@@ -16317,3 +16317,32 @@ html.lenis body {
 .swiper-wrapper {
   height: 455px !important;
 }
+
+ul.description {
+  margin-left: 20px !important;
+  margin-bottom: 20px !important;  
+}
+
+ul.description li {  
+  margin-bottom: 10px !important;
+}
+
+pre {
+  background-color: #fdf6e3;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+table.description th, table.description td {
+  border: 1px solid #000; /* Cambia el color y grosor según necesites */
+  padding: 8px;
+  text-align: center;
+}
+
+table.description {
+  margin-bottom: 20px;
+}
