@@ -321,10 +321,12 @@
                                     Kullback-Leibler y el resultado de la similitud entre matrices de correlación), y se
                                     normalizan todas al rango [0,1] para mantener
                                     escalas comparables. Finalmente, se calcula la función de calidad TabDSFidelity como
-                                    una combinación ponderada de estas métricas normalizadas: <br><br>
-                                    <strong>TabDSFidelity = w_auc * AUC-ROC_norm + w_f1 * F1_norm + w_acc *
+                                    una combinación ponderada de estas métricas normalizadas:                                    
+                                </p>
+                                <p class="description function">
+                                    <strong>TabDSFidelity = </strong> w_auc * AUC-ROC_norm + w_f1 * F1_norm + w_acc *
                                         Accuracy_norm + w_ks
-                                        * KS_norm + w_js * JS_norm + w_kl * KL_norm + w_c * C_norm.</strong>
+                                        * KS_norm + w_js * JS_norm + w_kl * KL_norm + w_c * C_norm.
                                 </p>
                                 <p class="description"><strong>Conjuntos de Datos:</strong></p>
                                 <p class="description">Los datos originales utilizados en este estudio fueron obtenidos
