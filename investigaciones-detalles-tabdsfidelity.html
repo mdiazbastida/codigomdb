@@ -2783,7 +2783,8 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td-ROC< /strong>
+                                            <td>
+                                                <p><strong>AUC-ROC</strong>
                                                 </p>
                                                 </td>
                                                 <td>
@@ -2792,7 +2793,8 @@
                                                 <td>
                                                     <p><strong>Accuracy</strong></p>
                                                 </td>
-                                                <td-ROC< /strong>
+                                                <td>
+                                                    <p><strong>AUC-ROC</strong>
                                                     </p>
                                                     </td>
                                                     <td>
@@ -2801,7 +2803,8 @@
                                                     <td>
                                                         <p><strong>Accuracy</strong></p>
                                                     </td>
-                                                    <td-ROC< /strong>
+                                                    <td>
+                                                        <p><strong>AUC-ROC</strong>
                                                         </p>
                                                         </td>
                                                         <td>
@@ -2809,7 +2812,7 @@
                                                         </td>
                                                         <td>
                                                             <p><strong>Accuracy</strong></p>
-                                                        </td>
+                                                        </td>                                                        
                                         </tr>
                                         <tr>
                                             <td>
@@ -3282,6 +3285,117 @@
                                                 se deba al azar, lo que fortalece la validez de TabDSFidelity como
                                                 métrica que, en su diseño, prioriza el rendimiento predictivo al evaluar
                                                 la calidad de los datos.</p>
+                                <p class="description"><strong>Análisis de sensibilidad de las ponderaciones de TabDSFidelity:</strong></p>
+                                <table class="description">
+                                    <thead>
+                                      <tr>
+                                        <th rowspan="2">Conjunto de Datos</th>
+                                        <th colspan="2">Ponderación que prioriza la efectividad predictiva</th>
+                                        <th colspan="2">Ponderación equilibrada</th>
+                                        <th colspan="2">Ponderación que prioriza la fidelidad estadística</th>
+                                      </tr>
+                                      <tr>
+                                        <th>Balanceo</th>
+                                        <th>Generación Sintética</th>
+                                        <th>Balanceo</th>
+                                        <th>Generación Sintética</th>
+                                        <th>Balanceo</th>
+                                        <th>Generación Sintética</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>CD1</td>
+                                        <td>SMOTE RSB* Adaptado</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>SMOTE RSB* Adaptado</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CD2</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>SMOTE RSB* Adaptado</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>SMOTE RSB* Adaptado</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CD3</td>
+                                        <td>SMOTE RSB* Adaptado</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CD4</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CD5</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CD6</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CD7</td>
+                                        <td>SMOTE RSB* Adaptado</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>BorderLine-SMOTE</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>SMOTE RSB* Adaptado</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CD8</td>
+                                        <td>SMOTE RSB* Adaptado</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CD9</td>
+                                        <td>SMOTE RSB* Adaptado</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>SMOTE RSB* Adaptado</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                      </tr>
+                                      <tr>
+                                        <td>CD10</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                        <td>Random OverSampling</td>
+                                        <td>SMOTE RSB* con Ruido Gaussiano</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>                                
                             </div>
                         </div>
                     </div>
