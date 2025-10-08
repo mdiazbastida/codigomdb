@@ -1,0 +1,1097 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Código MDB || Caso de Éxito: Inteligencia Artificial y Datos Sintéticos para Predecir la Mortalidad en Pacientes con Neumonía Grave de la Comunidad</title>
+    <meta name="description"
+        content="Mejora de los modelos de predicción de la mortalidad en pacientes con neumonía grave de la comunidad. Nuestro estudio demuestra un aumento en la precisión (AUC-ROC), abriendo nuevas vías para la decisión clínica.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/vendor/fontawesome-pro.css">
+    <link rel="stylesheet" href="assets/css/vendor/spacing.css">
+    <link rel="stylesheet" href="assets/css/vendor/remixicon.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body class="rs-smoother-yes">
+
+    <!-- preloader start
+    <div id="pre-load">
+        <div id="loader" class="loader">
+            <div class="loader-container">
+                <div class="loader-icon"><img src="assets/images/favicon.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    preloader end -->
+
+    <!-- preloader start -->
+
+    <div id="rs-mouse">
+        <div id="cursor-ball"></div>
+    </div>
+
+    <!-- preloader end -->
+
+    <!-- Header area start -->
+    <header>
+        <div class="rs-header-area has-dark" id="header-sticky">
+            <div class="container">
+                <div class="rs-header-inner">
+                    <div class="rs-header-left">
+                        <div class="my-rs-header-logo">
+                            <a class="logo-black" href="index.html"><img src="assets/images/logo/logo-codigo-mdb.png"
+                                    alt="logo"></a>
+                        </div>
+                    </div>
+                    <div class="rs-header-menu">
+                        <nav id="mobile-menu" class="main-menu has-theme-yellow">
+                            <ul class="multipage-menu">
+                                <li><a href="acerca-de-codigomdb.html">Quién Soy</a></li>
+                                <!-- page menu -->
+                                <li><a href="#">Tienda</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <!-- elements menu -->
+                                <li><a href="investigaciones.html">Investigaciones</a></li>
+                                <li><a href="#">Recursos</a></li>
+                                <li><a href="contacto.html">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="rs-header-right">
+                        <div class="rs-header-btn style-one d-none d-sm-block">
+                            <a class="rs-btn has-color has-icon" href="contacto.html">Hablemos
+                                <span class="icon-box">
+                                    <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                        <path
+                                            d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
+                                        </path>
+                                    </svg>
+                                    <svg class="icon-second" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                        <path
+                                            d="M31.71,15.29l-10-10L20.29,6.71,28.59,15H0v2H28.59l-8.29,8.29,1.41,1.41,10-10A1,1,0,0,0,31.71,15.29Z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="rs-header-hamburger">
+                            <div class="sidebar-toggle">
+                                <a class="bar-icon" href="javascript:void(0)">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Header area end -->
+
+    <!-- Offcanvas area start -->
+    <div class="fix">
+        <div class="offcanvas-area" data-lenis-prevent>
+            <div class="offcanvas-wrapper">
+                <div class="offcanvas-content">
+                    <div class="offcanvas-top d-flex justify-content-between align-items-center mb-25">
+                        <div class="offcanvas-logo">
+                            <a class="logo-black" href="index.html"><img src="assets/images/logo/logo-codigo-mdb.png"
+                                    alt="logo"></a>
+                        </div>
+                        <div class="offcanvas-close">
+                            <button class="offcanvas-close-icon animation--flip">
+                                <span class="offcanvas-m-lines">
+                                    <span class="offcanvas-m-line line--1"></span><span
+                                        class="offcanvas-m-line line--2"></span><span
+                                        class="offcanvas-m-line line--3"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="offcanvas-about mb-30 d-none d-sm-block">
+                        <h4 class="offcanvas-title-meta">Acerca de CódigoMDB </h4>
+                        <p>Desarrollador independiente con experiencia en la creación de soluciones web a medida. </p>
+                    </div>
+                    <div class="mobile-menu">
+                        <div class="rs-offcanvas-menu mb-25">
+                            <nav></nav>
+                        </div>
+                    </div>
+                    <div class="offcanvas-contact mb-30">
+                        <h4 class="offcanvas-title-meta">Información de Contacto</h4>
+                        <ul>
+                            <li class="d-flex align-items-center gap-15">
+                                <div class="offcanvas-contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 14 18"
+                                        fill="none">
+                                        <path
+                                            d="M11.8768 9.68475C11.3059 10.835 10.5331 11.9818 9.74128 13.0109C8.95198 14.0368 8.15999 14.9249 7.5643 15.5572C7.48514 15.6412 7.40956 15.7206 7.33802 15.7951C7.26648 15.7206 7.1909 15.6412 7.11174 15.5572C6.51605 14.9249 5.72406 14.0368 4.93476 13.0109C4.14299 11.9818 3.37019 10.835 2.79925 9.68475C2.22242 8.52266 1.89032 7.43373 1.89032 6.5C1.89032 3.50846 4.32934 1.08333 7.33802 1.08333C10.3467 1.08333 12.7857 3.50846 12.7857 6.5C12.7857 7.43373 12.4536 8.52266 11.8768 9.68475ZM7.33802 17.3333C7.33802 17.3333 13.8753 11.1732 13.8753 6.5C13.8753 2.91015 10.9484 0 7.33802 0C3.7276 0 0.800781 2.91015 0.800781 6.5C0.800781 11.1732 7.33802 17.3333 7.33802 17.3333Z"
+                                            fill="#6D6D6D"></path>
+                                        <path
+                                            d="M7.33802 8.66667C6.13455 8.66667 5.15894 7.69662 5.15894 6.5C5.15894 5.30338 6.13455 4.33333 7.33802 4.33333C8.54149 4.33333 9.5171 5.30338 9.5171 6.5C9.5171 7.69662 8.54149 8.66667 7.33802 8.66667ZM7.33802 9.75C9.14323 9.75 10.6066 8.29492 10.6066 6.5C10.6066 4.70507 9.14323 3.25 7.33802 3.25C5.53281 3.25 4.0694 4.70507 4.0694 6.5C4.0694 8.29492 5.53281 9.75 7.33802 9.75Z"
+                                            fill="#6D6D6D"></path>
+                                    </svg>
+                                </div>
+                                <div class="offcanvas-contact-text">
+                                    <a href="#"> Julio Jover #110, Santa Clara, <br>
+                                        Villa Clara, Cuba </a>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center gap-15">
+                                <div class="offcanvas-contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M3.65387 1.32849C3.40343 1.00649 2.92745 0.976861 2.639 1.26531L1.60508 2.29923C1.1216 2.78271 0.94387 3.46766 1.1551 4.06847C2.00338 6.48124 3.39215 8.74671 5.32272 10.6773C7.25329 12.6078 9.51876 13.9966 11.9315 14.8449C12.5323 15.0561 13.2173 14.8784 13.7008 14.3949L14.7347 13.361C15.0231 13.0726 14.9935 12.5966 14.6715 12.3461L12.3653 10.5524C12.2008 10.4245 11.9866 10.3793 11.7845 10.4298L9.59541 10.9771C9.00082 11.1257 8.37183 10.9515 7.93845 10.5181L5.48187 8.06155C5.04849 7.62817 4.87427 6.99919 5.02292 6.40459L5.57019 4.21553C5.62073 4.01336 5.57552 3.79918 5.44758 3.63468L3.65387 1.32849ZM1.88477 0.511076C2.62689 -0.231039 3.8515 -0.154797 4.49583 0.673634L6.28954 2.97983C6.6187 3.40304 6.73502 3.95409 6.60498 4.47423L6.05772 6.66329C5.99994 6.8944 6.06766 7.13888 6.2361 7.30732L8.69268 9.7639C8.86113 9.93235 9.1056 10.0001 9.33671 9.94229L11.5258 9.39502C12.0459 9.26499 12.597 9.3813 13.0202 9.71047L15.3264 11.5042C16.1548 12.1485 16.231 13.3731 15.4889 14.1152L14.455 15.1492C13.7153 15.8889 12.6089 16.2137 11.5778 15.8512C9.01754 14.9511 6.61438 13.4774 4.56849 11.4315C2.5226 9.38562 1.04895 6.98246 0.148838 4.42225C-0.213682 3.39112 0.11113 2.28472 0.85085 1.545L1.88477 0.511076Z"
+                                            fill="#6D6D6D"></path>
+                                        <path
+                                            d="M11 0.5C11 0.223858 11.2239 0 11.5 0H15.5C15.7761 0 16 0.223858 16 0.5V4.5C16 4.77614 15.7761 5 15.5 5C15.2239 5 15 4.77614 15 4.5V1.70711L10.8536 5.85355C10.6583 6.04882 10.3417 6.04882 10.1464 5.85355C9.95118 5.65829 9.95118 5.34171 10.1464 5.14645L14.2929 1H11.5C11.2239 1 11 0.776142 11 0.5Z"
+                                            fill="#6D6D6D"></path>
+                                    </svg>
+                                </div>
+                                <div class="offcanvas-contact-text">
+                                    <a href="tel:+5352774972"> +53-52774972 </a>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-center gap-15">
+                                <div class="offcanvas-contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path
+                                            d="M2 2C0.895431 2 0 2.89543 0 4V12L2.58386e-05 12.0103C0.00555998 13.1101 0.898859 14 2 14H7.5C7.77614 14 8 13.7761 8 13.5C8 13.2239 7.77614 13 7.5 13H2C1.53715 13 1.14774 12.6855 1.03376 12.2586L6.67417 8.7876L8 9.5831L15 5.3831V8.5C15 8.77614 15.2239 9 15.5 9C15.7761 9 16 8.77614 16 8.5V4C16 2.89543 15.1046 2 14 2H2ZM5.70808 8.20794L1 11.1052V5.3831L5.70808 8.20794ZM1 4.2169V4C1 3.44772 1.44772 3 2 3H14C14.5523 3 15 3.44772 15 4V4.2169L8 8.4169L1 4.2169Z"
+                                            fill="#6D6D6D"></path>
+                                        <path
+                                            d="M14.2467 14.2686C15.2567 14.2686 15.8339 13.4116 15.8339 12.2442V12.0344C15.8339 10.4297 14.6402 9 12.5197 9H12.4847C10.421 9 9 10.3598 9 12.4322V12.6465C9 14.8195 10.4385 16 12.3579 16H12.4016C12.9963 16 13.4204 15.9257 13.639 15.8251V15.0949C13.3941 15.2042 12.9656 15.2742 12.4585 15.2742H12.4147C11.0812 15.2742 9.84385 14.4872 9.84385 12.6202V12.4628C9.84385 10.8057 10.9019 9.73891 12.4847 9.73891H12.524C14.0587 9.73891 15.0075 10.7883 15.0075 12.065V12.183C15.0075 13.158 14.6839 13.5734 14.3691 13.5734C14.1374 13.5734 13.9582 13.4247 13.9582 13.1537V10.9631H13.0531V11.5315H13.0225C12.9394 11.2342 12.6552 10.9019 12.0693 10.9019C11.2911 10.9019 10.8101 11.4572 10.8101 12.3011V12.8301C10.8101 13.722 11.2998 14.2642 12.0693 14.2642C12.5415 14.2642 12.9656 14.0369 13.0837 13.6215H13.1274C13.2455 14.0412 13.7439 14.2686 14.2467 14.2686ZM11.7939 12.6814V12.4541C11.7939 11.9076 12.0212 11.6627 12.3666 11.6627C12.664 11.6627 12.9394 11.8551 12.9394 12.371V12.7383C12.9394 13.3111 12.6858 13.4816 12.3754 13.4816C12.0212 13.4816 11.7939 13.2673 11.7939 12.6814Z"
+                                            fill="#6D6D6D"></path>
+                                    </svg>
+                                </div>
+                                <div class="offcanvas-contact-text">
+                                    <a href="mailto:hello@flixta.com">mdiazbastida@gmail.com</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="offcanvas-social">
+                        <h4 class="offcanvas-title-meta">Suscríbete & Sígueme</h4>
+                        <ul>
+                            <li><a href="https://www.facebook.com/profile.php?id=61571685167258"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.instagram.com/marcosdiazbastida/"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/@mdiazbastida"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/marcos-diaz-bastida/"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-overlay"></div>
+    <div class="offcanvas-overlay-white"></div>
+    <!-- Offcanvas area start -->
+
+    <!-- Body main wrapper start -->
+    <main>
+
+        <!-- breadcrumb area start -->
+        <section class="rs-breadcrumb-area rs-breadcrumb-one p-relative">
+            <div class="rs-breadcrumb-bg bg-white" data-background="assets/images/bg/breadcrumb-bg-01.png"></div>
+            <div class="rs-breadcrumb-bg bg-black" data-background="assets/images/bg/breadcrumb-bg-dark-01.png"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-6 col-xl-8 col-lg-8">
+                        <div class="rs-breadcrumb-content-wrapper">
+                            <div class="rs-breadcrumb-title-wrapper text-center">
+                                <h1 class="rs-breadcrumb-title">Datos Sintéticos para Predecir la Mortalidad en Pacientes con Neumonía Grave de la Comunidad</h1>
+                            </div>
+                            <div class="rs-breadcrumb-menu text-center">
+                                <nav>
+                                    <ul>
+                                        <li><span><a href="index.html">Inicio</a></span></li>
+                                        <li><span><a href="investigaciones.html">Investigaciones</a></span></li>
+                                        <li><span>Caso de Éxito: Neumonía Grave de la Comunidad</span></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb area end -->
+
+        <!-- portfolio area start -->
+        <section class="rs-portfolio-area section-space-top primary-bg">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-xl-8 col-lg-8">
+                        <div class="rs-portfolio-details-wrapper">                            
+                            <div class="rs-portfolio-details-content wow fadeInUp" data-wow-delay=".3s"
+                                data-wow-duration="1s">
+                                <h3 class="rs-portfolio-details-title-plus">Caso de Éxito: Datos Sintéticos para Predecir la Mortalidad en Pacientes 
+                                    con Neumonía Grave de la Comunidad.</h3>
+                                <p class="description"><strong>1. Resumen General</strong></p>    
+                                <p class="description">Este informe detalla los resultados de la aplicación de la metodología <a href="investigaciones-detalles-metodologia-tds.html" class="a-plus">(Metodología TDS)</a>  avanzada para la generación y evaluación de datos sintéticos a un conjunto de datos sobre <strong>Neumonía Grave Adquirida en la Comunidad</strong>. El objetivo principal fue superar las limitaciones del conjunto de datos original, caracterizado por un significativo desbalance de clases (Ratio de 2.37). La metodología fue robustecida con la inclusión de la métrica "Gamma" de la Teoría de Conjuntos Aproximados, para una evaluación más profunda de la calidad y fidelidad estructural de los datos generados.<br><br>
+                                    Los resultados demuestran un éxito rotundo en dos áreas clave:
+                                </p>
+                                <ol>
+                                    <li>
+                                        <strong>Calidad de los datos:</strong> Se generaron conjuntos de datos balanceados, 
+                                        sintéticos y aumentados de alta calidad. La técnica basada en <a href="https://link.springer.com/article/10.1007/s10115-011-0465-6" target="_blank" class="a-plus">SMOTE RSB*</a>, <strong>"SMOTE RSB* Adaptado Con Reglas del Dominio"</strong> 
+                                        fue identificada como la mejor para el balanceo, mientras que <strong>"SMOTE RSB* con Ruido Gaussiano + Reglas del Dominio"</strong> demostró ser superior para la generación de datos a gran escala.
+                                    </li>
+                                    <li>
+                                        <strong>Rendimiento Predictivo:</strong> Los modelos de clasificación, especialmente 
+                                        los Bosques Aleatorios (Random Forests), entrenados con los conjuntos de datos aumentados, 
+                                        mostraron una mejora consistente en métricas clave como AUC-ROC y F1-Score en comparación 
+                                        con los entrenados únicamente con datos originales.
+                                    </li>
+                                </ol>
+                                <p class="description">Estos hallazgos no solo validan la eficacia de la metodología, sino que también abren nuevas y significativas oportunidades para la investigación y el desarrollo de herramientas de apoyo a la decisión clínica más precisas y fiables.</p>
+                                <p class="description"><strong>2. Análisis de Calidad de los Conjuntos de Datos Generados</strong></p>
+                                <p class="description">La primera fase del experimento se centró en generar y seleccionar los conjuntos de datos de mayor calidad utilizando el índice de evaluación <a href="investigaciones-detalles-tabdsfidelity.html" class="a-plus">TabDSFidelity</a> que ahora incluye la métrica "Gamma".                                    
+                                </p>
+                                <p class="description"><strong>2.1. Selección del Mejor Conjunto de Datos Balanceado</strong></p>
+                                <p class="description">El conjunto de datos original presentaba un desbalance considerable. Se evaluaron múltiples técnicas de sobremuestreo, y los resultados fueron:</p>
+                                <ul class="description">
+                                    <li>
+                                        <strong>Técnica Superior:</strong> SMOTE RSB* Adaptado Con Reglas del Dominio.
+                                    </li>
+                                    <li>
+                                        <strong>Justificación:</strong> Esta técnica no solo logró un excelente equilibrio de clases 
+                                        (Ratio ~1.18), sino que también obtuvo puntuaciones más altas en métricas de utilidad 
+                                        predictiva (AUC, F1) y fidelidad estadística respecto a su referente original y al resto de los candidatos balanceados. De manera crucial, su "Fidelidad Gamma" de 1 y 
+                                        un alto valor de "Consistencia Gamma" (0.996) indican que preservó de manera excepcional la estructura 
+                                        de conocimiento y las dependencias del conjunto de datos original, minimizando la incertidumbre 
+                                        introducida, un factor clave para la generación de modelos robustos.
+                                    </li>
+                                </ul>
+                                <p class="description"><strong>Tabla 1.</strong> Comparativa de Técnicas de Balanceo de Datos y Métricas de Evaluación.</p>
+                                <table class="description">
+                                    <thead>
+                                        <tr>
+                                            <th>Ratio</th>
+                                            <th>Dataset</th>
+                                            <th>No. Ejemplos</th>
+                                            <th>AUC-ROC</th>
+                                            <th>F1</th>
+                                            <th>Accuracy</th>
+                                            <th>Consistencia Gamma Dataset</th>
+                                            <th>Fidelidad Consistencia Gamma</th>
+                                            <th>Kolmogorov-Smirnov</th>
+                                            <th>Jensen-Shanon</th>
+                                            <th>Kullback-Leibler</th>                                            
+                                            <th>Puntuación TabDSFidelity</th>
+                                            <th>¿Es el mejor?</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2.36885</td>
+                                            <td>75% del conjunto original</td>
+                                            <td>411</td>
+                                            <td>0.706682</td>
+                                            <td>0.714266</td>
+                                            <td>0.751825</td>
+                                            <td>0.990268</td>
+                                            <td>---</td>
+                                            <td>---</td>
+                                            <td>---</td>
+                                            <td>---</td>                                            
+                                            <td>5.82103</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Random OverSampling</td>
+                                            <td>578</td>
+                                            <td>0.749873</td>
+                                            <td>0.690974</td>
+                                            <td>0.722628</td>
+                                            <td>0.984429</td>
+                                            <td>0.994104</td>
+                                            <td>2.5098</td>
+                                            <td>3.67276</td>
+                                            <td>2.98768</td>                                            
+                                            <td>7.69593</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>SMOTE</td>
+                                            <td>578</td>
+                                            <td>0.724212</td>
+                                            <td>0.755984</td>
+                                            <td>0.766423</td>
+                                            <td>0.991349</td>
+                                            <td>1</td>
+                                            <td>2.7873</td>
+                                            <td>3.58113</td>
+                                            <td>2.91239</td>                                            
+                                            <td>4.19444</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>BorderLine SMOTE</td>
+                                            <td>578</td>
+                                            <td>0.691819</td>
+                                            <td>0.670321</td>
+                                            <td>0.686131</td>
+                                            <td>0.99308</td>
+                                            <td>1</td>
+                                            <td>2.90349</td>
+                                            <td>3.5927</td>
+                                            <td>2.9179</td>                                            
+                                            <td>5.56624</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1.00346</td>
+                                            <td>ADASYN</td>
+                                            <td>579</td>
+                                            <td>0.708333</td>
+                                            <td>0.698086</td>
+                                            <td>0.708029</td>
+                                            <td>0.993092</td>
+                                            <td>1</td>
+                                            <td>3.2314</td>
+                                            <td>3.57823</td>
+                                            <td>2.93571</td>                                            
+                                            <td>5.56624</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1.18443</td>
+                                            <td>SMOTE RSB* Adaptado</td>
+                                            <td>533</td>
+                                            <td>0.71405</td>
+                                            <td>0.737852</td>
+                                            <td>0.751825</td>
+                                            <td>0.992495</td>
+                                            <td>1</td>
+                                            <td>3.59187</td>
+                                            <td>3.64369</td>
+                                            <td>2.97369</td>                                            
+                                            <td>7.68562</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr class="ok">
+                                            <td>1.18443</td>
+                                            <td>SMOTE RSB* Adaptado Con Reglas del Dominio</td>
+                                            <td>533</td>
+                                            <td>0.740346</td>
+                                            <td>0.746991</td>
+                                            <td>0.759124</td>
+                                            <td>0.996248</td>
+                                            <td>1</td>
+                                            <td>3.43465</td>
+                                            <td>3.64335</td>
+                                            <td>2.96681</td>                                            
+                                            <td>8.25911</td>
+                                            <td>SÍ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Optimización por Enjambre de Partículas</td>
+                                            <td>578</td>
+                                            <td>0.729421</td>
+                                            <td>0.686034</td>
+                                            <td>0.722628</td>
+                                            <td>0.99308</td>
+                                            <td>1</td>
+                                            <td>0.00043104</td>
+                                            <td>2.93066</td>
+                                            <td>2.81882</td>                                            
+                                            <td>2.74024</td>
+                                            <td>NO</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="description"><strong>2.2. Selección de los Mejores Conjuntos Sintéticos y Aumentados</strong></p>
+                                <p class="description">A partir del conjunto balanceado óptimo, se generaron 10,000 nuevas muestras sintéticas.</p>
+                                <ul class="description">
+                                    <li>
+                                        <strong>Técnica Superior:</strong> SMOTE RSB* Con Ruido Gaussiano + Reglas del Dominio.
+                                    </li>
+                                    <li>
+                                        <strong>Justificación:</strong> Tanto en su versión puramente sintética como en la aumentada (combinando datos originales y sintéticos), este método superó a alternativas como CTGAN y TVAE. Mantuvo un alto rendimiento en todas las métricas de evaluación, incluyendo una Fidelidad Gamma de 1, lo que confirma que los datos generados son de alta calidad, estructuralmente coherentes y listos para ser utilizados en el entrenamiento de modelos de aprendizaje automático.
+                                    </li>
+                                </ul>
+                                <p class="description"><strong>Tabla 2.</strong> Comparativa de Datasets Sintéticos y Aumentados con sus Métricas de Evaluación.</p>
+                                <table class="description">
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo</th>
+                                            <th>Equilibrio</th>
+                                            <th>Ratio</th>
+                                            <th>Dataset</th>
+                                            <th>No. Ejemplos</th>
+                                            <th>AUC-ROC</th>
+                                            <th>F1</th>
+                                            <th>Accuracy</th>
+                                            <th>Consistencia Gamma Dataset</th>
+                                            <th>Fidelidad Consistencia Gamma</th>
+                                            <th>Kolmogorov-Smirnov</th>
+                                            <th>Jensen-Shanon</th>
+                                            <th>Kullback-Leibler</th>
+                                            <th>Puntuación TabDSFidelity</th>
+                                            <th>¿Es el mejor?</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Sintético</td>
+                                            <td>Balanceado</td>
+                                            <td>1.16497</td>
+                                            <td>SMOTE RSB* Con Ruido Gaussiano</td>
+                                            <td>10000</td>
+                                            <td>0.73158</td>
+                                            <td>0.683868</td>
+                                            <td>0.708029</td>
+                                            <td>0.9991</td>
+                                            <td>1</td>
+                                            <td>2.16366</td>
+                                            <td>3.38051</td>
+                                            <td>2.80374</td>
+                                            <td>7.3567</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sintético</td>
+                                            <td>Balanceado</td>
+                                            <td>1.33318</td>
+                                            <td>CTGAN</td>
+                                            <td>10000</td>
+                                            <td>0.635417</td>
+                                            <td>0.679484</td>
+                                            <td>0.708029</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>0.000000373606</td>
+                                            <td>2.77446</td>
+                                            <td>2.79583</td>
+                                            <td>5.22048</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sintético</td>
+                                            <td>Desbalanceado</td>
+                                            <td>1.7571</td>
+                                            <td>TVAE</td>
+                                            <td>10000</td>
+                                            <td>0.592353</td>
+                                            <td>0.62616</td>
+                                            <td>0.635036</td>
+                                            <td>0.9992</td>
+                                            <td>1</td>
+                                            <td>0.0001404</td>
+                                            <td>2.59638</td>
+                                            <td>1.74348</td>
+                                            <td>3.00291</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr class="ok">
+                                            <td>Sintético</td>
+                                            <td>Balanceado</td>
+                                            <td>1.17439</td>
+                                            <td>SMOTE RSB* Con Ruido Gaussiano + Reglas del Dominio</td>
+                                            <td>10000</td>
+                                            <td>0.722688</td>
+                                            <td>0.725482</td>
+                                            <td>0.737226</td>
+                                            <td>0.9968</td>
+                                            <td>1</td>
+                                            <td>2.0659</td>
+                                            <td>3.38003</td>
+                                            <td>2.80462</td>
+                                            <td>7.89581</td>
+                                            <td>SÍ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sintético</td>
+                                            <td>Balanceado</td>
+                                            <td>1</td>
+                                            <td>Optimización por Enjambre de Partículas</td>
+                                            <td>10000</td>
+                                            <td>0.578252</td>
+                                            <td>0.584393</td>
+                                            <td>0.569343</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td>1.52435</td>
+                                            <td>1.14109</td>
+                                            <td>0</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aumentado</td>
+                                            <td>Balanceado</td>
+                                            <td>1.16595</td>
+                                            <td>SMOTE RSB* Con Ruido Gaussiano</td>
+                                            <td>10533</td>
+                                            <td>0.708714</td>
+                                            <td>0.679729</td>
+                                            <td>0.693431</td>
+                                            <td>0.9991</td>
+                                            <td>1</td>
+                                            <td>2.19617</td>
+                                            <td>3.39329</td>
+                                            <td>2.81567</td>
+                                            <td>6.83963</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aumentado</td>
+                                            <td>Balanceado</td>
+                                            <td>1.32517</td>
+                                            <td>CTGAN</td>
+                                            <td>10533</td>
+                                            <td>0.577871</td>
+                                            <td>0.607512</td>
+                                            <td>0.620438</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>0.00000165075</td>
+                                            <td>2.82018</td>
+                                            <td>2.81165</td>
+                                            <td>2.52144</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aumentado</td>
+                                            <td>Desbalanceado</td>
+                                            <td>1.721</td>
+                                            <td>TVAE</td>
+                                            <td>10533</td>
+                                            <td>0.609502</td>
+                                            <td>0.623533</td>
+                                            <td>0.627737</td>
+                                            <td>0.9992</td>
+                                            <td>1</td>
+                                            <td>0.000328698</td>
+                                            <td>2.66818</td>
+                                            <td>2.20163</td>
+                                            <td>2.56623</td>
+                                            <td>NO</td>
+                                        </tr>
+                                        <tr class="ok">
+                                            <td>Aumentado</td>
+                                            <td>Balanceado</td>
+                                            <td>1.17489</td>
+                                            <td>SMOTE RSB* Con Ruido Gaussiano + Reglas del Dominio</td>
+                                            <td>10533</td>
+                                            <td>0.732978</td>
+                                            <td>0.716323</td>
+                                            <td>0.729927</td>
+                                            <td>0.9968</td>
+                                            <td>1</td>
+                                            <td>2.09698</td>
+                                            <td>3.39291</td>
+                                            <td>2.81668</td>
+                                            <td>7.95461</td>
+                                            <td>SÍ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aumentado</td>
+                                            <td>Balanceado</td>
+                                            <td>1.00858</td>
+                                            <td>Optimización por Enjambre de Partículas</td>
+                                            <td>10533</td>
+                                            <td>0.680513</td>
+                                            <td>0.664234</td>
+                                            <td>0.664234</td>
+                                            <td>1</td>
+                                            <td>1</td>
+                                            <td>0</td>
+                                            <td>1.67258</td>
+                                            <td>1.45706</td>
+                                            <td>1.98305</td>
+                                            <td>NO</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="description"><strong>3. Impacto en la Efectividad Predictiva de los Modelos de Clasificación</strong></p>
+                                <p class="description">El valor final de los datos generados se mide por su capacidad para mejorar el rendimiento de los modelos predictivos. Los resultados de esta fase son muy alentadores.</p>
+                                <p class="description"><strong>Tabla 3.</strong> Análisis comparativo de la evolución del rendimiento con diferentes tipos de datos.</p>
+                                <table class="description">
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo de Datos</th>
+                                            <th>Mejor Algoritmo</th>
+                                            <th>AUC-ROC (Mejora vs. Original)</th>
+                                            <th>F1-Score (Mejora vs. Original)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Original</td>
+                                            <td>Bosques Aleatorios</td>
+                                            <td>0.703</td>
+                                            <td>0.698</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Balanceado</td>
+                                            <td>Bosques Aleatorios</td>
+                                            <td>0.718 (+2.1%)</td>
+                                            <td>0.760 (+8.9%)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sintético</td>
+                                            <td>Bosques Aleatorios</td>
+                                            <td>0.721 (+2.6%)</td>
+                                            <td>0.707 (+1.3%)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aumentado</td>
+                                            <td>Bosques Aleatorios</td>
+                                            <td>0.724 (+3.0%)</td>
+                                            <td>0.695 (-0.4%)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>                                
+                                <p class="description">Observaciones Clave:</p>
+                                <ul class="description">
+                                    <li>
+                                        <strong>Superioridad del Aumento de Datos:</strong> El conjunto de datos aumentado (augmented), 
+                                        que combina la información real con la riqueza de los datos sintéticos, produjo el mejor modelo 
+                                        global en términos de AUC-ROC, la métrica más importante para evaluar la capacidad de discriminación 
+                                        de un clasificador. El modelo de Bosques Aleatorios alcanzó un AUC de 0.724, una mejora significativa 
+                                        sobre el 0.703 del modelo original.
+                                    </li>
+                                    <li>
+                                        <strong>Mejora Generalizada:</strong> Si bien Bosques Aleatorios fue el algoritmo más destacado, 
+                                        es notable que otros modelos como la Máquina de Vector de Soporte (SVM) y la Red Neuronal mostraron 
+                                        mejoras aún más drásticas en su rendimiento al ser entrenados con datos sintéticos y aumentados, 
+                                        pasando de ser modelos débiles a competentes. Esto demuestra que los datos generados son robustos 
+                                        y benefician a una amplia gama de algoritmos.
+                                    </li>
+                                    <li>
+                                        <strong>Impacto del Balanceo:</strong> El uso del conjunto balanceado por sí solo ya proporciona 
+                                        una mejora sustancial, especialmente en el F1-Score, lo que indica una mejor capacidad para 
+                                        identificar correctamente la clase minoritaria.
+                                    </li>
+                                </ul>
+                                <p class="description"><strong>Tabla 4.</strong> Rendimiento Comparativo de Algoritmos de Clasificación por Tipo de Datos.</p>
+                                <table class="description">
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo</th>
+                                            <th>Algoritmo</th>
+                                            <th>AUC-ROC</th>
+                                            <th>F1</th>
+                                            <th>Accuracy</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Original</td>
+                                            <td>Regresión Logística</td>
+                                            <td>0.524136</td>
+                                            <td>0.608416</td>
+                                            <td>0.656934</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Original</td>
+                                            <td>Árbol de Decisión</td>
+                                            <td>0.597053</td>
+                                            <td>0.636449</td>
+                                            <td>0.664234</td>
+                                        </tr>
+                                        <tr class="ok">
+                                            <td>Original</td>
+                                            <td>Bosques Aleatorios</td>
+                                            <td>0.702744</td>
+                                            <td>0.697567</td>
+                                            <td>0.744526</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Original</td>
+                                            <td>Máquina de Vector de Soporte</td>
+                                            <td>0.575711</td>
+                                            <td>0.590277</td>
+                                            <td>0.70073</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Original</td>
+                                            <td>Red Neuronal de Clasificación</td>
+                                            <td>0.429878</td>
+                                            <td>0.585014</td>
+                                            <td>0.671533</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Balanceado</td>
+                                            <td>Regresión Logística</td>
+                                            <td>0.514482</td>
+                                            <td>0.571988</td>
+                                            <td>0.562044</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Balanceado</td>
+                                            <td>Árbol de Decisión</td>
+                                            <td>0.6828</td>
+                                            <td>0.67658</td>
+                                            <td>0.671533</td>
+                                        </tr>
+                                        <tr class="ok">
+                                            <td>Balanceado</td>
+                                            <td>Bosques Aleatorios</td>
+                                            <td>0.717734</td>
+                                            <td>0.759581</td>
+                                            <td>0.773723</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Balanceado</td>
+                                            <td>Máquina de Vector de Soporte</td>
+                                            <td>0.552846</td>
+                                            <td>0.61143</td>
+                                            <td>0.59854</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Balanceado</td>
+                                            <td>Red Neuronal de Clasificación</td>
+                                            <td>0.544715</td>
+                                            <td>0.591241</td>
+                                            <td>0.591241</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sintético</td>
+                                            <td>Regresión Logística</td>
+                                            <td>0.535315</td>
+                                            <td>0.561587</td>
+                                            <td>0.554745</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sintético</td>
+                                            <td>Árbol de Decisión</td>
+                                            <td>0.623094</td>
+                                            <td>0.653059</td>
+                                            <td>0.656934</td>
+                                        </tr>
+                                        <tr class="ok">
+                                            <td>Sintético</td>
+                                            <td>Bosques Aleatorios</td>
+                                            <td>0.72091</td>
+                                            <td>0.707011</td>
+                                            <td>0.722628</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sintético</td>
+                                            <td>Máquina de Vector de Soporte</td>
+                                            <td>0.649136</td>
+                                            <td>0.666464</td>
+                                            <td>0.664234</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sintético</td>
+                                            <td>Red Neuronal de Clasificación</td>
+                                            <td>0.661077</td>
+                                            <td>0.671857</td>
+                                            <td>0.664234</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aumentado</td>
+                                            <td>Regresión Logística</td>
+                                            <td>0.533028</td>
+                                            <td>0.561587</td>
+                                            <td>0.554745</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aumentado</td>
+                                            <td>Árbol de Decisión</td>
+                                            <td>0.615219</td>
+                                            <td>0.658103</td>
+                                            <td>0.656934</td>
+                                        </tr>
+                                        <tr class="ok">
+                                            <td>Aumentado</td>
+                                            <td>Bosques Aleatorios</td>
+                                            <td>0.723831</td>
+                                            <td>0.69498</td>
+                                            <td>0.708029</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aumentado</td>
+                                            <td>Máquina de Vector de Soporte</td>
+                                            <td>0.652947</td>
+                                            <td>0.666464</td>
+                                            <td>0.664234</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Aumentado</td>
+                                            <td>Red Neuronal de Clasificación</td>
+                                            <td>0.644055</td>
+                                            <td>0.676473</td>
+                                            <td>0.678832</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="description"><strong>4. Oportunidades y Vías de Acción</strong></p>
+                                <p class="description">Los resultados de este experimento abren un abanico de oportunidades estratégicas para la investigación en el campo de la medicina intensiva:</p>
+                                <ol>
+                                    <li>
+                                        <strong>Desarrollo de Modelos Predictivos de Alta Precisión:</strong>
+                                        <ul class="description">
+                                            <li>
+                                                <strong>Oportunidad:</strong> Existe una clara posibilidad de construir modelos de pronóstico 
+                                                para la neumonía grave con una capacidad predictiva superior. Un modelo con un AUC de 0.724 es 
+                                                significativamente más útil en un entorno clínico que uno con un rendimiento cercano a 0.70.
+                                            </li>
+                                            <li>
+                                                <strong>Acción:</strong> Utilizar el conjunto de datos aumentado como el nuevo estándar para 
+                                                entrenar y validar modelos de clasificación para esta patología.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Exploración de Arquitecturas de Aprendizaje Profundo:</strong>
+                                        <ul class="description">
+                                            <li>
+                                                <strong>Oportunidad:</strong> La escasez de datos suele ser el principal impedimento para usar 
+                                                modelos complejos como las redes neuronales profundas. Con un conjunto de datos robusto y de 
+                                                gran tamaño (más de 10,000 ejemplos), ahora es factible experimentar con arquitecturas más 
+                                                avanzadas que antes eran inviables por el alto riesgo de sobreajuste.
+                                            </li>
+                                            <li>
+                                                <strong>Acción:</strong> Iniciar una nueva fase de experimentación centrada en modelos de 
+                                                Deep Learning para buscar mejoras adicionales en la precisión predictiva.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li>
+                                        <strong>Investigación Clínica y Análisis de Subgrupos:</strong>
+                                        <ul class="description">
+                                            <li>
+                                                <strong>Oportunidad:</strong> El conjunto de datos aumentado, al ser más grande y diverso, 
+                                                permite un análisis más fiable de subpoblaciones de pacientes que en el conjunto original 
+                                                eran demasiado pequeñas para obtener conclusiones estadísticamente significativas.
+                                            </li>
+                                            <li>
+                                                <strong>Acción:</strong> Realizar estudios de análisis exploratorio sobre el conjunto de 
+                                                datos aumentado para identificar nuevos patrones de riesgo o perfiles de pacientes que 
+                                                puedan guiar la investigación clínica futura.
+                                            </li>
+                                        </ul>
+                                    </li>                                    
+                                    
+                                </ol>
+                                <p class="description"><strong>5. Conclusión</strong></p>
+                                <p class="description">Este estudio ha demostrado de manera concluyente que la metodología de generación de datos sintéticos, guiada por un riguroso proceso de evaluación que ahora incluye la Teoría de Conjuntos Aproximados, es una herramienta poderosa y eficaz. El conjunto de datos aumentado no solo resuelve el problema del desbalance de clases, sino que enriquece la base de conocimiento disponible, permitiendo el entrenamiento de modelos de aprendizaje automático más precisos y robustos. Los resultados positivos abren la puerta a avances significativos en el modelado predictivo para la neumonía grave, con el potencial de mejorar la toma de decisiones clínicas y, en última instancia, el cuidado del paciente.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="rs-portfolio-details-sidebar p-relative">
+                            <div class="rs-portfolio-details-sidebar-thumb">
+                                <img src="assets/images/banner/Marcos-Diaz-Bastida-Proyecto.png" alt="">
+                            </div>
+                            <div class="rs-portfolio-details-case-information">
+                                <h4 class="rs-portfolio-details-case-title">Autores de la Investigación</h4>
+                                <div class="rs-portfolio-details-case-info-wrapper">
+                                    <ul>
+                                        <li>Autor (es) <span>:</span> <strong><a
+                                                    href="mailto:mdiazbastida@gmail.com">MSc. Marcos Díaz
+                                                    Bastida</a></strong></li>
+                                        <li>&nbsp;<span>:</span> <strong><a href="mailto:rperez@uclv.edu.cu">Dr. C.
+                                                        Ramiro A. Pérez Vázquez</a></strong></li>            
+                                        <li>&nbsp;<span>:</span> <strong><a href="mailto:rbellop@uclv.edu.cu">Dr. C.
+                                                    Rafael Bello Pérez</a></strong></li>
+                                        <li>Colaborador (es) <span>:</span> <strong><a
+                                                    href="mailto:acaballerol@infomed.sld.cu">Dr. C. Armando Caballero López</a></strong></li>
+                                        <li>&nbsp;<span>:</span> <strong><a href="mailto:armandodcf@infomed.sld.cu">MSc.
+                                                    Armando Caballero Font</a></strong></li>            
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- portfolio area end -->
+
+        <!-- portfolio navigation area start -->
+        <section class="rs-portfolio-navigation-area primary-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="rs-postbox-more-navigation wow fadeInUp" data-wow-delay=".3s"
+                            data-wow-duration="1s">
+                            <div class="rs-postbox-more-left">
+                                <div class="rs-postbox-more-icon">
+                                    <a class="rs-circle-btn" href="#">
+                                        <i class="fa-regular fa-arrow-left-long"></i>
+                                    </a>
+                                </div>
+                                <div class="rs-postbox-more-content">
+                                    <p>Investigación Anterior</p>
+                                    <h6>
+                                        <a href="#">TabDSFidelity</a>
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="rs-postbox-more-menu">
+                                <a href="#">
+                                    <span>
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M11.6673 4.66662C12.9559 4.66662 14.0006 3.62196 14.0006 2.33331C14.0006 1.04466 12.9559 0 11.6673 0C10.3786 0 9.33398 1.04466 9.33398 2.33331C9.33398 3.62196 10.3786 4.66662 11.6673 4.66662Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M2.33331 4.66662C3.62196 4.66662 4.66662 3.62196 4.66662 2.33331C4.66662 1.04466 3.62196 0 2.33331 0C1.04466 0 0 1.04466 0 2.33331C0 3.62196 1.04466 4.66662 2.33331 4.66662Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M11.6673 13.9996C12.9559 13.9996 14.0006 12.955 14.0006 11.6663C14.0006 10.3777 12.9559 9.33301 11.6673 9.33301C10.3786 9.33301 9.33398 10.3777 9.33398 11.6663C9.33398 12.955 10.3786 13.9996 11.6673 13.9996Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M2.33331 13.9996C3.62196 13.9996 4.66662 12.955 4.66662 11.6663C4.66662 10.3777 3.62196 9.33301 2.33331 9.33301C1.04466 9.33301 0 10.3777 0 11.6663C0 12.955 1.04466 13.9996 2.33331 13.9996Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="rs-postbox-more-right">
+                                <div class="rs-postbox-more-content">
+                                    <p>Investigación Siguiente</p>
+                                    <h6>
+                                        <a href="investigaciones-detalles-metodologia-tds.html">Metodología TDS</a>
+                                    </h6>
+                                </div>
+                                <div class="rs-postbox-more-icon">
+                                    <a class="rs-circle-btn" href="investigaciones-detalles-metodologia-tds.html">
+                                        <i class="fa-regular fa-arrow-right-long"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- portfolio navigation area end -->
+
+    </main>
+    <!-- Body main wrapper end -->
+
+    <!-- footer area start -->
+    <footer class="rs-footer-area rs-footer-two primary-bg">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <div class="rs-footer-widget footer-2-col-1">
+                        <div class="rs-footer-widget-logo">
+                            <a class="logo-black" href="index.html"><img src="assets/images/logo/logo-codigo-mdb.png"
+                                    alt="logo"></a>
+                        </div>
+                        <div class="rs-footer-copyright">
+                            <p>© <span id="year"></span> CódigoMDB. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-3">
+                    <div class="rs-footer-widget footer-2-col-2">
+                        <div class="rs-footer-widget-links">
+                            <ul>
+                                <li><a href="acerca-de-codigomdb.html">Quién soy</a></li>
+                                <li><a href="#">Tienda</a></li>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-3">
+                    <div class="rs-footer-widget footer-2-col-3">
+                        <div class="rs-footer-widget-links">
+                            <ul>
+                                <li><a href="investigaciones.html">Investigaciones</a></li>
+                                <li><a href="#">Recursos</a></li>
+                                <li><a href="contacto.html">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                    <div class="rs-footer-widget footer-2-col-4">
+                        <div class="rs-footer-contact-info">
+                            <div class="rs-footer-contact-item">
+                                <a href="#"> Julio Jover #110. Santa Clara. Villa Clara. Cuba. </a>
+                            </div>
+                            <div class="rs-footer-contact-item">
+                                <a href="mailto:mdiazbastida@gmail.com">mdiazbastida@gmail.com</a>
+                            </div>
+                            <div class="rs-footer-contact-item">
+                                <a href="tel:+5352774972"> +53-52774972 </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <div class="rs-footer-widget footer-2-col-5">
+                        <div class="rs-footer-social">
+                            <div class="rs-theme-social has-border">
+                                <a href="https://www.youtube.com/@mdiazbastida"><i class="ri-youtube-line"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=61571685167258" target="_blank"><i class="ri-facebook-fill"></i></a>
+                                <a href="https://www.linkedin.com/in/marcos-diaz-bastida/" target="_blank"><i class="ri-linkedin-fill"></i></a>
+                                <a href="https://www.instagram.com/marcosdiazbastida/" target="_blank"><i class="ri-instagram-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+
+    <!-- back to top -->
+    <!-- Backtotop start -->
+    <div class="backtotop-wrap cursor-pointer">
+        <svg class="backtotop-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- Backtotop end -->
+
+    <!-- JS here -->
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/plugins/waypoints.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/plugins/meanmenu.min.js"></script>
+    <script src="assets/js/plugins/swiper.min.js"></script>
+    <script src="assets/js/plugins/wow.js"></script>
+    <script src="assets/js/vendor/magnific-popup.min.js"></script>
+    <script src="assets/js/vendor/isotope.pkgd.min.js"></script>
+    <script src="assets/js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/plugins/nice-select.min.js"></script>
+    <script src="assets/js/plugins/jarallax.min.js"></script>
+    <script src="assets/js/vendor/ajax-form.js"></script>
+    <script src="assets/js/plugins/easypie.js"></script>
+    <script src="assets/js/plugins/headding-title.js"></script>
+    <script src="assets/js/plugins/lenis.min.js"></script>
+    <script src="assets/js/plugins/gsap.min.js"></script>
+    <script src="assets/js/plugins/rs-anim-int.js"></script>
+    <script src="assets/js/plugins/rs-scroll-trigger.min.js"></script>
+    <script src="assets/js/plugins/rs-splitText.min.js"></script>
+    <script src="assets/js/plugins/jquery.lettering.js"></script>
+    <script src="assets/js/plugins/parallax-effect.min.js"></script>
+    <script src="assets/js/vendor/purecounter.js"></script>
+    <script src="assets/js/vendor/dark-light.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

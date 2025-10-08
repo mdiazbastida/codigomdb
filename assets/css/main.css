@@ -797,6 +797,10 @@ button {
   background: transparent;
 }
 
+.a-plus {
+  text-decoration: underline;
+}
+
 img {
   max-width: 100%;
   object-fit: cover;
@@ -14673,6 +14677,9 @@ html.lenis body {
 .rs-portfolio-details-title {
   margin: 40px 0 20px;
 }
+.rs-portfolio-details-title-plus {
+  margin: 0 0 20px;
+}
 .rs-portfolio-details-feature-list ul li {
   list-style: none;
   position: relative;
@@ -16345,6 +16352,11 @@ table.description th, table.description td {
 
 table.description {
   margin-bottom: 20px;
+  font-size: 12px;
+}
+
+tr.ok {
+  color: red;
 }
 
 p.function {
