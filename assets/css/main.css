@@ -16350,8 +16350,12 @@ table.description th, table.description td {
   text-align: center;
 }
 
-table.description {
+table.description, table.description p {
   margin-bottom: 20px;
+  font-size: 12px;
+}
+
+table.description p {  
   font-size: 12px;
 }
 
