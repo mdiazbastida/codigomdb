@@ -781,13 +781,19 @@ a:focus,
   outline: none;
 }
 
-a:focus,
+a:hover {
+  text-decoration: none;
+  color: inherit;  
+  color: var(--rs-theme-primary);  
+}
+
+/*a:focus,
 a:hover {
   text-decoration: none;
   color: inherit;
-  /*mio*/
+  
   color: var(--rs-theme-primary);  
-}
+}*/
 
 a,
 button {
