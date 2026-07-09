@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_31: Credit Card Fraud Detection (Europe) - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_31</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_31: Credit Card Fraud Detection (Europe)</h1>
+            <p class="description">Dataset financiero para la detección de fraude en tiempo real (Class). Se caracteriza por un desbalance de clases extremo (solo el 0.172% son fraudes), constituyendo la prueba definitiva para las técnicas de sobremuestreo. Por privacidad, 28 variables son componentes principales (PCA) continuos y ortogonales (V1-V28) de significado abstracto, acompañadas de las variables originales Time y Amount.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>1.00</td>
+                                    <td>0.99</td>
+                                    <td>0.99</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.99</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.50</td>
+                                    <td>0.49</td>
+                                    <td>0.50</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>1.00</td>
+                                    <td>0.99</td>
+                                    <td>0.99</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.99</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.99</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag" style="color: #f39c12;">— AUC sin cambio</span>
+                        <span class="improvement-tag">⬆ +0.01 F1</span>
+                        <span class="improvement-tag">⬆ +0.01 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>1.00</td>
+                                    <td>1.00</td>
+                                    <td>1.00</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.00 <span class="improvement-indicator" style="color: #f39c12;">—</span></td>
+                                    <td>0.00 <span class="improvement-indicator" style="color: #f39c12;">—</span></td>
+                                    <td>0.00 <span class="improvement-indicator" style="color: #f39c12;">—</span></td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>1.00</strong> <span class="improvement-indicator">⬆ +0.01</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.50</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.51</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.50</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>1.00 <span class="improvement-indicator">—</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item" style="border-left-color: #f39c12;">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.00</span>
+                            <span class="improvement-badge" style="background: #f39c12; color: white;">— Sin cambio</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">1.00</span>
+                            <span class="improvement-badge positive">⬆ +0.01</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">1.00</span>
+                            <span class="improvement-badge positive">⬆ +0.01</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras</h4>
+                <div class="improvements-grid" style="grid-template-columns: 1fr 1fr;">
+                    <div class="improvement-card" style="grid-column: span 2;">
+                        <span class="improvement-icon">📌</span>
+                        <div>
+                            <strong>Nota sobre el conjunto de datos</strong>
+                            <div style="margin-top: 10px; padding: 15px; background: #fff3cd; border-radius: 8px; border-left: 4px solid #f39c12;">
+                                <p style="margin: 0; color: #856404;">
+                                    <strong>⚠️ Conjunto de datos sin clase minoritaria:</strong> 
+                                    El conjunto de datos utilizado no contiene instancias de la Clase 1 (soporte = 0). 
+                                    Por lo tanto, las métricas de precisión, recall y F1-Score para esta clase son 0.00 
+                                    en ambos conjuntos (Original y Sintético). El AUC-ROC también es 0.00 debido a la 
+                                    ausencia de la clase positiva.
+                                </p>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Credit Card Fraud Detection Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Worldline & Machine Learning Group (ULB - Université Libre de Bruxelles)</div>
+                    <div class="fuente-fecha">Publicado: Septiembre 2013</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">Kaggle / ULB MLG</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud" target="_blank">Kaggle - Credit Card Fraud Detection</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">284,807</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Transacciones fraudulentas:</span>
+                            <span class="metadata-value">492 (0.172%)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Características:</span>
+                            <span class="metadata-value">30 (28 PCA + Time + Amount)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Detección de Fraude en Tarjetas de Crédito</strong> contiene transacciones realizadas con tarjetas de crédito en <strong>septiembre de 2013</strong> por titulares de tarjetas <strong>europeos</strong>. El dataset presenta transacciones ocurridas en <strong>dos días</strong>, con <strong>492 fraudes</strong> de un total de <strong>284,807 transacciones</strong>. El conjunto está <strong>altamente desbalanceado</strong>, donde la clase positiva (fraude) representa solo el <strong>0.172%</strong> de todas las transacciones. El objetivo es desarrollar modelos que reconozcan transacciones fraudulentas para que los clientes no sean cobrados por artículos que no compraron.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🔬 Contexto y Motivación</h4>
+                        <p>La <strong>detección de fraude en tarjetas de crédito</strong> es un problema crítico en la industria financiera. Las compañías de tarjetas de crédito necesitan identificar transacciones fraudulentas para:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Proteger a los clientes</strong> de cargos no autorizados</li>
+                            <li><strong>Reducir pérdidas financieras</strong> por fraudes</li>
+                            <li><strong>Mantener la confianza</strong> en el sistema de pagos</li>
+                            <li><strong>Cumplir con regulaciones</strong> y requisitos de seguridad</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">El dataset fue recolectado y analizado durante una <strong>colaboración de investigación</strong> entre <strong>Worldline</strong> y el <strong>Machine Learning Group (MLG)</strong> de la <strong>Université Libre de Bruxelles (ULB)</strong> en el ámbito del <strong>big data mining</strong> y la <strong>detección de fraudes</strong>.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">⚠️ Importante: Desbalanceo Extremo</h5>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6;">El dataset es <strong>extremadamente desbalanceado</strong>:</p>
+                            <ul class="transformacion-lista">
+                                <li><strong>Fraudes (Clase 1):</strong> 492 transacciones (0.172%)</li>
+                                <li><strong>No fraudes (Clase 0):</strong> 284,315 transacciones (99.828%)</li>
+                            </ul>
+                            <p style="color: #ff6b6b; font-size: 0.9rem; line-height: 1.6; margin-top: 0.3rem;">⚠️ La <strong>precisión de la matriz de confusión no es significativa</strong> para clasificación desbalanceada. Se recomienda medir el rendimiento utilizando el <strong>Área Bajo la Curva de Precisión-Recall (AUPRC)</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>284,807 instancias</strong> con <strong>30 atributos</strong> (28 variables PCA + Time + Amount + Class). Las características son <strong>numéricas</strong> y son el resultado de una <strong>transformación PCA</strong> para proteger la confidencialidad de los datos originales.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Notas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Componentes Principales (PCA)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>V1 - V28</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Componentes principales obtenidos mediante PCA</td>
+                                        <td style="padding: 0.4rem;">Sin significado semántico por confidencialidad</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ffd93d; font-weight: bold;">B. Variables sin Transformación PCA</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Time</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Segundos transcurridos entre cada transacción y la primera transacción del dataset</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Amount</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Monto de la transacción</td>
+                                        <td style="padding: 0.4rem;">Puede utilizarse para aprendizaje sensible a costos dependiente del ejemplo</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">C. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Class</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Indica si la transacción es fraudulenta</td>
+                                        <td style="padding: 0.4rem;">1 = Fraude<br>0 = No fraude</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ff6b6b; margin: 0.3rem 0;">🔒 Confidencialidad</h5>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6;">Debido a <strong>problemas de confidencialidad</strong>, no se pueden proporcionar las características originales ni información de fondo adicional sobre los datos. Las características <strong>V1 a V28</strong> son los <strong>componentes principales</strong> obtenidos mediante PCA, lo que preserva la estructura de los datos mientras protege la información sensible.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria extremadamente desbalanceada</li>
+                            <li><strong>Dimensión:</strong> Multivariante</li>
+                            <li><strong>Tipo de características:</strong> Numéricas (todas)</li>
+                            <li><strong>Valores faltantes:</strong> No</li>
+                            <li><strong>Área de aplicación:</strong> Finanzas, Seguridad, Detección de fraudes</li>
+                            <li><strong>Razón de desbalanceo:</strong> 0.172% (clase positiva - fraudes)</li>
+                            <li><strong>Transformación:</strong> PCA aplicado para anonimización</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📖 Publicaciones y Referencias Académicas</h4>
+                        <p>Este dataset ha sido ampliamente utilizado en la investigación académica. Se recomienda citar los siguientes trabajos:</p>
+                        
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #4fc3f7; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.85rem; margin: 0;">Dal Pozzolo, A., Caelen, O., Johnson, R. A., & Bontempi, G. (2015). <strong>Calibrating Probability with Undersampling for Unbalanced Classification</strong>. <em>IEEE Symposium on Computational Intelligence and Data Mining (CIDM)</em>.</p>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #ffd93d; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.85rem; margin: 0;">Dal Pozzolo, A., Caelen, O., Le Borgne, Y. A., Waterschoot, S., & Bontempi, G. (2014). <strong>Learned lessons in credit card fraud detection from a practitioner perspective</strong>. <em>Expert Systems with Applications</em>, 41(10), 4915-4928.</p>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #6bcb77; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.85rem; margin: 0;">Dal Pozzolo, A., Boracchi, G., Caelen, O., Alippi, C., & Bontempi, G. (2018). <strong>Credit card fraud detection: a realistic modeling and a novel learning strategy</strong>. <em>IEEE Transactions on Neural Networks and Learning Systems</em>, 29(8), 3784-3797.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos ha sido <strong>anonimizado mediante PCA</strong> para proteger la confidencialidad de los titulares de tarjetas y la información de las transacciones. Las características originales no están disponibles por razones de confidencialidad. <strong>Restricción de confidencialidad:</strong> En cumplimiento de los protocolos de privacidad, el uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la reidentificación de transacciones o titulares.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos presenta desafíos únicos debido al <strong>desbalanceo extremo</strong> y la <strong>anonimización de características</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>No utilizar la precisión de la matriz de confusión</strong> como métrica principal debido al desbalanceo extremo</li>
+                            <li>Utilizar <strong>Área Bajo la Curva de Precisión-Recall (AUPRC)</strong> como métrica de evaluación principal</li>
+                            <li>También se recomiendan: <strong>F1-Score</strong>, <strong>Recall</strong> (sensibilidad), <strong>Precision</strong> y <strong>ROC-AUC</strong></li>
+                            <li>Aplicar técnicas de <strong>balanceo de clases</strong>:
+                                <ul class="transformacion-lista">
+                                    <li><strong>Submuestreo</strong> de la clase mayoritaria (random undersampling)</li>
+                                    <li><strong>Sobremuestreo</strong> de la clase minoritaria (SMOTE, ADASYN)</li>
+                                    <li><strong>Métodos híbridos</strong> (SMOTE + Tomek Links)</li>
+                                    <li><strong>Cost-sensitive learning</strong> (ponderación de clases)</li>
+                                </ul>
+                            </li>
+                            <li>Las características <strong>V1-V28</strong> son componentes principales sin significado semántico</li>
+                            <li>La variable <strong>Time</strong> puede utilizarse para análisis temporal o ser excluida si no es relevante</li>
+                            <li>La variable <strong>Amount</strong> puede utilizarse para <strong>aprendizaje sensible a costos</strong> (transacciones de mayor monto pueden tener mayor costo de clasificación errónea)</li>
+                            <li>Estandarizar <strong>Time</strong> y <strong>Amount</strong> ya que las variables PCA ya están escaladas</li>
+                            <li>Utilizar <strong>validación cruzada estratificada</strong> (manteniendo la proporción de fraudes)</li>
+                            <li>Considerar <strong>técnicas de detección de anomalías</strong> (One-Class SVM, Isolation Forest) como enfoque alternativo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en la Industria Financiera</h4>
+                        <p>El <strong>fraude con tarjetas de crédito</strong> es un problema global que causa pérdidas significativas. Según estudios de la industria:</p>
+                        <ul class="transformacion-lista">
+                            <li>Las pérdidas globales por fraude con tarjetas de pago se estiman en <strong>miles de millones de dólares</strong> anualmente</li>
+                            <li>El <strong>fraude en transacciones sin presencia de tarjeta (CNP)</strong> es la categoría de fraude de más rápido crecimiento</li>
+                            <li>Los sistemas de detección de fraude deben tener <strong>alta sensibilidad</strong> para detectar fraudes y <strong>alta especificidad</strong> para no bloquear transacciones legítimas</li>
+                            <li>El <strong>costo de un falso positivo</strong> (bloquear una transacción legítima) puede incluir la pérdida de un cliente</li>
+                            <li>El <strong>costo de un falso negativo</strong> (no detectar un fraude) es la pérdida financiera directa</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset ha sido fundamental para el desarrollo de <strong>modelos de aprendizaje automático</strong> para la detección de fraudes, contribuyendo a la investigación en <strong>clasificación desbalanceada</strong>, <strong>aprendizaje sensible a costos</strong> y <strong>detección de anomalías</strong>.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Dal Pozzolo, A., Caelen, O., Johnson, R. A., & Bontempi, G. (2015). Calibrating Probability with Undersampling for Unbalanced Classification. In IEEE Symposium on Computational Intelligence and Data Mining (CIDM), 2015. Worldline & Machine Learning Group (ULB). Credit Card Fraud Detection Dataset. https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud</pre>
+                        <button onclick="copyToClipboard('Dal Pozzolo, A., Caelen, O., Johnson, R. A., & Bontempi, G. (2015). Calibrating Probability with Undersampling for Unbalanced Classification. In IEEE Symposium on Computational Intelligence and Data Mining (CIDM), 2015. Worldline & Machine Learning Group (ULB). Credit Card Fraud Detection Dataset. https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Dal Pozzolo, A., Caelen, O., Le Borgne, Y. A., Waterschoot, S., & Bontempi, G. (2014). Learned lessons in credit card fraud detection from a practitioner perspective. <em>Expert Systems with Applications</em>, 41(10), 4915-4928.</li>
+                            <li>Dal Pozzolo, A., Boracchi, G., Caelen, O., Alippi, C., & Bontempi, G. (2018). Credit card fraud detection: a realistic modeling and a novel learning strategy. <em>IEEE Transactions on Neural Networks and Learning Systems</em>, 29(8), 3784-3797.</li>
+                            <li>Carcillo, F., Dal Pozzolo, A., Le Borgne, Y. A., Caelen, O., Mazzer, Y., & Bontempi, G. (2018). Scarff: a scalable framework for streaming credit card fraud detection with Spark. <em>Information Fusion</em>, 41, 182-194.</li>
+                            <li>Le Borgne, Y. A., & Bontempi, G. (2021). <em>Reproducible Machine Learning for Credit Card Fraud Detection - Practical Handbook</em>. <a href="https://fraud-detection-handbook.github.io/fraud-detection-handbook/" target="_blank" style="color: #4fc3f7;">https://fraud-detection-handbook.github.io/fraud-detection-handbook/</a></li>
+                            <li>Kaggle - Credit Card Fraud Detection Dataset. <a href="https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud" target="_blank" style="color: #4fc3f7;">https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud</a></li>
+                            <li>ULB Machine Learning Group. <a href="http://mlg.ulb.ac.be" target="_blank" style="color: #4fc3f7;">http://mlg.ulb.ac.be</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Credit Card Fraud Detection)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Verificación y garantía de integridad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Confirmación de la <strong>ausencia total de valores perdidos</strong> en el dataset original, tal como lo documenta la fuente.</li>
+                            <li>Implementación de imputación con mediana como medida preventiva en caso de detección de valores nulos.</li>
+                            <li>Garantía de integridad total del conjunto de datos para modelado directo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Estandarización de tipos de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión forzada de la variable objetivo <em>Class</em> a tipo <strong>entero (int)</strong> para eliminar decimales espurios (ej. 0.0 → 0, 1.0 → 1).</li>
+                            <li>Preservación de todas las variables en sus tipos numéricos originales (continuos y enteros).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación y leyenda:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_creditcard.txt</em> con la semántica completa de la variable objetivo y las variables originales.</li>
+                            <li>Documentación detallada de la variable <em>Class</em> (0 = Transacción Legítima, 1 = Fraude).</li>
+                            <li>Descripción de variables originales: <em>Time</em> (segundos desde primera transacción) y <em>Amount</em> (importe de la transacción).</li>
+                            <li>Nota sobre las <strong>28 variables transformadas con PCA</strong> (V1 a V28): variables numéricas continuas centradas y no correlacionadas linealmente, sin interpretación semántica directa por razones de confidencialidad.</li>
+                            <li>Contextualización del dataset: transacciones de tarjetas de crédito europeas (Septiembre 2013).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Optimización y formato de salida:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Dataset completamente numérico (31 columnas: 30 predictoras + 1 objetivo).</li>
+                            <li>Preservación de las <strong>284,807 instancias</strong> (transacciones) sin eliminación de filas.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para mantener consistencia con el resto de datasets procesados.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Control de calidad y verificaciones:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Confirmación de calidad de datos: ausencia de valores perdidos según documentación original.</li>
+                            <li>Vista previa del dataset resultante para validación visual.</li>
+                            <li>Verificación de la distribución de clases para confirmar el desbalance extremo.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>284,807 transacciones</strong> con <strong>30 variables predictoras</strong> (2 originales + 28 transformadas con PCA) y <strong>1 variable objetivo binaria</strong> (Class). <strong>Desbalance extremo</strong> (~99.83% transacciones legítimas / ~0.17% fraudes) — escenario crítico para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>detección de fraude financiero</strong>, donde la identificación de eventos raros es fundamental y las variables han sido anonimizadas mediante PCA para proteger la privacidad de los usuarios.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    💳 <strong>Fuente:</strong> Credit Card Fraud Detection Dataset (Kaggle) - Transacciones de tarjetas de crédito europeas (Septiembre 2013).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🔒 <strong>Variables transformadas:</strong> V1 a V28 son componentes principales obtenidos mediante PCA, anonimizados para proteger información confidencial de los titulares de tarjetas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    ⏱️ <strong>Variables originales:</strong> <em>Time</em> (segundos desde primera transacción) y <em>Amount</em> (importe) — útiles para modelos sensibles al costo y análisis de patrones temporales.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_creditcard.txt</em> con descripción completa de la variable objetivo, variables originales y contexto del dataset.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Class</em> (1 = Transacción fraudulenta, 0 = Transacción legítima).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    ⚠️ <strong>Desbalance extremo:</strong> Solo 0.172% de transacciones son fraudulentas — escenario ideal para validación de técnicas de sobremuestreo y generación de datos sintéticos en problemas de detección de eventos raros.
+                </p>
+            </div>
+        </div>
+    
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Clínica / Financiera</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Time</code></td>
+                            <td>Tiempo transcurrido desde la primera transacción del dataset</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>205 - 171,924</td>
+                            <td>segundos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V1</code></td>
+                            <td>Componente principal 1 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-11.74 - 2.31</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V2</code></td>
+                            <td>Componente principal 2 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-7.79 - 7.57</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V3</code></td>
+                            <td>Componente principal 3 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-6.95 - 3.36</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V4</code></td>
+                            <td>Componente principal 4 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-4.40 - 4.81</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V5</code></td>
+                            <td>Componente principal 5 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-7.43 - 7.04</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V6</code></td>
+                            <td>Componente principal 6 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-5.08 - 5.28</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V7</code></td>
+                            <td>Componente principal 7 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-5.59 - 5.43</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V8</code></td>
+                            <td>Componente principal 8 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-12.07 - 4.30</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V9</code></td>
+                            <td>Componente principal 9 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.91 - 3.82</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V10</code></td>
+                            <td>Componente principal 10 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-5.25 - 4.77</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V11</code></td>
+                            <td>Componente principal 11 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.38 - 4.60</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V12</code></td>
+                            <td>Componente principal 12 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-5.03 - 2.06</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V13</code></td>
+                            <td>Componente principal 13 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.30 - 3.52</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V14</code></td>
+                            <td>Componente principal 14 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-6.42 - 3.07</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V15</code></td>
+                            <td>Componente principal 15 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.54 - 2.39</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V16</code></td>
+                            <td>Componente principal 16 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.78 - 2.18</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V17</code></td>
+                            <td>Componente principal 17 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-4.61 - 4.13</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V18</code></td>
+                            <td>Componente principal 18 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.73 - 2.71</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V19</code></td>
+                            <td>Componente principal 19 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.91 - 3.10</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V20</code></td>
+                            <td>Componente principal 20 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-4.50 - 2.93</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V21</code></td>
+                            <td>Componente principal 21 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-6.27 - 8.83</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V22</code></td>
+                            <td>Componente principal 22 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.58 - 2.00</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V23</code></td>
+                            <td>Componente principal 23 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-1.85 - 2.44</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V24</code></td>
+                            <td>Componente principal 24 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.28 - 1.24</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V25</code></td>
+                            <td>Componente principal 25 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.56 - 1.75</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V26</code></td>
+                            <td>Componente principal 26 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-1.18 - 2.47</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V27</code></td>
+                            <td>Componente principal 27 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.88 - 2.09</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>V28</code></td>
+                            <td>Componente principal 28 (PCA - Anónimo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-1.41 - 2.76</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Amount</code></td>
+                            <td>Importe de la transacción</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 1,383.76</td>
+                            <td>moneda</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Class</code></td>
+                            <td>Indicador de fraude en la transacción (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Legítima, 1: Fraude</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">31</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Fraude (Class)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Detección de Fraude en Tarjetas de Crédito. 
+                Comprender estas codificaciones es fundamental para la correcta interpretación de los 
+                resultados y la detección de transacciones fraudulentas.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: Class (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Class</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">0</span></td>
+                                    <td><strong>Transacción Legítima</strong> - Operación normal. Clase mayoritaria (>99.8%)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">1</span></td>
+                                    <td><strong>Fraude</strong> - Transacción fraudulenta. Clase minoritaria (0.172%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> El modelo debe identificar transacciones fraudulentas en tiempo real.</p>
+                        </div>                        
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato:</strong> 0 = Legítimo, 1 = Fraude
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Class</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Fraude en transacción (0: Legítima, 1: Fraude)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Única variable binaria en el dataset.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 1
+                        <ul>
+                            <li>🎯 Class (Objetivo - Fraude)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 30
+                        <ul>
+                            <li>28 variables PCA (V1-V28)</li>
+                            <li>1 variable temporal (Time)</li>
+                            <li>1 variable de importe (Amount)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones para Modelado:</strong>
+                        <ul>
+                            <li><strong>Métrica principal:</strong> AUC-PR (no Accuracy, debido al desbalance extremo)</li>
+                            <li><strong>Balanceo:</strong> SMOTE, SMOTE-ENN, o SMOTE-Tomek son recomendados</li>
+                            <li><strong>Escalado:</strong> Amount debe ser escalado (StandardScaler o RobustScaler)</li>
+                            <li><strong>Time:</strong> Puede contener patrones temporales (fraudes en horas específicas)</li>
+                            <li><strong>Cost-sensitive learning:</strong> Penalizar más los falsos negativos (fraudes no detectados)</li>
+                            <li><strong>Threshold tuning:</strong> Ajustar umbral de decisión para balancear sensibilidad/especificidad</li>
+                            <li><strong>Cross-validation:</strong> Usar StratifiedKFold para mantener proporción de fraudes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- FENOTIPO DE FRAUDE - PCA V17 -->
+                        <li><code>V17 < -3.5 → Class = 1 (Fraude)</code></li>
+                        
+                        <!-- FENOTIPO DE FRAUDE - PCA V14 -->
+                        <li><code>V14 < -6.0 → Class = 1 (Fraude)</code></li>
+                        
+                        <!-- FENOTIPO DE FRAUDE - PCA V12 -->
+                        <li><code>V12 < -6.0 → Class = 1 (Fraude)</code></li>
+                        
+                        <!-- COMPORTAMIENTO - Prueba de tarjeta (monto pequeño) -->
+                        <li><code>Amount < 2.0 → Class = 1 (Fraude)</code></li>
+                        
+                        <!-- COMPORTAMIENTO - Compra grande fraudulenta -->
+                        <li><code>Amount > 15000 → Class = 1 (Fraude)</code></li>
+                        
+                        <!-- COHERENCIA - Transacción legítima (V17) -->
+                        <li><code>Class == 0 → V17 > -2.5</code></li>
+                        
+                        <!-- COHERENCIA - Transacción legítima (V14) -->
+                        <li><code>Class == 0 → V14 > -5.0</code></li>
+                        
+                        <!-- COHERENCIA - Transacción legítima (Amount) -->
+                        <li><code>Class == 0 → Amount < 10000</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>1</td>
+                                <td>1196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>5.656</td>
+                                <td>0.453</td>
+                                <td>0.000</td>
+                                <td>0.671</td>
+                                <td>0.657</td>
+                                <td>52.351</td>
+                                <td>0</td>
+                                <td>1196</td>
+                                <td>0.472</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>1196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>5.723</td>
+                                <td>0.454</td>
+                                <td>0.000</td>
+                                <td>0.671</td>
+                                <td>0.726</td>
+                                <td>55.666</td>
+                                <td>0.010</td>
+                                <td>1000</td>
+                                <td>0.460</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>1196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>5.723</td>
+                                <td>0.454</td>
+                                <td>0.000</td>
+                                <td>0.671</td>
+                                <td>0.726</td>
+                                <td>53.747</td>
+                                <td>0.010</td>
+                                <td>1000</td>
+                                <td>0.460</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.003</td>
+                                <td>1194</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>5.639</td>
+                                <td>0.454</td>
+                                <td>0.000</td>
+                                <td>0.669</td>
+                                <td>0.693</td>
+                                <td>56.137</td>
+                                <td>0.013</td>
+                                <td>926</td>
+                                <td>0.460</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1</td>
+                                <td>1196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>5.523</td>
+                                <td>0.463</td>
+                                <td>0.007</td>
+                                <td>0.671</td>
+                                <td>0.811</td>
+                                <td>55.099</td>
+                                <td>0.051</td>
+                                <td>600</td>
+                                <td>0.466</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Adaptado + Reglas</strong></td>
+                                <td>1</td>
+                                <td>1196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td><strong>5.997</strong></td>
+                                <td>0.463</td>
+                                <td>0.013</td>
+                                <td>0.671</td>
+                                <td>0.810</td>
+                                <td>54.232</td>
+                                <td>0.051</td>
+                                <td>600</td>
+                                <td>0.467</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>1196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>4.634</td>
+                                <td>0.458</td>
+                                <td>0.000</td>
+                                <td>0.671</td>
+                                <td>0.411</td>
+                                <td>63.654</td>
+                                <td>0.169</td>
+                                <td>600</td>
+                                <td>0.477</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>1.476</td>
+                                <td>1196</td>
+                                <td>0.000</td>
+                                <td>0.904</td>
+                                <td>0.825</td>
+                                <td>0.531</td>
+                                <td>0.458</td>
+                                <td>0.000</td>
+                                <td>0.883</td>
+                                <td>0.362</td>
+                                <td>63.326</td>
+                                <td>0.219</td>
+                                <td>485</td>
+                                <td>0.597</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Adaptado + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>5.997</strong>, AUC: 0.000, F1: 1.000, MIA: 0.467). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>1.006</td>
+                                <td>7257</td>
+                                <td>0.000</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>6.728</strong></td>
+                                <td>0.811</td>
+                                <td>0.010</td>
+                                <td>0.668</td>
+                                <td>0.812</td>
+                                <td>107.195</td>
+                                <td>0.097</td>
+                                <td>0</td>
+                                <td>0.460</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.256</td>
+                                <td>7257</td>
+                                <td>0.000</td>
+                                <td>0.898</td>
+                                <td>0.815</td>
+                                <td>4.260</td>
+                                <td>0.811</td>
+                                <td>0.010</td>
+                                <td>0.790</td>
+                                <td>0.815</td>
+                                <td>305.723</td>
+                                <td>0.097</td>
+                                <td>0</td>
+                                <td>0.442</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.010</td>
+                                <td>10000</td>
+                                <td>0.000</td>
+                                <td>0.997</td>
+                                <td>0.995</td>
+                                <td>4.963</td>
+                                <td>0.831</td>
+                                <td>0.000</td>
+                                <td>0.666</td>
+                                <td>0.878</td>
+                                <td>680.192</td>
+                                <td>0.129</td>
+                                <td>0</td>
+                                <td>0.394</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.650</td>
+                                <td>10000</td>
+                                <td>0.000</td>
+                                <td>0.889</td>
+                                <td>0.800</td>
+                                <td>2.350</td>
+                                <td>0.831</td>
+                                <td>0.000</td>
+                                <td>0.951</td>
+                                <td>0.882</td>
+                                <td>955.312</td>
+                                <td>0.133</td>
+                                <td>0</td>
+                                <td>0.380</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.219</td>
+                                <td>10000</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>4.714</td>
+                                <td>0.831</td>
+                                <td>0.000</td>
+                                <td>0.577</td>
+                                <td>0.802</td>
+                                <td>409.453</td>
+                                <td>0.084</td>
+                                <td>0</td>
+                                <td>0.475</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.332</td>
+                                <td>10000</td>
+                                <td>0.000</td>
+                                <td>0.898</td>
+                                <td>0.815</td>
+                                <td>2.258</td>
+                                <td>0.831</td>
+                                <td>0.000</td>
+                                <td>0.823</td>
+                                <td>0.808</td>
+                                <td>678.689</td>
+                                <td>0.087</td>
+                                <td>0</td>
+                                <td>0.603</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>4.247</td>
+                                <td>0.827</td>
+                                <td>0.000</td>
+                                <td>0.671</td>
+                                <td>0.627</td>
+                                <td>164.674</td>
+                                <td>0.337</td>
+                                <td>0</td>
+                                <td>0.407</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>21.371</td>
+                                <td>10000</td>
+                                <td>0.000</td>
+                                <td>0.830</td>
+                                <td>0.710</td>
+                                <td>0.298</td>
+                                <td>0.827</td>
+                                <td>0.000</td>
+                                <td>3.075</td>
+                                <td>0.640</td>
+                                <td>418.973</td>
+                                <td>0.352</td>
+                                <td>0</td>
+                                <td>0.583</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1</td>
+                                <td>7000</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>5.401</td>
+                                <td>0.832</td>
+                                <td>0.008</td>
+                                <td>0.671</td>
+                                <td>0.785</td>
+                                <td>91.948</td>
+                                <td>0.064</td>
+                                <td>0</td>
+                                <td>0.500</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.222</td>
+                                <td>7000</td>
+                                <td>0.000</td>
+                                <td>0.901</td>
+                                <td>0.820</td>
+                                <td>3.004</td>
+                                <td>0.832</td>
+                                <td>0.008</td>
+                                <td>0.775</td>
+                                <td>0.788</td>
+                                <td>268.321</td>
+                                <td>0.066</td>
+                                <td>0</td>
+                                <td>0.620</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>6.728</strong>, AUC: 0.000, F1: 1.000, MIA: 0.460). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>1.005</td>
+                                <td>8453</td>
+                                <td>0.000</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>6.725</strong></td>
+                                <td>0.736</td>
+                                <td>0.012</td>
+                                <td>0.668</td>
+                                <td>0.812</td>
+                                <td>215.436</td>
+                                <td>0.095</td>
+                                <td>0</td>
+                                <td>0.479</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.216</td>
+                                <td>8453</td>
+                                <td>0.000</td>
+                                <td>0.942</td>
+                                <td>0.890</td>
+                                <td>2.734</td>
+                                <td>0.736</td>
+                                <td>0.012</td>
+                                <td>0.773</td>
+                                <td>0.814</td>
+                                <td>412.248</td>
+                                <td>0.095</td>
+                                <td>0</td>
+                                <td>0.425</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.009</td>
+                                <td>11196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>4.989</td>
+                                <td>0.765</td>
+                                <td>0.001</td>
+                                <td>0.666</td>
+                                <td>0.876</td>
+                                <td>827.316</td>
+                                <td>0.118</td>
+                                <td>121</td>
+                                <td>0.462</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.561</td>
+                                <td>11196</td>
+                                <td>0.000</td>
+                                <td>0.997</td>
+                                <td>0.995</td>
+                                <td>4.825</td>
+                                <td>0.765</td>
+                                <td>0.001</td>
+                                <td>0.917</td>
+                                <td>0.879</td>
+                                <td>1101.690</td>
+                                <td>0.122</td>
+                                <td>121</td>
+                                <td>0.441</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.193</td>
+                                <td>11196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>4.688</td>
+                                <td>0.765</td>
+                                <td>0.000</td>
+                                <td>0.587</td>
+                                <td>0.803</td>
+                                <td>551.768</td>
+                                <td>0.079</td>
+                                <td>121</td>
+                                <td>0.523</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.291</td>
+                                <td>11196</td>
+                                <td>0.000</td>
+                                <td>0.966</td>
+                                <td>0.935</td>
+                                <td>2.374</td>
+                                <td>0.765</td>
+                                <td>0.000</td>
+                                <td>0.806</td>
+                                <td>0.809</td>
+                                <td>824.046</td>
+                                <td>0.082</td>
+                                <td>121</td>
+                                <td>0.432</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>11196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>4.166</td>
+                                <td>0.760</td>
+                                <td>0.000</td>
+                                <td>0.671</td>
+                                <td>0.637</td>
+                                <td>300.780</td>
+                                <td>0.306</td>
+                                <td>121</td>
+                                <td>0.428</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>9.714</td>
+                                <td>11196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>4.213</td>
+                                <td>0.760</td>
+                                <td>0.000</td>
+                                <td>2.342</td>
+                                <td>0.648</td>
+                                <td>553.445</td>
+                                <td>0.319</td>
+                                <td>121</td>
+                                <td>0.414</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1</td>
+                                <td>8196</td>
+                                <td>0.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>6.070</td>
+                                <td>0.747</td>
+                                <td>0.009</td>
+                                <td>0.671</td>
+                                <td>0.789</td>
+                                <td>186.062</td>
+                                <td>0.063</td>
+                                <td>163</td>
+                                <td>0.478</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.187</td>
+                                <td>8196</td>
+                                <td>0.000</td>
+                                <td>0.953</td>
+                                <td>0.910</td>
+                                <td>2.824</td>
+                                <td>0.747</td>
+                                <td>0.009</td>
+                                <td>0.760</td>
+                                <td>0.792</td>
+                                <td>365.449</td>
+                                <td>0.064</td>
+                                <td>163</td>
+                                <td>0.454</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>6.725</strong>, AUC: 0.000, F1: 1.000, MIA: 0.479). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_31</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>SMOTE RSB* Adaptado + Reglas del Dominio</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* + Ruido Gaussiano</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd31.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Credit Card Fraud Detection - Europe (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32939138.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [99.67, 0.33], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

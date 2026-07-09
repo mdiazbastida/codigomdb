@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_26: NHANES 2013-2014: Obesity Prediction (CDC) - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_26</span>                
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_26: NHANES 2013-2014: Obesity Prediction (CDC)</h1>
+            <p class="description">Matriz analítica derivada de la encuesta NHANES (CDC) para la predicción binaria de Obesidad Clínica (Obesity_Diagnosis). La variable objetivo se generó a partir de mediciones reales (IMC ≥ 30). Integra ~9,800 registros que relacionan 1) Demografía; 2) Perfil Metabólico (insulina sérica, triglicéridos); y 3) Balance Energético (ingesta calórica/macronutrientes y minutos sedentarios).</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.73</td>
+                                    <td>0.95</td>
+                                    <td>0.83</td>
+                                    <td>148</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.11</td>
+                                    <td>0.02</td>
+                                    <td>0.03</td>
+                                    <td>52</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.70</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.42</td>
+                                    <td>0.48</td>
+                                    <td>0.43</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.57</td>
+                                    <td>0.70</td>
+                                    <td>0.62</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.34</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.62</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.70</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.41 AUC</span>
+                        <span class="improvement-tag">⬆ +0.10 F1</span>
+                        <span class="improvement-tag">⬆ +0.02 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.81</td>
+                                    <td>0.81</td>
+                                    <td>0.81</td>
+                                    <td>148</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.46 <span class="improvement-indicator">⬆ +0.35</span></td>
+                                    <td>0.46 <span class="improvement-indicator">⬆ +0.44</span></td>
+                                    <td>0.46 <span class="improvement-indicator">⬆ +0.43</span></td>
+                                    <td>52</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.72</strong> <span class="improvement-indicator">⬆ +0.02</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.64 <span class="improvement-indicator">⬆ +0.22</span></td>
+                                    <td>0.64 <span class="improvement-indicator">⬆ +0.16</span></td>
+                                    <td>0.64 <span class="improvement-indicator">⬆ +0.21</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.72 <span class="improvement-indicator">⬆ +0.15</span></td>
+                                    <td>0.72 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>0.72 <span class="improvement-indicator">⬆ +0.10</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.75</span>
+                            <span class="improvement-badge positive">⬆ +0.41</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.72</span>
+                            <span class="improvement-badge positive">⬆ +0.10</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.72</span>
+                            <span class="improvement-badge positive">⬆ +0.02</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.11</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 11%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.46</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 46%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.35</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.02</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 2%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.46</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 46%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.44</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.03</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 3%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.46</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 46%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.43</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>NHANES 2013-2014 (National Health and Nutrition Examination Survey)</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">National Center for Health Statistics (NCHS) / Centers for Disease Control and Prevention (CDC)</div>
+                    <div class="fuente-fecha">Publicado: 2013-2014</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Institución:</span>
+                            <span class="metadata-value">CDC / National Center for Health Statistics (NCHS)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value"><a href="https://www.cdc.gov/nchs/nhanes/index.htm" target="_blank">CDC NHANES</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://www.cdc.gov/nchs/nhanes/" target="_blank">https://www.cdc.gov/nchs/nhanes/</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Dominio público (Datos gubernamentales de EE.UU.)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Muestra anual:</span>
+                            <span class="metadata-value">~5,000 personas</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Condados visitados:</span>
+                            <span class="metadata-value">15 por año</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>La <strong>Encuesta Nacional de Examen de Salud y Nutrición (NHANES)</strong> es un programa de estudios diseñado para evaluar el <strong>estado de salud y nutricional</strong> de adultos y niños en <strong>Estados Unidos</strong>. La encuesta es única en su tipo porque combina <strong>entrevistas</strong> y <strong>exámenes físicos</strong>. NHANES es un programa principal del <strong>Centro Nacional de Estadísticas de Salud (NCHS)</strong>, que forma parte de los <strong>Centros para el Control y la Prevención de Enfermedades (CDC)</strong> y tiene la responsabilidad de producir estadísticas vitales y de salud para la nación.</p>
+                        <p style="margin-top: 0.5rem;">El programa NHANES comenzó a principios de la década de 1960 y se ha llevado a cabo como una serie de encuestas centradas en diferentes grupos de población o temas de salud. En <strong>1999</strong>, la encuesta se convirtió en un <strong>programa continuo</strong> que tiene un enfoque cambiante en una variedad de mediciones de salud y nutrición para satisfacer las necesidades emergentes. La encuesta examina una <strong>muestra representativa a nivel nacional</strong> de aproximadamente <strong>5,000 personas cada año</strong>, ubicadas en condados de todo el país, de los cuales <strong>15 son visitados cada año</strong>.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🔬 Métodos y Contexto</h4>
+                        <p>La entrevista de NHANES incluye preguntas sobre <strong>demografía, situación socioeconómica, dieta y salud</strong>. El componente de examen consiste en <strong>mediciones médicas, dentales y fisiológicas</strong>, así como <strong>pruebas de laboratorio</strong> administradas por personal médico altamente capacitado. Hasta la fecha, <strong>miles de hallazgos de investigación</strong> han sido publicados utilizando los datos de NHANES.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Componentes del Dataset NHANES 2013-2014</h5>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">1. Demographics Dataset</h6>
+                                <ul class="transformacion-lista">
+                                    <li>Información demográfica, socioeconómica y de salud general</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">2. Examinations Dataset</h6>
+                                <ul class="transformacion-lista">
+                                    <li><strong>Presión arterial</strong></li>
+                                    <li><strong>Medidas corporales</strong> (antropometría)</li>
+                                    <li><strong>Fuerza muscular</strong> - prueba de agarre</li>
+                                    <li><strong>Salud oral</strong> - dentición</li>
+                                    <li><strong>Gusto y olfato</strong></li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">3. Dietary Data - Total Nutrient Intake (First Day)</h6>
+                                <ul class="transformacion-lista">
+                                    <li>Ingesta total de nutrientes del primer día</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">4. Laboratory Dataset</h6>
+                                <p style="color: #b0b0b0; font-size: 0.85rem; margin: 0.2rem 0;">Incluye una amplia gama de pruebas de laboratorio:</p>
+                                <ul class="transformacion-lista">
+                                    <li>Albúmina y Creatinina - Orina</li>
+                                    <li>Apolipoproteína B</li>
+                                    <li>Metales en sangre (Plomo, Cadmio, Mercurio, Selenio, Manganeso)</li>
+                                    <li>Mercurio en sangre (inorgánico, etílico y metílico)</li>
+                                    <li>Colesterol - HDL, LDL, Triglicéridos, Total</li>
+                                    <li>Conteo sanguíneo completo con diferencial de 5 partes</li>
+                                    <li>Cobre, Selenio y Zinc - Suero</li>
+                                    <li>Cuestionario de ayuno</li>
+                                    <li>Fluoruro - Plasma y Agua</li>
+                                    <li>Glicohemoglobina (HbA1c)</li>
+                                    <li>Hepatitis A, B, C, D y E</li>
+                                    <li>Herpes Simple Virus Tipo-1 y Tipo-2</li>
+                                    <li>Prueba de anticuerpos VIH</li>
+                                    <li>Virus del Papiloma Humano (HPV) - Enjuague oral y ADN vaginal/penil</li>
+                                    <li>Insulina</li>
+                                    <li>Yodo - Orina</li>
+                                    <li>Perclorato, Nitrato y Tiocianato - Orina</li>
+                                    <li>Sustancias perfluoroalquiladas y polifluoroalquiladas (PFC)</li>
+                                    <li>Productos químicos de cuidado personal y metabolitos</li>
+                                    <li>Metabolitos de ftalatos y plastificantes - Orina</li>
+                                    <li>Glucosa plasmática en ayunas</li>
+                                    <li>Hidrocarburos aromáticos policíclicos (HAP) - Orina</li>
+                                    <li>Perfil bioquímico estándar</li>
+                                    <li>Ensayo de transglutaminasa tisular (IgA-TTG) y anticuerpos endomisiales IgA</li>
+                                    <li>Trichomonas - Orina</li>
+                                    <li>Prueba de tolerancia a la glucosa oral de 2 horas</li>
+                                    <li>Clamidia - Orina</li>
+                                    <li>Mercurio urinario</li>
+                                    <li>Arsénicos especificados en orina</li>
+                                    <li>Arsénico total en orina</li>
+                                    <li>Tasa de flujo urinario</li>
+                                    <li>Metales en orina</li>
+                                    <li>Prueba de embarazo en orina</li>
+                                    <li>Vitamina B12</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">5. Questionnaire Dataset</h6>
+                                <ul class="transformacion-lista">
+                                    <li>Aculturación</li>
+                                    <li>Consumo de alcohol</li>
+                                    <li>Presión arterial y Colesterol</li>
+                                    <li>Salud cardiovascular</li>
+                                    <li>Comportamiento del consumidor</li>
+                                    <li>Estado de salud actual</li>
+                                    <li>Dermatología</li>
+                                    <li>Diabetes</li>
+                                    <li>Comportamiento dietético y Nutrición</li>
+                                    <li>Discapacidad</li>
+                                    <li>Uso de drogas</li>
+                                    <li>Primera infancia</li>
+                                    <li>Seguridad alimentaria</li>
+                                    <li>Seguro de salud</li>
+                                    <li>Hepatitis</li>
+                                    <li>Utilización hospitalaria y Acceso a la atención</li>
+                                    <li>Características de la vivienda</li>
+                                    <li>Inmunización</li>
+                                    <li>Ingresos</li>
+                                    <li>Condiciones médicas</li>
+                                    <li>Salud mental - Evaluación de depresión</li>
+                                    <li>Ocupación</li>
+                                    <li>Salud oral</li>
+                                    <li>Osteoporosis</li>
+                                    <li>Uso de pesticidas</li>
+                                    <li>Actividad física</li>
+                                    <li>Funcionamiento físico</li>
+                                    <li>Uso preventivo de aspirina</li>
+                                    <li>Salud reproductiva</li>
+                                    <li>Comportamiento sexual</li>
+                                    <li>Trastornos del sueño</li>
+                                    <li>Tabaquismo - Consumo de cigarrillos</li>
+                                    <li>Tabaquismo - Fumadores en el hogar</li>
+                                    <li>Tabaquismo - Uso reciente de tabaco</li>
+                                    <li>Tabaquismo - Exposición al humo de segunda mano</li>
+                                    <li>Gusto y olfato</li>
+                                    <li>Historia de peso</li>
+                                    <li>Historia de peso - Jóvenes</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">6. Medication Dataset</h6>
+                                <ul class="transformacion-lista">
+                                    <li>Medicamentos recetados</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El conjunto de datos NHANES 2013-2014 es una colección integral de <strong>múltiples datasets interconectados</strong> que cubren diferentes aspectos de la salud y nutrición de la población estadounidense. Cada componente incluye su propio diccionario de variables y se puede acceder a través del sitio web oficial de NHANES.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Resumen de Componentes</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Componente</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Demographics</strong></td>
+                                        <td style="padding: 0.4rem;">Información demográfica, socioeconómica y de salud</td>                                        
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Examinations</strong></td>
+                                        <td style="padding: 0.4rem;">Mediciones físicas, presión arterial, fuerza muscular, salud oral, gusto y olfato</td>                                        
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Dietary</strong></td>
+                                        <td style="padding: 0.4rem;">Ingesta total de nutrientes (primer día)</td>                                        
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Laboratory</strong></td>
+                                        <td style="padding: 0.4rem;">Pruebas de laboratorio (más de 40 tipos de análisis)</td>                                        
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Questionnaire</strong></td>
+                                        <td style="padding: 0.4rem;">Cuestionarios sobre salud, comportamiento y estilo de vida (más de 40 temas)</td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Medication</strong></td>
+                                        <td style="padding: 0.4rem;">Medicamentos recetados</td>                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Múltiples (Clasificación, Regresión, Análisis de supervivencia, Encuestas)</li>
+                            <li><strong>Dimensión:</strong> Multivariante de alta dimensionalidad</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (Numéricas, Categóricas, Binarias, Ordinales)</li>
+                            <li><strong>Valores faltantes:</strong> Sí (presentes en diversos componentes)</li>
+                            <li><strong>Área de aplicación:</strong> Salud Pública, Epidemiología, Nutrición, Enfermedades crónicas</li>
+                            <li><strong>Muestra:</strong> Representativa a nivel nacional de EE.UU.</li>
+                            <li><strong>Diseño:</strong> Encuesta continua con enfoque cambiante</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>NHANES es una encuesta gubernamental de EE.UU. que cumple con estrictos protocolos de <strong>confidencialidad y privacidad</strong>. Todos los identificadores personales son eliminados de los conjuntos de datos públicos para proteger la identidad de los participantes. Los datos están en <strong>dominio público</strong> y pueden ser utilizados libremente para investigación, con la condición de que se cite adecuadamente a la fuente. El NCHS/CDC ha implementado procedimientos de <strong>enmascaramiento de datos</strong> para minimizar el riesgo de reidentificación. <strong>Restricción de confidencialidad:</strong> La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la reidentificación de participantes.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>El conjunto de datos NHANES es uno de los recursos más valiosos para la investigación en salud pública. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>Consultar los <strong>diccionarios de variables</strong> completos disponibles en el sitio web de NHANES para cada componente</li>
+                            <li>Tener en cuenta el <strong>diseño complejo de la encuesta</strong> (muestreo estratificado por conglomerados) al realizar inferencias estadísticas</li>
+                            <li>Utilizar los <strong>pesos de muestreo</strong> proporcionados para obtener estimaciones representativas de la población de EE.UU.</li>
+                            <li>Manejar adecuadamente los <strong>valores faltantes</strong> presentes en los diferentes componentes</li>
+                            <li>Considerar la <strong>naturaleza temporal</strong> de los datos (ciclos de 2 años) para análisis longitudinales</li>
+                            <li>Combinar múltiples componentes (Demographics + Laboratory + Questionnaire) para análisis integrados</li>
+                            <li>Documentar claramente las <strong>variables y códigos</strong> utilizados en el análisis</li>
+                            <li>Consultar la <strong>documentación metodológica</strong> de NHANES para comprender los procedimientos de recolección y procesamiento de datos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Salud Pública</h4>
+                        <p>NHANES es una de las <strong>encuestas de salud más importantes del mundo</strong> y ha sido fundamental para:</p>
+                        <ul class="transformacion-lista">
+                            <li>Establecer <strong>referencias nacionales</strong> para medidas antropométricas, bioquímicas y nutricionales</li>
+                            <li>Identificar <strong>tendencias epidemiológicas</strong> en enfermedades crónicas (obesidad, diabetes, hipertensión, etc.)</li>
+                            <li>Evaluar el <strong>estado nutricional</strong> de la población y la ingesta de nutrientes</li>
+                            <li>Detectar <strong>exposiciones ambientales</strong> a metales pesados, pesticidas y otros contaminantes</li>
+                            <li>Guiar <strong>políticas de salud pública</strong> y recomendaciones dietéticas</li>
+                            <li>Monitorear la <strong>prevalencia de enfermedades infecciosas</strong> (hepatitis, VIH, HPV, etc.)</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #b0b0b0; font-size: 0.9rem;">Los datos de NHANES han sido utilizados en <strong>miles de publicaciones científicas</strong> y continúan siendo un recurso invaluable para la comunidad de investigación en salud global.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">National Center for Health Statistics (NCHS). National Health and Nutrition Examination Survey Data 2013-2014. Hyattsville, MD: U.S. Department of Health and Human Services, Centers for Disease Control and Prevention. https://www.cdc.gov/nchs/nhanes/</pre>
+                        <button onclick="copyToClipboard('National Center for Health Statistics (NCHS). National Health and Nutrition Examination Survey Data 2013-2014. Hyattsville, MD: U.S. Department of Health and Human Services, Centers for Disease Control and Prevention. https://www.cdc.gov/nchs/nhanes/')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Centers for Disease Control and Prevention (CDC). National Health and Nutrition Examination Survey. <a href="https://www.cdc.gov/nchs/nhanes/" target="_blank" style="color: #4fc3f7;">https://www.cdc.gov/nchs/nhanes/</a></li>
+                            <li>NHANES 2013-2014 Data Documentation, Codebooks, and Frequencies. <a href="https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2013" target="_blank" style="color: #4fc3f7;">https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?BeginYear=2013</a></li>
+                            <li>NHANES Response Rates and Population Targets. <a href="https://www.cdc.gov/nchs/nhanes/response-rates.htm" target="_blank" style="color: #4fc3f7;">https://www.cdc.gov/nchs/nhanes/response-rates.htm</a></li>
+                            <li>NHANES Tutorials and Educational Materials. <a href="https://www.cdc.gov/nchs/nhanes/tutorials/default.aspx" target="_blank" style="color: #4fc3f7;">https://www.cdc.gov/nchs/nhanes/tutorials/default.aspx</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (NHANES 2013-2014 - Obesity Prediction)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Integración y fusión de múltiples tablas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Fusión secuencial de <strong>5 archivos</strong> del ciclo NHANES 2013-2014: demografía (<em>demographic.csv</em>), dieta (<em>diet.csv</em>), examen físico (<em>examination.csv</em>), laboratorios (<em>labs.csv</em>) y cuestionario (<em>questionnaire.csv</em>).</li>
+                            <li>Uso de <em>SEQN</em> (identificador único de participante) como clave para los merges (<em>left joins</em>).</li>
+                            <li>Selección estratégica de <strong>14 variables relevantes</strong> de las miles disponibles en NHANES, enfocadas en factores de riesgo metabólico y nutricional para obesidad.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Selección y renombrado de variables específicas para obesidad:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Variables demográficas:</strong> <em>Gender</em> (RIAGENDR), <em>Age</em> (RIDAGEYR), <em>Ethnicity</em> (RIDRETH1), <em>Family_Income_Ratio</em> (INDFMPIR).</li>
+                            <li><strong>Variables de examen físico:</strong> <em>BMI</em> (BMXBMI) — utilizado exclusivamente para construir el target y luego eliminado para evitar <em>Data Leakage</em>.</li>
+                            <li><strong>Variables de laboratorio (consecuencias metabólicas):</strong> <em>Total_Cholesterol</em> (LBXTC), <em>Insulin</em> (LBXIN - alta correlación con obesidad), <em>Fasting_Glucose</em> (LBXGLU), <em>Triglycerides</em> (LBXTR).</li>
+                            <li><strong>Variables de dieta (causas nutricionales):</strong> <em>Daily_Calories</em> (DR1TKCAL), <em>Daily_Carb_Intake</em> (DR1TCARB - carbohidratos), <em>Daily_Sugar_Intake</em> (DR1TSUGR), <em>Daily_Fat_Intake</em> (DR1TTFAT).</li>
+                            <li><strong>Variables de estilo de vida:</strong> <em>Sedentary_Minutes</em> (PAD680 - minutos sentado al día), <em>Smoker_History</em> (SMQ020).</li>
+                            <li>Eliminación del identificador <em>SEQN</em> tras la fusión para evitar sobreajuste.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ingeniería de la variable objetivo (Obesidad):</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación de <em>Obesity_Diagnosis</em> basada en el <strong>criterio clínico estándar</strong>: BMI ≥ 30.</li>
+                            <li><strong>Mapeo:</strong> BMI ≥ 30 → <em>1</em> (Clase Positiva - Obeso), BMI < 30 → <em>0</em> (Clase Negativa - No Obeso/Sobrepeso).</li>
+                            <li><strong>Eliminación estratégica de BMI</strong> del conjunto de predictores para evitar <em>Data Leakage</em> (predecir obesidad conociendo el BMI sería trivial).</li>
+                            <li>Eliminación de filas sin valor de BMI (no se puede determinar la verdad terreno).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Imputación diferenciada de valores faltantes:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Variables numéricas (10 columnas):</strong> Imputación con <em>mediana</em> para preservar robustez frente a outliers. Variables: <em>Age</em>, <em>Family_Income_Ratio</em>, <em>Total_Cholesterol</em>, <em>Insulin</em>, <em>Fasting_Glucose</em>, <em>Triglycerides</em>, <em>Daily_Calories</em>, <em>Daily_Carb_Intake</em>, <em>Daily_Sugar_Intake</em>, <em>Daily_Fat_Intake</em>, <em>Sedentary_Minutes</em>.</li>
+                            <li><strong>Variables categóricas (4 columnas):</strong> Imputación con <em>moda</em> (valor más frecuente) para preservar la distribución categórica. Variables: <em>Gender</em>, <em>Ethnicity</em>, <em>Smoker_History</em>, <em>Obesity_Diagnosis</em>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación específica de variables NHANES y generación de leyenda:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Gender:</strong> Mapeo de NHANES (1=Male, 2=Female) → 0=Male, 1=Female.</li>
+                            <li><strong>Smoker_History:</strong> Mapeo de NHANES (1=Yes, 2=No) → 1=Yes, 0=No.</li>
+                            <li><strong>Ethnicity:</strong> Preservación de códigos numéricos originales (1=Mexican American, 2=Other Hispanic, 3=Non-Hispanic White, 4=Non-Hispanic Black, 5=Other Race) con documentación en leyenda.</li>
+                            <li>Generación del archivo <em>leyenda_nhanes_obesity.txt</em> con semántica completa de todas las variables codificadas y descripción de variables nutricionales, metabólicas y de estilo de vida.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>7,311 instancias</strong> (participantes NHANES) después de filtrado de BMI.</li>
+                            <li>Dataset final con <strong>13 variables predictoras</strong> (mixtas: categóricas codificadas y numéricas continuas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>7,311 participantes</strong> del ciclo NHANES 2013-2014 con <strong>13 variables predictoras</strong> (demográficas, metabólicas, nutricionales y de estilo de vida) y <strong>1 variable objetivo binaria</strong> (Obesity_Diagnosis). Desbalance moderado (~65% no obesos / ~35% obesos) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos epidemiológicos de obesidad con factores dietéticos y metabólicos clave, donde <strong>el BMI se ha eliminado intencionalmente</strong> para evitar Data Leakage y forzar al modelo a aprender patrones complejos de causalidad.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🏥 <strong>Fuente:</strong> National Health and Nutrition Examination Survey (NHANES) 2013-2014 - CDC/NCHS.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🥗 <strong>Variables dietéticas clave:</strong> Ingesta calórica diaria, carbohidratos, azúcares, grasas — factores causales fundamentales en el desarrollo de obesidad.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧪 <strong>Variables metabólicas clave:</strong> Insulina (alta correlación con obesidad), glucosa en ayunas, triglicéridos, colesterol total — marcadores de síndrome metabólico.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🪑 <strong>Variables de estilo de vida:</strong> Minutos sentado al día (sedentarismo), historial de tabaquismo — factores de riesgo modificables.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_nhanes_obesity.txt</em> con mapeo semántico completo de todas las variables categóricas y descripción de variables continuas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Obesity_Diagnosis</em> (1 = Obeso - BMI ≥ 30, 0 = No Obeso - BMI < 30).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    ⚠️ <strong>Diseño experimental:</strong> BMI eliminado intencionalmente de los predictores para evitar Data Leakage y evaluar la capacidad predictiva basada en dieta, metabolismo y estilo de vida.
+                </p>
+            </div>
+        </div>
+    
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Clínica</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Ethnicity</code></td>
+                            <td>Origen étnico/racial del participante</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: Mexican American, 2: Other Hispanic, 3: Non-Hispanic White, 4: Non-Hispanic Black, 5: Other Race</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Age</code></td>
+                            <td>Edad del participante (censurada en 80)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>2 - 80</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Family_Income_Ratio</code></td>
+                            <td>Índice de pobreza (ratio de ingresos respecto al umbral federal)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 5</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Total_Cholesterol</code></td>
+                            <td>Colesterol total en sangre</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>69 - 302</td>
+                            <td>mg/dL</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Insulin</code></td>
+                            <td>Insulina sérica (marcador de resistencia a la insulina)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1.32 - 113.16</td>
+                            <td>μU/mL</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Triglycerides</code></td>
+                            <td>Triglicéridos en sangre</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>25 - 457</td>
+                            <td>mg/dL</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Daily_Calories</code></td>
+                            <td>Ingesta calórica total diaria (recuerdo 24h)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>264 - 9,595</td>
+                            <td>kcal</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Daily_Carb_Intake</code></td>
+                            <td>Ingesta diaria de carbohidratos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>37.76 - 1,210.7</td>
+                            <td>gramos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Daily_Sugar_Intake</code></td>
+                            <td>Ingesta diaria de azúcares totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1.36 - 735.01</td>
+                            <td>gramos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Daily_Fat_Intake</code></td>
+                            <td>Ingesta diaria de grasas totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>6.22 - 411.13</td>
+                            <td>gramos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Sedentary_Minutes</code></td>
+                            <td>Tiempo diario en actividad sedentaria (inactividad física)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>20 - 9,999</td>
+                            <td>minutos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Gender</code></td>
+                            <td>Sexo biológico del participante</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Masculino, 1: Femenino</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Smoker_History</code></td>
+                            <td>Historial de tabaquismo (>100 cigarrillos en la vida)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Obesity_Diagnosis</code></td>
+                            <td>Diagnóstico de obesidad clínica (BMI ≥ 30) - OBJETIVO</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No Obeso, 1: Obeso</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Obesidad (Obesity_Diagnosis)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de NHANES 2013-2014 para Predicción de Obesidad. 
+                Comprender estas codificaciones es fundamental para la correcta interpretación de los 
+                resultados clínicos.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: Ethnicity -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Ethnicity</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Origen étnico/racial del participante</strong>
+                        </p>
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>Mexican American (Mexicano-Americano)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Other Hispanic (Otro Hispano)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Non-Hispanic White (Blanco No Hispano)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Non-Hispanic Black (Negro No Hispano)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Other Race (Otra Raza)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">💡</span>
+                            <p><strong>Relevancia:</strong> La etnicidad es un factor de riesgo documentado para obesidad. Non-Hispanic Blacks y Mexican Americans tienen mayor prevalencia.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Obesity_Diagnosis (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Obesity_Diagnosis</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">0</span></td>
+                                    <td><strong>No Obeso</strong> - BMI &lt; 30 (Peso Normal / Sobrepeso)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">1</span></td>
+                                    <td><strong>Obeso</strong> - BMI ≥ 30 (Obesidad Clínica)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> Derivada del BMI calculado a partir de peso y altura medidos. El BMI fue eliminado para evitar Data Leakage.</p>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⚠️</span>
+                            <p><strong>Clasificación:</strong> BMI ≥ 30 es el umbral estándar de obesidad según la OMS.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato común:</strong> 0 = No / Ausencia, 1 = Sí / Presencia
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Gender</code></span>
+                                <span class="binaria-desc">Sexo (0: Masculino, 1: Femenino)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Smoker_History</code></span>
+                                <span class="binaria-desc">Historial de tabaquismo (>100 cigarros en la vida) (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Obesity_Diagnosis</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Obesidad clínica (0: No Obeso, 1: Obeso)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Todas las variables binarias están codificadas como <strong>0 = No</strong> y <strong>1 = Sí</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 1
+                        <ul>
+                            <li>Ethnicity (5 categorías étnico-raciales)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 3
+                        <ul>
+                            <li>Gender (Sexo)</li>
+                            <li>Smoker_History (Tabaquismo)</li>
+                            <li>🎯 Obesity_Diagnosis (Objetivo)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 10
+                        <ul>
+                            <li>Demográficas: Age, Family_Income_Ratio</li>
+                            <li>Metabólicas: Insulin, Triglycerides, Total_Cholesterol</li>
+                            <li>Nutrición: Daily_Calories, Daily_Carb_Intake, Daily_Sugar_Intake, Daily_Fat_Intake</li>
+                            <li>Estilo de vida: Sedentary_Minutes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones Clínicas:</strong>
+                        <ul>
+                            <li><strong>Factor clave:</strong> <code>Insulin</code> es el marcador metabólico más directamente relacionado con la obesidad (resistencia a la insulina)</li>
+                            <li><strong>Sedentarismo:</strong> <code>Sedentary_Minutes</code> > 480 min/día (8h) es un factor de riesgo importante</li>
+                            <li><strong>Nutrición:</strong> Alta ingesta de azúcares (<code>Daily_Sugar_Intake</code>) y carbohidratos contribuye a la obesidad</li>
+                            <li><strong>Triglicéridos:</strong> > 150 mg/dL se asocia con obesidad y síndrome metabólico</li>
+                            <li><strong>Etnicidad:</strong> Non-Hispanic Blacks y Mexican Americans tienen mayor prevalencia de obesidad</li>                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- TERMODINÁMICA - Calorías de grasa -->
+                        <li><code>Daily_Fat_Intake > 150 → Daily_Calories > 1500 (Grasa elevada → calorías totales altas)</code></li>
+                        
+                        <!-- TERMODINÁMICA - Calorías de carbohidratos -->
+                        <li><code>Daily_Carb_Intake > 500 → Daily_Calories > 2200 (Carbohidratos elevados → calorías totales altas)</code></li>
+                        
+                        <!-- ENDOCRINA - Hiperinsulinemia severa -->
+                        <li><code>Insulin > 30 → Obesity_Diagnosis = 1 (Insulina alta → obesidad)</code></li>
+                        
+                        <!-- METABÓLICA - Hipertrigliceridemia severa -->
+                        <li><code>Triglycerides > 400 → Obesity_Diagnosis = 1 (Triglicéridos altos → obesidad)</code></li>
+                        
+                        <!-- COHERENCIA - Fenotipo sano -->
+                        <li><code>Obesity_Diagnosis == 0 → Insulin < 25 (Sin obesidad → insulina normal)</code></li>
+                        
+                        <!-- PEDIATRÍA - Tabaquismo infantil -->
+                        <li><code>Age < 12 → Smoker_History = 0 (Niños sin historial tabáquico)</code></li>
+                        
+                        <!-- PEDIATRÍA - Obesidad infantil temprana -->
+                        <li><code>Age < 8 → Obesity_Diagnosis = 0 (Menores de 8 sin diagnóstico de obesidad)</code></li>
+                        
+                        <!-- ESTILO DE VIDA - Sedentarismo extremo -->
+                        <li><code>Sedentary_Minutes > 720 → (Obesity_Diagnosis = 1) OR (Smoker_History = 1)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>1</td>
+                                <td>890</td>
+                                <td>0.809</td>
+                                <td>0.753</td>
+                                <td>0.755</td>
+                                <td>4.692</td>
+                                <td>0.148</td>
+                                <td>0.618</td>
+                                <td>0.032</td>
+                                <td>0.976</td>
+                                <td>46.849</td>
+                                <td>0</td>
+                                <td>890</td>
+                                <td>0.449</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>890</td>
+                                <td>0.800</td>
+                                <td>0.746</td>
+                                <td>0.740</td>
+                                <td>2.072</td>
+                                <td>0.309</td>
+                                <td>0.404</td>
+                                <td>0.039</td>
+                                <td>0.973</td>
+                                <td>45.086</td>
+                                <td>0.013</td>
+                                <td>600</td>
+                                <td>0.452</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>890</td>
+                                <td>0.812</td>
+                                <td>0.771</td>
+                                <td>0.770</td>
+                                <td>5.208</td>
+                                <td>0.311</td>
+                                <td>0.355</td>
+                                <td>0.040</td>
+                                <td>0.971</td>
+                                <td>46.675</td>
+                                <td>0.014</td>
+                                <td>600</td>
+                                <td>0.435</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.052</td>
+                                <td>913</td>
+                                <td>0.787</td>
+                                <td>0.750</td>
+                                <td>0.750</td>
+                                <td>2.150</td>
+                                <td>0.320</td>
+                                <td>0.366</td>
+                                <td>0.042</td>
+                                <td>0.974</td>
+                                <td>45.998</td>
+                                <td>0.013</td>
+                                <td>600</td>
+                                <td>0.442</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Adaptado</strong></td>
+                                <td>1.435</td>
+                                <td>755</td>
+                                <td><strong>0.829</strong></td>
+                                <td><strong>0.776</strong></td>
+                                <td><strong>0.775</strong></td>
+                                <td><strong>7.448</strong></td>
+                                <td>0.208</td>
+                                <td>0.691</td>
+                                <td>0.014</td>
+                                <td>0.987</td>
+                                <td>43.180</td>
+                                <td>0.009</td>
+                                <td>600</td>
+                                <td>0.445</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1.435</td>
+                                <td>755</td>
+                                <td>0.817</td>
+                                <td>0.756</td>
+                                <td>0.755</td>
+                                <td>4.934</td>
+                                <td>0.212</td>
+                                <td>0.664</td>
+                                <td>0.014</td>
+                                <td>0.987</td>
+                                <td>44.404</td>
+                                <td>0.009</td>
+                                <td>600</td>
+                                <td>0.458</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>890</td>
+                                <td>0.837</td>
+                                <td>0.778</td>
+                                <td>0.790</td>
+                                <td>6.016</td>
+                                <td>0.324</td>
+                                <td>0.000</td>
+                                <td>0.064</td>
+                                <td>0.744</td>
+                                <td>53.802</td>
+                                <td>0.083</td>
+                                <td>600</td>
+                                <td>0.449</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>1.021</td>
+                                <td>865</td>
+                                <td>0.840</td>
+                                <td>0.772</td>
+                                <td>0.780</td>
+                                <td>5.334</td>
+                                <td>0.309</td>
+                                <td>0.000</td>
+                                <td>0.058</td>
+                                <td>0.727</td>
+                                <td>54.402</td>
+                                <td>0.066</td>
+                                <td>590</td>
+                                <td>0.438</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Adaptado</strong> 
+                    (TabDSFidelity: <strong>7.448</strong>, AUC: 0.829, F1: 0.776, MIA: 0.445). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>1.408</td>
+                                <td>9127</td>
+                                <td>0.822</td>
+                                <td>0.749</td>
+                                <td>0.760</td>
+                                <td><strong>8.721</strong></td>
+                                <td>0.482</td>
+                                <td>0.174</td>
+                                <td>0.016</td>
+                                <td>0.984</td>
+                                <td>78.182</td>
+                                <td>0.296</td>
+                                <td>0</td>
+                                <td>0.451</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.367</td>
+                                <td>9127</td>
+                                <td>0.815</td>
+                                <td>0.762</td>
+                                <td>0.770</td>
+                                <td>8.707</td>
+                                <td>0.482</td>
+                                <td>0.174</td>
+                                <td>0.017</td>
+                                <td>0.983</td>
+                                <td>213.296</td>
+                                <td>0.296</td>
+                                <td>0</td>
+                                <td>0.454</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.236</td>
+                                <td>10000</td>
+                                <td>0.780</td>
+                                <td>0.730</td>
+                                <td>0.720</td>
+                                <td>6.266</td>
+                                <td>0.478</td>
+                                <td>0.011</td>
+                                <td>0.031</td>
+                                <td>0.911</td>
+                                <td>288.864</td>
+                                <td>0.059</td>
+                                <td>0</td>
+                                <td>0.452</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.201</td>
+                                <td>10000</td>
+                                <td>0.795</td>
+                                <td>0.759</td>
+                                <td>0.750</td>
+                                <td>7.026</td>
+                                <td>0.478</td>
+                                <td>0.011</td>
+                                <td>0.032</td>
+                                <td>0.912</td>
+                                <td>436.305</td>
+                                <td>0.059</td>
+                                <td>0</td>
+                                <td>0.471</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.469</td>
+                                <td>10000</td>
+                                <td>0.777</td>
+                                <td>0.760</td>
+                                <td>0.755</td>
+                                <td>6.130</td>
+                                <td>0.653</td>
+                                <td>0.001</td>
+                                <td>0.021</td>
+                                <td>0.962</td>
+                                <td>181.170</td>
+                                <td>0.041</td>
+                                <td>0</td>
+                                <td>0.467</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.460</td>
+                                <td>10000</td>
+                                <td>0.779</td>
+                                <td>0.765</td>
+                                <td>0.760</td>
+                                <td>6.242</td>
+                                <td>0.653</td>
+                                <td>0.001</td>
+                                <td>0.021</td>
+                                <td>0.962</td>
+                                <td>329.837</td>
+                                <td>0.042</td>
+                                <td>0</td>
+                                <td>0.469</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.747</td>
+                                <td>0.676</td>
+                                <td>0.655</td>
+                                <td>2.876</td>
+                                <td>0.780</td>
+                                <td>0.000</td>
+                                <td>0.227</td>
+                                <td>0.664</td>
+                                <td>111.306</td>
+                                <td>0.214</td>
+                                <td>0</td>
+                                <td>0.457</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.000</td>
+                                <td>10000</td>
+                                <td>0.736</td>
+                                <td>0.467</td>
+                                <td>0.470</td>
+                                <td>0.115</td>
+                                <td>0.780</td>
+                                <td>0.000</td>
+                                <td>0.227</td>
+                                <td>0.701</td>
+                                <td>250.913</td>
+                                <td>0.218</td>
+                                <td>0</td>
+                                <td>0.460</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.015</td>
+                                <td>8942</td>
+                                <td>0.820</td>
+                                <td>0.756</td>
+                                <td>0.755</td>
+                                <td>8.686</td>
+                                <td>0.502</td>
+                                <td>0.192</td>
+                                <td>0.033</td>
+                                <td>0.980</td>
+                                <td>74.520</td>
+                                <td>0.227</td>
+                                <td>0</td>
+                                <td>0.436</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.017</td>
+                                <td>8942</td>
+                                <td>0.820</td>
+                                <td>0.760</td>
+                                <td>0.755</td>
+                                <td>8.718</td>
+                                <td>0.502</td>
+                                <td>0.192</td>
+                                <td>0.035</td>
+                                <td>0.981</td>
+                                <td>210.367</td>
+                                <td>0.227</td>
+                                <td>0</td>
+                                <td>0.482</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>8.721</strong>, AUC: 0.822, F1: 0.749, MIA: 0.451). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.410</td>
+                                <td>9882</td>
+                                <td>0.795</td>
+                                <td>0.755</td>
+                                <td>0.765</td>
+                                <td>5.394</td>
+                                <td>0.460</td>
+                                <td>0.194</td>
+                                <td>0.016</td>
+                                <td>0.984</td>
+                                <td>148.256</td>
+                                <td>0.296</td>
+                                <td>0</td>
+                                <td>0.440</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano + Reglas</strong></td>                    
+                                <td>1.372</td>
+                                <td>9882</td>
+                                <td>0.810</td>
+                                <td>0.773</td>
+                                <td>0.775</td>
+                                <td><strong>7.575</strong></td>
+                                <td>0.460</td>
+                                <td>0.194</td>
+                                <td>0.017</td>
+                                <td>0.984</td>
+                                <td>283.028</td>
+                                <td>0.296</td>
+                                <td>0</td>
+                                <td>0.450</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.249</td>
+                                <td>10755</td>
+                                <td>0.781</td>
+                                <td>0.746</td>
+                                <td>0.740</td>
+                                <td>1.946</td>
+                                <td>0.446</td>
+                                <td>0.020</td>
+                                <td>0.029</td>
+                                <td>0.917</td>
+                                <td>365.072</td>
+                                <td>0.055</td>
+                                <td>123</td>
+                                <td>0.440</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.216</td>
+                                <td>10755</td>
+                                <td>0.817</td>
+                                <td>0.771</td>
+                                <td>0.765</td>
+                                <td>6.366</td>
+                                <td>0.446</td>
+                                <td>0.020</td>
+                                <td>0.030</td>
+                                <td>0.918</td>
+                                <td>511.663</td>
+                                <td>0.054</td>
+                                <td>123</td>
+                                <td>0.444</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.467</td>
+                                <td>10755</td>
+                                <td>0.785</td>
+                                <td>0.744</td>
+                                <td>0.745</td>
+                                <td>1.778</td>
+                                <td>0.603</td>
+                                <td>0.002</td>
+                                <td>0.020</td>
+                                <td>0.965</td>
+                                <td>257.379</td>
+                                <td>0.038</td>
+                                <td>123</td>
+                                <td>0.458</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.458</td>
+                                <td>10755</td>
+                                <td>0.792</td>
+                                <td>0.764</td>
+                                <td>0.760</td>
+                                <td>3.865</td>
+                                <td>0.603</td>
+                                <td>0.002</td>
+                                <td>0.020</td>
+                                <td>0.965</td>
+                                <td>406.721</td>
+                                <td>0.038</td>
+                                <td>123</td>
+                                <td>0.463</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.025</td>
+                                <td>10755</td>
+                                <td>0.803</td>
+                                <td>0.746</td>
+                                <td>0.740</td>
+                                <td>1.289</td>
+                                <td>0.715</td>
+                                <td>0.000</td>
+                                <td>0.187</td>
+                                <td>0.677</td>
+                                <td>183.164</td>
+                                <td>0.199</td>
+                                <td>123</td>
+                                <td>0.442</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.026</td>
+                                <td>10755</td>
+                                <td>0.815</td>
+                                <td>0.786</td>
+                                <td>0.780</td>
+                                <td>5.971</td>
+                                <td>0.715</td>
+                                <td>0.000</td>
+                                <td>0.187</td>
+                                <td>0.712</td>
+                                <td>322.787</td>
+                                <td>0.202</td>
+                                <td>123</td>
+                                <td>0.449</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.043</td>
+                                <td>9697</td>
+                                <td>0.818</td>
+                                <td>0.761</td>
+                                <td>0.760</td>
+                                <td>6.696</td>
+                                <td>0.477</td>
+                                <td>0.212</td>
+                                <td>0.031</td>
+                                <td>0.981</td>
+                                <td>144.452</td>
+                                <td>0.227</td>
+                                <td>0</td>
+                                <td>0.427</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.012</td>
+                                <td>9697</td>
+                                <td>0.814</td>
+                                <td>0.759</td>
+                                <td>0.755</td>
+                                <td>6.093</td>
+                                <td>0.477</td>
+                                <td>0.212</td>
+                                <td>0.033</td>
+                                <td>0.981</td>
+                                <td>279.091</td>
+                                <td>0.227</td>
+                                <td>0</td>
+                                <td>0.482</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>7.575</strong>, AUC: 0.810, F1: 0.773, MIA: 0.450). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_26</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>SMOTE RSB* Adaptado</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd26.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Obesity Prediction (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32934167.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [74.17, 25.83], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

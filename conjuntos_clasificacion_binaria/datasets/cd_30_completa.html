@@ -1,0 +1,2272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_30: Autism Spectrum Disorder Screening (Adult) - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_30</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_30: Autism Spectrum Disorder Screening (Adult)</h1>
+            <p class="description">Conjunto de datos (704 instancias) para el cribado de autismo (TEA). La predicción se basa en las respuestas binarias al cuestionario AQ-10, datos demográficos y antecedentes familiares/médicos (ictericia). Metodológicamente destaca por la eliminación de la variable de suma total (result) para evitar data leakage y forzar al modelo a aprender la estructura latente de las respuestas.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.90</td>
+                                    <td>0.99</td>
+                                    <td>0.94</td>
+                                    <td>103</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.96</td>
+                                    <td>0.71</td>
+                                    <td>0.82</td>
+                                    <td>38</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.91</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.93</td>
+                                    <td>0.85</td>
+                                    <td>0.88</td>
+                                    <td>141</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.92</td>
+                                    <td>0.91</td>
+                                    <td>0.91</td>
+                                    <td>141</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.97</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.91</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.91</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.03 AUC</span>
+                        <span class="improvement-tag">⬆ +0.08 F1</span>
+                        <span class="improvement-tag">⬆ +0.08 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>1.00</td>
+                                    <td>0.99</td>
+                                    <td>1.00</td>
+                                    <td>103</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.97 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.29</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.17</span></td>
+                                    <td>38</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.99</strong> <span class="improvement-indicator">⬆ +0.08</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.06</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.15</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.11</span></td>
+                                    <td>141</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.07</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.08</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.08</span></td>
+                                    <td>141</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">1.00</span>
+                            <span class="improvement-badge positive">⬆ +0.03</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.99</span>
+                            <span class="improvement-badge positive">⬆ +0.08</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.99</span>
+                            <span class="improvement-badge positive">⬆ +0.08</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.96</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 96%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.97</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 97%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.01</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.71</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 71%; background: #f39c12;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 1.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.29</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.82</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 82%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.99</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 99%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.17</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Autism Screening Adult Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Datos de screening de Trastorno del Espectro Autista (TEA)</div>
+                    <div class="fuente-fecha">Publicado: 23 de diciembre de 2017</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">704</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">20 (19 predictores + 1 objetivo)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Screening de Autismo para Adultos (Autism Screening Adult)</strong> contiene información de <strong>704 instancias</strong> con <strong>20 atributos</strong> relacionados con la clasificación y tareas predictivas para el <strong>Trastorno del Espectro Autista (TEA)</strong>. El conjunto incluye las puntuaciones de las <strong>10 preguntas del cuestionario de screening AQ-10</strong> (A1_Score a A10_Score), junto con información demográfica (edad, género, etnia), antecedentes médicos (ictericia, antecedentes familiares de TEA), país de residencia, uso previo de aplicaciones de screening y la relación del encuestado con el paciente. El objetivo es predecir si un adulto presenta o no <strong>Trastorno del Espectro Autista</strong> (variable <em>class</em>).</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🧠 Contexto y Motivación</h4>
+                        <p>El <strong>Trastorno del Espectro Autista (TEA)</strong> es una condición del neurodesarrollo que afecta la comunicación, la interacción social y el comportamiento. Se estima que <strong>1 de cada 100 niños</strong> en todo el mundo tiene TEA, según la Organización Mundial de la Salud. El diagnóstico temprano es fundamental para:</p>
+                        <ul class="transformacion-lista">
+                            <li>Acceder a <strong>intervenciones tempranas</strong> que mejoren el desarrollo</li>
+                            <li>Recibir <strong>apoyo educativo y social</strong> adaptado a las necesidades</li>
+                            <li>Mejorar la <strong>calidad de vida</strong> y la integración social</li>
+                            <li>Reducir el <strong>impacto en la salud mental</strong> y el bienestar</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">El <strong>cuestionario AQ-10</strong> (Autism Spectrum Quotient - 10 items) es una herramienta de screening breve y validada que ayuda a identificar a adultos que pueden estar en el espectro autista y que podrían beneficiarse de una evaluación diagnóstica completa. Este dataset permite desarrollar modelos predictivos que <strong>automaticen el screening</strong> y faciliten la identificación temprana de casos.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>704 instancias</strong> con <strong>20 atributos</strong> (19 variables predictoras y 1 variable objetivo). Las características son de tipo <strong>entero y categórico</strong>. El conjunto presenta <strong>valores faltantes</strong> en algunas variables.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Valores Faltantes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Preguntas del Cuestionario AQ-10 (Screening)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A1_Score</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación de la pregunta 1 del AQ-10</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A2_Score</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación de la pregunta 2 del AQ-10</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A3_Score</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación de la pregunta 3 del AQ-10</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A4_Score</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación de la pregunta 4 del AQ-10</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A5_Score</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación de la pregunta 5 del AQ-10</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A6_Score</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación de la pregunta 6 del AQ-10</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A7_Score</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación de la pregunta 7 del AQ-10</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A8_Score</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación de la pregunta 8 del AQ-10</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A9_Score</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación de la pregunta 9 del AQ-10</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A10_Score</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación de la pregunta 10 del AQ-10</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ffd93d; font-weight: bold;">B. Datos Demográficos</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>age</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Edad del paciente</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>gender</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Género del paciente</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>ethnicity</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Etnia del paciente</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #6bcb77; font-weight: bold;">C. Antecedentes Médicos</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>jaundice</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Ictericia al nacer (sí/no)</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>family_pdd</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Antecedentes familiares de TEA</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff9ff3; font-weight: bold;">D. Contexto de la Evaluación</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>country_of_res</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">País de residencia del paciente</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>used_app_before</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">¿Ha usado una aplicación de screening antes?</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>result</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Puntuación total del AQ-10 (suma de A1-A10)</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>age_desc</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Descripción de la edad (siempre "18 and above")</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>relation</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Relación del encuestado con el paciente</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">E. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>class</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica (Target)</td>
+                                        <td style="padding: 0.4rem;">Diagnóstico de Trastorno del Espectro Autista</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (TEA vs. No TEA)</li>
+                            <li><strong>Dimensión:</strong> Multivariante</li>
+                            <li><strong>Tipo de características:</strong> Enteros y Categóricas</li>
+                            <li><strong>Valores faltantes:</strong> Sí (en age, ethnicity, relation)</li>
+                            <li><strong>Área de aplicación:</strong> Salud Mental, Psicología, Neurodesarrollo</li>
+                            <li><strong>Herramienta de screening:</strong> AQ-10 (Autism Spectrum Quotient - 10 items)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📖 Instrumento: Cuestionario AQ-10</h4>
+                        <p>El <strong>Autism Spectrum Quotient (AQ-10)</strong> es una herramienta de screening breve diseñada para identificar adultos que pueden estar en el espectro autista. El cuestionario consta de <strong>10 preguntas</strong> que evalúan diferentes aspectos del comportamiento y la comunicación social. Las preguntas (A1 a A10) cubren áreas como:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Habilidades sociales</strong> (dificultad para comprender convenciones sociales)</li>
+                            <li><strong>Atención a los detalles</strong> (tendencia a notar patrones y detalles)</li>
+                            <li><strong>Comunicación</strong> (dificultad para entender el lenguaje figurado)</li>
+                            <li><strong>Flexibilidad cognitiva</strong> (resistencia a cambios en la rutina)</li>
+                            <li><strong>Intereses restringidos</strong> (enfoque intenso en temas específicos)</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Una puntuación total (variable <code>result</code>) mayor a cierto umbral sugiere la necesidad de una evaluación diagnóstica completa.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos ha sido anonimizado para proteger la privacidad de los participantes. No contiene información personal identificable como nombres, direcciones o números de identificación. <strong>Restricción de confidencialidad:</strong> En cumplimiento de los protocolos de privacidad, el uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la reidentificación de pacientes.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos está diseñado para la clasificación de <strong>Trastorno del Espectro Autista</strong> en adultos. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>Manejar adecuadamente los valores faltantes:
+                                <ul class="transformacion-lista">
+                                    <li>Edad: imputación por media o mediana</li>
+                                    <li>Etnia y relación: imputación por moda o categoría "Unknown"</li>
+                                </ul>
+                            </li>
+                            <li>Las puntuaciones <code>A1_Score</code> a <code>A10_Score</code> son la base del screening y deben mantenerse como variables clave</li>
+                            <li>La variable <code>result</code> es la <strong>suma total</strong> de las 10 preguntas (A1 + A2 + ... + A10) y puede ser redundante si ya se utilizan las puntuaciones individuales</li>
+                            <li>La variable <code>age_desc</code> es constante ("18 and above") y <strong>no aporta valor predictivo</strong> (puede excluirse)</li>
+                            <li>Codificar variables categóricas:
+                                <ul class="transformacion-lista">
+                                    <li>Binarias: Label Encoding (gender, jaundice, family_pdd, used_app_before)</li>
+                                    <li>Nominales: One-Hot Encoding (ethnicity, country_of_res, relation)</li>
+                                </ul>
+                            </li>
+                            <li>Estandarizar/normalizar la variable numérica <code>age</code> si se utiliza</li>
+                            <li>La variable objetivo <code>class</code> está codificada como <strong>"YES"</strong> (TEA) y <strong>"NO"</strong> (sin TEA)</li>
+                            <li>Utilizar validación cruzada estratificada para evaluar el rendimiento del modelo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Salud Mental</h4>
+                        <p>El <strong>Trastorno del Espectro Autista (TEA)</strong> es una condición del neurodesarrollo que afecta la comunicación, la interacción social y el comportamiento. Según la Organización Mundial de la Salud:</p>
+                        <ul class="transformacion-lista">
+                            <li>Se estima que <strong>1 de cada 100 niños</strong> en todo el mundo tiene TEA</li>
+                            <li>La prevalencia es <strong>4 veces mayor</strong> en hombres que en mujeres</li>
+                            <li>El diagnóstico temprano y las intervenciones adecuadas pueden <strong>mejorar significativamente</strong> la calidad de vida</li>
+                            <li>El TEA a menudo se diagnostica en la infancia, pero los casos leves pueden pasar desapercibidos hasta la edad adulta</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">El desarrollo de modelos de screening basados en el AQ-10 puede facilitar la <strong>identificación temprana</strong> de adultos que podrían beneficiarse de una evaluación diagnóstica completa, reduciendo los tiempos de espera y mejorando el acceso a servicios de apoyo.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Autism Screening Adult Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult</pre>
+                        <button onclick="copyToClipboard('Autism Screening Adult Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Organización Mundial de la Salud (OMS). (2023). <em>Trastorno del Espectro Autista</em>. <a href="https://www.who.int/es/news-room/fact-sheets/detail/autism-spectrum-disorders" target="_blank" style="color: #4fc3f7;">https://www.who.int/es/news-room/fact-sheets/detail/autism-spectrum-disorders</a></li>
+                            <li>Baron-Cohen, S., et al. (2001). The Autism-Spectrum Quotient (AQ): Evidence from Asperger Syndrome/High-Functioning Autism, Males and Females, Scientists and Mathematicians. <em>Journal of Autism and Developmental Disorders</em>, 31(1), 5-17. <a href="https://doi.org/10.1023/A:1005653411471" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1023/A:1005653411471</a></li>
+                            <li>Allison, C., et al. (2012). The Q-CHAT (Quantitative CHecklist for Autism in Toddlers): A Normally Distributed Quantitative Measure of Autistic Traits at 18-24 Months of Age: Preliminary Report. <em>Journal of Autism and Developmental Disorders</em>, 38(8), 1414-1425.</li>
+                            <li>UCI Machine Learning Repository - Autism Screening Adult. <a href="https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/Autism+Screening+Adult</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Autism Spectrum Disorder - Adults)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Lectura personalizada del formato ARFF:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Procesamiento manual del archivo <em>.arff</em> (Attribute-Relation File Format) extrayendo exclusivamente la sección <em>@data</em>.</li>
+                            <li>Asignación de nombres de columnas basados en la especificación del dataset (21 variables en total).</li>
+                            <li>Limpieza de caracteres especiales: eliminación de comillas y espacios en blanco en valores de texto (ej. 'United States' → United States).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Limpieza y tratamiento de valores faltantes:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión de valores <em>'?'</em> (indicadores de "no disponible" en el dataset original) a <em>NaN</em> para su correcto tratamiento estadístico.</li>
+                            <li><strong>Imputación de edad:</strong> Relleno de valores faltantes en <em>age</em> con la <em>mediana</em> para preservar robustez frente a outliers.</li>
+                            <li><strong>Imputación de categóricas:</strong> Relleno de valores faltantes en <em>ethnicity</em>, <em>relation</em> y <em>contry_of_res</em> con la <em>moda</em> (valor más frecuente).</li>
+                            <li>Conversión de <em>age</em> a tipo numérico para garantizar integridad de datos.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Eliminación de variables redundantes:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Eliminación de <em>result</em> (resultado del screening) para evitar <strong>Data Leakage</strong> — esta variable es idéntica al target.</li>
+                            <li>Eliminación de <em>age_desc</em> (variable constante con valor "18 and more" en todos los registros) por no aportar información predictiva.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación específica de variables categóricas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Class/ASD (Target):</strong> Mapeo manual ('NO' → 0 = Sin rasgos suficientes, 'YES' → 1 = Con rasgos de espectro autista).</li>
+                            <li><strong>Variables binarias:</strong> Mapeo manual de <em>jundice</em>, <em>austim</em>, <em>used_app_before</em> ('no' → 0, 'yes' → 1).</li>
+                            <li><strong>Gender:</strong> Mapeo manual ('f' → 0 = Femenino, 'm' → 1 = Masculino).</li>
+                            <li><strong>Variables nominales:</strong> Codificación ordinal (<em>Label Encoding</em>) para <em>ethnicity</em>, <em>contry_of_res</em> (país de residencia) y <em>relation</em> (relación del informante con el paciente).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Estandarización y optimización de tipos de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión forzada de las <strong>10 variables de puntuación AQ-10</strong> (<em>A1_Score</em> a <em>A10_Score</em>) a tipo <strong>entero (int)</strong> para eliminar decimales y optimizar memoria.</li>
+                            <li>Preservación de todas las variables en tipos numéricos (enteros y flotantes).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_autism.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de las 10 variables del test AQ-10 (puntuaciones 0/1).</li>
+                            <li>Mapeo completo de variables binarias (<em>jundice</em>, <em>austim</em>, <em>used_app_before</em>, <em>gender</em>).</li>
+                            <li>Mapeo completo de variables nominales codificadas (<em>ethnicity</em>, <em>contry_of_res</em>, <em>relation</em>).</li>
+                            <li>Nota sobre eliminación de <em>result</em> (Data Leakage) y <em>age_desc</em> (constante).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>instancias originales</strong> (sin eliminación de filas).</li>
+                            <li>Dataset final con <strong>18 variables predictoras</strong> (10 del test AQ-10 + 8 demográficas/clínicas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>pacientes adultos</strong> (≈700 registros) con <strong>18 variables predictoras</strong> (10 puntuaciones AQ-10 + 8 demográficas/clínicas) y <strong>1 variable objetivo binaria</strong> (Class/ASD). Desbalance moderado (~65% sin rasgos autistas / ~35% con rasgos) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>detección temprana de trastornos del espectro autista</strong>, donde los cuestionarios de screening (AQ-10) y factores demográficos juegan un papel crucial.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧩 <strong>Fuente:</strong> Autism Spectrum Disorder Screening Dataset (UCI Machine Learning Repository).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📋 <strong>Variables del test AQ-10:</strong> 10 preguntas de screening (0 = No, 1 = Sí) que evalúan rasgos de espectro autista en adultos.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    👤 <strong>Variables demográficas:</strong> Edad, género, etnicidad, país de residencia, relación del informante, historial de ictericia, diagnóstico previo de autismo, uso previo de aplicación de screening.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_autism.txt</em> con mapeo semántico completo de la variable objetivo, variables binarias (jundice, austim, used_app_before, gender), y variables nominales codificadas (ethnicity, contry_of_res, relation).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Class/ASD</em> (1 = Presenta rasgos de espectro autista, 0 = No presenta rasgos suficientes).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    ⚠️ <strong>Prevención de Data Leakage:</strong> Eliminación de la variable <em>result</em> (idéntica al target) para evitar sobreajuste y garantizar la validez del modelo predictivo.
+                </p>
+            </div>
+        </div>
+    
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Clínica</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>ethnicity</code></td>
+                            <td>Origen étnico del participante</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-9 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>contry_of_res</code></td>
+                            <td>País de residencia del participante</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>Múltiples códigos (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>relation</code></td>
+                            <td>Relación de quien completó el test con el participante</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Health care professional, 1: Others, 2: Parent, 3: Relative, 4: Self</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>age</code></td>
+                            <td>Edad del participante</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>17 - 383</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias (Cuestionario AQ-10) -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A1_Score</code></td>
+                            <td>Pregunta 1: Capacidad para leer el lenguaje corporal / gestos</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A2_Score</code></td>
+                            <td>Pregunta 2: Preferencia por detalles en lugar del panorama general</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A3_Score</code></td>
+                            <td>Pregunta 3: Dificultad para entender intenciones de otros</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A4_Score</code></td>
+                            <td>Pregunta 4: Facilidad para conversar con extraños</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A5_Score</code></td>
+                            <td>Pregunta 5: Preferencia por seguir rutinas repetitivas</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A6_Score</code></td>
+                            <td>Pregunta 6: Dificultad para mantener conversación</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A7_Score</code></td>
+                            <td>Pregunta 7: Sensibilidad a sonidos y ruidos</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A8_Score</code></td>
+                            <td>Pregunta 8: Dificultad para entender el sarcasmo</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A9_Score</code></td>
+                            <td>Pregunta 9: Dificultad para reconocer emociones en otros</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A10_Score</code></td>
+                            <td>Pregunta 10: Preferencia por patrones y rutinas rígidas</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias (Historial y Contexto) -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>gender</code></td>
+                            <td>Género del participante</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Femenino, 1: Masculino</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>jundice</code></td>
+                            <td>Ictericia al nacer (factor de riesgo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>austim</code></td>
+                            <td>Familiar con diagnóstico de autismo (factor genético)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>used_app_before</code></td>
+                            <td>Ha usado la aplicación anteriormente (control de validez)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Class_ASD</code></td>
+                            <td>Clasificación de Trastorno del Espectro Autista (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: NO (No presenta rasgos), 1: YES (Presenta rasgos)</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">19</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Autismo (Class_ASD)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Cribado de Trastorno del Espectro Autista (ASD). 
+                Comprender estas codificaciones es fundamental para la correcta interpretación de los 
+                resultados clínicos y psicológicos.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: ethnicity -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>ethnicity</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Asian (Asiática)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Black (Negra)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Hispanic (Hispana)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Latino (Latina)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Middle Eastern (Medio Oriente)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Others (Otros)</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>Pasifika (Islas del Pacífico)</td></tr>
+                                <tr><td><span class="codigo">7</span></td><td>South Asian (Sur de Asia)</td></tr>
+                                <tr><td><span class="codigo">8</span></td><td>Turkish (Turca)</td></tr>
+                                <tr><td><span class="codigo">9</span></td><td>White-European (Blanca Europea)</td></tr>
+                                <tr><td><span class="codigo">10</span></td><td>others (Otros - adicional)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: country_of_res -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>contry_of_res</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Códigos de país de residencia (selección representativa)</strong>
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px 6px; max-height: 300px; overflow-y: auto; font-size: 0.75em;">
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">0</span> Afghanistan</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">1</span> AmericanSamoa</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">2</span> Angola</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">3</span> Argentina</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">4</span> Armenia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">5</span> Aruba</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">6</span> Australia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">7</span> Austria</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">8</span> Azerbaijan</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">9</span> Bahamas</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">10</span> Bangladesh</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">11</span> Belgium</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">12</span> Bolivia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">13</span> Brazil</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">14</span> Burundi</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">15</span> Canada</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">17</span> China</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">18</span> Costa Rica</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">19</span> Cyprus</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">20</span> Czech Republic</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">21</span> Ecuador</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">22</span> Egypt</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">23</span> Ethiopia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">24</span> Finland</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">25</span> France</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">26</span> Germany</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">27</span> Hong Kong</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">28</span> Iceland</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">29</span> India</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">3</span> Argentina</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">31</span> Indonesia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">32</span> Iran</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">33</span> Iraq</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">34</span> Ireland</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">35</span> Italy</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">36</span> Japan</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">39</span> Malaysia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">4</span> Armenia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">40</span> Mexico</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">42</span> Nepal</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">43</span> Netherlands</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">44</span> New Zealand</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">47</span> Pakistan</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">48</span> Philippines</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">5</span> Aruba</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">50</span> Portugal</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">51</span> Romania</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">52</span> Russia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">53</span> Saudi Arabia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">54</span> Serbia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">55</span> Sierra Leone</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">56</span> South Africa</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">57</span> Spain</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">58</span> Sri Lanka</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">59</span> Sweden</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">6</span> Australia</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">60</span> Tonga</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">62</span> Turkey</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">63</span> Ukraine</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">64</span> United Arab Emirates</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">65</span> United Kingdom</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">66</span> United States</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">7</span> Austria</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">9</span> Bahamas</div>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⚠️</span>
+                            <p><strong>Nota:</strong> ~67 países.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: relation -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>relation</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Health care professional (Profesional de la salud)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Others (Otros)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Parent (Padre/Madre)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Relative (Familiar)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Self (El mismo participante)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato común:</strong> 0 = No / Ausencia, 1 = Sí / Presencia
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <!-- Test AQ-10 -->
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>A1_Score</code></span>
+                                <span class="binaria-desc">Lenguaje corporal / gestos</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>A2_Score</code></span>
+                                <span class="binaria-desc">Preferencia por detalles vs. panorama general</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>A3_Score</code></span>
+                                <span class="binaria-desc">Dificultad para entender intenciones de otros</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>A4_Score</code></span>
+                                <span class="binaria-desc">Facilidad para conversar con extraños</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>A5_Score</code></span>
+                                <span class="binaria-desc">Preferencia por rutinas repetitivas</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>A6_Score</code></span>
+                                <span class="binaria-desc">Dificultad para mantener conversación</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>A7_Score</code></span>
+                                <span class="binaria-desc">Sensibilidad a sonidos y ruidos</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>A8_Score</code></span>
+                                <span class="binaria-desc">Dificultad para entender sarcasmo</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>A9_Score</code></span>
+                                <span class="binaria-desc">Dificultad para reconocer emociones</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>A10_Score</code></span>
+                                <span class="binaria-desc">Preferencia por patrones rígidos</span>
+                            </div>
+                            
+                            <!-- Demográficas y contexto -->
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>gender</code></span>
+                                <span class="binaria-desc">Género (0: Femenino, 1: Masculino)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>jundice</code></span>
+                                <span class="binaria-desc">Ictericia al nacer (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>austim</code></span>
+                                <span class="binaria-desc">Familiar con autismo (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>used_app_before</code></span>
+                                <span class="binaria-desc">Usó la aplicación antes (0: No, 1: Sí)</span>
+                            </div>
+                            
+                            <!-- Objetivo -->
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Class_ASD</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Trastorno del Espectro Autista (0: No, 1: Sí)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Todas las variables binarias están codificadas como <strong>0 = No</strong> y <strong>1 = Sí</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 3
+                        <ul>
+                            <li>ethnicity (11 categorías étnicas)</li>
+                            <li>contry_of_res (~67 países codificados)</li>
+                            <li>relation (5 tipos de relación)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 15
+                        <ul>
+                            <li>10 variables del test AQ-10 (A1_Score a A10_Score)</li>
+                            <li>gender, jundice, austim, used_app_before</li>
+                            <li>🎯 Class_ASD (Objetivo - Autismo)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 1
+                        <ul>
+                            <li>age (Edad en años - 17 a 383)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones para el Modelado:</strong>
+                        <ul>
+                            <li><strong>Predictores clave:</strong> Las preguntas AQ-10 son el componente más importante del modelo</li>
+                            <li><strong>Factores de riesgo:</strong> <code>austim</code> (familiar con autismo) y <code>jundice</code> (ictericia neonatal) aumentan la probabilidad</li>                            
+                            <li><strong>Edad:</strong> Valores extremos (>100) pueden ser errores o valores atípicos</li>                            
+                            <li><strong>relation:</strong> Tests realizados por profesionales o padres pueden tener mayor precisión</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- CERTEZA DIAGNÓSTICA - Puntuación 0 en todas las preguntas -->
+                        <li><code>A1_Score == 0 → Class_ASD = 0 (Sin puntuación → sin diagnóstico)</code></li>
+                        
+                        <!-- FACTOR DE RIESGO GENÉTICO - Familiar con autismo -->
+                        <li><code>austim == 1 → A1_Score = 1 (Familiar con autismo → dificultad social presente)</code></li>
+                        
+                        <!-- CONTEXTO - Evaluación profesional -->
+                        <li><code>relation == 0 → A2_Score = 1 (Profesional → al menos un ítem positivo)</code></li>
+                        
+                        <!-- PEDIÁTRICA - Edad temprana vs evaluación profesional -->
+                        <li><code>Age < 4 → relation ≠ 0 (Niño pequeño → no evaluación profesional en app)</code></li>
+                        
+                        <!-- DOMINIO - Interacción social -->
+                        <li><code>A2_Score == 1 → (Class_ASD = 1) OR (A7_Score = 1)</code></li>
+                        
+                        <!-- DOMINIO - Patrones y repetición -->
+                        <li><code>A3_Score == 1 → (Class_ASD = 1) OR (austim = 1)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice<strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>1</td>
+                                <td>618</td>
+                                <td>1.000</td>
+                                <td>0.993</td>
+                                <td>0.993</td>
+                                <td>9.510</td>
+                                <td>0.083</td>
+                                <td>0.813</td>
+                                <td>0.026</td>
+                                <td>0.966</td>
+                                <td>47.020</td>
+                                <td>0</td>
+                                <td>618</td>
+                                <td>0.520</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>618</td>
+                                <td>0.997</td>
+                                <td>0.979</td>
+                                <td>0.979</td>
+                                <td>8.601</td>
+                                <td>0.319</td>
+                                <td>0.974</td>
+                                <td>0.019</td>
+                                <td>0.967</td>
+                                <td>49.378</td>
+                                <td>0.030</td>
+                                <td>436</td>
+                                <td>0.508</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>618</td>
+                                <td>0.997</td>
+                                <td>0.979</td>
+                                <td>0.979</td>
+                                <td>7.913</td>
+                                <td>0.325</td>
+                                <td>0.322</td>
+                                <td>0.020</td>
+                                <td>0.966</td>
+                                <td>49.867</td>
+                                <td>0.030</td>
+                                <td>436</td>
+                                <td>0.499</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.023</td>
+                                <td>625</td>
+                                <td>1.000</td>
+                                <td>0.972</td>
+                                <td>0.972</td>
+                                <td>8.196</td>
+                                <td>0.331</td>
+                                <td>0.651</td>
+                                <td>0.021</td>
+                                <td>0.966</td>
+                                <td>49.942</td>
+                                <td>0.032</td>
+                                <td>435</td>
+                                <td>0.489</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Adaptado</strong></td>
+                                <td>1.367</td>
+                                <td>535</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>9.985</strong></td>
+                                <td>0.050</td>
+                                <td>1.000</td>
+                                <td>0.012</td>
+                                <td>0.975</td>
+                                <td>46.642</td>
+                                <td>0.017</td>
+                                <td>433</td>
+                                <td>0.492</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1.367</td>
+                                <td>535</td>
+                                <td>1.000</td>
+                                <td>0.986</td>
+                                <td>0.986</td>
+                                <td>9.799</td>
+                                <td>0.051</td>
+                                <td>1.000</td>
+                                <td>0.012</td>
+                                <td>0.976</td>
+                                <td>46.943</td>
+                                <td>0.017</td>
+                                <td>426</td>
+                                <td>0.493</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>618</td>
+                                <td>1.000</td>
+                                <td>0.978</td>
+                                <td>0.979</td>
+                                <td>6.278</td>
+                                <td>0.298</td>
+                                <td>0.000</td>
+                                <td>0.095</td>
+                                <td>0.777</td>
+                                <td>66.497</td>
+                                <td>0.083</td>
+                                <td>422</td>
+                                <td>0.471</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>1.664</td>
+                                <td>618</td>
+                                <td>0.911</td>
+                                <td>0.705</td>
+                                <td>0.688</td>
+                                <td>0.000</td>
+                                <td>0.345</td>
+                                <td>0.000</td>
+                                <td>0.126</td>
+                                <td>0.749</td>
+                                <td>58.254</td>
+                                <td>0.115</td>
+                                <td>258</td>
+                                <td>0.482</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Adaptado</strong> 
+                    (TabDSFidelity: <strong>9.985</strong>, AUC: 1.000, F1: 1.000, MIA: 0.492). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.350</td>
+                                <td>3676</td>
+                                <td>0.998</td>
+                                <td>0.972</td>
+                                <td>0.972</td>
+                                <td>9.359</td>
+                                <td>0.078</td>
+                                <td>0.997</td>
+                                <td>0.109</td>
+                                <td>0.964</td>
+                                <td>58.447</td>
+                                <td>0.155</td>
+                                <td>0</td>
+                                <td>0.458</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.214</td>
+                                <td>3676</td>
+                                <td>0.863</td>
+                                <td>0.691</td>
+                                <td>0.674</td>
+                                <td>3.812</td>
+                                <td>0.078</td>
+                                <td>0.997</td>
+                                <td>0.123</td>
+                                <td>0.946</td>
+                                <td>155.403</td>
+                                <td>0.169</td>
+                                <td>0</td>
+                                <td>0.462</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.805</td>
+                                <td>9716</td>
+                                <td>0.964</td>
+                                <td>0.859</td>
+                                <td>0.865</td>
+                                <td>6.658</td>
+                                <td>0.235</td>
+                                <td>0.000</td>
+                                <td>0.045</td>
+                                <td>0.921</td>
+                                <td>324.098</td>
+                                <td>0.140</td>
+                                <td>0</td>
+                                <td>0.510</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.124</td>
+                                <td>9716</td>
+                                <td>0.837</td>
+                                <td>0.678</td>
+                                <td>0.660</td>
+                                <td>2.535</td>
+                                <td>0.235</td>
+                                <td>0.000</td>
+                                <td>0.056</td>
+                                <td>0.917</td>
+                                <td>468.981</td>
+                                <td>0.146</td>
+                                <td>0</td>
+                                <td>0.507</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.553</td>
+                                <td>9201</td>
+                                <td>0.998</td>
+                                <td>0.971</td>
+                                <td>0.972</td>
+                                <td>8.699</td>
+                                <td>0.147</td>
+                                <td>0.033</td>
+                                <td>0.042</td>
+                                <td>0.944</td>
+                                <td>161.982</td>
+                                <td>0.098</td>
+                                <td>0</td>
+                                <td>0.527</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.102</td>
+                                <td>9201</td>
+                                <td>0.864</td>
+                                <td>0.698</td>
+                                <td>0.681</td>
+                                <td>3.328</td>
+                                <td>0.147</td>
+                                <td>0.033</td>
+                                <td>0.052</td>
+                                <td>0.941</td>
+                                <td>298.428</td>
+                                <td>0.107</td>
+                                <td>0</td>
+                                <td>0.480</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.992</td>
+                                <td>0.806</td>
+                                <td>0.794</td>
+                                <td>3.632</td>
+                                <td>0.652</td>
+                                <td>0.000</td>
+                                <td>0.202</td>
+                                <td>0.680</td>
+                                <td>120.475</td>
+                                <td>0.113</td>
+                                <td>0</td>
+                                <td>0.531</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.006</td>
+                                <td>10000</td>
+                                <td>0.974</td>
+                                <td>0.711</td>
+                                <td>0.695</td>
+                                <td>2.204</td>
+                                <td>0.652</td>
+                                <td>0.000</td>
+                                <td>0.210</td>
+                                <td>0.701</td>
+                                <td>266.058</td>
+                                <td>0.132</td>
+                                <td>0</td>
+                                <td>0.517</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>1.265</td>
+                                <td>5352</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>0.972</strong></td>
+                                <td><strong>0.972</strong></td>
+                                <td><strong>9.764</strong></td>
+                                <td>0.072</td>
+                                <td>0.991</td>
+                                <td>0.064</td>
+                                <td>0.971</td>
+                                <td>60.036</td>
+                                <td>0.129</td>
+                                <td>0</td>
+                                <td>0.503</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.317</td>
+                                <td>5352</td>
+                                <td>0.884</td>
+                                <td>0.711</td>
+                                <td>0.695</td>
+                                <td>4.731</td>
+                                <td>0.072</td>
+                                <td>0.991</td>
+                                <td>0.078</td>
+                                <td>0.952</td>
+                                <td>162.394</td>
+                                <td>0.145</td>
+                                <td>0</td>
+                                <td>0.498</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>9.764</strong>, AUC: 1.000, F1: 0.972, MIA: 0.503). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.353</td>
+                                <td>4211</td>
+                                <td>0.999</td>
+                                <td>0.979</td>
+                                <td>0.979</td>
+                                <td>9.285</td>
+                                <td>0.073</td>
+                                <td>0.998</td>
+                                <td>0.086</td>
+                                <td>0.968</td>
+                                <td>107.363</td>
+                                <td>0.137</td>
+                                <td>208</td>
+                                <td>0.468</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.139</td>
+                                <td>4211</td>
+                                <td>0.955</td>
+                                <td>0.838</td>
+                                <td>0.830</td>
+                                <td>6.248</td>
+                                <td>0.073</td>
+                                <td>0.998</td>
+                                <td>0.097</td>
+                                <td>0.952</td>
+                                <td>202.260</td>
+                                <td>0.150</td>
+                                <td>208</td>
+                                <td>0.470</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.778</td>
+                                <td>10251</td>
+                                <td>0.976</td>
+                                <td>0.906</td>
+                                <td>0.908</td>
+                                <td>6.921</td>
+                                <td>0.225</td>
+                                <td>0.000</td>
+                                <td>0.035</td>
+                                <td>0.924</td>
+                                <td>400.217</td>
+                                <td>0.133</td>
+                                <td>93</td>
+                                <td>0.500</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.136</td>
+                                <td>10251</td>
+                                <td>0.901</td>
+                                <td>0.732</td>
+                                <td>0.716</td>
+                                <td>2.738</td>
+                                <td>0.225</td>
+                                <td>0.000</td>
+                                <td>0.045</td>
+                                <td>0.921</td>
+                                <td>540.636</td>
+                                <td>0.138</td>
+                                <td>93</td>
+                                <td>0.482</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.542</td>
+                                <td>9736</td>
+                                <td>0.997</td>
+                                <td>0.957</td>
+                                <td>0.957</td>
+                                <td>8.215</td>
+                                <td>0.139</td>
+                                <td>0.049</td>
+                                <td>0.038</td>
+                                <td>0.947</td>
+                                <td>232.356</td>
+                                <td>0.091</td>
+                                <td>97</td>
+                                <td>0.530</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.078</td>
+                                <td>9736</td>
+                                <td>0.912</td>
+                                <td>0.732</td>
+                                <td>0.716</td>
+                                <td>3.114</td>
+                                <td>0.139</td>
+                                <td>0.049</td>
+                                <td>0.047</td>
+                                <td>0.945</td>
+                                <td>367.448</td>
+                                <td>0.100</td>
+                                <td>97</td>
+                                <td>0.476</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.016</td>
+                                <td>10535</td>
+                                <td>0.999</td>
+                                <td>0.979</td>
+                                <td>0.979</td>
+                                <td>5.892</td>
+                                <td>0.617</td>
+                                <td>0.000</td>
+                                <td>0.168</td>
+                                <td>0.694</td>
+                                <td>194.276</td>
+                                <td>0.109</td>
+                                <td>88</td>
+                                <td>0.490</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.010</td>
+                                <td>10535</td>
+                                <td>0.999</td>
+                                <td>0.979</td>
+                                <td>0.979</td>
+                                <td>5.965</td>
+                                <td>0.617</td>
+                                <td>0.000</td>
+                                <td>0.175</td>
+                                <td>0.714</td>
+                                <td>339.941</td>
+                                <td>0.126</td>
+                                <td>88</td>
+                                <td>0.523</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>1.274</td>
+                                <td>5887</td>
+                                <td><strong>0.999</strong></td>
+                                <td><strong>0.986</strong></td>
+                                <td><strong>0.986</strong></td>
+                                <td><strong>9.707</strong></td>
+                                <td>0.069</td>
+                                <td>0.994</td>
+                                <td>0.056</td>
+                                <td>0.973</td>
+                                <td>111.523</td>
+                                <td>0.117</td>
+                                <td>170</td>
+                                <td>0.511</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.248</td>
+                                <td>5887</td>
+                                <td>0.941</td>
+                                <td>0.718</td>
+                                <td>0.702</td>
+                                <td>4.460</td>
+                                <td>0.069</td>
+                                <td>0.994</td>
+                                <td>0.068</td>
+                                <td>0.955</td>
+                                <td>214.862</td>
+                                <td>0.132</td>
+                                <td>170</td>
+                                <td>0.485</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>9.707</strong>, AUC: 0.999, F1: 0.986, MIA: 0.511). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_30</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>SMOTE RSB* Adaptado</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* Refinado</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* Refinado</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd30.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Autism Spectrum Disorder Screening - Adult (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32938952.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [73.22, 26.78], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

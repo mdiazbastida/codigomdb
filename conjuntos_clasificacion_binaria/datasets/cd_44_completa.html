@@ -1,0 +1,2626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_44: IBM HR Employee Attrition - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_44</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_44: IBM HR Employee Attrition</h1>
+            <p class="description">Conjunto de datos de Recursos Humanos para la predicción del abandono laboral. Integra perfiles demográficos, métricas financieras y escalas ordinales de satisfacción.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.88</td>
+                                    <td>0.95</td>
+                                    <td>0.91</td>
+                                    <td>247</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.54</td>
+                                    <td>0.32</td>
+                                    <td>0.40</td>
+                                    <td>47</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.85</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.71</td>
+                                    <td>0.63</td>
+                                    <td>0.66</td>
+                                    <td>294</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.82</td>
+                                    <td>0.85</td>
+                                    <td>0.83</td>
+                                    <td>294</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.76</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.83</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.85</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de degradación -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon" style="color: #e74c3c;">⬇️</span>
+                    <span class="arrow-label" style="color: #e74c3c;">Degradación</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.03 AUC</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.03 F1</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.06 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance">
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.89</td>
+                                    <td>0.85</td>
+                                    <td>0.87</td>
+                                    <td>247</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.38 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.16</span></td>
+                                    <td>0.47 <span class="improvement-indicator">⬆ +0.15</span></td>
+                                    <td>0.42 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>47</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.79</strong> <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.06</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.64 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.07</span></td>
+                                    <td>0.66 <span class="improvement-indicator">⬆ +0.03</span></td>
+                                    <td>0.65 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.01</span></td>
+                                    <td>294</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.81 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.01</span></td>
+                                    <td>0.79 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.06</span></td>
+                                    <td>0.80 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.03</span></td>
+                                    <td>294</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.73</span>
+                            <span class="improvement-badge negative">⬇ -0.03</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.80</span>
+                            <span class="improvement-badge negative">⬇ -0.03</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.79</span>
+                            <span class="improvement-badge negative">⬇ -0.06</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de degradación -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Cambios en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.54</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 54%; background: #f39c12;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.38</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 38%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value" style="color: #e74c3c;">⬇ -0.16</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.32</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 32%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.47</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 47%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.15</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.40</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 40%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.42</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 42%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value" style="color: #f39c12;">⬆ +0.02</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Employee Attrition Dataset (HR Analytics)</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">IBM Watson Analytics / Datos de Recursos Humanos</div>
+                    <div class="fuente-fecha">Disponible en repositorios públicos</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">Kaggle / IBM Watson Analytics</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset" target="_blank">Kaggle - IBM HR Analytics Attrition</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Tipo de problema:</span>
+                            <span class="metadata-value">Clasificación binaria (Attrition = Yes/No)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Área de aplicación:</span>
+                            <span class="metadata-value">Recursos Humanos, Gestión de Talento, Retención de Empleados</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Rotación de Empleados (Employee Attrition)</strong> contiene información sobre empleados <strong>actuales y anteriores</strong> de una empresa. El objetivo es determinar <strong>qué factores mantienen a los empleados</strong> en la compañía y cuáles <strong>promueven la salida</strong> de otros. Como analista de <strong>Recursos Humanos (HR)</strong>, se necesita identificar qué factores se pueden cambiar para <strong>prevenir la pérdida de talento valioso</strong>. Este dataset permite comprender cómo se relacionan los diferentes factores con la <strong>rotación de personal (attrition)</strong>, permitiendo a la organización <strong>atraer y retener</strong> a los mejores talentos.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🏢 Contexto del Dominio</h4>
+                        <p>La <strong>rotación de empleados</strong> es uno de los <strong>desafíos más significativos</strong> para las organizaciones modernas. La <strong>clave del éxito</strong> en cualquier organización es <strong>atraer y retener talento de alto nivel</strong>. Este dataset, utilizado en un <strong>caso de uso de Watson Analytics</strong>, permite a los analistas de RRHH:</p>
+                        <ul class="transformacion-lista">
+                            <li>Identificar <strong>factores predictivos</strong> de la rotación de empleados</li>
+                            <li>Comprender cómo <strong>variables como satisfacción, involucramiento y equilibrio</strong> afectan la retención</li>
+                            <li>Tomar <strong>decisiones basadas en datos</strong> para mejorar la retención</li>
+                            <li>Prevenir la pérdida de <strong>empleados valiosos</strong> y reducir costos de contratación</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene información de empleados con variables que incluyen <strong>datos demográficos</strong>, <strong>nivel educativo</strong>, <strong>satisfacción laboral</strong>, <strong>involucramiento</strong>, <strong>evaluación de desempeño</strong>, <strong>satisfacción con relaciones</strong> y <strong>equilibrio vida-trabajo</strong>, entre otras. La variable objetivo es <strong>Attrition</strong>, que indica si el empleado sigue en la empresa o ha dejado la organización.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Codificación / Escala</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Datos Demográficos</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Age</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Edad del empleado</td>
+                                        <td style="padding: 0.4rem;">años</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Gender</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Género del empleado</td>
+                                        <td style="padding: 0.4rem;">Male / Female</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MaritalStatus</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Estado civil</td>
+                                        <td style="padding: 0.4rem;">Single, Married, Divorced</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Education</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Nivel educativo</td>
+                                        <td style="padding: 0.4rem;">1 = Below College<br>2 = College<br>3 = Bachelor<br>4 = Master<br>5 = Doctor</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>EducationField</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Campo de estudio</td>
+                                        <td style="padding: 0.4rem;">Life Sciences, Medical, Marketing, etc.</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ffd93d; font-weight: bold;">B. Datos Laborales</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Department</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Departamento de trabajo</td>
+                                        <td style="padding: 0.4rem;">Sales, Research & Development, Human Resources</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>JobRole</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Rol del puesto</td>
+                                        <td style="padding: 0.4rem;">Manager, Executive, Sales Executive, etc.</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>JobLevel</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Nivel del puesto</td>
+                                        <td style="padding: 0.4rem;">1-5</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>YearsAtCompany</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Años en la empresa</td>
+                                        <td style="padding: 0.4rem;">años</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>YearsInCurrentRole</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Años en el rol actual</td>
+                                        <td style="padding: 0.4rem;">años</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>YearsWithCurrManager</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Años con el gerente actual</td>
+                                        <td style="padding: 0.4rem;">años</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #6bcb77; font-weight: bold;">C. Satisfacción y Compromiso</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>EnvironmentSatisfaction</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Satisfacción con el ambiente laboral</td>
+                                        <td style="padding: 0.4rem;">1 = Low<br>2 = Medium<br>3 = High<br>4 = Very High</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>JobInvolvement</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Nivel de involucramiento en el trabajo</td>
+                                        <td style="padding: 0.4rem;">1 = Low<br>2 = Medium<br>3 = High<br>4 = Very High</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>JobSatisfaction</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Satisfacción con el trabajo</td>
+                                        <td style="padding: 0.4rem;">1 = Low<br>2 = Medium<br>3 = High<br>4 = Very High</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>PerformanceRating</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Evaluación de desempeño</td>
+                                        <td style="padding: 0.4rem;">1 = Low<br>2 = Good<br>3 = Excellent<br>4 = Outstanding</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>RelationshipSatisfaction</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Satisfacción con las relaciones laborales</td>
+                                        <td style="padding: 0.4rem;">1 = Low<br>2 = Medium<br>3 = High<br>4 = Very High</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>WorkLifeBalance</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Equilibrio entre vida personal y laboral</td>
+                                        <td style="padding: 0.4rem;">1 = Bad<br>2 = Good<br>3 = Better<br>4 = Best</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff9ff3; font-weight: bold;">D. Otras Variables</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MonthlyIncome</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Ingreso mensual</td>
+                                        <td style="padding: 0.4rem;">unidades monetarias</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>StockOptionLevel</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Nivel de opciones de acciones</td>
+                                        <td style="padding: 0.4rem;">0-3</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>OverTime</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">¿Trabaja horas extras?</td>
+                                        <td style="padding: 0.4rem;">Yes / No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>NumCompaniesWorked</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Número de empresas anteriores</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">E. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Attrition</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Indica si el empleado ha dejado la empresa</td>
+                                        <td style="padding: 0.4rem;">Yes = Dejó la empresa<br>No = Permanece en la empresa</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">📊 Escalas de Satisfacción y Desempeño</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">1</th>
+                                        <th style="text-align: left; padding: 0.4rem;">2</th>
+                                        <th style="text-align: left; padding: 0.4rem;">3</th>
+                                        <th style="text-align: left; padding: 0.4rem;">4</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Education</strong></td>
+                                        <td style="padding: 0.4rem;">Below College</td>
+                                        <td style="padding: 0.4rem;">College</td>
+                                        <td style="padding: 0.4rem;">Bachelor</td>
+                                        <td style="padding: 0.4rem;">Master</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>EnvironmentSatisfaction</strong></td>
+                                        <td style="padding: 0.4rem;">Low</td>
+                                        <td style="padding: 0.4rem;">Medium</td>
+                                        <td style="padding: 0.4rem;">High</td>
+                                        <td style="padding: 0.4rem;">Very High</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>JobInvolvement</strong></td>
+                                        <td style="padding: 0.4rem;">Low</td>
+                                        <td style="padding: 0.4rem;">Medium</td>
+                                        <td style="padding: 0.4rem;">High</td>
+                                        <td style="padding: 0.4rem;">Very High</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>JobSatisfaction</strong></td>
+                                        <td style="padding: 0.4rem;">Low</td>
+                                        <td style="padding: 0.4rem;">Medium</td>
+                                        <td style="padding: 0.4rem;">High</td>
+                                        <td style="padding: 0.4rem;">Very High</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>PerformanceRating</strong></td>
+                                        <td style="padding: 0.4rem;">Low</td>
+                                        <td style="padding: 0.4rem;">Good</td>
+                                        <td style="padding: 0.4rem;">Excellent</td>
+                                        <td style="padding: 0.4rem;">Outstanding</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>RelationshipSatisfaction</strong></td>
+                                        <td style="padding: 0.4rem;">Low</td>
+                                        <td style="padding: 0.4rem;">Medium</td>
+                                        <td style="padding: 0.4rem;">High</td>
+                                        <td style="padding: 0.4rem;">Very High</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>WorkLifeBalance</strong></td>
+                                        <td style="padding: 0.4rem;">Bad</td>
+                                        <td style="padding: 0.4rem;">Good</td>
+                                        <td style="padding: 0.4rem;">Better</td>
+                                        <td style="padding: 0.4rem;">Best</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="color: #000; font-size: 0.85rem; margin-top: 0.3rem;">Nota: Education tiene 5 niveles (incluye Doctor como 5).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Attrition = Yes/No)</li>
+                            <li><strong>Dimensión:</strong> Multivariante</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (Numéricas, Categóricas, Ordinales)</li>
+                            <li><strong>Valores faltantes:</strong> No reportados</li>
+                            <li><strong>Área de aplicación:</strong> Recursos Humanos, Gestión de Talento, Retención de Empleados</li>
+                            <li><strong>Contexto:</strong> IBM Watson Analytics Use Case</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🙏 Agradecimientos</h4>
+                        <p>Este conjunto de datos se basa en el caso de uso de <strong>Watson Analytics</strong> para Recursos Humanos:</p>
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #4fc3f7; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.9rem; margin: 0;"><a href="https://www.ibm.com/communities/analytics/watson-analytics-blog/watson-analytics-use-case-for-hr-retaining-valuable-employees/" target="_blank" style="color: #4fc3f7;">Watson Analytics Use Case for HR: Retaining Valuable Employees</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos contiene <strong>información demográfica y laboral</strong> que podría considerarse sensible. Los datos han sido <strong>anonimizados</strong> y no contienen información personal identificable como nombres, direcciones o números de identificación. <strong>Restricción de confidencialidad:</strong> El uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la reidentificación de empleados.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es ideal para <strong>análisis de retención de empleados</strong> y <strong>predicción de rotación</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable objetivo <strong>Attrition</strong> está codificada como <strong>Yes</strong> (dejó la empresa) y <strong>No</strong> (permanece en la empresa)</li>
+                            <li>Las variables de satisfacción (<code>EnvironmentSatisfaction</code>, <code>JobSatisfaction</code>, <code>RelationshipSatisfaction</code>) y <code>WorkLifeBalance</code> son <strong>ordinales</strong> (1-4)</li>
+                            <li><code>Education</code> es ordinal con 5 niveles (1 = Below College a 5 = Doctor)</li>
+                            <li><code>PerformanceRating</code> es ordinal con 4 niveles (1 = Low a 4 = Outstanding)</li>
+                            <li>Codificar variables categóricas:
+                                <ul class="transformacion-lista">
+                                    <li><strong>Gender</strong>: Label Encoding (Male/Female → 1/0)</li>
+                                    <li><strong>MaritalStatus</strong>: One-Hot Encoding</li>
+                                    <li><strong>Department</strong>: One-Hot Encoding</li>
+                                    <li><strong>JobRole</strong>: One-Hot Encoding</li>
+                                    <li><strong>EducationField</strong>: One-Hot Encoding</li>
+                                    <li><strong>OverTime</strong>: Label Encoding (Yes/No → 1/0)</li>
+                                </ul>
+                            </li>
+                            <li>Las variables ordinales pueden tratarse como <strong>numéricas continuas</strong> o como <strong>categóricas ordenadas</strong> según el enfoque</li>
+                            <li>Estandarizar/normalizar variables numéricas (<code>Age</code>, <code>MonthlyIncome</code>, <code>YearsAtCompany</code>, etc.)</li>
+                            <li>Las variables de <strong>satisfacción y equilibrio</strong> suelen ser <strong>predictores importantes</strong> de la rotación</li>
+                            <li><code>OverTime</code> (horas extras) es frecuentemente un <strong>factor clave</strong> en la decisión de dejar la empresa</li>
+                            <li>Utilizar <strong>validación cruzada estratificada</strong> debido al posible desbalanceo entre clases (generalmente más empleados se quedan que se van)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Recursos Humanos</h4>
+                        <p>La <strong>predicción de rotación de empleados</strong> es una de las aplicaciones más valiosas del <strong>aprendizaje automático</strong> en el ámbito de <strong>Recursos Humanos</strong>. El costo de la rotación de empleados es <strong>significativo</strong> para las organizaciones:</p>
+                        <ul class="transformacion-lista">
+                            <li>El costo de <strong>reemplazar a un empleado</strong> puede ser de <strong>50% a 200%</strong> de su salario anual</li>
+                            <li>La <strong>pérdida de conocimiento</strong> y <strong>experiencia</strong> afecta la productividad y la innovación</li>
+                            <li>La <strong>rotación frecuente</strong> impacta negativamente en la <strong>moral</strong> y <strong>cultura organizacional</strong></li>
+                            <li>La <strong>predicción temprana</strong> permite intervenciones para retener a empleados valiosos</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset, basado en el <strong>caso de uso de Watson Analytics</strong>, ha sido fundamental para demostrar cómo el <strong>análisis predictivo</strong> puede ayudar a las organizaciones a identificar <strong>factores de retención</strong> y <strong>prevenir la pérdida de talento</strong>.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">IBM HR Analytics Employee Attrition Dataset. Kaggle / IBM Watson Analytics. https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset</pre>
+                        <button onclick="copyToClipboard('IBM HR Analytics Employee Attrition Dataset. Kaggle / IBM Watson Analytics. https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>IBM Watson Analytics - Use Case for HR: Retaining Valuable Employees. <a href="https://www.ibm.com/communities/analytics/watson-analytics-blog/watson-analytics-use-case-for-hr-retaining-valuable-employees/" target="_blank" style="color: #4fc3f7;">https://www.ibm.com/communities/analytics/watson-analytics-blog/watson-analytics-use-case-for-hr-retaining-valuable-employees/</a></li>
+                            <li>Kaggle - IBM HR Analytics Attrition Dataset. <a href="https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset" target="_blank" style="color: #4fc3f7;">https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset</a></li>
+                            <li>Hom, P. W., Lee, T. W., Shaw, J. D., & Hausknecht, J. P. (2017). One hundred years of employee turnover theory and research. <em>Journal of Applied Psychology</em>, 102(3), 530-545.</li>
+                            <li>Allen, D. G., Bryant, P. C., & Vardaman, J. M. (2010). Retaining talent: Replacing misconceptions with evidence-based strategies. <em>Academy of Management Perspectives</em>, 24(2), 48-64.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (HR Employee Attrition - IBM)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Limpieza inicial y eliminación de variables:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Eliminación de <strong>columnas constantes</strong> (varianza 0): <em>EmployeeCount</em>, <em>Over18</em>, <em>StandardHours</em> — variables sin poder predictivo.</li>
+                            <li>Eliminación de identificador: <em>EmployeeNumber</em> (identificador único de empleado) para evitar sobreajuste.</li>
+                            <li>Reducción de la dimensionalidad del dataset para mejorar la eficiencia del modelo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de la variable objetivo:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de <em>Attrition</em> de texto a binaria: <em>'No'</em> → <strong>0</strong> (El empleado permanece), <em>'Yes'</em> → <strong>1</strong> (El empleado abandonó la empresa).</li>
+                            <li>Documentación del objetivo: predicción de deserción laboral.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variable ordinal específica:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>BusinessTravel:</strong> Mapeo preservando orden lógico de frecuencia de viajes: 'Non-Travel' → 0, 'Travel_Rarely' → 1, 'Travel_Frequently' → 2.</li>
+                            <li>Documentación detallada del mapeo ordinal en la leyenda.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variables categóricas restantes:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de <strong>10 variables categóricas</strong> a valores numéricos mediante <em>Label Encoding</em>: <em>Gender</em>, <em>OverTime</em>, <em>MaritalStatus</em>, <em>Department</em>, <em>EducationField</em>, <em>JobRole</em>, entre otras.</li>
+                            <li>Generación de mapeo completo (código → valor original) en la leyenda para todas las variables categóricas.</li>
+                            <li>Preservación de la semántica original a través de la documentación.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación y documentación de variables numéricas/ordinales:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Escalas 1-4 (Satisfacción/Rating):</strong> <em>EnvironmentSatisfaction</em>, <em>JobInvolvement</em>, <em>JobSatisfaction</em>, <em>RelationshipSatisfaction</em>, <em>WorkLifeBalance</em> (1=Low/Bad, 4=Very High/Best), <em>PerformanceRating</em> (3=Excellent, 4=Outstanding).</li>
+                            <li><strong>Escalas 1-5:</strong> <em>Education</em> (1=Below College... 5=Doctor), <em>JobLevel</em>.</li>
+                            <li><strong>Variables continuas:</strong> <em>Age</em>, <em>DailyRate</em>, <em>DistanceFromHome</em>, <em>HourlyRate</em>, <em>MonthlyIncome</em>, <em>MonthlyRate</em>, <em>NumCompaniesWorked</em>, <em>PercentSalaryHike</em>, <em>TotalWorkingYears</em>, <em>YearsAtCompany</em>, <em>YearsInCurrentRole</em>, <em>YearsSinceLastPromotion</em>, <em>YearsWithCurrManager</em>.</li>
+                            <li>Documentación detallada de todas las variables con sus escalas y significados.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_hr_attrition.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de la eliminación de columnas constantes para transparencia metodológica.</li>
+                            <li>Mapeo completo de variables categóricas codificadas (10 variables) con sus valores originales.</li>
+                            <li>Descripción detallada de variables numéricas/ordinales con sus escalas (1-4, 1-5, continuas).</li>
+                            <li>Contextualización del dataset: predicción de deserción laboral en IBM.</li>
+                            <li>Estadísticas finales: total de instancias y tasa de attrition.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul>
+                            <li>Mantenimiento de las <strong>1,470 instancias</strong> (empleados) originales sin eliminación de filas.</li>
+                            <li>Dataset final con <strong>30 variables predictoras</strong> (mixtas: ordinales, categóricas codificadas y numéricas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>1,470 empleados</strong> de IBM con <strong>30 variables predictoras</strong> (demográficas, laborales, de satisfacción y de compensación) y <strong>1 variable objetivo binaria</strong> (Attrition). Desbalance moderado (~84% retención / ~16% deserción) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>gestión de talento y predicción de rotación laboral</strong>, donde factores como satisfacción, compensación, antigüedad y desarrollo profesional son determinantes.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🏢 <strong>Fuente:</strong> IBM HR Analytics Employee Attrition & Performance Dataset (IBM Watson Analytics).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variables de satisfacción (1-4):</strong> <em>EnvironmentSatisfaction</em>, <em>JobInvolvement</em>, <em>JobSatisfaction</em>, <em>RelationshipSatisfaction</em>, <em>WorkLifeBalance</em> — 1=Low/Bad, 4=Very High/Best.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    💰 <strong>Variables de compensación:</strong> <em>MonthlyIncome</em>, <em>DailyRate</em>, <em>HourlyRate</em>, <em>MonthlyRate</em>, <em>PercentSalaryHike</em>.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    ⏱️ <strong>Variables de antigüedad:</strong> <em>YearsAtCompany</em>, <em>TotalWorkingYears</em>, <em>NumCompaniesWorked</em>, <em>YearsInCurrentRole</em>, <em>YearsSinceLastPromotion</em>, <em>YearsWithCurrManager</em>.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_hr_attrition.txt</em> con mapeo completo de variables categóricas (10 variables), documentación de escalas ordinales y variables numéricas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Attrition</em> (1 = Empleado abandonó la empresa, 0 = Empleado permanece).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Eliminación de columnas constantes (EmployeeCount, Over18, StandardHours), eliminación de EmployeeNumber, codificación de target, codificación ordinal de BusinessTravel, Label Encoding de 10 variables categóricas.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción de RR.HH.</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>BusinessTravel</code></td>
+                            <td>Frecuencia de viajes de negocio</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: No viaja, 1: Raramente, 2: Frecuentemente</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Department</code></td>
+                            <td>Departamento de la empresa</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: HR, 1: R&D, 2: Sales</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Education</code></td>
+                            <td>Nivel educativo (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: Below College, 2: College, 3: Bachelor, 4: Master, 5: Doctor</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>EducationField</code></td>
+                            <td>Campo de estudio del empleado</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: HR, 1: Life Sciences, 2: Marketing, 3: Medical, 4: Other, 5: Technical Degree</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>EnvironmentSatisfaction</code></td>
+                            <td>Satisfacción con el entorno laboral</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: Bajo, 2: Medio, 3: Alto, 4: Muy Alto</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>JobInvolvement</code></td>
+                            <td>Nivel de implicación en el trabajo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: Bajo, 2: Medio, 3: Alto, 4: Muy Alto</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>JobLevel</code></td>
+                            <td>Nivel del puesto (jerarquía)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1-5 (nivel jerárquico)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>JobRole</code></td>
+                            <td>Rol / Puesto específico</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-8 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>JobSatisfaction</code></td>
+                            <td>Satisfacción general con el trabajo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: Bajo, 2: Medio, 3: Alto, 4: Muy Alto</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>MaritalStatus</code></td>
+                            <td>Estado civil del empleado</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Divorciado, 1: Casado, 2: Soltero</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>PerformanceRating</code></td>
+                            <td>Calificación de desempeño</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>3: Excelente, 4: Sobresaliente</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>RelationshipSatisfaction</code></td>
+                            <td>Satisfacción con relaciones laborales</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: Bajo, 2: Medio, 3: Alto, 4: Muy Alto</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>StockOptionLevel</code></td>
+                            <td>Nivel de opciones sobre acciones</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Sin opciones, 1: Nivel 1, 2: Nivel 2, 3: Nivel 3</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>TrainingTimesLastYear</code></td>
+                            <td>Capacitaciones recibidas en el último año</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-6 (número de capacitaciones)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>WorkLifeBalance</code></td>
+                            <td>Equilibrio entre vida y trabajo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: Malo, 2: Regular, 3: Bueno, 4: Excelente</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Age</code></td>
+                            <td>Edad del empleado</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>18 - 60</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>DailyRate</code></td>
+                            <td>Tarifa diaria del empleado</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>103 - 1,495</td>
+                            <td>moneda</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>DistanceFromHome</code></td>
+                            <td>Distancia desde el hogar al trabajo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1 - 29</td>
+                            <td>km</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>HourlyRate</code></td>
+                            <td>Tarifa por hora del empleado</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>30 - 100</td>
+                            <td>moneda</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MonthlyIncome</code></td>
+                            <td>Ingreso mensual del empleado</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1,009 - 19,973</td>
+                            <td>moneda</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MonthlyRate</code></td>
+                            <td>Tarifa mensual del empleado</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>2,094 - 26,999</td>
+                            <td>moneda</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>NumCompaniesWorked</code></td>
+                            <td>Número de empresas donde trabajó</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 9</td>
+                            <td>empresas</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>PercentSalaryHike</code></td>
+                            <td>Porcentaje de aumento salarial</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>11 - 25</td>
+                            <td>%</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>TotalWorkingYears</code></td>
+                            <td>Años totales de experiencia laboral</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 40</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>YearsAtCompany</code></td>
+                            <td>Años en la empresa actual</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 36</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>YearsInCurrentRole</code></td>
+                            <td>Años en el puesto actual</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 17</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>YearsSinceLastPromotion</code></td>
+                            <td>Años desde la última promoción</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 15</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>YearsWithCurrManager</code></td>
+                            <td>Años con el jefe actual</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 17</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Gender</code></td>
+                            <td>Género del empleado</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Femenino, 1: Masculino</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>OverTime</code></td>
+                            <td>Realiza horas extras</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Attrition</code></td>
+                            <td>Deserción del empleado (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Permanece, 1: Abandona</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">31</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">13</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Deserción (Attrition)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Deserción de Empleados de IBM HR. Comprender estas 
+                codificaciones es fundamental para la correcta interpretación de los resultados de 
+                retención de talento.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: BusinessTravel -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>BusinessTravel</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                    <th>Riesgo Deserción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Non-Travel (No viaja)</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Travel_Rarely (Viaja raramente)</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Travel_Frequently (Viaja frecuentemente)</td><td style="color: #e74c3c;">✗ Alto</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">✈️</span>
+                            <p><strong>Factor de riesgo:</strong> Los empleados que viajan frecuentemente tienen mayor probabilidad de deserción.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Department -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Department</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Human Resources (Recursos Humanos)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Research & Development (I+D)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Sales (Ventas)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">🏢</span>
+                            <p><strong>Observación:</strong> Los departamentos de Ventas y RR.HH. suelen tener tasas de deserción más altas que I+D.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Education -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Education</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>Below College (Por debajo de universidad)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>College (Universidad)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Bachelor (Licenciatura)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Master (Maestría)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Doctor (Doctorado)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">🎓</span>
+                            <p><strong>Orden lógico:</strong> Mayor nivel educativo se asocia con mayor especialización.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: EducationField -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>EducationField</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Human Resources (Recursos Humanos)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Life Sciences (Ciencias de la Vida)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Marketing</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Medical (Medicina)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Other (Otro)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Technical Degree (Título Técnico)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variables de Satisfacción (1-4) -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables de Satisfacción</span>
+                        <span class="leyenda-tipo" style="background: #3498db;">Escala 1-4</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Variables: EnvironmentSatisfaction, JobSatisfaction, RelationshipSatisfaction, JobInvolvement</strong>
+                        </p>
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                    <th>Riesgo Deserción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>Bajo (Low)</td><td style="color: #e74c3c;">✗ Alto</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Medio (Medium)</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Alto (High)</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Muy Alto (Very High)</td><td style="color: #27ae60;">✓ Muy bajo</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">📊</span>
+                            <p><strong>Factor protector:</strong> Mayor satisfacción se asocia con menor probabilidad de deserción.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: JobLevel -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>JobLevel</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>Nivel 1 (Entrada/Junior)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Nivel 2</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Nivel 3</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Nivel 4 (Senior)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Nivel 5 (Directivo)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">📈</span>
+                            <p><strong>Jerarquía:</strong> Niveles más altos suelen tener menor deserción, pero con mayor responsabilidad.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: JobRole -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>JobRole</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Healthcare Representative (Representante de Salud)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Human Resources (Recursos Humanos)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Laboratory Technician (Técnico de Laboratorio)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Manager (Gerente)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Manufacturing Director (Director de Manufactura)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Research Director (Director de Investigación)</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>Research Scientist (Científico de Investigación)</td></tr>
+                                <tr><td><span class="codigo">7</span></td><td>Sales Executive (Ejecutivo de Ventas)</td></tr>
+                                <tr><td><span class="codigo">8</span></td><td>Sales Representative (Representante de Ventas)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">💼</span>
+                            <p><strong>Observación:</strong> Roles de ventas y técnicos suelen tener mayor rotación que roles de investigación y gerencia.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: MaritalStatus -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>MaritalStatus</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Divorced (Divorciado)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Married (Casado)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Single (Soltero)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">💑</span>
+                            <p><strong>Observación:</strong> Empleados solteros suelen tener mayor movilidad laboral que los casados.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: PerformanceRating -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>PerformanceRating</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">3</span></td><td>Excellent (Excelente)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Outstanding (Sobresaliente)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⭐</span>
+                            <p><strong>Nota:</strong> No hay valores 1 o 2 en este dataset (todos los empleados tienen buen desempeño).</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: StockOptionLevel -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>StockOptionLevel</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Sin opciones sobre acciones</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Nivel 1</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Nivel 2</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Nivel 3 (Mayor compensación variable)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">📈</span>
+                            <p><strong>Factor de retención:</strong> Mayor nivel de opciones sobre acciones se asocia con menor deserción.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: TrainingTimesLastYear -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>TrainingTimesLastYear</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>0 capacitaciones</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>1 capacitación</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>2 capacitaciones</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>3 capacitaciones</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>4 capacitaciones</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>5 capacitaciones</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>6 capacitaciones</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">📚</span>
+                            <p><strong>Factor de retención:</strong> Más capacitaciones se asocian con mayor desarrollo y retención.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: WorkLifeBalance -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>WorkLifeBalance</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                    <th>Riesgo Deserción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>Malo (Bad)</td><td style="color: #e74c3c;">✗ Alto</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Regular (Average)</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Bueno (Good)</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Excelente (Excellent)</td><td style="color: #27ae60;">✓ Muy bajo</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">⚖️</span>
+                            <p><strong>Factor clave:</strong> El equilibrio vida-trabajo es uno de los predictores más importantes de deserción.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato común:</strong> 0 = No / Ausencia, 1 = Sí / Presencia
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Gender</code></span>
+                                <span class="binaria-desc">Género (0: Femenino, 1: Masculino)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>OverTime</code></span>
+                                <span class="binaria-desc">Horas extras (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Attrition</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Deserción (0: Permanece, 1: Abandona)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Todas las variables binarias están codificadas como <strong>0 = No</strong> y <strong>1 = Sí</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 15
+                        <ul>
+                            <li>BusinessTravel (3 niveles - ordinal)</li>
+                            <li>Department (3 departamentos)</li>
+                            <li>Education (5 niveles - ordinal)</li>
+                            <li>EducationField (6 campos)</li>
+                            <li>EnvironmentSatisfaction (1-4 - ordinal)</li>
+                            <li>JobInvolvement (1-4 - ordinal)</li>
+                            <li>JobLevel (1-5 - ordinal)</li>
+                            <li>JobRole (9 roles)</li>
+                            <li>JobSatisfaction (1-4 - ordinal)</li>
+                            <li>MaritalStatus (3 estados)</li>
+                            <li>PerformanceRating (3-4 - ordinal)</li>
+                            <li>RelationshipSatisfaction (1-4 - ordinal)</li>
+                            <li>StockOptionLevel (0-3 - ordinal)</li>
+                            <li>TrainingTimesLastYear (0-6 - ordinal)</li>
+                            <li>WorkLifeBalance (1-4 - ordinal)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 3
+                        <ul>
+                            <li>Gender (Género)</li>
+                            <li>OverTime (Horas extras)</li>
+                            <li>🎯 Attrition (Objetivo - Deserción)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 13
+                        <ul>
+                            <li>Age, DailyRate, DistanceFromHome, HourlyRate</li>
+                            <li>MonthlyIncome, MonthlyRate, NumCompaniesWorked</li>
+                            <li>PercentSalaryHike, TotalWorkingYears</li>
+                            <li>YearsAtCompany, YearsInCurrentRole</li>
+                            <li>YearsSinceLastPromotion, YearsWithCurrManager</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Retención:</strong>
+                        <ul>
+                            <li><strong>Factor crítico:</strong> <code>OverTime</code> (horas extras) - empleados con horas extras tienen mayor riesgo</li>
+                            <li><strong>Viajes:</strong> <code>BusinessTravel</code> frecuente aumenta significativamente la deserción</li>
+                            <li><strong>Ingresos:</strong> <code>MonthlyIncome</code> bajo respecto al mercado es un predictor clave</li>
+                            <li><strong>Antigüedad:</strong> <code>YearsAtCompany</code> &lt; 5 años es período de alto riesgo</li>
+                            <li><strong>Satisfacción:</strong> Baja satisfacción (1-2) en cualquier variable es señal de alerta</li>
+                            <li><strong>Desarrollo:</strong> <code>TrainingTimesLastYear</code> = 0 indica falta de inversión en desarrollo</li>
+                            <li><strong>Promociones:</strong> <code>YearsSinceLastPromotion</code> &gt; 5 años puede indicar estancamiento</li>                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Refinado</div>
+                    <p><strong>Versión:</strong> 2.1.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.xxxx/zenodo.xxxxxxx" target="_blank">10.xxxx/zenodo.xxxxxxx</a></p>
+                    <p><strong>Código fuente:</strong> <a href="https://github.com/tu-usuario/dataset-sintetico-uci" target="_blank">https://github.com/tu-usuario/dataset-sintetico-uci</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- FÍSICA TEMPORAL -->
+                        <li><code>TotalWorkingYears > 60 → TotalWorkingYears < 45 (Años trabajando realistas)</code></li>
+                        <li><code>YearsAtCompany > 40 → TotalWorkingYears ≥ 40 (Años en empresa ≤ años trabajando)</code></li>
+                        <li><code>YearsInCurrentRole > 40 → YearsAtCompany ≥ 40 (Años en rol ≤ años en empresa)</code></li>
+                        <li><code>YearsWithCurrManager > 0 → YearsAtCompany ≥ 1 (Tiene manager → al menos 1 año en empresa)</code></li>
+                        <li><code>YearsAtCompany == 0 → YearsSinceLastPromotion = 0 (Sin antigüedad → sin promoción)</code></li>
+                        
+                        <!-- ORG CHART - Sales -->
+                        <li><code>JobRole == 7 (Sales Executive) → Department = 2 (Sales)</code></li>
+                        <li><code>JobRole == 8 (Sales Representative) → Department = 2 (Sales)</code></li>
+                        
+                        <!-- ORG CHART - R&D -->
+                        <li><code>JobRole == 6 (Research Scientist) → Department = 1 (R&D)</code></li>
+                        <li><code>JobRole == 2 (Laboratory Technician) → Department = 1 (R&D)</code></li>
+                        <li><code>JobRole == 4 (Manufacturing Director) → Department = 1 (R&D)</code></li>
+                        <li><code>JobRole == 0 (Healthcare Representative) → Department = 1 (R&D)</code></li>
+                        <li><code>JobRole == 5 (Research Director) → Department = 1 (R&D)</code></li>
+                        
+                        <!-- ORG CHART - HR -->
+                        <li><code>JobRole == 1 (Human Resources) → Department = 0 (HR)</code></li>
+                        
+                        <!-- JERARQUÍA -->
+                        <li><code>JobRole == 8 (Sales Representative) → JobLevel = 1 (Junior)</code></li>
+                        <li><code>JobRole == 5 (Research Director) → JobLevel ≥ 3 (Senior)</code></li>
+                        <li><code>JobRole == 3 (Manager) → JobLevel ≥ 3 (Senior)</code></li>
+                        
+                        <!-- BANDA SALARIAL -->
+                        <li><code>JobLevel == 1 → MonthlyIncome < 5000 (Nivel 1 → ingreso bajo)</code></li>
+                        <li><code>JobLevel == 5 → MonthlyIncome > 17000 (Nivel 5 → ingreso alto)</code></li>
+                        
+                        <!-- COHERENCIA DESEMPEÑO -->
+                        <li><code>PercentSalaryHike > 22 → PerformanceRating = 4 (Alto aumento → rating excelente)</code></li>
+                        <li><code>PerformanceRating == 3 → PercentSalaryHike ≤ 21 (Rating bueno → aumento moderado)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>Random Oversampling</strong></td>
+                                <td>1</td>
+                                <td>1478</td>
+                                <td><strong>0.779</strong></td>
+                                <td>0.833</td>
+                                <td>0.861</td>
+                                <td><strong>8.213</strong></td>
+                                <td>0.120</td>
+                                <td>0.294</td>
+                                <td>0.022</td>
+                                <td>0.969</td>
+                                <td>55.885</td>
+                                <td>0</td>
+                                <td>1478</td>
+                                <td>0.518</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>1478</td>
+                                <td>0.710</td>
+                                <td>0.817</td>
+                                <td>0.827</td>
+                                <td>3.870</td>
+                                <td>0.149</td>
+                                <td>0.158</td>
+                                <td>0.036</td>
+                                <td>0.953</td>
+                                <td>56.482</td>
+                                <td>0.072</td>
+                                <td>882</td>
+                                <td>0.562</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>1478</td>
+                                <td>0.705</td>
+                                <td>0.838</td>
+                                <td>0.854</td>
+                                <td>6.005</td>
+                                <td>0.150</td>
+                                <td>0.135</td>
+                                <td>0.036</td>
+                                <td>0.952</td>
+                                <td>56.158</td>
+                                <td>0.073</td>
+                                <td>882</td>
+                                <td>0.557</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.032</td>
+                                <td>1455</td>
+                                <td>0.715</td>
+                                <td>0.810</td>
+                                <td>0.830</td>
+                                <td>3.825</td>
+                                <td>0.144</td>
+                                <td>0.182</td>
+                                <td>0.034</td>
+                                <td>0.956</td>
+                                <td>57.961</td>
+                                <td>0.071</td>
+                                <td>882</td>
+                                <td>0.578</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1.034</td>
+                                <td>1454</td>
+                                <td>0.746</td>
+                                <td>0.818</td>
+                                <td>0.823</td>
+                                <td>4.898</td>
+                                <td>0.140</td>
+                                <td>0.228</td>
+                                <td>0.022</td>
+                                <td>0.972</td>
+                                <td>60.913</td>
+                                <td>0.077</td>
+                                <td>882</td>
+                                <td>0.545</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1.034</td>
+                                <td>1454</td>
+                                <td>0.757</td>
+                                <td>0.835</td>
+                                <td>0.833</td>
+                                <td>6.486</td>
+                                <td>0.144</td>
+                                <td>0.217</td>
+                                <td>0.021</td>
+                                <td>0.973</td>
+                                <td>62.830</td>
+                                <td>0.077</td>
+                                <td>882</td>
+                                <td>0.586</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>1478</td>
+                                <td>0.811</td>
+                                <td>0.824</td>
+                                <td>0.861</td>
+                                <td>4.268</td>
+                                <td>0.333</td>
+                                <td>0.000</td>
+                                <td>0.210</td>
+                                <td>0.599</td>
+                                <td>82.332</td>
+                                <td>0.156</td>
+                                <td>882</td>
+                                <td>0.528</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>1</td>
+                                <td>1478</td>
+                                <td>0.802</td>
+                                <td>0.844</td>
+                                <td>0.874</td>
+                                <td>6.106</td>
+                                <td>0.318</td>
+                                <td>0.002</td>
+                                <td>0.199</td>
+                                <td>0.632</td>
+                                <td>81.406</td>
+                                <td>0.168</td>
+                                <td>879</td>
+                                <td>0.522</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Random Oversampling</strong> 
+                    (TabDSFidelity: <strong>8.213</strong>, AUC: 0.779, F1: 0.833, MIA: 0.518). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.695</td>
+                                <td>7981</td>
+                                <td>0.758</td>
+                                <td>0.839</td>
+                                <td>0.864</td>
+                                <td>8.617</td>
+                                <td>0.170</td>
+                                <td>0.326</td>
+                                <td>0.040</td>
+                                <td>0.969</td>
+                                <td>96.103</td>
+                                <td>0.124</td>
+                                <td>2</td>
+                                <td>0.551</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.695</td>
+                                <td>7981</td>
+                                <td>0.736</td>
+                                <td>0.836</td>
+                                <td>0.864</td>
+                                <td>8.307</td>
+                                <td>0.170</td>
+                                <td>0.326</td>
+                                <td>0.036</td>
+                                <td>0.970</td>
+                                <td>272.260</td>
+                                <td>0.121</td>
+                                <td>2</td>
+                                <td>0.565</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.019</td>
+                                <td>10000</td>
+                                <td>0.680</td>
+                                <td>0.704</td>
+                                <td>0.660</td>
+                                <td>2.993</td>
+                                <td>0.289</td>
+                                <td>0.000</td>
+                                <td>0.060</td>
+                                <td>0.933</td>
+                                <td>801.889</td>
+                                <td>0.264</td>
+                                <td>0</td>
+                                <td>0.558</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.019</td>
+                                <td>10000</td>
+                                <td>0.699</td>
+                                <td>0.684</td>
+                                <td>0.636</td>
+                                <td>2.825</td>
+                                <td>0.289</td>
+                                <td>0.000</td>
+                                <td>0.059</td>
+                                <td>0.935</td>
+                                <td>974.569</td>
+                                <td>0.261</td>
+                                <td>0</td>
+                                <td>0.551</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.655</td>
+                                <td>10000</td>
+                                <td>0.819</td>
+                                <td>0.846</td>
+                                <td>0.850</td>
+                                <td>8.179</td>
+                                <td>0.253</td>
+                                <td>0.005</td>
+                                <td>0.019</td>
+                                <td>0.964</td>
+                                <td>344.674</td>
+                                <td>0.193</td>
+                                <td>0</td>
+                                <td>0.505</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>TVAE + Reglas del Dominio</strong></td>                    
+                                <td>1.655</td>
+                                <td>10000</td>
+                                <td><strong>0.836</strong></td>
+                                <td><strong>0.866</strong></td>
+                                <td><strong>0.871</strong></td>
+                                <td><strong>8.785</strong></td>
+                                <td>0.253</td>
+                                <td>0.005</td>
+                                <td>0.019</td>
+                                <td>0.964</td>
+                                <td>520.230</td>
+                                <td>0.193</td>
+                                <td>0</td>
+                                <td>0.507</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.783</td>
+                                <td>0.811</td>
+                                <td>0.799</td>
+                                <td>4.115</td>
+                                <td>0.601</td>
+                                <td>0.000</td>
+                                <td>1.063</td>
+                                <td>0.624</td>
+                                <td>124.617</td>
+                                <td>0.382</td>
+                                <td>0</td>
+                                <td>0.581</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.788</td>
+                                <td>0.803</td>
+                                <td>0.789</td>
+                                <td>4.087</td>
+                                <td>0.600</td>
+                                <td>0.000</td>
+                                <td>0.983</td>
+                                <td>0.622</td>
+                                <td>295.718</td>
+                                <td>0.360</td>
+                                <td>0</td>
+                                <td>0.572</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.496</td>
+                                <td>8342</td>
+                                <td>0.748</td>
+                                <td>0.847</td>
+                                <td>0.867</td>
+                                <td>8.405</td>
+                                <td>0.173</td>
+                                <td>0.264</td>
+                                <td>0.040</td>
+                                <td>0.969</td>
+                                <td>80.165</td>
+                                <td>0.155</td>
+                                <td>0</td>
+                                <td>0.567</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.496</td>
+                                <td>8342</td>
+                                <td>0.747</td>
+                                <td>0.846</td>
+                                <td>0.864</td>
+                                <td>8.367</td>
+                                <td>0.173</td>
+                                <td>0.264</td>
+                                <td>0.037</td>
+                                <td>0.970</td>
+                                <td>230.132</td>
+                                <td>0.152</td>
+                                <td>0</td>
+                                <td>0.559</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>TVAE + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>8.785</strong>, AUC: 0.836, F1: 0.866, MIA: 0.507). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.556</td>
+                                <td>9459</td>
+                                <td>0.740</td>
+                                <td>0.847</td>
+                                <td>0.871</td>
+                                <td>7.142</td>
+                                <td>0.159</td>
+                                <td>0.305</td>
+                                <td>0.033</td>
+                                <td>0.971</td>
+                                <td>187.658</td>
+                                <td>0.106</td>
+                                <td>318</td>
+                                <td>0.573</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.556</td>
+                                <td>9459</td>
+                                <td>0.767</td>
+                                <td>0.828</td>
+                                <td>0.857</td>
+                                <td>7.030</td>
+                                <td>0.159</td>
+                                <td>0.305</td>
+                                <td>0.031</td>
+                                <td>0.972</td>
+                                <td>364.724</td>
+                                <td>0.104</td>
+                                <td>318</td>
+                                <td>0.557</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.017</td>
+                                <td>11478</td>
+                                <td>0.741</td>
+                                <td>0.797</td>
+                                <td>0.793</td>
+                                <td>2.713</td>
+                                <td>0.262</td>
+                                <td>0.000</td>
+                                <td>0.050</td>
+                                <td>0.940</td>
+                                <td>893.284</td>
+                                <td>0.229</td>
+                                <td>264</td>
+                                <td>0.586</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.017</td>
+                                <td>11478</td>
+                                <td>0.759</td>
+                                <td>0.806</td>
+                                <td>0.796</td>
+                                <td>3.521</td>
+                                <td>0.262</td>
+                                <td>0.000</td>
+                                <td>0.049</td>
+                                <td>0.941</td>
+                                <td>1063.770</td>
+                                <td>0.225</td>
+                                <td>264</td>
+                                <td>0.579</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.548</td>
+                                <td>11478</td>
+                                <td>0.811</td>
+                                <td>0.845</td>
+                                <td>0.850</td>
+                                <td>7.316</td>
+                                <td>0.225</td>
+                                <td>0.008</td>
+                                <td>0.018</td>
+                                <td>0.966</td>
+                                <td>437.170</td>
+                                <td>0.168</td>
+                                <td>264</td>
+                                <td>0.525</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>TVAE + Reglas del Dominio</strong></td>                    
+                                <td>1.548</td>
+                                <td>11478</td>
+                                <td>0.799</td>
+                                <td><strong>0.854</strong></td>
+                                <td>0.861</td>
+                                <td><strong>7.478</strong></td>
+                                <td>0.225</td>
+                                <td>0.007</td>
+                                <td>0.018</td>
+                                <td>0.966</td>
+                                <td>613.876</td>
+                                <td>0.168</td>
+                                <td>264</td>
+                                <td>0.528</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>11478</td>
+                                <td>0.813</td>
+                                <td>0.871</td>
+                                <td>0.884</td>
+                                <td>6.000</td>
+                                <td>0.525</td>
+                                <td>0.000</td>
+                                <td>0.687</td>
+                                <td>0.639</td>
+                                <td>214.917</td>
+                                <td>0.332</td>
+                                <td>264</td>
+                                <td>0.559</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1</td>
+                                <td>11478</td>
+                                <td>0.799</td>
+                                <td>0.839</td>
+                                <td>0.861</td>
+                                <td>4.351</td>
+                                <td>0.524</td>
+                                <td>0.000</td>
+                                <td>0.634</td>
+                                <td>0.641</td>
+                                <td>385.297</td>
+                                <td>0.313</td>
+                                <td>264</td>
+                                <td>0.545</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.406</td>
+                                <td>9820</td>
+                                <td>0.736</td>
+                                <td>0.852</td>
+                                <td>0.871</td>
+                                <td>6.996</td>
+                                <td>0.162</td>
+                                <td>0.259</td>
+                                <td>0.034</td>
+                                <td>0.970</td>
+                                <td>159.774</td>
+                                <td>0.130</td>
+                                <td>317</td>
+                                <td>0.570</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.406</td>
+                                <td>9820</td>
+                                <td>0.745</td>
+                                <td>0.849</td>
+                                <td>0.867</td>
+                                <td>7.101</td>
+                                <td>0.162</td>
+                                <td>0.259</td>
+                                <td>0.032</td>
+                                <td>0.971</td>
+                                <td>310.509</td>
+                                <td>0.128</td>
+                                <td>317</td>
+                                <td>0.577</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>TVAE + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>7.478</strong>, AUC: 0.799, F1: 0.854, MIA: 0.528). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_44</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>Random Oversampling</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>TVAE + Reglas del Dominio</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>TVAE + Reglas del Dominio</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd44.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Employee Attrition Prediction (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32946326.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [83.79, 16.21], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

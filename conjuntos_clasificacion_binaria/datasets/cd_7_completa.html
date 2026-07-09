@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_7: Infección Urinaria (Sepsis de origen urinario) - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_7</span>                
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>Infección Urinaria (Sepsis de origen urinario)</h1>
+            <p class="description">Conjunto de datos clínico enfocado en Sepsis de Origen Urinario. Integra variables microbiológicas típicas del tracto urinario (E. coli, Klebsiella) con intervenciones urológicas específicas (catéter doble J).</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.17</td>
+                                    <td>0.06</td>
+                                    <td>0.08</td>
+                                    <td>18</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.60</td>
+                                    <td>0.84</td>
+                                    <td>0.70</td>
+                                    <td>31</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.55</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.39</td>
+                                    <td>0.45</td>
+                                    <td>0.39</td>
+                                    <td>49</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.44</td>
+                                    <td>0.55</td>
+                                    <td>0.48</td>
+                                    <td>49</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.65</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.48</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.55</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.11 AUC</span>
+                        <span class="improvement-tag">⬆ +0.21 F1</span>
+                        <span class="improvement-tag">⬆ +0.14 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.60</td>
+                                    <td>0.50</td>
+                                    <td>0.55</td>
+                                    <td>18</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.74 <span class="improvement-indicator">⬆ +0.14</span></td>
+                                    <td>0.81 <span class="improvement-indicator">⬇ -0.03</span></td>
+                                    <td>0.77 <span class="improvement-indicator">⬆ +0.07</span></td>
+                                    <td>31</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.69</strong> <span class="improvement-indicator">⬆ +0.14</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.67 <span class="improvement-indicator">⬆ +0.28</span></td>
+                                    <td>0.65 <span class="improvement-indicator">⬆ +0.20</span></td>
+                                    <td>0.66 <span class="improvement-indicator">⬆ +0.27</span></td>
+                                    <td>49</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.69 <span class="improvement-indicator">⬆ +0.25</span></td>
+                                    <td>0.69 <span class="improvement-indicator">⬆ +0.14</span></td>
+                                    <td>0.69 <span class="improvement-indicator">⬆ +0.21</span></td>
+                                    <td>49</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.76</span>
+                            <span class="improvement-badge positive">⬆ +0.11</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.69</span>
+                            <span class="improvement-badge positive">⬆ +0.21</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.69</span>
+                            <span class="improvement-badge positive">⬆ +0.14</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.60</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 60%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.74</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 74%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.14</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.84</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 84%; background: #2ecc71;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.81</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 81%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬇ -0.03</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.70</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 70%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.77</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 77%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.07</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+    <div class="fuente-original-section" id="fuente">
+        <h2>📚 Fuente Original del Conjunto</h2>
+        
+        <div class="fuente-card">
+            <div class="fuente-header">
+                <div class="fuente-titulo">
+                    <h3>Neumonía Grave Adquirida en la Comunidad</h3>
+                    <span class="fuente-version">v1.0</span>
+                </div>
+                <div class="fuente-autores">Datos clínicos hospitalarios</div>
+                <div class="fuente-fecha">Publicado: 2017-2024</div>
+            </div>
+            
+            <div class="fuente-body">
+                <div class="fuente-metadata">
+                    <div class="metadata-item">
+                        <span class="metadata-label">Repositorio:</span>
+                        <span class="metadata-value">Datos institucionales</span>
+                    </div>                    
+                    <div class="metadata-item">
+                        <span class="metadata-label">Licencia:</span>
+                        <span class="metadata-value">CC BY-NC 4.0</span>
+                    </div>
+                </div>
+                
+                <div class="fuente-section">
+                    <h4>📄 Resumen (Abstract)</h4>
+                    <p>Conjunto de datos clínico enfocado en la Sepsis de Origen Urinario. Se distingue por integrar variables microbiológicas típicas del tracto urinario (E. coli, Klebsiella) con intervenciones urológicas específicas (Colocación de catéter doble J).</p>
+                </div>
+                
+                <div class="fuente-section">
+                    <h4>🔬 Métodos</h4>
+                    <p>Recolección retrospectiva de registros electrónicos. Anonimización mediante cifrado.</p>
+                </div>
+                
+                <div class="fuente-section">
+                    <h4>⚖️ Ética y Privacidad</h4>
+                    <p>Estudio aprobado por el comité de ética institucional bajo exención de consentimiento informado. <strong>Restricción de confidencialidad:</strong> En estricto cumplimiento de los protocolos de privacidad hospitalaria, el comité no autoriza la divulgación pública de los microdatos a nivel de paciente, ni en su versión original ni en sus variantes sintéticas generadas. La publicación se restringe exclusivamente a las métricas de evaluación, resultados agregados y metodología del modelo.</p>
+                </div>
+                
+                <div class="citation-box">
+                    <h4>📖 Cómo citar la fuente original</h4>
+                    <pre class="citation-block">Datos clínicos anonimizados de pacientes con neumonía grave. Servicio de Terapia Intensiva. Hospital Universitario "Arnaldo Milián Castro". Villa Clara. Cuba.</pre>
+                    <button onclick="copyToClipboard('Datos clínicos anonimizados de pacientes con neumonía grave. Hospital Universitario "Arnaldo Milián Castro". Villa Clara. Cuba.')" class="btn-copy-small">Copiar cita</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+    <div class="transformacion-section" id="transformacion">
+        <h2>🔄 Transformaciones Aplicadas</h2>
+        
+        <div class="transformacion-card">
+            <h3>Modificaciones realizadas al conjunto original</h3>
+            <ul class="transformacion-lista">                
+                <li><strong>Codificación de categóricas:</strong> Transformación a valores numéricos.</li>                
+            </ul>            
+        </div>
+    </div>
+    
+    <div class="diccionario-section" id="diccionario">
+        <h2>📋 Diccionario de Datos Detallado</h2>
+        <div class="diccionario-filtros">
+            <button class="filtro-btn active" data-filter="all">Todos</button>
+            <button class="filtro-btn" data-filter="binario">Binario</button>
+            <button class="filtro-btn" data-filter="categórico">Categórico</button>
+            <button class="filtro-btn" data-filter="numérico">Numérico</button>
+        </div>
+        <div class="table-container">
+            <table class="data-dictionary" id="data-dictionary-table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Descripción Clínica</th>
+                        <th>Tipo</th>
+                        <th>Rango / Categorías</th>
+                        <th>Unidad</th>
+                        <th>¿Objetivo?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Variables Numéricas -->
+                    <tr data-tipo="numérico">
+                        <td class="var-name"><code>Edad</code></td>
+                        <td>Edad del paciente al momento del ingreso</td>
+                        <td><span class="badge-tipo numérico">Numérico</span></td>
+                        <td>0 - 94</td>
+                        <td>años</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="numérico">
+                        <td class="var-name"><code>Estadia</code></td>
+                        <td>Días de estancia hospitalaria del paciente</td>
+                        <td><span class="badge-tipo numérico">Numérico</span></td>
+                        <td>0 - 35</td>
+                        <td>días</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="numérico">
+                        <td class="var-name"><code>Tiempo_exacto_de_ventilacion</code></td>
+                        <td>Tiempo total de ventilación mecánica durante la estancia</td>
+                        <td><span class="badge-tipo numérico">Numérico</span></td>
+                        <td>0 - 720</td>
+                        <td>horas</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="numérico">
+                        <td class="var-name"><code>Puntaje_Apache</code></td>
+                        <td>Puntaje de severidad APACHE II al ingreso</td>
+                        <td><span class="badge-tipo numérico">Numérico</span></td>
+                        <td>0 - 40</td>
+                        <td>puntos</td>
+                        <td class="text-center">No</td>
+                    </tr>
+    
+                    <!-- Variables Categóricas -->
+                    <tr data-tipo="categórico">
+                        <td class="var-name"><code>Sexo</code></td>
+                        <td>Género del paciente</td>
+                        <td><span class="badge-tipo categórico">Categórico</span></td>
+                        <td>1: Masculino, 2: Femenino</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="categórico">
+                        <td class="var-name"><code>Raza</code></td>
+                        <td>Raza/etnia del paciente</td>
+                        <td><span class="badge-tipo categórico">Categórico</span></td>
+                        <td>1: Blanca, 2: Mestiza, 4: Negra</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="categórico">
+                        <td class="var-name"><code>Equipo_de_ventilacion_utilizado</code></td>
+                        <td>Tipo de equipo de ventilación utilizado durante la estancia</td>
+                        <td><span class="badge-tipo categórico">Categórico</span></td>
+                        <td>1, 3, 4, 6, 8, 9, 11, 12, 13, 14</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+    
+                    <!-- Variables Binarias (Diagnósticos y Tratamientos) -->
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Diagnostico_Infeccion_urinaria</code></td>
+                        <td>Diagnóstico de infección urinaria</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Infeccion_Urinaria</code></td>
+                        <td>Presencia de infección urinaria</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Germen_Klebsiella</code></td>
+                        <td>Presencia de infección por Klebsiella</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Germen_Echierichia_Coli</code></td>
+                        <td>Presencia de infección por Escherichia coli</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Germen_Enterobacter_cloacae</code></td>
+                        <td>Presencia de infección por Enterobacter cloacae</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Hidratacion_Recibida</code></td>
+                        <td>Paciente recibió hidratación intravenosa</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Anticoagulacion_profilactica_Recibida</code></td>
+                        <td>Paciente recibió anticoagulación profiláctica</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Antibioprofilaxis_Recibida</code></td>
+                        <td>Paciente recibió antibioprofilaxis</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Norepinefrina_Recibida</code></td>
+                        <td>Paciente recibió norepinefrina (vasopresor)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Dobutamina_Recibida</code></td>
+                        <td>Paciente recibió dobutamina (inotrópico)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Epinefrina_Recibida</code></td>
+                        <td>Paciente recibió epinefrina (vasopresor)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Hidrocortisona_Recibida</code></td>
+                        <td>Paciente recibió hidrocortisona (corticoide)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Amiodarona_Recibida</code></td>
+                        <td>Paciente recibió amiodarona (antiarrítmico)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Ceftriaxona_Recibida</code></td>
+                        <td>Paciente recibió ceftriaxona (antibiótico - cefalosporina)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Claforan_Recibida</code></td>
+                        <td>Paciente recibió claforan/cefotaxima (antibiótico - cefalosporina)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Meropenen_Recibida</code></td>
+                        <td>Paciente recibió meropenem (antibiótico - carbapenémico)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Gentamicina_Recibida</code></td>
+                        <td>Paciente recibió gentamicina (antibiótico - aminoglucósido)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Amikacina_Recibida</code></td>
+                        <td>Paciente recibió amikacina (antibiótico - aminoglucósido)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Piperacilina_tazobactan_Recibida</code></td>
+                        <td>Paciente recibió piperacilina-tazobactam (antibiótico)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Insulina_lenta_Recibida</code></td>
+                        <td>Paciente recibió insulina lenta</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Ceftazidima_Recibida</code></td>
+                        <td>Paciente recibió ceftazidima (antibiótico - cefalosporina)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Cefuroxima_Recibida</code></td>
+                        <td>Paciente recibió cefuroxima (antibiótico - cefalosporina)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Furosemida_Recibida</code></td>
+                        <td>Paciente recibió furosemida (diurético)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Colocacion_cateter_doble_J_Recibida</code></td>
+                        <td>Paciente recibió colocación de catéter doble J</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Fosfomicina_Recibida</code></td>
+                        <td>Paciente recibió fosfomicina (antibiótico)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: No, 1: Sí</td>
+                        <td>N/A</td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr data-tipo="binario">
+                        <td class="var-name"><code>Murio</code></td>
+                        <td>Indicador de fallecimiento del paciente (variable objetivo)</td>
+                        <td><span class="badge-tipo binario">Binario</span></td>
+                        <td>0: Superviviente, 1: Fallecido</td>
+                        <td>N/A</td>
+                        <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Resumen del diccionario -->
+        <div class="stats-diccionario">
+            <div class="stat-item">
+                <span class="stat-number">34</span>
+                <span class="stat-label">Variables totales</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Numéricas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Categóricas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">27</span>
+                <span class="stat-label">Binarias</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Objetivo:</span>
+                <span class="stat-value">Mortalidad (Murio)</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Datos ausentes:</span>
+                <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="viz-card">
+        <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+        <div id="target-plot"></div>
+    </div>
+
+    <div class="leyenda-categorias" id="leyenda">
+        <h2>📖 Leyenda de Variables Categóricas</h2>
+        <p class="leyenda-intro">
+            Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+            presentes en el conjunto de datos. Comprender estas codificaciones es fundamental para 
+            la correcta interpretación de los resultados clínicos.
+        </p>
+    
+        <div class="leyenda-grid">
+            <!-- Variable: Sexo -->
+            <div class="leyenda-card">
+                <div class="leyenda-header">
+                    <span class="leyenda-var"><code>Sexo</code></span>
+                    <span class="leyenda-tipo categórico">Categórica</span>
+                </div>
+                <div class="leyenda-body">
+                    <table class="leyenda-tabla">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Significado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="codigo">1</span></td>
+                                <td>Masculino</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">2</span></td>
+                                <td>Femenino</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+            <!-- Variable: Raza -->
+            <div class="leyenda-card">
+                <div class="leyenda-header">
+                    <span class="leyenda-var"><code>Raza</code></span>
+                    <span class="leyenda-tipo categórico">Categórica</span>
+                </div>
+                <div class="leyenda-body">
+                    <table class="leyenda-tabla">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Significado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="codigo">1</span></td>
+                                <td>Blanca / Caucásica</td>
+                            </tr>                        
+                            <tr>
+                                <td><span class="codigo">2</span></td>
+                                <td>Mestiza</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">4</span></td>
+                                <td>Negra / Afrodescendiente</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+            <!-- Variable: Equipo de ventilación -->
+            <div class="leyenda-card">
+                <div class="leyenda-header">
+                    <span class="leyenda-var"><code>Equipo_de_ventilacion_utilizado</code></span>
+                    <span class="leyenda-tipo categórico">Categórica</span>
+                </div>
+                <div class="leyenda-body">
+                    <table class="leyenda-tabla">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Significado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="codigo">1</span></td>
+                                <td>Evita-4</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">3</span></td>
+                                <td>Servo S</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">4</span></td>
+                                <td>Servo-i</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">6</span></td>
+                                <td>Savina</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">8</span></td>
+                                <td>No ventilado</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">9</span></td>
+                                <td>Bella Vista</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">11</span></td>
+                                <td>R 50 SIRIUSMED</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">12</span></td>
+                                <td>Jenny</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">13</span></td>
+                                <td>ABETHA</td>
+                            </tr>
+                            <tr>
+                                <td><span class="codigo">14</span></td>
+                                <td>Otros / No especificado</td>
+                            </tr>
+                        </tbody>
+                    </table>                    
+                </div>
+            </div>
+    
+            <!-- Variables Binarias (Diagnósticos y Tratamientos) -->
+            <div class="leyenda-card leyenda-binaria">
+                <div class="leyenda-header">
+                    <span class="leyenda-var">Variables Binarias</span>
+                    <span class="leyenda-tipo binario">Binario</span>
+                </div>
+                <div class="leyenda-body">
+                    <p class="leyenda-binaria-info">
+                        <strong>Formato común:</strong> 0 = No, 1 = Sí
+                    </p>
+                    <div class="leyenda-binaria-grid">
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Diagnostico_Infeccion_urinaria</code></span>
+                            <span class="binaria-desc">Diagnóstico de infección urinaria</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Infeccion_Urinaria</code></span>
+                            <span class="binaria-desc">Presencia de infección urinaria</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Germen_Klebsiella</code></span>
+                            <span class="binaria-desc">Infección por Klebsiella</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Germen_Echierichia_Coli</code></span>
+                            <span class="binaria-desc">Infección por Escherichia coli</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Germen_Enterobacter_cloacae</code></span>
+                            <span class="binaria-desc">Infección por Enterobacter cloacae</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Hidratacion_Recibida</code></span>
+                            <span class="binaria-desc">Administración de hidratación intravenosa</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Anticoagulacion_profilactica_Recibida</code></span>
+                            <span class="binaria-desc">Administración de anticoagulación profiláctica</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Antibioprofilaxis_Recibida</code></span>
+                            <span class="binaria-desc">Administración de antibioprofilaxis</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Norepinefrina_Recibida</code></span>
+                            <span class="binaria-desc">Administración de norepinefrina (vasopresor)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Dobutamina_Recibida</code></span>
+                            <span class="binaria-desc">Administración de dobutamina (inotrópico)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Epinefrina_Recibida</code></span>
+                            <span class="binaria-desc">Administración de epinefrina (vasopresor)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Hidrocortisona_Recibida</code></span>
+                            <span class="binaria-desc">Administración de hidrocortisona (corticoide)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Amiodarona_Recibida</code></span>
+                            <span class="binaria-desc">Administración de amiodarona (antiarrítmico)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Ceftriaxona_Recibida</code></span>
+                            <span class="binaria-desc">Administración de ceftriaxona (antibiótico - cefalosporina)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Claforan_Recibida</code></span>
+                            <span class="binaria-desc">Administración de claforan/cefotaxima (antibiótico - cefalosporina)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Meropenen_Recibida</code></span>
+                            <span class="binaria-desc">Administración de meropenem (antibiótico - carbapenémico)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Gentamicina_Recibida</code></span>
+                            <span class="binaria-desc">Administración de gentamicina (antibiótico - aminoglucósido)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Amikacina_Recibida</code></span>
+                            <span class="binaria-desc">Administración de amikacina (antibiótico - aminoglucósido)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Piperacilina_tazobactan_Recibida</code></span>
+                            <span class="binaria-desc">Administración de piperacilina-tazobactam (antibiótico)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Insulina_lenta_Recibida</code></span>
+                            <span class="binaria-desc">Administración de insulina lenta</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Ceftazidima_Recibida</code></span>
+                            <span class="binaria-desc">Administración de ceftazidima (antibiótico - cefalosporina)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Cefuroxima_Recibida</code></span>
+                            <span class="binaria-desc">Administración de cefuroxima (antibiótico - cefalosporina)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Furosemida_Recibida</code></span>
+                            <span class="binaria-desc">Administración de furosemida (diurético)</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Colocacion_cateter_doble_J_Recibida</code></span>
+                            <span class="binaria-desc">Colocación de catéter doble J</span>
+                        </div>
+                        <div class="binaria-item">
+                            <span class="binaria-var"><code>Fosfomicina_Recibida</code></span>
+                            <span class="binaria-desc">Administración de fosfomicina (antibiótico)</span>
+                        </div>
+                        <div class="binaria-item destacada">
+                            <span class="binaria-var"><code>Murio</code></span>
+                            <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Fallecimiento del paciente (0: Superviviente, 1: Fallecido)</span>
+                        </div>
+                    </div>
+                    <div class="leyenda-nota">
+                        <span class="nota-icon">ℹ️</span>
+                        <p><strong>Nota:</strong> Todas las variables binarias están codificadas como <strong>0 = No</strong> (ausencia) y <strong>1 = Sí</strong> (presencia).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Resumen de la leyenda -->
+        <div class="leyenda-resumen">
+            <div class="resumen-item">
+                <span class="resumen-icon">📊</span>
+                <div>
+                    <strong>Total de variables categóricas:</strong> 3
+                    <ul>
+                        <li>Sexo (2 categorías: 1=Masculino, 2=Femenino)</li>
+                        <li>Raza (3 categorías: 1=Blanca, 2=Mestiza, 4=Negra)</li>
+                        <li>Equipo de ventilación (10 categorías presentes: 1, 3, 4, 6, 8, 9, 11, 12, 13, 14)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="resumen-item">
+                <span class="resumen-icon">🎯</span>
+                <div>
+                    <strong>Total de variables binarias:</strong> 27
+                    <ul>
+                        <li>26 variables de diagnóstico/tratamiento</li>
+                        <li>1 variable objetivo (Murio)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="resumen-item">
+                <span class="resumen-icon">💊</span>
+                <div>
+                    <strong>Perfil terapéutico identificado:</strong>
+                    <ul>
+                        <li>🩸 <strong>Vasopresores e inotrópicos:</strong> Norepinefrina, Dobutamina, Epinefrina</li>
+                        <li>💊 <strong>Antibióticos:</strong> Ceftriaxona, Claforan, Meropenem, Gentamicina, Amikacina, Piperacilina/Tazobactam, Ceftazidima, Cefuroxima, Fosfomicina</li>
+                        <li>💉 <strong>Anticoagulación:</strong> Anticoagulación profiláctica</li>
+                        <li>💧 <strong>Hidratación:</strong> Hidratación intravenosa</li>
+                        <li>🛡️ <strong>Antibioprofilaxis</strong></li>
+                        <li>🫀 <strong>Antiarrítmico:</strong> Amiodarona</li>
+                        <li>💊 <strong>Corticoide:</strong> Hidrocortisona</li>
+                        <li>💉 <strong>Insulina:</strong> Insulina lenta</li>
+                        <li>💧 <strong>Diurético:</strong> Furosemida</li>
+                        <li>🩺 <strong>Procedimiento:</strong> Colocación de catéter doble J</li>
+                    </ul>
+                </div>
+            </div>            
+            <div class="resumen-item">
+                <span class="resumen-icon">⚠️</span>
+                <div>
+                    <strong>Recomendaciones para análisis:</strong>
+                    <ul>
+                        <li>Verificar relación entre <code>Diagnostico_Infeccion_urinaria</code> y la presencia de gérmenes específicos</li>
+                        <li>Validar la exclusión mutua entre <code>Ceftriaxona</code> y <code>Claforan</code></li>
+                        <li>Validar la exclusión mutua entre <code>Gentamicina</code> y <code>Amikacina</code> (aminoglucósidos)</li>
+                        <li>El código <code>8</code> en ventilación indica "No ventilado"</li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="metodologia-section" id="metodologia">
+        <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+        
+        <div class="metodologia-grid">
+            <div class="metodologia-card">
+                <h3>📐 Método Principal</h3>
+                <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                <p><strong>Versión:</strong> 2.0</p>
+                <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+            </div>
+
+            <div class="metodologia-card">
+                <h3>📏 Reglas de restricción</h3>
+                <ul class="restriction-rules">
+                    <li><code>Diagnostico_Infeccion_urinaria == 1 → Infeccion_Urinaria = 1</code></li>
+                    <li><code>Germen_Echierichia_Coli == 1 → Infeccion_Urinaria = 1</code></li>
+                    <li><code>Germen_Klebsiella == 1 → Infeccion_Urinaria = 1</code></li>
+                    <li><code>Norepinefrina_Recibida == 1 → Meropenen_Recibida = 1 OR Piperacilina_tazobactan_Recibida = 1</code></li>
+                    <li><code>Ceftriaxona_Recibida y Claforan_Recibida son mutuamente excluyentes</code></li>
+                    <li><code>Gentamicina_Recibida y Amikacina_Recibida son mutuamente excluyentes</code></li>
+                    <li><code>Tiempo_exacto_de_ventilacion == 0 → Equipo_de_ventilacion_utilizado = 8 (No Aplica)</code></li>
+                    <li><code>Tiempo_exacto_de_ventilacion > 0 → Equipo_de_ventilacion_utilizado ≠ 8</code></li>
+                    <li><code>Todo paciente debe recibir hidratación (Hidratacion_Recibida = 1)</code></li>
+                </ul>
+                <div style="margin-top: 15px; padding: 12px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #3498db;">
+                    <h4 style="margin: 0 0 8px 0; font-size: 0.9em; color: #2c3e50;">📋 Detalle de reglas por categoría:</h4>
+                    <ul style="margin: 0; padding-left: 20px; font-size: 0.85em; color: #555;">
+                        <li><strong>🩺 Consistencia de Datos:</strong> Diagnóstico de ITU implica Infección Urinaria = 1</li>
+                        <li><strong>🦠 Atributo SNOMED:</strong> Presencia de E. Coli o Klebsiella implica Infección Urinaria</li>
+                        <li><strong>💊 Guía Clínica Sepsis:</strong> Paciente con soporte vasopresor (Norepinefrina) debe recibir antibiótico de amplio espectro (Meropenem o Piperacilina/Tazobactam)</li>
+                        <li><strong>⛔ Redundancia Terapéutica:</strong> No administrar Ceftriaxona y Claforan al mismo tiempo. No administrar Gentamicina y Amikacina al mismo tiempo</li>
+                        <li><strong>📊 Lógica de datos:</strong> Consistencia entre tiempo de ventilación y equipo utilizado</li>
+                        <li><strong>💉 Cuidados estándar:</strong> Todo paciente debe recibir hidratación intravenosa</li>
+                    </ul>
+                </div>                
+            </div>
+            
+            <div class="metodologia-card">
+                <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                <table class="params-table">
+                    <tr><th>Valor escala</th><td>0.03</td></tr>
+                    <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                </table>                
+            </div>            
+            
+            <div class="metodologia-card">
+                <h3>🔄 Hiperparámetros CTGAN</h3>
+                <table class="params-table">
+                    <tr><th>epochs</th><td>300</td></tr>
+                    <tr><th>batch_size</th><td>20</td></tr>
+                    <tr><th>generator_lr</th><td>0.0002</td></tr>
+                    <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                    <tr><th>pac</th><td>2</td></tr>
+                    <tr><th>generator_dim</th><td>(64, 64)</td></tr>
+                    <tr><th>discriminator_dim</th><td>(64, 64)</td></tr>
+                    <tr><th>embedding_dim</th><td>128</td></tr>
+                    <tr><th>l2scale</th><td>1e-05</td></tr>
+                </table>                
+            </div>
+
+            <div class="metodologia-card">
+                <h3>📊 Hiperparámetros TVAE</h3>
+                <table class="params-table">
+                    <tr>
+                        <th>epochs</th>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <th>batch_size</th>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <th>embedding_dim</th>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <th>compress_dims</th>
+                        <td>(32, 32)</td>
+                    </tr>
+                    <tr>
+                        <th>decompress_dims</th>
+                        <td>(32, 32)</td>
+                    </tr>
+                    <tr>
+                        <th>l2scale</th>
+                        <td>1e-5</td>
+                    </tr>
+                    <tr>
+                        <th>loss_factor</th>
+                        <td>2</td>
+                    </tr>
+                </table>                
+            </div>
+            
+            <div class="metodologia-card">
+                <h3>🔐 Reproducibilidad</h3>
+                <table class="params-table">
+                    <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                    <tr><th>Python</th><td>3.12.12</td></tr>
+                </table>
+                <h4>Librerías utilizadas:</h4>
+                <ul class="libraries-list">
+                    <li><strong>pandas</strong>: 2.3.3</li>
+                    <li><strong>numpy</strong>: 2.4.4</li>
+                    <li><strong>scikit-learn</strong>: 1.7.2</li>
+                    <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                    <li><strong>ctgan</strong>: 0.11.1</li>
+                    <li><strong>torch</strong>: 2.9.0</li>
+                    <li><strong>sdv</strong>: 1.28.0</li>
+                    <li><strong>scipy</strong>: 1.16.3</li>
+                    <li><strong>matplotlib</strong>: 3.10.9</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="reproducibility-note">
+            <span class="note-icon">📝</span>
+            <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+            Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+        </div>
+    </div>
+    
+        
+    <div class="derivados-section" id="derivados">
+        <h2>📊 Conjuntos de Datos Derivados</h2>
+        
+        <div class="derivados-info">
+            <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+            <ul>
+                <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+            </ul>
+            <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+        </div>
+        
+        <!-- Conjuntos Balanceados -->
+        <div class="categoria-derivados">
+            <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+            
+            <div class="table-container">
+                <table class="derivados-table">
+                    <thead>
+                        <tr>
+                            <th>Algoritmo</th>
+                            <th>Ratio</th>
+                            <th>N° Ejemplos</th>
+                            <th>AUC-ROC</th>
+                            <th>F1</th>
+                            <th>Accuracy</th>
+                            <th>TabDSFidelity</th>
+                            <th>Jensen-Shannon</th>
+                            <th>Kolmogorov-Smirnov</th>
+                            <th>Kullback-Leibler</th>
+                            <th>Correlación</th>
+                            <th>Tiempo Total (s)</th>
+                            <th>Dist. Promedio</th>
+                            <th>Copias Exactas</th>
+                            <th>Ataque MIA</th>
+                            <th>Mejor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="best-row">
+                            <td><strong>Random Oversampling</strong></td>
+                            <td>1</td>
+                            <td>180</td>
+                            <td>0.888</td>
+                            <td>0.817</td>
+                            <td>0.816</td>
+                            <td><strong>8.700</strong></td>
+                            <td>0.078</td>
+                            <td>0.961</td>
+                            <td>0.002</td>
+                            <td>0.982</td>
+                            <td>86.196</td>
+                            <td>0</td>
+                            <td>180</td>
+                            <td>0.531</td>
+                            <td><span class="best-badge-table">🏆</span></td>
+                        </tr>
+                        <tr>
+                            <td>SMOTE</td>
+                            <td>1</td>
+                            <td>180</td>
+                            <td>0.870</td>
+                            <td>0.817</td>
+                            <td>0.816</td>
+                            <td>7.183</td>
+                            <td>0.115</td>
+                            <td>0.869</td>
+                            <td>0.005</td>
+                            <td>0.984</td>
+                            <td>72.957</td>
+                            <td>0.007</td>
+                            <td>144</td>
+                            <td>0.539</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Borderline SMOTE</td>
+                            <td>1</td>
+                            <td>180</td>
+                            <td>0.838</td>
+                            <td>0.777</td>
+                            <td>0.776</td>
+                            <td>3.098</td>
+                            <td>0.134</td>
+                            <td>0.908</td>
+                            <td>0.004</td>
+                            <td>0.980</td>
+                            <td>62.731</td>
+                            <td>0.009</td>
+                            <td>144</td>
+                            <td>0.517</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>ADASYN</td>
+                            <td>1.011</td>
+                            <td>181</td>
+                            <td>0.845</td>
+                            <td>0.777</td>
+                            <td>0.776</td>
+                            <td>3.592</td>
+                            <td>0.122</td>
+                            <td>0.962</td>
+                            <td>0.005</td>
+                            <td>0.983</td>
+                            <td>64.373</td>
+                            <td>0.008</td>
+                            <td>144</td>
+                            <td>0.424</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>SMOTE RSB* Adaptado</td>
+                            <td>1</td>
+                            <td>180</td>
+                            <td>0.875</td>
+                            <td>0.817</td>
+                            <td>0.816</td>
+                            <td>7.808</td>
+                            <td>0.114</td>
+                            <td>0.947</td>
+                            <td>0.002</td>
+                            <td>0.977</td>
+                            <td>64.247</td>
+                            <td>0.011</td>
+                            <td>144</td>
+                            <td>0.463</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>SMOTE RSB* Adaptado + Reglas</td>
+                            <td>1</td>
+                            <td>180</td>
+                            <td>0.867</td>
+                            <td>0.778</td>
+                            <td>0.776</td>
+                            <td>4.885</td>
+                            <td>0.110</td>
+                            <td>0.982</td>
+                            <td>0.003</td>
+                            <td>0.977</td>
+                            <td>57.800</td>
+                            <td>0.011</td>
+                            <td>144</td>
+                            <td>0.457</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>OOF PSO para Balanceo</td>
+                            <td>1</td>
+                            <td>180</td>
+                            <td>0.872</td>
+                            <td>0.815</td>
+                            <td>0.816</td>
+                            <td>4.022</td>
+                            <td>0.197</td>
+                            <td>0.281</td>
+                            <td>0.044</td>
+                            <td>0.790</td>
+                            <td>71.812</td>
+                            <td>0.070</td>
+                            <td>144</td>
+                            <td>0.455</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>OOF PSO para Balanceo + Reglas</td>
+                            <td>1</td>
+                            <td>180</td>
+                            <td>0.879</td>
+                            <td>0.834</td>
+                            <td>0.837</td>
+                            <td>6.452</td>
+                            <td>0.197</td>
+                            <td>0.454</td>
+                            <td>0.061</td>
+                            <td>0.860</td>
+                            <td>68.348</td>
+                            <td>0.083</td>
+                            <td>61</td>
+                            <td>0.440</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mejor-seleccionado">
+                <span class="star">⭐</span> Mejor seleccionado: <strong>Random Oversampling</strong> 
+                (TabDSFidelity: <strong>8.700</strong>, AUC: 0.888, F1: 0.817, MIA: 0.531). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+            </div>
+        </div>
+
+        <!-- Sintéticos Puros -->
+        <div class="categoria-derivados">
+            <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+            
+            <div class="table-container">
+                <table class="derivados-table">
+                    <thead>
+                        <tr>
+                            <th>Algoritmo</th>                    
+                            <th>Ratio</th>
+                            <th>N° Ejemplos</th>
+                            <th>AUC-ROC</th>
+                            <th>F1</th>
+                            <th>Accuracy</th>
+                            <th>TabDSFidelity</th>
+                            <th>Jensen-Shannon</th>
+                            <th>Kolmogorov-Smirnov</th>
+                            <th>Kullback-Leibler</th>
+                            <th>Correlación</th>
+                            <th>Tiempo Total (s)</th>
+                            <th>Dist. Promedio</th>
+                            <th>Copias Exactas</th>
+                            <th>Ataque MIA</th>
+                            <th>Mejor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="best-row">
+                            <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                            <td>1.399</td>
+                            <td>6160</td>
+                            <td><strong>0.862</strong></td>
+                            <td><strong>0.817</strong></td>
+                            <td><strong>0.816</strong></td>
+                            <td><strong>9.732</strong></td>
+                            <td>0.164</td>
+                            <td>0.632</td>
+                            <td>0.026</td>
+                            <td>0.953</td>
+                            <td>98.415</td>
+                            <td>0.062</td>
+                            <td>143</td>
+                            <td>0.529</td>
+                            <td><span class="best-badge-table">🏆</span></td>
+                        </tr>
+                        <tr>
+                            <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                            <td>1.399</td>
+                            <td>6160</td>
+                            <td>0.781</td>
+                            <td>0.723</td>
+                            <td>0.735</td>
+                            <td>8.314</td>
+                            <td>0.164</td>
+                            <td>0.632</td>
+                            <td>0.043</td>
+                            <td>0.946</td>
+                            <td>271.320</td>
+                            <td>0.078</td>
+                            <td>49</td>
+                            <td>0.517</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>CTGAN</td>                    
+                            <td>1.096</td>
+                            <td>9992</td>
+                            <td>0.831</td>
+                            <td>0.759</td>
+                            <td>0.755</td>
+                            <td>8.027</td>
+                            <td>0.219</td>
+                            <td>0.049</td>
+                            <td>0.004</td>
+                            <td>0.910</td>
+                            <td>316.770</td>
+                            <td>0.075</td>
+                            <td>0</td>
+                            <td>0.576</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>CTGAN + Reglas del Dominio</td>                    
+                            <td>1.096</td>
+                            <td>9992</td>
+                            <td>0.719</td>
+                            <td>0.619</td>
+                            <td>0.612</td>
+                            <td>5.792</td>
+                            <td>0.219</td>
+                            <td>0.049</td>
+                            <td>0.024</td>
+                            <td>0.911</td>
+                            <td>521.681</td>
+                            <td>0.085</td>
+                            <td>0</td>
+                            <td>0.576</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TVAE</td>                    
+                            <td>1.126</td>
+                            <td>9975</td>
+                            <td>0.789</td>
+                            <td>0.717</td>
+                            <td>0.714</td>
+                            <td>7.212</td>
+                            <td>0.367</td>
+                            <td>0.182</td>
+                            <td>0.023</td>
+                            <td>0.943</td>
+                            <td>172.323</td>
+                            <td>0.040</td>
+                            <td>1</td>
+                            <td>0.659</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TVAE + Reglas del Dominio</td>                    
+                            <td>1.126</td>
+                            <td>9975</td>
+                            <td>0.728</td>
+                            <td>0.658</td>
+                            <td>0.653</td>
+                            <td>6.145</td>
+                            <td>0.367</td>
+                            <td>0.182</td>
+                            <td>0.029</td>
+                            <td>0.935</td>
+                            <td>376.901</td>
+                            <td>0.053</td>
+                            <td>1</td>
+                            <td>0.663</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>OOF PSO para Aumento</td>                    
+                            <td>1</td>
+                            <td>10000</td>
+                            <td>0.567</td>
+                            <td>0.459</td>
+                            <td>0.469</td>
+                            <td>0.519</td>
+                            <td>0.640</td>
+                            <td>0.000</td>
+                            <td>0.249</td>
+                            <td>0.605</td>
+                            <td>154.098</td>
+                            <td>0.216</td>
+                            <td>0</td>
+                            <td>0.428</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>OOF PSO para Aumento + Reglas</td>                    
+                            <td>1</td>
+                            <td>10000</td>
+                            <td>0.608</td>
+                            <td>0.395</td>
+                            <td>0.429</td>
+                            <td>0.301</td>
+                            <td>0.640</td>
+                            <td>0.000</td>
+                            <td>0.297</td>
+                            <td>0.603</td>
+                            <td>365.070</td>
+                            <td>0.228</td>
+                            <td>0</td>
+                            <td>0.508</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>SMOTE RSB* Refinado</td>                    
+                            <td>1.226</td>
+                            <td>7989</td>
+                            <td>0.812</td>
+                            <td>0.710</td>
+                            <td>0.714</td>
+                            <td>8.463</td>
+                            <td>0.188</td>
+                            <td>0.690</td>
+                            <td>0.018</td>
+                            <td>0.954</td>
+                            <td>104.885</td>
+                            <td>0.059</td>
+                            <td>102</td>
+                            <td>0.399</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>SMOTE RSB* Refinado + Reglas</td>                    
+                            <td>1.226</td>
+                            <td>7989</td>
+                            <td>0.808</td>
+                            <td>0.747</td>
+                            <td>0.755</td>
+                            <td>8.801</td>
+                            <td>0.188</td>
+                            <td>0.690</td>
+                            <td>0.035</td>
+                            <td>0.948</td>
+                            <td>298.094</td>
+                            <td>0.074</td>
+                            <td>50</td>
+                            <td>0.469</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mejor-seleccionado">
+                <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                (TabDSFidelity: <strong>9.732</strong>, AUC: 0.862, F1: 0.817, MIA: 0.529). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+            </div>
+        </div>
+
+        <!-- Aumentados -->
+        <div class="categoria-derivados">
+            <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+            
+            <div class="table-container">
+                <table class="derivados-table">
+                    <thead>
+                        <tr>
+                            <th>Algoritmo</th>                    
+                            <th>Ratio</th>
+                            <th>N° Ejemplos</th>
+                            <th>AUC-ROC</th>
+                            <th>F1</th>
+                            <th>Accuracy</th>
+                            <th>TabDSFidelity</th>
+                            <th>Jensen-Shannon</th>
+                            <th>Kolmogorov-Smirnov</th>
+                            <th>Kullback-Leibler</th>
+                            <th>Correlación</th>
+                            <th>Tiempo Total (s)</th>
+                            <th>Dist. Promedio</th>
+                            <th>Copias Exactas</th>
+                            <th>Ataque MIA</th>
+                            <th>Mejor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="best-row">
+                            <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                            <td>1.385</td>
+                            <td>6340</td>
+                            <td><strong>0.867</strong></td>
+                            <td><strong>0.796</strong></td>
+                            <td><strong>0.796</strong></td>
+                            <td><strong>9.733</strong></td>
+                            <td>0.161</td>
+                            <td>0.647</td>
+                            <td>0.025</td>
+                            <td>0.953</td>
+                            <td>182.751</td>
+                            <td>0.060</td>
+                            <td>181</td>
+                            <td>0.533</td>
+                            <td><span class="best-badge-table">🏆</span></td>
+                        </tr>
+                        <tr>
+                            <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                            <td>1.385</td>
+                            <td>6340</td>
+                            <td>0.817</td>
+                            <td>0.752</td>
+                            <td>0.755</td>
+                            <td>8.177</td>
+                            <td>0.161</td>
+                            <td>0.647</td>
+                            <td>0.041</td>
+                            <td>0.947</td>
+                            <td>357.851</td>
+                            <td>0.077</td>
+                            <td>106</td>
+                            <td>0.514</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>CTGAN</td>                    
+                            <td>1.094</td>
+                            <td>10172</td>
+                            <td>0.814</td>
+                            <td>0.719</td>
+                            <td>0.714</td>
+                            <td>6.322</td>
+                            <td>0.216</td>
+                            <td>0.054</td>
+                            <td>0.004</td>
+                            <td>0.912</td>
+                            <td>418.442</td>
+                            <td>0.074</td>
+                            <td>40</td>
+                            <td>0.620</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>CTGAN + Reglas del Dominio</td>                    
+                            <td>1.094</td>
+                            <td>10172</td>
+                            <td>0.703</td>
+                            <td>0.679</td>
+                            <td>0.673</td>
+                            <td>4.175</td>
+                            <td>0.216</td>
+                            <td>0.054</td>
+                            <td>0.023</td>
+                            <td>0.912</td>
+                            <td>624.005</td>
+                            <td>0.084</td>
+                            <td>40</td>
+                            <td>0.500</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TVAE</td>                    
+                            <td>1.124</td>
+                            <td>10155</td>
+                            <td>0.799</td>
+                            <td>0.696</td>
+                            <td>0.694</td>
+                            <td>5.523</td>
+                            <td>0.360</td>
+                            <td>0.190</td>
+                            <td>0.021</td>
+                            <td>0.945</td>
+                            <td>275.087</td>
+                            <td>0.039</td>
+                            <td>40</td>
+                            <td>0.579</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>TVAE + Reglas del Dominio</td>                    
+                            <td>1.124</td>
+                            <td>10155</td>
+                            <td>0.760</td>
+                            <td>0.677</td>
+                            <td>0.673</td>
+                            <td>4.597</td>
+                            <td>0.360</td>
+                            <td>0.190</td>
+                            <td>0.027</td>
+                            <td>0.937</td>
+                            <td>480.832</td>
+                            <td>0.052</td>
+                            <td>40</td>
+                            <td>0.548</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>OOF PSO para Aumento</td>                    
+                            <td>1</td>
+                            <td>10180</td>
+                            <td>0.661</td>
+                            <td>0.639</td>
+                            <td>0.633</td>
+                            <td>0.005</td>
+                            <td>0.626</td>
+                            <td>0.000</td>
+                            <td>0.235</td>
+                            <td>0.634</td>
+                            <td>259.739</td>
+                            <td>0.212</td>
+                            <td>39</td>
+                            <td>0.541</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>OOF PSO para Aumento + Reglas</td>                    
+                            <td>1</td>
+                            <td>10180</td>
+                            <td>0.703</td>
+                            <td>0.679</td>
+                            <td>0.673</td>
+                            <td>1.443</td>
+                            <td>0.626</td>
+                            <td>0.000</td>
+                            <td>0.282</td>
+                            <td>0.632</td>
+                            <td>475.470</td>
+                            <td>0.225</td>
+                            <td>39</td>
+                            <td>0.558</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>SMOTE RSB* Refinado</td>                    
+                            <td>1.220</td>
+                            <td>8169</td>
+                            <td>0.833</td>
+                            <td>0.755</td>
+                            <td>0.755</td>
+                            <td>8.483</td>
+                            <td>0.186</td>
+                            <td>0.706</td>
+                            <td>0.017</td>
+                            <td>0.955</td>
+                            <td>204.670</td>
+                            <td>0.055</td>
+                            <td>148</td>
+                            <td>0.452</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>SMOTE RSB* Refinado + Reglas</td>                    
+                            <td>1.220</td>
+                            <td>8169</td>
+                            <td>0.794</td>
+                            <td>0.710</td>
+                            <td>0.714</td>
+                            <td>7.007</td>
+                            <td>0.186</td>
+                            <td>0.706</td>
+                            <td>0.034</td>
+                            <td>0.949</td>
+                            <td>394.487</td>
+                            <td>0.071</td>
+                            <td>92</td>
+                            <td>0.448</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mejor-seleccionado">
+                <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                (TabDSFidelity: <strong>9.733</strong>, AUC: 0.867, F1: 0.796, MIA: 0.533). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+            </div>
+        </div>
+        
+        <!-- Diagrama de flujo del proceso -->
+        <div class="flowchart-section">
+            <h4>📈 Diagrama del Proceso de Generación</h4>
+            <div class="flowchart">
+                <div class="flow-node">Conjunto Original<br><small>CD_7</small></div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node-group">
+                    <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                    <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                    <div class="flow-node best-flow">⭐ Mejor Balanceado<br>Random Oversampling</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node-group">
+                    <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                    <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                    <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano</div>
+                    <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* + Ruido Gaussiano</div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+            </div>
+        </div>
+
+        <!-- Guía de Métricas Explicativas -->
+        <div class="metricas-guia">
+            <h3>📊 Guía de Métricas de Evaluación</h3>
+            <p class="guia-intro">
+                Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                una de las métricas utilizadas en la evaluación:
+            </p>
+            
+            <div class="metricas-grid">
+                <!-- Métricas de Rendimiento Predictivo -->
+                <div class="metrica-grupo">
+                    <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                    
+                    <div class="metrica-item">
+                        <span class="metrica-nombre">AUC-ROC</span>
+                        <span class="metrica-rango">(0.5 - 1.0)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                <li><strong>0.8-0.9:</strong> Excelente</li>
+                                <li><strong>>0.9:</strong> Sobresaliente</li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="metrica-item">
+                        <span class="metrica-nombre">F1-Score</span>
+                        <span class="metrica-rango">(0 - 1.0)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="metrica-item">
+                        <span class="metrica-nombre">Accuracy</span>
+                        <span class="metrica-rango">(0 - 1.0)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                            <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                <div class="metrica-grupo">
+                    <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                    
+                    <div class="metrica-item destacado">
+                        <span class="metrica-nombre">TabDSFidelity</span>
+                        <span class="metrica-rango">(0 - 10+)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                            <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Métricas de Distribución -->
+                <div class="metrica-grupo">
+                    <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                    
+                    <div class="metrica-item">
+                        <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                        <span class="metrica-rango">(0 - 1.0)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                            <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="metrica-item">
+                        <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                        <span class="metrica-rango">(0 - 1.0)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                            <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="metrica-item">
+                        <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                        <span class="metrica-rango">(0 - ∞)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                <li><strong>> 0.1:</strong> Diferencias notables</li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                            <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                        </div>
+                    </div>
+                </div>               
+                
+                <!-- Métricas de Estructura -->
+                <div class="metrica-grupo">
+                    <h4>📊 Métricas de Estructura</h4>
+                    
+                    <div class="metrica-item">
+                        <span class="metrica-nombre">Similitud de Correlación</span>
+                        <span class="metrica-rango">(0 - 1.0)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Métricas de Rendimiento Temporal -->
+                <div class="metrica-grupo">
+                    <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                    
+                    <div class="metrica-item">
+                        <span class="metrica-nombre">Tiempo Total (s)</span>
+                        <span class="metrica-rango">(segundos)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>< 100s:</strong> Generación rápida</li>
+                                <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                            <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Métricas de Privacidad -->
+                <div class="metrica-grupo">
+                    <h4>🔒 Métricas de Privacidad</h4>
+                    <p class="metrica-subtitulo">
+                        Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                        un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                    </p>
+                    
+                    <!-- Distancia al registro más cercano -->
+                    <div class="metrica-item">
+                        <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                        <span class="metrica-rango">(≥ 0)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                            <div class="metrica-nota">
+                                <span class="nota-icon">🔬</span>
+                                <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                <span class="nota-icon">💡</span>
+                                <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Copias exactas -->
+                    <div class="metrica-item">
+                        <span class="metrica-nombre">Copias Exactas</span>
+                        <span class="metrica-rango">(≥ 0)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                            <div class="metrica-nota">
+                                <span class="nota-icon">⚠️</span>
+                                <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ataque de inferencia de membresía -->
+                    <div class="metrica-item destacado">
+                        <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                        <span class="metrica-rango">(0 - 1.0)</span>
+                        <div class="metrica-descripcion">
+                            <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                            <p><strong>Interpretación:</strong></p>
+                            <ul>
+                                <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                            </ul>
+                            <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                            <div class="metrica-nota">
+                                <span class="nota-icon">🎯</span>
+                                <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Resumen Rápido -->
+            <div class="metricas-resumen">
+                <h4>📝 Resumen Rápido para Selección</h4>
+                <div class="resumen-grid">
+                    <div class="resumen-item">
+                        <span class="resumen-icon">🏆</span>
+                        <div>
+                            <strong>Para seleccionar el mejor conjunto:</strong>
+                            <ul>
+                                <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                <li><strong>Correlación</strong> > 0.9</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="resumen-item">
+                        <span class="resumen-icon">⚖️</span>
+                        <div>
+                            <strong>Balance entre calidad y tiempo:</strong>
+                            <ul>
+                                <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                <li>Tiempos de generación < 200s son aceptables</li>
+                                <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="resumen-item">
+                        <span class="resumen-icon">🔒</span>
+                        <div>
+                            <strong>Para garantizar la privacidad:</strong>
+                            <ul>
+                                <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [37.50, 62.50], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

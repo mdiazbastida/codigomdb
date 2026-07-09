@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_51: Mammographic Mass - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_51</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_51: Mammographic Mass</h1>
+            <p class="description">Conjunto de datos radiológico para la clasificación binaria de la severidad de masas mamarias. Integra atributos morfológicos (forma, margen) con ordinalidad implícita y datos demográficos procesados por imputación.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.84</td>
+                                    <td>0.80</td>
+                                    <td>0.82</td>
+                                    <td>104</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.78</td>
+                                    <td>0.82</td>
+                                    <td>0.80</td>
+                                    <td>89</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.81</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.81</td>
+                                    <td>0.81</td>
+                                    <td>0.81</td>
+                                    <td>193</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.81</td>
+                                    <td>0.81</td>
+                                    <td>0.81</td>
+                                    <td>193</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.89</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.81</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.81</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de degradación -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon" style="color: #e74c3c;">⬇️</span>
+                    <span class="arrow-label" style="color: #e74c3c;">Degradación</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.01 AUC</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.01 F1</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.01 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance">
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.89</td>
+                                    <td>0.71</td>
+                                    <td>0.79</td>
+                                    <td>104</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.73 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.05</span></td>
+                                    <td>0.90 <span class="improvement-indicator">⬆ +0.08</span></td>
+                                    <td>0.80 <span class="improvement-indicator" style="color: #f39c12;">—</span></td>
+                                    <td>89</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.80</strong> <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.01</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.81 <span class="improvement-indicator" style="color: #f39c12;">—</span></td>
+                                    <td>0.81 <span class="improvement-indicator" style="color: #f39c12;">—</span></td>
+                                    <td>0.80 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.01</span></td>
+                                    <td>193</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.82 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>0.80 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.01</span></td>
+                                    <td>0.80 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.01</span></td>
+                                    <td>193</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.88</span>
+                            <span class="improvement-badge negative">⬇ -0.01</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.80</span>
+                            <span class="improvement-badge negative">⬇ -0.01</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.80</span>
+                            <span class="improvement-badge negative">⬇ -0.01</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de degradación -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Cambios en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.78</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 78%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.73</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 73%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value" style="color: #e74c3c;">⬇ -0.05</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.82</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 82%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.90</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 90%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.08</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.80</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 80%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.80</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 80%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value" style="color: #f39c12;">— Sin cambio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Mammographic Mass Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Elter, M., Schulz-Wendtland, R., & Wittenberg, T.</div>
+                    <div class="fuente-fecha">Publicado: 2007</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value"><a href="https://doi.org/10.1118/1.2814240" target="_blank">10.1118/1.2814240</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/Mammographic+Mass" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">961</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Benignas:</span>
+                            <span class="metadata-value">516 (53.7%)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Malignas:</span>
+                            <span class="metadata-value">445 (46.3%)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Características:</span>
+                            <span class="metadata-value">5 (4 predictores + 1 objetivo)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Masas Mamográficas (Mammographic Mass)</strong> está diseñado para la <strong>discriminación de masas mamográficas benignas y malignas</strong> basada en <strong>atributos BI-RADS</strong> y la <strong>edad del paciente</strong>. La <strong>mamografía</strong> es el método más efectivo para la <strong>detección del cáncer de mama</strong> disponible actualmente. Sin embargo, el <strong>bajo valor predictivo positivo</strong> de la biopsia de mama resultante de la interpretación de mamografías conduce a aproximadamente <strong>70% de biopsias innecesarias</strong> con resultados benignos. Este conjunto de datos puede utilizarse para predecir la <strong>severidad (benigna o maligna)</strong> de una lesión de masa mamográfica a partir de atributos BI-RADS y la edad del paciente, ayudando a los médicos en su decisión de realizar una biopsia o un <strong>seguimiento a corto plazo</strong>.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🔬 Contexto del Dominio</h4>
+                        <p>El <strong>cáncer de mama</strong> es una de las principales causas de muerte en mujeres en todo el mundo. La <strong>detección temprana</strong> mediante mamografía es crucial para mejorar las tasas de supervivencia. Sin embargo, la interpretación de mamografías tiene una <strong>tasa significativa de falsos positivos</strong>, lo que lleva a <strong>biopsias innecesarias</strong> que son costosas, invasivas y causan ansiedad en los pacientes.</p>
+                        
+                        <p style="margin-top: 0.5rem;">Los <strong>sistemas CAD (Computer-Aided Diagnosis)</strong> han sido propuestos para ayudar a los médicos en la toma de decisiones. Este dataset, recolectado en el <strong>Instituto de Radiología de la Universidad de Erlangen-Nuremberg</strong> entre <strong>2003 y 2006</strong>, contiene datos de <strong>mamografías digitales de campo completo</strong> con <strong>516 masas benignas y 445 malignas</strong>.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Clasificación BI-RADS</h5>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6;">BI-RADS (Breast Imaging Reporting and Data System) es un sistema de estandarización para informes de imágenes mamarias. Cada instancia tiene una <strong>evaluación BI-RADS</strong> que va de <strong>1 (definitivamente benigno)</strong> a <strong>5 (altamente sugestivo de malignidad)</strong>, asignada en un <strong>proceso de doble revisión</strong> por médicos.</p>
+                            <ul class="transformacion-lista">
+                                <li><strong>1:</strong> Definitivamente benigno</li>
+                                <li><strong>2:</strong> Benigno</li>
+                                <li><strong>3:</strong> Probablemente benigno</li>
+                                <li><strong>4:</strong> Sospechoso</li>
+                                <li><strong>5:</strong> Altamente sugestivo de malignidad</li>
+                            </ul>
+                            <p style="color: #000; font-size: 0.85rem; margin-top: 0.3rem;">Asumiendo que todos los casos con evaluaciones BI-RADS ≥ un valor dado (1-5) son malignos, se pueden calcular <strong>sensibilidades y especificidades</strong> para comparar el rendimiento de los sistemas CAD con el de los radiólogos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>961 instancias</strong> con <strong>5 atributos</strong> (4 variables predictoras y 1 variable objetivo). Las características son de tipo <strong>entero</strong> (ordinales y nominales). Presenta <strong>valores faltantes</strong> en varias variables.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Escala / Categorías</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Valores Faltantes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="5" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Variables Predictoras</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>BI-RADS</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Evaluación BI-RADS de la masa</td>
+                                        <td style="padding: 0.4rem;">1-5 (1 = definitivamente benigno, 5 = altamente sugestivo de malignidad)</td>
+                                        <td style="padding: 0.4rem;">2</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Age</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Edad del paciente</td>
+                                        <td style="padding: 0.4rem;">años</td>
+                                        <td style="padding: 0.4rem;">5</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Shape</strong></td>
+                                        <td style="padding: 0.4rem;">Nominal</td>
+                                        <td style="padding: 0.4rem;">Forma de la masa</td>
+                                        <td style="padding: 0.4rem;">1 = redonda, 2 = oval, 3 = lobulada, 4 = irregular</td>
+                                        <td style="padding: 0.4rem;">31</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Margin</strong></td>
+                                        <td style="padding: 0.4rem;">Nominal</td>
+                                        <td style="padding: 0.4rem;">Margen de la masa</td>
+                                        <td style="padding: 0.4rem;">1 = circunscrito, 2 = microlobulado, 3 = oscurecido, 4 = mal definido, 5 = espiculado</td>
+                                        <td style="padding: 0.4rem;">48</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Density</strong></td>
+                                        <td style="padding: 0.4rem;">Ordinal</td>
+                                        <td style="padding: 0.4rem;">Densidad de la masa</td>
+                                        <td style="padding: 0.4rem;">1 = alta, 2 = iso, 3 = baja, 4 = contiene grasa</td>
+                                        <td style="padding: 0.4rem;">76</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="5" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">B. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Severity</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Resultado de la biopsia</td>
+                                        <td style="padding: 0.4rem;">0 = benigno, 1 = maligno</td>
+                                        <td style="padding: 0.4rem;">0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">⚠️ Distribución de Clases</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Clase</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Instancias</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Porcentaje</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Benigna (0)</strong></td>
+                                        <td style="padding: 0.4rem;">516</td>
+                                        <td style="padding: 0.4rem;">53.7%</td>
+                                        <td style="padding: 0.4rem;">Resultado benigno de biopsia</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Maligna (1)</strong></td>
+                                        <td style="padding: 0.4rem;">445</td>
+                                        <td style="padding: 0.4rem;">46.3%</td>
+                                        <td style="padding: 0.4rem;">Resultado maligno de biopsia</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="color: #000; font-size: 0.85rem; margin-top: 0.3rem;">El dataset está <strong>relativamente balanceado</strong> entre clases benignas y malignas.</p>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">⚠️ Valores Faltantes por Variable</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Valores Faltantes</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Porcentaje de Faltantes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>BI-RADS</strong></td>
+                                        <td style="padding: 0.4rem;">2</td>
+                                        <td style="padding: 0.4rem;">0.2%</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Age</strong></td>
+                                        <td style="padding: 0.4rem;">5</td>
+                                        <td style="padding: 0.4rem;">0.5%</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Shape</strong></td>
+                                        <td style="padding: 0.4rem;">31</td>
+                                        <td style="padding: 0.4rem;">3.2%</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Margin</strong></td>
+                                        <td style="padding: 0.4rem;">48</td>
+                                        <td style="padding: 0.4rem;">5.0%</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Density</strong></td>
+                                        <td style="padding: 0.4rem;">76</td>
+                                        <td style="padding: 0.4rem;">7.9%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="color: #ff6b6b; font-size: 0.85rem; margin-top: 0.3rem;">⚠️ La variable <strong>Density</strong> tiene el mayor número de valores faltantes (7.9%).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Benigno vs. Maligno)</li>
+                            <li><strong>Dimensión:</strong> Multivariante (961 × 5)</li>
+                            <li><strong>Tipo de características:</strong> Enteras (Ordinales y Nominales)</li>
+                            <li><strong>Valores faltantes:</strong> Sí (en todas las variables predictoras)</li>
+                            <li><strong>Área de aplicación:</strong> Salud y Medicina, Radiología, Diagnóstico por Imágenes</li>
+                            <li><strong>Distribución de clases:</strong> 516 benignas (53.7%), 445 malignas (46.3%)</li>
+                            <li><strong>Período de recolección:</strong> 2003-2006</li>
+                            <li><strong>Institución:</strong> Instituto de Radiología de la Universidad de Erlangen-Nuremberg</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📖 Publicación Introductoria</h4>
+                        <p>El artículo fundamental que describe la predicción de resultados de biopsias de mama utilizando dos enfoques CAD es:</p>
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #4fc3f7; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.9rem; margin: 0;">Elter, M., Schulz-Wendtland, R., & Wittenberg, T. (2007). <strong>The prediction of breast cancer biopsy outcomes using two CAD approaches that both emphasize an intelligible decision process</strong>. <em>Medical Physics</em>, 34(11), 4164-4172. <a href="https://doi.org/10.1118/1.2814240" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1118/1.2814240</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos ha sido <strong>anonimizado</strong> para proteger la privacidad de los pacientes. No contiene información personal identificable como nombres, direcciones o números de identificación. Los datos fueron recolectados con fines de investigación en el <strong>Instituto de Radiología de la Universidad de Erlangen-Nuremberg</strong>. <strong>Restricción de confidencialidad:</strong> El uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la reidentificación de pacientes.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es ideal para <strong>clasificación médica</strong> y <strong>sistemas CAD</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable objetivo <strong>Severity</strong> está codificada como <strong>0 = Benigno</strong> y <strong>1 = Maligno</strong></li>
+                            <li>La variable <strong>BI-RADS</strong> es <strong>ordinal</strong> (1-5) y puede utilizarse como característica o como umbral de referencia</li>
+                            <li>Las variables <strong>Shape</strong> y <strong>Margin</strong> son <strong>nominales</strong> y requieren codificación One-Hot Encoding</li>
+                            <li>Las variables <strong>BI-RADS</strong> y <strong>Density</strong> son <strong>ordinales</strong> y pueden tratarse como numéricas</li>
+                            <li>Manejar los <strong>valores faltantes</strong> mediante imputación:
+                                <ul class="transformacion-lista">
+                                    <li><strong>BI-RADS, Shape, Margin, Density:</strong> Imputación por <strong>moda</strong></li>
+                                    <li><strong>Age:</strong> Imputación por <strong>mediana</strong> o <strong>media</strong></li>
+                                </ul>
+                            </li>
+                            <li>Estandarizar/normalizar la variable <strong>Age</strong></li>
+                            <li>La variable <strong>BI-RADS</strong> es un <strong>predictor muy fuerte</strong>, pero en aplicaciones clínicas puede considerarse <strong>no predictiva</strong> en el sentido de que ya representa la evaluación del radiólogo</li>
+                            <li>El dataset está <strong>balanceado</strong> (53.7% benignas, 46.3% malignas), pero se recomienda validación cruzada estratificada</li>
+                            <li>Este dataset es adecuado para <strong>modelos de clasificación</strong> como Regresión Logística, Árboles de Decisión, Random Forest, SVM y Redes Neuronales</li>
+                            <li>La <strong>interpretabilidad</strong> de los modelos es especialmente importante en aplicaciones médicas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en el Diagnóstico de Cáncer de Mama</h4>
+                        <p>El <strong>cáncer de mama</strong> es el <strong>cáncer más común en mujeres</strong> en todo el mundo, con aproximadamente <strong>2.3 millones de casos nuevos</strong> y <strong>685,000 muertes</strong> en 2020, según la Organización Mundial de la Salud. La <strong>detección temprana</strong> a través de mamografía es fundamental para:</p>
+                        <ul class="transformacion-lista">
+                            <li>Mejorar las <strong>tasas de supervivencia</strong> y reducir la mortalidad</li>
+                            <li>Reducir el <strong>número de biopsias innecesarias</strong> (aproximadamente 70%)</li>
+                            <li>Disminuir la <strong>ansiedad del paciente</strong> y los costos de atención médica</li>
+                            <li>Apoyar a los radiólogos en la <strong>toma de decisiones</strong> clínicas</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Los <strong>sistemas CAD</strong> basados en este dataset pueden ayudar a los médicos a decidir si realizar una biopsia o un <strong>seguimiento a corto plazo</strong>, mejorando la <strong>precisión diagnóstica</strong> y reduciendo <strong>procedimientos innecesarios</strong>.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Elter, M., Schulz-Wendtland, R., & Wittenberg, T. (2007). The prediction of breast cancer biopsy outcomes using two CAD approaches that both emphasize an intelligible decision process. Medical Physics, 34(11), 4164-4172. https://doi.org/10.1118/1.2814240</pre>
+                        <button onclick="copyToClipboard('Elter, M., Schulz-Wendtland, R., & Wittenberg, T. (2007). The prediction of breast cancer biopsy outcomes using two CAD approaches that both emphasize an intelligible decision process. Medical Physics, 34(11), 4164-4172. https://doi.org/10.1118/1.2814240')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Elter, M., Schulz-Wendtland, R., & Wittenberg, T. (2007). The prediction of breast cancer biopsy outcomes using two CAD approaches that both emphasize an intelligible decision process. <em>Medical Physics</em>, 34(11), 4164-4172. <a href="https://doi.org/10.1118/1.2814240" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1118/1.2814240</a></li>
+                            <li>UCI Machine Learning Repository - Mammographic Mass. <a href="https://archive.ics.uci.edu/ml/datasets/Mammographic+Mass" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/Mammographic+Mass</a></li>
+                            <li>D'Orsi, C. J., Sickles, E. A., Mendelson, E. B., & Morris, E. A. (2013). <em>ACR BI-RADS Atlas: Breast Imaging Reporting and Data System</em>. American College of Radiology.</li>
+                            <li>Organización Mundial de la Salud (OMS). (2021). <em>Breast Cancer</em>. <a href="https://www.who.int/news-room/fact-sheets/detail/breast-cancer" target="_blank" style="color: #4fc3f7;">https://www.who.int/news-room/fact-sheets/detail/breast-cancer</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Mammographic Masses)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Carga y estructuración de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Carga del archivo <em>mammographic_masses.data</em> con nombres de columnas según la documentación oficial: <em>BI_RADS_assessment</em>, <em>Age</em>, <em>Shape</em>, <em>Margin</em>, <em>Density</em>, <em>Severity</em>.</li>
+                            <li>Tratamiento de valores <em>'?'</em> como <em>NaN</em> durante la carga para identificación temprana de valores faltantes.</li>
+                            <li>Verificación de la estructura del dataset (6 columnas).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Imputación de valores faltantes:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Imputación con mediana</strong> para <em>Age</em> (edad) — estrategia robusta frente a outliers en variables demográficas.</li>
+                            <li><strong>Imputación con moda</strong> para variables ordinales/categóricas: <em>BI_RADS_assessment</em> (evaluación radiológica 1-5), <em>Shape</em> (forma 1-4), <em>Margin</em> (margen 1-5), <em>Density</em> (densidad 1-4).</li>
+                            <li>Garantía de integridad total del conjunto de datos para modelado directo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Estandarización y optimización de tipos de datos:</strong> 
+                        < class="transformacion-lista">
+                            <li>Conversión forzada de <strong>todas las 6 variables</strong> a tipo <strong>entero (int)</strong> para eliminar decimales y optimizar memoria.</li>
+                            <li>Variables incluidas: <em>BI_RADS_assessment</em>, <em>Age</em>, <em>Shape</em>, <em>Margin</em>, <em>Density</em>, <em>Severity</em>.</li>
+                            <li>Eliminación de decimales espurios resultantes de la imputación.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la semántica de variables ordinales:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Documentación detallada de las escalas ordinales con su significado clínico:</li>
+                            <ul class="transformacion-lista">
+                                <li><strong>BI_RADS_assessment (1-5):</strong> Evaluación radiológica — mayor valor indica mayor sospecha de malignidad.</li>
+                                <li><strong>Shape (1-4):</strong> Forma de la masa — 1=Round, 2=Oval, 3=Lobular, 4=Irregular (mayor riesgo).</li>
+                                <li><strong>Margin (1-5):</strong> Margen de la masa — 1=Circumscribed, 2=Microlobulated, 3=Obscured, 4=Ill-defined, 5=Spiculated.</li>
+                                <li><strong>Density (1-4):</strong> Densidad de la masa — 1=High, 2=Iso, 3=Low, 4=Fat-containing.</li>
+                            </ul>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_mammographic.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de la variable <em>Severity</em> (0 = Benign - No canceroso, 1 = Malignant - Canceroso).</li>
+                            <li>Descripción detallada de las 4 variables ordinales con sus escalas y significados clínicos.</li>
+                            <li>Nota sobre imputación de valores perdidos: mediana para Edad, moda para el resto.</li>
+                            <li>Contextualización del dataset: clasificación de masas mamarias en mamografías.</li>
+                            <li>Estadísticas finales: total de instancias, distribución de clases y ratio de desbalance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>961 instancias</strong> (pacientes con masas mamarias) sin eliminación de filas.</li>
+                            <li>Dataset final con <strong>5 variables predictoras</strong> (todas ordinales/númericas enteras) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>961 pacientes</strong> con masas mamarias con <strong>5 variables predictoras</strong> (evaluación radiológica, edad, forma, margen, densidad) y <strong>1 variable objetivo binaria</strong> (Severity). Desbalance moderado (~54% benignas / ~46% malignas) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>diagnóstico por imagen y detección temprana de cáncer de mama</strong>, donde las características morfológicas de las masas y la evaluación radiológica son determinantes.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🩺 <strong>Fuente:</strong> Mammographic Masses Dataset (UCI Machine Learning Repository) - Datos de masas mamarias para clasificación benigno/maligno.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>BI_RADS_assessment (1-5):</strong> Escala de evaluación radiológica — mayor valor = mayor sospecha de malignidad (variable más predictiva).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🔬 <strong>Variables morfológicas:</strong> <em>Shape</em> (forma de la masa, 1-4), <em>Margin</em> (margen, 1-5), <em>Density</em> (densidad, 1-4) — todas con significado clínico documentado.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    👤 <strong>Variable demográfica:</strong> <em>Age</em> (edad del paciente en años) — imputada con mediana.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_mammographic.txt</em> con descripción completa de variables ordinales y sus escalas clínicas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Severity</em> (1 = Maligno/Canceroso, 0 = Benigno/No canceroso).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Tratamiento de '?' como NaN, imputación con mediana (Age) y moda (BI_RADS, Shape, Margin, Density), estandarización de tipos a int.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Mamográfica</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>BI_RADS_assessment</code></td>
+                            <td>Evaluación BI-RADS del radiólogo (escala de sospecha)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0, 2, 3, 4, 5, 6 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Shape</code></td>
+                            <td>Forma de la masa mamaria</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: Redonda, 2: Oval, 3: Lobular, 4: Irregular</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Margin</code></td>
+                            <td>Margen de la masa mamaria</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: Circunscrito, 2: Microlobulado, 3: Oscurecido, 4: Mal definido, 5: Espiculado</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Density</code></td>
+                            <td>Densidad de la masa mamaria</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: Alta, 2: Iso, 3: Baja, 4: Contiene grasa</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Age</code></td>
+                            <td>Edad del paciente</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>18 - 96</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variable Binaria (Target) -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Severity</code></td>
+                            <td>Severidad de la masa mamaria (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Benigno, 1: Maligno</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Severidad (Severity)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Masas Mamográficas (Mammographic Masses). Comprender 
+                estas codificaciones es fundamental para la correcta interpretación de los resultados 
+                de diagnóstico de cáncer de mama.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: BI_RADS_assessment -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>BI_RADS_assessment</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Evaluación BI-RADS (Breast Imaging Reporting and Data System)</strong>
+                        </p>
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                    <th>Riesgo de Malignidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Incompleto (Necesita evaluación adicional)</td><td style="color: #7f8c8d;">-</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Benigno (Hallazgos claramente benignos)</td><td style="color: #27ae60;">✓ Muy bajo (&lt;2%)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Probablemente benigno (Seguimiento corto plazo)</td><td style="color: #27ae60;">✓ Bajo (~2%)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Sospechoso (Recomendación de biopsia)</td><td style="color: #f39c12;">⚠ Moderado (~23-34%)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Altamente sospechoso de malignidad</td><td style="color: #e74c3c;">✗ Alto (&gt;95%)</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>Malignidad conocida (confirmado por biopsia)</td><td style="color: #e74c3c;">✗ Muy alto (100%)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🚨</span>
+                            <p><strong>Factor clave:</strong> BI-RADS es el predictor más fuerte de malignidad. Códigos 4 y 5 requieren biopsia.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Shape -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Shape</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                    <th>Riesgo de Malignidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>Redonda (Round)</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Oval (Oval)</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Lobular (Lobular)</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Irregular (Irregular)</td><td style="color: #e74c3c;">✗ Alto</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">📐</span>
+                            <p><strong>Interpretación:</strong> Formas más irregulares y lobulares son más sospechosas de malignidad.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Margin -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Margin</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                    <th>Riesgo de Malignidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>Circunscrito (Circumscribed)</td><td style="color: #27ae60;">✓ Muy bajo</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Microlobulado (Microlobulated)</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Oscurecido (Obscured)</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Mal definido (Ill-defined)</td><td style="color: #e74c3c;">✗ Alto</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Espiculado (Spiculated)</td><td style="color: #e74c3c;">✗ Muy alto</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🔬</span>
+                            <p><strong>Interpretación:</strong> Margen espiculado (5) es altamente sugestivo de cáncer infiltrante.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Density -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Density</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                    <th>Riesgo de Malignidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>Alta densidad (High)</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Iso densidad (Iso)</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Baja densidad (Low)</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Contiene grasa (Fat-containing)</td><td style="color: #27ae60;">✓ Muy bajo (Benigno)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">💡</span>
+                            <p><strong>Interpretación:</strong> Masas con contenido graso (4) son casi siempre benignas. Alta densidad (1) puede oscurecer lesiones.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Severity (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Severity</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">0</span></td>
+                                    <td><strong>Benigno</strong> - Masa no cancerosa (53.7%)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">1</span></td>
+                                    <td><strong>Maligno</strong> - Masa cancerosa (46.3%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> Clasifica la severidad de la masa mamaria como benigna o maligna.</p>
+                        </div>                        
+                    </div>
+                </div>
+        
+                <!-- Resumen de Características -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Resumen de Características Mamográficas</span>
+                        <span class="leyenda-tipo" style="background: #3498db;">4 Categóricas + 1 Numérica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <div style="background: #eaf2f8; padding: 10px; border-radius: 8px;">
+                                <span style="font-weight: bold; display: block;">🏥 BI-RADS</span>
+                                <span style="font-size: 0.85em;">Evaluación radiológica</span>
+                                <span style="font-size: 0.75em; color: #7f8c8d;">0, 2, 3, 4, 5, 6</span>
+                            </div>
+                            <div style="background: #fdebd0; padding: 10px; border-radius: 8px;">
+                                <span style="font-weight: bold; display: block;">🔵 Shape</span>
+                                <span style="font-size: 0.85em;">Forma de la masa</span>
+                                <span style="font-size: 0.75em; color: #7f8c8d;">1-4 (Round → Irregular)</span>
+                            </div>
+                            <div style="background: #fef9e7; padding: 10px; border-radius: 8px;">
+                                <span style="font-weight: bold; display: block;">📐 Margin</span>
+                                <span style="font-size: 0.85em;">Bordes de la masa</span>
+                                <span style="font-size: 0.75em; color: #7f8c8d;">1-5 (Circunscrito → Espiculado)</span>
+                            </div>
+                            <div style="background: #d5f5e3; padding: 10px; border-radius: 8px;">
+                                <span style="font-weight: bold; display: block;">🎨 Density</span>
+                                <span style="font-size: 0.85em;">Densidad radiográfica</span>
+                                <span style="font-size: 0.75em; color: #7f8c8d;">1-4 (Alta → Grasa)</span>
+                            </div>
+                            <div style="background: #e8daef; padding: 10px; border-radius: 8px; grid-column: span 2;">
+                                <span style="font-weight: bold; display: block;">👤 Age</span>
+                                <span style="font-size: 0.85em;">Edad del paciente (18-96 años)</span>
+                                <span style="font-size: 0.75em; color: #7f8c8d;">A mayor edad, mayor riesgo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 4
+                        <ul>
+                            <li>BI_RADS_assessment (6 niveles - ordinal)</li>
+                            <li>Shape (4 niveles - ordinal)</li>
+                            <li>Margin (5 niveles - ordinal)</li>
+                            <li>Density (4 niveles - ordinal)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 1
+                        <ul>
+                            <li>🎯 Severity (Objetivo - Benigno/Maligno)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 1
+                        <ul>
+                            <li>Age (Edad en años)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones Clínicas:</strong>
+                        <ul>
+                            <li><strong>Factor más importante:</strong> <code>BI_RADS_assessment</code> - Códigos 4+ son altamente predictivos de malignidad</li>
+                            <li><strong>Forma sospechosa:</strong> <code>Shape = 4</code> (Irregular) es la forma más asociada a cáncer</li>
+                            <li><strong>Margen sospechoso:</strong> <code>Margin = 5</code> (Espiculado) es un hallazgo clásico de cáncer infiltrante</li>
+                            <li><strong>Densidad protectora:</strong> <code>Density = 4</code> (Contiene grasa) casi siempre benigno</li>
+                            <li><strong>Edad:</strong> Mayor edad (&gt; 50 años) aumenta el riesgo de malignidad</li>
+                            <li><strong>BI-RADS 0:</strong> Requiere imágenes adicionales (no es diagnóstico final)</li>
+                            <li><strong>BI-RADS 6:</strong> Malignidad ya confirmada por biopsia previa</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- AXIOMA 1: Margin=5 -->
+                        <li><code>Margin == 5 → BI_RADS_assessment = 5 (Margen irregular → BI-RADS 5)</code></li>
+                        <li><code>Margin == 5 → Severity = 1 (Margen irregular → severidad alta)</code></li>
+                        
+                        <!-- AXIOMA 2: Shape=4 -->
+                        <li><code>Shape == 4 → BI_RADS_assessment ≥ 4 (Forma irregular → BI-RADS ≥4)</code></li>
+                        <li><code>Shape == 4 → Severity = 1 (Forma irregular → severidad alta)</code></li>
+                        
+                        <!-- AXIOMA 3: Margin=1 -->
+                        <li><code>Margin == 1 → BI_RADS_assessment ≠ 5 (Margen bien definido → BI-RADS no 5)</code></li>
+                        <li><code>Margin == 1 → Severity = 0 (Margen bien definido → severidad baja)</code></li>
+                        
+                        <!-- AXIOMA 4: Shape=1 -->
+                        <li><code>Shape == 1 → Severity = 0 (Forma bien definida → severidad baja)</code></li>
+                        
+                        <!-- COHERENCIA BI-RADS → SEVERIDAD -->
+                        <li><code>BI_RADS_assessment == 6 → Severity = 1</code></li>
+                        <li><code>BI_RADS_assessment == 5 → Severity = 1</code></li>
+                        <li><code>BI_RADS_assessment == 2 → Severity = 0</code></li>
+                        
+                        <!-- INTERACCIÓN DENSIDAD-MARGEN -->
+                        <li><code>Margin == 3 → Density ≤ 2</code></li>
+                        
+                        <!-- INTERACCIÓN EDAD-DENSIDAD -->
+                        <li><code>Age > 85 → Density ≠ 1</code></li>
+                        
+                        <!-- FACTOR EDAD -->
+                        <li><code>Severity == 1 → Age ≥ 25</code></li>
+                        
+                        <!-- JUSTIFICACIÓN BI-RADS 4 -->
+                        <li><code>BI_RADS_assessment == 4 → (Shape ≥ 3) OR (Margin ≥ 3)</code></li>
+                        
+                        <!-- CONTRADICCIÓN LÓGICA -->
+                        <li><code>Severity == 0 → Margin ≠ 5</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Sin datos disponibles</strong> 
+                    (TabDSFidelity: <strong>-</strong>, AUC: -, F1: -, MIA: -). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.060</td>
+                                <td>3103</td>
+                                <td>0.686</td>
+                                <td>0.619</td>
+                                <td>0.620</td>
+                                <td>4.335</td>
+                                <td>0.050</td>
+                                <td>1.000</td>
+                                <td>0.412</td>
+                                <td>0.812</td>
+                                <td>44.426</td>
+                                <td>0.200</td>
+                                <td>0</td>
+                                <td>0.458</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.371</td>
+                                <td>3103</td>
+                                <td>0.864</td>
+                                <td>0.828</td>
+                                <td>0.828</td>
+                                <td>7.443</td>
+                                <td>0.050</td>
+                                <td>1.000</td>
+                                <td>0.380</td>
+                                <td>0.830</td>
+                                <td>110.056</td>
+                                <td>0.162</td>
+                                <td>44</td>
+                                <td>0.463</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.860</td>
+                                <td>3572</td>
+                                <td>0.495</td>
+                                <td>0.470</td>
+                                <td>0.510</td>
+                                <td>2.416</td>
+                                <td>0.139</td>
+                                <td>0.000</td>
+                                <td>0.152</td>
+                                <td>0.873</td>
+                                <td>308.721</td>
+                                <td>0.087</td>
+                                <td>0</td>
+                                <td>0.423</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>CTGAN + Reglas del Dominio</strong></td>                    
+                                <td>1.275</td>
+                                <td>3572</td>
+                                <td>0.844</td>
+                                <td><strong>0.839</strong></td>
+                                <td><strong>0.839</strong></td>
+                                <td><strong>7.808</strong></td>
+                                <td>0.139</td>
+                                <td>0.000</td>
+                                <td>0.143</td>
+                                <td>0.895</td>
+                                <td>378.241</td>
+                                <td>0.072</td>
+                                <td>114</td>
+                                <td>0.512</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.029</td>
+                                <td>1447</td>
+                                <td>0.488</td>
+                                <td>0.436</td>
+                                <td>0.438</td>
+                                <td>1.881</td>
+                                <td>0.173</td>
+                                <td>0.041</td>
+                                <td>0.033</td>
+                                <td>0.852</td>
+                                <td>157.378</td>
+                                <td>0.020</td>
+                                <td>0</td>
+                                <td>0.480</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.106</td>
+                                <td>1447</td>
+                                <td>0.853</td>
+                                <td>0.813</td>
+                                <td>0.813</td>
+                                <td>7.537</td>
+                                <td>0.173</td>
+                                <td>0.041</td>
+                                <td>0.047</td>
+                                <td>0.847</td>
+                                <td>221.893</td>
+                                <td>0.015</td>
+                                <td>256</td>
+                                <td>0.471</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.521</td>
+                                <td>8287</td>
+                                <td>0.805</td>
+                                <td>0.781</td>
+                                <td>0.781</td>
+                                <td>5.433</td>
+                                <td>0.662</td>
+                                <td>0.000</td>
+                                <td>1.290</td>
+                                <td>0.652</td>
+                                <td>247.029</td>
+                                <td>0.210</td>
+                                <td>4</td>
+                                <td>0.447</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.477</td>
+                                <td>8287</td>
+                                <td>0.864</td>
+                                <td>0.795</td>
+                                <td>0.797</td>
+                                <td>5.600</td>
+                                <td>0.662</td>
+                                <td>0.000</td>
+                                <td>1.258</td>
+                                <td>0.537</td>
+                                <td>320.156</td>
+                                <td>0.155</td>
+                                <td>13</td>
+                                <td>0.469</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1</td>
+                                <td>3758</td>
+                                <td>0.571</td>
+                                <td>0.515</td>
+                                <td>0.516</td>
+                                <td>2.787</td>
+                                <td>0.057</td>
+                                <td>0.981</td>
+                                <td>0.306</td>
+                                <td>0.818</td>
+                                <td>41.169</td>
+                                <td>0.172</td>
+                                <td>0</td>
+                                <td>0.514</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.344</td>
+                                <td>3758</td>
+                                <td>0.852</td>
+                                <td>0.839</td>
+                                <td>0.839</td>
+                                <td>7.596</td>
+                                <td>0.057</td>
+                                <td>0.981</td>
+                                <td>0.279</td>
+                                <td>0.842</td>
+                                <td>108.754</td>
+                                <td>0.139</td>
+                                <td>104</td>
+                                <td>0.488</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>CTGAN + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>7.808</strong>, AUC: 0.844, F1: 0.839, MIA: 0.512). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.083</td>
+                                <td>4064</td>
+                                <td>0.981</td>
+                                <td>0.906</td>
+                                <td>0.906</td>
+                                <td>5.834</td>
+                                <td>0.039</td>
+                                <td>1.000</td>
+                                <td>0.248</td>
+                                <td>0.855</td>
+                                <td>78.105</td>
+                                <td>0.151</td>
+                                <td>475</td>
+                                <td>0.448</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.227</td>
+                                <td>4064</td>
+                                <td>0.979</td>
+                                <td>0.906</td>
+                                <td>0.906</td>
+                                <td>5.754</td>
+                                <td>0.039</td>
+                                <td>1.000</td>
+                                <td>0.226</td>
+                                <td>0.872</td>
+                                <td>143.182</td>
+                                <td>0.124</td>
+                                <td>513</td>
+                                <td>0.473</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.676</td>
+                                <td>4533</td>
+                                <td>0.965</td>
+                                <td>0.890</td>
+                                <td>0.891</td>
+                                <td>2.960</td>
+                                <td>0.114</td>
+                                <td>0.000</td>
+                                <td>0.100</td>
+                                <td>0.901</td>
+                                <td>344.440</td>
+                                <td>0.069</td>
+                                <td>423</td>
+                                <td>0.520</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.173</td>
+                                <td>4533</td>
+                                <td>0.977</td>
+                                <td>0.891</td>
+                                <td>0.891</td>
+                                <td>4.172</td>
+                                <td>0.114</td>
+                                <td>0.000</td>
+                                <td>0.095</td>
+                                <td>0.920</td>
+                                <td>413.396</td>
+                                <td>0.058</td>
+                                <td>512</td>
+                                <td>0.479</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.079</td>
+                                <td>2408</td>
+                                <td>0.970</td>
+                                <td>0.880</td>
+                                <td>0.880</td>
+                                <td>2.475</td>
+                                <td>0.108</td>
+                                <td>0.370</td>
+                                <td>0.013</td>
+                                <td>0.920</td>
+                                <td>190.434</td>
+                                <td>0.012</td>
+                                <td>810</td>
+                                <td>0.532</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.002</td>
+                                <td>2408</td>
+                                <td>0.976</td>
+                                <td>0.891</td>
+                                <td>0.891</td>
+                                <td>4.168</td>
+                                <td>0.108</td>
+                                <td>0.370</td>
+                                <td>0.013</td>
+                                <td>0.925</td>
+                                <td>254.842</td>
+                                <td>0.008</td>
+                                <td>1031</td>
+                                <td>0.459</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>OOF PSO para Aumento</strong></td>                    
+                                <td>1.478</td>
+                                <td>9248</td>
+                                <td><strong>0.986</strong></td>
+                                <td><strong>0.917</strong></td>
+                                <td><strong>0.917</strong></td>
+                                <td><strong>6.291</strong></td>
+                                <td>0.593</td>
+                                <td>0.000</td>
+                                <td>0.790</td>
+                                <td>0.684</td>
+                                <td>283.291</td>
+                                <td>0.187</td>
+                                <td>214</td>
+                                <td>0.446</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.440</td>
+                                <td>9248</td>
+                                <td>0.986</td>
+                                <td>0.917</td>
+                                <td>0.917</td>
+                                <td>6.089</td>
+                                <td>0.593</td>
+                                <td>0.000</td>
+                                <td>0.721</td>
+                                <td>0.580</td>
+                                <td>358.075</td>
+                                <td>0.139</td>
+                                <td>223</td>
+                                <td>0.447</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.031</td>
+                                <td>4719</td>
+                                <td>0.976</td>
+                                <td>0.901</td>
+                                <td>0.901</td>
+                                <td>4.908</td>
+                                <td>0.045</td>
+                                <td>0.999</td>
+                                <td>0.205</td>
+                                <td>0.854</td>
+                                <td>75.334</td>
+                                <td>0.136</td>
+                                <td>418</td>
+                                <td>0.428</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.227</td>
+                                <td>4719</td>
+                                <td>0.978</td>
+                                <td>0.901</td>
+                                <td>0.901</td>
+                                <td>5.114</td>
+                                <td>0.045</td>
+                                <td>0.999</td>
+                                <td>0.186</td>
+                                <td>0.875</td>
+                                <td>144.801</td>
+                                <td>0.110</td>
+                                <td>495</td>
+                                <td>0.479</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>OOF PSO para Aumento</strong> 
+                    (TabDSFidelity: <strong>6.291</strong>, AUC: 0.986, F1: 0.917, MIA: 0.446). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_51</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>----</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>CTGAN + Reglas del Dominio</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>OOF PSO para Aumento</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd51.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Breast Cancer Diagnosis (Mammographic Mass) (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32946752.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [53.65, 46.35], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_42: German Credit Data - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_42</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_42: German Credit Data</h1>
+            <p class="description">Conjunto de datos financiero para la evaluación del riesgo crediticio (binario). Integra variables sociodemográficas y financieras procesadas numéricamente, manteniendo jerarquías en atributos ordinales (e.g., estado de cuenta, ahorros).</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.76</td>
+                                    <td>0.88</td>
+                                    <td>0.81</td>
+                                    <td>140</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.55</td>
+                                    <td>0.35</td>
+                                    <td>0.43</td>
+                                    <td>60</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.72</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.66</td>
+                                    <td>0.61</td>
+                                    <td>0.62</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.70</td>
+                                    <td>0.72</td>
+                                    <td>0.70</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.76</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.70</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.72</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.02 AUC</span>
+                        <span class="improvement-tag">⬆ +0.05 F1</span>
+                        <span class="improvement-tag">⬆ +0.02 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.83</td>
+                                    <td>0.80</td>
+                                    <td>0.81</td>
+                                    <td>140</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.57 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>0.62 <span class="improvement-indicator">⬆ +0.27</span></td>
+                                    <td>0.59 <span class="improvement-indicator">⬆ +0.16</span></td>
+                                    <td>60</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.74</strong> <span class="improvement-indicator">⬆ +0.02</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.70 <span class="improvement-indicator">⬆ +0.04</span></td>
+                                    <td>0.71 <span class="improvement-indicator">⬆ +0.10</span></td>
+                                    <td>0.70 <span class="improvement-indicator">⬆ +0.08</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.75 <span class="improvement-indicator">⬆ +0.05</span></td>
+                                    <td>0.74 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>0.75 <span class="improvement-indicator">⬆ +0.05</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.78</span>
+                            <span class="improvement-badge positive">⬆ +0.02</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.75</span>
+                            <span class="improvement-badge positive">⬆ +0.05</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.74</span>
+                            <span class="improvement-badge positive">⬆ +0.02</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.55</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 55%; background: #f39c12;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.57</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 57%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.02</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.35</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 35%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.62</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 62%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.27</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.43</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 43%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.59</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 59%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.16</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>German Credit Data (StatLog)</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Prof. Hofmann (Universidad de Hamburgo)</div>
+                    <div class="fuente-fecha">Disponible en repositorios públicos</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">1,000</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">20 (19 predictores + 1 objetivo)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Formatos:</span>
+                            <span class="metadata-value">Categórico (german.data) y Numérico (german.data-numeric)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Crédito Alemán (German Credit Data)</strong> clasifica a personas descritas por un conjunto de atributos como <strong>buenos o malos riesgos crediticios</strong>. El dataset está disponible en <strong>dos formatos</strong>: el original con atributos categóricos/simbólicos (archivo <code>german.data</code>) y una versión numérica editada por la <strong>Universidad de Strathclyde</strong> (archivo <code>german.data-numeric</code>) para algoritmos que requieren atributos numéricos. Este dataset requiere el uso de una <strong>matriz de costos</strong> porque es peor clasificar a un cliente como bueno cuando es malo (costo 5) que clasificarlo como malo cuando es bueno (costo 1).</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🔬 Contexto y Motivación</h4>
+                        <p>La <strong>evaluación de riesgos crediticios</strong> es un problema fundamental en la <strong>industria bancaria y financiera</strong>. Las instituciones financieras necesitan determinar si un solicitante de crédito es un <strong>buen o mal riesgo</strong> para minimizar pérdidas y maximizar ganancias. Este dataset fue utilizado en el proyecto <strong>StatLog</strong> para comparar diferentes algoritmos de aprendizaje automático en problemas de clasificación del mundo real.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">💰 Matriz de Costos</h5>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6;">El dataset requiere el uso de una <strong>matriz de costos</strong> para evaluar correctamente el rendimiento:</p>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;"> </th>
+                                        <th style="text-align: left; padding: 0.4rem;">Predicción: Bueno (1)</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Predicción: Malo (2)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Real: Bueno (1)</strong></td>
+                                        <td style="padding: 0.4rem;">0 (Correcto)</td>
+                                        <td style="padding: 0.4rem;">1 (Falso negativo)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Real: Malo (2)</strong></td>
+                                        <td style="padding: 0.4rem;">5 (Falso positivo - <strong>más costoso</strong>)</td>
+                                        <td style="padding: 0.4rem;">0 (Correcto)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="color: #ff6b6b; font-size: 0.85rem; margin-top: 0.3rem;">⚠️ Es <strong>5 veces más costoso</strong> clasificar a un cliente malo como bueno (conceder un préstamo que no se pagará) que clasificar a un cliente bueno como malo (rechazar un préstamo que sí se pagaría).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>1,000 instancias</strong> con <strong>20 atributos</strong> (19 variables predictoras y 1 variable objetivo). Las características son de tipo <strong>categórico y entero</strong>. <strong>No presenta valores faltantes</strong>.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Atributo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Categorías / Unidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Información Financiera</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute1</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Estado de la cuenta corriente</td>
+                                        <td style="padding: 0.4rem;">A11: < 0 DM, A12: 0-200 DM, A13: ≥ 200 DM, A14: sin cuenta</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute2</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Duración del crédito</td>
+                                        <td style="padding: 0.4rem;">meses</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute5</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Monto del crédito</td>
+                                        <td style="padding: 0.4rem;">DM</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute8</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Tasa de cuota (% del ingreso disponible)</td>
+                                        <td style="padding: 0.4rem;">%</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute16</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Número de créditos existentes en este banco</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute18</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Número de personas a cargo</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ffd93d; font-weight: bold;">B. Historial Crediticio</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute3</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Historial crediticio</td>
+                                        <td style="padding: 0.4rem;">A30: pagado, A31: pagado en este banco, A32: créditos existentes pagados, A33: retrasos, A34: cuenta crítica</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute6</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Cuenta de ahorros / bonos</td>
+                                        <td style="padding: 0.4rem;">A61: < 100 DM, A62: 100-500 DM, A63: 500-1000 DM, A64: ≥ 1000 DM, A65: desconocido</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #6bcb77; font-weight: bold;">C. Datos Personales y Demográficos</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute7</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Empleo actual desde</td>
+                                        <td style="padding: 0.4rem;">A71: desempleado, A72: < 1 año, A73: 1-4 años, A74: 4-7 años, A75: ≥ 7 años</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute9</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Estado personal y sexo</td>
+                                        <td style="padding: 0.4rem;">A91: hombre divorciado/separado, A92: mujer divorciada/casada, A93: hombre soltero, A94: hombre casado/viudo, A95: mujer soltera</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute10</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Otros deudores / garantes</td>
+                                        <td style="padding: 0.4rem;">A101: ninguno, A102: co-solicitante, A103: garante</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute11</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Residencia actual desde</td>
+                                        <td style="padding: 0.4rem;">años</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute12</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Propiedad</td>
+                                        <td style="padding: 0.4rem;">A121: bienes raíces, A122: seguro de vida, A123: automóvil, A124: desconocido</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute13</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Edad</td>
+                                        <td style="padding: 0.4rem;">años</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute14</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Otros planes de cuotas</td>
+                                        <td style="padding: 0.4rem;">A141: banco, A142: tiendas, A143: ninguno</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute15</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Vivienda</td>
+                                        <td style="padding: 0.4rem;">A151: alquiler, A152: propia, A153: gratis</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute17</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Ocupación</td>
+                                        <td style="padding: 0.4rem;">A171: desempleado/no calificado, A172: no calificado residente, A173: empleado calificado, A174: gerente/autónomo</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute19</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">Teléfono</td>
+                                        <td style="padding: 0.4rem;">A191: ninguno, A192: sí (registrado)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Attribute20</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">Trabajador extranjero</td>
+                                        <td style="padding: 0.4rem;">A201: sí, A202: no</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">D. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>class</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Riesgo crediticio</td>
+                                        <td style="padding: 0.4rem;">1 = Bueno (Good)<br>2 = Malo (Bad)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria con costos asimétricos (Good vs. Bad credit risk)</li>
+                            <li><strong>Dimensión:</strong> Multivariante (1,000 × 20)</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (Categóricas y Enteras)</li>
+                            <li><strong>Valores faltantes:</strong> No</li>
+                            <li><strong>Área de aplicación:</strong> Finanzas, Banca, Evaluación de Riesgos Crediticios</li>
+                            <li><strong>Formatos disponibles:</strong> Categórico (german.data) y Numérico (german.data-numeric)</li>
+                            <li><strong>Matriz de costos:</strong> Requerida para evaluación (costo de Falso Positivo = 5, Falso Negativo = 1)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos contiene <strong>información demográfica</strong> (edad, sexo, estado civil, ocupación, nacionalidad) que podría considerarse sensible. Los datos han sido <strong>anonimizados</strong> y no contienen información personal identificable como nombres, direcciones o números de identificación. <strong>Restricción de confidencialidad:</strong> El uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que pueda comprometer la privacidad de los individuos representados en el dataset.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es un <strong>clásico en la evaluación de riesgos crediticios</strong> y requiere consideraciones especiales debido a la <strong>matriz de costos</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable objetivo <strong>class</strong> está codificada como <strong>1 = Bueno (Good)</strong> y <strong>2 = Malo (Bad)</strong></li>
+                            <li>Utilizar la <strong>matriz de costos</strong> para evaluar el rendimiento:
+                                <ul class="transformacion-lista">
+                                    <li><strong>Falso Positivo</strong> (cliente malo clasificado como bueno): Costo = 5</li>
+                                    <li><strong>Falso Negativo</strong> (cliente bueno clasificado como malo): Costo = 1</li>
+                                </ul>
+                            </li>
+                            <li>Existen <strong>dos formatos</strong> del dataset:
+                                <ul class="transformacion-lista">
+                                    <li><code>german.data</code>: Atributos categóricos/simbólicos (original)</li>
+                                    <li><code>german.data-numeric</code>: Atributos numéricos (editado por Strathclyde University)</li>
+                                </ul>
+                            </li>
+                            <li>Las variables categóricas en el formato original utilizan códigos como <strong>A11, A12, etc.</strong></li>
+                            <li>En el formato numérico, las variables categóricas han sido codificadas como valores enteros</li>
+                            <li>Varias características están en <strong>escalas diferentes</strong> (DM, meses, %, años), por lo que se recomienda estandarización/normalización para algoritmos basados en distancias</li>
+                            <li>El dataset tiene un <strong>desbalanceo moderado</strong> (aproximadamente 70% buenos, 30% malos)</li>
+                            <li>Los <strong>costos asimétricos</strong> deben reflejarse en la función de pérdida durante el entrenamiento (cost-sensitive learning)</li>
+                            <li>Este dataset es adecuado para <strong>modelos de clasificación</strong> como Regresión Logística, Árboles de Decisión, Random Forest, XGBoost y SVM</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en la Evaluación de Riesgos Crediticios</h4>
+                        <p>La <strong>evaluación de riesgos crediticios</strong> es una de las aplicaciones más importantes del <strong>aprendizaje automático</strong> en el sector financiero. Este dataset es significativo porque:</p>
+                        <ul class="transformacion-lista">
+                            <li>Refleja un <strong>problema del mundo real</strong> con <strong>costos asimétricos</strong> (los falsos positivos son mucho más costosos que los falsos negativos)</li>
+                            <li>Incluye una <strong>mezcla de atributos</strong> categóricos y numéricos, lo que requiere técnicas de preprocesamiento variadas</li>
+                            <li>Fue utilizado en el proyecto <strong>StatLog</strong> para comparar diferentes algoritmos de clasificación</li>
+                            <li>Permite investigar <strong>técnicas de aprendizaje sensible a costos</strong> y <strong>evaluación con matrices de costo</strong></li>
+                            <li>Es un dataset <strong>balanceado en cuanto a tamaño</strong> (1,000 instancias) que permite pruebas rápidas de algoritmos</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">La <strong>evaluación correcta del riesgo crediticio</strong> es fundamental para la estabilidad financiera de los bancos y la economía en general. Los modelos predictivos basados en este tipo de datos ayudan a las instituciones a <strong>minimizar pérdidas</strong> por préstamos impagos mientras <strong>maximizan el acceso al crédito</strong> para clientes que sí pagarán.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Statlog (German Credit Data) Dataset. UCI Machine Learning Repository. Prof. Dr. Hans Hofmann, Universität Hamburg. https://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)</pre>
+                        <button onclick="copyToClipboard('Statlog (German Credit Data) Dataset. UCI Machine Learning Repository. Prof. Dr. Hans Hofmann, Universität Hamburg. https://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        < class="transformacion-lista">
+                            <li>Michie, D., Spiegelhalter, D. J., & Taylor, C. C. (1994). <em>Machine Learning, Neural and Statistical Classification</em>. Ellis Horwood. (Proyecto StatLog)</li>
+                            <li>UCI Machine Learning Repository - Statlog (German Credit Data). <a href="https://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data)</a></li>
+                            <li>Hand, D. J., & Henley, W. E. (1997). Statistical classification methods in consumer credit scoring: a review. <em>Journal of the Royal Statistical Society: Series A</em>, 160(3), 523-541.</li>
+                            <li>Thomas, L. C., Edelman, D. B., & Crook, J. N. (2002). <em>Credit Scoring and Its Applications</em>. SIAM.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (German Credit Risk Dataset)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Carga y estructuración de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Carga del archivo <em>german.data</em> utilizando separador de espacios en blanco (<code>\s+</code>).</li>
+                            <li>Asignación de nombres de columnas según la documentación oficial (20 variables predictoras + 1 variable objetivo).</li>
+                            <li>Verificación de integridad estructural del dataset.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transformación de la variable objetivo:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación de <em>risk_bad</em> a partir de la variable original <em>class</em> que utilizaba codificación {1, 2}.</li>
+                            <li><strong>Mapeo:</strong> class = 1 (Good Credit) → <em>0</em> (Clase Negativa), class = 2 (Bad Credit) → <em>1</em> (Clase Positiva - Riesgo).</li>
+                            <li>Eliminación de la columna original <em>class</em> para evitar redundancia.</li>
+                            <li>Documentación del objetivo: detección de clientes con mal riesgo crediticio.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variables ordinales preservando jerarquía:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>checking_status:</strong> Mapeo de estado de cuenta (A11→1, A12→2, A13→3, A14→4) preservando orden de liquidez (1 = <0 DM, 2 = 0-200 DM, 3 = ≥200 DM, 4 = Sin cuenta).</li>
+                            <li><strong>savings_status:</strong> Mapeo de ahorros (A61→1, A62→2, A63→3, A64→4, A65→0) con 0 = Desconocido/Ninguno, preservando jerarquía de cantidad.</li>
+                            <li><strong>employment:</strong> Mapeo de empleo (A71→0, A72→1, A73→2, A74→3, A75→4) preservando jerarquía de estabilidad laboral (0 = Desempleado, 4 = ≥7 años).</li>
+                            <li>Documentación detallada de cada escala ordinal en la leyenda.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variables nominales:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de <strong>10 variables categóricas</strong> a valores numéricos mediante <em>Label Encoding</em>: <em>credit_history</em>, <em>purpose</em>, <em>personal_status_sex</em>, <em>other_debtors</em>, <em>property</em>, <em>other_installment_plans</em>, <em>housing</em>, <em>job</em>, <em>telephone</em>, <em>foreign_worker</em>.</li>
+                            <li>Generación de mapeo completo (código → valor original) en la leyenda para todas las variables nominales.</li>
+                            <li>Preservación de la semántica original a través de la documentación.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Estandarización y optimización de tipos de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión forzada de <strong>todas las 21 variables</strong> (20 predictoras + 1 objetivo) a tipo <strong>entero (int)</strong>.</li>
+                            <li>Preservación de variables numéricas continuas/discretas en formato entero: <em>duration</em> (meses), <em>credit_amount</em> (moneda), <em>installment_rate</em> (%), <em>residence_since</em> (años), <em>age</em> (años), <em>existing_credits</em> (conteo), <em>num_dependents</em> (conteo).</li>
+                            <li>Eliminación de decimales espurios para optimizar memoria y mejorar legibilidad.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_german_credit.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de variables ordinales con sus escalas jerárquicas (checking_status, savings_status, employment).</li>
+                            <li>Mapeo completo de variables nominales codificadas (10 variables) con sus valores originales.</li>
+                            <li>Descripción de variables numéricas y sus unidades de medida.</li>
+                            <li>Contextualización del dataset: clasificación de riesgo crediticio en clientes bancarios alemanes.</li>
+                            <li>Estadísticas finales: total de instancias y ratio de desbalance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>1,000 instancias</strong> (clientes bancarios) sin eliminación de filas.</li>
+                            <li>Dataset final con <strong>20 variables predictoras</strong> (mixtas: ordinales, nominales codificadas y numéricas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>1,000 clientes bancarios</strong> alemanes con <strong>20 variables predictoras</strong> (demográficas, financieras, de historial crediticio y de empleo) y <strong>1 variable objetivo binaria</strong> (risk_bad). Desbalance moderado (~70% buen crédito / ~30% mal crédito) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>evaluación de riesgo crediticio y scoring bancario</strong>, donde factores socioeconómicos, laborales y de historial financiero son determinantes.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🏦 <strong>Fuente:</strong> German Credit Risk Dataset (UCI Machine Learning Repository) - Datos de clientes bancarios alemanes para clasificación de riesgo crediticio.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variables ordinales:</strong> <em>checking_status</em> (estado de cuenta, 1-4), <em>savings_status</em> (ahorros, 0-4), <em>employment</em> (empleo, 0-4) — todas con jerarquía preservada.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📋 <strong>Variables nominales:</strong> 10 variables incluyendo <em>credit_history</em> (historial crediticio), <em>purpose</em> (propósito del préstamo), <em>personal_status_sex</em> (estado civil/género), <em>property</em> (propiedad), <em>housing</em> (vivienda), <em>job</em> (trabajo), entre otras.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_german_credit.txt</em> con mapeo completo de variables ordinales, nominales y descripción de variables numéricas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>risk_bad</em> (1 = Mal riesgo crediticio, 0 = Buen riesgo crediticio).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Carga con separador de espacios, transformación de target (1→0, 2→1), mapeo ordinal de 3 variables, Label Encoding de 10 variables nominales, estandarización de tipos a int.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Financiera</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>checking_status</code></td>
+                            <td>Estado de la cuenta corriente (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: &lt;0 DM, 2: 0-200 DM, 3: ≥200 DM, 4: Sin cuenta</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>credit_history</code></td>
+                            <td>Historial crediticio (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-4 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>purpose</code></td>
+                            <td>Propósito del crédito (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-9 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>savings_status</code></td>
+                            <td>Estado de ahorros (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Desconocido, 1: &lt;100, 2: 100-500, 3: 500-1000, 4: ≥1000</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>personal_status_sex</code></td>
+                            <td>Sexo y estado civil (compuesto)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-3 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>other_debtors</code></td>
+                            <td>Otros deudores (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-2 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>property</code></td>
+                            <td>Tipo de propiedad (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-3 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>other_installment_plans</code></td>
+                            <td>Otros planes de cuotas (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-2 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>housing</code></td>
+                            <td>Tipo de vivienda (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-2 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>job</code></td>
+                            <td>Tipo de empleo (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-3 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>duration</code></td>
+                            <td>Duración del crédito en meses</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4 - 60</td>
+                            <td>meses</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>credit_amount</code></td>
+                            <td>Monto del crédito</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>276 - 14,782</td>
+                            <td>DM</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>employment</code></td>
+                            <td>Antigüedad laboral (años)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 4</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>installment_rate</code></td>
+                            <td>Tasa de pago (% del ingreso disponible)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1 - 4</td>
+                            <td>%</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>residence_since</code></td>
+                            <td>Tiempo en residencia actual</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1 - 4</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>age</code></td>
+                            <td>Edad del solicitante</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>19 - 75</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>existing_credits</code></td>
+                            <td>Número de créditos existentes</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1 - 4</td>
+                            <td>créditos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>num_dependents</code></td>
+                            <td>Número de personas a cargo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1 - 2</td>
+                            <td>personas</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>telephone</code></td>
+                            <td>Teléfono registrado</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>foreign_worker</code></td>
+                            <td>Trabajador extranjero</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Sí, 1: No</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>risk_bad</code></td>
+                            <td>Riesgo de incumplimiento (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Bueno (Solvente), 1: Malo (Riesgo)</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">21</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Riesgo Crediticio (risk_bad)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Riesgo Crediticio Alemán (German Credit Data). 
+                Comprender estas codificaciones es fundamental para la correcta interpretación de los 
+                resultados de evaluación de crédito.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: checking_status -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>checking_status</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                    <th>Riesgo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>&lt; 0 DM (Saldo negativo)</td><td style="color: #e74c3c;">✗ Alto</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>0 - 200 DM (Saldo bajo)</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>≥ 200 DM (Saldo alto)</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Sin cuenta corriente</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🚨</span>
+                            <p><strong>Factor clave:</strong> Saldo negativo en cuenta corriente es un fuerte predictor de riesgo crediticio.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: credit_history -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>credit_history</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                    <th>Riesgo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>A30 - Sin créditos previos</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>A31 - Todos los créditos pagados</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>A32 - Créditos actuales pagados puntualmente</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>A33 - Pagos atrasados (retrasos)</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>A34 - Créditos críticos / Deudas pendientes</td><td style="color: #e74c3c;">✗ Alto</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">📊</span>
+                            <p><strong>Historial crediticio:</strong> El historial de pagos es el predictor más importante de riesgo crediticio.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: purpose -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>purpose</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>A40 - Automóvil nuevo</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>A41 - Automóvil usado</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>A410 - Otros (electrodomésticos, etc.)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>A42 - Equipamiento / Mobiliario</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>A43 - Radio / Televisión</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>A44 - Electrodomésticos</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>A45 - Reparaciones</td></tr>
+                                <tr><td><span class="codigo">7</span></td><td>A46 - Educación / Formación</td></tr>
+                                <tr><td><span class="codigo">8</span></td><td>A48 - Vacaciones</td></tr>
+                                <tr><td><span class="codigo">9</span></td><td>A49 - Negocios / Inversión</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">💼</span>
+                            <p><strong>Interpretación:</strong> Créditos para negocios/inversión (9) suelen tener mejor comportamiento que para consumo.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: savings_status -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>savings_status</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                    <th>Riesgo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Desconocido / Sin ahorros</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>&lt; 100 DM</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>100 - 500 DM</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>500 - 1000 DM</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>≥ 1000 DM</td><td style="color: #27ae60;">✓ Muy bajo</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">💰</span>
+                            <p><strong>Factor protector:</strong> Mayor nivel de ahorros indica menor riesgo de incumplimiento.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: personal_status_sex -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>personal_status_sex</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>A91 - Hombre soltero</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>A92 - Hombre casado/viudo/divorciado</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>A93 - Hombre divorciado/separado</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>A94 - Mujer</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">👤</span>
+                            <p><strong>Variable compuesta:</strong> Combina sexo y estado civil en una sola codificación.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: other_debtors -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>other_debtors</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>A101 - Sin otros deudores</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>A102 - Con deudor que avala</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>A103 - Cónyuge como deudor</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: property -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>property</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                    <th>Riesgo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>A121 - Bienes raíces (casa/terreno)</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>A122 - Seguro de ahorro / Contrato de pensión</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>A123 - Automóvil / Otros bienes</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>A124 - Sin propiedad / Desconocido</td><td style="color: #e74c3c;">✗ Alto</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🏠</span>
+                            <p><strong>Garantía:</strong> La posesión de bienes raíces es un fuerte factor protector contra el riesgo crediticio.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: other_installment_plans -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>other_installment_plans</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>A141 - En el banco (institución financiera)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>A142 - En tiendas (comercios)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>A143 - Sin otros planes de cuotas</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: housing -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>housing</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                    <th>Riesgo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>A151 - Alquiler</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>A152 - Propia</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>A153 - Vivienda gratuita (familiares)</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">🏡</span>
+                            <p><strong>Estabilidad:</strong> Vivienda propia indica mayor estabilidad financiera y menor riesgo.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: job -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>job</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                    <th>Estabilidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>A171 - Desempleado / Sin empleo</td><td style="color: #e74c3c;">✗ Muy baja</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>A172 - Trabajador no calificado</td><td style="color: #f39c12;">⚠ Baja</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>A173 - Trabajador calificado / Funcionario</td><td style="color: #27ae60;">✓ Media</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>A174 - Directivo / Profesional</td><td style="color: #27ae60;">✓ Alta</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">💼</span>
+                            <p><strong>Jerarquía ocupacional:</strong> Mayor nivel ocupacional se asocia con menor riesgo crediticio.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato común:</strong> 0 = No / Ausencia, 1 = Sí / Presencia
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>telephone</code></span>
+                                <span class="binaria-desc">Teléfono registrado (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>foreign_worker</code></span>
+                                <span class="binaria-desc">Trabajador extranjero (0: Sí, 1: No)</span>
+                            </div>
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>risk_bad</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Riesgo crediticio (0: Bueno, 1: Malo)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Todas las variables binarias están codificadas como <strong>0 = No</strong> y <strong>1 = Sí</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 10
+                        <ul>
+                            <li>checking_status (4 niveles - ordinal)</li>
+                            <li>credit_history (5 niveles - nominal)</li>
+                            <li>purpose (10 niveles - nominal)</li>
+                            <li>savings_status (5 niveles - ordinal)</li>
+                            <li>personal_status_sex (4 niveles - nominal)</li>
+                            <li>other_debtors (3 niveles - nominal)</li>
+                            <li>property (4 niveles - nominal)</li>
+                            <li>other_installment_plans (3 niveles - nominal)</li>
+                            <li>housing (3 niveles - nominal)</li>
+                            <li>job (4 niveles - ordinal)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 3
+                        <ul>
+                            <li>telephone (Teléfono)</li>
+                            <li>foreign_worker (Trabajador extranjero)</li>
+                            <li>🎯 risk_bad (Objetivo - Riesgo crediticio)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 8
+                        <ul>
+                            <li>duration, credit_amount</li>
+                            <li>employment, installment_rate</li>
+                            <li>residence_since, age</li>
+                            <li>existing_credits, num_dependents</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Evaluación Crediticia:</strong>
+                        <ul>
+                            <li><strong>Factores críticos:</strong> checking_status, credit_history, savings_status, property</li>
+                            <li><strong>Riesgo alto:</strong> Saldo negativo en cuenta, historial de deudas críticas, sin propiedad</li>
+                            <li><strong>Riesgo bajo:</strong> Ahorros altos, vivienda propia, empleo estable</li>
+                            <li><strong>Duración del crédito:</strong> Créditos más largos (duration &gt; 36 meses) tienen mayor riesgo</li>
+                            <li><strong>Edad:</strong> Solicitantes jóvenes (age &lt; 25) suelen tener mayor riesgo</li>
+                            <li><strong>Coste de clasificación:</strong> El coste de un falso negativo (aprobar a un mal pagador) es mayor que un falso positivo</li>
+                            <li><strong>Dataset original:</strong> Códigos AXX de la UCI mapeados a valores numéricos para el modelo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- EMPLEO - Edad temprana -->
+                        <li><code>age < 26 → employment ≠ 4 (Jóvenes no pueden estar desempleados)</code></li>
+                        
+                        <!-- EMPLEO - Consistencia desempleo -->
+                        <li><code>employment == 0 → job ≠ 2 (Desempleado → no puede ser técnico)</code></li>
+                        <li><code>employment == 0 → job ≠ 3 (Desempleado → no puede ser ejecutivo)</code></li>
+                        
+                        <!-- EMPLEO - Trabajador extranjero -->
+                        <li><code>foreign_worker == 1 → job ≠ 0 (Trabajador extranjero → no puede ser desempleado)</code></li>
+                        
+                        <!-- EMPLEO - Perfil ejecutivo -->
+                        <li><code>job == 3 → telephone = 1 (Ejecutivo → debe tener teléfono)</code></li>
+                        
+                        <!-- VIVIENDA - Propiedad (Dueño) -->
+                        <li><code>housing == 1 → property ≠ 3 (Dueño de vivienda → no sin activos)</code></li>
+                        
+                        <!-- VIVIENDA - Sin activos -->
+                        <li><code>property == 3 → housing ≠ 1 (Sin activos → no dueño de vivienda)</code></li>
+                        
+                        <!-- VIVIENDA - Vivienda gratuita -->
+                        <li><code>housing == 2 → property ≠ 0 (Vivienda gratuita → no propiedad sin activos)</code></li>
+                        
+                        <!-- HISTORIAL CREDITICIO - Perfecto -->
+                        <li><code>credit_history == 0 → existing_credits = 1 (Historial perfecto → 1 crédito existente)</code></li>
+                        
+                        <!-- HISTORIAL CREDITICIO - Crítico -->
+                        <li><code>credit_history == 4 → existing_credits ≥ 2 (Historial crítico → múltiples créditos)</code></li>
+                        
+                        <!-- DEMOGRAFÍA - Soltero -->
+                        <li><code>personal_status_sex == 2 (Soltero) → num_dependents = 1</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>1</td>
+                                <td>840</td>
+                                <td>0.718</td>
+                                <td>0.679</td>
+                                <td>0.690</td>
+                                <td>6.856</td>
+                                <td>0.048</td>
+                                <td>0.884</td>
+                                <td>0.010</td>
+                                <td>0.979</td>
+                                <td>56.932</td>
+                                <td>0</td>
+                                <td>840</td>
+                                <td>0.504</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>Smote</strong></td>
+                                <td>1</td>
+                                <td>840</td>
+                                <td>0.731</td>
+                                <td><strong>0.710</strong></td>
+                                <td><strong>0.705</strong></td>
+                                <td><strong>8.296</strong></td>
+                                <td>0.104</td>
+                                <td>0.467</td>
+                                <td>0.020</td>
+                                <td>0.968</td>
+                                <td>55.354</td>
+                                <td>0.040</td>
+                                <td>600</td>
+                                <td>0.494</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>840</td>
+                                <td>0.726</td>
+                                <td>0.673</td>
+                                <td>0.670</td>
+                                <td>5.416</td>
+                                <td>0.098</td>
+                                <td>0.546</td>
+                                <td>0.022</td>
+                                <td>0.964</td>
+                                <td>54.925</td>
+                                <td>0.040</td>
+                                <td>600</td>
+                                <td>0.508</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.017</td>
+                                <td>847</td>
+                                <td>0.727</td>
+                                <td>0.698</td>
+                                <td>0.695</td>
+                                <td>7.272</td>
+                                <td>0.102</td>
+                                <td>0.509</td>
+                                <td>0.023</td>
+                                <td>0.963</td>
+                                <td>56.195</td>
+                                <td>0.041</td>
+                                <td>600</td>
+                                <td>0.476</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1.167</td>
+                                <td>780</td>
+                                <td>0.738</td>
+                                <td>0.695</td>
+                                <td>0.690</td>
+                                <td>8.244</td>
+                                <td>0.078</td>
+                                <td>0.888</td>
+                                <td>0.010</td>
+                                <td>0.985</td>
+                                <td>53.408</td>
+                                <td>0.035</td>
+                                <td>600</td>
+                                <td>0.489</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1.167</td>
+                                <td>780</td>
+                                <td>0.721</td>
+                                <td>0.659</td>
+                                <td>0.650</td>
+                                <td>4.588</td>
+                                <td>0.077</td>
+                                <td>0.891</td>
+                                <td>0.011</td>
+                                <td>0.984</td>
+                                <td>54.863</td>
+                                <td>0.038</td>
+                                <td>600</td>
+                                <td>0.499</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>840</td>
+                                <td>0.748</td>
+                                <td>0.673</td>
+                                <td>0.695</td>
+                                <td>4.190</td>
+                                <td>0.237</td>
+                                <td>0.000</td>
+                                <td>0.087</td>
+                                <td>0.706</td>
+                                <td>66.356</td>
+                                <td>0.101</td>
+                                <td>600</td>
+                                <td>0.524</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>1</td>
+                                <td>840</td>
+                                <td>0.703</td>
+                                <td>0.679</td>
+                                <td>0.695</td>
+                                <td>2.897</td>
+                                <td>0.186</td>
+                                <td>0.011</td>
+                                <td>0.076</td>
+                                <td>0.726</td>
+                                <td>64.615</td>
+                                <td>0.113</td>
+                                <td>442</td>
+                                <td>0.539</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Smote</strong> 
+                    (TabDSFidelity: <strong>8.296</strong>, AUC: 0.731, F1: 0.710, MIA: 0.494). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>1.069</td>
+                                <td>9656</td>
+                                <td><strong>0.755</strong></td>
+                                <td><strong>0.708</strong></td>
+                                <td><strong>0.715</strong></td>
+                                <td><strong>9.985</strong></td>
+                                <td>0.161</td>
+                                <td>0.238</td>
+                                <td>0.057</td>
+                                <td>0.961</td>
+                                <td>77.123</td>
+                                <td>0.122</td>
+                                <td>91</td>
+                                <td>0.500</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.069</td>
+                                <td>9656</td>
+                                <td>0.709</td>
+                                <td>0.668</td>
+                                <td>0.670</td>
+                                <td>6.927</td>
+                                <td>0.178</td>
+                                <td>0.179</td>
+                                <td>0.058</td>
+                                <td>0.957</td>
+                                <td>213.537</td>
+                                <td>0.127</td>
+                                <td>70</td>
+                                <td>0.498</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.408</td>
+                                <td>10000</td>
+                                <td>0.651</td>
+                                <td>0.637</td>
+                                <td>0.660</td>
+                                <td>4.063</td>
+                                <td>0.250</td>
+                                <td>0.073</td>
+                                <td>0.042</td>
+                                <td>0.915</td>
+                                <td>436.697</td>
+                                <td>0.179</td>
+                                <td>0</td>
+                                <td>0.459</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.408</td>
+                                <td>10000</td>
+                                <td>0.644</td>
+                                <td>0.638</td>
+                                <td>0.665</td>
+                                <td>4.022</td>
+                                <td>0.259</td>
+                                <td>0.073</td>
+                                <td>0.048</td>
+                                <td>0.918</td>
+                                <td>582.216</td>
+                                <td>0.177</td>
+                                <td>0</td>
+                                <td>0.516</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.050</td>
+                                <td>10000</td>
+                                <td>0.708</td>
+                                <td>0.682</td>
+                                <td>0.670</td>
+                                <td>6.596</td>
+                                <td>0.218</td>
+                                <td>0.073</td>
+                                <td>0.077</td>
+                                <td>0.936</td>
+                                <td>262.042</td>
+                                <td>0.117</td>
+                                <td>0</td>
+                                <td>0.511</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.050</td>
+                                <td>10000</td>
+                                <td>0.695</td>
+                                <td>0.669</td>
+                                <td>0.655</td>
+                                <td>5.517</td>
+                                <td>0.243</td>
+                                <td>0.043</td>
+                                <td>0.079</td>
+                                <td>0.935</td>
+                                <td>427.446</td>
+                                <td>0.117</td>
+                                <td>0</td>
+                                <td>0.507</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.673</td>
+                                <td>0.630</td>
+                                <td>0.615</td>
+                                <td>0.545</td>
+                                <td>0.472</td>
+                                <td>0.007</td>
+                                <td>0.941</td>
+                                <td>0.689</td>
+                                <td>143.115</td>
+                                <td>0.295</td>
+                                <td>0</td>
+                                <td>0.511</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.681</td>
+                                <td>0.636</td>
+                                <td>0.620</td>
+                                <td>0.937</td>
+                                <td>0.472</td>
+                                <td>0.002</td>
+                                <td>0.938</td>
+                                <td>0.691</td>
+                                <td>291.306</td>
+                                <td>0.301</td>
+                                <td>0</td>
+                                <td>0.483</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.005</td>
+                                <td>9946</td>
+                                <td>0.734</td>
+                                <td>0.705</td>
+                                <td>0.710</td>
+                                <td>9.271</td>
+                                <td>0.165</td>
+                                <td>0.203</td>
+                                <td>0.058</td>
+                                <td>0.956</td>
+                                <td>92.967</td>
+                                <td>0.147</td>
+                                <td>102</td>
+                                <td>0.479</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.005</td>
+                                <td>9946</td>
+                                <td>0.707</td>
+                                <td>0.677</td>
+                                <td>0.680</td>
+                                <td>7.129</td>
+                                <td>0.182</td>
+                                <td>0.142</td>
+                                <td>0.059</td>
+                                <td>0.954</td>
+                                <td>253.583</td>
+                                <td>0.149</td>
+                                <td>80</td>
+                                <td>0.471</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>9.985</strong>, AUC: 0.755, F1: 0.708, MIA: 0.500). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.064</td>
+                                <td>10496</td>
+                                <td>0.705</td>
+                                <td>0.687</td>
+                                <td>0.695</td>
+                                <td>6.829</td>
+                                <td>0.156</td>
+                                <td>0.241</td>
+                                <td>0.052</td>
+                                <td>0.962</td>
+                                <td>147.039</td>
+                                <td>0.121</td>
+                                <td>211</td>
+                                <td>0.491</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.064</td>
+                                <td>10496</td>
+                                <td>0.733</td>
+                                <td>0.693</td>
+                                <td>0.695</td>
+                                <td>7.263</td>
+                                <td>0.172</td>
+                                <td>0.182</td>
+                                <td>0.053</td>
+                                <td>0.959</td>
+                                <td>284.195</td>
+                                <td>0.125</td>
+                                <td>191</td>
+                                <td>0.513</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.370</td>
+                                <td>10840</td>
+                                <td>0.671</td>
+                                <td>0.642</td>
+                                <td>0.650</td>
+                                <td>2.840</td>
+                                <td>0.234</td>
+                                <td>0.071</td>
+                                <td>0.038</td>
+                                <td>0.920</td>
+                                <td>512.289</td>
+                                <td>0.166</td>
+                                <td>122</td>
+                                <td>0.509</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.370</td>
+                                <td>10840</td>
+                                <td>0.711</td>
+                                <td>0.706</td>
+                                <td>0.715</td>
+                                <td>6.688</td>
+                                <td>0.242</td>
+                                <td>0.071</td>
+                                <td>0.043</td>
+                                <td>0.924</td>
+                                <td>655.496</td>
+                                <td>0.165</td>
+                                <td>122</td>
+                                <td>0.486</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.046</td>
+                                <td>10840</td>
+                                <td>0.708</td>
+                                <td>0.687</td>
+                                <td>0.675</td>
+                                <td>5.529</td>
+                                <td>0.206</td>
+                                <td>0.096</td>
+                                <td>0.056</td>
+                                <td>0.940</td>
+                                <td>346.503</td>
+                                <td>0.110</td>
+                                <td>122</td>
+                                <td>0.494</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.046</td>
+                                <td>10840</td>
+                                <td>0.697</td>
+                                <td>0.675</td>
+                                <td>0.665</td>
+                                <td>4.584</td>
+                                <td>0.227</td>
+                                <td>0.064</td>
+                                <td>0.059</td>
+                                <td>0.941</td>
+                                <td>510.289</td>
+                                <td>0.110</td>
+                                <td>122</td>
+                                <td>0.498</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10840</td>
+                                <td>0.731</td>
+                                <td>0.690</td>
+                                <td>0.690</td>
+                                <td>3.399</td>
+                                <td>0.429</td>
+                                <td>0.008</td>
+                                <td>0.641</td>
+                                <td>0.702</td>
+                                <td>216.581</td>
+                                <td>0.275</td>
+                                <td>122</td>
+                                <td>0.491</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1</td>
+                                <td>10840</td>
+                                <td>0.731</td>
+                                <td>0.695</td>
+                                <td>0.690</td>
+                                <td>3.509</td>
+                                <td>0.429</td>
+                                <td>0.002</td>
+                                <td>0.638</td>
+                                <td>0.704</td>
+                                <td>372.481</td>
+                                <td>0.279</td>
+                                <td>122</td>
+                                <td>0.505</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>1.004</td>
+                                <td>10786</td>
+                                <td><strong>0.759</strong></td>
+                                <td><strong>0.732</strong></td>
+                                <td><strong>0.735</strong></td>
+                                <td><strong>9.812</strong></td>
+                                <td>0.159</td>
+                                <td>0.208</td>
+                                <td>0.054</td>
+                                <td>0.958</td>
+                                <td>180.331</td>
+                                <td>0.138</td>
+                                <td>202</td>
+                                <td>0.500</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.004</td>
+                                <td>10786</td>
+                                <td>0.742</td>
+                                <td>0.720</td>
+                                <td>0.725</td>
+                                <td>8.617</td>
+                                <td>0.175</td>
+                                <td>0.147</td>
+                                <td>0.054</td>
+                                <td>0.956</td>
+                                <td>331.840</td>
+                                <td>0.140</td>
+                                <td>191</td>
+                                <td>0.506</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>9.812</strong>, AUC: 0.759, F1: 0.732, MIA: 0.500). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_42</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>Smote</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* Refinado</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd42.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Credit Risk Assessment (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32946128.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [70.00, 30.00], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

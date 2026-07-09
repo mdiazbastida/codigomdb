@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Código MDB || Conjuntos Tabulares Sintéticos - Catálogo de 56 Conjuntos (Clasificación Binaria)</title>
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link href="assets/css/diccionario.css" rel="stylesheet" />
+    <link href="assets/css/metodologia.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <p class="subtitle-home"><a class="nav-link-home" href="../index.html">← Volver al sitio</a></p>
+            <h1>🗄️ Conjuntos de datos tabulares sintéticos</h1>
+            <p class="subtitle">56 conjuntos de datos (clasificación binaria) generados con metodología reproducible</p>
+            <div class="stats-bar">
+                <div>📊 56 datasets disponibles</div>
+                <div>🔒 Privacidad garantizada (ε ≤ 0.5)</div>
+                <div>📋 Diccionario incluido</div>
+                <div>🔬 Metodología reproducible</div>
+            </div>
+            <div class="search-container">
+                <input id="search-input" placeholder="🔍 Buscar por nombre, ID o descripción..." type="text" />
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="filters-bar">
+            <span class="filter-label">Filtrar por dominio:</span>
+            <button class="filter-chip active" data-filter="all">📋 Todos (56)</button>
+            <button class="filter-chip" data-filter="clinical-deep">🫀 Medicina Clínica Profunda</button>
+            <button class="filter-chip" data-filter="public-health">📊 Salud Pública y Encuestas</button>
+            <button class="filter-chip" data-filter="finance">💰 Finanzas y Negocios</button>
+            <button class="filter-chip" data-filter="industry">🏭 Industria y Ciberseguridad</button>
+            <button class="filter-chip" data-filter="biology">🧬 Biología y Química</button>
+            <span class="filter-label" style="margin-left: 20px;">Filtrar por mejora:</span>
+            <button class="filter-chip active" data-filter="all">📋 Todos (56)</button>
+            <button class="filter-chip" data-filter="improvement-positive">📈 Mejora positiva (+)</button>
+            <button class="filter-chip" data-filter="improvement-negative">📉 Deterioro (-)</button>
+            <button class="filter-chip" data-filter="improvement-neutral">⚖️ Neutro (0)</button>
+        </div>
+
+        <!-- NOTA ACLARATORIA -->
+        <div class="aclaracion-nota">
+            <div class="icono">ℹ️</div>
+            <div class="texto">
+                <strong>Nota sobre las métricas de eficacia predictiva:</strong> Los valores mostrados (AUC y F1)
+                corresponden a los resultados obtenidos al entrenar un modelo <strong>MLP (Perceptrón
+                    Multicapa)</strong> con los datos sintéticos seleccionados por <strong
+                    class="destacado"><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong> como los de <strong>mejor fidelidad</strong> respecto al
+                conjunto real original. Las mejoras (<span style="color:#10b981;">▲</span> / <span
+                    style="color:#ef4444;">▼</span>) indican la diferencia en rendimiento entre el modelo entrenado con
+                datos sintéticos versus el entrenado con los datos reales originales.<br><br>
+                <strong>Nota sobre el desbalance original:</strong> El <strong>ratio</strong> mostrado (<span
+                    style="font-family: monospace;">⚖️ Ratio: X.XX</span>) indica el grado de desbalance del conjunto de
+                datos original, calculado como <em>(clase mayoritaria / clase minoritaria)</em>. Un ratio <strong>≤
+                    1.5</strong> se considera un conjunto <strong>balanceado</strong> <span
+                    style="background-color:#d4edda; color:#155724; padding:2px 6px; border-radius:4px;">✅</span>,
+                mientras que valores superiores indican un desbalance progresivo. Las <strong>muestras</strong>
+                reflejadas (<span style="font-family: monospace;">📊 Muestras: XXX</span>) corresponden a la cantidad
+                de ejemplos del conjunto original de entrenamiento, que sirvió como base para todo el proceso 
+                <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> de
+                generación sintética (selección por fidelidad, generación de datos sintéticos, balanceo y aumento).
+            </div>
+        </div>
+        <div class="datasets-grid" id="datasets-grid">
+            <div class="dataset-card" data-id="CD_1" data-name="Neumonía Grave Adquirida en la Comunidad">
+                <div class="card-badge">CD_1</div>
+                <h3>Neumonía grave adquirida en la comunidad</h3>
+                <p>Conjunto de datos clínico real para la predicción de mortalidad (Murio) en cuidados intensivos,
+                    centrado en patologías r...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.44 <strong class="improvement-badge positive">+0.26</strong></span>
+                    <span>🎯 F1: 0.61 <strong class="improvement-badge positive">+0.10</strong></span>
+                    <span>💾 No descargable</span>
+                    <span>⚖️ Ratio: 2.38</span><span>📊 Muestras: 328</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_1_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_2" data-name="EPOC Exacerbada por Infección Respiratoria">
+                <div class="card-badge">CD_2</div>
+                <h3>EPOC exacerbada por infección respiratoria</h3>
+                <p>Conjunto de datos clínico real para la predicción de mortalidad en pacientes con EPOC reagudizada.
+                    Perfil terapéutico es...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.61 <strong class="improvement-badge negative">-0.22</strong></span>
+                    <span>🎯 F1: 0.70 <strong class="improvement-badge negative">-0.10</strong></span>
+                    <span>💾 No descargable</span>
+                    <span>⚖️ Ratio: 4.61</span><span>📊 Muestras: 129</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_2_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_3" data-name="Neumonía Nosocomial">
+                <div class="card-badge">CD_3</div>
+                <h3>Neumonía nosocomial</h3>
+                <p>Conjunto de datos clínico real centrado en Neumonía Nosocomial (adquirida en el hospital). Perfil
+                    microbiológico específ...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.52 <strong class="improvement-badge positive">+0.14</strong></span>
+                    <span>🎯 F1: 0.58 <strong class="improvement-badge positive">+0.09</strong></span>
+                    <span>💾 No descargable</span>
+                    <span>⚖️ Ratio: 2.38</span><span>📊 Muestras: 328</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_3_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_4" data-name="Cetoacidosis Diabética">
+                <div class="card-badge">CD_4</div>
+                <h3>Cetoacidosis diabética</h3>
+                <p>Conjunto de datos clínico real enfocado en Cetoacidosis Diabética. Integra variables de infecciones
+                    desencadenantes (uri...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.68 <strong class="improvement-badge positive">+0.25</strong></span>
+                    <span>🎯 F1: 0.65 <strong class="improvement-badge positive">+0.26</strong></span>
+                    <span>💾 No descargable</span>
+                    <span>⚖️ Ratio: 6.67</span><span>📊 Muestras: 69</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_4_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_5" data-name="Contusión Cerebral">
+                <div class="card-badge">CD_5</div>
+                <h3>Contusión cerebral</h3>
+                <p>Conjunto de datos enfocado en Contusión Cerebral. Manejo farmacológico especializado orientado a
+                    neuroprotección: Manito...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.42 <strong class="improvement-badge positive">+0.28</strong></span>
+                    <span>🎯 F1: 0.59 <strong class="improvement-badge positive">+0.12</strong></span>
+                    <span>💾 No descargable</span>
+                    <span>⚖️ Ratio: 2.08</span><span>📊 Muestras: 123</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_5_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_6" data-name="Hemorragia Subaracnoidea (HSA) Postraumática">
+                <div class="card-badge">CD_6</div>
+                <h3>Hemorragia subaracnoidea (HSA) postraumática</h3>
+                <p>Conjunto de datos centrado en Hemorragia Subaracnoidea Postraumática. Protocolo terapéutico altamente
+                    específico: Nimodi...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.40 <strong class="improvement-badge positive">+0.18</strong></span>
+                    <span>🎯 F1: 0.28 <strong class="improvement-badge positive">+0.33</strong></span>
+                    <span>💾 No descargable</span>
+                    <span>⚖️ Ratio: 2.08</span><span>📊 Muestras: 123</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_6_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_7" data-name="Infección Urinaria (Sepsis de origen urinario)">
+                <div class="card-badge">CD_7</div>
+                <h3>Infección urinaria (Sepsis de origen urinario)</h3>
+                <p>Conjunto de datos clínico enfocado en Sepsis de Origen Urinario. Integra variables microbiológicas
+                    típicas del tracto ur...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.64 <strong class="improvement-badge positive">+0.11</strong></span>
+                    <span>🎯 F1: 0.47 <strong class="improvement-badge positive">+0.21</strong></span>
+                    <span>💾 No descargable</span>
+                    <span>⚖️ Ratio: 1.67</span><span>📊 Muestras: 144</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_7_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_8" data-name="Meningoencefalitis Bacteriana">
+                <div class="card-badge">CD_8</div>
+                <h3>Meningoencefalitis bacteriana</h3>
+                <p>Conjunto de datos clínico enfocado en Meningoencefalitis Bacteriana. Integra marcadores
+                    microbiológicos específicos (Str...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.42 <strong class="improvement-badge positive">+0.17</strong></span>
+                    <span>🎯 F1: 0.53 <strong class="improvement-badge positive">+0.33</strong></span>
+                    <span>💾 No descargable</span>
+                    <span>⚖️ Ratio: 2.83</span><span>📊 Muestras: 23</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_8_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_9" data-name="Síndrome de Weil (Leptospirosis Grave)">
+                <div class="card-badge">CD_9</div>
+                <h3>Síndrome de Weil (Leptospirosis grave)</h3>
+                <p>Conjunto de datos infectológico centrado en Leptospirosis Grave. Modela patología sistémica que
+                    combina falla renal (hem...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.32 <strong class="improvement-badge positive">+0.42</strong></span>
+                    <span>🎯 F1: 0.45 <strong class="improvement-badge positive">+0.39</strong></span>
+                    <span>💾 No descargable</span>
+                    <span>⚖️ Ratio: 3.10</span><span>📊 Muestras: 41</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_9_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_10" data-name="SPO de craniectomía y evacuación de Hematoma subdural">
+                <div class="card-badge">CD_10</div>
+                <h3>SPO de craniectomía y evacuación de Hematoma subdural</h3>
+                <p>Conjunto de datos de Neurocirugía Intensiva enfocado en recuperación post-evacuación de hematoma
+                    subdural. Incluye varia...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.50 <strong class="improvement-badge positive">+0.16</strong></span>
+                    <span>🎯 F1: 0.51 <strong class="improvement-badge positive">+0.16</strong></span>
+                    <span>💾 No descargable</span>
+                    <span>⚖️ Ratio: 2.08</span><span>📊 Muestras: 123</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_10_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_11" data-name="MIMIC-IV: Mortalidad Hospitalaria (Primeras 24h)">
+                <div class="card-badge">CD_11</div>
+                <h3>MIMIC-IV: Mortalidad hospitalaria (Primeras 24h)</h3>
+                <p>Conjunto de datos clínicos centrado en predicción de mortalidad intrahospitalaria. Integra
+                    dimensiones demográfica/admin...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.22 <strong class="improvement-badge positive">+0.27</strong></span>
+                    <span>🎯 F1: 0.88 <strong class="improvement-badge neutral">0.00</strong></span>
+                    <span>💾 0.96 MB</span>
+                    <span>⚖️ Ratio: 17.33</span><span>📊 Muestras: 165</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_11_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/CD_11.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_12" data-name="eICU-CRD: Predicción de Mortalidad Multicéntrica">
+                <div class="card-badge">CD_12</div>
+                <h3>eICU-CRD: Predicción de mortalidad multicéntrica</h3>
+                <p>Dataset derivado de eICU Collaborative Research Database (v2.0.1). Integra puntuación APACHE IV,
+                    variables fisiológicas ...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.92 <strong class="improvement-badge negative">-0.02</strong></span>
+                    <span>🎯 F1: 0.91 <strong class="improvement-badge positive">+0.03</strong></span>
+                    <span>💾 0.75 MB</span>
+                    <span>⚖️ Ratio: 11.00</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_12_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/CD_12.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_13" data-name="Diabetes 130-US Hospitals: Predicción de Readmisión">
+                <div class="card-badge">CD_13</div>
+                <h3>Diabetes 130-US Hospitales: Predicción de readmisión</h3>
+                <p>Dataset de 130 hospitales (1999-2008) para clasificación de readmisiones tempranas. Integra variables
+                    demográficas, util...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.42 <strong class="improvement-badge positive">+0.13</strong></span>
+                    <span>🎯 F1: 0.82 <strong class="improvement-badge positive">+0.01</strong></span>
+                    <span>💾 0.09 MB</span>
+                    <span>⚖️ Ratio: 7.24</span><span>📊 Muestras: 173</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_13_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_13.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_14" data-name="PhysioNet 2019: Predicción Temprana de Sepsis">
+                <div class="card-badge">CD_14</div>
+                <h3>PhysioNet 2019: Predicción temprana de Sepsis</h3>
+                <p>Dataset estructurado para detección anticipada de sepsis (6h antes). Cada instancia representa una
+                    hora de estancia en U...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.81 <strong class="improvement-badge positive">+0.19</strong></span>
+                    <span>🎯 F1: 0.95 <strong class="improvement-badge positive">+0.04</strong></span>
+                    <span>💾 1.53 MB</span>
+                    <span>⚖️ Ratio: 65.67</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_14_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_14.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_15" data-name="Breast Cancer Wisconsin (Diagnostic) - WDBC">
+                <div class="card-badge">CD_15</div>
+                <h3>Breast cancer Wisconsin (Diagnostico) - WDBC</h3>
+                <p>Clasificación binaria de tumores mamarios (Maligno vs Benigno). 569 instancias, 30 variables
+                    derivadas de 10 característ...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.99 <strong class="improvement-badge positive">+0.01</strong></span>
+                    <span>🎯 F1: 0.93 <strong class="improvement-badge positive">+0.02</strong></span>
+                    <span>💾 1.60 MB</span>
+                    <span>⚖️ Ratio: 1.69</span><span>📊 Muestras: 341</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_15_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_15.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_16" data-name="Heart Disease (Cleveland) - UCI">
+                <div class="card-badge">CD_16</div>
+                <h3>Heart disease (Cleveland) - UCI</h3>
+                <p>Predicción de enfermedad coronaria (estenosis &gt; 50%). 297 instancias con variables demográficas,
+                    pruebas cardíacas y res...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.96 <strong class="improvement-badge positive">+0.04</strong></span>
+                    <span>🎯 F1: 0.86 <strong class="improvement-badge positive">+0.14</strong></span>
+                    <span>💾 0.17 MB</span>
+                    <span>⚖️ Ratio: 1.19</span><span>📊 Muestras: 177</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_16_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_16.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_17"
+                data-name="Pima Indians Diabetes: Predicción de Inicio de Diabetes">
+                <div class="card-badge">CD_17</div>
+                <h3>Pima indians diabetes: Predicción de inicio de diabetes</h3>
+                <p>Predicción de desarrollo de diabetes (5 años) en mujeres indígenas Pima (&gt;21 años). 768 instancias
+                    con historia reproduc...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.78 <strong class="improvement-badge positive">+0.03</strong></span>
+                    <span>🎯 F1: 0.68 <strong class="improvement-badge positive">+0.05</strong></span>
+                    <span>💾 0.21 MB</span>
+                    <span>⚖️ Ratio: 1.88</span><span>📊 Muestras: 460</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_17_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_17.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_18" data-name="Stroke Prediction: Factores de Riesgo de Ictus">
+                <div class="card-badge">CD_18</div>
+                <h3>Stroke prediction: Factores de riesgo de Ictus</h3>
+                <p>Dataset clínico para predicción binaria de ACV. Integra factores sociodemográficos, fisiológicos
+                    (hipertensión, cardiopa...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.72 <strong class="improvement-badge positive">+0.17</strong></span>
+                    <span>🎯 F1: 0.94 <strong class="improvement-badge negative">-0.04</strong></span>
+                    <span>💾 0.15 MB</span>
+                    <span>⚖️ Ratio: 19.69</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_18_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_18.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_19" data-name="Cardiovascular Disease: Cribado Masivo">
+                <div class="card-badge">CD_19</div>
+                <h3>Cardiovascular disease: Cribado masivo</h3>
+                <p>Registro clínico de cribados masivos para clasificación de patología cardiovascular. Variables
+                    objetivas, examen clínico...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.72 <strong class="improvement-badge positive">+0.11</strong></span>
+                    <span>🎯 F1: 0.70 <strong class="improvement-badge positive">+0.07</strong></span>
+                    <span>💾 0.07 MB</span>
+                    <span>⚖️ Ratio: 1.02</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_19_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_19.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_20" data-name="Chronic Kidney Disease: Apollo Hospitals">
+                <div class="card-badge">CD_20</div>
+                <h3>Chronic Kidney Disease: Apollo Hospitals</h3>
+                <p>Clasificación de Enfermedad Renal Crónica. 400 instancias, 25 variables: bioquímica sanguínea,
+                    análisis de orina y antec...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 1.00 <strong class="improvement-badge neutral">0.00</strong></span>
+                    <span>🎯 F1: 0.96 <strong class="improvement-badge positive">+0.02</strong></span>
+                    <span>💾 0.40 MB</span>
+                    <span>⚖️ Ratio: 1.66</span><span>📊 Muestras: 237</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_20_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_20.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_21" data-name="Oxford Parkinson's Disease Detection">
+                <div class="card-badge">CD_21</div>
+                <h3>Oxford Parkinson's disease detection</h3>
+                <p>Clasificación de Parkinson mediante análisis acústico de la voz. 195 instancias, 22 características
+                    continuas que cuanti...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.71 <strong class="improvement-badge positive">+0.24</strong></span>
+                    <span>🎯 F1: 0.64 <strong class="improvement-badge positive">+0.28</strong></span>
+                    <span>💾 1.41 MB</span>
+                    <span>⚖️ Ratio: 3.18</span><span>📊 Muestras: 117</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_21_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_21.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_22" data-name="Cervical Cancer (Risk Factors) - UCI">
+                <div class="card-badge">CD_22</div>
+                <h3>Cancer de cervical (Factores de riesgo) - UCI</h3>
+                <p>Predicción de cáncer cervical basada en biopsia. 858 instancias, 36 variables:
+                    demográficas/reproductivas, hábitos y his...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.32 <strong class="improvement-badge positive">+0.60</strong></span>
+                    <span>🎯 F1: 0.91 <strong class="improvement-badge positive">+0.05</strong></span>
+                    <span>💾 0.19 MB</span>
+                    <span>⚖️ Ratio: 14.58</span><span>📊 Muestras: 514</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_22_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_22.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_23" data-name="Heart Failure Clinical Records">
+                <div class="card-badge">CD_23</div>
+                <h3>Heart Failure Clinical Records</h3>
+                <p>Predicción de mortalidad en insuficiencia cardíaca. 299 pacientes, 13 variables: demografía,
+                    comorbilidades binarias y b...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.62 <strong class="improvement-badge positive">+0.13</strong></span>
+                    <span>🎯 F1: 0.55 <strong class="improvement-badge positive">+0.18</strong></span>
+                    <span>💾 0.22 MB</span>
+                    <span>⚖️ Ratio: 2.09</span><span>📊 Muestras: 179</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_23_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_23.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_24" data-name="NHANES 2013-2014: Diabetes Prediction (CDC)">
+                <div class="card-badge">CD_24</div>
+                <h3>NHANES 2013-2014: Predicción de diabetes (CDC)</h3>
+                <p>Matriz analítica de encuesta poblacional NHANES para predicción de Diabetes Tipo 2. 9800 registros de
+                    demografía, antrop...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.19 <strong class="improvement-badge positive">+0.58</strong></span>
+                    <span>🎯 F1: 0.87 <strong class="improvement-badge positive">+0.02</strong></span>
+                    <span>💾 0.35 MB</span>
+                    <span>⚖️ Ratio: 12.33</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_24_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_24.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_25" data-name="NHANES 2013-2014: Hypertension Prediction (CDC)">
+                <div class="card-badge">CD_25</div>
+                <h3>NHANES 2013-2014: Predicción de hipertensión arterial (CDC)</h3>
+                <p>Predicción de Hipertensión Arterial. 9800 registros con variables de demografía, antropometría,
+                    biomarcadores y hábitos ...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.68 <strong class="improvement-badge positive">+0.10</strong></span>
+                    <span>🎯 F1: 0.69 <strong class="improvement-badge positive">+0.04</strong></span>
+                    <span>💾 0.47 MB</span>
+                    <span>⚖️ Ratio: 1.96</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_25_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_25.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_26" data-name="NHANES 2013-2014: Obesity Prediction (CDC)">
+                <div class="card-badge">CD_26</div>
+                <h3>NHANES 2013-2014: Predicción de la obesidad (CDC)</h3>
+                <p>Predicción de Obesidad Clínica (IMC = 30). 9800 registros con demografía, perfil metabólico
+                    (insulina, triglicéridos) y ...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.34 <strong class="improvement-badge positive">+0.41</strong></span>
+                    <span>🎯 F1: 0.62 <strong class="improvement-badge positive">+0.10</strong></span>
+                    <span>💾 0.48 MB</span>
+                    <span>⚖️ Ratio: 2.87</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_26_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_26.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_27" data-name="Medical Appointment No Shows (Brasil)">
+                <div class="card-badge">CD_27</div>
+                <h3>Medical Appointment No Shows (Brasil)</h3>
+                <p>Predicción de inasistencia a citas médicas. Variables sociodemográficas (Scholarship, edad), clínicas
+                    (hipertensión, dis...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.56 <strong class="improvement-badge positive">+0.07</strong></span>
+                    <span>🎯 F1: 0.71 <strong class="improvement-badge positive">+0.05</strong></span>
+                    <span>💾 0.04 MB</span>
+                    <span>⚖️ Ratio: 3.92</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_27_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_27.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_28" data-name="Health Insurance Cross Sell: Venta Cruzada">
+                <div class="card-badge">CD_28</div>
+                <h3>Health Insurance Cross Sell: Venta cruzada</h3>
+                <p>Predicción de venta cruzada de seguros de vehículos. Variables demográficas, características del
+                    vehículo (antigüedad, d...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.34 <strong class="improvement-badge positive">+0.43</strong></span>
+                    <span>🎯 F1: 0.82 <strong class="improvement-badge neutral">0.00</strong></span>
+                    <span>💾 0.12 MB</span>
+                    <span>⚖️ Ratio: 7.11</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_28_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_28.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_29"
+                data-name="Patient Medication Adherence: Cumplimiento Terapéutico">
+                <div class="card-badge">CD_29</div>
+                <h3>Patient Medication Adherence: Cumplimiento terapéutico</h3>
+                <p>Predicción de cumplimiento del tratamiento. Determinantes sociales (ingresos, seguro), factores
+                    psicosociales (salud men...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.61 <strong class="improvement-badge positive">+0.32</strong></span>
+                    <span>🎯 F1: 0.57 <strong class="improvement-badge positive">+0.28</strong></span>
+                    <span>💾 0.12 MB</span>
+                    <span>⚖️ Ratio: 1.18</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_29_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_29.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_30" data-name="Autism Spectrum Disorder Screening (Adult)">
+                <div class="card-badge">CD_30</div>
+                <h3>Autism Spectrum Disorder Screening (Adult)</h3>
+                <p>Cribado de autismo (TEA) mediante cuestionario AQ-10. 704 instancias con respuestas binarias, datos
+                    demográficos y antec...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.97 <strong class="improvement-badge positive">+0.03</strong></span>
+                    <span>🎯 F1: 0.91 <strong class="improvement-badge positive">+0.08</strong></span>
+                    <span>💾 0.05 MB</span>
+                    <span>⚖️ Ratio: 2.73</span><span>📊 Muestras: 422</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_30_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_30.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_31" data-name="Credit Card Fraud Detection (Europe)">
+                <div class="card-badge">CD_31</div>
+                <h3>Credit Card Fraud Detection (Europe)</h3>
+                <p>Detección de fraude en tiempo real. Desbalance extremo (0.172% fraudes). 28 componentes principales
+                    (PCA) más Time y Amo...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.00 <strong class="improvement-badge neutral">0.00</strong></span>
+                    <span>🎯 F1: 0.99 <strong class="improvement-badge positive">+0.01</strong></span>
+                    <span>💾 2.13 MB</span>
+                    <span>⚖️ Ratio: 299.00</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_31_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_31.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_32" data-name="Bank Marketing (Portugal)">
+                <div class="card-badge">CD_32</div>
+                <h3>Bank Marketing (Portugal) - UCI</h3>
+                <p>Predicción de suscripción a depósitos en campañas de telemarketing. Variables sociodemográficas,
+                    económicas y de histori...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.59 <strong class="improvement-badge positive">+0.22</strong></span>
+                    <span>🎯 F1: 0.82 <strong class="improvement-badge positive">+0.05</strong></span>
+                    <span>💾 0.10 MB</span>
+                    <span>⚖️ Ratio: 7.45</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_32_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_32.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_33" data-name="Default of Credit Card Clients (Taiwan)">
+                <div class="card-badge">CD_33</div>
+                <h3>Default of Credit Card Clients (Taiwan)</h3>
+                <p>Predicción de impago de tarjetas de crédito. Estructura temporal de 6 meses: historial de pagos,
+                    montos de facturación y...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.58 <strong class="improvement-badge positive">+0.11</strong></span>
+                    <span>🎯 F1: 0.72 <strong class="improvement-badge positive">+0.07</strong></span>
+                    <span>💾 0.29 MB</span>
+                    <span>⚖️ Ratio: 3.51</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_33_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_33.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_34" data-name="Online Shoppers Purchasing Intention">
+                <div class="card-badge">CD_34</div>
+                <h3>Online Shoppers Purchasing Intention</h3>
+                <p>Clasificación de intención de compra. Métricas de navegación (conteos, duraciones), indicadores de
+                    calidad y contexto te...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.70 <strong class="improvement-badge positive">+0.08</strong></span>
+                    <span>🎯 F1: 0.77 <strong class="improvement-badge positive">+0.07</strong></span>
+                    <span>💾 0.36 MB</span>
+                    <span>⚖️ Ratio: 5.45</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_34_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_34.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_35" data-name="Polish Companies Bankruptcy Prediction">
+                <div class="card-badge">CD_35</div>
+                <h3>Polish Companies Bankruptcy Prediction</h3>
+                <p>Predicción de quiebra empresarial. 64 ratios financieros continuos (rentabilidad, liquidez,
+                    apalancamiento) de 5 horizon...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.55 <strong class="improvement-badge negative">-0.02</strong></span>
+                    <span>🎯 F1: 0.92 <strong class="improvement-badge negative">-0.01</strong></span>
+                    <span>💾 3.16 MB</span>
+                    <span>⚖️ Ratio: 19.69</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_35_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_35.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_36" data-name="Phishing Websites Features">
+                <div class="card-badge">CD_36</div>
+                <h3>Phishing Websites Features</h3>
+                <p>Clasificación de sitios web fraudulentos. 30 características técnicas de URL, código fuente y
+                    reputación de dominio</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.93 <strong class="improvement-badge negative">-0.02</strong></span>
+                    <span>🎯 F1: 0.86 <strong class="improvement-badge negative">-0.03</strong></span>
+                    <span>💾 0.10 MB</span>
+                    <span>⚖️ Ratio: 1.26</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_36_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_36.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_37" data-name="Spambase: Detección de Spam">
+                <div class="card-badge">CD_37</div>
+                <h3>Spambase: Detección de Spam</h3>
+                <p>Clasificación binaria de spam. 57 variables: 48 frecuencias de palabras, 6 de caracteres y 3 métricas
+                    de patrones de may...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.94 <strong class="improvement-badge positive">+0.02</strong></span>
+                    <span>🎯 F1: 0.92 <strong class="improvement-badge positive">+0.01</strong></span>
+                    <span>💾 1.58 MB</span>
+                    <span>⚖️ Ratio: 1.54</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_37_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_37.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_38" data-name="Bank Customer Churn: Predicción de Abandono">
+                <div class="card-badge">CD_38</div>
+                <h3>Bank Customer Churn: Predicción de Abandono</h3>
+                <p>Predicción de retención de clientes bancarios. Perfiles financieros (CreditScore, Balance),
+                    demográficos y de relación c...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.37 <strong class="improvement-badge positive">+0.41</strong></span>
+                    <span>🎯 F1: 0.70 <strong class="improvement-badge positive">+0.06</strong></span>
+                    <span>💾 0.22 MB</span>
+                    <span>⚖️ Ratio: 3.92</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_38_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_38.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_39" data-name="Water Potability">
+                <div class="card-badge">CD_39</div>
+                <h3>Water Potability</h3>
+                <p>Clasificación de potabilidad del agua. Variables físico-químicas (pH, dureza, sólidos disueltos) con
+                    imputación por medi...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.48 <strong class="improvement-badge positive">+0.10</strong></span>
+                    <span>🎯 F1: 0.51 <strong class="improvement-badge positive">+0.09</strong></span>
+                    <span>💾 0.64 MB</span>
+                    <span>⚖️ Ratio: 1.56</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_39_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_39.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_40" data-name="Seismic Bumps">
+                <div class="card-badge">CD_40</div>
+                <h3>Seismic Bumps</h3>
+                <p>Clasificación de eventos sísmicos peligrosos en minería. Desbalance extremo (6.6% positivos),
+                    variables ordinales y medi...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.33 <strong class="improvement-badge positive">+0.25</strong></span>
+                    <span>🎯 F1: 0.90 <strong class="improvement-badge negative">-0.02</strong></span>
+                    <span>💾 0.10 MB</span>
+                    <span>⚖️ Ratio: 14.00</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_40_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_40.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_41" data-name="Handwritten Digits (Binary 8 vs All)">
+                <div class="card-badge">CD_41</div>
+                <h3>Handwritten Digits (Binary 8 vs All)</h3>
+                <p>Clasificación binaria desbalanceada (Dígito 8 vs Resto). 64 variables enteras (0-16) de intensidad de
+                    tinta en cuadrícul...</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.67 <strong class="improvement-badge positive">+0.32</strong></span>
+                    <span>🎯 F1: 0.85 <strong class="improvement-badge positive">+0.11</strong></span>
+                    <span>💾 0.18 MB</span>
+                    <span>⚖️ Ratio: 9.17</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_41_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_41.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_42" data-name="German Credit Data">
+                <div class="card-badge">CD_42</div>
+                <h3>German Credit Data</h3>
+                <p>Evaluación de riesgo crediticio. Variables sociodemográficas y financieras con jerarquías en
+                    atributos ordinales</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.76 <strong class="improvement-badge positive">+0.02</strong></span>
+                    <span>🎯 F1: 0.70 <strong class="improvement-badge positive">+0.05</strong></span>
+                    <span>💾 0.07 MB</span>
+                    <span>⚖️ Ratio: 2.33</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_42_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_42.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_43" data-name="Loan Prediction">
+                <div class="card-badge">CD_43</div>
+                <h3>Loan Prediction</h3>
+                <p>Automatización de decisiones hipotecarias. Perfiles sociodemográficos e historial crediticio con
+                    datos imputados</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.53 <strong class="improvement-badge positive">+0.30</strong></span>
+                    <span>🎯 F1: 0.60 <strong class="improvement-badge positive">+0.17</strong></span>
+                    <span>💾 0.30 MB</span>
+                    <span>⚖️ Ratio: 2.20</span><span>📊 Muestras: 368</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_43_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_43.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_44" data-name="IBM HR Employee Attrition">
+                <div class="card-badge">CD_44</div>
+                <h3>IBM HR Employee Attrition</h3>
+                <p>Predicción de abandono laboral. Perfiles demográficos, métricas financieras y escalas ordinales de
+                    satisfacción</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.76 <strong class="improvement-badge negative">-0.03</strong></span>
+                    <span>🎯 F1: 0.83 <strong class="improvement-badge negative">-0.03</strong></span>
+                    <span>💾 0.27 MB</span>
+                    <span>⚖️ Ratio: 5.17</span><span>📊 Muestras: 882</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_44_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_44.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_45" data-name="Telco Customer Churn">
+                <div class="card-badge">CD_45</div>
+                <h3>Telco Customer Churn</h3>
+                <p>Predicción de abandono de clientes de telecomunicaciones. Información demográfica, servicios
+                    contratados y facturación</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.86 <strong class="improvement-badge negative">-0.09</strong></span>
+                    <span>🎯 F1: 0.82 <strong class="improvement-badge negative">-0.06</strong></span>
+                    <span>💾 0.27 MB</span>
+                    <span>⚖️ Ratio: 2.77</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_45_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_45.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_46" data-name="E-commerce Customer Churn">
+                <div class="card-badge">CD_46</div>
+                <h3>E-commerce Customer Churn</h3>
+                <p>Clasificación de abandono de clientes e-commerce. Métricas de comportamiento, logísticas y
+                    satisfacción</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.64 <strong class="improvement-badge positive">+0.12</strong></span>
+                    <span>🎯 F1: 0.75 <strong class="improvement-badge positive">+0.03</strong></span>
+                    <span>💾 0.16 MB</span>
+                    <span>⚖️ Ratio: 4.83</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_46_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_46.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_47" data-name="Credit Approval">
+                <div class="card-badge">CD_47</div>
+                <h3>Credit Approval</h3>
+                <p>Evaluación de solicitudes de crédito. Atributos anonimizados (A1-A16) con mezcla de tipos de datos
+                </p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.96 <strong class="improvement-badge positive">+0.04</strong></span>
+                    <span>🎯 F1: 0.88 <strong class="improvement-badge positive">+0.11</strong></span>
+                    <span>💾 0.32 MB</span>
+                    <span>⚖️ Ratio: 1.20</span><span>📊 Muestras: 391</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_47_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_47.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_48" data-name="APS Failure at Scania Trucks">
+                <div class="card-badge">CD_48</div>
+                <h3>APS Failure at Scania Trucks</h3>
+                <p>Predicción de fallos en Sistema de Presión de Aire. Desbalance extremo (~1.6% positivos), 170
+                    variables anonimizadas</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.79 <strong class="improvement-badge negative">-0.29</strong></span>
+                    <span>🎯 F1: 0.97 <strong class="improvement-badge negative">-0.96</strong></span>
+                    <span>💾 3.64 MB</span>
+                    <span>⚖️ Ratio: 53.55</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_48_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_48.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_49" data-name="Steel Plates Faults">
+                <div class="card-badge">CD_49</div>
+                <h3>Steel Plates Faults</h3>
+                <p>Clasificación de defectos superficiales en acero. Atributos geométricos, radiométricos y
+                    transformaciones matemáticas</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.83 <strong class="improvement-badge positive">+0.03</strong></span>
+                    <span>🎯 F1: 0.80 <strong class="improvement-badge positive">+0.03</strong></span>
+                    <span>💾 1.12 MB</span>
+                    <span>⚖️ Ratio: 3.80</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_49_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_49.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_50" data-name="AI4I 2020 Predictive Maintenance">
+                <div class="card-badge">CD_50</div>
+                <h3>AI4I 2020 Predictive Maintenance</h3>
+                <p>Predicción de fallos mecánicos en simulación industrial. Desbalance alto (3.4%), reglas físicas
+                    explícitas</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.60 <strong class="improvement-badge positive">+0.38</strong></span>
+                    <span>🎯 F1: 0.95 <strong class="improvement-badge positive">+0.02</strong></span>
+                    <span>💾 0.24 MB</span>
+                    <span>⚖️ Ratio: 29.00</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_50_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_50.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_51" data-name="Mammographic Mass">
+                <div class="card-badge">CD_51</div>
+                <h3>Mammographic Mass</h3>
+                <p>Clasificación de severidad de masas mamarias. Atributos morfológicos (forma, margen) con ordinalidad
+                    implícita</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.89 <strong class="improvement-badge negative">-0.01</strong></span>
+                    <span>🎯 F1: 0.80 <strong class="improvement-badge neutral">0.00</strong></span>
+                    <span>💾 0.02 MB</span>
+                    <span>⚖️ Ratio: 1.16</span><span>📊 Muestras: 576</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_51_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_51.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_52" data-name="EEG Eye State">
+                <div class="card-badge">CD_52</div>
+                <h3>EEG Eye State</h3>
+                <p>Detección de ojos abiertos/cerrados mediante EEG. Grabación continua de 14 sensores con orden
+                    temporal</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.90 <strong class="improvement-badge positive">+0.10</strong></span>
+                    <span>🎯 F1: 0.83 <strong class="improvement-badge positive">+0.16</strong></span>
+                    <span>💾 0.85 MB</span>
+                    <span>⚖️ Ratio: 1.23</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_52_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_52.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_53" data-name="Mushroom Classification">
+                <div class="card-badge">CD_53</div>
+                <h3>Mushroom Classification</h3>
+                <p>Clasificación de hongos comestibles vs venenosos. 100% categórico nominal (22 variables) transformado
+                    numéricamente</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.99 <strong class="improvement-badge positive">+0.01</strong></span>
+                    <span>🎯 F1: 0.97 <strong class="improvement-badge positive">+0.03</strong></span>
+                    <span>💾 0.04 MB</span>
+                    <span>⚖️ Ratio: 1.07</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_53_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_53.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_54" data-name="Twonorm (KEEL/Breiman)">
+                <div class="card-badge">CD_54</div>
+                <h3>Twonorm (KEEL/Breiman)</h3>
+                <p>Dataset sintético de referencia de 20 dimensiones. Dos distribuciones normales multivariantes como
+                    escenario de control</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 1.00 <strong class="improvement-badge positive">+0.00</strong></span>
+                    <span>🎯 F1: 0.98 <strong class="improvement-badge positive">+0.01</strong></span>
+                    <span>💾 0.60 MB</span>
+                    <span>⚖️ Ratio: 1.00</span><span>📊 Muestras: 600</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_54_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_54.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_55" data-name="Yeast (Imbalanced Version)">
+                <div class="card-badge">CD_55</div>
+                <h3>Yeast (Imbalanced Version)</h3>
+                <p>Determinación de ubicación de proteínas en células (Vacuola vs otras zonas). Dataset biológico
+                    desbalanceado</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.30 <strong class="improvement-badge positive">+0.56</strong></span>
+                    <span>🎯 F1: 0.95 <strong class="improvement-badge negative">-0.08</strong></span>
+                    <span>💾 0.09 MB</span>
+                    <span>⚖️ Ratio: 30.50</span><span>📊 Muestras: 567</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_55_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_55.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+            <div class="dataset-card" data-id="CD_56" data-name="Ecoli (Imbalanced Version 4)">
+                <div class="card-badge">CD_56</div>
+                <h3>Ecoli (Imbalanced Version 4)</h3>
+                <p>Identificación de proteínas en superficie externa de bacteria E. coli. Dataset biológico de alta
+                    especificidad</p>
+                <div class="card-metrics">
+                    <span>📈 AUC: 0.06 <strong class="improvement-badge positive">+0.93</strong></span>
+                    <span>🎯 F1: 0.88 <strong class="improvement-badge positive">+0.12</strong></span>
+                    <span>💾 0.08 MB</span>
+                    <span>⚖️ Ratio: 15.75</span><span>📊 Muestras: 201</span>
+                </div>
+                <div class="card-footer">
+                    <a class="card-link" href="datasets/cd_56_completa.html">
+                        Ver ficha técnica →
+                    </a>
+                    <a class="download-icon" href="_data/cd_56.zip"
+                        title="Descargar conjunto de entrenamiento, sintético y de prueba">📥</a>
+                </div>                
+            </div>
+        </div>
+    </main>
+    <footer class="main-footer">
+        <p>© 2026 - Conjuntos Tabulares Sintéticos | Licencia CC BY 4.0</p>
+        <p><a href="#">Documentación</a> | <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">Metodología (GSTD) completa</a></p>
+    </footer>
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const cards = document.querySelectorAll('.dataset-card');
+        let currentDomainFilter = 'all';
+        let currentImprovementFilter = 'all';
+        let currentSearchTerm = '';
+
+        // Función para actualizar contadores
+        function updateCounters() {
+            const visible = Array.from(cards).filter(card => card.style.display !== 'none').length;
+            const allButton = document.querySelector('.filter-chip[data-filter="all"]');
+            if (allButton) {
+                allButton.innerHTML = `📋 Todos (${visible})`;
+            }
+        }
+
+        // Función para obtener el tipo de mejora de una tarjeta (considera ambos badges)
+        function getImprovementTypes(card) {
+            const improvementBadges = card.querySelectorAll('.improvement-badge');
+            const types = new Set();
+
+            improvementBadges.forEach(badge => {
+                const text = badge.textContent.trim();
+
+                if (text.includes('+')) {
+                    types.add('positive');
+                } else if (text.includes('-')) {
+                    types.add('negative');
+                } else {
+                    types.add('neutral');
+                }
+            });
+
+            return Array.from(types);
+        }
+
+        // Función principal de filtrado combinado
+        function applyFilters() {
+            // Definición de dominios
+            const domains = {
+                'clinical-deep': [
+                    'CD_1', 'CD_2', 'CD_3', 'CD_4', 'CD_5', 'CD_6', 'CD_7', 'CD_8', 'CD_9', 'CD_10',
+                    'CD_11', 'CD_12', 'CD_14', 'CD_20', 'CD_21', 'CD_22', 'CD_23', 'CD_52'
+                ],
+                'public-health': [
+                    'CD_24', 'CD_25', 'CD_26', 'CD_27', 'CD_29'
+                ],
+                'finance': [
+                    'CD_28', 'CD_32', 'CD_33', 'CD_34', 'CD_38', 'CD_42', 'CD_43', 'CD_44', 'CD_45', 'CD_47'
+                ],
+                'industry': [
+                    'CD_36', 'CD_37', 'CD_48', 'CD_49', 'CD_50'
+                ],
+                'biology': [
+                    'CD_51', 'CD_54', 'CD_55', 'CD_56'
+                ]
+            };
+
+            cards.forEach(card => {
+                const id = card.dataset.id;
+                let domainMatch = false;
+                let improvementMatch = false;
+                let searchMatch = false;
+
+                // Verificar filtro de dominio
+                if (currentDomainFilter === 'all') {
+                    domainMatch = true;
+                } else {
+                    const domainIds = domains[currentDomainFilter] || [];
+                    domainMatch = domainIds.includes(id);
+                }
+
+                // Verificar filtro de mejora
+                if (currentImprovementFilter === 'all') {
+                    improvementMatch = true;
+                } else {
+                    const improvementTypes = getImprovementTypes(card);
+                    improvementMatch = improvementTypes.includes(currentImprovementFilter);
+                }
+
+                // Verificar búsqueda
+                if (currentSearchTerm === '') {
+                    searchMatch = true;
+                } else {
+                    const name = card.dataset.name.toLowerCase();
+                    const text = card.querySelector('p')?.innerText.toLowerCase() || '';
+                    searchMatch = name.includes(currentSearchTerm) || text.includes(currentSearchTerm);
+                }
+
+                card.style.display = (domainMatch && improvementMatch && searchMatch) ? 'block' : 'none';
+            });
+
+            updateCounters();
+        }
+
+        // Evento de búsqueda
+        searchInput.addEventListener('input', function (e) {
+            currentSearchTerm = e.target.value.toLowerCase();
+            applyFilters();
+        });
+
+        // Event listeners para filtros
+        const filterChips = document.querySelectorAll('.filter-chip');
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', function () {
+                const filterValue = this.dataset.filter;
+
+                // Caso especial: botón "Todos"
+                if (filterValue === 'all') {
+                    // Resetear AMBOS filtros
+                    currentDomainFilter = 'all';
+                    currentImprovementFilter = 'all';
+
+                    // Desactivar visualmente TODOS los filtros
+                    filterChips.forEach(c => c.classList.remove('active'));
+                    // Activar solo el botón "Todos"
+                    this.classList.add('active');
+                }
+                // Filtros de dominio
+                else if (['clinical-deep', 'public-health', 'finance', 'industry', 'biology'].includes(filterValue)) {
+                    // Si ya estaba activo, lo desactivamos (vuelve a "todos")
+                    if (currentDomainFilter === filterValue) {
+                        currentDomainFilter = 'all';
+                        this.classList.remove('active');
+                        // Activar visualmente el botón "Todos"
+                        const allBtn = document.querySelector('.filter-chip[data-filter="all"]');
+                        if (allBtn) allBtn.classList.add('active');
+                    } else {
+                        currentDomainFilter = filterValue;
+                        // Desactivar visualmente otros filtros de dominio
+                        document.querySelectorAll('.filter-chip').forEach(c => {
+                            if (['clinical-deep', 'public-health', 'finance', 'industry', 'biology'].includes(c.dataset.filter)) {
+                                c.classList.remove('active');
+                            }
+                        });
+                        this.classList.add('active');
+
+                        // Desactivar visualmente "Todos" si estaba activo
+                        const allBtn = document.querySelector('.filter-chip[data-filter="all"]');
+                        if (allBtn && currentDomainFilter !== 'all') {
+                            allBtn.classList.remove('active');
+                        }
+                    }
+                }
+                // Filtros de mejora
+                else if (['improvement-positive', 'improvement-negative', 'improvement-neutral'].includes(filterValue)) {
+                    const improvementValue = filterValue.replace('improvement-', '');
+
+                    // Si ya estaba activo, lo desactivamos
+                    if (currentImprovementFilter === improvementValue) {
+                        currentImprovementFilter = 'all';
+                        this.classList.remove('active');
+                    } else {
+                        currentImprovementFilter = improvementValue;
+                        // Desactivar visualmente otros filtros de mejora
+                        document.querySelectorAll('.filter-chip').forEach(c => {
+                            if (['improvement-positive', 'improvement-negative', 'improvement-neutral'].includes(c.dataset.filter)) {
+                                c.classList.remove('active');
+                            }
+                        });
+                        this.classList.add('active');
+                    }
+
+                    // Verificar si ambos filtros están en 'all' para activar "Todos"
+                    if (currentDomainFilter === 'all' && currentImprovementFilter === 'all') {
+                        const allBtn = document.querySelector('.filter-chip[data-filter="all"]');
+                        if (allBtn) allBtn.classList.add('active');
+                    } else {
+                        const allBtn = document.querySelector('.filter-chip[data-filter="all"]');
+                        if (allBtn) allBtn.classList.remove('active');
+                    }
+                }
+
+                applyFilters();
+            });
+        });
+
+        // Inicializar
+        applyFilters();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,2602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_53: Mushroom Classification - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_53</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_53: Mushroom Classification</h1>
+            <p class="description">Conjunto de datos biológico para la clasificación de hongos (comestible vs. venenoso). Caracterizado por ser 100% categórico nominal (22 variables de morfología, olor, hábitat) transformado numéricamente.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.85</td>
+                                    <td>0.96</td>
+                                    <td>0.90</td>
+                                    <td>104</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.95</td>
+                                    <td>0.81</td>
+                                    <td>0.88</td>
+                                    <td>96</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.89</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.90</td>
+                                    <td>0.89</td>
+                                    <td>0.89</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.90</td>
+                                    <td>0.89</td>
+                                    <td>0.89</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.99</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.89</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.89</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.01 AUC</span>
+                        <span class="improvement-tag">⬆ +0.11 F1</span>
+                        <span class="improvement-tag">⬆ +0.11 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>1.00</td>
+                                    <td>1.00</td>
+                                    <td>1.00</td>
+                                    <td>104</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.05</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.19</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.12</span></td>
+                                    <td>96</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>1.00</strong> <span class="improvement-indicator">⬆ +0.11</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.10</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.11</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.11</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.10</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.11</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.11</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">1.00</span>
+                            <span class="improvement-badge positive">⬆ +0.01</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">1.00</span>
+                            <span class="improvement-badge positive">⬆ +0.11</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">1.00</span>
+                            <span class="improvement-badge positive">⬆ +0.11</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.95</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 95%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 1.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.05</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.81</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 81%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 1.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.19</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.88</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 88%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 1.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Mushroom Classification Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">The Audubon Society Field Guide to North American Mushrooms (1981)</div>
+                    <div class="fuente-fecha">Donado a UCI ML: 27 de abril de 1987</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/Mushroom" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">8,124</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">22 (21 predictores + 1 objetivo)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Especies:</span>
+                            <span class="metadata-value">23 especies de hongos (Agaricus y Lepiota)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Clases:</span>
+                            <span class="metadata-value">Comestible (e) y Venenoso (p)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Clasificación de Hongos (Mushroom Classification)</strong> incluye descripciones de <strong>muestras hipotéticas</strong> correspondientes a <strong>23 especies de hongos con branquias</strong> de las familias <strong>Agaricus y Lepiota</strong>, extraídas de <strong>The Audubon Society Field Guide to North American Mushrooms (1981)</strong>. Cada especie está identificada como <strong>definitivamente comestible</strong>, <strong>definitivamente venenosa</strong>, o de <strong>comestibilidad desconocida</strong> (no recomendada). Esta última clase fue combinada con la clase venenosa. El objetivo es predecir si un hongo es <strong>comestible (e)</strong> o <strong>venenoso (p)</strong> basándose en <strong>22 características</strong> morfológicas. La guía establece claramente que <strong>no existe una regla simple</strong> para determinar la comestibilidad de un hongo.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🍄 Contexto del Dominio</h4>
+                        <p>La <strong>identificación de hongos comestibles vs. venenosos</strong> es un problema de <strong>seguridad alimentaria</strong> y <strong>salud pública</strong>. La intoxicación por hongos puede causar desde molestias gastrointestinales hasta <strong>fallo hepático</strong> y <strong>muerte</strong>. Este dataset es importante porque:</p>
+                        <ul style="color: #000; font-size: 0.9rem; line-height: 1.6; padding-left: 1.2rem;">
+                            <li>Permite desarrollar <strong>modelos de clasificación</strong> para identificar hongos venenosos</li>
+                            <li>Ayuda a entender <strong>qué características morfológicas</strong> son más indicativas de toxicidad</li>
+                            <li>Es un <strong>dataset clásico</strong> en aprendizaje automático, utilizado en numerosas investigaciones</li>
+                            <li>La <strong>recolección de hongos ("shrooming")</strong> está ganando popularidad, lo que hace que este dataset sea más relevante que nunca</li>
+                        </ul>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">⚠️ Advertencia</h5>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6;">La guía establece claramente que <strong>no existe una regla simple</strong> para determinar la comestibilidad de un hongo. No existe una regla como <strong>"hojas de tres, déjala ser"</strong> para el roble venenoso y la hiedra. La identificación de hongos debe realizarse por <strong>expertos capacitados</strong> y nunca basarse únicamente en modelos predictivos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>8,124 instancias</strong> con <strong>22 atributos</strong> (21 variables predictoras y 1 variable objetivo). Todas las características son de tipo <strong>categórico</strong> y <strong>no presentan valores faltantes</strong>.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Categorías</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="3" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Características Morfológicas</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>cap-shape</strong></td>
+                                        <td style="padding: 0.4rem;">Forma del sombrero</td>
+                                        <td style="padding: 0.4rem;">bell=b, conical=c, convex=x, flat=f, knobbed=k, sunken=s</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>cap-surface</strong></td>
+                                        <td style="padding: 0.4rem;">Superficie del sombrero</td>
+                                        <td style="padding: 0.4rem;">fibrous=f, grooves=g, scaly=y, smooth=s</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>cap-color</strong></td>
+                                        <td style="padding: 0.4rem;">Color del sombrero</td>
+                                        <td style="padding: 0.4rem;">brown=n, buff=b, cinnamon=c, gray=g, green=r, pink=p, purple=u, red=e, white=w, yellow=y</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>bruises</strong></td>
+                                        <td style="padding: 0.4rem;">¿Presenta moretones?</td>
+                                        <td style="padding: 0.4rem;">bruises=t, no=f</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>odor</strong></td>
+                                        <td style="padding: 0.4rem;">Olor del hongo</td>
+                                        <td style="padding: 0.4rem;">almond=a, anise=l, creosote=c, fishy=y, foul=f, musty=m, none=n, pungent=p, spicy=s</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>gill-attachment</strong></td>
+                                        <td style="padding: 0.4rem;">Unión de las láminas</td>
+                                        <td style="padding: 0.4rem;">attached=a, descending=d, free=f, notched=n</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>gill-spacing</strong></td>
+                                        <td style="padding: 0.4rem;">Espaciado de las láminas</td>
+                                        <td style="padding: 0.4rem;">close=c, crowded=w, distant=d</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>gill-size</strong></td>
+                                        <td style="padding: 0.4rem;">Tamaño de las láminas</td>
+                                        <td style="padding: 0.4rem;">broad=b, narrow=n</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>gill-color</strong></td>
+                                        <td style="padding: 0.4rem;">Color de las láminas</td>
+                                        <td style="padding: 0.4rem;">black=k, brown=n, buff=b, chocolate=h, gray=g, green=r, orange=o, pink=p, purple=u, red=e, white=w, yellow=y</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>stalk-shape</strong></td>
+                                        <td style="padding: 0.4rem;">Forma del tallo</td>
+                                        <td style="padding: 0.4rem;">enlarging=e, tapering=t</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>stalk-root</strong></td>
+                                        <td style="padding: 0.4rem;">Raíz del tallo</td>
+                                        <td style="padding: 0.4rem;">bulbous=b, club=c, cup=u, equal=e, rhizomorphs=z, rooted=r, missing=?</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>stalk-surface-above-ring</strong></td>
+                                        <td style="padding: 0.4rem;">Superficie del tallo (por encima del anillo)</td>
+                                        <td style="padding: 0.4rem;">fibrous=f, scaly=y, silky=k, smooth=s</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>stalk-surface-below-ring</strong></td>
+                                        <td style="padding: 0.4rem;">Superficie del tallo (por debajo del anillo)</td>
+                                        <td style="padding: 0.4rem;">fibrous=f, scaly=y, silky=k, smooth=s</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>stalk-color-above-ring</strong></td>
+                                        <td style="padding: 0.4rem;">Color del tallo (por encima del anillo)</td>
+                                        <td style="padding: 0.4rem;">brown=n, buff=b, cinnamon=c, gray=g, orange=o, pink=p, red=e, white=w, yellow=y</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>stalk-color-below-ring</strong></td>
+                                        <td style="padding: 0.4rem;">Color del tallo (por debajo del anillo)</td>
+                                        <td style="padding: 0.4rem;">brown=n, buff=b, cinnamon=c, gray=g, orange=o, pink=p, red=e, white=w, yellow=y</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>veil-type</strong></td>
+                                        <td style="padding: 0.4rem;">Tipo de velo</td>
+                                        <td style="padding: 0.4rem;">partial=p, universal=u</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>veil-color</strong></td>
+                                        <td style="padding: 0.4rem;">Color del velo</td>
+                                        <td style="padding: 0.4rem;">brown=n, orange=o, white=w, yellow=y</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>ring-number</strong></td>
+                                        <td style="padding: 0.4rem;">Número de anillos</td>
+                                        <td style="padding: 0.4rem;">none=n, one=o, two=t</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>ring-type</strong></td>
+                                        <td style="padding: 0.4rem;">Tipo de anillo</td>
+                                        <td style="padding: 0.4rem;">cobwebby=c, evanescent=e, flaring=f, large=l, none=n, pendant=p, sheathing=s, zone=z</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>spore-print-color</strong></td>
+                                        <td style="padding: 0.4rem;">Color de la impresión de esporas</td>
+                                        <td style="padding: 0.4rem;">black=k, brown=n, buff=b, chocolate=h, green=r, orange=o, purple=u, white=w, yellow=y</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>population</strong></td>
+                                        <td style="padding: 0.4rem;">Población</td>
+                                        <td style="padding: 0.4rem;">abundant=a, clustered=c, numerous=n, scattered=s, several=v, solitary=y</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>habitat</strong></td>
+                                        <td style="padding: 0.4rem;">Hábitat</td>
+                                        <td style="padding: 0.4rem;">grasses=g, leaves=l, meadows=m, paths=p, urban=u, waste=w, woods=d</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="3" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">B. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>class</strong></td>
+                                        <td style="padding: 0.4rem;">Comestibilidad del hongo</td>
+                                        <td style="padding: 0.4rem;">e = comestible, p = venenoso</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Comestible vs. Venenoso)</li>
+                            <li><strong>Dimensión:</strong> Multivariante (8,124 × 22)</li>
+                            <li><strong>Tipo de características:</strong> Categóricas (todas)</li>
+                            <li><strong>Valores faltantes:</strong> No (excepto stalk-root con '?' que representa valor faltante)</li>
+                            <li><strong>Área de aplicación:</strong> Botánica, Micología, Seguridad Alimentaria</li>
+                            <li><strong>Especies:</strong> 23 especies de hongos (Agaricus y Lepiota)</li>
+                            <li><strong>Clases:</strong> e (comestible) y p (venenoso)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos contiene <strong>características morfológicas de hongos</strong> y no incluye <strong>información personal identificable</strong>. Los datos son de dominio público y se utilizan exclusivamente para fines académicos y de investigación. <strong>Restricción de confidencialidad:</strong> El uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo. Se enfatiza que <strong>los modelos predictivos no deben utilizarse para identificar hongos en la vida real</strong> sin la supervisión de un experto micólogo.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es un <strong>clásico en clasificación categórica</strong> y es ideal para <strong>problemas de clasificación</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable objetivo <strong>class</strong> está codificada como <strong>e = comestible</strong> y <strong>p = venenoso</strong></li>
+                            <li>Todas las características son <strong>categóricas</strong> y requieren codificación (One-Hot Encoding o Label Encoding)</li>
+                            <li>La variable <strong>stalk-root</strong> contiene valores '?' que representan <strong>valores faltantes</strong> (aproximadamente 2,480 instancias)</li>
+                            <li>La variable <strong>veil-type</strong> tiene un <strong>único valor</strong> (p) en todas las instancias, por lo que <strong>no aporta información</strong> y puede excluirse</li>
+                            <li>El dataset está <strong>relativamente balanceado</strong> (aproximadamente 50% comestibles, 50% venenosos)</li>
+                            <li>El <strong>olor (odor)</strong> es una de las características <strong>más discriminativas</strong> (algunos olores como almendra, anís o ninguno son típicos de comestibles)</li>
+                            <li>La <strong>impresión de esporas (spore-print-color)</strong> es otra característica importante para la clasificación</li>
+                            <li>Los modelos de <strong>Árboles de Decisión</strong> y <strong>Random Forest</strong> suelen funcionar muy bien en este dataset debido a la naturaleza categórica de los datos</li>
+                            <li>El dataset es adecuado para <strong>aprendizaje automático interpretable</strong> (reglas de decisión)</li>
+                            <li>No existe una <strong>regla simple</strong> para determinar la comestibilidad, lo que hace que este dataset sea un desafío interesante para el aprendizaje automático</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Micología y Seguridad Alimentaria</h4>
+                        <p>La <strong>identificación correcta de hongos</strong> es crucial para la <strong>seguridad alimentaria</strong>. La intoxicación por hongos puede tener consecuencias graves:</p>
+                        <ul class="transformacion-lista">
+                            <li>La <strong>amanita phalloides</strong> (hongo de la muerte) es responsable de la mayoría de las muertes por intoxicación con hongos</li>
+                            <li>Los síntomas de intoxicación pueden incluir <strong>náuseas</strong>, <strong>vómitos</strong>, <strong>diarrea</strong>, <strong>fallo hepático</strong> y <strong>muerte</strong></li>
+                            <li>La <strong>identificación errónea</strong> de hongos comestibles y venenosos es un problema común entre los recolectores aficionados</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset ha sido utilizado en <strong>numerosas investigaciones</strong> sobre clasificación y ha contribuido al desarrollo de <strong>técnicas de aprendizaje automático interpretable</strong>. A pesar de su antigüedad, sigue siendo relevante para entender <strong>qué características morfológicas</strong> son más indicativas de toxicidad.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Mushroom Classification Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/Mushroom</pre>
+                        <button onclick="copyToClipboard('Mushroom Classification Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/Mushroom')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>UCI Machine Learning Repository - Mushroom Classification. <a href="https://archive.ics.uci.edu/ml/datasets/Mushroom" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/Mushroom</a></li>
+                            <li>Lincoff, G. H. (1981). <em>The Audubon Society Field Guide to North American Mushrooms</em>. Alfred A. Knopf.</li>
+                            <li>Schalkwijk-Barendsen, H. M. E. (1991). <em>Mushrooms of Western Canada</em>. Lone Pine Publishing.</li>
+                            <li>Quinlan, J. R. (1993). <em>C4.5: Programs for Machine Learning</em>. Morgan Kaufmann. (Este dataset fue utilizado en el desarrollo de C4.5)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Mushroom Classification)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Limpieza inicial y eliminación de variables:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Eliminación de <strong>columnas constantes</strong> (varianza 0) que no aportan información predictiva, incluyendo <em>veil-type</em> (tipo de velo) que es constante en todo el dataset.</li>
+                            <li>Reducción de la dimensionalidad del dataset para mejorar la eficiencia del modelo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transformación de la variable objetivo:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Renombramiento de <em>class</em> a <em>is_poisonous</em> para mayor claridad semántica.</li>
+                            <li><strong>Mapeo:</strong> 'p' (Poisonous - Venenoso) → <em>1</em> (Clase Positiva), 'e' (Edible - Comestible) → <em>0</em> (Clase Negativa).</li>
+                            <li>Documentación del objetivo: clasificación de hongos comestibles vs venenosos.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variables categóricas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de <strong>21 variables categóricas</strong> a valores numéricos mediante <em>Label Encoding</em> con <code>sklearn.preprocessing.LabelEncoder</code>.</li>
+                            <li>Variables incluidas: <em>cap-shape</em> (forma del sombrero), <em>cap-surface</em> (superficie del sombrero), <em>cap-color</em> (color del sombrero), <em>bruises</em> (moretones), <em>odor</em> (olor), <em>gill-attachment</em> (fijación de laminillas), <em>gill-spacing</em> (espaciado de laminillas), <em>gill-size</em> (tamaño de laminillas), <em>gill-color</em> (color de laminillas), <em>stalk-shape</em> (forma del tallo), <em>stalk-root</em> (raíz del tallo), <em>stalk-surface-above-ring</em>, <em>stalk-surface-below-ring</em>, <em>stalk-color-above-ring</em>, <em>stalk-color-below-ring</em>, <em>veil-color</em> (color del velo), <em>ring-number</em> (número de anillos), <em>ring-type</em> (tipo de anillo), <em>spore-print-color</em> (color de esporas), <em>population</em> (población), <em>habitat</em> (hábitat).</li>
+                            <li>Generación de mapeo completo (código → valor original) en la leyenda para todas las variables.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submuestreo estratificado para reducción del dataset:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Reducción del dataset a <strong>1,000 ejemplos</strong> representativos mediante muestreo estratificado.</li>
+                            <li>Uso de <code>train_test_split</code> con parámetro <em>stratify</em> para <strong>preservar exactamente</strong> la proporción original de clases (desbalance de hongos venenosos vs comestibles).</li>
+                            <li>Semilla fija (<em>random_state=42</em>) para garantizar reproducibilidad científica de la muestra.</li>
+                            <li>Verificación de integridad con diferencia máxima < 1% en proporción de clases.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_mushrooms.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de la variable <em>is_poisonous</em> (0 = Comestible, 1 = Venenoso).</li>
+                            <li>Mapeo completo de <strong>21 variables categóricas</strong> codificadas con sus valores originales.</li>
+                            <li>Nota sobre eliminación de columnas constantes (veil-type).</li>
+                            <li>Contextualización del dataset: clasificación de hongos del género Agaricus y Lepiota.</li>
+                            <li>Estadísticas finales: total de instancias, distribución de clases y balance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>8,124 instancias</strong> (hongos) originales para el dataset completo.</li>
+                            <li>Dataset reducido de <strong>1,000 ejemplos</strong> estratificados para experimentación eficiente.</li>
+                            <li>Dataset final con <strong>21 variables predictoras</strong> (todas categóricas codificadas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>8,124 especímenes de hongos</strong> (con versión reducida estratificada de 1,000 ejemplos) con <strong>21 variables predictoras</strong> (todas categóricas codificadas: características morfológicas y de hábitat) y <strong>1 variable objetivo binaria</strong> (is_poisonous). Desbalance equilibrado-preservado (~52% comestibles / ~48% venenosos) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>clasificación biológica y micología</strong>, donde las características morfológicas de los hongos son determinantes para distinguir especies comestibles de venenosas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🍄 <strong>Fuente:</strong> Mushroom Classification Dataset (UCI Machine Learning Repository) - Datos de hongos del género Agaricus y Lepiota.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variables morfológicas:</strong> Forma del sombrero (cap-shape), superficie (cap-surface), color (cap-color), moretones (bruises), olor (odor) — el olor es uno de los predictores más importantes.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📋 <strong>Variables de laminillas y tallo:</strong> Fijación (gill-attachment), espaciado (gill-spacing), tamaño (gill-size), color (gill-color), forma del tallo (stalk-shape), raíz (stalk-root), superficies y colores del tallo.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🌍 <strong>Variables de hábitat:</strong> Población (population) y hábitat (habitat) — factores ecológicos de crecimiento.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_mushrooms.txt</em> con mapeo completo de todas las variables categóricas codificadas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>is_poisonous</em> (1 = Venenoso, 0 = Comestible).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Eliminación de columnas constantes (veil-type), renombrado de target, mapeo de target ('p'→1, 'e'→0), Label Encoding de 21 variables categóricas, reducción estratificada a 1,000 ejemplos.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Micológica</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>cap-shape</code></td>
+                            <td>Forma del sombrero del hongo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Bell, 1: Conical, 2: Flat, 3: Knobbed, 4: Sunken, 5: Convex</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>cap-surface</code></td>
+                            <td>Superficie del sombrero</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Fibrous, 1: Grooves, 2: Smooth, 3: Scaly</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>cap-color</code></td>
+                            <td>Color del sombrero</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Buff, 1: Cinnamon, 2: Red, 3: Gray, 4: Brown, 5: Pink, 6: Purple, 7: Green, 8: White, 9: Yellow</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>bruises</code></td>
+                            <td>Magulladuras al tacto</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>odor</code></td>
+                            <td>Olor del hongo (predictor más potente)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Almond, 1: Creosote, 2: Foul, 3: Anise, 4: Musty, 5: None, 6: Pungent, 7: Spicy, 8: Fishy</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>gill-attachment</code></td>
+                            <td>Inserción de las láminas</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Attached (Adheridas), 1: Free (Libres)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>gill-spacing</code></td>
+                            <td>Espaciado de las láminas</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Close (Juntas), 1: Crowded (Apretadas)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>gill-size</code></td>
+                            <td>Tamaño de las láminas</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Broad (Anchas), 1: Narrow (Estrechas)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>gill-color</code></td>
+                            <td>Color de las láminas</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Buff, 1: Red, 2: Gray, 3: Chocolate, 4: Black, 5: Brown, 6: Orange, 7: Pink, 8: Purple, 9: Green, 10: White, 11: Yellow</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>stalk-shape</code></td>
+                            <td>Forma del tallo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Enlarging (Ensanchado), 1: Tapering (Ahusado)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>stalk-root</code></td>
+                            <td>Raíz del tallo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Desconocido, 1: Bulbous (Bulbosa), 2: Club (En forma de maza), 3: Equal (Igual), 4: Rooted (Enraizada)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>stalk-surface-above-ring</code></td>
+                            <td>Superficie del tallo por encima del anillo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Fibrous, 1: Silky, 2: Smooth, 3: Scaly</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>stalk-surface-below-ring</code></td>
+                            <td>Superficie del tallo por debajo del anillo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Fibrous, 1: Silky, 2: Smooth, 3: Scaly</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>stalk-color-above-ring</code></td>
+                            <td>Color del tallo por encima del anillo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Buff, 1: Cinnamon, 2: Red, 3: Gray, 4: Brown, 5: Orange, 6: Pink, 7: White, 8: Yellow</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>stalk-color-below-ring</code></td>
+                            <td>Color del tallo por debajo del anillo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Buff, 1: Cinnamon, 2: Red, 3: Gray, 4: Brown, 5: Orange, 6: Pink, 7: White, 8: Yellow</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>veil-color</code></td>
+                            <td>Color del velo (cortina parcial)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Brown, 1: Orange, 2: White, 3: Yellow</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>ring-number</code></td>
+                            <td>Número de anillos</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: None (Ninguno), 1: One (Uno), 2: Two (Dos)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>ring-type</code></td>
+                            <td>Tipo de anillo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Evanescent (Evanescente), 1: Flaring (Abocinado), 2: Large (Grande), 3: None (Ninguno), 4: Pendant (Colgante)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>spore-print-color</code></td>
+                            <td>Color de la impresión de esporas</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Buff, 1: Chocolate, 2: Black, 3: Brown, 4: Orange, 5: Green, 6: Purple, 7: White, 8: Yellow</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>population</code></td>
+                            <td>Distribución poblacional del hongo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Abundant, 1: Clustered, 2: Numerous, 3: Scattered, 4: Several, 5: Solitary</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>habitat</code></td>
+                            <td>Hábitat del hongo</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Woods, 1: Grasses, 2: Leaves, 3: Meadows, 4: Paths, 5: Urban, 6: Waste</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variable Binaria (Target) -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>is_poisonous</code></td>
+                            <td>Comestibilidad del hongo (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Comestible, 1: Venenoso</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">22</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">21</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Venenoso (is_poisonous)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Clasificación de Hongos (Mushrooms). Comprender 
+                estas codificaciones es fundamental para la correcta interpretación de los resultados 
+                de identificación de hongos comestibles y venenosos.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: cap-shape -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>cap-shape</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>b - Bell (Campana)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>c - Conical (Cónico)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>f - Flat (Plano)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>k - Knobbed (Con protuberancia)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>s - Sunken (Hundido)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>x - Convex (Convexo)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: cap-surface -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>cap-surface</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>f - Fibrous (Fibrosa)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>g - Grooves (Con surcos)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>s - Smooth (Lisa)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>y - Scaly (Escamosa)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: cap-color -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>cap-color</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>b - Buff (Amarillo pálido)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>c - Cinnamon (Canela)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>e - Red (Rojo)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>g - Gray (Gris)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>n - Brown (Marrón)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>p - Pink (Rosa)</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>r - Purple (Púrpura)</td></tr>
+                                <tr><td><span class="codigo">7</span></td><td>u - Green (Verde)</td></tr>
+                                <tr><td><span class="codigo">8</span></td><td>w - White (Blanco)</td></tr>
+                                <tr><td><span class="codigo">9</span></td><td>y - Yellow (Amarillo)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: bruises -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>bruises</code></span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>f - No (No tiene magulladuras)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>t - Yes (Tiene magulladuras)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: odor -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>odor</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px; color: #e74c3c;">
+                            <strong>⚠️ El predictor más potente para detectar venenosos</strong>
+                        </p>
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                    <th>Comestibilidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>a - Almond (Almendra)</td><td style="color: #27ae60;">✓ Comestible</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>c - Creosote (Creosota)</td><td style="color: #e74c3c;">✗ Venenoso</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>f - Foul (Fétido)</td><td style="color: #e74c3c;">✗ Venenoso</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>l - Anise (Anís)</td><td style="color: #27ae60;">✓ Comestible</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>m - Musty (Mohoso)</td><td style="color: #e74c3c;">✗ Venenoso</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>n - None (Ninguno)</td><td style="color: #27ae60;">✓ Comestible</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>p - Pungent (Pungente)</td><td style="color: #e74c3c;">✗ Venenoso</td></tr>
+                                <tr><td><span class="codigo">7</span></td><td>s - Spicy (Picante)</td><td style="color: #27ae60;">✓ Comestible</td></tr>
+                                <tr><td><span class="codigo">8</span></td><td>y - Fishy (A pescado)</td><td style="color: #e74c3c;">✗ Venenoso</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🚨</span>
+                            <p><strong>Regla clave:</strong> Olores como Almond (0), Anise (3), None (5) y Spicy (7) son típicamente comestibles.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: gill-attachment -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>gill-attachment</code></span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>a - Attached (Adheridas al tallo)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>f - Free (Libres, sin adherir)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: gill-spacing -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>gill-spacing</code></span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>c - Close (Juntas)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>w - Crowded (Apretadas)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: gill-size -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>gill-size</code></span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>b - Broad (Anchas)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>n - Narrow (Estrechas)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: gill-color -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>gill-color</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>b - Buff</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>e - Red</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>g - Gray</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>h - Chocolate</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>k - Black</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>n - Brown</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>o - Orange</td></tr>
+                                <tr><td><span class="codigo">7</span></td><td>p - Pink</td></tr>
+                                <tr><td><span class="codigo">8</span></td><td>r - Purple</td></tr>
+                                <tr><td><span class="codigo">9</span></td><td>u - Green</td></tr>
+                                <tr><td><span class="codigo">10</span></td><td>w - White</td></tr>
+                                <tr><td><span class="codigo">11</span></td><td>y - Yellow</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: stalk-shape -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>stalk-shape</code></span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>e - Enlarging (Ensanchado hacia la base)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>t - Tapering (Ahusado)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: stalk-root -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>stalk-root</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>? - Unknown (Desconocido)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>b - Bulbous (Bulbosa)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>c - Club (En forma de maza)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>e - Equal (Igual)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>r - Rooted (Enraizada)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⚠️</span>
+                            <p><strong>Nota:</strong> El código 0 corresponde a valores originales "?" (desconocidos).</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: stalk-surface-above-ring / stalk-surface-below-ring -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>stalk-surface-above-ring</code> y <code>stalk-surface-below-ring</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>f - Fibrous (Fibrosa)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>k - Silky (Sedosa)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>s - Smooth (Lisa)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>y - Scaly (Escamosa)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: stalk-color-above-ring / stalk-color-below-ring -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>stalk-color-above-ring</code> y <code>stalk-color-below-ring</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>b - Buff</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>c - Cinnamon</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>e - Red</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>g - Gray</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>n - Brown</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>o - Orange</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>p - Pink</td></tr>
+                                <tr><td><span class="codigo">7</span></td><td>w - White</td></tr>
+                                <tr><td><span class="codigo">8</span></td><td>y - Yellow</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: veil-color -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>veil-color</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>n - Brown</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>o - Orange</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>w - White</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>y - Yellow</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: ring-number -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>ring-number</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>n - None (Ninguno)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>o - One (Uno)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>t - Two (Dos)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: ring-type -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>ring-type</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>e - Evanescent (Evanescente)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>f - Flaring (Abocinado)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>l - Large (Grande)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>n - None (Ninguno)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>p - Pendant (Colgante)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: spore-print-color -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>spore-print-color</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>b - Buff</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>h - Chocolate</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>k - Black</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>n - Brown</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>o - Orange</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>r - Green</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>u - Purple</td></tr>
+                                <tr><td><span class="codigo">7</span></td><td>w - White</td></tr>
+                                <tr><td><span class="codigo">8</span></td><td>y - Yellow</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: population -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>population</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>a - Abundant (Abundante)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>c - Clustered (Agrupado)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>n - Numerous (Numeroso)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>s - Scattered (Disperso)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>v - Several (Varios)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>y - Solitary (Solitario)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: habitat -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>habitat</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>d - Woods (Bosque)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>g - Grasses (Pastizales)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>l - Leaves (Hojarasca)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>m - Meadows (Prados)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>p - Paths (Caminos)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>u - Urban (Urbano)</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>w - Waste (Terreno baldío)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: is_poisonous (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>is_poisonous</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">0</span></td>
+                                    <td><strong>Edible (Comestible)</strong> - Hongo seguro para consumir (~52%)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">1</span></td>
+                                    <td><strong>Poisonous (Venenoso)</strong> - Hongo tóxico (~48%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> Clasifica la comestibilidad del hongo basado en 21 características morfológicas.</p>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">💡</span>
+                            <p><strong>Regla clave:</strong> El <code>odor</code> (olor) es el predictor más potente. Olores como Almond (0) o None (5) son típicos de comestibles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 21
+                        <ul>
+                            <li>cap-shape (6 categorías)</li>
+                            <li>cap-surface (4 categorías)</li>
+                            <li>cap-color (10 categorías)</li>
+                            <li>bruises (2 categorías - binario)</li>
+                            <li>odor (9 categorías - predictor clave)</li>
+                            <li>gill-attachment (2 categorías - binario)</li>
+                            <li>gill-spacing (2 categorías - binario)</li>
+                            <li>gill-size (2 categorías - binario)</li>
+                            <li>gill-color (12 categorías)</li>
+                            <li>stalk-shape (2 categorías - binario)</li>
+                            <li>stalk-root (5 categorías)</li>
+                            <li>stalk-surface-above-ring (4 categorías)</li>
+                            <li>stalk-surface-below-ring (4 categorías)</li>
+                            <li>stalk-color-above-ring (9 categorías)</li>
+                            <li>stalk-color-below-ring (9 categorías)</li>
+                            <li>veil-color (4 categorías)</li>
+                            <li>ring-number (3 categorías)</li>
+                            <li>ring-type (5 categorías)</li>
+                            <li>spore-print-color (9 categorías)</li>
+                            <li>population (6 categorías)</li>
+                            <li>habitat (7 categorías)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 1
+                        <ul>
+                            <li>🎯 is_poisonous (Objetivo - Comestible/Venenoso)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Identificación:</strong>
+                        <ul>
+                            <li><strong>Predictor clave:</strong> <code>odor</code> - Olores Foul (2), Musty (4), Pungent (6), Fishy (8) son venenosos</li>
+                            <li><strong>Olores seguros:</strong> Almond (0), Anise (3), None (5), Spicy (7) son comestibles</li>
+                            <li><strong>Color de esporas:</strong> <code>spore-print-color</code> es muy discriminante</li>
+                            <li><strong>Magulladuras:</strong> <code>bruises = 1</code> es un indicador importante</li>
+                            <li><strong>Variable eliminada:</strong> <code>veil-type</code> fue removida por ser constante</li>
+                            <li><strong>Dataset famoso:</strong> Permite precisión del 100% con reglas simples basadas en olor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- OLOR -->
+                        <li><code>odor == 2 (Fétido) → is_poisonous = 1</code></li>
+                        <li><code>odor == 1 (Creosota, almendra, pimentón, sulfuroso) → is_poisonous = 1</code></li>
+                        <li><code>odor == 0 (Anís, almendra) → is_poisonous = 0</code></li>
+                        
+                        <!-- ESPORAS -->
+                        <li><code>spore-print-color == 5 (Verde) → is_poisonous = 1</code></li>
+                        <li><code>spore-print-color == 1 (Chocolate) → is_poisonous = 0</code></li>
+                        
+                        <!-- AGALLAS -->
+                        <li><code>gill-color == 0 (Buff) → is_poisonous = 1</code></li>
+                        <li><code>gill-size == 1 (Estrechas) → is_poisonous = 1</code></li>
+                        <li><code>gill-size == 0 (Anchas) → is_poisonous = 0</code></li>
+                        
+                        <!-- ANILLO -->
+                        <li><code>ring-type == 2 (Grande) → is_poisonous = 1</code></li>
+                        
+                        <!-- MAGULLADURAS Y AGALLAS -->
+                        <li><code>bruises == 0 → gill-spacing = 1 (Sin magulladuras → agallas juntas)</code></li>
+                        
+                        <!-- TALLO -->
+                        <li><code>stalk-surface-above-ring == 1 (Sedoso) → is_poisonous = 1</code></li>
+                        <li><code>stalk-surface-above-ring == 0 (Fibroso) → is_poisonous = 0</code></li>
+                        
+                        <!-- POBLACIÓN -->
+                        <li><code>population == 1 (Agrupada) → is_poisonous = 1</code></li>
+                        <li><code>population == 0 (Abundante/Numerosa) → is_poisonous = 0</code></li>
+                        
+                        <!-- CONTRADICCIÓN VENENOSA -->
+                        <li><code>is_poisonous == 1 → odor ≠ 0 (Venenoso → olor no anís)</code></li>
+                        
+                        <!-- EXCLUSIONES BIOLÓGICAS -->
+                        <li><code>odor y gill-size son mutuamente excluyentes</code></li>
+                        <li><code>gill-color y gill-size son mutuamente excluyentes</code></li>
+                        
+                        <!-- CONSISTENCIA DEL TALLO -->
+                        <li><code>stalk-color-above-ring == 7 → stalk-color-below-ring = 7 (Color consistente)</code></li>
+                        
+                        <!-- ANILLO Y VELO -->
+                        <li><code>ring-number == 0 → ring-type = 3 (Sin anillo → tipo ausente)</code></li>
+                        
+                        <!-- COHERENCIA DE AGALLAS -->
+                        <li><code>gill-attachment == 1 → gill-spacing = 0</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Sin datos disponibles</strong> 
+                    (TabDSFidelity: <strong>-</strong>, AUC: -, F1: -, MIA: -). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.035</td>
+                                <td>3000</td>
+                                <td>0.895</td>
+                                <td>0.885</td>
+                                <td>0.885</td>
+                                <td>5.434</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.418</td>
+                                <td>0.839</td>
+                                <td>42.265</td>
+                                <td>0.495</td>
+                                <td>0</td>
+                                <td>0.466</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.020</td>
+                                <td>3000</td>
+                                <td>0.713</td>
+                                <td>0.650</td>
+                                <td>0.650</td>
+                                <td>0.768</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1.820</td>
+                                <td>0.828</td>
+                                <td>118.632</td>
+                                <td>0.503</td>
+                                <td>0</td>
+                                <td>0.539</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.386</td>
+                                <td>9023</td>
+                                <td>0.920</td>
+                                <td>0.894</td>
+                                <td>0.895</td>
+                                <td>6.246</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.040</td>
+                                <td>0.926</td>
+                                <td>450.921</td>
+                                <td>0.176</td>
+                                <td>0</td>
+                                <td>0.474</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.017</td>
+                                <td>9023</td>
+                                <td>0.855</td>
+                                <td>0.779</td>
+                                <td>0.780</td>
+                                <td>3.613</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1.481</td>
+                                <td>0.877</td>
+                                <td>570.915</td>
+                                <td>0.232</td>
+                                <td>0</td>
+                                <td>0.474</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>TVAE</strong></td>                    
+                                <td>1.230</td>
+                                <td>4739</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>0.995</strong></td>
+                                <td><strong>0.995</strong></td>
+                                <td><strong>8.000</strong></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.021</td>
+                                <td>0.933</td>
+                                <td>167.292</td>
+                                <td>0.103</td>
+                                <td>0</td>
+                                <td>0.447</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.210</td>
+                                <td>4739</td>
+                                <td>0.892</td>
+                                <td>0.845</td>
+                                <td>0.845</td>
+                                <td>4.672</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1.475</td>
+                                <td>0.886</td>
+                                <td>270.923</td>
+                                <td>0.180</td>
+                                <td>0</td>
+                                <td>0.478</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.932</td>
+                                <td>0.863</td>
+                                <td>0.865</td>
+                                <td>4.639</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.869</td>
+                                <td>0.686</td>
+                                <td>101.292</td>
+                                <td>0.424</td>
+                                <td>0</td>
+                                <td>0.479</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>2.503</td>
+                                <td>10000</td>
+                                <td>0.894</td>
+                                <td>0.790</td>
+                                <td>0.790</td>
+                                <td>2.914</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>2.301</td>
+                                <td>0.694</td>
+                                <td>218.311</td>
+                                <td>0.490</td>
+                                <td>0</td>
+                                <td>0.473</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1</td>
+                                <td>3000</td>
+                                <td>0.897</td>
+                                <td>0.885</td>
+                                <td>0.885</td>
+                                <td>5.459</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.422</td>
+                                <td>0.843</td>
+                                <td>57.113</td>
+                                <td>0.493</td>
+                                <td>0</td>
+                                <td>0.492</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.020</td>
+                                <td>3000</td>
+                                <td>0.807</td>
+                                <td>0.725</td>
+                                <td>0.725</td>
+                                <td>2.300</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>1.828</td>
+                                <td>0.830</td>
+                                <td>155.910</td>
+                                <td>0.503</td>
+                                <td>0</td>
+                                <td>0.534</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>TVAE</strong> 
+                    (TabDSFidelity: <strong>8.000</strong>, AUC: 1.000, F1: 0.995, MIA: 0.447). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.045</td>
+                                <td>4000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.377</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.245</td>
+                                <td>0.868</td>
+                                <td>80.998</td>
+                                <td>0.373</td>
+                                <td>496</td>
+                                <td>0.450</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.034</td>
+                                <td>4000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.231</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.316</td>
+                                <td>0.855</td>
+                                <td>159.281</td>
+                                <td>0.379</td>
+                                <td>496</td>
+                                <td>0.458</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.351</td>
+                                <td>10023</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.930</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.033</td>
+                                <td>0.933</td>
+                                <td>512.128</td>
+                                <td>0.157</td>
+                                <td>209</td>
+                                <td>0.454</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.008</td>
+                                <td>10023</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.530</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.193</td>
+                                <td>0.886</td>
+                                <td>630.570</td>
+                                <td>0.207</td>
+                                <td>209</td>
+                                <td>0.463</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>TVAE</strong></td>                    
+                                <td>1.201</td>
+                                <td>5739</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>2.000</strong></td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.014</td>
+                                <td>0.945</td>
+                                <td>219.229</td>
+                                <td>0.085</td>
+                                <td>378</td>
+                                <td>0.450</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.156</td>
+                                <td>5739</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.683</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.138</td>
+                                <td>0.906</td>
+                                <td>323.494</td>
+                                <td>0.146</td>
+                                <td>378</td>
+                                <td>0.463</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.007</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>0.186</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.652</td>
+                                <td>0.704</td>
+                                <td>161.048</td>
+                                <td>0.383</td>
+                                <td>186</td>
+                                <td>0.446</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>2.261</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>0.042</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.798</td>
+                                <td>0.714</td>
+                                <td>277.407</td>
+                                <td>0.444</td>
+                                <td>186</td>
+                                <td>0.434</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.018</td>
+                                <td>4000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.384</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.247</td>
+                                <td>0.870</td>
+                                <td>107.385</td>
+                                <td>0.370</td>
+                                <td>496</td>
+                                <td>0.439</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.034</td>
+                                <td>4000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.233</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>0.320</td>
+                                <td>0.857</td>
+                                <td>205.082</td>
+                                <td>0.378</td>
+                                <td>496</td>
+                                <td>0.454</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>TVAE</strong> 
+                    (TabDSFidelity: <strong>2.000</strong>, AUC: 1.000, F1: 1.000, MIA: 0.450). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_53</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>----</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>TVAE</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>TVAE</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd53.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Mushroom Edibility Classification (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32946821.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [51.67, 48.33], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

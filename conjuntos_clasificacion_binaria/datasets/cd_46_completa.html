@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_46: E-commerce Customer Churn - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_46</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_46: E-commerce Customer Churn</h1>
+            <p class="description">Conjunto de datos de comercio electrónico para la clasificación binaria de abandono de clientes. Integra métricas de comportamiento, logísticas y de satisfacción, procesadas con imputación por mediana.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.83</td>
+                                    <td>0.97</td>
+                                    <td>0.89</td>
+                                    <td>166</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.17</td>
+                                    <td>0.03</td>
+                                    <td>0.05</td>
+                                    <td>34</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.81</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.50</td>
+                                    <td>0.50</td>
+                                    <td>0.47</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.72</td>
+                                    <td>0.81</td>
+                                    <td>0.75</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.65</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.75</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.81</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.12 AUC</span>
+                        <span class="improvement-tag">⬆ +0.03 F1</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.04 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.89</td>
+                                    <td>0.81</td>
+                                    <td>0.85</td>
+                                    <td>166</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.37 <span class="improvement-indicator">⬆ +0.20</span></td>
+                                    <td>0.53 <span class="improvement-indicator">⬆ +0.50</span></td>
+                                    <td>0.43 <span class="improvement-indicator">⬆ +0.38</span></td>
+                                    <td>34</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.77</strong> <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.04</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.63 <span class="improvement-indicator">⬆ +0.13</span></td>
+                                    <td>0.67 <span class="improvement-indicator">⬆ +0.17</span></td>
+                                    <td>0.64 <span class="improvement-indicator">⬆ +0.17</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.80 <span class="improvement-indicator">⬆ +0.08</span></td>
+                                    <td>0.77 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.04</span></td>
+                                    <td>0.78 <span class="improvement-indicator">⬆ +0.03</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.77</span>
+                            <span class="improvement-badge positive">⬆ +0.12</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.78</span>
+                            <span class="improvement-badge positive">⬆ +0.03</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.77</span>
+                            <span class="improvement-badge negative">⬇ -0.04</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.17</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 17%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.37</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 37%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.20</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.03</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 3%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.53</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 53%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.05</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 5%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.43</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 43%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.38</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>E-commerce Customer Churn Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Datos de comercio electrónico</div>
+                    <div class="fuente-fecha">Disponible en repositorios públicos</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">Kaggle / Repositorios de ciencia de datos</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://www.kaggle.com/datasets/shriyashjagtap/e-commerce-customer-churn" target="_blank">Kaggle - E-commerce Customer Churn</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Tipo de problema:</span>
+                            <span class="metadata-value">Clasificación binaria (Churn = Yes/No)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">10 (9 predictores + 1 objetivo)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Área de aplicación:</span>
+                            <span class="metadata-value">Comercio Electrónico, Marketing, Retención de Clientes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Rotación de Clientes de Comercio Electrónico (E-commerce Customer Churn)</strong> pertenece a una <strong>empresa líder de comercio electrónico</strong> en línea. La empresa desea <strong>identificar clientes que probablemente abandonarán</strong>, para poder <strong>abordarlos de manera proactiva</strong> con <strong>ofertas promocionales</strong>. El dataset contiene varias características relacionadas con el <strong>comportamiento del cliente</strong> y sus características, que pueden utilizarse para predecir la <strong>rotación de clientes (churn)</strong>. El objetivo es un problema de <strong>clasificación binaria</strong> donde la variable objetivo es <strong>Churn</strong>.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🛒 Contexto del Dominio</h4>
+                        <p>La <strong>rotación de clientes en el comercio electrónico</strong> es un desafío crítico para las empresas que operan en línea. El costo de <strong>adquirir un nuevo cliente</strong> es significativamente mayor que <strong>retener a uno existente</strong>. Este dataset permite:</p>
+                        <ul class="transformacion-lista">
+                            <li>Identificar <strong>factores predictivos</strong> de la rotación de clientes en comercio electrónico</li>
+                            <li>Comprender cómo <strong>características como tenencia, distancia al almacén, dispositivos, satisfacción, quejas y actividad reciente</strong> afectan la retención</li>
+                            <li>Desarrollar <strong>modelos predictivos</strong> para identificar clientes en riesgo de abandono</li>
+                            <li>Implementar <strong>estrategias de retención</strong> proactivas y <strong>campañas de marketing</strong> dirigidas</li>
+                        </ul>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">🎯 Aplicaciones Potenciales</h5>
+                            <ul class="transformacion-lista">
+                                <li><strong>Retención de Clientes:</strong> Identificar clientes en riesgo y tomar medidas proactivas para retenerlos</li>
+                                <li><strong>Marketing Dirigido:</strong> Diseñar campañas de marketing específicas para clientes propensos a abandonar</li>
+                                <li><strong>Mejora del Servicio:</strong> Analizar las características que contribuyen al abandono y mejorar esos aspectos del servicio</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>10 características</strong> (9 variables predictoras y 1 variable objetivo) relacionadas con el <strong>comportamiento del cliente</strong> en una plataforma de comercio electrónico. Las características son de tipo <strong>mixto</strong> (numéricas, categóricas, binarias).</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Unidades / Categorías</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Variables del Cliente</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Tenure</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Antigüedad del cliente en la empresa</td>
+                                        <td style="padding: 0.4rem;">meses / años</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MaritalStatus</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Estado civil del cliente</td>
+                                        <td style="padding: 0.4rem;">Single, Married, Divorced</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>SatisfactionScore</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Puntuación de satisfacción del cliente con el servicio</td>
+                                        <td style="padding: 0.4rem;">Escala numérica</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ffd93d; font-weight: bold;">B. Variables de Comportamiento</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>WarehouseToHome</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Distancia entre el almacén y el hogar del cliente</td>
+                                        <td style="padding: 0.4rem;">km / unidades de distancia</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>NumberOfDeviceRegistered</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Número total de dispositivos registrados por el cliente</td>
+                                        <td style="padding: 0.4rem;">cantidad</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>PreferedOrderCat</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Categoría de pedido preferida en el último mes</td>
+                                        <td style="padding: 0.4rem;">Electronics, Clothing, Home, etc.</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>NumberOfAddress</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Número total de direcciones agregadas para el cliente</td>
+                                        <td style="padding: 0.4rem;">cantidad</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Complaint</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">¿Se ha presentado alguna queja en el último mes?</td>
+                                        <td style="padding: 0.4rem;">1 = Sí, 0 = No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>DaySinceLastOrder</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Días desde el último pedido del cliente</td>
+                                        <td style="padding: 0.4rem;">días</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>CashbackAmount</strong></td>
+                                        <td style="padding: 0.4rem;">Numérica</td>
+                                        <td style="padding: 0.4rem;">Monto promedio de cashback en el último mes</td>
+                                        <td style="padding: 0.4rem;">unidades monetarias</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">C. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Churn</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Indica si el cliente ha abandonado la plataforma</td>
+                                        <td style="padding: 0.4rem;">1 = Churn (abandonó)<br>0 = No Churn (permanece)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Churn = 1/0)</li>
+                            <li><strong>Dimensión:</strong> Multivariante</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (Numéricas, Categóricas, Binarias)</li>
+                            <li><strong>Valores faltantes:</strong> No reportados</li>
+                            <li><strong>Área de aplicación:</strong> Comercio Electrónico, Marketing, Retención de Clientes, CRM</li>
+                            <li><strong>Contexto:</strong> Empresa líder de comercio electrónico</li>
+                            <li><strong>Enfoque:</strong> Identificar clientes en riesgo para ofertas promocionales proactivas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚠️ Observaciones sobre los Datos</h4>
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">📌 Nota sobre la Procedencia</h5>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6;">Este conjunto de datos se proporciona con <strong>fines educativos</strong>. Si bien representa un <strong>escenario del mundo real</strong>, los datos en sí pueden ser <strong>simulados o anonimizados</strong> para proteger la privacidad de los clientes y la información de la empresa.</p>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📊 Variables Clave para la Predicción de Churn</h5>
+                            <ul class="transformacion-lista">
+                                <li><strong>Tenure</strong> - Clientes con menor antigüedad tienden a abandonar más</li>
+                                <li><strong>SatisfactionScore</strong> - Baja satisfacción es un fuerte predictor de churn</li>
+                                <li><strong>Complaint</strong> - Clientes con quejas tienen mayor probabilidad de abandonar</li>
+                                <li><strong>DaySinceLastOrder</strong> - Mayor tiempo sin pedidos indica mayor riesgo de churn</li>
+                                <li><strong>CashbackAmount</strong> - Menor cashback puede indicar menor compromiso</li>
+                                <li><strong>NumberOfDeviceRegistered</strong> - Más dispositivos registrados sugiere mayor engagement</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos ha sido <strong>anonimizado</strong> para proteger la privacidad de los clientes. La información proporcionada es <strong>agregada y desidentificada</strong>, sin contener datos personales identificables como nombres, direcciones o números de identificación. <strong>Restricción de confidencialidad:</strong> El uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la reidentificación de clientes.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es ideal para <strong>predicción de rotación de clientes en comercio electrónico</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable objetivo <strong>Churn</strong> está codificada como <strong>1 = Churn</strong> (abandonó) y <strong>0 = No Churn</strong> (permanece)</li>
+                            <li>Codificar variables categóricas:
+                                <ul class="transformacion-lista">
+                                    <li><strong>MaritalStatus</strong>: One-Hot Encoding (Single, Married, Divorced)</li>
+                                    <li><strong>PreferedOrderCat</strong>: One-Hot Encoding (Electronics, Clothing, Home, etc.)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Complaint</strong> ya es binaria (1/0) y puede usarse directamente</li>
+                            <li>Estandarizar/normalizar variables numéricas (<code>Tenure</code>, <code>WarehouseToHome</code>, <code>NumberOfDeviceRegistered</code>, <code>NumberOfAddress</code>, <code>DaySinceLastOrder</code>, <code>CashbackAmount</code>, <code>SatisfactionScore</code>)</li>
+                            <li>Las variables <strong>Complaint</strong> y <strong>DaySinceLastOrder</strong> suelen ser <strong>predictores importantes</strong> del churn</li>
+                            <li><strong>Tenure</strong> es un predictor clásico: clientes con menor antigüedad tienden a abandonar más</li>
+                            <li><strong>SatisfactionScore</strong> captura la percepción del cliente sobre el servicio</li>
+                            <li>Utilizar <strong>validación cruzada estratificada</strong> debido al posible desbalanceo entre clases</li>
+                            <li>Considerar la <strong>ingeniería de características</strong> para crear nuevas variables (ej: interacciones entre Tenure y DaySinceLastOrder)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en el Comercio Electrónico</h4>
+                        <p>La <strong>predicción de rotación de clientes</strong> es fundamental para las empresas de <strong>comercio electrónico</strong> debido a:</p>
+                        <ul class="transformacion-lista">
+                            <li>El <strong>costo de adquisición de clientes (CAC)</strong> en comercio electrónico es <strong>alto</strong> (publicidad, descuentos de primer pedido, etc.)</li>
+                            <li>La <strong>lealtad del cliente</strong> es un <strong>factor crítico</strong> para la rentabilidad a largo plazo</li>
+                            <li>Los clientes que abandonan representan una <strong>pérdida de ingresos recurrentes</strong></li>
+                            <li>La <strong>predicción temprana</strong> permite <strong>intervenciones</strong> como ofertas personalizadas, descuentos o mejoras en el servicio</li>
+                            <li>Las <strong>empresas de comercio electrónico</strong> pueden usar estos modelos para <strong>priorizar esfuerzos</strong> de retención en clientes de alto riesgo</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset es especialmente valioso porque se centra en el <strong>comportamiento específico del comercio electrónico</strong> (distancia al almacén, dispositivos registrados, categorías de pedido preferidas, cashback), lo que permite un <strong>análisis más granular</strong> de los factores que contribuyen al abandono en este sector.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">E-commerce Customer Churn Dataset. Kaggle. https://www.kaggle.com/datasets/shriyashjagtap/e-commerce-customer-churn</pre>
+                        <button onclick="copyToClipboard('E-commerce Customer Churn Dataset. Kaggle. https://www.kaggle.com/datasets/shriyashjagtap/e-commerce-customer-churn')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Kaggle - E-commerce Customer Churn Dataset. <a href="https://www.kaggle.com/datasets/shriyashjagtap/e-commerce-customer-churn" target="_blank" style="color: #4fc3f7;">https://www.kaggle.com/datasets/shriyashjagtap/e-commerce-customer-churn</a></li>
+                            <li>Hadden, J., Tiwari, A., Roy, R., & Ruta, D. (2007). Computer assisted customer churn management: State-of-the-art and future trends. <em>Computers & Operations Research</em>, 34(10), 2902-2917.</li>
+                            <li>Verhoef, P. C., & Donkers, B. (2001). Predicting customer potential value an application in the insurance industry. <em>Decision Support Systems</em>, 32(2), 189-199.</li>
+                            <li>Gupta, S., & Zeithaml, V. (2006). Customer metrics and their impact on financial performance. <em>Marketing Science</em>, 25(6), 718-739.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (E-Commerce Customer Churn)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Unificación de categorías redundantes:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Corrección de la variable <em>PreferedOrderCat</em>: unificación de la categoría 'Mobile' con 'Mobile Phone' para eliminar redundancias y mejorar consistencia.</li>
+                            <li>Reducción del número de categorías para simplificar el modelo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Imputación de valores faltantes:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Imputación con mediana</strong> para variables numéricas con valores nulos: <em>Tenure</em>, <em>WarehouseToHome</em>, <em>DaySinceLastOrder</em>, <em>SatisfactionScore</em>, <em>NumberOfAddress</em>, <em>Complain</em>, <em>CashbackAmount</em>, <em>NumberOfDeviceRegistered</em>.</li>
+                            <li>Estrategia robusta frente a outliers en variables de e-commerce (antigüedad, distancia, días desde último pedido).</li>
+                            <li>Garantía de integridad total del conjunto de datos para modelado directo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Limpieza de precisión en variables monetarias:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Redondeo de <em>CashbackAmount</em> a <strong>2 decimales</strong> para eliminar precisión excesiva y mejorar legibilidad.</li>
+                            <li>Preservación de valores monetarios con formato estándar de moneda.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variables nominales:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de <strong>2 variables categóricas</strong> a valores numéricos mediante <em>Label Encoding</em>: <em>PreferedOrderCat</em> (categoría de pedido preferida) y <em>MaritalStatus</em> (estado civil).</li>
+                            <li>Generación de mapeo completo (código → valor original) en la leyenda para ambas variables.</li>
+                            <li>Preservación de la semántica original a través de la documentación.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Estandarización y optimización de tipos de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión forzada de <strong>8 variables</strong> a tipo <strong>entero (int)</strong>: <em>Tenure</em>, <em>WarehouseToHome</em>, <em>NumberOfDeviceRegistered</em>, <em>SatisfactionScore</em>, <em>NumberOfAddress</em>, <em>Complain</em>, <em>DaySinceLastOrder</em>, <em>Churn</em>.</li>
+                            <li>Preservación de <em>CashbackAmount</em> como <strong>float</strong> para mantener precisión monetaria.</li>
+                            <li>Eliminación de decimales espurios para optimizar memoria y mejorar legibilidad.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submuestreo estratificado para reducción del dataset:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Reducción del dataset a <strong>1,000 ejemplos</strong> representativos mediante muestreo estratificado.</li>
+                            <li>Uso de <code>train_test_split</code> con parámetro <em>stratify</em> para <strong>preservar exactamente</strong> la proporción original de clases (desbalance de churn).</li>
+                            <li>Semilla fija (<em>random_state=42</em>) para garantizar reproducibilidad científica de la muestra.</li>
+                            <li>Verificación de integridad con diferencia máxima < 1% en proporción de clases.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_ecommerce_churn.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de la unificación de categorías en <em>PreferedOrderCat</em> ('Mobile' → 'Mobile Phone').</li>
+                            <li>Mapeo completo de variables nominales codificadas (PreferedOrderCat, MaritalStatus).</li>
+                            <li>Descripción de variables numéricas: <em>Tenure</em> (antigüedad), <em>WarehouseToHome</em> (distancia al almacén), <em>SatisfactionScore</em> (1-5), <em>NumberOfAddress</em> (direcciones registradas), <em>Complain</em> (quejas), <em>DaySinceLastOrder</em> (días desde último pedido), <em>CashbackAmount</em> (reembolso).</li>
+                            <li>Contextualización del dataset: predicción de abandono de clientes en comercio electrónico.</li>
+                            <li>Estadísticas finales: total de instancias, tasa de churn y ratio de desbalance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>instancias originales</strong> (clientes de e-commerce) sin eliminación de filas.</li>
+                            <li>Dataset reducido de <strong>1,000 ejemplos</strong> estratificados para experimentación eficiente.</li>
+                            <li>Dataset final con <strong>10 variables predictoras</strong> (mixtas: nominales codificadas y numéricas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>clientes de e-commerce</strong> (con versión reducida estratificada de 1,000 ejemplos) con <strong>10 variables predictoras</strong> (demográficas, de comportamiento de compra, de satisfacción y de antigüedad) y <strong>1 variable objetivo binaria</strong> (Churn). Desbalance moderado-preservado (~83% clientes retenidos / ~17% clientes perdidos) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>retención de clientes en comercio electrónico</strong>, donde factores como antigüedad, satisfacción, quejas, distancia al almacén y días desde el último pedido son determinantes.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🛒 <strong>Fuente:</strong> E-Commerce Customer Churn Dataset (Kaggle/Data Science Community) - Datos de clientes de tienda online.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    👤 <strong>Variables demográficas y de comportamiento:</strong> <em>Tenure</em> (antigüedad), <em>MaritalStatus</em> (estado civil), <em>NumberOfAddress</em> (direcciones registradas), <em>PreferedOrderCat</em> (categoría de pedido preferida).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variables de satisfacción y servicio:</strong> <em>SatisfactionScore</em> (1-5), <em>Complain</em> (quejas), <em>CashbackAmount</em> (reembolso), <em>NumberOfDeviceRegistered</em> (dispositivos registrados).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📦 <strong>Variables de logística:</strong> <em>WarehouseToHome</em> (distancia al almacén), <em>DaySinceLastOrder</em> (días desde último pedido).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_ecommerce_churn.txt</em> con mapeo completo de variables nominales (PreferedOrderCat, MaritalStatus) y descripción de variables numéricas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Churn</em> (1 = Cliente perdido, 0 = Cliente retenido).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Unificación de categorías ('Mobile'→'Mobile Phone'), imputación con mediana en variables numéricas (8 variables), redondeo de CashbackAmount a 2 decimales, Label Encoding de 2 variables nominales, estandarización de tipos a int/float, reducción estratificada a 1,000 ejemplos.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción de E-commerce</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>PreferedOrderCat</code></td>
+                            <td>Categoría de productos preferida por el cliente</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Fashion, 1: Grocery, 2: Laptop & Accessory, 3: Mobile Phone, 4: Others</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>SatisfactionScore</code></td>
+                            <td>Puntuación de satisfacción del cliente</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1-5 (1: Muy insatisfecho, 5: Muy satisfecho)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>MaritalStatus</code></td>
+                            <td>Estado civil del cliente</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Divorciado, 1: Casado, 2: Soltero</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Tenure</code></td>
+                            <td>Antigüedad del cliente en la plataforma</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 31</td>
+                            <td>meses</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>WarehouseToHome</code></td>
+                            <td>Distancia del almacén al hogar del cliente</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>6 - 36</td>
+                            <td>km</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>NumberOfDeviceRegistered</code></td>
+                            <td>Número de dispositivos registrados</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1 - 6</td>
+                            <td>dispositivos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>NumberOfAddress</code></td>
+                            <td>Número de direcciones registradas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1 - 11</td>
+                            <td>direcciones</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>DaySinceLastOrder</code></td>
+                            <td>Días transcurridos desde el último pedido</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 17</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>CashbackAmount</code></td>
+                            <td>Monto promedio de cashback recibido</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>37 - 324.43</td>
+                            <td>moneda</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Complain</code></td>
+                            <td>El cliente ha presentado una queja reciente</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Churn</code></td>
+                            <td>Abandono del cliente (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Retenido, 1: Abandonó</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Abandono (Churn)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Abandono de Clientes de E-commerce. Comprender estas 
+                codificaciones es fundamental para la correcta interpretación de los resultados de 
+                retención de clientes en plataformas digitales.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: PreferedOrderCat -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>PreferedOrderCat</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Fashion (Moda)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Grocery (Alimentos)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Laptop & Accessory (Laptops y accesorios)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Mobile Phone (Teléfonos móviles)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Others (Otros)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">🛍️</span>
+                            <p><strong>Nota:</strong> Se unificaron las categorías "Mobile" y "Mobile Phone" en una sola (código 3).</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: SatisfactionScore -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>SatisfactionScore</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                    <th>Riesgo Churn</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>Muy insatisfecho</td><td style="color: #e74c3c;">✗ Muy Alto</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Insatisfecho</td><td style="color: #e74c3c;">✗ Alto</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Neutral</td><td style="color: #f39c12;">⚠ Moderado</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Satisfecho</td><td style="color: #27ae60;">✓ Bajo</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Muy satisfecho</td><td style="color: #27ae60;">✓ Muy Bajo</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">⭐</span>
+                            <p><strong>Factor clave:</strong> La satisfacción del cliente es uno de los predictores más importantes del abandono.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: MaritalStatus -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>MaritalStatus</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Nominal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Divorced (Divorciado)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Married (Casado)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Single (Soltero)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato común:</strong> 0 = No / Ausencia, 1 = Sí / Presencia
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Complain</code></span>
+                                <span class="binaria-desc">Queja reciente (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Churn</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Abandono (0: Retenido, 1: Abandonó)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Todas las variables binarias están codificadas como <strong>0 = No</strong> y <strong>1 = Sí</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 3
+                        <ul>
+                            <li>PreferedOrderCat (5 categorías - productos preferidos)</li>
+                            <li>SatisfactionScore (5 niveles - ordinal)</li>
+                            <li>MaritalStatus (3 estados civiles)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 2
+                        <ul>
+                            <li>Complain (Queja reciente)</li>
+                            <li>🎯 Churn (Objetivo - Abandono)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 6
+                        <ul>
+                            <li>Tenure (Antigüedad en meses)</li>
+                            <li>WarehouseToHome (Distancia en km)</li>
+                            <li>NumberOfDeviceRegistered (Dispositivos)</li>
+                            <li>NumberOfAddress (Direcciones)</li>
+                            <li>DaySinceLastOrder (Días)</li>
+                            <li>CashbackAmount (Monto de cashback)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Retención:</strong>
+                        <ul>
+                            <li><strong>Factor crítico:</strong> <code>Complain = 1</code> - Clientes que han presentado quejas tienen alta probabilidad de abandono</li>
+                            <li><strong>Satisfacción:</strong> <code>SatisfactionScore ≤ 2</code> es señal de alerta para intervención inmediata</li>
+                            <li><strong>Recencia:</strong> <code>DaySinceLastOrder > 10</code> indica posible pérdida de engagement</li>
+                            <li><strong>Antigüedad:</strong> <code>Tenure < 6</code> meses es período de alto riesgo</li>
+                            <li><strong>Cashback:</strong> <code>CashbackAmount</code> bajo puede indicar menor valor percibido</li>
+                            <li><strong>Dispositivos:</strong> <code>NumberOfDeviceRegistered = 1</code> sugiere menor engagement</li>
+                            <li><strong>Distancia:</strong> <code>WarehouseToHome</code> > 30 km puede afectar la experiencia de entrega</li>                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Refinado</div>
+                    <p><strong>Versión:</strong> 2.1.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.xxxx/zenodo.xxxxxxx" target="_blank">10.xxxx/zenodo.xxxxxxx</a></p>
+                    <p><strong>Código fuente:</strong> <a href="https://github.com/tu-usuario/dataset-sintetico-uci" target="_blank">https://github.com/tu-usuario/dataset-sintetico-uci</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- PSICOLOGÍA - Queja y satisfacción -->
+                        <li><code>Complain == 1 → SatisfactionScore ≠ 5 (Cliente quejoso → no satisfecho)</code></li>
+                        
+                        <!-- MADUREZ - Direcciones -->
+                        <li><code>Tenure < 2 → NumberOfAddress ≤ 3 (Cliente nuevo → pocas direcciones)</code></li>
+                        
+                        <!-- MADUREZ - Dispositivos -->
+                        <li><code>Tenure == 0 → NumberOfDeviceRegistered ≤ 2 (Cliente nuevo → pocos dispositivos)</code></li>
+                        
+                        <!-- FÍSICA TEMPORAL - Recencia -->
+                        <li><code>Tenure ≤ 1 → DaySinceLastOrder ≤ 30 (Cliente nuevo → pedido reciente)</code></li>
+                        
+                        <!-- ECONOMÍA - Laptop -->
+                        <li><code>PreferedOrderCat == 2 (Laptop) → CashbackAmount > 110</code></li>
+                        
+                        <!-- ECONOMÍA - Grocery -->
+                        <li><code>PreferedOrderCat == 1 (Grocery) → CashbackAmount < 200</code></li>
+                        
+                        <!-- LOGÍSTICA - Perecederos -->
+                        <li><code>PreferedOrderCat == 1 (Grocery) → WarehouseToHome ≤ 40</code></li>
+                        
+                        <!-- FRICCIÓN LOGÍSTICA FATAL -->
+                        <li><code>WarehouseToHome > 100 → Churn = 1 (Distancia extrema → abandono)</code></li>
+                        
+                        <!-- ABANDONO CRÍTICO -->
+                        <li><code>SatisfactionScore == 1 → Churn = 1 (Insatisfecho → abandono)</code></li>
+                        
+                        <!-- LEALTAD BLINDADA -->
+                        <li><code>Tenure > 24 → Churn = 0 (Cliente antiguo → no abandona)</code></li>
+                        
+                        <!-- CLIENTE DORMIDO -->
+                        <li><code>DaySinceLastOrder > 45 → Churn = 1 (Inactivo → abandono)</code></li>
+                        
+                        <!-- PERFIL TECH -->
+                        <li><code>PreferedOrderCat == 3 (Mobile) → NumberOfDeviceRegistered ≥ 2</code></li>
+                        
+                        <!-- USUARIO MULTIDIRECCIÓN -->
+                        <li><code>NumberOfAddress > 5 → Tenure > 6 (Múltiples direcciones → cliente maduro)</code></li>
+                        
+                        <!-- INCOHERENCIA DISPOSITIVOS -->
+                        <li><code>NumberOfDeviceRegistered == 6 → Tenure ≥ 6 (Muchos dispositivos → cliente maduro)</code></li>
+                        
+                        <!-- CASHBACK HIGH-END -->
+                        <li><code>CashbackAmount > 250 → PreferedOrderCat ≠ 1 (Cashback alto → no grocery)</code></li>
+                        
+                        <!-- ABANDONO POR DISTANCIA -->
+                        <li><code>WarehouseToHome > 30 → Churn = 1 (Distancia >30 → abandono)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>1</td>
+                                <td>994</td>
+                                <td>0.917</td>
+                                <td>0.867</td>
+                                <td>0.865</td>
+                                <td>9.163</td>
+                                <td>0.116</td>
+                                <td>0.309</td>
+                                <td>0.057</td>
+                                <td>0.954</td>
+                                <td>50.694</td>
+                                <td>0</td>
+                                <td>994</td>
+                                <td>0.458</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>994</td>
+                                <td>0.898</td>
+                                <td>0.886</td>
+                                <td>0.880</td>
+                                <td>9.434</td>
+                                <td>0.140</td>
+                                <td>0.396</td>
+                                <td>0.053</td>
+                                <td>0.952</td>
+                                <td>48.344</td>
+                                <td>0.029</td>
+                                <td>615</td>
+                                <td>0.467</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>994</td>
+                                <td>0.877</td>
+                                <td>0.886</td>
+                                <td>0.880</td>
+                                <td>9.233</td>
+                                <td>0.138</td>
+                                <td>0.380</td>
+                                <td>0.052</td>
+                                <td>0.956</td>
+                                <td>48.674</td>
+                                <td>0.027</td>
+                                <td>614</td>
+                                <td>0.469</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>ADASYN</strong></td>
+                                <td>1.033</td>
+                                <td>978</td>
+                                <td>0.893</td>
+                                <td>0.881</td>
+                                <td>0.875</td>
+                                <td><strong>9.548</strong></td>
+                                <td>0.132</td>
+                                <td>0.495</td>
+                                <td>0.050</td>
+                                <td>0.963</td>
+                                <td>48.052</td>
+                                <td>0.029</td>
+                                <td>608</td>
+                                <td>0.426</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1.206</td>
+                                <td>909</td>
+                                <td>0.918</td>
+                                <td>0.870</td>
+                                <td>0.865</td>
+                                <td>9.437</td>
+                                <td>0.115</td>
+                                <td>0.409</td>
+                                <td>0.043</td>
+                                <td>0.960</td>
+                                <td>47.518</td>
+                                <td>0.020</td>
+                                <td>619</td>
+                                <td>0.412</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1.206</td>
+                                <td>909</td>
+                                <td>0.893</td>
+                                <td>0.842</td>
+                                <td>0.835</td>
+                                <td>8.516</td>
+                                <td>0.117</td>
+                                <td>0.411</td>
+                                <td>0.045</td>
+                                <td>0.960</td>
+                                <td>48.569</td>
+                                <td>0.021</td>
+                                <td>615</td>
+                                <td>0.485</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>994</td>
+                                <td>0.902</td>
+                                <td>0.868</td>
+                                <td>0.870</td>
+                                <td>5.669</td>
+                                <td>0.316</td>
+                                <td>0.000</td>
+                                <td>0.195</td>
+                                <td>0.594</td>
+                                <td>58.912</td>
+                                <td>0.106</td>
+                                <td>600</td>
+                                <td>0.471</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>1.708</td>
+                                <td>994</td>
+                                <td>0.715</td>
+                                <td>0.726</td>
+                                <td>0.690</td>
+                                <td>0.463</td>
+                                <td>0.295</td>
+                                <td>0.000</td>
+                                <td>0.255</td>
+                                <td>0.726</td>
+                                <td>60.585</td>
+                                <td>0.094</td>
+                                <td>470</td>
+                                <td>0.471</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>ADASYN</strong> 
+                    (TabDSFidelity: <strong>9.548</strong>, AUC: 0.893, F1: 0.881, MIA: 0.426). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.010</td>
+                                <td>9689</td>
+                                <td>0.868</td>
+                                <td>0.861</td>
+                                <td>0.855</td>
+                                <td>9.465</td>
+                                <td>0.188</td>
+                                <td>0.230</td>
+                                <td>0.058</td>
+                                <td>0.960</td>
+                                <td>72.824</td>
+                                <td>0.463</td>
+                                <td>0</td>
+                                <td>0.449</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.662</td>
+                                <td>9689</td>
+                                <td>0.706</td>
+                                <td>0.723</td>
+                                <td>0.685</td>
+                                <td>6.563</td>
+                                <td>0.188</td>
+                                <td>0.230</td>
+                                <td>0.099</td>
+                                <td>0.957</td>
+                                <td>193.677</td>
+                                <td>0.463</td>
+                                <td>0</td>
+                                <td>0.508</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.353</td>
+                                <td>10000</td>
+                                <td>0.809</td>
+                                <td>0.797</td>
+                                <td>0.780</td>
+                                <td>7.050</td>
+                                <td>0.268</td>
+                                <td>0.003</td>
+                                <td>0.071</td>
+                                <td>0.939</td>
+                                <td>379.715</td>
+                                <td>0.104</td>
+                                <td>0</td>
+                                <td>0.520</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.497</td>
+                                <td>10000</td>
+                                <td>0.656</td>
+                                <td>0.658</td>
+                                <td>0.610</td>
+                                <td>4.224</td>
+                                <td>0.268</td>
+                                <td>0.003</td>
+                                <td>0.119</td>
+                                <td>0.935</td>
+                                <td>502.401</td>
+                                <td>0.113</td>
+                                <td>0</td>
+                                <td>0.496</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.389</td>
+                                <td>10000</td>
+                                <td>0.833</td>
+                                <td>0.814</td>
+                                <td>0.800</td>
+                                <td>7.567</td>
+                                <td>0.247</td>
+                                <td>0.014</td>
+                                <td>0.045</td>
+                                <td>0.939</td>
+                                <td>197.274</td>
+                                <td>0.071</td>
+                                <td>0</td>
+                                <td>0.443</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.120</td>
+                                <td>10000</td>
+                                <td>0.718</td>
+                                <td>0.711</td>
+                                <td>0.670</td>
+                                <td>5.440</td>
+                                <td>0.247</td>
+                                <td>0.014</td>
+                                <td>0.071</td>
+                                <td>0.934</td>
+                                <td>319.677</td>
+                                <td>0.077</td>
+                                <td>0</td>
+                                <td>0.493</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.132</td>
+                                <td>9416</td>
+                                <td>0.778</td>
+                                <td>0.582</td>
+                                <td>0.535</td>
+                                <td>1.885</td>
+                                <td>0.607</td>
+                                <td>0.000</td>
+                                <td>0.671</td>
+                                <td>0.681</td>
+                                <td>296.110</td>
+                                <td>0.209</td>
+                                <td>0</td>
+                                <td>0.500</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.420</td>
+                                <td>9416</td>
+                                <td>0.778</td>
+                                <td>0.497</td>
+                                <td>0.455</td>
+                                <td>1.057</td>
+                                <td>0.607</td>
+                                <td>0.000</td>
+                                <td>0.688</td>
+                                <td>0.674</td>
+                                <td>411.393</td>
+                                <td>0.208</td>
+                                <td>0</td>
+                                <td>0.545</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>1.003</td>
+                                <td>9844</td>
+                                <td><strong>0.887</strong></td>
+                                <td><strong>0.890</strong></td>
+                                <td><strong>0.890</strong></td>
+                                <td><strong>9.995</strong></td>
+                                <td>0.189</td>
+                                <td>0.246</td>
+                                <td>0.060</td>
+                                <td>0.961</td>
+                                <td>68.402</td>
+                                <td>0.374</td>
+                                <td>0</td>
+                                <td>0.519</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.671</td>
+                                <td>9844</td>
+                                <td>0.735</td>
+                                <td>0.741</td>
+                                <td>0.705</td>
+                                <td>7.060</td>
+                                <td>0.189</td>
+                                <td>0.246</td>
+                                <td>0.100</td>
+                                <td>0.958</td>
+                                <td>192.101</td>
+                                <td>0.380</td>
+                                <td>0</td>
+                                <td>0.510</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>9.995</strong>, AUC: 0.887, F1: 0.890, MIA: 0.519). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.012</td>
+                                <td>10667</td>
+                                <td>0.886</td>
+                                <td>0.862</td>
+                                <td>0.860</td>
+                                <td>9.344</td>
+                                <td>0.182</td>
+                                <td>0.242</td>
+                                <td>0.057</td>
+                                <td>0.961</td>
+                                <td>135.597</td>
+                                <td>0.463</td>
+                                <td>0</td>
+                                <td>0.516</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.578</td>
+                                <td>10667</td>
+                                <td>0.744</td>
+                                <td>0.722</td>
+                                <td>0.685</td>
+                                <td>4.238</td>
+                                <td>0.182</td>
+                                <td>0.242</td>
+                                <td>0.093</td>
+                                <td>0.958</td>
+                                <td>256.549</td>
+                                <td>0.463</td>
+                                <td>0</td>
+                                <td>0.502</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.321</td>
+                                <td>10978</td>
+                                <td>0.863</td>
+                                <td>0.822</td>
+                                <td>0.810</td>
+                                <td>6.897</td>
+                                <td>0.248</td>
+                                <td>0.003</td>
+                                <td>0.066</td>
+                                <td>0.942</td>
+                                <td>443.075</td>
+                                <td>0.096</td>
+                                <td>121</td>
+                                <td>0.440</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.438</td>
+                                <td>10978</td>
+                                <td>0.741</td>
+                                <td>0.710</td>
+                                <td>0.670</td>
+                                <td>2.693</td>
+                                <td>0.248</td>
+                                <td>0.003</td>
+                                <td>0.109</td>
+                                <td>0.939</td>
+                                <td>567.579</td>
+                                <td>0.102</td>
+                                <td>121</td>
+                                <td>0.498</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.352</td>
+                                <td>10978</td>
+                                <td>0.855</td>
+                                <td>0.858</td>
+                                <td>0.850</td>
+                                <td>7.749</td>
+                                <td>0.230</td>
+                                <td>0.021</td>
+                                <td>0.045</td>
+                                <td>0.942</td>
+                                <td>260.492</td>
+                                <td>0.065</td>
+                                <td>121</td>
+                                <td>0.425</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.106</td>
+                                <td>10978</td>
+                                <td>0.795</td>
+                                <td>0.732</td>
+                                <td>0.695</td>
+                                <td>4.067</td>
+                                <td>0.230</td>
+                                <td>0.021</td>
+                                <td>0.069</td>
+                                <td>0.938</td>
+                                <td>382.990</td>
+                                <td>0.070</td>
+                                <td>121</td>
+                                <td>0.504</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.116</td>
+                                <td>10394</td>
+                                <td>0.891</td>
+                                <td>0.866</td>
+                                <td>0.855</td>
+                                <td>5.506</td>
+                                <td>0.549</td>
+                                <td>0.000</td>
+                                <td>0.491</td>
+                                <td>0.696</td>
+                                <td>355.251</td>
+                                <td>0.191</td>
+                                <td>127</td>
+                                <td>0.442</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.369</td>
+                                <td>10394</td>
+                                <td>0.884</td>
+                                <td>0.854</td>
+                                <td>0.840</td>
+                                <td>5.110</td>
+                                <td>0.549</td>
+                                <td>0.000</td>
+                                <td>0.507</td>
+                                <td>0.691</td>
+                                <td>470.529</td>
+                                <td>0.191</td>
+                                <td>127</td>
+                                <td>0.485</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>1.006</td>
+                                <td>10822</td>
+                                <td><strong>0.882</strong></td>
+                                <td><strong>0.887</strong></td>
+                                <td><strong>0.885</strong></td>
+                                <td><strong>9.868</strong></td>
+                                <td>0.183</td>
+                                <td>0.261</td>
+                                <td>0.058</td>
+                                <td>0.961</td>
+                                <td>132.171</td>
+                                <td>0.374</td>
+                                <td>0</td>
+                                <td>0.523</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.587</td>
+                                <td>10822</td>
+                                <td>0.753</td>
+                                <td>0.749</td>
+                                <td>0.715</td>
+                                <td>5.005</td>
+                                <td>0.183</td>
+                                <td>0.261</td>
+                                <td>0.094</td>
+                                <td>0.959</td>
+                                <td>256.190</td>
+                                <td>0.379</td>
+                                <td>0</td>
+                                <td>0.501</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>9.868</strong>, AUC: 0.882, F1: 0.887, MIA: 0.523). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_46</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>ADASYN</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* Refinado</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* Refinado</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd46.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Customer Churn Prediction in E-commerce (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32946521.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [82.83, 17.17], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

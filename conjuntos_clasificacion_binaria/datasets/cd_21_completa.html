@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_21: Oxford Parkinson's Disease Detection - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_21</span>                
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_21: Oxford Parkinson's Disease Detection</h1>
+            <p class="description">Conjunto de datos biomédico (Universidad de Oxford) para la clasificación binaria de la Enfermedad de Parkinson (status) mediante el análisis acústico de la voz. Consta de 195 instancias  y 22 características continuas que cuantifican la disfonía. Las variables incluyen medidas de frecuencia fundamental, perturbación de micro-temblor (Jitter), variación de amplitud (Shimmer), ruido (NHR/HNR) y, crucialmente, métricas de dinámica no lineal basadas en la teoría del caos (RPDE, D2, DFA) para capturar degradaciones vocales sutiles.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.35</td>
+                                    <td>0.60</td>
+                                    <td>0.44</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.82</td>
+                                    <td>0.62</td>
+                                    <td>0.71</td>
+                                    <td>29</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.62</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.59</td>
+                                    <td>0.61</td>
+                                    <td>0.58</td>
+                                    <td>39</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.70</td>
+                                    <td>0.62</td>
+                                    <td>0.64</td>
+                                    <td>39</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.71</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.64</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.62</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.24 AUC</span>
+                        <span class="improvement-tag">⬆ +0.28 F1</span>
+                        <span class="improvement-tag">⬆ +0.30 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.89</td>
+                                    <td>0.80</td>
+                                    <td>0.84</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.93 <span class="improvement-indicator">⬆ +0.11</span></td>
+                                    <td>0.97 <span class="improvement-indicator">⬆ +0.35</span></td>
+                                    <td>0.95 <span class="improvement-indicator">⬆ +0.24</span></td>
+                                    <td>29</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.92</strong> <span class="improvement-indicator">⬆ +0.30</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.91 <span class="improvement-indicator">⬆ +0.32</span></td>
+                                    <td>0.88 <span class="improvement-indicator">⬆ +0.27</span></td>
+                                    <td>0.90 <span class="improvement-indicator">⬆ +0.32</span></td>
+                                    <td>39</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.92 <span class="improvement-indicator">⬆ +0.22</span></td>
+                                    <td>0.92 <span class="improvement-indicator">⬆ +0.30</span></td>
+                                    <td>0.92 <span class="improvement-indicator">⬆ +0.28</span></td>
+                                    <td>39</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.96</span>
+                            <span class="improvement-badge positive">⬆ +0.24</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.92</span>
+                            <span class="improvement-badge positive">⬆ +0.28</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.92</span>
+                            <span class="improvement-badge positive">⬆ +0.30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión (Clase 0)</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.35</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 35%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.89</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 89%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.54</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall (Clase 0)</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.60</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 60%; background: #f39c12;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.80</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 80%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.20</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score (Clase 0)</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.44</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 44%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.84</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 84%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.40</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 20px; padding: 15px; background: #d4edda; border-radius: 8px; border-left: 4px solid #28a745;">
+                    <p style="margin: 0; color: #155724;">
+                        <strong>🚀 Mejora espectacular en la clase minoritaria:</strong> El modelo sintético transforma completamente 
+                        el rendimiento en la Clase 0, aumentando la precisión de 0.35 a 0.89 (+0.54), el recall de 0.60 a 0.80 (+0.20) 
+                        y el F1-Score de 0.44 a 0.84 (+0.40). La accuracy global salta de 0.62 a 0.92 (+0.30) y el AUC-ROC mejora 
+                        de 0.71 a 0.96 (+0.24), demostrando una capacidad de discriminación excepcional.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Oxford Parkinson's Disease Detection Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Little, M. A., McSharry, P. E., Hunter, E. J., & Ramig, L. O.</div>
+                    <div class="fuente-fecha">Publicado: 25 de junio de 2008</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value"><a href="https://doi.org/10.1109/TBME.2008.2005954" target="_blank">10.1109/TBME.2008.2005954</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/Parkinsons" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">197 (195 registros de voz)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">22 (21 predictores + 1 objetivo)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Detección de Enfermedad de Parkinson de Oxford</strong> está compuesto por un conjunto de <strong>mediciones biomédicas de voz</strong> de <strong>31 personas</strong>, de las cuales <strong>23 tienen enfermedad de Parkinson (PD)</strong>. Cada columna representa una medida de voz particular, y cada fila corresponde a una de las <strong>195 grabaciones de voz</strong> de estos individuos (identificados en la columna "name"). El objetivo principal del dataset es <strong>discriminar entre personas sanas y aquellas con enfermedad de Parkinson</strong> basándose en la columna "status" (0 = sano, 1 = Parkinson). Existen aproximadamente <strong>6 grabaciones por paciente</strong>, lo que permite análisis tanto a nivel de grabación como a nivel de paciente.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🔬 Métodos y Contexto</h4>
+                        <p>Este dataset fue desarrollado por el equipo de <strong>Max Little</strong> de la <strong>Universidad de Oxford</strong> como parte de la investigación sobre el uso de mediciones de voz para el <strong>telemonitoreo de la enfermedad de Parkinson</strong>. La enfermedad de Parkinson afecta el control motor, y la voz es una de las funciones que se ven afectadas tempranamente. Los síntomas vocales incluyen:</p>
+                        <ul class="transformacion-lista">
+                            <li>Reducción del rango de frecuencia fundamental (Fo)</li>
+                            <li>Inestabilidad en la frecuencia vocal (<em>jitter</em>)</li>
+                            <li>Inestabilidad en la amplitud vocal (<em>shimmer</em>)</li>
+                            <li>Aumento del ruido en relación a los componentes tonales</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">Las mediciones se realizaron a partir de grabaciones de voz sostenida de la vocal <strong>/a/</strong>. Este enfoque no invasivo y de bajo costo tiene el potencial de ser utilizado como herramienta de <strong>diagnóstico temprano</strong> y <strong>monitoreo remoto</strong> de la progresión de la enfermedad, especialmente en áreas con acceso limitado a especialistas.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>197 instancias</strong> (195 registros de voz + 1 encabezado) con <strong>22 atributos</strong> (21 variables predictoras y 1 variable objetivo). Las características son de tipo <strong>continuo (real)</strong> y no presentan valores faltantes. Los datos están en formato <strong>ASCII CSV</strong>.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Unidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>name</strong></td>
+                                        <td style="padding: 0.4rem;">ID Categórica</td>
+                                        <td style="padding: 0.4rem;">Nombre del sujeto y número de grabación</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MDVP:Fo</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Frecuencia fundamental vocal promedio</td>
+                                        <td style="padding: 0.4rem;">Hz</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MDVP:Fhi</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Frecuencia fundamental vocal máxima</td>
+                                        <td style="padding: 0.4rem;">Hz</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MDVP:Flo</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Frecuencia fundamental vocal mínima</td>
+                                        <td style="padding: 0.4rem;">Hz</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MDVP:Jitter(%)</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Variación en frecuencia fundamental (porcentaje)</td>
+                                        <td style="padding: 0.4rem;">%</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MDVP:Jitter(Abs)</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Variación absoluta en frecuencia fundamental</td>
+                                        <td style="padding: 0.4rem;">Abs</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MDVP:RAP</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Amplitud de perturbación relativa</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MDVP:PPQ</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Cociente de perturbación de período</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Jitter:DDP</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Diferencia de diferencias de período</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MDVP:Shimmer</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Variación en amplitud</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MDVP:Shimmer(dB)</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Variación en amplitud (decibelios)</td>
+                                        <td style="padding: 0.4rem;">dB</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Shimmer:APQ3</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Cociente de perturbación de amplitud (3 puntos)</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Shimmer:APQ5</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Cociente de perturbación de amplitud (5 puntos)</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>MDVP:APQ</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Cociente de perturbación de amplitud</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Shimmer:DDA</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Diferencia de diferencias de amplitud</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>NHR</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Cociente de ruido a componentes tonales</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>HNR</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Cociente de tono a ruido</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>status</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Estado de salud: 0 = sano, 1 = Parkinson</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>RPDE</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Medida de complejidad dinámica no lineal</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>DFA</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Exponente de escala fractal de la señal</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>spread1</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Medida no lineal de variación de frecuencia fundamental</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>spread2</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Medida no lineal de variación de frecuencia fundamental</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>D2</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Medida de complejidad dinámica no lineal</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>PPE</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Medida no lineal de variación de frecuencia fundamental</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Parkinson vs. Sano)</li>
+                            <li><strong>Dimensión:</strong> Multivariante</li>
+                            <li><strong>Tipo de características:</strong> Reales (continuas)</li>
+                            <li><strong>Valores faltantes:</strong> No</li>
+                            <li><strong>Área de aplicación:</strong> Salud y Medicina, Neurología, Procesamiento de señales de voz</li>
+                            <li><strong>Número de sujetos:</strong> 31 (23 con Parkinson, 8 sanos)</li>
+                            <li><strong>Grabaciones por sujeto:</strong> Aproximadamente 6</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📖 Publicación Introductoria</h4>
+                        <p>El artículo fundamental que describe el uso de mediciones de voz para la detección de la enfermedad de Parkinson es:</p>
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #4fc3f7; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.9rem; margin: 0;">Little, M. A., McSharry, P. E., Hunter, E. J., & Ramig, L. O. (2008). <strong>Suitability of dysphonia measurements for telemonitoring of Parkinson's disease</strong>. <em>IEEE Transactions on Biomedical Engineering</em>, 56(4), 1015-1022. <a href="https://doi.org/10.1109/TBME.2008.2005954" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1109/TBME.2008.2005954</a></p>
+                        </div>
+                        <p style="margin-top: 0.5rem; color: #b0b0b0; font-size: 0.9rem;">También se recomienda citar el artículo anterior:</p>
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #ffd93d; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.9rem; margin: 0;">Little, M. A., McSharry, P., Roberts, S., Costello, D., & Moroz, I. (2007). <strong>Exploiting Nonlinear Recurrence and Fractal Scaling Properties for Voice Disorder Detection</strong>. <em>BioMedical Engineering OnLine</em>, 6(1), 23. <a href="https://doi.org/10.1186/1475-925X-6-23" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1186/1475-925X-6-23</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos ha sido anonimizado para proteger la privacidad de los participantes. Los nombres de los sujetos en la columna <code>name</code> han sido codificados para evitar la identificación personal. <strong>Restricción de confidencialidad:</strong> En cumplimiento de los protocolos de privacidad, el uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la reidentificación de pacientes.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es ampliamente utilizado como referencia en problemas de clasificación biomédica y procesamiento de señales. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Excluir la variable <code>name</code></strong> del modelado por ser un identificador único sin valor predictivo</li>
+                            <li>Tener en cuenta que existen <strong>múltiples grabaciones por paciente</strong> (aproximadamente 6), lo que introduce dependencia intra-sujeto. Se recomienda utilizar <strong>validación cruzada por paciente</strong> (leave-one-subject-out) para evitar el sobreajuste y evaluar la generalización a nuevos pacientes</li>
+                            <li>Estandarizar/normalizar las características dado que tienen rangos muy diferentes</li>
+                            <li>Las variables de <em>jitter</em> y <em>shimmer</em> son las más relevantes para el diagnóstico diferencial</li>
+                            <li>Considerar técnicas de selección de características debido a la alta dimensionalidad relativa al número de instancias (22 variables para 195 registros)</li>
+                            <li>La variable objetivo <code>status</code> está codificada como 0 (sano) y 1 (Parkinson)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia Clínica</h4>
+                        <p>La <strong>enfermedad de Parkinson</strong> es un trastorno neurodegenerativo progresivo que afecta aproximadamente a <strong>10 millones de personas</strong> en todo el mundo. Se caracteriza por síntomas motores como temblores, rigidez y bradicinesia, así como por síntomas no motores. El diagnóstico temprano es crucial para:</p>
+                        <ul class="transformacion-lista">
+                            <li>Iniciar tratamientos farmacológicos que mejoren la calidad de vida</li>
+                            <li>Retrasar la progresión de la enfermedad</li>
+                            <li>Planificar intervenciones terapéuticas y de rehabilitación</li>
+                            <li>Reducir el impacto socioeconómico de la enfermedad</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #b0b0b0; font-size: 0.9rem;">Las mediciones de voz ofrecen una <strong>herramienta no invasiva, de bajo costo y accesible</strong> para el cribado y monitoreo de la enfermedad de Parkinson, especialmente en regiones con acceso limitado a neurólogos. Este dataset ha sido fundamental para demostrar el potencial del análisis acústico como biomarcador de la enfermedad.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Little, M. A., McSharry, P. E., Hunter, E. J., & Ramig, L. O. (2008). Suitability of dysphonia measurements for telemonitoring of Parkinson's disease. IEEE Transactions on Biomedical Engineering, 56(4), 1015-1022. https://doi.org/10.1109/TBME.2008.2005954</pre>
+                        <button onclick="copyToClipboard('Little, M. A., McSharry, P. E., Hunter, E. J., & Ramig, L. O. (2008). Suitability of dysphonia measurements for telemonitoring of Parkinson\'s disease. IEEE Transactions on Biomedical Engineering, 56(4), 1015-1022. https://doi.org/10.1109/TBME.2008.2005954')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Little, M. A., McSharry, P. E., Hunter, E. J., & Ramig, L. O. (2008). Suitability of dysphonia measurements for telemonitoring of Parkinson's disease. <em>IEEE Transactions on Biomedical Engineering</em>, 56(4), 1015-1022. <a href="https://doi.org/10.1109/TBME.2008.2005954" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1109/TBME.2008.2005954</a></li>
+                            <li>Little, M. A., McSharry, P., Roberts, S., Costello, D., & Moroz, I. (2007). Exploiting Nonlinear Recurrence and Fractal Scaling Properties for Voice Disorder Detection. <em>BioMedical Engineering OnLine</em>, 6(1), 23. <a href="https://doi.org/10.1186/1475-925X-6-23" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1186/1475-925X-6-23</a></li>
+                            <li>UCI Machine Learning Repository - Parkinsons. <a href="https://archive.ics.uci.edu/ml/datasets/Parkinsons" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/Parkinsons</a></li>
+                            <li>Parkinson's Foundation. <em>Parkinson's Disease Overview</em>. <a href="https://www.parkinson.org/understanding-parkinsons" target="_blank" style="color: #4fc3f7;">https://www.parkinson.org/understanding-parkinsons</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Parkinsons Dataset)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Limpieza inicial y eliminación de variables no predictivas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Eliminación de la columna <em>name</em> (identificador único de paciente) por no aportar valor predictivo y para evitar sobreajuste en los modelos.</li>
+                            <li>Preservación de las 22 variables biomédicas derivadas de mediciones de voz (características de frecuencia, variabilidad, amplitud, ruido y no lineales).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verificación y tratamiento de valores faltantes:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Comprobación de la calidad del dataset: Excelente calidad de datos sin valores perdidos en las mediciones.</li>
+                            <li>Implementación de imputación con mediana como medida preventiva en caso de detección de valores nulos.</li>
+                            <li>Garantía de integridad total del conjunto de datos para modelado directo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación y leyenda:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_parkinsons.txt</em> con la semántica completa de la variable objetivo.</li>
+                            <li>Documentación de la variable <em>status</em> (0 = Sano/Control, 1 = Parkinson - PD).</li>
+                            <li>Descripción de las 22 variables predictoras numéricas continuas agrupadas por tipo de característica biomédica:</li>
+                            <ul class="transformacion-lista">
+                                <li><strong>Características de frecuencia (Hz):</strong> MDVP:Fo, MDVP:Fhi, MDVP:Flo.</li>
+                                <li><strong>Características de variabilidad (Jitter):</strong> MDVP:Jitter(%), MDVP:Jitter(Abs), MDVP:RAP, MDVP:PPQ, Jitter:DDP.</li>
+                                <li><strong>Características de amplitud (Shimmer):</strong> MDVP:Shimmer, MDVP:Shimmer(dB), Shimmer:APQ3, Shimmer:APQ5, Shimmer:APQ11, Shimmer:DDA.</li>
+                                <li><strong>Características de ruido:</strong> NHR (Relación de ruido armónico), HNR (Relación armónico-ruido).</li>
+                                <li><strong>Características no lineales:</strong> RPDE (Densidad de entropía de recurrencia), D2 (Dimensión de correlación), DFA (Análisis de fluctuación sin tendencia), spread1, spread2, PPE (Entropía de probabilidad de período).</li>
+                            </ul>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura original:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>195 instancias</strong> (pacientes) sin eliminación de filas.</li>
+                            <li>Conservación de las 23 variables originales (tras eliminar <em>name</em>): 1 variable objetivo binaria + 22 predictoras numéricas.</li>
+                            <li>Todas las variables predictoras son <strong>numéricas continuas</strong>, sin necesidad de codificación categórica.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Control de calidad y verificaciones:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Verificación de ausencia de valores nulos para garantizar la integridad estadística.</li>
+                            <li>Vista previa del dataset resultante para validación visual.</li>
+                            <li>Confirmación de la estructura dimensional final (195 filas × 23 columnas).</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>195 pacientes</strong> con <strong>22 variables predictoras numéricas continuas</strong> (derivadas de mediciones de voz) y <strong>1 variable objetivo binaria</strong> (status). Desbalance moderado (~75% casos Parkinson / ~25% controles sanos) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de enfermedades neurodegenerativas con alta dimensionalidad y correlación entre variables.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🏥 <strong>Fuente:</strong> Parkinsons Dataset (UCI Machine Learning Repository) - Creado por Max A. Little et al. (2007).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🗣️ <strong>Método de recolección:</strong> Mediciones de voz extraídas de grabaciones de pacientes que sostienen la vocal "a" durante varios segundos, utilizando el software Praat para análisis acústico.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_parkinsons.txt</em> con descripción completa de la variable objetivo y agrupación de características biomédicas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>status</em> (1 = Enfermedad de Parkinson - PD, 0 = Sano/Control).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📈 <strong>Características clave:</strong> Alta correlación entre variables (jitter, shimmer, medidas de frecuencia), adecuada para evaluar técnicas de reducción de dimensionalidad y generación de datos sintéticos que preserven correlaciones complejas.
+                </p>
+            </div>
+        </div>
+    
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Clínica</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variable Binaria (Target) -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>status</code></td>
+                            <td>Estado de salud (diagnóstico de Parkinson)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Sano, 1: Parkinson (PD)</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+        
+                        <!-- Variables Numéricas (Frecuencia Fundamental) -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MDVP:Fo(Hz)</code></td>
+                            <td>Frecuencia fundamental media (tono promedio)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>88.33 - 260.11</td>
+                            <td>Hz</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MDVP:Fhi(Hz)</code></td>
+                            <td>Frecuencia fundamental máxima</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>102.15 - 592.03</td>
+                            <td>Hz</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MDVP:Flo(Hz)</code></td>
+                            <td>Frecuencia fundamental mínima</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>65.48 - 239.17</td>
+                            <td>Hz</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas (Jitter - Variación de Frecuencia) -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MDVP:Jitter(%)</code></td>
+                            <td>Jitter porcentual (variación ciclo a ciclo del tono)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.0017 - 0.0332</td>
+                            <td>%</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MDVP:Jitter(Abs)</code></td>
+                            <td>Jitter absoluto (variación absoluta del tono)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>7.0e-6 - 0.00026</td>
+                            <td>s</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MDVP:RAP</code></td>
+                            <td>Amplitud de perturbación relativa (variación de tono)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.00068 - 0.02144</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MDVP:PPQ</code></td>
+                            <td>Índice de perturbación del tono (variación de tono)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.00092 - 0.01958</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Jitter:DDP</code></td>
+                            <td>Diferencia de período a período (variación de tono)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.00204 - 0.06433</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas (Shimmer - Variación de Amplitud) -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MDVP:Shimmer</code></td>
+                            <td>Shimmer (variación ciclo a ciclo de la amplitud)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.00954 - 0.11908</td>
+                            <td>%</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MDVP:Shimmer(dB)</code></td>
+                            <td>Shimmer en decibelios</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.085 - 1.302</td>
+                            <td>dB</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Shimmer:APQ3</code></td>
+                            <td>Amplitud de perturbación (3 puntos)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.00455 - 0.05647</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Shimmer:APQ5</code></td>
+                            <td>Amplitud de perturbación (5 puntos)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.00570 - 0.07940</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>MDVP:APQ</code></td>
+                            <td>Índice de perturbación de amplitud</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.00719 - 0.13778</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Shimmer:DDA</code></td>
+                            <td>Amplitud de diferencia de período</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.01364 - 0.16942</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas (Ruido y Calidad Tonal) -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>NHR</code></td>
+                            <td>Relación Ruido-Armónico (ruido en la voz)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.00072 - 0.31482</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>HNR</code></td>
+                            <td>Relación Armónico-Ruido (calidad tonal)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>8.441 - 32.684</td>
+                            <td>dB</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas (Dinámica No Lineal) -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>RPDE</code></td>
+                            <td>Entropía de densidad de periodo de recurrencia</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.25657 - 0.67713</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>DFA</code></td>
+                            <td>Análisis de fluctuación sin tendencia (escala fractal)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.57428 - 0.82348</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>spread1</code></td>
+                            <td>Medida no lineal de variación de tono (entropía del periodo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-7.69573 - -2.43403</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>spread2</code></td>
+                            <td>Medida no lineal de variación de tono (entropía del periodo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.01869 - 0.45049</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>D2</code></td>
+                            <td>Dimensión de correlación (complejidad fractal)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1.51228 - 3.67116</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>PPE</code></td>
+                            <td>Entropía de periodo de tono (no lineal)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.05614 - 0.52737</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">23</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">22</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Parkinson (status)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Detección de Parkinson (Oxford Parkinson's). 
+                Comprender estas codificaciones es fundamental para la correcta interpretación de los 
+                resultados clínicos.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: status (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>status</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">0</span></td>
+                                    <td><strong>Sano (Control)</strong> - Sujeto sin diagnóstico de Parkinson</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">1</span></td>
+                                    <td><strong>Parkinson (PD)</strong> - Sujeto diagnosticado con Enfermedad de Parkinson</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> El modelo debe clasificar si el sujeto padece Parkinson basándose en características acústicas de la voz.</p>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">💡</span>
+                            <p><strong>Contexto clínico:</strong> La disfonía (alteración de la voz) es uno de los primeros síntomas de Parkinson, detectable antes que los síntomas motores.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato:</strong> 0 = Sano, 1 = Parkinson
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>status</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Diagnóstico de Parkinson (0: Sano, 1: Parkinson)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Única variable binaria en el dataset.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 1
+                        <ul>
+                            <li>🎯 status (Objetivo - Diagnóstico de Parkinson)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 22
+                        <ul>
+                            <li>3 Frecuencia fundamental (tono)</li>
+                            <li>5 Jitter (variación de frecuencia)</li>
+                            <li>6 Shimmer (variación de amplitud)</li>
+                            <li>2 Ruido/Calidad tonal</li>
+                            <li>6 Dinámica no lineal</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🏥</span>
+                    <div>
+                        <strong>Información Clínica:</strong>
+                        <ul>
+                            <li><strong>Institución:</strong> Universidad de Oxford</li>
+                            <li><strong>Pacientes:</strong> 31 individuos (~6 grabaciones por paciente)</li>
+                            <li><strong>Grabación:</strong> Fonación sostenida de la vocal 'a'</li>
+                            <li><strong>Contexto:</strong> Telemonitorización no invasiva</li>
+                            <li><strong>Referencia:</strong> Little et al. (2007)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones Técnicas:</strong>
+                        <ul>
+                            <li><strong>Predictores clave:</strong> RPDE, D2, PPE, MDVP:Jitter(%)</li>
+                            <li><strong>Jitter elevado:</strong> Mayor variación del tono (temblor vocal)</li>
+                            <li><strong>Shimmer elevado:</strong> Mayor variación de amplitud (inestabilidad vocal)</li>
+                            <li><strong>NHR alto / HNR bajo:</strong> Mayor ruido en la voz (ronquera)</li>
+                            <li><strong>D2 y DFA:</strong> Capturan cambios en la complejidad de la señal</li>                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- FRECUENCIA FUNDAMENTAL - Relaciones físicas -->
+                        <li><code>MDVP:Fhi(Hz) < 150 → MDVP:Fo(Hz) < 150</code></li>
+                        <li><code>MDVP:Flo(Hz) > 200 → MDVP:Fo(Hz) > 200</code></li>
+                        <li><code>MDVP:Flo(Hz) > 200 → MDVP:Fhi(Hz) > 200</code></li>
+                        
+                        <!-- JITTER - Variación de frecuencia -->
+                        <li><code>MDVP:RAP > 0.01 → Jitter:DDP > 0.025</code></li>
+                        
+                        <!-- SHIMMER - Variación de amplitud -->
+                        <li><code>Shimmer:APQ3 > 0.03 → Shimmer:DDA > 0.08</code></li>
+                        
+                        <!-- ARMÓNICOS - Relación HNR/NHR -->
+                        <li><code>HNR < 10 → NHR > 0.02</code></li>
+                        <li><code>HNR > 30 → NHR < 0.02</code></li>
+                        
+                        <!-- CAOS VOCAL - Medidas de entropía -->
+                        <li><code>NHR > 0.1 → RPDE > 0.3</code></li>
+                        
+                        <!-- DISFONÍA CONJUNTA -->
+                        <li><code>MDVP:Jitter(%) > 0.03 → MDVP:Shimmer > 0.02</code></li>
+                        
+                        <!-- PATOLOGÍA - Criterios de diagnóstico -->
+                        <li><code>PPE > 0.35 → status = 1 (Patología)</code></li>
+                        <li><code>HNR > 33 → status = 0 (Salud)</code></li>
+                        <li><code>MDVP:Jitter(%) > 0.02 → status = 1 (Disfonía severa)</code></li>
+                        <li><code>spread1 > -3.0 → status = 1 (Caos vocal)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>300</td></tr>
+                        <tr><th>batch_size</th><td>20</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>2</td></tr>
+                        <tr><th>generator_dim</th><td>(64, 64)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(64, 64)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>300</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>32</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(32, 32)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(32, 32)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>1</td>
+                                <td>178</td>
+                                <td>0.940</td>
+                                <td>0.897</td>
+                                <td>0.897</td>
+                                <td>5.112</td>
+                                <td>0.201</td>
+                                <td>0.116</td>
+                                <td>0.143</td>
+                                <td>0.955</td>
+                                <td>48.117</td>
+                                <td>0</td>
+                                <td>178</td>
+                                <td>0.309</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>178</td>
+                                <td>0.929</td>
+                                <td>0.893</td>
+                                <td>0.897</td>
+                                <td>3.028</td>
+                                <td>0.366</td>
+                                <td>0.070</td>
+                                <td>0.143</td>
+                                <td>0.945</td>
+                                <td>48.331</td>
+                                <td>0.006</td>
+                                <td>117</td>
+                                <td>0.319</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>178</td>
+                                <td>0.929</td>
+                                <td>0.850</td>
+                                <td>0.846</td>
+                                <td>1.037</td>
+                                <td>0.366</td>
+                                <td>0.163</td>
+                                <td>0.143</td>
+                                <td>0.958</td>
+                                <td>47.495</td>
+                                <td>0.006</td>
+                                <td>117</td>
+                                <td>0.318</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.034</td>
+                                <td>181</td>
+                                <td>0.938</td>
+                                <td>0.870</td>
+                                <td>0.872</td>
+                                <td>3.695</td>
+                                <td>0.372</td>
+                                <td>0.259</td>
+                                <td>0.152</td>
+                                <td>0.972</td>
+                                <td>47.994</td>
+                                <td>0.007</td>
+                                <td>117</td>
+                                <td>0.344</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1.060</td>
+                                <td>173</td>
+                                <td>0.945</td>
+                                <td>0.846</td>
+                                <td>0.846</td>
+                                <td>2.855</td>
+                                <td>0.354</td>
+                                <td>0.244</td>
+                                <td>0.128</td>
+                                <td>0.964</td>
+                                <td>41.342</td>
+                                <td>0.009</td>
+                                <td>117</td>
+                                <td>0.309</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1.060</td>
+                                <td>173</td>
+                                <td>0.926</td>
+                                <td>0.846</td>
+                                <td>0.846</td>
+                                <td>0.699</td>
+                                <td>0.355</td>
+                                <td>0.181</td>
+                                <td>0.128</td>
+                                <td>0.961</td>
+                                <td>42.320</td>
+                                <td>0.009</td>
+                                <td>117</td>
+                                <td>0.315</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>3.069</td>
+                                <td>118</td>
+                                <td>0.936</td>
+                                <td>0.918</td>
+                                <td>0.923</td>
+                                <td>7.750</td>
+                                <td>0.030</td>
+                                <td>1.000</td>
+                                <td>0.000</td>
+                                <td>0.965</td>
+                                <td>47.034</td>
+                                <td>0.002</td>
+                                <td>117</td>
+                                <td>0.327</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>OOF PSO para Balanceo + Reglas</strong></td>
+                                <td>3.069</td>
+                                <td>118</td>
+                                <td>0.936</td>
+                                <td><strong>0.918</strong></td>
+                                <td><strong>0.923</strong></td>
+                                <td><strong>8.091</strong></td>
+                                <td>0.029</td>
+                                <td>1.000</td>
+                                <td>0.000</td>
+                                <td>0.975</td>
+                                <td>48.525</td>
+                                <td>0.002</td>
+                                <td>117</td>
+                                <td>0.323</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>OOF PSO para Balanceo + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>8.091</strong>, AUC: 0.936, F1: 0.918, MIA: 0.323). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>2.799</td>
+                                <td>7108</td>
+                                <td>0.940</td>
+                                <td>0.918</td>
+                                <td>0.923</td>
+                                <td>8.268</td>
+                                <td>0.798</td>
+                                <td>0.953</td>
+                                <td>0.002</td>
+                                <td>0.970</td>
+                                <td>82.777</td>
+                                <td>0.069</td>
+                                <td>0</td>
+                                <td>0.352</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano + Reglas</strong></td>                    
+                                <td>2.819</td>
+                                <td>7108</td>
+                                <td><strong>0.952</strong></td>
+                                <td><strong>0.918</strong></td>
+                                <td><strong>0.923</strong></td>
+                                <td><strong>8.374</strong></td>
+                                <td>0.798</td>
+                                <td>0.953</td>
+                                <td>0.001</td>
+                                <td>0.970</td>
+                                <td>227.018</td>
+                                <td>0.069</td>
+                                <td>0</td>
+                                <td>0.324</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.293</td>
+                                <td>10000</td>
+                                <td>0.740</td>
+                                <td>0.755</td>
+                                <td>0.744</td>
+                                <td>1.134</td>
+                                <td>0.793</td>
+                                <td>0.005</td>
+                                <td>0.084</td>
+                                <td>0.565</td>
+                                <td>157.149</td>
+                                <td>0.185</td>
+                                <td>0</td>
+                                <td>0.694</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.540</td>
+                                <td>10000</td>
+                                <td>0.810</td>
+                                <td>0.733</td>
+                                <td>0.718</td>
+                                <td>1.259</td>
+                                <td>0.793</td>
+                                <td>0.005</td>
+                                <td>0.053</td>
+                                <td>0.566</td>
+                                <td>358.802</td>
+                                <td>0.185</td>
+                                <td>0</td>
+                                <td>0.744</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>5.361</td>
+                                <td>10000</td>
+                                <td>0.766</td>
+                                <td>0.761</td>
+                                <td>0.795</td>
+                                <td>3.291</td>
+                                <td>0.777</td>
+                                <td>0.273</td>
+                                <td>0.023</td>
+                                <td>0.861</td>
+                                <td>144.854</td>
+                                <td>0.076</td>
+                                <td>0</td>
+                                <td>0.410</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>5.361</td>
+                                <td>10000</td>
+                                <td>0.766</td>
+                                <td>0.761</td>
+                                <td>0.795</td>
+                                <td>3.291</td>
+                                <td>0.777</td>
+                                <td>0.273</td>
+                                <td>0.023</td>
+                                <td>0.861</td>
+                                <td>340.742</td>
+                                <td>0.076</td>
+                                <td>0</td>
+                                <td>0.410</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.910</td>
+                                <td>0.853</td>
+                                <td>0.846</td>
+                                <td>4.474</td>
+                                <td>0.811</td>
+                                <td>0.000</td>
+                                <td>0.143</td>
+                                <td>0.645</td>
+                                <td>130.968</td>
+                                <td>0.206</td>
+                                <td>0</td>
+                                <td>0.389</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.118</td>
+                                <td>10000</td>
+                                <td>0.890</td>
+                                <td>0.781</td>
+                                <td>0.769</td>
+                                <td>2.775</td>
+                                <td>0.811</td>
+                                <td>0.000</td>
+                                <td>0.115</td>
+                                <td>0.648</td>
+                                <td>317.068</td>
+                                <td>0.207</td>
+                                <td>0</td>
+                                <td>0.332</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1</td>
+                                <td>7000</td>
+                                <td>0.969</td>
+                                <td>0.918</td>
+                                <td>0.923</td>
+                                <td>6.945</td>
+                                <td>0.821</td>
+                                <td>0.062</td>
+                                <td>0.143</td>
+                                <td>0.921</td>
+                                <td>79.057</td>
+                                <td>0.026</td>
+                                <td>0</td>
+                                <td>0.347</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1</td>
+                                <td>7000</td>
+                                <td>0.969</td>
+                                <td>0.918</td>
+                                <td>0.923</td>
+                                <td>6.945</td>
+                                <td>0.821</td>
+                                <td>0.062</td>
+                                <td>0.143</td>
+                                <td>0.921</td>
+                                <td>216.982</td>
+                                <td>0.026</td>
+                                <td>0</td>
+                                <td>0.347</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>8.374</strong>, AUC: 0.952, F1: 0.918, MIA: 0.324). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>2.803</td>
+                                <td>7226</td>
+                                <td><strong>0.972</strong></td>
+                                <td><strong>0.918</strong></td>
+                                <td><strong>0.923</strong></td>
+                                <td><strong>8.497</strong></td>
+                                <td>0.779</td>
+                                <td>0.955</td>
+                                <td>0.001</td>
+                                <td>0.970</td>
+                                <td>155.972</td>
+                                <td>0.069</td>
+                                <td>0</td>
+                                <td>0.315</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>2.823</td>
+                                <td>7226</td>
+                                <td>0.966</td>
+                                <td>0.918</td>
+                                <td>0.923</td>
+                                <td>8.393</td>
+                                <td>0.779</td>
+                                <td>0.955</td>
+                                <td>0.001</td>
+                                <td>0.970</td>
+                                <td>298.734</td>
+                                <td>0.069</td>
+                                <td>0</td>
+                                <td>0.296</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.304</td>
+                                <td>10118</td>
+                                <td>0.848</td>
+                                <td>0.801</td>
+                                <td>0.795</td>
+                                <td>1.236</td>
+                                <td>0.775</td>
+                                <td>0.005</td>
+                                <td>0.082</td>
+                                <td>0.568</td>
+                                <td>258.380</td>
+                                <td>0.181</td>
+                                <td>32</td>
+                                <td>0.725</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.551</td>
+                                <td>10118</td>
+                                <td>0.841</td>
+                                <td>0.823</td>
+                                <td>0.821</td>
+                                <td>1.820</td>
+                                <td>0.775</td>
+                                <td>0.005</td>
+                                <td>0.052</td>
+                                <td>0.569</td>
+                                <td>460.300</td>
+                                <td>0.181</td>
+                                <td>32</td>
+                                <td>0.731</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>5.320</td>
+                                <td>10118</td>
+                                <td>0.872</td>
+                                <td>0.761</td>
+                                <td>0.795</td>
+                                <td>2.500</td>
+                                <td>0.762</td>
+                                <td>0.281</td>
+                                <td>0.022</td>
+                                <td>0.862</td>
+                                <td>242.634</td>
+                                <td>0.074</td>
+                                <td>32</td>
+                                <td>0.356</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>5.320</td>
+                                <td>10118</td>
+                                <td>0.872</td>
+                                <td>0.761</td>
+                                <td>0.795</td>
+                                <td>2.500</td>
+                                <td>0.762</td>
+                                <td>0.281</td>
+                                <td>0.022</td>
+                                <td>0.862</td>
+                                <td>438.795</td>
+                                <td>0.074</td>
+                                <td>32</td>
+                                <td>0.356</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.012</td>
+                                <td>10118</td>
+                                <td>0.941</td>
+                                <td>0.870</td>
+                                <td>0.872</td>
+                                <td>4.458</td>
+                                <td>0.791</td>
+                                <td>0.000</td>
+                                <td>0.140</td>
+                                <td>0.648</td>
+                                <td>224.614</td>
+                                <td>0.202</td>
+                                <td>32</td>
+                                <td>0.295</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.130</td>
+                                <td>10118</td>
+                                <td>0.940</td>
+                                <td>0.874</td>
+                                <td>0.872</td>
+                                <td>4.492</td>
+                                <td>0.791</td>
+                                <td>0.000</td>
+                                <td>0.113</td>
+                                <td>0.651</td>
+                                <td>410.048</td>
+                                <td>0.203</td>
+                                <td>32</td>
+                                <td>0.312</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.017</td>
+                                <td>7118</td>
+                                <td>0.971</td>
+                                <td>0.893</td>
+                                <td>0.897</td>
+                                <td>6.212</td>
+                                <td>0.797</td>
+                                <td>0.068</td>
+                                <td>0.138</td>
+                                <td>0.922</td>
+                                <td>149.179</td>
+                                <td>0.026</td>
+                                <td>40</td>
+                                <td>0.366</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.017</td>
+                                <td>7118</td>
+                                <td>0.971</td>
+                                <td>0.893</td>
+                                <td>0.897</td>
+                                <td>6.212</td>
+                                <td>0.797</td>
+                                <td>0.068</td>
+                                <td>0.138</td>
+                                <td>0.922</td>
+                                <td>285.027</td>
+                                <td>0.026</td>
+                                <td>40</td>
+                                <td>0.366</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>8.497</strong>, AUC: 0.972, F1: 0.918, MIA: 0.315). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_21</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>OOF PSO para Balanceo + Reglas del Dominio</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio </div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* + Ruido Gaussiano</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd21.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Parkinson's Disease Detection (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32933759.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [23.93, 76.07], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

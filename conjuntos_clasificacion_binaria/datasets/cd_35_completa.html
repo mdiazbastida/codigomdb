@@ -1,0 +1,2836 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_35: Polish Companies Bankruptcy Prediction - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_35</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_35: Polish Companies Bankruptcy Prediction</h1>
+            <p class="description">Consolidado financiero (2000-2013) de manufactura polaca para la predicción binaria de quiebra (Bankrupt). Unifica 5 horizontes temporales en un dataset compuesto por 64 ratios financieros continuos (rentabilidad, liquidez, apalancamiento).</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.95</td>
+                                    <td>1.00</td>
+                                    <td>0.97</td>
+                                    <td>190</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>10</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.95</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.47</td>
+                                    <td>0.50</td>
+                                    <td>0.49</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.90</td>
+                                    <td>0.95</td>
+                                    <td>0.93</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.55</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.93</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.95</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.02 AUC</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.02 F1</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.04 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance">
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.96</td>
+                                    <td>0.94</td>
+                                    <td>0.95</td>
+                                    <td>190</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.15 <span class="improvement-indicator">⬆ +0.15</span></td>
+                                    <td>0.20 <span class="improvement-indicator">⬆ +0.20</span></td>
+                                    <td>0.17 <span class="improvement-indicator">⬆ +0.17</span></td>
+                                    <td>10</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.91</strong> <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.04</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.56 <span class="improvement-indicator">⬆ +0.09</span></td>
+                                    <td>0.57 <span class="improvement-indicator">⬆ +0.07</span></td>
+                                    <td>0.56 <span class="improvement-indicator">⬆ +0.07</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.92 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>0.91 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.04</span></td>
+                                    <td>0.91 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.02</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.53</span>
+                            <span class="improvement-badge negative">⬇ -0.02</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.91</span>
+                            <span class="improvement-badge negative">⬇ -0.02</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.91</span>
+                            <span class="improvement-badge negative">⬇ -0.04</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.15</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 15%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.15</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.20</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 20%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.20</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.17</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 17%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.17</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Polish Companies Bankruptcy Prediction Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Ziȩba, M., Tomczak, S., & Tomczak, J. M.</div>
+                    <div class="fuente-fecha">Publicado: 2016</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value"><a href="https://doi.org/10.1016/j.eswa.2016.02.036" target="_blank">10.1016/j.eswa.2016.02.036</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/Polish+companies+bankruptcy+data" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias (año 3):</span>
+                            <span class="metadata-value">10,503</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">65 (64 predictores + 1 objetivo)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Período:</span>
+                            <span class="metadata-value">2000-2012 (bancarrotas) / 2007-2013 (activas)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Predicción de Quiebras de Empresas Polacas</strong> contiene información financiera de empresas polacas recopilada de <strong>Emerging Markets Information Service (EMIS)</strong>, una base de datos que contiene información sobre mercados emergentes en todo el mundo. Las empresas <strong>en quiebra</strong> fueron analizadas en el período <strong>2000-2012</strong>, mientras que las empresas <strong>aún en funcionamiento</strong> fueron evaluadas desde <strong>2007 hasta 2013</strong>. Basándose en los datos recopilados, se distinguieron <strong>cinco casos de clasificación</strong> que dependen del <strong>período de pronóstico</strong> (1 a 5 años antes de la quiebra). El objetivo es predecir la <strong>quiebra de empresas</strong> utilizando <strong>64 ratios financieros</strong> como variables predictoras.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🔬 Contexto y Motivación</h4>
+                        <p>La <strong>predicción de quiebras</strong> es un problema crítico en la <strong>gestión financiera</strong> y la <strong>evaluación de riesgos</strong>. La capacidad de predecir la quiebra de una empresa con <strong>anticipación</strong> permite a:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Inversores</strong> tomar decisiones informadas y evitar pérdidas</li>
+                            <li><strong>Bancos e instituciones financieras</strong> evaluar el riesgo crediticio</li>
+                            <li><strong>Gobiernos y reguladores</strong> monitorear la estabilidad del sistema financiero</li>
+                            <li><strong>Auditores y consultores</strong> identificar empresas en dificultades</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">Este dataset es particularmente valioso porque cubre <strong>múltiples horizontes de predicción</strong> (1 a 5 años), permitiendo evaluar la capacidad predictiva de los modelos en diferentes plazos. El estudio de Ziȩba et al. (2016) propuso <strong>árboles potenciados con generación de características sintéticas</strong> para mejorar la precisión de la predicción.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Estructura del Dataset</h4>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Cinco Casos de Clasificación por Período de Pronóstico</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Caso</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Año de Datos</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Período de Pronóstico</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Instancias</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Quiebras</th>
+                                        <th style="text-align: left; padding: 0.4rem;">No Quiebras</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>1er Año</strong></td>
+                                        <td style="padding: 0.4rem;">Año 1</td>
+                                        <td style="padding: 0.4rem;">5 años</td>
+                                        <td style="padding: 0.4rem;">7,027</td>
+                                        <td style="padding: 0.4rem;">271 (3.86%)</td>
+                                        <td style="padding: 0.4rem;">6,756 (96.14%)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>2do Año</strong></td>
+                                        <td style="padding: 0.4rem;">Año 2</td>
+                                        <td style="padding: 0.4rem;">4 años</td>
+                                        <td style="padding: 0.4rem;">10,173</td>
+                                        <td style="padding: 0.4rem;">400 (3.93%)</td>
+                                        <td style="padding: 0.4rem;">9,773 (96.07%)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>3er Año</strong></td>
+                                        <td style="padding: 0.4rem;">Año 3</td>
+                                        <td style="padding: 0.4rem;">3 años</td>
+                                        <td style="padding: 0.4rem;"><strong>10,503</strong></td>
+                                        <td style="padding: 0.4rem;">495 (4.71%)</td>
+                                        <td style="padding: 0.4rem;">10,008 (95.29%)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>4to Año</strong></td>
+                                        <td style="padding: 0.4rem;">Año 4</td>
+                                        <td style="padding: 0.4rem;">2 años</td>
+                                        <td style="padding: 0.4rem;">9,792</td>
+                                        <td style="padding: 0.4rem;">515 (5.26%)</td>
+                                        <td style="padding: 0.4rem;">9,277 (94.74%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>5to Año</strong></td>
+                                        <td style="padding: 0.4rem;">Año 5</td>
+                                        <td style="padding: 0.4rem;">1 año</td>
+                                        <td style="padding: 0.4rem;">5,910</td>
+                                        <td style="padding: 0.4rem;">410 (6.94%)</td>
+                                        <td style="padding: 0.4rem;">5,500 (93.06%)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="color: #000; font-size: 0.85rem; margin-top: 0.3rem;">Nota: El conjunto de datos más utilizado es el <strong>3er Año</strong> con 10,503 instancias y 495 quiebras (4.71%).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>65 atributos</strong> (64 variables predictoras y 1 variable objetivo). Las características son en su mayoría de tipo <strong>real (continuo)</strong> y representan <strong>ratios financieras</strong> calculadas a partir de los estados financieros de las empresas. El conjunto presenta <strong>valores faltantes</strong> en varias variables.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <p style="color: #000; font-size: 0.85rem;">Las variables <strong>A1 a A64</strong> representan ratios financieras (ver lista completa abajo). La variable <strong>year</strong> indica el año del estado financiero y <strong>class</strong> es la variable objetivo.</p>
+                            
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción (Ratio Financiero)</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Valores Faltantes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>year</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Año del estado financiero</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">Ratios Financieros (A1 - A64)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A1</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">net profit / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A2</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">total liabilities / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A3</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">working capital / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A4</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">current assets / short-term liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A5</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">[(cash + short-term securities + receivables - short-term liabilities) / (operating expenses - depreciation)] * 365</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A6</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">retained earnings / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A7</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">EBIT / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A8</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">book value of equity / total liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A9</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">sales / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A10</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">equity / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A11</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(gross profit + extraordinary items + financial expenses) / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A12</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">gross profit / short-term liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A13</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(gross profit + depreciation) / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A14</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(gross profit + interest) / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A15</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(total liabilities * 365) / (gross profit + depreciation)</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A16</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(gross profit + depreciation) / total liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A17</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">total assets / total liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A18</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">gross profit / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A19</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">gross profit / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A20</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(inventory * 365) / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A21</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">sales (n) / sales (n-1)</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A22</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">profit on operating activities / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A23</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">net profit / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A24</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">gross profit (in 3 years) / total assets</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A25</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(equity - share capital) / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A26</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(net profit + depreciation) / total liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A27</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">profit on operating activities / financial expenses</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A28</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">working capital / fixed assets</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A29</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">logarithm of total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A30</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(total liabilities - cash) / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A31</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(gross profit + interest) / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A32</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(current liabilities * 365) / cost of products sold</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A33</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">operating expenses / short-term liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A34</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">operating expenses / total liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A35</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">profit on sales / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A36</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">total sales / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A37</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(current assets - inventories) / long-term liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A38</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">constant capital / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A39</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">profit on sales / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A40</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(current assets - inventory - receivables) / short-term liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A41</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">total liabilities / ((profit on operating activities + depreciation) * (12/365))</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A42</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">profit on operating activities / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A43</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">rotation receivables + inventory turnover in days</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A44</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(receivables * 365) / sales</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A45</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">net profit / inventory</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A46</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(current assets - inventory) / short-term liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A47</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(inventory * 365) / cost of products sold</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A48</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">EBITDA (profit on operating activities - depreciation) / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A49</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">EBITDA (profit on operating activities - depreciation) / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A50</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">current assets / total liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A51</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">short-term liabilities / total assets</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A52</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(short-term liabilities * 365) / cost of products sold</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A53</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">equity / fixed assets</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A54</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">constant capital / fixed assets</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A55</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">working capital</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A56</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(sales - cost of products sold) / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A57</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(current assets - inventory - short-term liabilities) / (sales - gross profit - depreciation)</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A58</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">total costs / total sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A59</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">long-term liabilities / equity</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A60</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">sales / inventory</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A61</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">sales / receivables</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A62</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">(short-term liabilities * 365) / sales</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A63</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">sales / short-term liabilities</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A64</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">sales / fixed assets</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">F. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>class</strong></td>
+                                        <td style="padding: 0.4rem;">Entero (Target)</td>
+                                        <td style="padding: 0.4rem;">Indica si la empresa quebró en el período de pronóstico</td>
+                                        <td style="padding: 0.4rem;">0 = No quiebra, 1 = Quiebra</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Quiebra vs. No quiebra)</li>
+                            <li><strong>Dimensión:</strong> Multivariante (65 variables)</li>
+                            <li><strong>Tipo de características:</strong> Reales (principalmente ratios financieros)</li>
+                            <li><strong>Valores faltantes:</strong> Sí (presentes en muchas variables)</li>
+                            <li><strong>Área de aplicación:</strong> Finanzas, Gestión de Riesgos, Contabilidad</li>
+                            <li><strong>Período de datos:</strong> 2000-2012 (quiebras) / 2007-2013 (activas)</li>
+                            <li><strong>Fuente:</strong> Emerging Markets Information Service (EMIS)</li>
+                            <li><strong>País:</strong> Polonia</li>
+                            <li><strong>Desbalanceo:</strong> Las quiebras representan entre 3.86% y 6.94% de los casos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📖 Publicación Introductoria</h4>
+                        <p>El artículo fundamental que describe la aplicación de árboles potenciados con generación de características sintéticas para la predicción de quiebras es:</p>
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #4fc3f7; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.9rem; margin: 0;">Ziȩba, M., Tomczak, S., & Tomczak, J. M. (2016). <strong>Ensemble boosted trees with synthetic features generation in application to bankruptcy prediction</strong>. <em>Expert Systems with Applications</em>, 58, 93-101. <a href="https://doi.org/10.1016/j.eswa.2016.02.036" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1016/j.eswa.2016.02.036</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos ha sido anonimizado para proteger la privacidad de las empresas. Los nombres de las empresas y otros identificadores no están incluidos en el dataset. <strong>Restricción de confidencialidad:</strong> En cumplimiento de los protocolos de privacidad, el uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la identificación de empresas específicas.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos presenta desafíos significativos debido a la <strong>alta dimensionalidad</strong> (65 variables), la presencia de <strong>valores faltantes</strong> y el <strong>desbalanceo de clases</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>Seleccionar uno de los <strong>5 casos de clasificación</strong> según el horizonte de predicción deseado (1-5 años)</li>
+                            <li>Manejar adecuadamente los <strong>valores faltantes</strong> mediante imputación (media, mediana, KNN, MICE) o eliminación de variables con alta proporción de faltantes</li>
+                            <li>Las variables <strong>A1 a A64</strong> representan ratios financieras de diferente naturaleza (rentabilidad, liquidez, solvencia, etc.)</li>
+                            <li>Considerar <strong>técnicas de selección de características</strong> para reducir la dimensionalidad debido a la alta cantidad de variables</li>
+                            <li>La variable <strong>year</strong> puede utilizarse para análisis temporal o excluirse según el enfoque</li>
+                            <li>La variable objetivo <strong>class</strong> está codificada como 0 = No quiebra, 1 = Quiebra</li>
+                            <li>Utilizar <strong>validación cruzada estratificada</strong> debido al desbalanceo de clases (quiebras entre 3.86% y 6.94%)</li>
+                            <li>Considerar técnicas de <strong>balanceo de clases</strong> (SMOTE, submuestreo, sobremuestreo) y <strong>cost-sensitive learning</strong></li>
+                            <li>El dataset es adecuado para <strong>métodos de ensemble</strong> (Random Forest, Gradient Boosting, XGBoost) y <strong>redes neuronales</strong></li>
+                            <li>El estudio original demostró que los <strong>árboles potenciados con características sintéticas</strong> superan a otros métodos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Predicción de Quiebras</h4>
+                        <p>La <strong>predicción de quiebras empresariales</strong> es un área fundamental de la investigación financiera con importantes implicaciones prácticas:</p>
+                        <ul class="transformacion-lista">
+                            <li>El modelo de <strong>Altman Z-Score</strong> (1968) fue uno de los primeros en utilizar ratios financieros para predecir quiebras</li>
+                            <li>La quiebra de una empresa tiene <strong>impactos significativos</strong> en empleados, proveedores, clientes y la economía en general</li>
+                            <li>La <strong>detección temprana</strong> permite tomar medidas correctivas (reestructuración, inyección de capital, venta de activos)</li>
+                            <li>Los <strong>modelos de aprendizaje automático</strong> superan a los métodos estadísticos tradicionales en precisión predictiva</li>
+                            <li>Este dataset permite investigar el <strong>efecto del horizonte de predicción</strong> (1-5 años) en la precisión de los modelos</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">El estudio de Ziȩba et al. (2016) demostró que los <strong>métodos de ensemble con generación de características sintéticas</strong> logran una alta precisión en la predicción de quiebras, incluso en presencia de datos desbalanceados y valores faltantes.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Ziȩba, M., Tomczak, S., & Tomczak, J. M. (2016). Ensemble boosted trees with synthetic features generation in application to bankruptcy prediction. Expert Systems with Applications, 58, 93-101. https://doi.org/10.1016/j.eswa.2016.02.036</pre>
+                        <button onclick="copyToClipboard('Ziȩba, M., Tomczak, S., & Tomczak, J. M. (2016). Ensemble boosted trees with synthetic features generation in application to bankruptcy prediction. Expert Systems with Applications, 58, 93-101. https://doi.org/10.1016/j.eswa.2016.02.036')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Ziȩba, M., Tomczak, S., & Tomczak, J. M. (2016). Ensemble boosted trees with synthetic features generation in application to bankruptcy prediction. <em>Expert Systems with Applications</em>, 58, 93-101. <a href="https://doi.org/10.1016/j.eswa.2016.02.036" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1016/j.eswa.2016.02.036</a></li>
+                            <li>UCI Machine Learning Repository - Polish Companies Bankruptcy Data. <a href="https://archive.ics.uci.edu/ml/datasets/Polish+companies+bankruptcy+data" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/Polish+companies+bankruptcy+data</a></li>
+                            <li>Altman, E. I. (1968). Financial ratios, discriminant analysis and the prediction of corporate bankruptcy. <em>Journal of Finance</em>, 23(4), 589-609.</li>
+                            <li>Emerging Markets Information Service (EMIS). <a href="http://www.securities.com" target="_blank" style="color: #4fc3f7;">http://www.securities.com</a></li>
+                            <li>Beaver, W. H. (1966). Financial ratios as predictors of failure. <em>Journal of Accounting Research</em>, 4, 71-111.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Polish Companies Bankruptcy)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Fusión de múltiples archivos ARFF:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Integración de <strong>5 archivos ARFF</strong> (1year.arff a 5year.arff) correspondientes a diferentes horizontes de predicción de bancarrota.</li>
+                            <li>Adición de la variable <em>Forecasting_Year</em> (1 a 5) para identificar el origen de cada registro y el horizonte temporal de pronóstico.</li>
+                            <li>Uso de <code>scipy.io.arff</code> para la carga correcta del formato ARFF y decodificación de tipos de datos.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Limpieza y estandarización de nombres de columnas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Renombrado de variables originales <em>Attr1</em> a <em>Attr64</em> a <strong>X01 a X64</strong> para mayor claridad y consistencia.</li>
+                            <li>Renombrado de la variable objetivo <em>'class'</em> a <em>'Bankrupt'</em> para mejorar la legibilidad semántica.</li>
+                            <li>Preservación de todas las 64 variables financieras como números flotantes.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Decodificación y transformación de la variable objetivo:</strong> 
+                        < class="transformacion-lista">
+                            <li>Conversión de la variable <em>Bankrupt</em> de formato <em>bytes</em> (b'0', b'1') a <strong>entero binario</strong>: 0 = No Bancarrota (Solvente), 1 = Bancarrota.</li>
+                            <li>Mapeo robusto para manejar diferentes formatos de codificación presentes en los archivos ARFF.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Imputación de valores perdidos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Detección y tratamiento de valores faltantes en las 64 variables financieras.</li>
+                            <li><strong>Imputación con mediana</strong> para cada variable financiera — estrategia robusta frente a outliers en datos financieros.</li>
+                            <li>Preservación de la integridad de la variable objetivo y Forecasting_Year sin imputación.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación y leyenda:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_polish_bankruptcy.txt</em> con semántica completa de la variable objetivo, variable de contexto y descripción de ratios financieros.</li>
+                            <li>Documentación de la variable <em>Forecasting_Year</em> (1 = datos del 1er año, pronóstico a 5 años; 5 = datos del 5to año, pronóstico a 1 año).</li>
+                            <li>Descripción de las 64 variables financieras (ratios) basadas en la documentación original, incluyendo ejemplos como X01 = net profit / total assets, X02 = total liabilities / total assets, etc.</li>
+                            <li>Nota sobre la imputación con mediana aplicada a valores perdidos.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>instancias fusionadas</strong> de los 5 periodos de predicción.</li>
+                            <li>Dataset final con <strong>64 variables predictoras</strong> (ratios financieros), <strong>1 variable de contexto</strong> (Forecasting_Year) y <strong>1 variable objetivo binaria</strong> (Bankrupt).</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset fusionado de <strong>empresas polacas</strong> con <strong>64 variables predictoras</strong> (ratios financieros), <strong>1 variable de contexto temporal</strong> (Forecasting_Year) y <strong>1 variable objetivo binaria</strong> (Bankrupt). Desbalance extremo (~95% solventes / ~5% en bancarrota) — escenario crítico para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>predicción de quiebra financiera</strong>, donde la detección temprana de empresas en riesgo es fundamental y el análisis de ratios financieros es el pilar del diagnóstico.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🏢 <strong>Fuente:</strong> Polish Companies Bankruptcy Dataset (UCI Machine Learning Repository) - Datos financieros de empresas polacas para predicción de bancarrota.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variables financieras:</strong> 64 ratios financieros (X01 a X64) que incluyen métricas de rentabilidad, liquidez, endeudamiento, eficiencia y solvencia.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    ⏱️ <strong>Variable de contexto:</strong> <em>Forecasting_Year</em> (1 a 5) indica el horizonte de predicción: 1 = pronóstico a 5 años, 5 = pronóstico a 1 año.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_polish_bankruptcy.txt</em> con descripción de la variable objetivo, variable de contexto, y lista completa de ratios financieros.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Bankrupt</em> (1 = Empresa en bancarrota, 0 = Empresa solvente).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Fusión de 5 archivos ARFF, renombrado de Attr1-64 a X01-64, decodificación de target, imputación con mediana de valores perdidos.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Financiera</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Forecasting_Year</code></td>
+                            <td>Horizonte temporal del pronóstico (años)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1: 5 años, 2: 4 años, 3: 3 años, 4: 2 años, 5: 1 año</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas (Ratios Financieros) -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X01</code></td>
+                            <td>Beneficio neto / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-61.602 - 1.218</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X02</code></td>
+                            <td>Pasivos totales / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 441.5</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X03</code></td>
+                            <td>Capital de trabajo / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-440.5 - 1.385</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X04</code></td>
+                            <td>Activos corrientes / Pasivos a corto plazo (Current Ratio)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.002 - 127.41</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X05</code></td>
+                            <td>[(Efectivo + valores CP + cobrar - pasivos CP) / (gastos op. - dep.)] * 365</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-163,090 - 48,305</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X06</code></td>
+                            <td>Ganancias retenidas / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-397.89 - 35.551</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X07</code></td>
+                            <td>EBIT / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-61.602 - 1.377</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X08</code></td>
+                            <td>Valor contable del patrimonio / Pasivos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-0.998 - 1,452.2</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X09</code></td>
+                            <td>Ventas / Activos totales (Rotación de activos)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 109.5</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X10</code></td>
+                            <td>Patrimonio (Equity) / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-440.55 - 74.434</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X11</code></td>
+                            <td>(Beneficio bruto + partidas extraord. + gastos fin.) / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-0.996 - 1.377</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X12</code></td>
+                            <td>Beneficio bruto / Pasivos a corto plazo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-78.1 - 331.46</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X13</code></td>
+                            <td>(Beneficio bruto + depreciación) / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-668.15 - 2.703</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X14</code></td>
+                            <td>(Beneficio bruto + intereses) / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-61.602 - 1.377</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X15</code></td>
+                            <td>(Pasivos totales * 365) / (Beneficio bruto + depreciación)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-301,630 - 1,331,700</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X16</code></td>
+                            <td>(Beneficio bruto + depreciación) / Pasivos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-38.286 - 405.33</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X17</code></td>
+                            <td>Activos totales / Pasivos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.002 - 1,529.9</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X18</code></td>
+                            <td>Beneficio bruto / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-61.602 - 1.377</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X19</code></td>
+                            <td>Beneficio bruto / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-668.5 - 2.377</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X20</code></td>
+                            <td>(Inventario * 365) / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 1,062.5</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X21</code></td>
+                            <td>Ventas (n) / Ventas (n-1) [Crecimiento de ventas]</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 6,964.2</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X22</code></td>
+                            <td>Beneficio de actividades operativas / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-1.383 - 1.377</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X23</code></td>
+                            <td>Beneficio neto / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-668.5 - 2.272</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X24</code></td>
+                            <td>Beneficio bruto (3 años) / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-61.602 - 4.458</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X25</code></td>
+                            <td>(Patrimonio - Capital social) / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-459.56 - 48.669</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X26</code></td>
+                            <td>(Beneficio neto + depreciación) / Pasivos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-38.286 - 612.88</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X27</code></td>
+                            <td>Beneficio de actividades operativas / Gastos financieros</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-157,160 - 57,716</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X28</code></td>
+                            <td>Capital de trabajo / Activos fijos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-121.77 - 2,249.8</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X29</code></td>
+                            <td>Logaritmo de Activos Totales (Tamaño de la empresa)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.976 - 9.698</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X30</code></td>
+                            <td>(Pasivos totales - Efectivo) / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-1,055.9 - 656.45</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X31</code></td>
+                            <td>(Beneficio bruto + intereses) / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-668.41 - 2.377</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X32</code></td>
+                            <td>(Pasivos corrientes * 365) / Costo de productos vendidos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 351,630</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X33</code></td>
+                            <td>Gastos operativos / Pasivos a corto plazo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 135.67</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X34</code></td>
+                            <td>Gastos operativos / Pasivos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-12.369 - 337.65</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X35</code></td>
+                            <td>Beneficio en ventas / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-1.502 - 1.384</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X36</code></td>
+                            <td>Ventas totales / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.0007 - 110.97</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X37</code></td>
+                            <td>(Activos corrientes - inventarios) / Pasivos a largo plazo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-89.392 - 79,762</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X38</code></td>
+                            <td>Capital constante / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-440.55 - 74.689</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X39</code></td>
+                            <td>Beneficio en ventas / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-648.8 - 0.695</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X40</code></td>
+                            <td>(Activos corrientes - inventario - cuentas por cobrar) / Pasivos a corto plazo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-1.726 - 125.58</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X41</code></td>
+                            <td>Pasivos totales / ((Beneficio operativo + depreciación) * (12/365))</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-388.7 - 462.11</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X42</code></td>
+                            <td>Beneficio de actividades operativas / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-648.8 - 1.028</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X43</code></td>
+                            <td>Rotación de cuentas por cobrar + Rotación de inventario (días)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 40,515</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X44</code></td>
+                            <td>(Cuentas por cobrar * 365) / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 40,515</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X45</code></td>
+                            <td>Beneficio neto / Inventario</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-711.43 - 512.67</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X46</code></td>
+                            <td>(Activos corrientes - inventario) / Pasivos a corto plazo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-0.153 - 127.41</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X47</code></td>
+                            <td>(Inventario * 365) / Costo de productos vendidos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 1,121.2</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X48</code></td>
+                            <td>EBITDA / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-13.147 - 1.377</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X49</code></td>
+                            <td>EBITDA / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-649.16 - 0.968</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X50</code></td>
+                            <td>Activos corrientes / Pasivos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.002 - 125.23</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X51</code></td>
+                            <td>Pasivos a corto plazo / Activos totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 441.5</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X52</code></td>
+                            <td>(Pasivos a corto plazo * 365) / Costo de productos vendidos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 453.96</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X53</code></td>
+                            <td>Patrimonio / Activos fijos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-225.31 - 86,795</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X54</code></td>
+                            <td>Capital constante / Activos fijos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-120.77 - 87,092</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X55</code></td>
+                            <td>Capital de trabajo (Valor absoluto)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-232,950 - 484,930</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X56</code></td>
+                            <td>(Ventas - Costo de productos vendidos) / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-648.8 - 1</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X57</code></td>
+                            <td>(Activos corrientes - inventario - pasivos CP) / (Ventas - Ben. Bruto - Deprec.)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-24.536 - 6.392</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X58</code></td>
+                            <td>Costos totales / Ventas totales</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1.5e-6 - 668.75</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X59</code></td>
+                            <td>Pasivos a largo plazo / Patrimonio</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-256.99 - 58.899</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X60</code></td>
+                            <td>Ventas / Inventario</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.344 - 5,500</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X61</code></td>
+                            <td>Ventas / Cuentas por cobrar</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 298.19</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X62</code></td>
+                            <td>(Pasivos a corto plazo * 365) / Ventas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 127,450</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X63</code></td>
+                            <td>Ventas / Pasivos a corto plazo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.003 - 485.71</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>X64</code></td>
+                            <td>Ventas / Activos fijos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.0008 - 127,680</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variable Binaria (Target) -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Bankrupt</code></td>
+                            <td>Estado de bancarrota de la empresa (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Solvente, 1: Bancarrota</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">66</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">64</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Bancarrota (Bankrupt)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Predicción de Bancarrota de Empresas Polacas. 
+                Comprender estas codificaciones es fundamental para la correcta interpretación de los 
+                resultados financieros.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: Forecasting_Year -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Forecasting_Year</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">1</span></td><td>Pronóstico a 5 años (Datos del 1er año)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Pronóstico a 4 años (Datos del 2do año)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Pronóstico a 3 años (Datos del 3er año)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>Pronóstico a 2 años (Datos del 4to año)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Pronóstico a 1 año (Datos del 5to año)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">📊</span>
+                            <p><strong>Importancia:</strong> El horizonte temporal afecta la precisión de los modelos. Pronósticos a 1 año son más precisos que a 5 años.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Bankrupt (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Bankrupt</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">0</span></td>
+                                    <td><strong>Solvente</strong> - Empresa operativa, sin quiebra (Clase Mayoritaria ~95%)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">1</span></td>
+                                    <td><strong>Bancarrota</strong> - Empresa en quiebra (Clase Minoritaria ~5%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> El modelo debe predecir la bancarrota empresarial basándose en ratios financieros.</p>
+                        </div>                        
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato:</strong> 0 = Solvente, 1 = Bancarrota
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Bankrupt</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Estado de bancarrota (0: Solvente, 1: Bancarrota)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Única variable binaria en el dataset.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 1
+                        <ul>
+                            <li>Forecasting_Year (5 horizontes temporales)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 1
+                        <ul>
+                            <li>🎯 Bankrupt (Objetivo - Bancarrota)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 64
+                        <ul>
+                            <li>13 Rentabilidad (Profitability)</li>
+                            <li>9 Liquidez (Liquidity)</li>
+                            <li>8 Apalancamiento (Leverage)</li>
+                            <li>21 Eficiencia (Turnover)</li>
+                            <li>13 Otros indicadores</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones Financieras:</strong>
+                        <ul>
+                            <li><strong>Ratios clave:</strong> X01 (ROA), X04 (Current Ratio), X02 (Deuda/Activos), X09 (Rotación de activos)</li>
+                            <li><strong>Bancarrota:</strong> Empresas con <code>X01</code> (ROA) negativo y <code>X02</code> (Deuda/Activos) > 1 tienen alto riesgo</li>
+                            <li><strong>Liquidez:</strong> <code>X04</code> (Current Ratio) < 1 indica problemas de liquidez a corto plazo</li>
+                            <li><strong>Apalancamiento:</strong> <code>X02</code> > 1 significa deuda mayor que activos (alto riesgo)</li>
+                            <li><strong>Rentabilidad:</strong> <code>X01</code>, <code>X07</code> (ROA), <code>X18</code> (Margen bruto) negativos son señales de alerta</li>
+                            <li><strong>Eficiencia:</strong> <code>X09</code> baja indica mala utilización de activos</li>
+                            <li><strong>Tamaño:</strong> <code>X29</code> (log activos) - empresas más grandes tienden a tener menor riesgo</li>
+                            <li><strong>Horizonte:</strong> Modelos con <code>Forecasting_Year = 5</code> (5 años) son menos precisos que con año 1</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- SOLVENCIA FUNDAMENTAL -->
+                        <li><code>X02 > 1 → Bankrupt = 1 (Pasivos > Activos → bancarrota)</code></li>
+                        <li><code>Bankrupt == 0 → X02 ≤ 1 (Sin bancarrota → pasivos ≤ activos)</code></li>
+                        
+                        <!-- IDENTIDAD CONTABLE (Activos = Pasivos + Patrimonio) -->
+                        <li><code>X02 > 0.9 → X10 < 0.1 (Deuda alta → patrimonio bajo)</code></li>
+                        <li><code>X10 > 0.9 → X02 < 0.1 (Patrimonio alto → deuda baja)</code></li>
+                        
+                        <!-- INACTIVIDAD COMERCIAL -->
+                        <li><code>X09 == 0 → X19 = 0 (Sin ventas → beneficio bruto 0)</code></li>
+                        <li><code>X09 == 0 → X23 = 0 (Sin ventas → beneficio neto 0)</code></li>
+                        
+                        <!-- JERARQUÍA DE RENTABILIDAD -->
+                        <li><code>X18 < X07 → X07 ≤ X18 (Beneficio Bruto ≥ EBIT)</code></li>
+                        <li><code>X07 < X01 → X01 ≤ X07 (EBIT ≥ Beneficio Neto)</code></li>
+                        
+                        <!-- LIQUIDEZ CRÍTICA -->
+                        <li><code>X04 < 1 → Bankrupt = 1 (Current ratio < 1 → bancarrota)</code></li>
+                        
+                        <!-- INCONSISTENCIA DE DEUDA -->
+                        <li><code>X02 < X51 → X51 ≤ X02 (Pasivos totales ≥ pasivos a corto plazo)</code></li>
+                        
+                        <!-- SALUD FINANCIERA EXTREMA -->
+                        <li><code>X01 > 0.5 → Bankrupt = 0 (ROA alto → sin bancarrota)</code></li>
+                        
+                        <!-- EXCLUSIÓN DE RENTABILIDAD -->
+                        <li><code>X01 > 0.5 y X18 < 0 son mutuamente excluyentes (ROA positivo vs beneficio bruto negativo)</code></li>
+                        
+                        <!-- INVERSO LÓGICO -->
+                        <li><code>X02 > 1 → X17 < 1 (Pasivos > Activos → Activos/Pasivos < 1)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>Random Oversampling</strong></td>
+                                <td>1</td>
+                                <td>1142</td>
+                                <td><strong>0.659</strong></td>
+                                <td>0.928</td>
+                                <td>0.945</td>
+                                <td><strong>8.401</strong></td>
+                                <td>0.373</td>
+                                <td>0.053</td>
+                                <td>0.258</td>
+                                <td>0.958</td>
+                                <td>101.586</td>
+                                <td>0</td>
+                                <td>1142</td>
+                                <td>0.413</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>1142</td>
+                                <td>0.634</td>
+                                <td>0.936</td>
+                                <td>0.940</td>
+                                <td>7.778</td>
+                                <td>0.447</td>
+                                <td>0.099</td>
+                                <td>0.268</td>
+                                <td>0.976</td>
+                                <td>81.136</td>
+                                <td>0.003</td>
+                                <td>604</td>
+                                <td>0.548</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>1142</td>
+                                <td>0.623</td>
+                                <td>0.917</td>
+                                <td>0.915</td>
+                                <td>6.332</td>
+                                <td>0.446</td>
+                                <td>0.044</td>
+                                <td>0.282</td>
+                                <td>0.966</td>
+                                <td>80.274</td>
+                                <td>0.004</td>
+                                <td>609</td>
+                                <td>0.432</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.018</td>
+                                <td>1132</td>
+                                <td>0.542</td>
+                                <td>0.918</td>
+                                <td>0.925</td>
+                                <td>6.308</td>
+                                <td>0.444</td>
+                                <td>0.110</td>
+                                <td>0.264</td>
+                                <td>0.977</td>
+                                <td>78.114</td>
+                                <td>0.003</td>
+                                <td>608</td>
+                                <td>0.445</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1.036</td>
+                                <td>1122</td>
+                                <td>0.681</td>
+                                <td>0.914</td>
+                                <td>0.910</td>
+                                <td>7.844</td>
+                                <td>0.441</td>
+                                <td>0.090</td>
+                                <td>0.255</td>
+                                <td>0.965</td>
+                                <td>100.752</td>
+                                <td>0.005</td>
+                                <td>600</td>
+                                <td>0.466</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1.036</td>
+                                <td>1122</td>
+                                <td>0.609</td>
+                                <td>0.923</td>
+                                <td>0.925</td>
+                                <td>7.171</td>
+                                <td>0.441</td>
+                                <td>0.096</td>
+                                <td>0.258</td>
+                                <td>0.964</td>
+                                <td>102.026</td>
+                                <td>0.005</td>
+                                <td>600</td>
+                                <td>0.541</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>1142</td>
+                                <td>0.622</td>
+                                <td>0.928</td>
+                                <td>0.945</td>
+                                <td>5.943</td>
+                                <td>0.444</td>
+                                <td>0.000</td>
+                                <td>0.255</td>
+                                <td>0.513</td>
+                                <td>80.913</td>
+                                <td>0.221</td>
+                                <td>600</td>
+                                <td>0.471</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>1.904</td>
+                                <td>848</td>
+                                <td>0.696</td>
+                                <td>0.801</td>
+                                <td>0.720</td>
+                                <td>3.114</td>
+                                <td>0.329</td>
+                                <td>0.000</td>
+                                <td>0.185</td>
+                                <td>0.566</td>
+                                <td>77.113</td>
+                                <td>0.124</td>
+                                <td>496</td>
+                                <td>0.514</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Random Oversampling</strong> 
+                    (TabDSFidelity: <strong>8.401</strong>, AUC: 0.659, F1: 0.928, MIA: 0.413). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>2.581</td>
+                                <td>6170</td>
+                                <td>0.571</td>
+                                <td>0.931</td>
+                                <td>0.950</td>
+                                <td>8.569</td>
+                                <td>0.666</td>
+                                <td>0.086</td>
+                                <td>0.091</td>
+                                <td>0.967</td>
+                                <td>158.588</td>
+                                <td>0.032</td>
+                                <td>0</td>
+                                <td>0.479</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.079</td>
+                                <td>6170</td>
+                                <td>0.561</td>
+                                <td>0.805</td>
+                                <td>0.725</td>
+                                <td>7.233</td>
+                                <td>0.666</td>
+                                <td>0.086</td>
+                                <td>0.234</td>
+                                <td>0.967</td>
+                                <td>450.348</td>
+                                <td>0.032</td>
+                                <td>0</td>
+                                <td>0.490</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.270</td>
+                                <td>10000</td>
+                                <td>0.656</td>
+                                <td>0.446</td>
+                                <td>0.325</td>
+                                <td>3.756</td>
+                                <td>0.773</td>
+                                <td>0.000</td>
+                                <td>0.310</td>
+                                <td>0.840</td>
+                                <td>1559.540</td>
+                                <td>0.071</td>
+                                <td>0</td>
+                                <td>0.549</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.057</td>
+                                <td>10000</td>
+                                <td>0.598</td>
+                                <td>0.448</td>
+                                <td>0.330</td>
+                                <td>3.154</td>
+                                <td>0.773</td>
+                                <td>0.000</td>
+                                <td>0.241</td>
+                                <td>0.839</td>
+                                <td>2106.190</td>
+                                <td>0.070</td>
+                                <td>0</td>
+                                <td>0.566</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>2.238</td>
+                                <td>10000</td>
+                                <td>0.494</td>
+                                <td>0.886</td>
+                                <td>0.865</td>
+                                <td>5.156</td>
+                                <td>0.830</td>
+                                <td>0.008</td>
+                                <td>0.226</td>
+                                <td>0.878</td>
+                                <td>932.031</td>
+                                <td>0.004</td>
+                                <td>0</td>
+                                <td>0.470</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.141</td>
+                                <td>10000</td>
+                                <td>0.564</td>
+                                <td>0.767</td>
+                                <td>0.670</td>
+                                <td>4.795</td>
+                                <td>0.830</td>
+                                <td>0.008</td>
+                                <td>0.340</td>
+                                <td>0.878</td>
+                                <td>1497.430</td>
+                                <td>0.004</td>
+                                <td>0</td>
+                                <td>0.509</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.500</td>
+                                <td>0.933</td>
+                                <td>0.955</td>
+                                <td>4.090</td>
+                                <td>0.826</td>
+                                <td>0.000</td>
+                                <td>0.836</td>
+                                <td>0.583</td>
+                                <td>220.002</td>
+                                <td>0.258</td>
+                                <td>0</td>
+                                <td>0.494</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.077</td>
+                                <td>10000</td>
+                                <td>0.613</td>
+                                <td>0.818</td>
+                                <td>0.745</td>
+                                <td>4.227</td>
+                                <td>0.826</td>
+                                <td>0.000</td>
+                                <td>0.853</td>
+                                <td>0.604</td>
+                                <td>719.409</td>
+                                <td>0.244</td>
+                                <td>0</td>
+                                <td>0.480</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>2.742</td>
+                                <td>6047</td>
+                                <td>0.680</td>
+                                <td>0.923</td>
+                                <td>0.935</td>
+                                <td><strong>9.820</strong></td>
+                                <td>0.677</td>
+                                <td>0.111</td>
+                                <td>0.085</td>
+                                <td>0.965</td>
+                                <td>147.317</td>
+                                <td>0.017</td>
+                                <td>0</td>
+                                <td>0.512</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.708</td>
+                                <td>6047</td>
+                                <td>0.648</td>
+                                <td>0.801</td>
+                                <td>0.720</td>
+                                <td>8.290</td>
+                                <td>0.677</td>
+                                <td>0.111</td>
+                                <td>0.149</td>
+                                <td>0.961</td>
+                                <td>429.398</td>
+                                <td>0.017</td>
+                                <td>0</td>
+                                <td>0.510</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>9.820</strong>, AUC: 0.680, F1: 0.923, MIA: 0.512). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>2.187</td>
+                                <td>7312</td>
+                                <td>0.530</td>
+                                <td>0.925</td>
+                                <td>0.940</td>
+                                <td>7.813</td>
+                                <td>0.606</td>
+                                <td>0.067</td>
+                                <td>0.112</td>
+                                <td>0.966</td>
+                                <td>317.215</td>
+                                <td>0.032</td>
+                                <td>0</td>
+                                <td>0.480</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.066</td>
+                                <td>7312</td>
+                                <td>0.608</td>
+                                <td>0.794</td>
+                                <td>0.710</td>
+                                <td>4.800</td>
+                                <td>0.606</td>
+                                <td>0.067</td>
+                                <td>0.237</td>
+                                <td>0.965</td>
+                                <td>608.206</td>
+                                <td>0.032</td>
+                                <td>0</td>
+                                <td>0.527</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.239</td>
+                                <td>11142</td>
+                                <td>0.674</td>
+                                <td>0.926</td>
+                                <td>0.930</td>
+                                <td>7.464</td>
+                                <td>0.706</td>
+                                <td>0.000</td>
+                                <td>0.304</td>
+                                <td>0.846</td>
+                                <td>1852.290</td>
+                                <td>0.064</td>
+                                <td>208</td>
+                                <td>0.438</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.051</td>
+                                <td>11142</td>
+                                <td>0.627</td>
+                                <td>0.907</td>
+                                <td>0.905</td>
+                                <td>6.486</td>
+                                <td>0.706</td>
+                                <td>0.000</td>
+                                <td>0.242</td>
+                                <td>0.845</td>
+                                <td>2391.530</td>
+                                <td>0.063</td>
+                                <td>208</td>
+                                <td>0.542</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>2.045</td>
+                                <td>11142</td>
+                                <td>0.508</td>
+                                <td>0.897</td>
+                                <td>0.885</td>
+                                <td>4.814</td>
+                                <td>0.744</td>
+                                <td>0.011</td>
+                                <td>0.201</td>
+                                <td>0.945</td>
+                                <td>1236.280</td>
+                                <td>0.004</td>
+                                <td>208</td>
+                                <td>0.503</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.126</td>
+                                <td>11142</td>
+                                <td>0.565</td>
+                                <td>0.859</td>
+                                <td>0.815</td>
+                                <td>4.285</td>
+                                <td>0.744</td>
+                                <td>0.011</td>
+                                <td>0.305</td>
+                                <td>0.945</td>
+                                <td>1801.130</td>
+                                <td>0.004</td>
+                                <td>208</td>
+                                <td>0.455</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>11142</td>
+                                <td>0.697</td>
+                                <td>0.931</td>
+                                <td>0.950</td>
+                                <td>6.038</td>
+                                <td>0.739</td>
+                                <td>0.000</td>
+                                <td>0.618</td>
+                                <td>0.604</td>
+                                <td>486.295</td>
+                                <td>0.233</td>
+                                <td>208</td>
+                                <td>0.410</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.069</td>
+                                <td>11142</td>
+                                <td>0.672</td>
+                                <td>0.928</td>
+                                <td>0.945</td>
+                                <td>5.755</td>
+                                <td>0.739</td>
+                                <td>0.000</td>
+                                <td>0.634</td>
+                                <td>0.624</td>
+                                <td>970.077</td>
+                                <td>0.221</td>
+                                <td>208</td>
+                                <td>0.489</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>2.287</td>
+                                <td>7189</td>
+                                <td><strong>0.651</strong></td>
+                                <td><strong>0.925</strong></td>
+                                <td>0.940</td>
+                                <td><strong>9.304</strong></td>
+                                <td>0.611</td>
+                                <td>0.090</td>
+                                <td>0.107</td>
+                                <td>0.963</td>
+                                <td>299.741</td>
+                                <td>0.017</td>
+                                <td>0</td>
+                                <td>0.430</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.564</td>
+                                <td>7189</td>
+                                <td>0.641</td>
+                                <td>0.801</td>
+                                <td>0.720</td>
+                                <td>5.535</td>
+                                <td>0.611</td>
+                                <td>0.090</td>
+                                <td>0.164</td>
+                                <td>0.961</td>
+                                <td>584.791</td>
+                                <td>0.017</td>
+                                <td>0</td>
+                                <td>0.534</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>9.304</strong>, AUC: 0.651, F1: 0.925, MIA: 0.430). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_35</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>Random Oversampling</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* Refinado</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* Refinado</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd35.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Polish Companies Bankruptcy Prediction (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32945870.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [95.17, 4.83], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

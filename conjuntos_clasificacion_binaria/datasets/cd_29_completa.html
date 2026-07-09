@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_29: Patient Medication Adherence: Cumplimiento Terapéutico - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_29</span>                
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_29: Patient Medication Adherence: Cumplimiento Terapéutico</h1>
+            <p class="description">Dataset de salud pública y farmacoeconomía para la predicción del cumplimiento del tratamiento (Adherence). Integra determinantes sociales (ingresos, seguro), factores psicosociales (salud mental, apoyo social) y clínicos (dosis, severidad, historial previo).</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.57</td>
+                                    <td>0.62</td>
+                                    <td>0.59</td>
+                                    <td>109</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.49</td>
+                                    <td>0.43</td>
+                                    <td>0.46</td>
+                                    <td>91</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.54</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.53</td>
+                                    <td>0.53</td>
+                                    <td>0.53</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.53</td>
+                                    <td>0.54</td>
+                                    <td>0.53</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.61</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.53</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.54</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.32 AUC</span>
+                        <span class="improvement-tag">⬆ +0.33 F1</span>
+                        <span class="improvement-tag">⬆ +0.31 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.88</td>
+                                    <td>0.84</td>
+                                    <td>0.86</td>
+                                    <td>109</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.82 <span class="improvement-indicator">⬆ +0.33</span></td>
+                                    <td>0.87 <span class="improvement-indicator">⬆ +0.44</span></td>
+                                    <td>0.84 <span class="improvement-indicator">⬆ +0.38</span></td>
+                                    <td>91</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.85</strong> <span class="improvement-indicator">⬆ +0.31</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.85 <span class="improvement-indicator">⬆ +0.32</span></td>
+                                    <td>0.86 <span class="improvement-indicator">⬆ +0.33</span></td>
+                                    <td>0.85 <span class="improvement-indicator">⬆ +0.32</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.86 <span class="improvement-indicator">⬆ +0.33</span></td>
+                                    <td>0.85 <span class="improvement-indicator">⬆ +0.31</span></td>
+                                    <td>0.86 <span class="improvement-indicator">⬆ +0.33</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.93</span>
+                            <span class="improvement-badge positive">⬆ +0.32</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.86</span>
+                            <span class="improvement-badge positive">⬆ +0.33</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.85</span>
+                            <span class="improvement-badge positive">⬆ +0.31</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.49</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 49%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.82</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 82%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.33</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.43</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 43%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.87</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 87%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.44</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.46</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 46%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.84</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 84%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.38</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Medication Adherence Prediction Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Datos clínicos de adherencia a medicamentos</div>
+                    <div class="fuente-fecha">Disponible en repositorios de salud</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">Datos de investigación en salud</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Tipo de problema:</span>
+                            <span class="metadata-value">Clasificación binaria (Adherencia vs. No adherencia)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Modelo sugerido:</span>
+                            <span class="metadata-value">Regresión Logística</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">13 predictores + 1 objetivo</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Predicción de Adherencia a Medicamentos</strong> está diseñado para desarrollar un modelo de <strong>Regresión Logística</strong> que prediga si un paciente <strong>adherirá (1) o no adherirá (0)</strong> a un régimen de medicación prescrito. La <strong>falta de adherencia a la medicación</strong> es un desafío crítico en la atención sanitaria que conduce al <strong>empeoramiento de las condiciones de salud</strong>, <strong>reas hospitalizaciones</strong> y <strong>aumento de costos</strong>. Predecir la no adherencia permite <strong>intervenciones tempranas</strong> que mejoran los resultados de salud y optimizan el uso de recursos sanitarios.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🩺 Contexto y Motivación</h4>
+                        <p>La <strong>adherencia a la medicación</strong> se define como el grado en que el comportamiento de una persona (tomar medicamentos, seguir una dieta o modificar hábitos de vida) corresponde a las recomendaciones acordadas con un profesional de la salud. La <strong>no adherencia</strong> es un problema multifactorial que puede deberse a:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Factores del paciente</strong>: Olvidos, falta de comprensión, creencias sobre la medicación, problemas de salud mental</li>
+                            <li><strong>Factores socioeconómicos</strong>: Bajos ingresos, falta de seguro médico, dificultades de acceso</li>
+                            <li><strong>Factores relacionados con el tratamiento</strong>: Efectos secundarios, régimen complejo, costo de los medicamentos</li>
+                            <li><strong>Factores del sistema de salud</strong>: Mala comunicación médico-paciente, falta de seguimiento</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">La <strong>predicción temprana</strong> de pacientes en riesgo de no adherencia permite implementar <strong>intervenciones personalizadas</strong> que aborden las barreras específicas de cada paciente.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Definición de Variables</h4>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ff6b6b; margin: 0.3rem 0;">🎯 Variable Dependiente (Target)</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Codificación</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Adherence</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">Adherencia del paciente a la medicación prescrita</td>
+                                        <td style="padding: 0.4rem;">1 = Adhirió<br>0 = No adhirió</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables Predictoras (Features)</h5>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">A. Datos Demográficos</h6>
+                                <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                    <thead>
+                                        <tr style="border-bottom: 1px solid #444;">
+                                            <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #333;">
+                                            <td style="padding: 0.4rem;"><strong>Age</strong></td>
+                                            <td style="padding: 0.4rem;">Numérico</td>
+                                            <td style="padding: 0.4rem;">Edad del paciente</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 0.4rem;"><strong>Gender</strong></td>
+                                            <td style="padding: 0.4rem;">Categórica</td>
+                                            <td style="padding: 0.4rem;">Género: Male / Female / Other</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">B. Detalles de la Medicación</h6>
+                                <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                    <thead>
+                                        <tr style="border-bottom: 1px solid #444;">
+                                            <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #333;">
+                                            <td style="padding: 0.4rem;"><strong>Medication_Type</strong></td>
+                                            <td style="padding: 0.4rem;">Categórica</td>
+                                            <td style="padding: 0.4rem;">Tipo de medicamento (ej: TypeA, TypeB, TypeC)</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 0.4rem;"><strong>Dosage_mg</strong></td>
+                                            <td style="padding: 0.4rem;">Numérico</td>
+                                            <td style="padding: 0.4rem;">Dosis en miligramos</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">C. Historial de Adherencia</h6>
+                                <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                    <thead>
+                                        <tr style="border-bottom: 1px solid #444;">
+                                            <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Codificación</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding: 0.4rem;"><strong>Previous_Adherence</strong></td>
+                                            <td style="padding: 0.4rem;">Binaria</td>
+                                            <td style="padding: 0.4rem;">Adherencia en la última visita</td>
+                                            <td style="padding: 0.4rem;">1 = Adhirió<br>0 = No adhirió</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">D. Estatus Socioeconómico</h6>
+                                <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                    <thead>
+                                        <tr style="border-bottom: 1px solid #444;">
+                                            <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #333;">
+                                            <td style="padding: 0.4rem;"><strong>Education_Level</strong></td>
+                                            <td style="padding: 0.4rem;">Categórica</td>
+                                            <td style="padding: 0.4rem;">Nivel educativo: High School, Graduate, Postgraduate</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #333;">
+                                            <td style="padding: 0.4rem;"><strong>Income</strong></td>
+                                            <td style="padding: 0.4rem;">Numérico</td>
+                                            <td style="padding: 0.4rem;">Ingreso anual en INR</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 0.4rem;"><strong>Social_Support_Level</strong></td>
+                                            <td style="padding: 0.4rem;">Categórica</td>
+                                            <td style="padding: 0.4rem;">Nivel de apoyo social: Low, Medium, High</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">E. Estado de Salud</h6>
+                                <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                    <thead>
+                                        <tr style="border-bottom: 1px solid #444;">
+                                            <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #333;">
+                                            <td style="padding: 0.4rem;"><strong>Condition_Severity</strong></td>
+                                            <td style="padding: 0.4rem;">Categórica</td>
+                                            <td style="padding: 0.4rem;">Severidad de la condición: Mild, Moderate, Severe</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 0.4rem;"><strong>Comorbidities_Count</strong></td>
+                                            <td style="padding: 0.4rem;">Numérico</td>
+                                            <td style="padding: 0.4rem;">Número de condiciones adicionales</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div style="margin: 0.5rem 0;">
+                                <h6 style="color: #ffd93d; margin: 0.3rem 0;">F. Acceso y Salud Mental</h6>
+                                <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                    <thead>
+                                        <tr style="border-bottom: 1px solid #444;">
+                                            <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                            <th style="text-align: left; padding: 0.4rem;">Codificación</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #333;">
+                                            <td style="padding: 0.4rem;"><strong>Healthcare_Access</strong></td>
+                                            <td style="padding: 0.4rem;">Categórica</td>
+                                            <td style="padding: 0.4rem;">Acceso a atención sanitaria</td>
+                                            <td style="padding: 0.4rem;">Good, Average, Poor</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #333;">
+                                            <td style="padding: 0.4rem;"><strong>Mental_Health_Status</strong></td>
+                                            <td style="padding: 0.4rem;">Categórica</td>
+                                            <td style="padding: 0.4rem;">Estado de salud mental</td>
+                                            <td style="padding: 0.4rem;">Good, Moderate, Poor</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 0.4rem;"><strong>Insurance_Coverage</strong></td>
+                                            <td style="padding: 0.4rem;">Binaria</td>
+                                            <td style="padding: 0.4rem;">Cobertura de seguro médico</td>
+                                            <td style="padding: 0.4rem;">1 = Cubierto<br>0 = No cubierto</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🧠 Proceso de Entrenamiento del Modelo</h4>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">1. Preprocesamiento de Datos</h5>
+                            <ul class="transformacion-lista">
+                                <li>Manejo de valores faltantes</li>
+                                <li>Codificación de variables categóricas (ej: Gender, Medication_Type)</li>
+                                <li>Normalización o estandarización de variables numéricas (ej: Age, Income)</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">2. División Entrenamiento-Prueba</h5>
+                            <ul class="transformacion-lista">
+                                <li>División estándar: <strong>80% entrenamiento</strong> y <strong>20% prueba</strong></li>
+                                <li>Validación cruzada para evaluación robusta</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">3. Entrenamiento del Modelo de Regresión Logística</h5>
+                            <ul class="transformacion-lista">
+                                <li>Implementación con <code>LogisticRegression()</code> de scikit-learn (o herramienta equivalente)</li>
+                                <li>Interpretación de coeficientes para identificar predictores influyentes</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">4. Evaluación del Modelo</h5>
+                            <ul class="transformacion-lista">
+                                <li>Métricas de evaluación: <strong>Accuracy</strong>, <strong>Precision</strong>, <strong>Recall</strong>, <strong>F1-Score</strong>, <strong>ROC-AUC</strong></li>
+                                <li>Análisis de coeficientes de características para comprender predictores influyentes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🧪 Predicciones e Intervenciones</h4>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">Identificación de Pacientes de Alto Riesgo</h5>
+                            <ul class="transformacion-lista">
+                                <li>Pacientes con <strong>baja probabilidad predicha de adherencia</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #6bcb77; margin: 0.3rem 0;">Intervenciones Sugeridas</h5>
+                            <ul class="transformacion-lista">
+                                <li><strong>Recordatorios de Medicación</strong>: SMS, notificaciones de aplicación</li>
+                                <li><strong>Consejería/Educación al Paciente</strong>: Orientación sobre la importancia de la adherencia</li>
+                                <li><strong>Asistencia Financiera</strong>: Alivio de copagos, seguimiento de seguros</li>
+                                <li><strong>Visitas Domiciliarias</strong>: Apoyo de trabajadores sociales</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>✅ Resultados Esperados</h4>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">Información Accionable</h5>
+                            <ul class="transformacion-lista">
+                                <li>Identificar <strong>barreras clave</strong> para la adherencia (ej: bajos ingresos, salud mental, falta de apoyo)</li>
+                                <li>Los proveedores de salud pueden <strong>priorizar la atención</strong> y asignar recursos de manera eficiente</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #6bcb77; margin: 0.3rem 0;">Impacto</h5>
+                            <ul class="transformacion-lista">
+                                <li><strong>Aumento de la adherencia</strong> a la medicación</li>
+                                <li><strong>Reducción de las tasas de rehospitalización</strong></li>
+                                <li><strong>Mejores resultados de salud</strong> para los pacientes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Adherencia vs. No adherencia)</li>
+                            <li><strong>Modelo recomendado:</strong> Regresión Logística (interpretable, coeficientes analizables)</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (Numéricas, Categóricas, Binarias)</li>
+                            <li><strong>Área de aplicación:</strong> Salud Pública, Gestión de Medicación, Intervenciones Conductuales</li>
+                            <li><strong>Enfoque:</strong> Identificación de barreras a la adherencia e intervenciones personalizadas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos ha sido anonimizado para proteger la privacidad de los pacientes. No contiene información personal identificable. <strong>Restricción de confidencialidad:</strong> En cumplimiento de los protocolos de privacidad, el uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la reidentificación de pacientes.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos está diseñado para predecir la <strong>adherencia a la medicación</strong> utilizando <strong>Regresión Logística</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>Manejar valores faltantes mediante imputación (media, mediana, moda) o eliminación de registros</li>
+                            <li>Codificar variables categóricas:
+                                <ul class="transformacion-lista">
+                                    <li>Binarias: utilizar directamente 0/1</li>
+                                    <li>Ordinales: Label Encoding (Education_Level, Condition_Severity, Social_Support_Level, Healthcare_Access, Mental_Health_Status)</li>
+                                    <li>Nominales: One-Hot Encoding (Gender, Medication_Type)</li>
+                                </ul>
+                            </li>
+                            <li>Estandarizar/normalizar las variables numéricas (<code>Age</code>, <code>Dosage_mg</code>, <code>Income</code>, <code>Comorbidities_Count</code>)</li>
+                            <li>La variable <code>Previous_Adherence</code> es un predictor importante del comportamiento futuro</li>
+                            <li>Analizar los <strong>coeficientes de la regresión logística</strong> para comprender las barreras clave a la adherencia</li>
+                            <li>Utilizar métricas de evaluación apropiadas para datos desbalanceados (F1-Score, Precision-Recall, ROC-AUC)</li>
+                            <li>Implementar validación cruzada para evaluar la robustez del modelo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Salud Pública</h4>
+                        <p>La <strong>no adherencia a la medicación</strong> es un problema global con implicaciones significativas. Según la Organización Mundial de la Salud:</p>
+                        <ul class="transformacion-lista">
+                            <li>La <strong>no adherencia</strong> afecta a aproximadamente el <strong>50%</strong> de los pacientes con enfermedades crónicas en países desarrollados</li>
+                            <li>Se estima que la no adherencia causa <strong>125,000 muertes</strong> anuales en EE.UU.</li>
+                            <li>El costo de la no adherencia en EE.UU. se estima en <strong>$100-300 mil millones</strong> anuales</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">La capacidad de predecir y abordar la no adherencia permite a los sistemas de salud <strong>mejorar los resultados clínicos</strong>, <strong>reducir costos</strong> y <strong>optimizar la asignación de recursos</strong>. Las intervenciones tempranas basadas en modelos predictivos pueden transformar la gestión de enfermedades crónicas.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Medication Adherence Prediction Dataset. Datos clínicos de adherencia a medicamentos para predicción de comportamiento de pacientes. Disponible en repositorios de investigación en salud.</pre>
+                        <button onclick="copyToClipboard('Medication Adherence Prediction Dataset. Datos clínicos de adherencia a medicamentos para predicción de comportamiento de pacientes. Disponible en repositorios de investigación en salud.')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Organización Mundial de la Salud (OMS). (2003). <em>Adherence to Long-Term Therapies: Evidence for Action</em>. <a href="https://www.who.int/publications/i/item/adherence-to-long-term-therapies-evidence-for-action" target="_blank" style="color: #4fc3f7;">https://www.who.int/publications/i/item/adherence-to-long-term-therapies-evidence-for-action</a></li>
+                            <li>Brown, M. T., & Bussell, J. K. (2011). Medication Adherence: WHO Cares?. <em>Mayo Clinic Proceedings</em>, 86(4), 304-314. <a href="https://doi.org/10.4065/mcp.2010.0575" target="_blank" style="color: #4fc3f7;">https://doi.org/10.4065/mcp.2010.0575</a></li>
+                            <li>Nieuwlaat, R., et al. (2014). Interventions for enhancing medication adherence. <em>Cochrane Database of Systematic Reviews</em>, (11). <a href="https://doi.org/10.1002/14651858.CD000011.pub4" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1002/14651858.CD000011.pub4</a></li>
+                            <li>Kripalani, S., Yao, X., & Haynes, R. B. (2007). Interventions to enhance medication adherence in chronic medical conditions: a systematic review. <em>Archives of Internal Medicine</em>, 167(6), 540-550. <a href="https://doi.org/10.1001/archinte.167.6.540" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1001/archinte.167.6.540</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Patient Medication Adherence)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Verificación e imputación de valores faltantes:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Confirmación de calidad de datos con imputación preventiva: <em>moda</em> para variables categóricas y <em>mediana</em> para variables numéricas.</li>
+                            <li>Garantía de integridad total del conjunto de datos para modelado directo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación ordinal respetando jerarquías clínicas y socioeconómicas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Education_Level:</strong> Mapeo ordinal (High School → 0, Graduate → 1, Postgraduate → 2).</li>
+                            <li><strong>Social_Support_Level:</strong> Mapeo ordinal (Low → 0, Medium → 1, High → 2).</li>
+                            <li><strong>Condition_Severity:</strong> Mapeo ordinal (Mild → 0, Moderate → 1, Severe → 2) — gravedad de la condición médica.</li>
+                            <li><strong>Healthcare_Access:</strong> Mapeo ordinal (Poor → 0, Average → 1, Good → 2) — acceso a servicios de salud.</li>
+                            <li><strong>Mental_Health_Status:</strong> Mapeo ordinal (Poor → 0, Moderate → 1, Good → 2) — estado de salud mental.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación nominal de variables categóricas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Gender:</strong> Codificación ordinal con preservación de mapeo completo en leyenda.</li>
+                            <li><strong>Medication_Type:</strong> Codificación ordinal con preservación de mapeo completo en leyenda.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de variables numéricas y binarias:</strong> 
+                        < class="transformacion-lista">
+                            <li><em>Age</em> (Edad del paciente).</li>
+                            <li><em>Dosage_mg</em> (Dosis del medicamento en mg).</li>
+                            <li><em>Income</em> (Ingresos anuales del paciente).</li>
+                            <li><em>Comorbidities_Count</em> (Número de otras enfermedades coexistentes).</li>
+                            <li><em>Previous_Adherence</em> (0: No cumplió antes, 1: Sí cumplió) — indicador de comportamiento pasado.</li>
+                            <li><em>Insurance_Coverage</em> (0: No asegurado, 1: Asegurado).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de la variable objetivo:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Preservación de <em>Adherence</em> en su formato binario original: 0 = No Adherido (No cumplió el tratamiento), 1 = Adherido (Cumplió el tratamiento).</li>
+                            <li>Documentación detallada en leyenda sobre el significado clínico de la variable objetivo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submuestreo estratificado para reducción del dataset:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Reducción del dataset a <strong>1,000 ejemplos</strong> representativos mediante muestreo estratificado.</li>
+                            <li>Uso de <code>train_test_split</code> con parámetro <em>stratify</em> para <strong>preservar exactamente</strong> la proporción original de clases (desbalance de adherencia).</li>
+                            <li>Semilla fija (<em>random_state=42</em>) para garantizar reproducibilidad científica de la muestra.</li>
+                            <li>Verificación de integridad con diferencia máxima < 1% en proporción de clases.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_adherence.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de la estrategia de codificación ordinal (respetando jerarquías naturales).</li>
+                            <li>Mapeo completo de variables nominales (<em>Gender</em>, <em>Medication_Type</em>) con sus categorías originales.</li>
+                            <li>Descripción de variables numéricas, binarias y su significado clínico/socioeconómico.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Optimización y formato de salida:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Dataset completamente numérico (enteros y flotantes) sin variables categóricas.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset reducido de <strong>1,000 pacientes</strong> (muestra estratificada del dataset original) con <strong>13 variables predictoras</strong> (mixtas: ordinales codificadas, nominales codificadas, binarias y numéricas) y <strong>1 variable objetivo binaria</strong> (Adherence). Desbalance moderado-preservado (~65% no adheridos / ~35% adheridos) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>adherencia terapéutica</strong>, donde factores socioeconómicos, clínicos y de soporte social juegan un papel crucial.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🏥 <strong>Fuente:</strong> Patient Medication Adherence Dataset (sintético/simulado para investigación en adherencia terapéutica).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧬 <strong>Variables ordinales clave:</strong> Education_Level, Social_Support_Level, Condition_Severity, Healthcare_Access, Mental_Health_Status — todas mapeadas respetando su jerarquía natural (Menor a Mayor).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    💊 <strong>Variables clínicas:</strong> Dosage_mg (dosis), Comorbidities_Count (comorbilidades), Previous_Adherence (comportamiento pasado), Medication_Type (tipo de medicamento).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_adherence.txt</em> con mapeo semántico completo de todas las variables ordinales, nominales, binarias y numéricas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Adherence</em> (1 = Paciente adherido al tratamiento, 0 = Paciente no adherido).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🔬 <strong>Enfoque metodológico:</strong> Codificación ordinal preservando jerarquías naturales de variables socioeconómicas y clínicas para mantener la semántica original en los modelos predictivos.
+                </p>
+            </div>
+        </div>
+    
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Clínica</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Medication_Type</code></td>
+                            <td>Tipo de medicación prescrita (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: TypeA, 1: TypeB, 2: TypeC</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Education_Level</code></td>
+                            <td>Nivel educativo del paciente (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: High School, 1: Graduate, 2: Postgraduate</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Social_Support_Level</code></td>
+                            <td>Nivel de apoyo social/familiar (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Bajo, 1: Medio, 2: Alto</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Condition_Severity</code></td>
+                            <td>Gravedad de la enfermedad (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Leve, 1: Moderada, 2: Severa</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Healthcare_Access</code></td>
+                            <td>Nivel de acceso al sistema de salud (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Pobre, 1: Promedio, 2: Bueno</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Mental_Health_Status</code></td>
+                            <td>Estado de salud mental (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Pobre, 1: Moderado, 2: Bueno</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Age</code></td>
+                            <td>Edad del paciente</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>18 - 90</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Dosage_mg</code></td>
+                            <td>Dosis de medicación prescrita</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>54 - 423</td>
+                            <td>mg</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Income</code></td>
+                            <td>Ingresos anuales del paciente</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>100,000 - 1,013,273</td>
+                            <td>moneda local</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Comorbidities_Count</code></td>
+                            <td>Número de comorbilidades (otras enfermedades)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 7</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Gender</code></td>
+                            <td>Género del paciente</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Femenino, 1: Masculino, 2: Otro</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Previous_Adherence</code></td>
+                            <td>Historial de adherencia al tratamiento</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No cumplió antes, 1: Sí cumplió</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Insurance_Coverage</code></td>
+                            <td>Cobertura de seguro médico</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No asegurado, 1: Asegurado</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Adherence</code></td>
+                            <td>Cumplimiento del tratamiento (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No Adherido, 1: Adherido</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Adherencia (Adherence)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Adherencia a la Medicación. Comprender estas 
+                codificaciones es fundamental para la correcta interpretación de los resultados clínicos 
+                y el diseño de intervenciones para mejorar el cumplimiento terapéutico.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: Medication_Type -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Medication_Type</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>TypeA (Fármaco tipo A)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>TypeB (Fármaco tipo B)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>TypeC (Fármaco tipo C)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">💊</span>
+                            <p><strong>Nota:</strong> Los tipos de fármaco pueden diferir en frecuencia de dosificación, efectos secundarios o vía de administración.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Education_Level -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Education_Level</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>High School (Educación secundaria)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Graduate (Educación universitaria)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Postgraduate (Posgrado)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">🎓</span>
+                            <p><strong>Orden lógico:</strong> Mayor nivel educativo suele correlacionar con mejor comprensión del tratamiento.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Social_Support_Level -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Social_Support_Level</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Bajo (Apoyo social/familiar limitado)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Medio (Apoyo social/familiar moderado)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Alto (Apoyo social/familiar robusto)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">🤝</span>
+                            <p><strong>Importancia:</strong> El apoyo social es un determinante clave para la adherencia terapéutica.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Condition_Severity -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Condition_Severity</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Leve (Enfermedad de baja gravedad)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Moderada (Enfermedad de gravedad media)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Severa (Enfermedad de alta gravedad)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🏥</span>
+                            <p><strong>Interpretación:</strong> Pacientes con enfermedades severas suelen tener mayor adherencia (síntomas más evidentes).</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Healthcare_Access -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Healthcare_Access</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Pobre (Acceso limitado a servicios de salud)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Promedio (Acceso moderado a servicios de salud)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Bueno (Acceso adecuado a servicios de salud)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">🚑</span>
+                            <p><strong>Impacto:</strong> Buen acceso al sistema de salud facilita la obtención de medicamentos y seguimiento médico.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Mental_Health_Status -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Mental_Health_Status</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Pobre (Salud mental comprometida)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Moderado (Salud mental regular)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Bueno (Salud mental estable)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🧠</span>
+                            <p><strong>Importancia:</strong> La depresión y ansiedad son barreras significativas para la adherencia terapéutica.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato común:</strong> 0 = No / Ausencia, 1 = Sí / Presencia
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Gender</code></span>
+                                <span class="binaria-desc">Género (0: Femenino, 1: Masculino, 2: Otro)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Previous_Adherence</code></span>
+                                <span class="binaria-desc">Historial de adherencia (0: No cumplió, 1: Sí cumplió)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Insurance_Coverage</code></span>
+                                <span class="binaria-desc">Cobertura de seguro (0: No asegurado, 1: Asegurado)</span>
+                            </div>
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Adherence</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Cumplimiento del tratamiento (0: No adherido, 1: Adherido)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Todas las variables binarias están codificadas como <strong>0 = No</strong> y <strong>1 = Sí</strong>, excepto Gender que incluye 2 = Otro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 6
+                        <ul>
+                            <li>Medication_Type (Nominal - 3 tipos)</li>
+                            <li>Education_Level (Ordinal - 3 niveles)</li>
+                            <li>Social_Support_Level (Ordinal - 3 niveles)</li>
+                            <li>Condition_Severity (Ordinal - 3 niveles)</li>
+                            <li>Healthcare_Access (Ordinal - 3 niveles)</li>
+                            <li>Mental_Health_Status (Ordinal - 3 niveles)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 4
+                        <ul>
+                            <li>Gender (0: Femenino, 1: Masculino, 2: Otro)</li>
+                            <li>Previous_Adherence (Historial de cumplimiento)</li>
+                            <li>Insurance_Coverage (Seguro médico)</li>
+                            <li>🎯 Adherence (Objetivo - Cumplimiento terapéutico)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 4
+                        <ul>
+                            <li>Age (Edad en años)</li>
+                            <li>Dosage_mg (Dosis en miligramos)</li>
+                            <li>Income (Ingresos anuales)</li>
+                            <li>Comorbidities_Count (Número de comorbilidades)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones Clínicas:</strong>
+                        <ul>
+                            <li><strong>Factor más importante:</strong> <code>Previous_Adherence</code> - historial de cumplimiento previo</li>
+                            <li><strong>Barreras clave:</strong> Bajo apoyo social (<code>Social_Support_Level = 0</code>) y mala salud mental (<code>Mental_Health_Status = 0</code>)</li>
+                            <li><strong>Facilitadores:</strong> Buena educación (<code>Education_Level = 2</code>) y acceso a salud (<code>Healthcare_Access = 2</code>)</li>
+                            <li><strong>Seguro médico:</strong> <code>Insurance_Coverage = 1</code> reduce barreras financieras</li>
+                            <li><strong>Dosis:</strong> Mayor <code>Dosage_mg</code> puede afectar adherencia por efectos secundarios</li>
+                            <li><strong>Intervención:</strong> Enfoque en pacientes con historial de no adherencia, bajo apoyo social y mala salud mental</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- BARRERA ESTRUCTURAL - Acceso a salud -->
+                        <li><code>Healthcare_Access == 0 → Adherence = 0 (Sin acceso → sin adherencia)</code></li>
+                        
+                        <!-- BARRERA ECONÓMICA - Severidad y cobertura -->
+                        <li><code>Condition_Severity == 2 → Insurance_Coverage = 1 (Severidad alta → cobertura requerida)</code></li>
+                        
+                        <!-- PSICOSOCIAL - Salud mental -->
+                        <li><code>Mental_Health_Status == 0 → Adherence = 0 (Problemas mentales → sin adherencia)</code></li>
+                        
+                        <!-- COMPORTAMIENTO - Adherencia previa -->
+                        <li><code>Previous_Adherence == 0 → Social_Support_Level > 0 (Mala adherencia previa → requiere apoyo social)</code></li>
+                        
+                        <!-- CAPACIDAD - Múltiples comorbilidades -->
+                        <li><code>Comorbidities_Count > 4 → Education_Level > 0 (Múltiples comorbilidades → educación requerida)</code></li>
+                        
+                        <!-- MOTIVACIÓN - Severidad y salud mental -->
+                        <li><code>Condition_Severity == 2 → Mental_Health_Status > 0 (Severidad alta → salud mental adecuada)</code></li>
+                        
+                        <!-- FENOTIPO VULNERABLE -->
+                        <li><code>Social_Support_Level == 0 → (Adherence = 0) OR (Healthcare_Access = 0)</code></li>
+                        
+                        <!-- FENOTIPO CAPACITADO Y CON RECURSOS -->
+                        <li><code>Education_Level == 2 → (Adherence = 1) OR (Healthcare_Access = 1)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Sin datos disponibles</strong> 
+                    (TabDSFidelity: <strong>-</strong>, AUC: -, F1: -, MIA: -). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>1.129</td>
+                                <td>9979</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>0.995</strong></td>
+                                <td><strong>0.995</strong></td>
+                                <td><strong>9.953</strong></td>
+                                <td>0.208</td>
+                                <td>0.774</td>
+                                <td>0.003</td>
+                                <td>0.988</td>
+                                <td>71.110</td>
+                                <td>0.048</td>
+                                <td>18</td>
+                                <td>0.432</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>2.273</td>
+                                <td>9979</td>
+                                <td>0.800</td>
+                                <td>0.824</td>
+                                <td>0.830</td>
+                                <td>7.515</td>
+                                <td>0.208</td>
+                                <td>0.774</td>
+                                <td>0.008</td>
+                                <td>0.981</td>
+                                <td>201.223</td>
+                                <td>0.057</td>
+                                <td>12</td>
+                                <td>0.440</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.231</td>
+                                <td>10000</td>
+                                <td>0.598</td>
+                                <td>0.566</td>
+                                <td>0.565</td>
+                                <td>2.543</td>
+                                <td>0.355</td>
+                                <td>0.000</td>
+                                <td>0.075</td>
+                                <td>0.955</td>
+                                <td>346.134</td>
+                                <td>0.126</td>
+                                <td>0</td>
+                                <td>0.494</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>2.949</td>
+                                <td>10000</td>
+                                <td>0.556</td>
+                                <td>0.547</td>
+                                <td>0.565</td>
+                                <td>2.248</td>
+                                <td>0.355</td>
+                                <td>0.000</td>
+                                <td>0.087</td>
+                                <td>0.948</td>
+                                <td>466.920</td>
+                                <td>0.122</td>
+                                <td>0</td>
+                                <td>0.464</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.269</td>
+                                <td>10000</td>
+                                <td>0.714</td>
+                                <td>0.621</td>
+                                <td>0.640</td>
+                                <td>3.097</td>
+                                <td>0.336</td>
+                                <td>0.004</td>
+                                <td>0.214</td>
+                                <td>0.916</td>
+                                <td>168.648</td>
+                                <td>0.074</td>
+                                <td>0</td>
+                                <td>0.486</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.362</td>
+                                <td>10000</td>
+                                <td>0.695</td>
+                                <td>0.578</td>
+                                <td>0.620</td>
+                                <td>2.723</td>
+                                <td>0.336</td>
+                                <td>0.004</td>
+                                <td>0.215</td>
+                                <td>0.915</td>
+                                <td>288.859</td>
+                                <td>0.074</td>
+                                <td>0</td>
+                                <td>0.475</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.716</td>
+                                <td>0.603</td>
+                                <td>0.625</td>
+                                <td>1.244</td>
+                                <td>0.615</td>
+                                <td>0.000</td>
+                                <td>0.351</td>
+                                <td>0.707</td>
+                                <td>96.810</td>
+                                <td>0.210</td>
+                                <td>0</td>
+                                <td>0.514</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>5.039</td>
+                                <td>10000</td>
+                                <td>0.671</td>
+                                <td>0.600</td>
+                                <td>0.600</td>
+                                <td>1.010</td>
+                                <td>0.615</td>
+                                <td>0.000</td>
+                                <td>0.351</td>
+                                <td>0.714</td>
+                                <td>215.895</td>
+                                <td>0.214</td>
+                                <td>0</td>
+                                <td>0.451</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1</td>
+                                <td>9982</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>9.791</td>
+                                <td>0.210</td>
+                                <td>0.582</td>
+                                <td>0.004</td>
+                                <td>0.986</td>
+                                <td>67.331</td>
+                                <td>0.074</td>
+                                <td>20</td>
+                                <td>0.461</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>2.102</td>
+                                <td>9982</td>
+                                <td>0.750</td>
+                                <td>0.824</td>
+                                <td>0.830</td>
+                                <td>7.081</td>
+                                <td>0.210</td>
+                                <td>0.582</td>
+                                <td>0.007</td>
+                                <td>0.979</td>
+                                <td>187.297</td>
+                                <td>0.078</td>
+                                <td>15</td>
+                                <td>0.468</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>9.953</strong>, AUC: 1.000, F1: 0.995, MIA: 0.432). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>1.134</td>
+                                <td>10979</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>7.998</strong></td>
+                                <td>0.192</td>
+                                <td>0.834</td>
+                                <td>0.003</td>
+                                <td>0.989</td>
+                                <td>142.534</td>
+                                <td>0.043</td>
+                                <td>207</td>
+                                <td>0.432</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>2.131</td>
+                                <td>10979</td>
+                                <td>1.000</td>
+                                <td>0.985</td>
+                                <td>0.985</td>
+                                <td>3.975</td>
+                                <td>0.192</td>
+                                <td>0.834</td>
+                                <td>0.007</td>
+                                <td>0.983</td>
+                                <td>262.878</td>
+                                <td>0.049</td>
+                                <td>202</td>
+                                <td>0.445</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.227</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>6.285</td>
+                                <td>0.318</td>
+                                <td>0.000</td>
+                                <td>0.043</td>
+                                <td>0.959</td>
+                                <td>407.739</td>
+                                <td>0.113</td>
+                                <td>186</td>
+                                <td>0.441</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>2.680</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>6.265</td>
+                                <td>0.318</td>
+                                <td>0.000</td>
+                                <td>0.053</td>
+                                <td>0.954</td>
+                                <td>529.028</td>
+                                <td>0.109</td>
+                                <td>186</td>
+                                <td>0.458</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.262</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>5.812</td>
+                                <td>0.299</td>
+                                <td>0.008</td>
+                                <td>0.123</td>
+                                <td>0.925</td>
+                                <td>231.085</td>
+                                <td>0.067</td>
+                                <td>186</td>
+                                <td>0.452</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.345</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>5.809</td>
+                                <td>0.299</td>
+                                <td>0.008</td>
+                                <td>0.124</td>
+                                <td>0.924</td>
+                                <td>352.556</td>
+                                <td>0.067</td>
+                                <td>186</td>
+                                <td>0.443</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.016</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>4.000</td>
+                                <td>0.557</td>
+                                <td>0.000</td>
+                                <td>0.252</td>
+                                <td>0.725</td>
+                                <td>157.325</td>
+                                <td>0.192</td>
+                                <td>186</td>
+                                <td>0.458</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>4.206</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>4.097</td>
+                                <td>0.557</td>
+                                <td>0.000</td>
+                                <td>0.252</td>
+                                <td>0.730</td>
+                                <td>276.435</td>
+                                <td>0.194</td>
+                                <td>186</td>
+                                <td>0.416</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.016</td>
+                                <td>10982</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>7.837</td>
+                                <td>0.193</td>
+                                <td>0.670</td>
+                                <td>0.003</td>
+                                <td>0.987</td>
+                                <td>128.919</td>
+                                <td>0.070</td>
+                                <td>209</td>
+                                <td>0.453</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.988</td>
+                                <td>10982</td>
+                                <td>1.000</td>
+                                <td>0.990</td>
+                                <td>0.990</td>
+                                <td>5.149</td>
+                                <td>0.193</td>
+                                <td>0.670</td>
+                                <td>0.006</td>
+                                <td>0.981</td>
+                                <td>249.082</td>
+                                <td>0.073</td>
+                                <td>202</td>
+                                <td>0.460</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>7.998</strong>, AUC: 1.000, F1: 1.000, MIA: 0.432). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_29</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>----</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano </div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* + Ruido Gaussiano</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd29.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Patient Medication Adherence Prediction (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32938907.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [54.17, 45.83], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,2240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_40: Seismic Bumps - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_40</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_40: Seismic Bumps</h1>
+            <p class="description">Conjunto de datos de monitoreo minero para la clasificación binaria de eventos sísmicos peligrosos. Caracterizado por un desbalance extremo (6.6% positivos) y variables mixtas: evaluaciones ordinales y mediciones físicas continuas.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.94</td>
+                                    <td>1.00</td>
+                                    <td>0.97</td>
+                                    <td>187</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>13</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.94</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.47</td>
+                                    <td>0.50</td>
+                                    <td>0.48</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.87</td>
+                                    <td>0.94</td>
+                                    <td>0.90</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.33</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.90</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.94</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.25 AUC</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.02 F1</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.05 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.94</td>
+                                    <td>0.94</td>
+                                    <td>0.94</td>
+                                    <td>187</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.08 <span class="improvement-indicator">⬆ +0.08</span></td>
+                                    <td>0.08 <span class="improvement-indicator">⬆ +0.08</span></td>
+                                    <td>0.08 <span class="improvement-indicator">⬆ +0.08</span></td>
+                                    <td>13</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.89</strong> <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.05</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.51 <span class="improvement-indicator">⬆ +0.04</span></td>
+                                    <td>0.51 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>0.51 <span class="improvement-indicator">⬆ +0.03</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.88 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>0.89 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.05</span></td>
+                                    <td>0.88 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.02</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.58</span>
+                            <span class="improvement-badge positive">⬆ +0.25</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.88</span>
+                            <span class="improvement-badge negative">⬇ -0.02</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.89</span>
+                            <span class="improvement-badge negative">⬇ -0.05</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.08</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 8%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.08</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.08</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 8%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.08</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.08</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 8%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.08</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Seismic Bumps Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Datos de minería de carbón polaca</div>
+                    <div class="fuente-fecha">Disponible en repositorios públicos</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/Seismic+bumps" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">2,584</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">18 (17 predictores + 1 objetivo)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Clase positiva (1):</span>
+                            <span class="metadata-value">170 (6.6%)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Clase negativa (0):</span>
+                            <span class="metadata-value">2,414 (93.4%)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Sacudidas Sísmicas (Seismic Bumps)</strong> describe el problema de la predicción de <strong>sacudidas sísmicas de alta energía (>10⁴ J)</strong> en una <strong>mina de carbón</strong>. Los datos provienen de <strong>dos frentes de explotación (longwalls)</strong> ubicados en una <strong>mina de carbón polaca</strong>. La actividad minera siempre ha estado conectada con la ocurrencia de peligros, comúnmente llamados <strong>peligros mineros</strong>. Un caso especial de tal amenaza es el <strong>peligro sísmico</strong>, que ocurre frecuentemente en muchas minas subterráneas y es el <strong>más difícil de detectar y predecir</strong> entre los peligros naturales, comparable a un <strong>terremoto</strong>. El objetivo es predecir si en el <strong>próximo turno (8 horas)</strong> ocurrirá una <strong>sacudida sísmica de alta energía</strong> (clase 1) o no (clase 0).</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⛏️ Contexto y Motivación</h4>
+                        <p>La <strong>predicción de peligro sísmico</strong> en minas subterráneas es un problema de <strong>gran importancia práctica</strong> y <strong>seguridad</strong>. Los sistemas de monitoreo sísmico y seismoacústico cada vez más avanzados permiten una mejor comprensión de los procesos del macizo rocoso y la definición de métodos de predicción del peligro sísmico. Sin embargo, la <strong>precisión de los métodos creados hasta ahora está lejos de ser perfecta</strong> debido a:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Complejidad de los procesos sísmicos</strong></li>
+                            <li><strong>Gran desproporción</strong> entre el número de eventos sísmicos de baja energía y los de alta energía (>10⁴ J)</li>
+                            <li><strong>Insuficiencia de técnicas estadísticas</strong> tradicionales para predecir el peligro sísmico</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">La <strong>predicción precisa de la actividad sísmica aumentada</strong> es fundamental para:</p>
+                        <ul class="transformacion-lista">
+                            <li>Reducir el <strong>riesgo de estallidos de roca (rockbursts)</strong></li>
+                            <li>Implementar <strong>tiros de distensión (distressing shooting)</strong> para reducir el riesgo</li>
+                            <li><strong>Retirar trabajadores</strong> de áreas amenazadas</li>
+                            <li>Mejorar la <strong>seguridad laboral</strong> en la minería subterránea</li>
+                        </ul>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">⚠️ Desbalanceo Extremo</h5>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6;">El dataset se caracteriza por una <strong>distribución desbalanceada</strong> de ejemplos positivos y negativos:</p>
+                            <ul class="transformacion-lista">
+                                <li><strong>Clase 1 (Peligroso):</strong> 170 ejemplos (6.6%)</li>
+                                <li><strong>Clase 0 (No peligroso):</strong> 2,414 ejemplos (93.4%)</li>
+                            </ul>
+                            <p style="color: #ff6b6b; font-size: 0.9rem; line-height: 1.6; margin-top: 0.3rem;">⚠️ Este desbalanceo es un <strong>problema serio</strong> en la predicción del peligro sísmico y requiere <strong>técnicas especiales</strong> de muestreo y evaluación.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>2,584 instancias</strong> con <strong>18 atributos</strong> (17 variables predictoras y 1 variable objetivo). Cada fila contiene un <strong>resumen de la actividad sísmica</strong> en el macizo rocoso dentro de un <strong>turno (8 horas)</strong>. Las características son de tipo <strong>real</strong> y <strong>categórico</strong>. <strong>No presenta valores faltantes</strong>.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Categorías / Unidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Evaluación de Peligro Sísmico</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>seismic</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Evaluación del peligro sísmico en el turno mediante método sísmico</td>
+                                        <td style="padding: 0.4rem;">a = sin peligro, b = bajo peligro, c = alto peligro, d = estado de peligro</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>seismoacoustic</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Evaluación del peligro sísmico mediante método seismoacústico</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>shift</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Tipo de turno</td>
+                                        <td style="padding: 0.4rem;">W = extracción de carbón, N = turno de preparación</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>ghazard</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Evaluación del peligro sísmico basada en GMax (método seismoacústico)</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ffd93d; font-weight: bold;">B. Parámetros del Geófono Más Activo (GMax)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>genergy</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Energía sísmica registrada en el turno anterior por el geófono más activo (GMax)</td>
+                                        <td style="padding: 0.4rem;">J</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>gpuls</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Número de pulsos registrados en el turno anterior por GMax</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>gdenergy</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Desviación de la energía registrada por GMax respecto al promedio de 8 turnos anteriores</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>gdpuls</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Desviación del número de pulsos registrados por GMax respecto al promedio de 8 turnos anteriores</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #6bcb77; font-weight: bold;">C. Sacudidas Sísmicas por Rango de Energía</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>nbumps</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Número total de sacudidas sísmicas registradas en el turno anterior</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>nbumps2</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Número de sacudidas en rango [10², 10³) J</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>nbumps3</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Número de sacudidas en rango [10³, 10⁴) J</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>nbumps4</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Número de sacudidas en rango [10⁴, 10⁵) J</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>nbumps5</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Número de sacudidas en rango [10⁵, 10⁶) J</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>nbumps6</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Número de sacudidas en rango [10⁶, 10⁷) J</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>nbumps7</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Número de sacudidas en rango [10⁷, 10⁸) J</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>nbumps89</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Número de sacudidas en rango [10⁸, 10¹⁰) J</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff9ff3; font-weight: bold;">D. Energía Total y Máxima</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>energy</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Energía total de las sacudidas sísmicas registradas en el turno anterior</td>
+                                        <td style="padding: 0.4rem;">J</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>maxenergy</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Energía máxima de las sacudidas sísmicas registradas en el turno anterior</td>
+                                        <td style="padding: 0.4rem;">J</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">E. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>class</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Indica si ocurrió una sacudida sísmica de alta energía en el próximo turno</td>
+                                        <td style="padding: 0.4rem;">1 = Peligroso (sacudida >10⁴ J)<br>0 = No peligroso</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria extremadamente desbalanceada</li>
+                            <li><strong>Dimensión:</strong> Multivariante (2,584 × 18)</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (Reales y Categóricas)</li>
+                            <li><strong>Valores faltantes:</strong> No</li>
+                            <li><strong>Área de aplicación:</strong> Minería, Seguridad Industrial, Geofísica, Predicción de Desastres</li>
+                            <li><strong>Razón de desbalanceo:</strong> 6.6% (clase positiva - peligroso)</li>
+                            <li><strong>Contexto:</strong> Mina de carbón polaca, dos frentes de explotación (longwalls)</li>
+                            <li><strong>Unidad temporal:</strong> Turnos de 8 horas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📖 Referencias Académicas</h4>
+                        <p>Este dataset ha sido utilizado en investigaciones sobre <strong>predicción de peligro sísmico</strong> y <strong>clasificación desbalanceada</strong>. Referencias clave:</p>
+                        
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #4fc3f7; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.85rem; margin: 0;">Lesniak, A., & Isakow, Z. (2009). <strong>Space-time clustering of seismic events and hazard assessment in the Zabrze-Bielszowice coal mine, Poland</strong>. <em>International Journal of Rock Mechanics and Mining Sciences</em>, 46(5), 918-928.</p>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #ffd93d; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.85rem; margin: 0;">Kabiesz, J. (2005). <strong>Effect of the form of data on the quality of mine tremors hazard forecasting using neural networks</strong>. <em>Geotechnical and Geological Engineering</em>, 24(5), 1131-1147.</p>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #6bcb77; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.85rem; margin: 0;">Bukowska, M. (2006). <strong>The probability of rockburst occurrence in the Upper Silesian Coal Basin area dependent on natural mining conditions</strong>. <em>Journal of Mining Sciences</em>, 42(6), 570-577.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Seguridad</h4>
+                        <p>El conjunto de datos contiene <strong>información de seguridad minera</strong> que ha sido <strong>anonimizada</strong> para proteger la identidad de la mina y los trabajadores. No contiene información personal identificable. <strong>Restricción de confidencialidad:</strong> El uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que pueda comprometer la seguridad operativa de la mina.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos presenta desafíos significativos debido al <strong>desbalanceo extremo</strong> y la <strong>naturaleza temporal</strong> de los datos. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable objetivo <strong>class</strong> está codificada como <strong>1 = Peligroso (sacudida >10⁴ J en próximo turno)</strong> y <strong>0 = No peligroso</strong></li>
+                            <li>Manejar el <strong>desbalanceo extremo</strong> (6.6% de ejemplos positivos) mediante técnicas de balanceo:
+                                <ul class="transformacion-lista">
+                                    <li><strong>Sobremuestreo</strong> de la clase minoritaria (SMOTE, ADASYN)</li>
+                                    <li><strong>Submuestreo</strong> de la clase mayoritaria (Random Undersampling)</li>
+                                    <li><strong>Cost-sensitive learning</strong> (ponderación de clases)</li>
+                                    <li><strong>Métodos de ensemble</strong> (Balanced Random Forest, EasyEnsemble)</li>
+                                </ul>
+                            </li>
+                            <li>Utilizar <strong>métricas apropiadas</strong> para datos desbalanceados: <strong>Precision-Recall AUC</strong>, <strong>F1-Score</strong>, <strong>Recall</strong> (sensibilidad), <strong>Specificity</strong></li>
+                            <li>Las variables <strong>seismic</strong>, <strong>seismoacoustic</strong>, <strong>shift</strong> y <strong>ghazard</strong> son categóricas y requieren codificación</li>
+                            <li>Las variables de <strong>energía y pulsos</strong> (genergy, gpuls, gdenergy, gdpuls) son continuas y deben estandarizarse</li>
+                            <li>Las variables <strong>nbumps*</strong> representan <strong>conteos por rango de energía</strong>, lo que permite analizar la distribución energética de los eventos</li>
+                            <li>La variable <strong>class</strong> predice eventos en el <strong>próximo turno</strong> (8 horas), lo que hace que el problema sea <strong>temporal</strong> y adecuado para modelos secuenciales (LSTM, GRU)</li>
+                            <li>El dataset es adecuado para <strong>modelos de clasificación</strong> como Random Forest, XGBoost, SVM y Redes Neuronales</li>
+                            <li>Considerar <strong>validación temporal</strong> (time-series split) en lugar de validación cruzada aleatoria debido a la naturaleza secuencial de los datos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Seguridad Minera</h4>
+                        <p>La <strong>predicción de peligro sísmico</strong> en minas subterráneas es un problema de <strong>seguridad crítica</strong> con implicaciones directas en la <strong>vida de los trabajadores</strong>. La importancia de este problema radica en:</p>
+                        <ul class="transformacion-lista">
+                            <li>Los <strong>estallidos de roca (rockbursts)</strong> son eventos repentinos y violentos que pueden causar <strong>lesiones graves o muertes</strong> a los trabajadores</li>
+                            <li>La <strong>predicción precisa</strong> permite tomar <strong>medidas preventivas</strong> como <strong>tiros de distensión</strong> o la <strong>evacuación</strong> de áreas amenazadas</li>
+                            <li>La <strong>actividad sísmica aumentada</strong> es un <strong>indicador temprano</strong> de posibles estallidos de roca</li>
+                            <li>La <strong>mejora de los métodos de predicción</strong> puede <strong>salvar vidas</strong> y <strong>reducir costos operativos</strong> asociados a paradas de producción</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset es un recurso valioso para la investigación en <strong>predicción de peligros naturales</strong> y <strong>clasificación desbalanceada</strong>, con aplicaciones que van más allá de la minería a la <strong>predicción de terremotos</strong> y otros <strong>fenómenos geofísicos</strong>.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Seismic Bumps Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/Seismic+bumps</pre>
+                        <button onclick="copyToClipboard('Seismic Bumps Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/Seismic+bumps')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Lesniak, A., & Isakow, Z. (2009). Space-time clustering of seismic events and hazard assessment in the Zabrze-Bielszowice coal mine, Poland. <em>International Journal of Rock Mechanics and Mining Sciences</em>, 46(5), 918-928.</li>
+                            <li>Kabiesz, J. (2005). Effect of the form of data on the quality of mine tremors hazard forecasting using neural networks. <em>Geotechnical and Geological Engineering</em>, 24(5), 1131-1147.</li>
+                            <li>Bukowska, M. (2006). The probability of rockburst occurrence in the Upper Silesian Coal Basin area dependent on natural mining conditions. <em>Journal of Mining Sciences</em>, 42(6), 570-577.</li>
+                            <li>UCI Machine Learning Repository - Seismic Bumps. <a href="https://archive.ics.uci.edu/ml/datasets/Seismic+bumps" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/Seismic+bumps</a></li>
+                            <li>International Society for Rock Mechanics and Rock Engineering (ISRM). <em>Rockburst and Seismicity in Mines</em>. <a href="https://www.isrm.net/" target="_blank" style="color: #4fc3f7;">https://www.isrm.net/</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Seismic Bumps Dataset)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Lectura personalizada del formato ARFF:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Procesamiento manual del archivo <em>.arff</em> (Attribute-Relation File Format) extrayendo exclusivamente la sección <em>@data</em>.</li>
+                            <li>Asignación de nombres de columnas basados en la especificación del dataset (18 variables predictoras + 1 objetivo).</li>
+                            <li>Limpieza de caracteres y formato durante la carga para garantizar integridad de datos.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación ordinal de variables de riesgo:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de variables categóricas con orden lógico de peligro: <em>seismic</em>, <em>seismoacoustic</em>, <em>ghazard</em>.</li>
+                            <li><strong>Mapeo ordinal:</strong> 'a' (Sin riesgo) → 0, 'b' (Bajo) → 1, 'c' (Alto) → 2, 'd' (Peligro) → 3.</li>
+                            <li>Preservación de la jerarquía natural de niveles de riesgo para mantener la semántica original.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación nominal de variable contextual:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de <em>shift</em> (tipo de turno) a binario: 'W' (Extracción de carbón) → 0, 'N' (Preparación) → 1.</li>
+                            <li>Documentación del significado contextual en la leyenda.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Conversión y estandarización de variables numéricas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión forzada de <strong>14 variables numéricas</strong> a tipo <strong>float</strong>: <em>genergy</em>, <em>gpuls</em>, <em>gdenergy</em>, <em>gdpuls</em>, <em>nbumps</em> a <em>nbumps89</em>, <em>energy</em>, <em>maxenergy</em>.</li>
+                            <li>Renombrado de la variable objetivo de <em>'class'</em> a <em>'hazardous_state'</em> para mejorar claridad semántica.</li>
+                            <li>Conversión de <em>hazardous_state</em> a tipo <strong>entero (int)</strong> para codificación binaria.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submuestreo estratificado para reducción del dataset:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Reducción del dataset a <strong>1,000 ejemplos</strong> representativos mediante muestreo estratificado.</li>
+                            <li>Uso de <code>train_test_split</code> con parámetro <em>stratify</em> para <strong>preservar exactamente</strong> la proporción original de clases (desbalance de eventos sísmicos peligrosos).</li>
+                            <li>Semilla fija (<em>random_state=42</em>) para garantizar reproducibilidad científica de la muestra.</li>
+                            <li>Verificación de integridad con diferencia máxima < 1% en proporción de clases.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_seismic_bumps.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de variables ordinales de riesgo (seismic, seismoacoustic, ghazard) con su escala (0-3).</li>
+                            <li>Documentación de variable contextual (shift) con su mapeo binario.</li>
+                            <li>Descripción de variables de lecturas del geófono más activo (GMax) y su significado físico.</li>
+                            <li>Descripción de variables de histórico de sacudidas (conteos por energía) y energía total.</li>
+                            <li>Contextualización del dataset: minería de carbón y predicción de actividad sísmica peligrosa.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>2,584 instancias</strong> (registros de turnos mineros) originales para el dataset completo.</li>
+                            <li>Dataset reducido de <strong>1,000 ejemplos</strong> estratificados para experimentación eficiente.</li>
+                            <li>Dataset final con <strong>18 variables predictoras</strong> (mixtas: ordinales, binarias y numéricas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>2,584 registros de turnos mineros</strong> (con versión reducida estratificada de 1,000 ejemplos) con <strong>18 variables predictoras</strong> (evaluaciones de riesgo, lecturas de geófonos, histórico de sacudidas) y <strong>1 variable objetivo binaria</strong> (hazardous_state). Desbalance extremo-preservado (~93% estados no peligrosos / ~7% estados peligrosos) — escenario crítico para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>seguridad minera y predicción de eventos sísmicos</strong>, donde la detección temprana de condiciones peligrosas es fundamental para la prevención de accidentes.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    ⛏️ <strong>Fuente:</strong> Seismic Bumps Dataset (UCI Machine Learning Repository) - Datos de actividad sísmica en minas de carbón.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variables de riesgo ordinal:</strong> <em>seismic</em>, <em>seismoacoustic</em>, <em>ghazard</em> con escala 0='a' (Sin riesgo) a 3='d' (Peligro).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📈 <strong>Lecturas del geófono (GMax):</strong> <em>genergy</em> (energía sísmica), <em>gpuls</em> (número de pulsos), <em>gdenergy</em> (desviación de energía), <em>gdpuls</em> (desviación de pulsos).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Histórico de sacudidas:</strong> <em>nbumps</em> a <em>nbumps89</em> — conteos de sacudidas por rangos de energía (10² a 10¹⁰ J).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_seismic_bumps.txt</em> con descripción completa de variables ordinales, binarias, numéricas y contextuales.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>hazardous_state</em> (1 = Estado peligroso - sacudida > 10⁴ J en el siguiente turno, 0 = Estado no peligroso).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Lectura manual de ARFF, codificación ordinal de riesgo, codificación binaria de turno, conversión de numéricas, renombrado de target, reducción estratificada a 1,000 ejemplos.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción de Monitoreo Minero</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>seismic</code></td>
+                            <td>Evaluación de riesgo por método sísmico</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Sin riesgo, 1: Bajo, 2: Alto</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>seismoacoustic</code></td>
+                            <td>Evaluación de riesgo por método sismoacústico</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Sin riesgo, 1: Bajo, 2: Alto</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>ghazard</code></td>
+                            <td>Evaluación de riesgo por sensor GMax</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Sin riesgo, 1: Bajo, 2: Alto</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>genergy</code></td>
+                            <td>Energía del sensor más activo (GMax)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>100 - 2,129,020</td>
+                            <td>J</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>gpuls</code></td>
+                            <td>Pulsos registrados por el sensor más activo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4 - 3,722</td>
+                            <td>pulsos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>gdenergy</code></td>
+                            <td>Desviación de energía vs 8 turnos previos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-96 - 484</td>
+                            <td>J</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>gdpuls</code></td>
+                            <td>Desviación de pulsos vs 8 turnos previos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-90 - 506</td>
+                            <td>pulsos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>nbumps</code></td>
+                            <td>Número total de sacudidas en el turno anterior</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 8</td>
+                            <td>eventos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>nbumps2</code></td>
+                            <td>Sacudidas entre 10² y 10³ J</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 5</td>
+                            <td>eventos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>nbumps3</code></td>
+                            <td>Sacudidas entre 10³ y 10⁴ J</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 5</td>
+                            <td>eventos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>nbumps4</code></td>
+                            <td>Sacudidas entre 10⁴ y 10⁵ J</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 2</td>
+                            <td>eventos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>nbumps5</code></td>
+                            <td>Sacudidas entre 10⁵ y 10⁶ J</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 1</td>
+                            <td>eventos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>nbumps6</code></td>
+                            <td>Sacudidas entre 10⁶ y 10⁷ J</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 0</td>
+                            <td>eventos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>nbumps7</code></td>
+                            <td>Sacudidas entre 10⁷ y 10⁸ J</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 0</td>
+                            <td>eventos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>nbumps89</code></td>
+                            <td>Sacudidas entre 10⁸ y 10¹⁰ J</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 0</td>
+                            <td>eventos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>energy</code></td>
+                            <td>Energía total acumulada en el turno</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 402,000</td>
+                            <td>J</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>maxenergy</code></td>
+                            <td>Energía máxima en una sola sacudida</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 400,000</td>
+                            <td>J</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>shift</code></td>
+                            <td>Tipo de turno de trabajo</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: W (Extracción), 1: N (Preparación)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>hazardous</code></td>
+                            <td>Evento sísmico peligroso en siguiente turno - OBJETIVO</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí (sacudida > 10⁴ J)</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">19</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Peligro Sísmico (hazardous)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Sacudidas Sísmicas (Seismic Bumps). Comprender estas 
+                codificaciones es fundamental para la correcta interpretación de los resultados de 
+                predicción de peligros mineros.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: seismic -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>seismic</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Sin riesgo (a)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Bajo (b)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Alto (c)</td></tr>
+                                <tr><td><span class="codigo" style="background: #e74c3c; color: white;">3</span></td><td><strong>Peligro (d)</strong> - No presente en este subconjunto</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">📊</span>
+                            <p><strong>Método sísmico:</strong> Evalúa el riesgo basado en ondas sísmicas registradas.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: seismoacoustic -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>seismoacoustic</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Sin riesgo (a)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Bajo (b)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Alto (c)</td></tr>
+                                <tr><td><span class="codigo" style="background: #e74c3c; color: white;">3</span></td><td><strong>Peligro (d)</strong> - No presente en este subconjunto</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">🎵</span>
+                            <p><strong>Método sismoacústico:</strong> Evalúa el riesgo basado en señales acústicas y vibraciones.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: ghazard -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>ghazard</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Sin riesgo (a)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Bajo (b)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Alto (c)</td></tr>
+                                <tr><td><span class="codigo" style="background: #e74c3c; color: white;">3</span></td><td><strong>Peligro (d)</strong> - No presente en este subconjunto</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">📡</span>
+                            <p><strong>Sensor GMax:</strong> Evaluación basada exclusivamente en el geófono más activo.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: shift -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>shift</code></span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>W = Turno de extracción de carbón</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>N = Turno de preparación</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⛏️</span>
+                            <p><strong>Importancia:</strong> El tipo de turno afecta la actividad sísmica. La extracción (W) genera más sacudidas que la preparación (N).</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: hazardous (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>hazardous</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">0</span></td>
+                                    <td><strong>No Peligroso</strong> - No ocurrió sacudida &gt; 10⁴ J en el siguiente turno</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">1</span></td>
+                                    <td><strong>Peligroso</strong> - Ocurrió sacudida &gt; 10⁴ J (evento catastrófico) en el siguiente turno</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🚨</span>
+                            <p><strong>Variable Objetivo:</strong> Predice eventos sísmicos de alta energía (> 10⁴ J) en el siguiente turno minero.</p>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 3
+                        <ul>
+                            <li>seismic (3 niveles - evaluación sísmica)</li>
+                            <li>seismoacoustic (3 niveles - evaluación sismoacústica)</li>
+                            <li>ghazard (3 niveles - evaluación GMax)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 2
+                        <ul>
+                            <li>shift (Tipo de turno: W/N)</li>
+                            <li>🎯 hazardous (Objetivo - Peligro sísmico)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 14
+                        <ul>
+                            <li>4 del sensor GMax (genergy, gpuls, gdenergy, gdpuls)</li>
+                            <li>8 de conteos de sacudidas (nbumps a nbumps89)</li>
+                            <li>2 de energía total (energy, maxenergy)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Modelado:</strong>
+                        <ul>                            
+                            <li><strong>Métrica clave:</strong> <strong>Recall</strong> (detectar eventos peligrosos) sobre Accuracy</li>
+                            <li><strong>Feature Engineering:</strong> Crear ratio energy/events o tendencias temporales</li>
+                            <li><strong>Ley de Gutenberg-Richter:</strong> La acumulación de eventos pequeños precede a eventos grandes</li>
+                            <li><strong>Variables con ceros:</strong> nbumps6, nbumps7, nbumps89 pueden ser eliminadas (constantes)</li>
+                            <li><strong>Escalado:</strong> Variables de energía tienen alta varianza - usar <strong>StandardScaler</strong> o <strong>RobustScaler</strong></li>                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- FÍSICA ABSOLUTA (SILENCIO) -->
+                        <li><code>nbumps == 0 → energy = 0, maxenergy = 0, nbumps2 = 0, nbumps3 = 0, nbumps4 = 0, nbumps5 = 0</code></li>
+                        
+                        <!-- INTEGRIDAD MATEMÁTICA -->
+                        <li><code>energy ≥ maxenergy (Energía total ≥ energía máxima)</code></li>
+                        
+                        <!-- SENSOR GMAX -->
+                        <li><code>genergy > 50000 → gpuls > 10 (Energía G alta → pulsos G altos)</code></li>
+                        
+                        <!-- LÓGICA DE DESVIACIÓN -->
+                        <li><code>genergy == 0 → gdenergy ≤ 0</code></li>
+                        
+                        <!-- CONSISTENCIA DE EXPERTOS -->
+                        <li><code>seismic == 3 → seismoacoustic ≥ 1</code></li>
+                        <li><code>ghazard == 3 → genergy > 1000</code></li>
+                        
+                        <!-- ESCALA DE ENERGÍA - nbumps2 -->
+                        <li><code>nbumps2 > 0 → maxenergy ≥ 100</code></li>
+                        
+                        <!-- ESCALA DE ENERGÍA - nbumps3 -->
+                        <li><code>nbumps3 > 0 → maxenergy ≥ 1000</code></li>
+                        
+                        <!-- ESCALA DE ENERGÍA - nbumps4 -->
+                        <li><code>nbumps4 > 0 → maxenergy ≥ 10000</code></li>
+                        
+                        <!-- ESCALA DE ENERGÍA - nbumps5 -->
+                        <li><code>nbumps5 > 0 → maxenergy ≥ 100000</code></li>
+                        
+                        <!-- ESCALA DE ENERGÍA - nbumps6 -->
+                        <li><code>nbumps6 > 0 → maxenergy ≥ 1000000</code></li>
+                        
+                        <!-- LÍMITE SUPERIOR FÍSICO -->
+                        <li><code>maxenergy < 1000 → nbumps3 = 0, nbumps4 = 0, nbumps5 = 0, nbumps6 = 0</code></li>
+                        
+                        <!-- CONSISTENCIA DE CONTEO -->
+                        <li><code>nbumps == 1 → nbumps4 ≤ 1</code></li>
+                        
+                        <!-- ACTIVIDAD ALTA -->
+                        <li><code>energy > 100000 → (nbumps4 > 0) OR (nbumps5 > 0) OR (nbumps6 > 0)</code></li>
+                        
+                        <!-- PELIGRO SÍSMICO -->
+                        <li><code>seismic == 0 → nbumps6 = 0</code></li>
+                        
+                        <!-- CORRELACIÓN ENERGÍA TOTAL -->
+                        <li><code>nbumps > 10 → energy > 5000</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>Random Oversampling</strong></td>
+                                <td>1</td>
+                                <td>1120</td>
+                                <td>0.422</td>
+                                <td>0.915</td>
+                                <td>0.940</td>
+                                <td><strong>7.537</strong></td>
+                                <td>0.160</td>
+                                <td>0.343</td>
+                                <td>0.099</td>
+                                <td>0.933</td>
+                                <td>52.306</td>
+                                <td>0</td>
+                                <td>1120</td>
+                                <td>0.448</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>1120</td>
+                                <td>0.468</td>
+                                <td>0.883</td>
+                                <td>0.885</td>
+                                <td>6.341</td>
+                                <td>0.169</td>
+                                <td>0.436</td>
+                                <td>0.111</td>
+                                <td>0.948</td>
+                                <td>45.715</td>
+                                <td>0.009</td>
+                                <td>601</td>
+                                <td>0.446</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>1120</td>
+                                <td>0.448</td>
+                                <td>0.883</td>
+                                <td>0.885</td>
+                                <td>5.845</td>
+                                <td>0.174</td>
+                                <td>0.360</td>
+                                <td>0.114</td>
+                                <td>0.938</td>
+                                <td>45.441</td>
+                                <td>0.009</td>
+                                <td>600</td>
+                                <td>0.454</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.013</td>
+                                <td>1113</td>
+                                <td>0.499</td>
+                                <td>0.863</td>
+                                <td>0.850</td>
+                                <td>5.508</td>
+                                <td>0.168</td>
+                                <td>0.436</td>
+                                <td>0.108</td>
+                                <td>0.952</td>
+                                <td>45.382</td>
+                                <td>0.009</td>
+                                <td>600</td>
+                                <td>0.457</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1</td>
+                                <td>1120</td>
+                                <td>0.460</td>
+                                <td>0.843</td>
+                                <td>0.820</td>
+                                <td>4.172</td>
+                                <td>0.178</td>
+                                <td>0.465</td>
+                                <td>0.099</td>
+                                <td>0.947</td>
+                                <td>52.551</td>
+                                <td>0.012</td>
+                                <td>600</td>
+                                <td>0.441</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1</td>
+                                <td>1120</td>
+                                <td>0.476</td>
+                                <td>0.863</td>
+                                <td>0.845</td>
+                                <td>5.186</td>
+                                <td>0.178</td>
+                                <td>0.431</td>
+                                <td>0.099</td>
+                                <td>0.947</td>
+                                <td>47.041</td>
+                                <td>0.011</td>
+                                <td>600</td>
+                                <td>0.436</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>1120</td>
+                                <td>0.614</td>
+                                <td>0.904</td>
+                                <td>0.935</td>
+                                <td>5.736</td>
+                                <td>0.297</td>
+                                <td>0.285</td>
+                                <td>0.173</td>
+                                <td>0.705</td>
+                                <td>49.631</td>
+                                <td>0.117</td>
+                                <td>600</td>
+                                <td>0.450</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>1</td>
+                                <td>1120</td>
+                                <td>0.663</td>
+                                <td>0.904</td>
+                                <td>0.935</td>
+                                <td>5.800</td>
+                                <td>0.313</td>
+                                <td>0.143</td>
+                                <td>0.160</td>
+                                <td>0.704</td>
+                                <td>51.992</td>
+                                <td>0.118</td>
+                                <td>600</td>
+                                <td>0.431</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Random Oversampling</strong> 
+                    (TabDSFidelity: <strong>7.537</strong>, AUC: 0.422, F1: 0.915, MIA: 0.448). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>2.035</td>
+                                <td>7175</td>
+                                <td>0.468</td>
+                                <td>0.915</td>
+                                <td>0.940</td>
+                                <td>7.692</td>
+                                <td>0.198</td>
+                                <td>0.436</td>
+                                <td>0.083</td>
+                                <td>0.948</td>
+                                <td>67.455</td>
+                                <td>0.020</td>
+                                <td>4</td>
+                                <td>0.454</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>2.035</td>
+                                <td>7175</td>
+                                <td>0.468</td>
+                                <td>0.915</td>
+                                <td>0.940</td>
+                                <td>7.692</td>
+                                <td>0.198</td>
+                                <td>0.436</td>
+                                <td>0.083</td>
+                                <td>0.948</td>
+                                <td>183.486</td>
+                                <td>0.020</td>
+                                <td>4</td>
+                                <td>0.454</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.033</td>
+                                <td>10000</td>
+                                <td>0.583</td>
+                                <td>0.700</td>
+                                <td>0.600</td>
+                                <td>4.814</td>
+                                <td>0.215</td>
+                                <td>0.364</td>
+                                <td>0.104</td>
+                                <td>0.905</td>
+                                <td>418.620</td>
+                                <td>0.033</td>
+                                <td>0</td>
+                                <td>0.516</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.033</td>
+                                <td>10000</td>
+                                <td>0.587</td>
+                                <td>0.704</td>
+                                <td>0.605</td>
+                                <td>4.926</td>
+                                <td>0.215</td>
+                                <td>0.364</td>
+                                <td>0.104</td>
+                                <td>0.905</td>
+                                <td>563.629</td>
+                                <td>0.033</td>
+                                <td>0</td>
+                                <td>0.504</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.049</td>
+                                <td>10000</td>
+                                <td>0.517</td>
+                                <td>0.746</td>
+                                <td>0.660</td>
+                                <td>4.528</td>
+                                <td>0.296</td>
+                                <td>0.366</td>
+                                <td>0.101</td>
+                                <td>0.913</td>
+                                <td>239.708</td>
+                                <td>0.019</td>
+                                <td>0</td>
+                                <td>0.480</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.049</td>
+                                <td>10000</td>
+                                <td>0.517</td>
+                                <td>0.746</td>
+                                <td>0.660</td>
+                                <td>4.528</td>
+                                <td>0.296</td>
+                                <td>0.366</td>
+                                <td>0.101</td>
+                                <td>0.913</td>
+                                <td>383.919</td>
+                                <td>0.019</td>
+                                <td>0</td>
+                                <td>0.480</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.752</td>
+                                <td>7854</td>
+                                <td>0.630</td>
+                                <td>0.739</td>
+                                <td>0.650</td>
+                                <td>2.655</td>
+                                <td>0.457</td>
+                                <td>0.214</td>
+                                <td>0.330</td>
+                                <td>0.571</td>
+                                <td>225.828</td>
+                                <td>0.178</td>
+                                <td>8</td>
+                                <td>0.449</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.752</td>
+                                <td>7854</td>
+                                <td>0.627</td>
+                                <td>0.739</td>
+                                <td>0.650</td>
+                                <td>2.621</td>
+                                <td>0.458</td>
+                                <td>0.214</td>
+                                <td>0.330</td>
+                                <td>0.571</td>
+                                <td>346.028</td>
+                                <td>0.178</td>
+                                <td>8</td>
+                                <td>0.445</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>2.212</td>
+                                <td>7040</td>
+                                <td>0.506</td>
+                                <td>0.904</td>
+                                <td>0.935</td>
+                                <td><strong>8.146</strong></td>
+                                <td>0.198</td>
+                                <td>0.461</td>
+                                <td>0.077</td>
+                                <td>0.949</td>
+                                <td>60.428</td>
+                                <td>0.020</td>
+                                <td>3</td>
+                                <td>0.436</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>2.212</td>
+                                <td>7040</td>
+                                <td>0.506</td>
+                                <td>0.904</td>
+                                <td>0.935</td>
+                                <td>8.145</td>
+                                <td>0.198</td>
+                                <td>0.461</td>
+                                <td>0.077</td>
+                                <td>0.949</td>
+                                <td>168.660</td>
+                                <td>0.020</td>
+                                <td>3</td>
+                                <td>0.436</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>8.146</strong>, AUC: 0.506, F1: 0.904, MIA: 0.436). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>1.837</td>
+                                <td>8295</td>
+                                <td>0.455</td>
+                                <td>0.904</td>
+                                <td>0.935</td>
+                                <td><strong>7.597</strong></td>
+                                <td>0.190</td>
+                                <td>0.421</td>
+                                <td>0.082</td>
+                                <td>0.947</td>
+                                <td>128.182</td>
+                                <td>0.018</td>
+                                <td>284</td>
+                                <td>0.444</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.837</td>
+                                <td>8295</td>
+                                <td>0.455</td>
+                                <td>0.904</td>
+                                <td>0.935</td>
+                                <td>7.597</td>
+                                <td>0.190</td>
+                                <td>0.421</td>
+                                <td>0.082</td>
+                                <td>0.947</td>
+                                <td>243.658</td>
+                                <td>0.018</td>
+                                <td>284</td>
+                                <td>0.444</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.030</td>
+                                <td>11120</td>
+                                <td>0.518</td>
+                                <td>0.811</td>
+                                <td>0.755</td>
+                                <td>4.926</td>
+                                <td>0.204</td>
+                                <td>0.356</td>
+                                <td>0.102</td>
+                                <td>0.914</td>
+                                <td>496.051</td>
+                                <td>0.029</td>
+                                <td>205</td>
+                                <td>0.461</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.030</td>
+                                <td>11120</td>
+                                <td>0.514</td>
+                                <td>0.814</td>
+                                <td>0.760</td>
+                                <td>4.976</td>
+                                <td>0.204</td>
+                                <td>0.356</td>
+                                <td>0.102</td>
+                                <td>0.914</td>
+                                <td>640.067</td>
+                                <td>0.029</td>
+                                <td>205</td>
+                                <td>0.451</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.044</td>
+                                <td>11120</td>
+                                <td>0.450</td>
+                                <td>0.789</td>
+                                <td>0.725</td>
+                                <td>3.280</td>
+                                <td>0.271</td>
+                                <td>0.363</td>
+                                <td>0.100</td>
+                                <td>0.918</td>
+                                <td>316.231</td>
+                                <td>0.017</td>
+                                <td>205</td>
+                                <td>0.450</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.044</td>
+                                <td>11120</td>
+                                <td>0.450</td>
+                                <td>0.789</td>
+                                <td>0.725</td>
+                                <td>3.280</td>
+                                <td>0.271</td>
+                                <td>0.363</td>
+                                <td>0.100</td>
+                                <td>0.918</td>
+                                <td>460.272</td>
+                                <td>0.017</td>
+                                <td>205</td>
+                                <td>0.450</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.629</td>
+                                <td>8974</td>
+                                <td>0.616</td>
+                                <td>0.909</td>
+                                <td>0.930</td>
+                                <td>5.813</td>
+                                <td>0.405</td>
+                                <td>0.214</td>
+                                <td>0.271</td>
+                                <td>0.595</td>
+                                <td>288.001</td>
+                                <td>0.158</td>
+                                <td>259</td>
+                                <td>0.444</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.629</td>
+                                <td>8974</td>
+                                <td>0.612</td>
+                                <td>0.915</td>
+                                <td>0.940</td>
+                                <td>5.953</td>
+                                <td>0.405</td>
+                                <td>0.214</td>
+                                <td>0.271</td>
+                                <td>0.595</td>
+                                <td>406.422</td>
+                                <td>0.158</td>
+                                <td>259</td>
+                                <td>0.447</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.965</td>
+                                <td>8160</td>
+                                <td>0.443</td>
+                                <td>0.904</td>
+                                <td>0.935</td>
+                                <td>7.548</td>
+                                <td>0.190</td>
+                                <td>0.437</td>
+                                <td>0.076</td>
+                                <td>0.948</td>
+                                <td>116.996</td>
+                                <td>0.018</td>
+                                <td>287</td>
+                                <td>0.423</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.965</td>
+                                <td>8160</td>
+                                <td>0.445</td>
+                                <td>0.904</td>
+                                <td>0.935</td>
+                                <td>7.575</td>
+                                <td>0.190</td>
+                                <td>0.437</td>
+                                <td>0.076</td>
+                                <td>0.948</td>
+                                <td>225.417</td>
+                                <td>0.018</td>
+                                <td>287</td>
+                                <td>0.423</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>7.597</strong>, AUC: 0.455, F1: 0.904, MIA: 0.444). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_40</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>Random Oversampling</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* Refinado</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* + Ruido Gaussiano</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd40.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Seismic Hazard Prediction in Underground Coal Mines (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32946047.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [93.33, 6.67], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

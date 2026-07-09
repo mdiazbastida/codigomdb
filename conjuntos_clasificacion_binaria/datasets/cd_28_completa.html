@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_28: Health Insurance Cross Sell: Venta Cruzada - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_28</span>                
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_28: Health Insurance Cross Sell: Venta Cruzada)</h1>
+            <p class="description">Registro empresarial para la predicción de venta cruzada (Cross-Selling) de seguros de vehículos (Response) en una cartera de clientes de salud. Integra variables demográficas (edad, código de región), características del bien (antigüedad ordinal Vehicle_Age, daños previos) y datos de la póliza (prima anual, canal de ventas).</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.88</td>
+                                    <td>1.00</td>
+                                    <td>0.93</td>
+                                    <td>175</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>25</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.88</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.44</td>
+                                    <td>0.50</td>
+                                    <td>0.47</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.77</td>
+                                    <td>0.88</td>
+                                    <td>0.82</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.34</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.82</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.88</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.43 AUC</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.01 F1</span>
+                        <span class="improvement-tag" style="color: #e74c3c;">⬇ -0.05 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.88</td>
+                                    <td>0.94</td>
+                                    <td>0.91</td>
+                                    <td>175</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.21 <span class="improvement-indicator">⬆ +0.21</span></td>
+                                    <td>0.12 <span class="improvement-indicator">⬆ +0.12</span></td>
+                                    <td>0.15 <span class="improvement-indicator">⬆ +0.15</span></td>
+                                    <td>25</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.83</strong> <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.05</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.55 <span class="improvement-indicator">⬆ +0.11</span></td>
+                                    <td>0.53 <span class="improvement-indicator">⬆ +0.03</span></td>
+                                    <td>0.53 <span class="improvement-indicator">⬆ +0.06</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.80 <span class="improvement-indicator">⬆ +0.03</span></td>
+                                    <td>0.83 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.05</span></td>
+                                    <td>0.81 <span class="improvement-indicator" style="color: #e74c3c;">⬇ -0.01</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.77</span>
+                            <span class="improvement-badge positive">⬆ +0.43</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.81</span>
+                            <span class="improvement-badge negative">⬇ -0.01</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #e74c3c;">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.83</span>
+                            <span class="improvement-badge negative">⬇ -0.05</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.21</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 21%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.21</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.12</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 12%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.15</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 15%; background: #e74c3c;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.15</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Vehicle Insurance Prediction Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Datos de compañía de seguros</div>
+                    <div class="fuente-fecha">Disponible en repositorios públicos (Kaggle)</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">Kaggle / Hackathons de ciencia de datos</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction" target="_blank">Kaggle - Health Insurance Cross Sell Prediction</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Métrica de evaluación:</span>
+                            <span class="metadata-value">ROC_AUC Score</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Split público/privado:</span>
+                            <span class="metadata-value">40% / 60% del conjunto de prueba</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Predicción de Seguro de Vehículos</strong> ha sido proporcionado por una compañía de seguros que ofrece <strong>Seguro de Salud</strong> a sus clientes. El objetivo es construir un modelo para predecir si los asegurados (clientes) del año anterior también estarán <strong>interesados en un Seguro de Vehículo</strong> ofrecido por la compañía. Predecir el interés de los clientes en un seguro de vehículo es <strong>extremadamente útil</strong> para la empresa, ya que permite planificar su <strong>estrategia de comunicación</strong> para llegar a esos clientes y optimizar su <strong>modelo de negocio e ingresos</strong>.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">📖 Concepto de Seguro</h5>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6;">Una <strong>póliza de seguro</strong> es un acuerdo mediante el cual una compañía se compromete a proporcionar una garantía de compensación por pérdidas, daños, enfermedades o muerte especificados, a cambio del pago de una <strong>prima</strong> especificada. Una prima es una suma de dinero que el cliente debe pagar regularmente a la compañía de seguros por esta garantía.</p>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6; margin-top: 0.3rem;">Ejemplo: Un cliente paga una prima de Rs. 5,000 cada año por una cobertura de seguro de salud de Rs. 200,000. Si el cliente se enferma y necesita hospitalización, la compañía de seguros cubrirá los costos de hospitalización hasta Rs. 200,000. El concepto de <strong>probabilidades</strong> es clave: de 100 clientes que pagan una prima de Rs. 5,000, solo unos pocos (2-3) serían hospitalizados ese año, compartiendo así el riesgo entre todos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🔬 Contexto y Motivación</h4>
+                        <p>Al igual que el seguro médico, existe el <strong>seguro de vehículos</strong>, donde cada año el cliente debe pagar una prima a la compañía de seguros para que, en caso de accidente del vehículo, la compañía proporcione una compensación (llamada <strong>"suma asegurada"</strong>) al cliente.</p>
+                        
+                        <p style="margin-top: 0.5rem;">La <strong>predicción de interés</strong> de los clientes en un seguro de vehículo permite a la compañía:</p>
+                        <ul class="transformacion-lista">
+                            <li>Planificar <strong>estrategias de comunicación</strong> dirigidas a clientes potenciales</li>
+                            <li><strong>Optimizar el modelo de negocio</strong> y los ingresos</li>
+                            <li>Ofrecer <strong>productos personalizados</strong> según las características del cliente</li>
+                            <li>Maximizar la <strong>retención de clientes</strong> mediante ofertas relevantes</li>
+                        </ul>
+                        
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">El dataset incluye información sobre <strong>demografía</strong> (género, edad, tipo de código de región), <strong>vehículos</strong> (edad del vehículo, daños), <strong>póliza</strong> (prima, canal de ventas) y <strong>historial del cliente</strong> (vintage).</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Estructura del Fichero</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Conjunto de entrenamiento (Train Data):</strong> 11 variables + objetivo (Response)</li>
+                            <li><strong>Conjunto de prueba (Test Data):</strong> 11 variables (sin Response)</li>
+                            <li><strong>Archivo de envío (Submission):</strong> id + Response (probabilidad predicha)</li>
+                            <li><strong>Métrica de evaluación:</strong> <code>ROC_AUC</code> (Área bajo la curva ROC)</li>
+                        </ul>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Diccionario de Variables</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Definición</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Notas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">A. Identificador (A excluir del modelo)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>id</strong></td>
+                                        <td style="padding: 0.4rem;">ID único del cliente</td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Sin valor predictivo. <strong>Excluir del modelo.</strong></td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">B. Datos Demográficos</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Gender</strong></td>
+                                        <td style="padding: 0.4rem;">Género del cliente</td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Age</strong></td>
+                                        <td style="padding: 0.4rem;">Edad del cliente</td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Region_Code</strong></td>
+                                        <td style="padding: 0.4rem;">Código único de la región del cliente</td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ffd93d; font-weight: bold;">C. Licencia y Vehículo</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Driving_License</strong></td>
+                                        <td style="padding: 0.4rem;">¿El cliente tiene licencia de conducir?</td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">0 = No tiene DL, 1 = Ya tiene DL</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Previously_Insured</strong></td>
+                                        <td style="padding: 0.4rem;">¿El cliente ya tiene seguro de vehículo?</td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">1 = Ya tiene seguro, 0 = No tiene seguro</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Vehicle_Age</strong></td>
+                                        <td style="padding: 0.4rem;">Edad del vehículo</td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Vehicle_Damage</strong></td>
+                                        <td style="padding: 0.4rem;">¿El cliente dañó su vehículo en el pasado?</td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">1 = Sí tuvo daños, 0 = No tuvo daños</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #6bcb77; font-weight: bold;">D. Póliza y Ventas</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Annual_Premium</strong></td>
+                                        <td style="padding: 0.4rem;">Monto que el cliente debe pagar como prima anual</td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">En unidades monetarias locales</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Policy_Sales_Channel</strong></td>
+                                        <td style="padding: 0.4rem;">Código anonimizado del canal de contacto con el cliente</td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Ej: Agentes, Correo, Teléfono, En persona, etc.</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Vintage</strong></td>
+                                        <td style="padding: 0.4rem;">Número de días que el cliente ha estado asociado con la compañía</td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Antigüedad del cliente en días</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">E. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Response</strong></td>
+                                        <td style="padding: 0.4rem;">¿El cliente está interesado en el seguro de vehículo?</td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">1 = Interesado, 0 = No interesado</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Interesado vs. No interesado)</li>
+                            <li><strong>Métrica de evaluación:</strong> ROC_AUC Score</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (Numéricas, Categóricas, Binarias)</li>
+                            <li><strong>Valores faltantes:</strong> No reportados</li>
+                            <li><strong>Área de aplicación:</strong> Finanzas, Seguros, Marketing, Cross-Selling</li>
+                            <li><strong>Contexto:</strong> Venta cruzada (cross-selling) de seguros de vehículos a clientes existentes de seguro de salud</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos está diseñado para predecir el <strong>interés en seguros de vehículos</strong> (problema de <strong>venta cruzada</strong>). Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Excluir la variable <code>id</code></strong> del modelado por ser un identificador único sin valor predictivo</li>
+                            <li>La variable <code>Gender</code> requiere codificación (Label Encoding o One-Hot Encoding)</li>
+                            <li>La variable <code>Vehicle_Age</code> puede ser categórica y requiere codificación</li>
+                            <li><code>Region_Code</code> y <code>Policy_Sales_Channel</code> son variables categóricas con muchos valores únicos; considerar:</li>
+                            <ul class="transformacion-lista">
+                                <li>One-Hot Encoding (si el número de categorías es manejable)</li>
+                                <li>Frequency Encoding o Target Encoding para categorías con alta cardinalidad</li>
+                            </ul>
+                            <li>Estandarizar/normalizar las características numéricas (<code>Age</code>, <code>Annual_Premium</code>, <code>Vintage</code>)</li>
+                            <li>Las variables <code>Driving_License</code>, <code>Previously_Insured</code> y <code>Vehicle_Damage</code> pueden utilizarse directamente como 0/1</li>
+                            <li>La métrica de evaluación es <strong>ROC_AUC</strong>, por lo que se debe optimizar esta métrica y trabajar con <strong>probabilidades</strong> (no solo predicciones de clase)</li>
+                            <li>La <strong>división del conjunto de prueba</strong> es 40% para la <strong>leaderboard pública</strong> y 60% para la <strong>leaderboard privada</strong> (clasificación final)</li>
+                            <li>El envío final debe incluir <strong>código</strong> para reproducir la solución (obligatorio)</li>
+                            <li>El archivo de <strong>solución</strong> debe contener las <strong>probabilidades</strong> de la clase positiva (Response = 1)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en la Industria de Seguros</h4>
+                        <p>La <strong>venta cruzada (cross-selling)</strong> es una estrategia clave en la industria de seguros para:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Incrementar el valor de vida del cliente (LTV)</strong> ofreciendo productos adicionales a clientes existentes</li>
+                            <li><strong>Reducir costos de adquisición</strong> al vender a clientes existentes en lugar de adquirir nuevos</li>
+                            <li><strong>Mejorar la retención</strong> al ofrecer productos personalizados y relevantes</li>
+                            <li><strong>Aumentar los ingresos</strong> mediante la diversificación de la cartera de productos por cliente</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">La capacidad de predecir qué clientes estarán interesados en un seguro de vehículo permite a la compañía <strong>optimizar sus campañas de marketing</strong>, asignar recursos de manera más eficiente y mejorar la <strong>experiencia del cliente</strong> al ofrecer productos relevantes en el momento adecuado.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Health Insurance Cross Sell Prediction Dataset. Kaggle. https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction</pre>
+                        <button onclick="copyToClipboard('Health Insurance Cross Sell Prediction Dataset. Kaggle. https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Kaggle - Health Insurance Cross Sell Prediction. <a href="https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction" target="_blank" style="color: #4fc3f7;">https://www.kaggle.com/datasets/anmolkumar/health-insurance-cross-sell-prediction</a></li>
+                            <li>Insurance Information Institute. <em>Understanding Insurance</em>. <a href="https://www.iii.org/" target="_blank" style="color: #4fc3f7;">https://www.iii.org/</a></li>
+                            <li>Cross-Selling in Insurance: Strategies and Best Practices. <a href="#" style="color: #4fc3f7;">Artículos de la industria</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Health Insurance Cross Sell)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Limpieza inicial y eliminación de variables no predictivas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Eliminación de la columna <em>id</em> (identificador único de cliente) por no aportar valor predictivo y para evitar sobreajuste.</li>
+                            <li>Verificación de calidad de datos: Confirmación de <strong>ausencia de valores nulos</strong> en el dataset original.</li>
+                            <li>Implementación de imputación con <em>moda</em> (categóricas) y <em>mediana</em> (numéricas) como medida preventiva.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación específica de variables categóricas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Gender:</strong> Mapeo manual ('Male' → 0 = Masculino, 'Female' → 1 = Femenino).</li>
+                            <li><strong>Vehicle_Damage:</strong> Mapeo manual ('No' → 0 = Sin daño, 'Yes' → 1 = Con daño previo) — variable clave que indica riesgo e interés potencial.</li>
+                            <li><strong>Vehicle_Age:</strong> Mapeo ordinal con jerarquía lógica ('< 1 Year' → 0, '1-2 Year' → 1, '> 2 Years' → 2) preservando la antigüedad del vehículo.</li>
+                            <li><strong>Region_Code</strong> y <strong>Policy_Sales_Channel:</strong> Preservación como códigos numéricos enteros (anónimos proporcionados por la compañía).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de variables numéricas originales:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><em>Age</em> (Edad en años) — variable demográfica clave.</li>
+                            <li><em>Driving_License</em> (0 = No tiene licencia, 1 = Sí tiene licencia).</li>
+                            <li><em>Previously_Insured</em> (0 = No tiene seguro de vehículo, 1 = Ya tiene seguro) — indicador de cliente existente en el segmento de vehículos.</li>
+                            <li><em>Annual_Premium</em> (Prima anual - Precio del seguro).</li>
+                            <li><em>Vintage</em> (Días de antigüedad del cliente con la compañía).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de la variable objetivo:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Preservación de <em>Response</em> en su formato binario original: 0 = No interesado, 1 = Interesado (Clase Positiva).</li>
+                            <li>Documentación detallada en leyenda sobre el significado de la variable objetivo para venta cruzada.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_insurance.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación del mapeo ordinal de <em>Vehicle_Age</em> con jerarquía lógica (0 → < 1 año, 1 → 1-2 años, 2 → > 2 años).</li>
+                            <li>Descripción de variables binarias y su significado (Driving_License, Previously_Insured, Vehicle_Damage).</li>
+                            <li>Nota sobre variables de código anónimo (Region_Code, Policy_Sales_Channel).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Optimización y formato de salida:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión de <em>Region_Code</em> y <em>Policy_Sales_Channel</em> a tipo <strong>int</strong> para eliminar decimales.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                            <li>Preservación de las <strong>instancias originales</strong> del dataset de entrenamiento.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>clientes de seguros</strong> (≈381,000 registros) con <strong>10 variables predictoras</strong> (demográficas, de vehículo, de póliza y de antigüedad) y <strong>1 variable objetivo binaria</strong> (Response). Desbalance extremo (~88% no interesados / ~12% interesados en seguro de vehículo) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>venta cruzada (cross-selling)</strong> en el sector asegurador, donde la predicción de interés en productos adicionales es clave para la estrategia comercial.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🏢 <strong>Fuente:</strong> Health Insurance Cross Sell (Kaggle) - Datos de compañía aseguradora.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🚗 <strong>Variable clave de interés:</strong> <em>Vehicle_Damage</em> (daño previo del vehículo) — fuerte predictor de intención de compra de seguro vehicular.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📋 <strong>Variables comerciales:</strong> <em>Previously_Insured</em> (cliente ya asegurado en vehículos), <em>Annual_Premium</em> (prima anual), <em>Vintage</em> (antigüedad como cliente).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_insurance.txt</em> con mapeo semántico completo de Gender, Vehicle_Damage, Vehicle_Age (ordinal), y descripción de variables numéricas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Response</em> (1 = Interesado en seguro de vehículo, 0 = No interesado).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Eliminación de ID, verificación de nulos, codificación de categóricas con mapeos manuales específicos para el contexto asegurador.
+                </p>
+            </div>
+        </div>
+    
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Clínica / Comercial</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Region_Code</code></td>
+                            <td>Código de región geográfica del cliente (anónimo)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-50 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Policy_Sales_Channel</code></td>
+                            <td>Canal de captación de la póliza (anónimo)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1-163 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Age</code></td>
+                            <td>Edad del cliente</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>20 - 83</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Vehicle_Age</code></td>
+                            <td>Antigüedad del vehículo (ordinal)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0: &lt;1 año, 1: 1-2 años, 2: &gt;2 años</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Annual_Premium</code></td>
+                            <td>Prima anual del seguro de salud</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>2,630 - 90,123</td>
+                            <td>moneda local</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Vintage</code></td>
+                            <td>Antigüedad del cliente en la compañía</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>10 - 297</td>
+                            <td>días</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Gender</code></td>
+                            <td>Género del cliente</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Masculino, 1: Femenino</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Lic</code></td>
+                            <td>Licencia de conducir (Driving License)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No tiene, 1: Sí tiene</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Previously_Insured</code></td>
+                            <td>Cliente ya asegurado en seguro de vehículo</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No tiene, 1: Ya tiene</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Vehicle_Damage</code></td>
+                            <td>Historial de daños del vehículo</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Response</code></td>
+                            <td>Interés en seguro de vehículo (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No interesado, 1: Interesado</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Venta Cruzada (Response)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Health Insurance Cross Sell. Comprender estas 
+                codificaciones es fundamental para la correcta interpretación de los resultados y la 
+                optimización de estrategias comerciales.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: Region_Code -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Region_Code</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Códigos de región geográfica (anónimos)</strong>
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2px 6px; max-height: 200px; overflow-y: auto; font-size: 0.8em;">
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">0</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">1</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">2</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">3</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">4</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">5</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">6</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">7</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">8</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">9</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">10</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">11</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">12</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">13</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">14</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">15</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">16</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">17</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">18</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">19</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">20</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">21</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">23</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">24</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">25</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">26</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">27</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">28</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">29</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">30</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">31</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">32</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">33</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">34</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">35</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">36</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">37</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">38</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">39</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">40</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">41</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">43</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">44</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">45</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">46</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">47</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">48</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">50</span></div>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⚠️</span>
+                            <p><strong>Nota:</strong> Códigos anónimos proporcionados por la compañía. No se dispone de mapeo a ubicaciones reales.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Policy_Sales_Channel -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Policy_Sales_Channel</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Códigos de canal de venta (anónimos)</strong>
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 2px 6px; max-height: 200px; overflow-y: auto; font-size: 0.8em;">
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">1</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">3</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">7</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">8</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">11</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">12</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">13</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">14</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">15</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">16</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">18</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">23</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">25</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">26</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">29</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">37</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">52</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">60</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">61</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">106</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">109</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">122</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">124</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">125</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">131</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">135</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">136</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">147</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">148</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">150</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">151</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">152</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">154</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">155</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">156</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">157</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">158</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">159</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">160</span></div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">163</span></div>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⚠️</span>
+                            <p><strong>Nota:</strong> Códigos anónimos que representan diferentes canales de venta (agente, web, correo, etc.)</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Vehicle_Age -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Vehicle_Age</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Menos de 1 año (Vehículo nuevo)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Entre 1 y 2 años</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Más de 2 años</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">💡</span>
+                            <p><strong>Interpretación:</strong> Vehículos más viejos (código 2) tienen mayor probabilidad de interés en seguro.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato común:</strong> 0 = No / Ausencia, 1 = Sí / Presencia
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Gender</code></span>
+                                <span class="binaria-desc">Género (0: Masculino, 1: Femenino)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Lic</code></span>
+                                <span class="binaria-desc">Licencia de conducir (0: No tiene, 1: Sí tiene)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Previously_Insured</code></span>
+                                <span class="binaria-desc">Ya tiene seguro de vehículo (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Vehicle_Damage</code></span>
+                                <span class="binaria-desc">Vehículo con daños previos (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Response</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Interés en seguro de vehículo (0: No, 1: Sí)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Todas las variables binarias están codificadas como <strong>0 = No</strong> y <strong>1 = Sí</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 2
+                        <ul>
+                            <li>Region_Code (48 códigos anónimos)</li>
+                            <li>Policy_Sales_Channel (40 códigos anónimos)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 5
+                        <ul>
+                            <li>Gender, Lic, Previously_Insured, Vehicle_Damage</li>
+                            <li>🎯 Response (Objetivo - Interés en seguro de vehículo)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 4
+                        <ul>
+                            <li>Age (Edad en años)</li>
+                            <li>Vehicle_Age (Antigüedad del vehículo - ordinal 0-2)</li>
+                            <li>Annual_Premium (Prima anual)</li>
+                            <li>Vintage (Días de antigüedad del cliente)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Marketing:</strong>
+                        <ul>
+                            <li><strong>Target principal:</strong> Clientes sin seguro de vehículo (<code>Previously_Insured = 0</code>)</li>
+                            <li><strong>Factor clave:</strong> <code>Vehicle_Damage</code> - Clientes con daños previos son más propensos a comprar</li>
+                            <li><strong>Vehículos viejos:</strong> <code>Vehicle_Age = 2</code> (&gt;2 años) mayor interés</li>
+                            <li><strong>Canal de venta:</strong> Algunos canales tienen mayor tasa de conversión (explorar)</li>
+                            <li><strong>Vintage:</strong> Clientes con mayor antigüedad pueden tener mayor fidelidad</li>
+                            <li><strong>Annual_Premium:</strong> Prima más alta puede indicar mayor capacidad de gasto</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- NEGOCIO - Venta cruzada -->
+                        <li><code>Previously_Insured == 1 → Response = 0 (Cliente asegurado → no interesado)</code></li>
+                        
+                        <!-- LEGAL - Licencia de conducir -->
+                        <li><code>Driving_License == 1 → Age ≥ 18 (Licencia → mayoría de edad)</code></li>
+                        
+                        <!-- LÓGICA DE PRODUCTO - Vehículo nuevo -->
+                        <li><code>Vehicle_Age == 0 → Vehicle_Damage = 0 (Vehículo nuevo → sin daños)</code></li>
+                        
+                        <!-- NEGOCIO - Conductor sin licencia -->
+                        <li><code>Driving_License == 0 → Response = 0 (Sin licencia → sin interés en seguro)</code></li>
+                        
+                        <!-- TARIFICACIÓN - Riesgo mínimo -->
+                        <li><code>Age > 30 → Annual_Premium < 60000 (Conductor experimentado → prima no extrema)</code></li>
+                        
+                        <!-- RIESGO - Conductor joven -->
+                        <li><code>Age < 22 → (Vehicle_Damage = 1) OR (Previously_Insured = 1)</code></li>
+                        
+                        <!-- RIESGO - Vehículo viejo -->
+                        <li><code>Vehicle_Age == 2 → (Vehicle_Damage = 1) OR (Previously_Insured = 1)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice<strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>1</td>
+                                <td>1052</td>
+                                <td>0.776</td>
+                                <td>0.822</td>
+                                <td>0.850</td>
+                                <td>7.251</td>
+                                <td>0.187</td>
+                                <td>0.279</td>
+                                <td>0.088</td>
+                                <td>0.958</td>
+                                <td>50.951</td>
+                                <td>0</td>
+                                <td>1052</td>
+                                <td>0.405</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>1052</td>
+                                <td>0.742</td>
+                                <td>0.790</td>
+                                <td>0.785</td>
+                                <td>2.883</td>
+                                <td>0.204</td>
+                                <td>0.386</td>
+                                <td>0.130</td>
+                                <td>0.953</td>
+                                <td>51.446</td>
+                                <td>0.060</td>
+                                <td>601</td>
+                                <td>0.439</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>1052</td>
+                                <td>0.744</td>
+                                <td>0.783</td>
+                                <td>0.785</td>
+                                <td>2.283</td>
+                                <td>0.198</td>
+                                <td>0.231</td>
+                                <td>0.138</td>
+                                <td>0.946</td>
+                                <td>50.417</td>
+                                <td>0.066</td>
+                                <td>600</td>
+                                <td>0.422</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.002</td>
+                                <td>1053</td>
+                                <td>0.749</td>
+                                <td>0.784</td>
+                                <td>0.770</td>
+                                <td>2.406</td>
+                                <td>0.199</td>
+                                <td>0.375</td>
+                                <td>0.131</td>
+                                <td>0.950</td>
+                                <td>50.229</td>
+                                <td>0.062</td>
+                                <td>600</td>
+                                <td>0.420</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1.015</td>
+                                <td>1044</td>
+                                <td>0.803</td>
+                                <td>0.800</td>
+                                <td>0.780</td>
+                                <td>5.380</td>
+                                <td>0.202</td>
+                                <td>0.295</td>
+                                <td>0.102</td>
+                                <td>0.958</td>
+                                <td>50.721</td>
+                                <td>0.059</td>
+                                <td>600</td>
+                                <td>0.448</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1.015</td>
+                                <td>1044</td>
+                                <td>0.800</td>
+                                <td>0.807</td>
+                                <td>0.790</td>
+                                <td>5.892</td>
+                                <td>0.205</td>
+                                <td>0.339</td>
+                                <td>0.104</td>
+                                <td>0.961</td>
+                                <td>50.732</td>
+                                <td>0.060</td>
+                                <td>600</td>
+                                <td>0.421</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>OOF PSO para Balanceo</strong></td>
+                                <td>7.013</td>
+                                <td>601</td>
+                                <td>0.787</td>
+                                <td>0.816</td>
+                                <td>0.865</td>
+                                <td><strong>9.186</strong></td>
+                                <td>0.012</td>
+                                <td>1.000</td>
+                                <td>0.000</td>
+                                <td>0.998</td>
+                                <td>55.492</td>
+                                <td>0.000</td>
+                                <td>600</td>
+                                <td>0.414</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>1</td>
+                                <td>1052</td>
+                                <td>0.773</td>
+                                <td>0.819</td>
+                                <td>0.855</td>
+                                <td>4.636</td>
+                                <td>0.341</td>
+                                <td>0.000</td>
+                                <td>0.194</td>
+                                <td>0.790</td>
+                                <td>55.358</td>
+                                <td>0.121</td>
+                                <td>519</td>
+                                <td>0.407</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>OOF PSO para Balanceo</strong> 
+                    (TabDSFidelity: <strong>9.186</strong>, AUC: 0.787, F1: 0.816, MIA: 0.414). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>5.813</td>
+                                <td>9791</td>
+                                <td>0.775</td>
+                                <td>0.819</td>
+                                <td>0.845</td>
+                                <td>8.962</td>
+                                <td>0.214</td>
+                                <td>0.585</td>
+                                <td>0.035</td>
+                                <td>0.961</td>
+                                <td>72.597</td>
+                                <td>0.640</td>
+                                <td>0</td>
+                                <td>0.407</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano + Reglas</strong></td>                    
+                                <td>6.649</td>
+                                <td>9791</td>
+                                <td>0.766</td>
+                                <td><strong>0.828</strong></td>
+                                <td><strong>0.860</strong></td>
+                                <td><strong>9.030</strong></td>
+                                <td>0.214</td>
+                                <td>0.585</td>
+                                <td>0.041</td>
+                                <td>0.956</td>
+                                <td>208.362</td>
+                                <td>0.640</td>
+                                <td>0</td>
+                                <td>0.414</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>9.536</td>
+                                <td>9999</td>
+                                <td>0.745</td>
+                                <td>0.827</td>
+                                <td>0.870</td>
+                                <td>7.586</td>
+                                <td>0.284</td>
+                                <td>0.029</td>
+                                <td>0.026</td>
+                                <td>0.934</td>
+                                <td>341.685</td>
+                                <td>0.112</td>
+                                <td>0</td>
+                                <td>0.474</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>10.480</td>
+                                <td>9999</td>
+                                <td>0.760</td>
+                                <td>0.814</td>
+                                <td>0.860</td>
+                                <td>7.557</td>
+                                <td>0.284</td>
+                                <td>0.029</td>
+                                <td>0.029</td>
+                                <td>0.935</td>
+                                <td>467.570</td>
+                                <td>0.110</td>
+                                <td>0</td>
+                                <td>0.439</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>10.533</td>
+                                <td>9999</td>
+                                <td>0.702</td>
+                                <td>0.824</td>
+                                <td>0.865</td>
+                                <td>6.755</td>
+                                <td>0.334</td>
+                                <td>0.208</td>
+                                <td>0.179</td>
+                                <td>0.898</td>
+                                <td>170.317</td>
+                                <td>0.114</td>
+                                <td>0</td>
+                                <td>0.462</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>10.533</td>
+                                <td>9999</td>
+                                <td>0.657</td>
+                                <td>0.816</td>
+                                <td>0.865</td>
+                                <td>6.045</td>
+                                <td>0.334</td>
+                                <td>0.208</td>
+                                <td>0.182</td>
+                                <td>0.884</td>
+                                <td>294.567</td>
+                                <td>0.116</td>
+                                <td>0</td>
+                                <td>0.422</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.795</td>
+                                <td>0.667</td>
+                                <td>0.600</td>
+                                <td>1.867</td>
+                                <td>0.611</td>
+                                <td>0.000</td>
+                                <td>1.025</td>
+                                <td>0.767</td>
+                                <td>121.406</td>
+                                <td>0.284</td>
+                                <td>0</td>
+                                <td>0.449</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.001</td>
+                                <td>10000</td>
+                                <td>0.819</td>
+                                <td>0.662</td>
+                                <td>0.595</td>
+                                <td>2.000</td>
+                                <td>0.611</td>
+                                <td>0.000</td>
+                                <td>1.039</td>
+                                <td>0.750</td>
+                                <td>251.707</td>
+                                <td>0.300</td>
+                                <td>0</td>
+                                <td>0.409</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.005</td>
+                                <td>9929</td>
+                                <td>0.815</td>
+                                <td>0.846</td>
+                                <td>0.835</td>
+                                <td>8.881</td>
+                                <td>0.262</td>
+                                <td>0.240</td>
+                                <td>0.102</td>
+                                <td>0.945</td>
+                                <td>76.127</td>
+                                <td>0.551</td>
+                                <td>0</td>
+                                <td>0.431</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.064</td>
+                                <td>9929</td>
+                                <td>0.801</td>
+                                <td>0.829</td>
+                                <td>0.815</td>
+                                <td>8.352</td>
+                                <td>0.262</td>
+                                <td>0.240</td>
+                                <td>0.089</td>
+                                <td>0.937</td>
+                                <td>204.881</td>
+                                <td>0.551</td>
+                                <td>0</td>
+                                <td>0.376</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>9.030</strong>, AUC: 0.766, F1: 0.828, MIA: 0.414). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>5.873</td>
+                                <td>10392</td>
+                                <td>0.763</td>
+                                <td>0.809</td>
+                                <td>0.850</td>
+                                <td>6.877</td>
+                                <td>0.204</td>
+                                <td>0.610</td>
+                                <td>0.032</td>
+                                <td>0.963</td>
+                                <td>141.421</td>
+                                <td>0.640</td>
+                                <td>0</td>
+                                <td>0.410</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano + Reglas</strong></td>                    
+                                <td>6.669</td>
+                                <td>10392</td>
+                                <td>0.749</td>
+                                <td><strong>0.844</strong></td>
+                                <td><strong>0.875</strong></td>
+                                <td><strong>8.930</strong></td>
+                                <td>0.204</td>
+                                <td>0.610</td>
+                                <td>0.037</td>
+                                <td>0.958</td>
+                                <td>276.385</td>
+                                <td>0.640</td>
+                                <td>0</td>
+                                <td>0.410</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>9.352</td>
+                                <td>10600</td>
+                                <td>0.699</td>
+                                <td>0.811</td>
+                                <td>0.855</td>
+                                <td>4.907</td>
+                                <td>0.266</td>
+                                <td>0.040</td>
+                                <td>0.023</td>
+                                <td>0.937</td>
+                                <td>406.078</td>
+                                <td>0.102</td>
+                                <td>125</td>
+                                <td>0.438</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>10.205</td>
+                                <td>10600</td>
+                                <td>0.732</td>
+                                <td>0.811</td>
+                                <td>0.855</td>
+                                <td>5.416</td>
+                                <td>0.266</td>
+                                <td>0.040</td>
+                                <td>0.026</td>
+                                <td>0.938</td>
+                                <td>531.676</td>
+                                <td>0.100</td>
+                                <td>125</td>
+                                <td>0.422</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>10.253</td>
+                                <td>10600</td>
+                                <td>0.704</td>
+                                <td>0.814</td>
+                                <td>0.860</td>
+                                <td>5.032</td>
+                                <td>0.312</td>
+                                <td>0.222</td>
+                                <td>0.137</td>
+                                <td>0.915</td>
+                                <td>234.560</td>
+                                <td>0.106</td>
+                                <td>125</td>
+                                <td>0.427</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>10.253</td>
+                                <td>10600</td>
+                                <td>0.685</td>
+                                <td>0.809</td>
+                                <td>0.850</td>
+                                <td>4.198</td>
+                                <td>0.312</td>
+                                <td>0.222</td>
+                                <td>0.139</td>
+                                <td>0.905</td>
+                                <td>364.979</td>
+                                <td>0.107</td>
+                                <td>125</td>
+                                <td>0.417</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.089</td>
+                                <td>10601</td>
+                                <td>0.764</td>
+                                <td>0.809</td>
+                                <td>0.800</td>
+                                <td>1.858</td>
+                                <td>0.569</td>
+                                <td>0.000</td>
+                                <td>0.773</td>
+                                <td>0.770</td>
+                                <td>187.440</td>
+                                <td>0.266</td>
+                                <td>125</td>
+                                <td>0.430</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.090</td>
+                                <td>10601</td>
+                                <td>0.772</td>
+                                <td>0.803</td>
+                                <td>0.790</td>
+                                <td>1.333</td>
+                                <td>0.569</td>
+                                <td>0.000</td>
+                                <td>0.785</td>
+                                <td>0.753</td>
+                                <td>319.547</td>
+                                <td>0.281</td>
+                                <td>125</td>
+                                <td>0.419</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.095</td>
+                                <td>10530</td>
+                                <td>0.816</td>
+                                <td>0.828</td>
+                                <td>0.820</td>
+                                <td>7.204</td>
+                                <td>0.249</td>
+                                <td>0.276</td>
+                                <td>0.092</td>
+                                <td>0.949</td>
+                                <td>145.458</td>
+                                <td>0.550</td>
+                                <td>0</td>
+                                <td>0.424</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.155</td>
+                                <td>10530</td>
+                                <td>0.789</td>
+                                <td>0.835</td>
+                                <td>0.820</td>
+                                <td>7.068</td>
+                                <td>0.249</td>
+                                <td>0.276</td>
+                                <td>0.080</td>
+                                <td>0.941</td>
+                                <td>267.364</td>
+                                <td>0.550</td>
+                                <td>0</td>
+                                <td>0.413</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>8.930</strong>, AUC: 0.749, F1: 0.844, MIA: 0.410). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_28</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>OOF PSO para Balanceo</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd28.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Vehicle Insurance Cross-Sell Prediction (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32934557.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [87.67, 12.33], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

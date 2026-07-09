@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || Código MDB || CD_50: AI4I 2020 Predictive Maintenance - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_50</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_50: AI4I 2020 Predictive Maintenance</h1>
+            <p class="description">Conjunto de datos de simulación industrial para la predicción de fallos mecánicos. Caracterizado por un desbalance alto (3.4%) y la incorporación de reglas físicas explícitas.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.96</td>
+                                    <td>1.00</td>
+                                    <td>0.98</td>
+                                    <td>193</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>7</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.96</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.48</td>
+                                    <td>0.50</td>
+                                    <td>0.49</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.93</td>
+                                    <td>0.96</td>
+                                    <td>0.95</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.60</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.95</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.96</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.38 AUC</span>
+                        <span class="improvement-tag">⬆ +0.02 F1</span>
+                        <span class="improvement-tag">⬆ +0.01 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.97</td>
+                                    <td>1.00</td>
+                                    <td>0.99</td>
+                                    <td>193</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +1.00</span></td>
+                                    <td>0.29 <span class="improvement-indicator">⬆ +0.29</span></td>
+                                    <td>0.44 <span class="improvement-indicator">⬆ +0.44</span></td>
+                                    <td>7</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.97</strong> <span class="improvement-indicator">⬆ +0.01</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.51</span></td>
+                                    <td>0.64 <span class="improvement-indicator">⬆ +0.14</span></td>
+                                    <td>0.72 <span class="improvement-indicator">⬆ +0.23</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.98 <span class="improvement-indicator">⬆ +0.05</span></td>
+                                    <td>0.97 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>0.97 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.98</span>
+                            <span class="improvement-badge positive">⬆ +0.38</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.97</span>
+                            <span class="improvement-badge positive">⬆ +0.02</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.97</span>
+                            <span class="improvement-badge positive">⬆ +0.01</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 1.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +1.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.29</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 29%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.29</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.44</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 44%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.44</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>AI4I 2020 Predictive Maintenance Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Matzka, S.</div>
+                    <div class="fuente-fecha">Publicado: 29 de agosto de 2020</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value"><a href="https://doi.org/10.24432/C5HS5C" target="_blank">10.24432/C5HS5C</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/AI4I+2020+Predictive+Maintenance+Dataset" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Creative Commons Attribution 4.0 International (CC BY 4.0)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">10,000</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">14 (6 predictores + 2 objetivos + 6 identificadores)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Tipo de problema:</span>
+                            <span class="metadata-value">Clasificación binaria (Machine failure) y multi-clase (Failure Type)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Mantenimiento Predictivo AI4I 2020</strong> es un <strong>dataset sintético</strong> que refleja datos reales de mantenimiento predictivo encontrados en la industria. Dado que los conjuntos de datos reales de mantenimiento predictivo son generalmente <strong>difíciles de obtener</strong> y, en particular, <strong>difíciles de publicar</strong>, este dataset proporciona una alternativa sintética pero <strong>realista</strong> para la investigación y el desarrollo de modelos de <strong>mantenimiento predictivo</strong>. El dataset consta de <strong>10,000 puntos de datos</strong> con <strong>14 características</strong> que incluyen condiciones operativas de máquinas, desgaste de herramientas y modos de fallo. El objetivo es predecir si una máquina <strong>fallará</strong> (Machine failure) y el <strong>tipo de fallo</strong> específico (Failure Type).</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🔧 Contexto del Dominio</h4>
+                        <p>El <strong>mantenimiento predictivo</strong> es una aplicación crítica del <strong>aprendizaje automático</strong> en la industria 4.0. El objetivo es predecir fallos en equipos antes de que ocurran, permitiendo:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Reducir tiempos de inactividad</strong> no planificados</li>
+                            <li><strong>Optimizar programas de mantenimiento</strong> y reducir costos</li>
+                            <li><strong>Mejorar la seguridad</strong> en entornos industriales</li>
+                            <li><strong>Aumentar la vida útil</strong> de los equipos</li>
+                        </ul>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">⚙️ Generación de Datos Sintéticos</h5>
+                            <ul class="transformacion-lista">
+                                <li><strong>air temperature [K]:</strong> Proceso de caminata aleatoria normalizado a σ = 2 K alrededor de 300 K</li>
+                                <li><strong>process temperature [K]:</strong> Caminata aleatoria con σ = 1 K, añadido a la temperatura del aire + 10 K</li>
+                                <li><strong>rotational speed [rpm]:</strong> Calculado a partir de una potencia de 2860 W, con ruido normalmente distribuido</li>
+                                <li><strong>torque [Nm]:</strong> Distribución normal alrededor de 40 Nm con σ = 10 Nm, sin valores negativos</li>
+                                <li><strong>tool wear [min]:</strong> Las variantes de calidad H/M/L añaden 5/3/2 minutos de desgaste</li>
+                            </ul>
+                            <p style="color: #000; font-size: 0.85rem; margin-top: 0.3rem;">El dataset incluye <strong>variantes de calidad de productos</strong> (L: 50%, M: 30%, H: 20%) que afectan el desgaste de la herramienta.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>10,000 instancias</strong> con <strong>14 atributos</strong>. Las características son de tipo <strong>mixto</strong> (numéricas y categóricas) y <strong>no presentan valores faltantes</strong>.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Unidades / Categorías</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">A. Identificadores (A excluir del modelo)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>UID</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Identificador único (1-10000)</td>
+                                        <td style="padding: 0.4rem;">Sin valor predictivo</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Product ID</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Identificador del producto (letra + número de serie)</td>
+                                        <td style="padding: 0.4rem;">L, M, H + número de serie</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Type</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Variante de calidad del producto</td>
+                                        <td style="padding: 0.4rem;">L (50%), M (30%), H (20%)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">B. Variables Operativas</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Air temperature</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Temperatura del aire</td>
+                                        <td style="padding: 0.4rem;">Kelvin (K)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Process temperature</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Temperatura del proceso</td>
+                                        <td style="padding: 0.4rem;">Kelvin (K)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Rotational speed</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Velocidad de rotación</td>
+                                        <td style="padding: 0.4rem;">rpm</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Torque</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Torque aplicado</td>
+                                        <td style="padding: 0.4rem;">Nm</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Tool wear</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Desgaste de la herramienta</td>
+                                        <td style="padding: 0.4rem;">minutos</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ffd93d; font-weight: bold;">C. Variables de Fallo</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Machine failure</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Indica si la máquina falló</td>
+                                        <td style="padding: 0.4rem;">1 = Fallo, 0 = No fallo</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>TWF</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">Fallo por desgaste de herramienta</td>
+                                        <td style="padding: 0.4rem;">1 = Sí, 0 = No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>HDF</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">Fallo por disipación de calor</td>
+                                        <td style="padding: 0.4rem;">1 = Sí, 0 = No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>PWF</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">Fallo por potencia</td>
+                                        <td style="padding: 0.4rem;">1 = Sí, 0 = No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>OSF</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">Fallo por sobreesfuerzo</td>
+                                        <td style="padding: 0.4rem;">1 = Sí, 0 = No</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>RNF</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">Fallo aleatorio</td>
+                                        <td style="padding: 0.4rem;">1 = Sí, 0 = No</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">⚠️ Modos de Fallo y Condiciones</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Modo de Fallo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Condición / Frecuencia</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>TWF</strong></td>
+                                        <td style="padding: 0.4rem;">Tool Wear Failure</td>
+                                        <td style="padding: 0.4rem;">Desgaste entre 200-240 min (120 casos)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>HDF</strong></td>
+                                        <td style="padding: 0.4rem;">Heat Dissipation Failure</td>
+                                        <td style="padding: 0.4rem;">ΔT < 8.6 K y velocidad < 1380 rpm (115 casos)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>PWF</strong></td>
+                                        <td style="padding: 0.4rem;">Power Failure</td>
+                                        <td style="padding: 0.4rem;">Potencia < 3500 W o > 9000 W (95 casos)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>OSF</strong></td>
+                                        <td style="padding: 0.4rem;">Overstrain Failure</td>
+                                        <td style="padding: 0.4rem;">Desgaste × Torque > umbral por variante (98 casos)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>RNF</strong></td>
+                                        <td style="padding: 0.4rem;">Random Failure</td>
+                                        <td style="padding: 0.4rem;">Probabilidad aleatoria del 0.1% (5 casos)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="color: #ff6b6b; font-size: 0.85rem; margin-top: 0.3rem;">⚠️ <strong>Machine failure = 1</strong> si al menos un modo de fallo es verdadero. <strong>No es transparente</strong> para el modelo qué modo causó el fallo.</p>
+                            <p style="color: #ff6b6b; font-size: 0.85rem; margin-top: 0.3rem;">⚠️ <strong>Dos variables objetivo</strong>: Machine failure (binaria) y Failure Type (multi-clase). <strong>No usar una como característica</strong> para evitar <strong>fuga de datos</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Machine failure) y Clasificación multi-clase (Failure Type)</li>
+                            <li><strong>Dimensión:</strong> Multivariante (10,000 × 14)</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (Numéricas, Categóricas, Binarias)</li>
+                            <li><strong>Valores faltantes:</strong> No</li>
+                            <li><strong>Área de aplicación:</strong> Mantenimiento Predictivo, Industria 4.0, Manufactura</li>
+                            <li><strong>Dataset sintético:</strong> Refleja condiciones reales de mantenimiento predictivo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📖 Publicación Introductoria</h4>
+                        <p>El artículo fundamental que describe la aplicación de IA explicable para mantenimiento predictivo es:</p>
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #4fc3f7; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.9rem; margin: 0;">Matzka, S. (2020). <strong>Explainable Artificial Intelligence for Predictive Maintenance Applications</strong>. <em>International Conference on Artificial Intelligence for Industries (AI4I)</em>, 69-74. <a href="https://doi.org/10.1109/AI4I50062.2020.00021" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1109/AI4I50062.2020.00021</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos es <strong>sintético</strong> y no contiene <strong>datos reales de empresas</strong>, lo que elimina preocupaciones de privacidad y propiedad industrial. Se distribuye bajo la licencia <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong>, permitiendo su uso, modificación y distribución con atribución adecuada. <strong>Restricción de confidencialidad:</strong> El uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos presenta dos objetivos diferentes y requiere consideraciones especiales:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Dos variables objetivo:</strong>
+                                <ul class="transformacion-lista">
+                                    <li><strong>Machine failure:</strong> Clasificación binaria (1 = fallo, 0 = sin fallo)</li>
+                                    <li><strong>TWF, HDF, PWF, OSF, RNF:</strong> Modos de fallo individuales (binarios)</li>
+                                </ul>
+                            </li>
+                            <li><strong>⚠️ Importante:</strong> No usar las variables de fallo como características, ya que causarían <strong>fuga de datos</strong></li>
+                            <li><strong>Excluir variables identificadoras</strong> (UID, Product ID, Type) del modelado</li>
+                            <li>La variable <strong>Type</strong> (L/M/H) afecta el desgaste de la herramienta y puede ser una característica útil</li>
+                            <li>Codificar <strong>Product ID</strong> y <strong>Type</strong> como categóricas (One-Hot Encoding)</li>
+                            <li>Estandarizar/normalizar variables numéricas (temperaturas, velocidad, torque, desgaste)</li>
+                            <li>El dataset tiene <strong>desbalanceo de clases</strong> (la mayoría de instancias no tienen fallo)</li>
+                            <li>Los modos de fallo son <strong>mutuamente excluyentes</strong> (solo uno puede ocurrir por instancia)</li>
+                            <li>El dataset es adecuado para <strong>modelos de clasificación</strong> (Random Forest, XGBoost, SVM, Redes Neuronales)</li>
+                            <li>La <strong>interpretabilidad</strong> es importante en mantenimiento predictivo (XAI)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Mantenimiento Predictivo</h4>
+                        <p>El <strong>mantenimiento predictivo</strong> es una de las aplicaciones más valiosas del <strong>aprendizaje automático</strong> en la <strong>industria 4.0</strong>. Este dataset sintético permite:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Desarrollar y probar</strong> modelos de predicción de fallos sin datos reales</li>
+                            <li><strong>Investigar diferentes modos de fallo</strong> (desgaste, calor, potencia, sobreesfuerzo, aleatorio)</li>
+                            <li><strong>Entrenar modelos</strong> que identifiquen la causa raíz de los fallos</li>
+                            <li><strong>Implementar mantenimiento predictivo</strong> que optimice el reemplazo de herramientas y reduzca tiempos de inactividad</li>
+                            <li><strong>Explorar técnicas de IA explicable (XAI)</strong> para entender las decisiones del modelo</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">El dataset fue creado para el <strong>International Conference on Artificial Intelligence for Industries (AI4I) 2020</strong> y ha sido ampliamente utilizado en investigaciones sobre <strong>mantenimiento predictivo</strong> y <strong>explicabilidad en IA</strong>.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Matzka, S. (2020). AI4I 2020 Predictive Maintenance Dataset. UCI Machine Learning Repository. https://doi.org/10.24432/C5HS5C</pre>
+                        <button onclick="copyToClipboard('Matzka, S. (2020). AI4I 2020 Predictive Maintenance Dataset. UCI Machine Learning Repository. https://doi.org/10.24432/C5HS5C')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Matzka, S. (2020). Explainable Artificial Intelligence for Predictive Maintenance Applications. <em>International Conference on Artificial Intelligence for Industries (AI4I)</em>, 69-74. <a href="https://doi.org/10.1109/AI4I50062.2020.00021" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1109/AI4I50062.2020.00021</a></li>
+                            <li>UCI Machine Learning Repository - AI4I 2020 Predictive Maintenance Dataset. <a href="https://archive.ics.uci.edu/ml/datasets/AI4I+2020+Predictive+Maintenance+Dataset" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/AI4I+2020+Predictive+Maintenance+Dataset</a></li>
+                            <li>Jardine, A. K. S., Lin, D., & Banjevic, D. (2006). A review on machinery diagnostics and prognostics implementing condition-based maintenance. <em>Mechanical Systems and Signal Processing</em>, 20(7), 1483-1510.</li>
+                            <li>Lee, J., Wu, F., Zhao, W., Ghaffari, M., Liao, L., & Siegel, D. (2014). Prognostics and health management design for rotary machinery systems—Reviews, methodology and applications. <em>Mechanical Systems and Signal Processing</em>, 42(1-2), 314-334.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Predictive Maintenance - AI4I 2020)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Limpieza inicial y eliminación de variables:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Eliminación de columnas identificadoras y con fuga de datos: <em>UDI</em> (identificador único), <em>Product ID</em> (identificador de producto), <em>Failure Type</em> (tipo de fallo — causa Data Leakage).</li>
+                            <li>Reducción de la dimensionalidad del dataset para mejorar la eficiencia del modelo y evitar sobreajuste.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Renombrado y estandarización de nombres de columnas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de nombres para eliminar caracteres especiales y espacios: <em>'Air temperature [K]'</em> → <em>Air_Temp_K</em>, <em>'Process temperature [K]'</em> → <em>Process_Temp_K</em>, <em>'Rotational speed [rpm]'</em> → <em>Rotational_Speed_rpm</em>, <em>'Torque [Nm]'</em> → <em>Torque_Nm</em>, <em>'Tool wear [min]'</em> → <em>Tool_Wear_min</em>, <em>'Target'</em> → <em>Machine_Failure</em>, <em>'Type'</em> → <em>Product_Quality_Type</em>.</li>
+                            <li>Facilitación del uso en librerías de Machine Learning y generación de datos sintéticos.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variable ordinal:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Product_Quality_Type:</strong> Mapeo preservando jerarquía de calidad: 'L' (Low) → 0, 'M' (Medium) → 1, 'H' (High) → 2.</li>
+                            <li>Documentación detallada del mapeo en la leyenda.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de variables físicas y de proceso:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Variables de temperatura:</strong> <em>Air_Temp_K</em> (ambiente), <em>Process_Temp_K</em> (proceso) — en Kelvin.</li>
+                            <li><strong>Variables de operación:</strong> <em>Rotational_Speed_rpm</em> (velocidad de giro), <em>Torque_Nm</em> (fuerza de torsión), <em>Tool_Wear_min</em> (desgaste de herramienta en minutos).</li>
+                            <li>Relaciones físicas documentadas: velocidad inversamente proporcional al torque.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Estandarización y optimización de tipos de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión forzada de <em>Product_Quality_Type</em> y <em>Machine_Failure</em> a tipo <strong>entero (int)</strong>.</li>
+                            <li>Preservación de variables continuas (temperaturas, velocidad, torque, desgaste) como <strong>float</strong> para mantener precisión.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submuestreo estratificado para reducción del dataset:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Reducción del dataset a <strong>1,000 ejemplos</strong> representativos mediante muestreo estratificado.</li>
+                            <li>Uso de <code>train_test_split</code> con parámetro <em>stratify</em> para <strong>preservar exactamente</strong> la proporción original de clases (desbalance de fallos de máquina).</li>
+                            <li>Semilla fija (<em>random_state=42</em>) para garantizar reproducibilidad científica de la muestra.</li>
+                            <li>Verificación de integridad con diferencia máxima < 1% en proporción de clases.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_predictive_maintenance.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de la variable <em>Machine_Failure</em> (0 = No Failure, 1 = Failure).</li>
+                            <li>Descripción de la variable ordinal <em>Product_Quality_Type</em> (0=Low, 1=Medium, 2=High).</li>
+                            <li>Descripción de variables físicas con sus unidades de medida (Kelvin, rpm, Nm, minutos).</li>
+                            <li>Contextualización del dataset: mantenimiento predictivo en maquinaria industrial (AI4I 2020).</li>
+                            <li>Estadísticas finales: total de instancias, distribución de clases y ratio de desbalance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>10,000 instancias</strong> (registros de máquinas) originales para el dataset completo.</li>
+                            <li>Dataset reducido de <strong>1,000 ejemplos</strong> estratificados para experimentación eficiente.</li>
+                            <li>Dataset final con <strong>6 variables predictoras</strong> (mixtas: ordinal y continuas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>10,000 registros de maquinaria industrial</strong> (con versión reducida estratificada de 1,000 ejemplos) con <strong>6 variables predictoras</strong> (de proceso, operación y calidad) y <strong>1 variable objetivo binaria</strong> (Machine_Failure). Desbalance moderado-preservado (~96.5% sin fallo / ~3.5% con fallo) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>mantenimiento predictivo y detección de fallos en maquinaria industrial</strong>, donde la monitorización de variables físicas (temperaturas, velocidad, torque, desgaste) es fundamental para la prevención de averías.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🏭 <strong>Fuente:</strong> Predictive Maintenance Dataset (AI4I 2020) - Datos de sensores industriales para mantenimiento predictivo.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🌡️ <strong>Variables de temperatura:</strong> <em>Air_Temp_K</em> (temperatura ambiente) y <em>Process_Temp_K</em> (temperatura del proceso) — ambas en Kelvin.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    ⚙️ <strong>Variables de operación:</strong> <em>Rotational_Speed_rpm</em> (velocidad de giro), <em>Torque_Nm</em> (fuerza de torsión), <em>Tool_Wear_min</em> (desgaste de herramienta).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variable de calidad:</strong> <em>Product_Quality_Type</em> (0=Low, 1=Medium, 2=High) — ordinal preservando jerarquía.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_predictive_maintenance.txt</em> con descripción completa de la variable objetivo, variable ordinal y variables físicas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Machine_Failure</em> (1 = Fallo de máquina, 0 = Funcionamiento normal).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Eliminación de UDI, Product ID y Failure Type (Data Leakage), renombrado de columnas, codificación ordinal de Product_Quality_Type, estandarización de tipos, reducción estratificada a 1,000 ejemplos.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Industrial</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Product_Quality_Type</code></td>
+                            <td>Tipo de calidad del producto (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: Low (Baja), 1: Medium (Media), 2: High (Alta)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Air_Temp_K</code></td>
+                            <td>Temperatura ambiente del aire</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>295.6 - 304.4</td>
+                            <td>K</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Process_Temp_K</code></td>
+                            <td>Temperatura del proceso de la máquina</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>306 - 313.7</td>
+                            <td>K</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Rotational_Speed_rpm</code></td>
+                            <td>Velocidad de rotación de la máquina</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1,168 - 2,595</td>
+                            <td>RPM</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Torque_Nm</code></td>
+                            <td>Torque (par motor) de la máquina</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>12.5 - 71.8</td>
+                            <td>Nm</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Tool_Wear_min</code></td>
+                            <td>Desgaste acumulado de la herramienta</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 241</td>
+                            <td>minutos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variable Binaria (Target) -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Machine_Failure</code></td>
+                            <td>Fallo de la máquina (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Normal, 1: Fallo</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Fallo (Machine_Failure)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Mantenimiento Predictivo (AI4I 2020). Comprender 
+                estas codificaciones es fundamental para la correcta interpretación de los resultados 
+                de predicción de fallos.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: Product_Quality_Type -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Product_Quality_Type</code></span>
+                        <span class="leyenda-tipo categórico">Categórica (Ordinal)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                    <th>Interpretación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Low (L) - Baja calidad</td><td>Mayor variabilidad en el proceso</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Medium (M) - Calidad media</td><td>Proceso estable</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>High (H) - Alta calidad</td><td>Mayor precisión en el proceso</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">📊</span>
+                            <p><strong>Orden lógico:</strong> La calidad del producto es ordinal. Mayor calidad suele asociarse con menor variabilidad y menor riesgo de fallo.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Machine_Failure (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Machine_Failure</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">0</span></td>
+                                    <td><strong>Normal</strong> - Máquina en funcionamiento correcto (96.61%)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">1</span></td>
+                                    <td><strong>Fallo</strong> - La máquina experimentó un fallo (3.39%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> Predice fallos mecánicos basándose en lecturas termodinámicas y cinemáticas.</p>
+                        </div>                        
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato:</strong> 0 = Normal, 1 = Fallo
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Machine_Failure</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Fallo de máquina (0: Normal, 1: Fallo)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Única variable binaria en el dataset.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 1
+                        <ul>
+                            <li>Product_Quality_Type (3 niveles - ordinal)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 1
+                        <ul>
+                            <li>🎯 Machine_Failure (Objetivo - Fallo)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 5
+                        <ul>
+                            <li>Air_Temp_K (Temperatura ambiente)</li>
+                            <li>Process_Temp_K (Temperatura proceso)</li>
+                            <li>Rotational_Speed_rpm (Velocidad rotación)</li>
+                            <li>Torque_Nm (Torque)</li>
+                            <li>Tool_Wear_min (Desgaste herramienta)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Mantenimiento Predictivo:</strong>
+                        <ul>
+                            <li><strong>Factor crítico:</strong> <code>Tool_Wear_min</code> - El desgaste acumulado es un predictor clave de fallos</li>
+                            <li><strong>Relación velocidad-torque:</strong> <code>Rotational_Speed_rpm</code> × <code>Torque_Nm</code> ≈ constante (potencia)</li>
+                            <li><strong>Temperatura:</strong> <code>Process_Temp_K</code> > <code>Air_Temp_K</code> es una condición física esperada</li>
+                            <li><strong>Calidad:</strong> Productos de baja calidad (0) pueden indicar mayor variabilidad y riesgo</li>
+                            <li><strong>Desbalance:</strong> 28.5:1 - Usar <strong>Recall</strong> o <strong>AUC-PR</strong> como métrica principal</li>
+                            <li><strong>Coste de fallo:</strong> El coste de no detectar un fallo (falso negativo) es alto en mantenimiento industrial</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- TORQUE → RPM -->
+                        <li><code>Torque_Nm > 60 → Rotational_Speed_rpm < 1450</code></li>
+                        <li><code>Torque_Nm > 50 → Rotational_Speed_rpm < 1700</code></li>
+                        
+                        <!-- RPM → TORQUE -->
+                        <li><code>Rotational_Speed_rpm > 2200 → Torque_Nm < 20</code></li>
+                        <li><code>Rotational_Speed_rpm > 1800 → Torque_Nm < 30</code></li>
+                        
+                        <!-- TEMPERATURAS -->
+                        <li><code>Air_Temp_K > 300 → Process_Temp_K > 308</code></li>
+                        <li><code>Process_Temp_K < 306 → Air_Temp_K < 298</code></li>
+                        
+                        <!-- DESGASTE → FALLO -->
+                        <li><code>Tool_Wear_min > 250 → Machine_Failure = 1</code></li>
+                        <li><code>Machine_Failure == 0 → Tool_Wear_min < 260</code></li>
+                        
+                        <!-- TORQUE ALTO Y DESGASTE -->
+                        <li><code>Torque_Nm > 60 → Tool_Wear_min < 180</code></li>
+                        
+                        <!-- DESGASTE → TORQUE O CALIDAD -->
+                        <li><code>Tool_Wear_min > 220 → (Torque_Nm > 50) OR (Product_Quality_Type = 1)</code></li>
+                        
+                        <!-- CALIDAD BAJA → DESGASTE LIMITADO -->
+                        <li><code>Product_Quality_Type == 0 → Tool_Wear_min < 240</code></li>
+                        
+                        <!-- DESGASTE CERO → SIN FALLO -->
+                        <li><code>Tool_Wear_min == 0 → Machine_Failure = 0</code></li>
+                        
+                        <!-- RPM BAJA → FALLO -->
+                        <li><code>Rotational_Speed_rpm < 1200 → Machine_Failure = 1</code></li>
+                        
+                        <!-- TORQUE EXTREMO → FALLO -->
+                        <li><code>Torque_Nm > 70 → Machine_Failure = 1</code></li>
+                        
+                        <!-- VALORES NO NEGATIVOS -->
+                        <li><code>Torque_Nm ≥ 0 (No negativo)</code></li>
+                        <li><code>Rotational_Speed_rpm ≥ 0 (No negativo)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>1</td>
+                                <td>1160</td>
+                                <td>0.990</td>
+                                <td>0.980</td>
+                                <td>0.980</td>
+                                <td>8.085</td>
+                                <td>0.324</td>
+                                <td>0.001</td>
+                                <td>0.279</td>
+                                <td>0.907</td>
+                                <td>49.966</td>
+                                <td>0</td>
+                                <td>1160</td>
+                                <td>0.445</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>1160</td>
+                                <td>0.934</td>
+                                <td>0.939</td>
+                                <td>0.925</td>
+                                <td>1.286</td>
+                                <td>0.382</td>
+                                <td>0.000</td>
+                                <td>0.307</td>
+                                <td>0.887</td>
+                                <td>47.807</td>
+                                <td>0.022</td>
+                                <td>601</td>
+                                <td>0.425</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>1160</td>
+                                <td>0.975</td>
+                                <td>0.966</td>
+                                <td>0.965</td>
+                                <td>4.787</td>
+                                <td>0.407</td>
+                                <td>0.001</td>
+                                <td>0.306</td>
+                                <td>0.827</td>
+                                <td>48.867</td>
+                                <td>0.018</td>
+                                <td>600</td>
+                                <td>0.429</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.010</td>
+                                <td>1154</td>
+                                <td>0.933</td>
+                                <td>0.949</td>
+                                <td>0.940</td>
+                                <td>2.278</td>
+                                <td>0.380</td>
+                                <td>0.000</td>
+                                <td>0.305</td>
+                                <td>0.889</td>
+                                <td>48.760</td>
+                                <td>0.021</td>
+                                <td>600</td>
+                                <td>0.440</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1</td>
+                                <td>1160</td>
+                                <td>0.922</td>
+                                <td>0.959</td>
+                                <td>0.955</td>
+                                <td>3.795</td>
+                                <td>0.390</td>
+                                <td>0.000</td>
+                                <td>0.282</td>
+                                <td>0.901</td>
+                                <td>47.101</td>
+                                <td>0.024</td>
+                                <td>600</td>
+                                <td>0.422</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1</td>
+                                <td>1160</td>
+                                <td>0.932</td>
+                                <td>0.950</td>
+                                <td>0.940</td>
+                                <td>3.137</td>
+                                <td>0.390</td>
+                                <td>0.000</td>
+                                <td>0.282</td>
+                                <td>0.899</td>
+                                <td>46.699</td>
+                                <td>0.024</td>
+                                <td>600</td>
+                                <td>0.405</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>2.248</td>
+                                <td>838</td>
+                                <td>0.987</td>
+                                <td>0.968</td>
+                                <td>0.970</td>
+                                <td>5.880</td>
+                                <td>0.309</td>
+                                <td>0.006</td>
+                                <td>0.138</td>
+                                <td>0.770</td>
+                                <td>54.295</td>
+                                <td>0.031</td>
+                                <td>600</td>
+                                <td>0.408</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>OOF PSO para Balanceo + Reglas</strong></td>
+                                <td>11.135</td>
+                                <td>631</td>
+                                <td>0.984</td>
+                                <td><strong>0.974</strong></td>
+                                <td><strong>0.975</strong></td>
+                                <td><strong>9.378</strong></td>
+                                <td>0.111</td>
+                                <td>0.721</td>
+                                <td>0.010</td>
+                                <td>0.914</td>
+                                <td>55.680</td>
+                                <td>0.005</td>
+                                <td>599</td>
+                                <td>0.456</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>OOF PSO para Balanceo + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>9.378</strong>, AUC: 0.984, F1: 0.974, MIA: 0.456). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>8.383</td>
+                                <td>8229</td>
+                                <td><strong>0.987</strong></td>
+                                <td><strong>0.978</strong></td>
+                                <td><strong>0.980</strong></td>
+                                <td><strong>9.599</strong></td>
+                                <td>0.516</td>
+                                <td>0.335</td>
+                                <td>0.024</td>
+                                <td>0.927</td>
+                                <td>63.832</td>
+                                <td>0.300</td>
+                                <td>0</td>
+                                <td>0.463</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>8.236</td>
+                                <td>8229</td>
+                                <td>0.952</td>
+                                <td>0.978</td>
+                                <td>0.980</td>
+                                <td>9.386</td>
+                                <td>0.516</td>
+                                <td>0.335</td>
+                                <td>0.024</td>
+                                <td>0.925</td>
+                                <td>174.541</td>
+                                <td>0.300</td>
+                                <td>0</td>
+                                <td>0.462</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>3.537</td>
+                                <td>9950</td>
+                                <td>0.654</td>
+                                <td>0.948</td>
+                                <td>0.965</td>
+                                <td>6.443</td>
+                                <td>0.331</td>
+                                <td>0.164</td>
+                                <td>0.082</td>
+                                <td>0.868</td>
+                                <td>221.524</td>
+                                <td>0.063</td>
+                                <td>0</td>
+                                <td>0.444</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>2.618</td>
+                                <td>9950</td>
+                                <td>0.691</td>
+                                <td>0.948</td>
+                                <td>0.965</td>
+                                <td>6.667</td>
+                                <td>0.331</td>
+                                <td>0.164</td>
+                                <td>0.114</td>
+                                <td>0.869</td>
+                                <td>342.548</td>
+                                <td>0.066</td>
+                                <td>0</td>
+                                <td>0.445</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>12.037</td>
+                                <td>9999</td>
+                                <td>0.813</td>
+                                <td>0.964</td>
+                                <td>0.970</td>
+                                <td>7.105</td>
+                                <td>0.627</td>
+                                <td>0.130</td>
+                                <td>0.031</td>
+                                <td>0.898</td>
+                                <td>166.536</td>
+                                <td>0.034</td>
+                                <td>0</td>
+                                <td>0.435</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>11.803</td>
+                                <td>9999</td>
+                                <td>0.820</td>
+                                <td>0.956</td>
+                                <td>0.965</td>
+                                <td>6.882</td>
+                                <td>0.627</td>
+                                <td>0.130</td>
+                                <td>0.032</td>
+                                <td>0.898</td>
+                                <td>289.507</td>
+                                <td>0.034</td>
+                                <td>0</td>
+                                <td>0.436</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.739</td>
+                                <td>0.887</td>
+                                <td>0.840</td>
+                                <td>0.511</td>
+                                <td>0.794</td>
+                                <td>0.000</td>
+                                <td>0.511</td>
+                                <td>0.509</td>
+                                <td>210.873</td>
+                                <td>0.148</td>
+                                <td>0</td>
+                                <td>0.441</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>6.710</td>
+                                <td>10000</td>
+                                <td>0.750</td>
+                                <td>0.947</td>
+                                <td>0.935</td>
+                                <td>3.427</td>
+                                <td>0.794</td>
+                                <td>0.000</td>
+                                <td>1.154</td>
+                                <td>0.584</td>
+                                <td>332.967</td>
+                                <td>0.202</td>
+                                <td>0</td>
+                                <td>0.456</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.171</td>
+                                <td>7722</td>
+                                <td>0.981</td>
+                                <td>0.964</td>
+                                <td>0.960</td>
+                                <td>7.438</td>
+                                <td>0.581</td>
+                                <td>0.000</td>
+                                <td>0.249</td>
+                                <td>0.776</td>
+                                <td>63.672</td>
+                                <td>0.178</td>
+                                <td>0</td>
+                                <td>0.471</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.171</td>
+                                <td>7722</td>
+                                <td>0.981</td>
+                                <td>0.964</td>
+                                <td>0.960</td>
+                                <td>7.438</td>
+                                <td>0.581</td>
+                                <td>0.000</td>
+                                <td>0.249</td>
+                                <td>0.776</td>
+                                <td>173.171</td>
+                                <td>0.178</td>
+                                <td>0</td>
+                                <td>0.471</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>9.599</strong>, AUC: 0.987, F1: 0.978, MIA: 0.463). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>8.537</td>
+                                <td>8860</td>
+                                <td>0.979</td>
+                                <td>0.972</td>
+                                <td>0.975</td>
+                                <td><strong>9.418</strong></td>
+                                <td>0.487</td>
+                                <td>0.357</td>
+                                <td>0.022</td>
+                                <td>0.927</td>
+                                <td>119.928</td>
+                                <td>0.299</td>
+                                <td>0</td>
+                                <td>0.490</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>8.396</td>
+                                <td>8860</td>
+                                <td>0.980</td>
+                                <td>0.968</td>
+                                <td>0.970</td>
+                                <td>8.465</td>
+                                <td>0.487</td>
+                                <td>0.357</td>
+                                <td>0.023</td>
+                                <td>0.925</td>
+                                <td>227.852</td>
+                                <td>0.299</td>
+                                <td>0</td>
+                                <td>0.492</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>3.713</td>
+                                <td>10581</td>
+                                <td>0.647</td>
+                                <td>0.945</td>
+                                <td>0.960</td>
+                                <td>3.322</td>
+                                <td>0.316</td>
+                                <td>0.172</td>
+                                <td>0.077</td>
+                                <td>0.871</td>
+                                <td>285.447</td>
+                                <td>0.060</td>
+                                <td>125</td>
+                                <td>0.453</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>2.776</td>
+                                <td>10581</td>
+                                <td>0.786</td>
+                                <td>0.968</td>
+                                <td>0.975</td>
+                                <td>7.752</td>
+                                <td>0.316</td>
+                                <td>0.172</td>
+                                <td>0.106</td>
+                                <td>0.872</td>
+                                <td>402.540</td>
+                                <td>0.062</td>
+                                <td>125</td>
+                                <td>0.464</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>11.979</td>
+                                <td>10630</td>
+                                <td>0.976</td>
+                                <td>0.968</td>
+                                <td>0.975</td>
+                                <td>8.226</td>
+                                <td>0.579</td>
+                                <td>0.157</td>
+                                <td>0.029</td>
+                                <td>0.900</td>
+                                <td>229.752</td>
+                                <td>0.032</td>
+                                <td>125</td>
+                                <td>0.434</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>11.761</td>
+                                <td>10630</td>
+                                <td>0.907</td>
+                                <td>0.968</td>
+                                <td>0.975</td>
+                                <td>7.807</td>
+                                <td>0.579</td>
+                                <td>0.157</td>
+                                <td>0.029</td>
+                                <td>0.899</td>
+                                <td>350.683</td>
+                                <td>0.032</td>
+                                <td>125</td>
+                                <td>0.405</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.104</td>
+                                <td>10631</td>
+                                <td>0.956</td>
+                                <td>0.974</td>
+                                <td>0.975</td>
+                                <td>5.856</td>
+                                <td>0.732</td>
+                                <td>0.000</td>
+                                <td>0.449</td>
+                                <td>0.520</td>
+                                <td>271.050</td>
+                                <td>0.139</td>
+                                <td>125</td>
+                                <td>0.457</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>4.667</td>
+                                <td>10631</td>
+                                <td>0.974</td>
+                                <td>0.974</td>
+                                <td>0.975</td>
+                                <td>6.161</td>
+                                <td>0.732</td>
+                                <td>0.000</td>
+                                <td>0.966</td>
+                                <td>0.600</td>
+                                <td>394.379</td>
+                                <td>0.187</td>
+                                <td>125</td>
+                                <td>0.414</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.314</td>
+                                <td>8353</td>
+                                <td>0.980</td>
+                                <td>0.964</td>
+                                <td>0.960</td>
+                                <td>5.385</td>
+                                <td>0.543</td>
+                                <td>0.000</td>
+                                <td>0.224</td>
+                                <td>0.781</td>
+                                <td>119.469</td>
+                                <td>0.176</td>
+                                <td>0</td>
+                                <td>0.461</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.314</td>
+                                <td>8353</td>
+                                <td>0.980</td>
+                                <td>0.964</td>
+                                <td>0.960</td>
+                                <td>5.385</td>
+                                <td>0.543</td>
+                                <td>0.000</td>
+                                <td>0.224</td>
+                                <td>0.781</td>
+                                <td>229.659</td>
+                                <td>0.176</td>
+                                <td>0</td>
+                                <td>0.461</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>9.418</strong>, AUC: 0.979, F1: 0.972, MIA: 0.490). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_50</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>OOF PSO para Balanceo + Reglas del Dominio</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* + Ruido Gaussiano</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd50.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Predictive Maintenance (AI4I 2020) (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32946731.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [96.67, 3.33], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

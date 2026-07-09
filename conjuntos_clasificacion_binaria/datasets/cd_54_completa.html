@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_54: Twonorm (KEEL/Breiman) - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_54</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_54: Twonorm (KEEL/Breiman)</h1>
+            <p class="description">Conjunto de datos sintético de referencia  generado a partir de dos distribuciones normales multivariantes de 20 dimensiones. Caracterizado por su pureza estadística. Actúa como un escenario ideal de control. Permite validar si los generadores son capaces de replicar correctamente estadísticas sencillas cuando no hay 'ruido' ni datos erróneos que dificulten la tarea.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.98</td>
+                                    <td>0.97</td>
+                                    <td>0.97</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.97</td>
+                                    <td>0.98</td>
+                                    <td>0.98</td>
+                                    <td>100</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.97</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.98</td>
+                                    <td>0.97</td>
+                                    <td>0.97</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.98</td>
+                                    <td>0.97</td>
+                                    <td>0.97</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">1.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.97</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.97</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.001 AUC</span>
+                        <span class="improvement-tag">⬆ +0.02 F1</span>
+                        <span class="improvement-tag">⬆ +0.02 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>1.00</td>
+                                    <td>0.98</td>
+                                    <td>0.99</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.98 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>100</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.99</strong> <span class="improvement-indicator">⬆ +0.02</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">1.00</span>
+                            <span class="improvement-badge positive">⬆ +0.001</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.99</span>
+                            <span class="improvement-badge positive">⬆ +0.02</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.99</span>
+                            <span class="improvement-badge positive">⬆ +0.02</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.97</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 97%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.98</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 98%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.01</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.98</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 98%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 1.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.02</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.98</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 98%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.99</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 99%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.01</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Twonorm Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Datos sintéticos de laboratorio</div>
+                    <div class="fuente-fecha">Disponible en repositorios públicos (KEEL / DELVE)</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorios:</span>
+                            <span class="metadata-value">KEEL, DELVE</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://sci2s.ugr.es/keel/dataset.php?cod=1067" target="_blank">KEEL Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">7,400</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">20 (todas numéricas reales)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Clases:</span>
+                            <span class="metadata-value">2 (0 y 1)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Origen:</span>
+                            <span class="metadata-value">Laboratorio (datos sintéticos)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos <strong>Twonorm</strong> es un problema de <strong>clasificación de 20 dimensiones y 2 clases</strong>. Cada clase se extrae de una <strong>distribución normal multivariante</strong>. La <strong>Clase 1</strong> tiene media <strong>(a, a, ..., a)</strong> mientras que la <strong>Clase 2</strong> tiene media <strong>(-a, -a, ..., -a)</strong>, donde <strong>a = 2/√20</strong>. Este dataset es un <strong>benchmark sintético</strong> ampliamente utilizado para evaluar y comparar algoritmos de clasificación, especialmente en entornos de <strong>aprendizaje automático</strong> y <strong>minería de datos</strong>.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Contexto y Generación de Datos</h4>
+                        <p>El conjunto de datos <strong>Twonorm</strong> fue generado en un <strong>entorno de laboratorio</strong> y se ha utilizado ampliamente en la investigación de <strong>aprendizaje automático</strong>. Las características clave son:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Dimensión:</strong> 20 características numéricas reales</li>
+                            <li><strong>Distribución:</strong> Normal multivariante con media diferenciada por clase</li>
+                            <li><strong>Separabilidad:</strong> El parámetro <strong>a = 2/√20 ≈ 0.447</strong> controla la separación entre clases</li>
+                            <li><strong>Aplicación:</strong> Benchmark para algoritmos de clasificación y validación de modelos</li>
+                        </ul>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📐 Estructura Matemática</h5>
+                            <ul class="transformacion-lista">
+                                <li><strong>Clase 1:</strong> Media = (a, a, ..., a) con 20 dimensiones</li>
+                                <li><strong>Clase 2:</strong> Media = (-a, -a, ..., -a) con 20 dimensiones</li>
+                                <li><strong>a = 2/√20 ≈ 0.4472135955</strong></li>
+                                <li><strong>Varianza:</strong> Identidad (covarianza unitaria)</li>
+                            </ul>
+                            <p style="color: #000; font-size: 0.85rem; margin-top: 0.3rem;">Este diseño crea un problema donde las clases son <strong>linealmente separables</strong> en el espacio de 20 dimensiones, con el <strong>hiperplano óptimo</strong> ubicado en el origen.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>7,400 instancias</strong> con <strong>20 atributos</strong> (19 variables predictoras y 1 variable objetivo). Todas las características son de tipo <strong>real (continuo)</strong> y <strong>no presentan valores faltantes</strong>.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Rango</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Variables Predictoras (A1 - A20)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A1</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 1</td>
+                                        <td style="padding: 0.4rem;">[-4.2497, 3.5782]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A2</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 2</td>
+                                        <td style="padding: 0.4rem;">[-3.9606, 4.3451]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A3</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 3</td>
+                                        <td style="padding: 0.4rem;">[-4.4798, 4.4039]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A4</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 4</td>
+                                        <td style="padding: 0.4rem;">[-3.8891, 4.2589]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A5</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 5</td>
+                                        <td style="padding: 0.4rem;">[-3.9099, 5.6395]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A6</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 6</td>
+                                        <td style="padding: 0.4rem;">[-4.0095, 3.9901]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A7</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 7</td>
+                                        <td style="padding: 0.4rem;">[-3.7334, 4.4522]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A8</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 8</td>
+                                        <td style="padding: 0.4rem;">[-4.5744, 3.8648]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A9</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 9</td>
+                                        <td style="padding: 0.4rem;">[-3.8136, 4.254]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A10</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 10</td>
+                                        <td style="padding: 0.4rem;">[-4.1999, 4.0829]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A11</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 11</td>
+                                        <td style="padding: 0.4rem;">[-3.9204, 4.0953]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A12</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 12</td>
+                                        <td style="padding: 0.4rem;">[-3.8262, 4.3025]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A13</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 13</td>
+                                        <td style="padding: 0.4rem;">[-3.9451, 3.7817]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A14</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 14</td>
+                                        <td style="padding: 0.4rem;">[-3.8516, 4.1238]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A15</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 15</td>
+                                        <td style="padding: 0.4rem;">[-3.6978, 3.5485]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A16</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 16</td>
+                                        <td style="padding: 0.4rem;">[-3.6976, 4.2439]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A17</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 17</td>
+                                        <td style="padding: 0.4rem;">[-3.9428, 3.7233]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A18</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 18</td>
+                                        <td style="padding: 0.4rem;">[-4.0653, 4.0557]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A19</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 19</td>
+                                        <td style="padding: 0.4rem;">[-4.1218, 4.3238]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A20</strong></td>
+                                        <td style="padding: 0.4rem;">Real</td>
+                                        <td style="padding: 0.4rem;">Característica 20</td>
+                                        <td style="padding: 0.4rem;">[-3.7831, 4.279]</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">B. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Class</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Etiqueta de clase</td>
+                                        <td style="padding: 0.4rem;">{0, 1}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (2 clases: 0 y 1)</li>
+                            <li><strong>Dimensión:</strong> Multivariante (7,400 × 20)</li>
+                            <li><strong>Tipo de características:</strong> Reales (continuas)</li>
+                            <li><strong>Valores faltantes:</strong> No</li>
+                            <li><strong>Área de aplicación:</strong> Benchmark de algoritmos de clasificación</li>
+                            <li><strong>Origen:</strong> DELVE Repository, Universidad de Toronto</li>
+                            <li><strong>Distribución:</strong> Normal multivariante con medias diferenciadas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es un <strong>benchmark clásico</strong> para evaluar algoritmos de clasificación. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable objetivo <strong>Class</strong> está codificada como <strong>0</strong> y <strong>1</strong></li>
+                            <li>Todas las características son <strong>numéricas reales</strong> y no requieren codificación adicional</li>
+                            <li>El dataset es <strong>sintético</strong> y fue diseñado para probar la capacidad de los algoritmos para manejar <strong>problemas de alta dimensionalidad</strong></li>
+                            <li>Las clases son <strong>linealmente separables</strong> en el espacio de 20 dimensiones</li>
+                            <li>El <strong>hiperplano óptimo</strong> se encuentra en el origen (0, 0, ..., 0)</li>
+                            <li>Estandarizar/normalizar las características es <strong>recomendable</strong> para la mayoría de los algoritmos</li>
+                            <li>El dataset está disponible en el <strong>repositorio KEEL</strong> en formatos:
+                                <ul class="transformacion-lista">
+                                    <li>Conjunto completo en formato KEEL</li>
+                                    <li>Particiones 10-folds y 5-folds para validación cruzada</li>
+                                </ul>
+                            </li>
+                            <li>Es adecuado para <strong>modelos de clasificación</strong> como SVM, Regresión Logística, Random Forest, XGBoost y Redes Neuronales</li>
+                            <li>El dataset fue originalmente obtenido del <strong>repositorio DELVE</strong> de la Universidad de Toronto</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en la Investigación de Aprendizaje Automático</h4>
+                        <p>El conjunto de datos <strong>Twonorm</strong> es un <strong>benchmark clásico</strong> en la investigación de <strong>aprendizaje automático</strong> y <strong>minería de datos</strong>. Su importancia radica en:</p>
+                        <ul class="transformacion-lista">
+                            <li>Proporciona un <strong>problema bien definido</strong> con propiedades matemáticas conocidas (distribución normal multivariante)</li>
+                            <li>Permite <strong>evaluar y comparar</strong> algoritmos de clasificación en un entorno controlado</li>
+                            <li>Es <strong>ampliamente utilizado</strong> en la literatura para demostrar nuevos métodos</li>
+                            <li>La <strong>separabilidad lineal</strong> de las clases permite probar la capacidad de los modelos para encontrar hiperplanos óptimos</li>
+                            <li>El dataset es <strong>reproducible</strong> y tiene <strong>particiones predefinidas</strong> para validación cruzada</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset ha sido utilizado en <strong>numerosas investigaciones</strong> sobre clasificación y ha contribuido al desarrollo de <strong>técnicas de aprendizaje automático</strong> en el repositorio <strong>KEEL</strong> (Knowledge Extraction based on Evolutionary Learning).</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Twonorm Dataset. KEEL Repository. https://sci2s.ugr.es/keel/dataset.php?cod=1067</pre>
+                        <button onclick="copyToClipboard('Twonorm Dataset. KEEL Repository. https://sci2s.ugr.es/keel/dataset.php?cod=1067')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul style="color: #000; font-size: 0.9rem; line-height: 1.6; padding-left: 1.2rem;">
+                            <li>KEEL Repository - Twonorm Dataset. <a href="https://sci2s.ugr.es/keel/dataset.php?cod=1067" target="_blank" style="color: #4fc3f7;">https://sci2s.ugr.es/keel/dataset.php?cod=1067</a></li>
+                            <li>DELVE Repository - Twonorm. <a href="http://www.cs.utoronto.ca/~delve/data/twonorm/desc.html" target="_blank" style="color: #4fc3f7;">http://www.cs.utoronto.ca/~delve/data/twonorm/desc.html</a></li>
+                            <li>Alcalá-Fdez, J., et al. (2011). KEEL Data-Mining Software Tool: Data Set Repository, Integration of Algorithms and Experimental Analysis Framework. <em>Journal of Multiple-Valued Logic and Soft Computing</em>, 17(2-3), 255-287.</li>
+                            <li>Alcalá-Fdez, J., et al. (2009). KEEL: A software tool to assess evolutionary algorithms for data mining problems. <em>Soft Computing</em>, 13(3), 307-318.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Twonorm Dataset)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Carga y estructuración de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Carga del archivo <em>twonorm.dat</em> con separador por comas, ignorando líneas de cabecera KEEL (comentarios con '@').</li>
+                            <li>Asignación de nombres de columnas: <strong>20 variables predictoras</strong> (A1 a A20) y <strong>1 variable objetivo</strong> (Class).</li>
+                            <li>Manejo de espacios después de comas con <code>skipinitialspace=True</code> para garantizar una carga correcta.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Conversión y estandarización de tipos de datos:</strong> 
+                        < class="transformacion-lista">
+                            <li>Conversión forzada de <strong>20 variables predictoras</strong> a tipo <strong>float</strong> utilizando <code>pd.to_numeric</code>.</li>
+                            <li>Conversión de la variable objetivo <em>Class</em> a tipo <strong>entero (int)</strong>.</li>
+                            <li>Garantía de integridad numérica del conjunto de datos para modelado directo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transformación de la variable objetivo:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Preservación de <em>Class</em> en su formato binario original: 0 = Clase 0 (Media Negativa), 1 = Clase 1 (Media Positiva).</li>
+                            <li>Documentación del objetivo: clasificación binaria de dos distribuciones normales multivariantes.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura de datos sintéticos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>20 variables predictoras</strong> (A1 a A20) como variables continuas generadas artificialmente.</li>
+                            <li>Documentación de la naturaleza sintética del dataset: generado a partir de dos distribuciones normales multivariantes.</li>
+                            <li>No se requiere codificación de categóricas ni imputación de valores faltantes.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submuestreo estratificado para reducción del dataset:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Reducción del dataset a <strong>1,000 ejemplos</strong> representativos mediante muestreo estratificado.</li>
+                            <li>Uso de <code>train_test_split</code> con parámetro <em>stratify</em> para <strong>preservar exactamente</strong> la proporción original de clases (balance perfecto teórico).</li>
+                            <li>Semilla fija (<em>random_state=42</em>) para garantizar reproducibilidad científica de la muestra.</li>
+                            <li>Verificación de integridad con diferencia máxima < 1% en proporción de clases.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_twonorm.txt</em> con semántica completa de la variable objetivo y la estructura del dataset.</li>
+                            <li>Documentación de la variable <em>Class</em> (0 = Clase 0 - Media Negativa, 1 = Clase 1 - Media Positiva).</li>
+                            <li>Descripción de las <strong>20 variables predictoras</strong> (A1 a A20) como variables continuas generadas artificialmente.</li>
+                            <li>Contextualización del dataset: clasificación de dos distribuciones normales multivariantes (Twonorm).</li>
+                            <li>Estadísticas finales: total de instancias y distribución de clases perfectamente balanceada.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>7,400 instancias</strong> (muestras sintéticas) originales para el dataset completo.</li>
+                            <li>Dataset reducido de <strong>1,000 ejemplos</strong> estratificados para experimentación eficiente.</li>
+                            <li>Dataset final con <strong>20 variables predictoras</strong> (todas numéricas continuas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>7,400 muestras sintéticas</strong> (con versión reducida estratificada de 1,000 ejemplos) con <strong>20 variables predictoras</strong> (todas numéricas continuas generadas artificialmente) y <strong>1 variable objetivo binaria</strong> (Class). <strong>Balance perfecto preservado</strong> (~50% Clase 0 / ~50% Clase 1) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>clasificación de datos sintéticos y problemas de benchmark</strong>, donde el balance de clases y la naturaleza gaussiana de los datos permiten una evaluación controlada y reproducible.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧪 <strong>Fuente:</strong> Twonorm Dataset (KEEL Repository) - Dataset sintético generado a partir de dos distribuciones normales multivariantes.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variables predictoras:</strong> 20 variables continuas (A1 a A20) generadas artificialmente siguiendo distribuciones normales con medias diferenciadas por clase.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Class</em> (0 = Clase 0 - Media Negativa, 1 = Clase 1 - Media Positiva) — perfectamente balanceada (1:1).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_twonorm.txt</em> con descripción completa de la variable objetivo y la estructura de variables predictoras.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Carga ignorando comentarios KEEL, manejo de espacios en el archivo, conversión de variables a tipos numéricos, reducción estratificada a 1,000 ejemplos.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    ⚖️ <strong>Característica destacada:</strong> Dataset sintético con balance perfecto de clases, ideal para benchmarking de algoritmos de clasificación y generación de datos sintéticos.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Numéricas (A1 a A20) -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A1</code></td>
+                            <td>Característica 1 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-4.2497 - 3.3579</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A2</code></td>
+                            <td>Característica 2 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.3120 - 3.6798</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A3</code></td>
+                            <td>Característica 3 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.5864 - 2.7992</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A4</code></td>
+                            <td>Característica 4 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.4426 - 3.0480</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A5</code></td>
+                            <td>Característica 5 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.4306 - 5.6395</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A6</code></td>
+                            <td>Característica 6 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.5500 - 3.9901</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A7</code></td>
+                            <td>Característica 7 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.3751 - 3.1995</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A8</code></td>
+                            <td>Característica 8 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.0545 - 3.8648</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A9</code></td>
+                            <td>Característica 9 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.3072 - 3.0021</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A10</code></td>
+                            <td>Característica 10 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.3660 - 4.0829</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A11</code></td>
+                            <td>Característica 11 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.2341 - 3.4012</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A12</code></td>
+                            <td>Característica 12 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.4704 - 3.9785</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A13</code></td>
+                            <td>Característica 13 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.2018 - 3.5692</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A14</code></td>
+                            <td>Característica 14 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.7276 - 4.1238</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A15</code></td>
+                            <td>Característica 15 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.5709 - 2.8740</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A16</code></td>
+                            <td>Característica 16 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.9463 - 2.9311</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A17</code></td>
+                            <td>Característica 17 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.9428 - 3.5159</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A18</code></td>
+                            <td>Característica 18 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-2.9806 - 2.7969</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A19</code></td>
+                            <td>Característica 19 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.1762 - 3.2984</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A20</code></td>
+                            <td>Característica 20 (distribución normal multivariante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>-3.1485 - 3.2907</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variable Binaria (Target) -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Class</code></td>
+                            <td>Clase de la distribución normal multivariante (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Clase 0 (Media -a), 1: Clase 1 (Media +a)</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">21</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">20</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Clase (Class)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos Twonorm. Comprender estas codificaciones es fundamental 
+                para la correcta interpretación de los resultados de clasificación de distribuciones 
+                normales multivariantes.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: Class (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Class</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #2980b9; color: white;">0</span></td>
+                                    <td><strong>Clase 0</strong> - Punto generado desde distribución normal con media -a (50.04%)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">1</span></td>
+                                    <td><strong>Clase 1</strong> - Punto generado desde distribución normal con media +a (49.96%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> Clasifica puntos generados artificialmente de dos distribuciones normales multivariantes con medias opuestas.</p>
+                        </div>                        
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato:</strong> 0 = Clase 0, 1 = Clase 1
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Class</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Clase del punto (0: Clase 0, 1: Clase 1)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Única variable binaria en el dataset.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 20
+                        <ul>
+                            <li>A1 - A20 (20 variables Gaussianas independientes)</li>
+                            <li>Rango típico: [-4.5, 5.6]</li>
+                            <li>Distribución: Normal (media 0, varianza 1)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 1
+                        <ul>
+                            <li>🎯 Class (Objetivo - Clase 0/1)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Análisis:</strong>
+                        <ul>
+                            <li><strong>Dataset sintético:</strong> No tiene interpretación semántica directa</li>
+                            <li><strong>Clasificadores recomendados:</strong> SVM lineal, LDA, Regresión Logística</li>
+                            <li><strong>Separabilidad:</strong> Las clases son linealmente separables en el espacio 20-dimensional</li>
+                            <li><strong>Balance perfecto:</strong> No requiere técnicas de balanceo</li>
+                            <li><strong>Normalización:</strong> No es necesario escalar (distribución normal estándar)</li>
+                            <li><strong>Benchmark:</strong> Dataset estándar para validar modelos de clasificación Gaussianos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Refinado</div>
+                    <p><strong>Versión:</strong> 2.1.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.xxxx/zenodo.xxxxxxx" target="_blank">10.xxxx/zenodo.xxxxxxx</a></p>
+                    <p><strong>Código fuente:</strong> <a href="https://github.com/tu-usuario/dataset-sintetico-uci" target="_blank">https://github.com/tu-usuario/dataset-sintetico-uci</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- ANCLAJE CENTROIDE - Bloque 1 -->
+                        <li><code>Class == 1 → A1 > 0</code></li>
+                        <li><code>Class == 0 → A1 < 0</code></li>
+                        
+                        <!-- ANCLAJE CENTROIDE - Bloque 2 -->
+                        <li><code>Class == 1 → A8 > 0</code></li>
+                        <li><code>Class == 0 → A8 < 0</code></li>
+                        
+                        <!-- ANCLAJE CENTROIDE - Bloque 3 -->
+                        <li><code>Class == 1 → A15 > 0</code></li>
+                        <li><code>Class == 0 → A15 < 0</code></li>
+                        
+                        <!-- CONTRADICCIÓN FUERTE -->
+                        <li><code>A3 > 2.5 → Class = 1</code></li>
+                        <li><code>A3 < -2.5 → Class = 0</code></li>
+                        
+                        <!-- CORRELACIÓN INTRA-CLASE -->
+                        <li><code>A5 > 1.5 → A6 > 0</code></li>
+                        <li><code>A5 < -1.5 → A6 < 0</code></li>
+                        <li><code>A12 > 1.5 → A13 > 0</code></li>
+                        <li><code>A12 < -1.5 → A13 < 0</code></li>
+                        
+                        <!-- PROXY SUMA - Bloque 1 -->
+                        <li><code>Class == 1 → (A1 ≠ 0) OR (A2 ≠ 0) OR (A3 ≠ 0) OR (A4 ≠ 0) OR (A5 ≠ 0)</code></li>
+                        <li><code>Class == 0 → (A1 ≠ 0) OR (A2 ≠ 0) OR (A3 ≠ 0) OR (A4 ≠ 0) OR (A5 ≠ 0)</code></li>
+                        
+                        <!-- PROXY SUMA - Bloque 2 -->
+                        <li><code>Class == 1 → (A6 ≠ 0) OR (A7 ≠ 0) OR (A8 ≠ 0) OR (A9 ≠ 0) OR (A10 ≠ 0)</code></li>
+                        <li><code>Class == 0 → (A6 ≠ 0) OR (A7 ≠ 0) OR (A8 ≠ 0) OR (A9 ≠ 0) OR (A10 ≠ 0)</code></li>
+                        
+                        <!-- PROXY SUMA - Bloque 3 -->
+                        <li><code>Class == 1 → (A11 ≠ 0) OR (A12 ≠ 0) OR (A13 ≠ 0) OR (A14 ≠ 0) OR (A15 ≠ 0)</code></li>
+                        <li><code>Class == 0 → (A11 ≠ 0) OR (A12 ≠ 0) OR (A13 ≠ 0) OR (A14 ≠ 0) OR (A15 ≠ 0)</code></li>
+                        
+                        <!-- PROXY SUMA - Bloque 4 -->
+                        <li><code>Class == 1 → (A16 ≠ 0) OR (A17 ≠ 0) OR (A18 ≠ 0) OR (A19 ≠ 0) OR (A20 ≠ 0)</code></li>
+                        <li><code>Class == 0 → (A16 ≠ 0) OR (A17 ≠ 0) OR (A18 ≠ 0) OR (A19 ≠ 0) OR (A20 ≠ 0)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Sin datos disponibles</strong> 
+                    (TabDSFidelity: <strong>-</strong>, AUC: -, F1: -, MIA: -). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.005</td>
+                                <td>7234</td>
+                                <td>0.933</td>
+                                <td>0.745</td>
+                                <td>0.745</td>
+                                <td>6.924</td>
+                                <td>0.802</td>
+                                <td>0.619</td>
+                                <td>0.000</td>
+                                <td>0.979</td>
+                                <td>113.858</td>
+                                <td>0.070</td>
+                                <td>0</td>
+                                <td>0.486</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.018</td>
+                                <td>7234</td>
+                                <td>0.913</td>
+                                <td>0.724</td>
+                                <td>0.725</td>
+                                <td>6.680</td>
+                                <td>0.802</td>
+                                <td>0.619</td>
+                                <td>0.000</td>
+                                <td>0.979</td>
+                                <td>309.702</td>
+                                <td>0.070</td>
+                                <td>0</td>
+                                <td>0.493</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.002</td>
+                                <td>10000</td>
+                                <td>0.957</td>
+                                <td>0.885</td>
+                                <td>0.885</td>
+                                <td>5.921</td>
+                                <td>0.826</td>
+                                <td>0.007</td>
+                                <td>0.000</td>
+                                <td>0.870</td>
+                                <td>652.365</td>
+                                <td>0.111</td>
+                                <td>0</td>
+                                <td>0.504</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.008</td>
+                                <td>10000</td>
+                                <td>0.959</td>
+                                <td>0.895</td>
+                                <td>0.895</td>
+                                <td>5.999</td>
+                                <td>0.826</td>
+                                <td>0.007</td>
+                                <td>0.000</td>
+                                <td>0.869</td>
+                                <td>897.707</td>
+                                <td>0.111</td>
+                                <td>0</td>
+                                <td>0.487</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.049</td>
+                                <td>10000</td>
+                                <td>0.998</td>
+                                <td>0.970</td>
+                                <td>0.970</td>
+                                <td>7.890</td>
+                                <td>0.808</td>
+                                <td>0.244</td>
+                                <td>0.000</td>
+                                <td>0.934</td>
+                                <td>358.887</td>
+                                <td>0.086</td>
+                                <td>0</td>
+                                <td>0.487</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>TVAE + Reglas del Dominio</strong></td>                    
+                                <td>1.057</td>
+                                <td>10000</td>
+                                <td><strong>0.997</strong></td>
+                                <td><strong>0.975</strong></td>
+                                <td><strong>0.975</strong></td>
+                                <td><strong>7.919</strong></td>
+                                <td>0.808</td>
+                                <td>0.244</td>
+                                <td>0.000</td>
+                                <td>0.934</td>
+                                <td>591.189</td>
+                                <td>0.086</td>
+                                <td>0</td>
+                                <td>0.496</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.625</td>
+                                <td>0.333</td>
+                                <td>0.500</td>
+                                <td>0.278</td>
+                                <td>0.829</td>
+                                <td>0.000</td>
+                                <td>0.000</td>
+                                <td>0.645</td>
+                                <td>172.267</td>
+                                <td>0.296</td>
+                                <td>0</td>
+                                <td>0.461</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.884</td>
+                                <td>10000</td>
+                                <td>0.706</td>
+                                <td>0.324</td>
+                                <td>0.480</td>
+                                <td>0.527</td>
+                                <td>0.829</td>
+                                <td>0.000</td>
+                                <td>0.049</td>
+                                <td>0.616</td>
+                                <td>401.067</td>
+                                <td>0.318</td>
+                                <td>0</td>
+                                <td>0.498</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1</td>
+                                <td>7000</td>
+                                <td>1.000</td>
+                                <td>0.995</td>
+                                <td>0.995</td>
+                                <td>7.884</td>
+                                <td>0.832</td>
+                                <td>0.555</td>
+                                <td>0.000</td>
+                                <td>0.975</td>
+                                <td>85.623</td>
+                                <td>0.026</td>
+                                <td>0</td>
+                                <td>0.500</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.013</td>
+                                <td>7000</td>
+                                <td>0.994</td>
+                                <td>0.970</td>
+                                <td>0.970</td>
+                                <td>7.680</td>
+                                <td>0.832</td>
+                                <td>0.555</td>
+                                <td>0.000</td>
+                                <td>0.976</td>
+                                <td>253.569</td>
+                                <td>0.026</td>
+                                <td>0</td>
+                                <td>0.519</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>TVAE + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>7.919</strong>, AUC: 0.997, F1: 0.975, MIA: 0.496). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.004</td>
+                                <td>8234</td>
+                                <td>0.995</td>
+                                <td>0.960</td>
+                                <td>0.960</td>
+                                <td>3.000</td>
+                                <td>0.688</td>
+                                <td>0.747</td>
+                                <td>0.000</td>
+                                <td>0.982</td>
+                                <td>218.373</td>
+                                <td>0.068</td>
+                                <td>0</td>
+                                <td>0.488</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.016</td>
+                                <td>8234</td>
+                                <td>0.996</td>
+                                <td>0.960</td>
+                                <td>0.960</td>
+                                <td>3.246</td>
+                                <td>0.688</td>
+                                <td>0.747</td>
+                                <td>0.000</td>
+                                <td>0.982</td>
+                                <td>416.339</td>
+                                <td>0.068</td>
+                                <td>0</td>
+                                <td>0.512</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.002</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>6.771</td>
+                                <td>0.727</td>
+                                <td>0.012</td>
+                                <td>0.000</td>
+                                <td>0.878</td>
+                                <td>780.731</td>
+                                <td>0.101</td>
+                                <td>186</td>
+                                <td>0.513</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.007</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>6.770</td>
+                                <td>0.727</td>
+                                <td>0.012</td>
+                                <td>0.000</td>
+                                <td>0.878</td>
+                                <td>1025.240</td>
+                                <td>0.101</td>
+                                <td>186</td>
+                                <td>0.522</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.044</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>7.608</td>
+                                <td>0.716</td>
+                                <td>0.300</td>
+                                <td>0.000</td>
+                                <td>0.940</td>
+                                <td>480.138</td>
+                                <td>0.077</td>
+                                <td>186</td>
+                                <td>0.501</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.052</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>7.609</td>
+                                <td>0.716</td>
+                                <td>0.300</td>
+                                <td>0.000</td>
+                                <td>0.940</td>
+                                <td>713.988</td>
+                                <td>0.077</td>
+                                <td>186</td>
+                                <td>0.498</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>6.073</td>
+                                <td>0.729</td>
+                                <td>0.000</td>
+                                <td>0.000</td>
+                                <td>0.648</td>
+                                <td>294.186</td>
+                                <td>0.269</td>
+                                <td>186</td>
+                                <td>0.535</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.773</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>6.000</td>
+                                <td>0.729</td>
+                                <td>0.000</td>
+                                <td>0.040</td>
+                                <td>0.621</td>
+                                <td>519.429</td>
+                                <td>0.289</td>
+                                <td>186</td>
+                                <td>0.548</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1</td>
+                                <td>8000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>8.517</td>
+                                <td>0.704</td>
+                                <td>0.694</td>
+                                <td>0.000</td>
+                                <td>0.979</td>
+                                <td>170.049</td>
+                                <td>0.022</td>
+                                <td>254</td>
+                                <td>0.484</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado + Reglas</strong></td>                    
+                                <td>1.012</td>
+                                <td>8000</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>8.519</strong></td>
+                                <td>0.704</td>
+                                <td>0.694</td>
+                                <td>0.000</td>
+                                <td>0.979</td>
+                                <td>348.188</td>
+                                <td>0.022</td>
+                                <td>254</td>
+                                <td>0.513</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>8.519</strong>, AUC: 1.000, F1: 1.000, MIA: 0.513). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_54</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>----</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>TVAE + Reglas del Dominio</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* Refinado + Reglas del Dominio</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd54.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Benchmark Classification (Twonorm) (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32946848.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [50.00, 50.00], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

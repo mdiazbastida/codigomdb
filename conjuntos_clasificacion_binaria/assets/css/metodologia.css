@@ -1,0 +1,154 @@
+/* metodologia.css - Estilos para sección de metodología científica */
+
+.metodologia-section {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.metodologia-section h2 {
+    margin-bottom: 25px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.metodologia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.metodologia-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.metodologia-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.metodologia-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.metodologia-card h4 {
+    color: #495057;
+    margin: 15px 0 10px 0;
+    font-size: 0.9rem;
+}
+
+.metodologia-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.params-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 0.85rem;
+}
+
+.params-table th,
+.params-table td {
+    padding: 8px 6px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.params-table th {
+    font-weight: 600;
+    color: #495057;
+    width: 45%;
+}
+
+.params-table td {
+    color: #2c3e50;
+    font-family: 'Courier New', monospace;
+}
+
+.restriction-rules,
+.libraries-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+}
+
+.restriction-rules li,
+.libraries-list li {
+    padding: 6px 0;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #e9ecef;
+    font-family: 'Courier New', monospace;
+}
+
+.restriction-rules li code,
+.libraries-list li code {
+    background: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.libraries-list li strong {
+    color: #2c3e50;
+}
+
+.reproducibility-note {
+    background: #e8f4fd;
+    border-left: 4px solid #3498db;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.note-icon {
+    font-size: 1.5rem;
+}
+
+.reproducibility-note p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.reproducibility-note code {
+    background: #d4e6f1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .metodologia-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reproducibility-note {
+        flex-direction: column;
+        text-align: center;
+    }
+}

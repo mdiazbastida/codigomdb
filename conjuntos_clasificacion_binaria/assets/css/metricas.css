@@ -1,0 +1,21 @@
+/* metricas.css */
+.metricas-section { background: white; border-radius: 16px; padding: 25px; margin: 30px 0; }
+.tabdsfidelity-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; padding: 20px; margin-bottom: 25px; color: white; }
+.fidelity-container { display: flex; flex-direction: column; gap: 15px; margin-top: 15px; }
+.fidelity-item { display: flex; align-items: center; gap: 15px; }
+.fidelity-label { width: 150px; font-weight: 500; }
+.progress-bar { flex: 1; height: 20px; background: rgba(255,255,255,0.3); border-radius: 10px; overflow: hidden; }
+.progress-fill { height: 100%; background: #2ecc71; border-radius: 10px; transition: width 0.5s; }
+.fidelity-value { width: 50px; font-weight: 700; }
+.metricas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 25px; }
+.metricas-card { background: #f8f9fa; border-radius: 12px; padding: 20px; }
+.metrics-table { width: 100%; border-collapse: collapse; }
+.metrics-table td { padding: 10px 6px; border-bottom: 1px solid #dee2e6; }
+.metrics-table th { text-align: left; padding: 10px 6px; font-weight: 600; }
+.ic-95 { font-size: 0.7rem; color: #6c757d; }
+.interpretacion { margin-top: 15px; padding-top: 10px; border-top: 1px solid #dee2e6; }
+.correlation-plot { background: #f8f9fa; border-radius: 12px; padding: 20px; margin-top: 20px; text-align: center; }
+.plot-placeholder { background: #e9ecef; padding: 60px; border-radius: 8px; color: #6c757d; }
+.quality-summary { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+.quality-badge { background: #f8f9fa; padding: 10px 20px; border-radius: 30px; display: flex; align-items: center; gap: 8px; }
+.quality-badge.good { background: #d4edda; color: #155724; }

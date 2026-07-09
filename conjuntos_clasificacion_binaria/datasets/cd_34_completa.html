@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_34: Online Shoppers Purchasing Intention - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_34</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_34: Online Shoppers Purchasing Intention</h1>
+            <p class="description">Registro de Web Analytics para la clasificación binaria de intención de compra (Revenue). Integra métricas de navegación (conteos y duraciones por tipo de página), indicadores de calidad (tasa de rebote/salida, valor de página) y contexto temporal (SpecialDay, mes).</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.84</td>
+                                    <td>1.00</td>
+                                    <td>0.92</td>
+                                    <td>169</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>0.00</td>
+                                    <td>31</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.84</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.42</td>
+                                    <td>0.50</td>
+                                    <td>0.46</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.71</td>
+                                    <td>0.84</td>
+                                    <td>0.77</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.70</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.77</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.84</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.08 AUC</span>
+                        <span class="improvement-tag">⬆ +0.08 F1</span>
+                        <span class="improvement-tag">⬆ +0.01 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.90</td>
+                                    <td>0.93</td>
+                                    <td>0.92</td>
+                                    <td>169</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.54 <span class="improvement-indicator">⬆ +0.54</span></td>
+                                    <td>0.42 <span class="improvement-indicator">⬆ +0.42</span></td>
+                                    <td>0.47 <span class="improvement-indicator">⬆ +0.47</span></td>
+                                    <td>31</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.85</strong> <span class="improvement-indicator">⬆ +0.01</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.72 <span class="improvement-indicator">⬆ +0.30</span></td>
+                                    <td>0.68 <span class="improvement-indicator">⬆ +0.18</span></td>
+                                    <td>0.69 <span class="improvement-indicator">⬆ +0.23</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.84 <span class="improvement-indicator">⬆ +0.13</span></td>
+                                    <td>0.85 <span class="improvement-indicator">⬆ +0.01</span></td>
+                                    <td>0.85 <span class="improvement-indicator">⬆ +0.08</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.78</span>
+                            <span class="improvement-badge positive">⬆ +0.08</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.85</span>
+                            <span class="improvement-badge positive">⬆ +0.08</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.85</span>
+                            <span class="improvement-badge positive">⬆ +0.01</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.54</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 54%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.54</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.42</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 42%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.42</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 0%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.47</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 47%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.47</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Online Shoppers Purchasing Intention Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Sakar, C. O., Polat, S., Katircioglu, M., & Kastro, Y.</div>
+                    <div class="fuente-fecha">Publicado: 2019</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value"><a href="https://doi.org/10.1007/s00521-018-3523-3" target="_blank">10.1007/s00521-018-3523-3</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">12,330</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">17 (16 predictores + 1 objetivo)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Balanceo:</span>
+                            <span class="metadata-value">84.5% No compra / 15.5% Compra</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Intención de Compra de Compradores en Línea</strong> contiene vectores de características pertenecientes a <strong>12,330 sesiones</strong>. De estas, <strong>84.5% (10,422)</strong> fueron muestras de clase negativa que <strong>no terminaron en compra</strong>, y el resto <strong>15.5% (1,908)</strong> fueron muestras de clase positiva que <strong>terminaron en compra</strong>. El conjunto fue formado para que cada sesión perteneciera a un <strong>usuario diferente en un período de 1 año</strong> para evitar cualquier tendencia a una campaña específica, día especial, perfil de usuario o período. El objetivo es predecir si una sesión de navegación en un sitio de comercio electrónico terminará en una <strong>transacción de compra</strong> (variable <em>Revenue</em>).</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🔬 Contexto y Motivación</h4>
+                        <p>La <strong>predicción en tiempo real</strong> de la intención de compra de los compradores en línea es fundamental para los sitios de <strong>comercio electrónico</strong>. Esta investigación, publicada en 2019, compara el rendimiento de <strong>perceptrones multicapa (MLP)</strong> y <strong>redes neuronales recurrentes LSTM</strong> para la predicción en tiempo real. El conjunto de datos permite:</p>
+                        <ul class="transformacion-lista">
+                            <li>Analizar el <strong>comportamiento de navegación</strong> de los usuarios en tiendas en línea</li>
+                            <li>Identificar <strong>patrones de compra</strong> y factores que influyen en la conversión</li>
+                            <li>Desarrollar modelos para <strong>personalizar la experiencia</strong> del usuario</li>
+                            <li>Optimizar <strong>campañas de marketing</strong> y recomendaciones de productos</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">El dataset fue diseñado específicamente para <strong>evitar sesgos</strong> de campañas específicas, días especiales o perfiles de usuario, abarcando un <strong>período de 1 año</strong> con sesiones de diferentes usuarios.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>12,330 instancias</strong> con <strong>17 atributos</strong> (16 variables predictoras y 1 variable objetivo). Las características son de tipo <strong>mixto</strong> (10 numéricas y 8 categóricas). <strong>No presenta valores faltantes</strong>.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Unidades / Categorías</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Páginas Visitadas y Duración</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Administrative</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Número de páginas administrativas visitadas</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Administrative_Duration</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Tiempo total en páginas administrativas</td>
+                                        <td style="padding: 0.4rem;">segundos</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Informational</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Número de páginas informativas visitadas</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Informational_Duration</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Tiempo total en páginas informativas</td>
+                                        <td style="padding: 0.4rem;">segundos</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>ProductRelated</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Número de páginas relacionadas con productos visitadas</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>ProductRelated_Duration</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Tiempo total en páginas relacionadas con productos</td>
+                                        <td style="padding: 0.4rem;">segundos</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ffd93d; font-weight: bold;">B. Métricas de Google Analytics</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>BounceRates</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Porcentaje de visitantes que abandonan desde esta página</td>
+                                        <td style="padding: 0.4rem;">valor entre 0 y 1</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>ExitRates</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Porcentaje de visitas que terminaron en esta página</td>
+                                        <td style="padding: 0.4rem;">valor entre 0 y 1</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>PageValues</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Valor promedio de la página antes de completar una transacción</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #6bcb77; font-weight: bold;">C. Contexto de la Visita</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>SpecialDay</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Cercanía a un día especial (ej: Día de la Madre, San Valentín)</td>
+                                        <td style="padding: 0.4rem;">0 = no cercano, 1 = máximo (día del evento)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Month</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Mes del año de la visita</td>
+                                        <td style="padding: 0.4rem;">Jan, Feb, Mar, ..., Dec</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Weekend</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria</td>
+                                        <td style="padding: 0.4rem;">Indica si la visita fue en fin de semana</td>
+                                        <td style="padding: 0.4rem;">1 = Fin de semana, 0 = Día laboral</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff9ff3; font-weight: bold;">D. Datos del Usuario y Tecnología</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>OperatingSystems</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Sistema operativo del visitante</td>
+                                        <td style="padding: 0.4rem;">Código numérico</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Browser</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Navegador utilizado por el visitante</td>
+                                        <td style="padding: 0.4rem;">Código numérico</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Region</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Región geográfica del visitante</td>
+                                        <td style="padding: 0.4rem;">Código numérico</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>TrafficType</strong></td>
+                                        <td style="padding: 0.4rem;">Entero</td>
+                                        <td style="padding: 0.4rem;">Tipo de tráfico (fuente de llegada)</td>
+                                        <td style="padding: 0.4rem;">Código numérico</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>VisitorType</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Tipo de visitante</td>
+                                        <td style="padding: 0.4rem;">New_Visitor, Returning_Visitor, Other</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">E. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Revenue</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Indica si la sesión terminó en una transacción de compra</td>
+                                        <td style="padding: 0.4rem;">1 = Compra, 0 = No compra</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📊 Distribución de Clases</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Clase</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Instancias</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Porcentaje</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>0 (No compra)</strong></td>
+                                        <td style="padding: 0.4rem;">10,422</td>
+                                        <td style="padding: 0.4rem;">84.5%</td>
+                                        <td style="padding: 0.4rem;">Clase negativa (mayoritaria)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>1 (Compra)</strong></td>
+                                        <td style="padding: 0.4rem;">1,908</td>
+                                        <td style="padding: 0.4rem;">15.5%</td>
+                                        <td style="padding: 0.4rem;">Clase positiva (minoritaria)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Compra vs. No compra)</li>
+                            <li><strong>Dimensión:</strong> Multivariante</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (10 numéricas, 8 categóricas)</li>
+                            <li><strong>Valores faltantes:</strong> No</li>
+                            <li><strong>Área de aplicación:</strong> Comercio Electrónico, Marketing Digital, Análisis de Comportamiento</li>
+                            <li><strong>Desbalanceo:</strong> 84.5% / 15.5% (clase positiva minoritaria)</li>
+                            <li><strong>Período:</strong> 1 año (cada sesión de un usuario diferente)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📖 Publicación Introductoria</h4>
+                        <p>El artículo fundamental que describe la predicción en tiempo real de la intención de compra utilizando MLP y LSTM es:</p>
+                        <div style="background: rgba(255,255,255,0.03); border-left: 3px solid #4fc3f7; padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0;">
+                            <p style="color: #000; font-size: 0.9rem; margin: 0;">Sakar, C. O., Polat, S., Katircioglu, M., & Kastro, Y. (2019). <strong>Real-time prediction of online shoppers' purchasing intention using multilayer perceptron and LSTM recurrent neural networks</strong>. <em>Neural Computing and Applications</em>, 31(10), 6893-6908. <a href="https://doi.org/10.1007/s00521-018-3523-3" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1007/s00521-018-3523-3</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es ampliamente utilizado para la <strong>predicción de intención de compra</strong> en comercio electrónico. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable <strong>Revenue</strong> es la variable objetivo (1 = compra, 0 = no compra)</li>
+                            <li>Las variables de <strong>duración</strong> (Administrative_Duration, Informational_Duration, ProductRelated_Duration) son características importantes para predecir la intención de compra</li>
+                            <li><strong>BounceRates</strong> y <strong>ExitRates</strong> son métricas de Google Analytics que reflejan el comportamiento de abandono</li>
+                            <li><strong>PageValues</strong> indica el valor promedio de las páginas visitadas antes de una transacción</li>
+                            <li><strong>SpecialDay</strong> captura el efecto de días especiales (ej: San Valentín) en el comportamiento de compra</li>
+                            <li>Codificar variables categóricas:
+                                <ul class="transformacion-lista">
+                                    <li><strong>Month</strong>: One-Hot Encoding o Label Encoding con orden cíclico</li>
+                                    <li><strong>VisitorType</strong>: One-Hot Encoding</li>
+                                    <li><strong>Weekend</strong>: Binaria (0/1)</li>
+                                </ul>
+                            </li>
+                            <li>Las variables <strong>OperatingSystems</strong>, <strong>Browser</strong>, <strong>Region</strong>, <strong>TrafficType</strong> son códigos numéricos que pueden tratarse como categóricas</li>
+                            <li>Estandarizar/normalizar variables numéricas (todas las duraciones, BounceRates, ExitRates, PageValues)</li>
+                            <li>Utilizar <strong>validación cruzada estratificada</strong> debido al desbalanceo de clases (15.5% de compras)</li>
+                            <li>Considerar técnicas de <strong>balanceo de clases</strong> si es necesario (SMOTE, submuestreo, etc.)</li>
+                            <li>El dataset fue diseñado para <strong>predicción en tiempo real</strong>, por lo que es adecuado para modelos secuenciales (LSTM) y de aprendizaje automático tradicional</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Comercio Electrónico</h4>
+                        <p>La <strong>predicción de la intención de compra</strong> en tiempo real es fundamental para los negocios de comercio electrónico. Las aplicaciones incluyen:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Personalización de la experiencia</strong> del usuario durante la sesión de navegación</li>
+                            <li><strong>Recomendaciones de productos</strong> contextuales y oportunas</li>
+                            <li><strong>Optimización de campañas</strong> de marketing y remarketing</li>
+                            <li><strong>Reducción de la tasa de abandono</strong> del carrito de compras</li>
+                            <li><strong>Mejora de la tasa de conversión</strong> y el retorno de la inversión (ROI)</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset ha sido fundamental para la investigación en <strong>análisis de comportamiento de compradores en línea</strong>, demostrando que los modelos de <strong>aprendizaje profundo</strong> (LSTM, MLP) pueden predecir la intención de compra con alta precisión utilizando datos de navegación en tiempo real.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Sakar, C. O., Polat, S., Katircioglu, M., & Kastro, Y. (2019). Real-time prediction of online shoppers' purchasing intention using multilayer perceptron and LSTM recurrent neural networks. Neural Computing and Applications, 31(10), 6893-6908. https://doi.org/10.1007/s00521-018-3523-3</pre>
+                        <button onclick="copyToClipboard('Sakar, C. O., Polat, S., Katircioglu, M., & Kastro, Y. (2019). Real-time prediction of online shoppers\' purchasing intention using multilayer perceptron and LSTM recurrent neural networks. Neural Computing and Applications, 31(10), 6893-6908. https://doi.org/10.1007/s00521-018-3523-3')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Sakar, C. O., Polat, S., Katircioglu, M., & Kastro, Y. (2019). Real-time prediction of online shoppers' purchasing intention using multilayer perceptron and LSTM recurrent neural networks. <em>Neural Computing and Applications</em>, 31(10), 6893-6908. <a href="https://doi.org/10.1007/s00521-018-3523-3" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1007/s00521-018-3523-3</a></li>
+                            <li>UCI Machine Learning Repository - Online Shoppers Purchasing Intention Dataset. <a href="https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/Online+Shoppers+Purchasing+Intention+Dataset</a></li>
+                            <li>Google Analytics. <em>Bounce Rate, Exit Rate and Page Value</em>. <a href="https://support.google.com/analytics/" target="_blank" style="color: #4fc3f7;">https://support.google.com/analytics/</a></li>
+                            <li>Chaffey, D., & Ellis-Chadwick, F. (2019). <em>Digital Marketing: Strategy, Implementation and Practice</em>. Pearson Education.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Online Shoppers Purchasing Intention)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Verificación y garantía de integridad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Confirmación de la <strong>ausencia total de valores perdidos</strong> en el dataset original, tal como lo documenta la fuente.</li>
+                            <li>Implementación de imputación con mediana para variables numéricas y moda para categóricas como medida preventiva.</li>
+                            <li>Garantía de integridad total del conjunto de datos para modelado directo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variables booleanas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de <em>Revenue</em> (objetivo) y <em>Weekend</em> de tipo booleano o texto a valores numéricos binarios: <strong>0 = FALSE</strong>, <strong>1 = TRUE</strong>.</li>
+                            <li><strong>Variable objetivo:</strong> <em>Revenue</em> (1 = Compra realizada/conversión exitosa, 0 = No compró).</li>
+                            <li><strong>Variable contextual:</strong> <em>Weekend</em> (1 = Fin de semana, 0 = Día de semana).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variable temporal (Month):</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión de nombres de mes a valores numéricos para preservar la estacionalidad: Feb → 2, Mar → 3, May → 5, June/Jun → 6, Jul → 7, Aug → 8, Sep → 9, Oct → 10, Nov → 11, Dec → 12.</li>
+                            <li>Nota: Enero y Abril no están presentes en la muestra original del dataset.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variable nominal (VisitorType):</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de <em>VisitorType</em> (tipo de visitante) mediante codificación ordinal (<em>Label Encoding</em>) con preservación de mapeo completo en leyenda.</li>
+                            <li>Categorías originales: Returning_Visitor (visitante recurrente), New_Visitor (visitante nuevo), Other (otros).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de variables numéricas codificadas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Variables nominales pre-codificadas: <em>OperatingSystems</em>, <em>Browser</em>, <em>Region</em>, <em>TrafficType</em> — preservadas como códigos numéricos con documentación en leyenda.</li>
+                            <li>Estas variables ya están en formato numérico y se mantienen sin transformación adicional.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Documentación de variables métricas de navegación:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Contadores de páginas:</strong> <em>Administrative</em>, <em>Informational</em>, <em>ProductRelated</em> — número de páginas visitadas por tipo.</li>
+                            <li><strong>Tiempos de navegación:</strong> <em>Administrative_Duration</em>, <em>Informational_Duration</em>, <em>ProductRelated_Duration</em> — tiempo en segundos por tipo de página.</li>
+                            <li><strong>Tasas de comportamiento:</strong> <em>BounceRates</em> (tasa de rebote), <em>ExitRates</em> (tasa de salida) — valores entre 0.0 y 1.0.</li>
+                            <li><strong>Valor de página:</strong> <em>PageValues</em> — valor medio de las páginas visitadas.</li>
+                            <li><strong>Día especial:</strong> <em>SpecialDay</em> — proximidad a un día especial (0.0 - 1.0).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_online_shoppers.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de variables booleanas (Revenue, Weekend), temporal (Month), nominal (VisitorType), y métricas de navegación.</li>
+                            <li>Contextualización del dataset: sesiones de navegación en tienda online con datos de Google Analytics.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>12,330 instancias</strong> (sesiones de navegación) sin eliminación de filas.</li>
+                            <li>Dataset final con <strong>17 variables predictoras</strong> (mixtas: booleanas, ordinales, nominales codificadas y numéricas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>12,330 sesiones de navegación</strong> en tienda online con <strong>17 variables predictoras</strong> (comportamiento de navegación, métricas de Google Analytics, datos temporales y de dispositivo) y <strong>1 variable objetivo binaria</strong> (Revenue). Desbalance moderado (~84.5% sin compra / ~15.5% con compra) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>e-commerce y predicción de conversión</strong>, donde el comportamiento de navegación y las métricas de engagement son determinantes.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🛒 <strong>Fuente:</strong> Online Shoppers Purchasing Intention Dataset (UCI Machine Learning Repository) - Datos de sesiones de navegación en tienda online con Google Analytics.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variables clave de navegación:</strong> Páginas visitadas (Administrative, Informational, ProductRelated), tiempos de navegación, tasas de rebote y salida, valor de página.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📅 <strong>Variables temporales:</strong> <em>Month</em> (mes de la visita), <em>Weekend</em> (fin de semana), <em>SpecialDay</em> (proximidad a día especial).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_online_shoppers.txt</em> con mapeo semántico completo de variables booleanas (Revenue, Weekend), temporal (Month), nominal (VisitorType), y métricas de navegación.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Revenue</em> (1 = Compra realizada/conversión exitosa, 0 = No compró).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🔍 <strong>Contexto analítico:</strong> El dataset permite analizar la relación entre el comportamiento de navegación y la intención de compra, con métricas como tasas de rebote y valores de página que indican engagement del usuario.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Month</code></td>
+                            <td>Mes de la sesión (ordinal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>2: Feb, 3: Mar, 5: May, 6: Jun, 7: Jul, 8: Aug, 9: Sep, 10: Oct, 11: Nov, 12: Dec</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>OperatingSystems</code></td>
+                            <td>Sistema operativo del visitante (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1,2,3,4,6,8 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Browser</code></td>
+                            <td>Navegador web del visitante (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1,2,3,4,5,6,7,8,10,13 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>Region</code></td>
+                            <td>Región geográfica del visitante (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1-9 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>TrafficType</code></td>
+                            <td>Tipo de tráfico / fuente de llegada (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>1-15,20 (ver leyenda)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>VisitorType</code></td>
+                            <td>Tipo de visitante (nominal)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: New_Visitor, 1: Other, 2: Returning_Visitor</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Administrative</code></td>
+                            <td>Número de páginas administrativas visitadas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 19</td>
+                            <td>páginas</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Administrative_Duration</code></td>
+                            <td>Tiempo en páginas administrativas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 2,086.75</td>
+                            <td>segundos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Informational</code></td>
+                            <td>Número de páginas informativas visitadas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 12</td>
+                            <td>páginas</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Informational_Duration</code></td>
+                            <td>Tiempo en páginas informativas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 1,767.67</td>
+                            <td>segundos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>ProductRelated</code></td>
+                            <td>Número de páginas de productos visitadas</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 349</td>
+                            <td>páginas</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>ProductRelated_Duration</code></td>
+                            <td>Tiempo en páginas de productos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 13,265.36</td>
+                            <td>segundos</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>BounceRates</code></td>
+                            <td>Tasa de rebote (entrada y salida sin interacción)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 0.2</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>ExitRates</code></td>
+                            <td>Tasa de salida (página fue última de la sesión)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 0.2</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>PageValues</code></td>
+                            <td>Valor promedio de página (contribución a transacción)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 131.50</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>SpecialDay</code></td>
+                            <td>Proximidad a un día festivo / especial</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 1</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Weekend</code></td>
+                            <td>¿La sesión ocurrió en fin de semana?</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Revenue</code></td>
+                            <td>¿Se realizó una compra? (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">18</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Compra (Revenue)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Intención de Compra en Tiendas Online. Comprender 
+                estas codificaciones es fundamental para la correcta interpretación de los resultados 
+                de comportamiento del usuario.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: Month -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Month</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">2</span></td><td>Febrero (February)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>Marzo (March)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>Mayo (May)</td></tr>
+                                <tr><td><span class="codigo">6</span></td><td>Junio (June)</td></tr>
+                                <tr><td><span class="codigo">7</span></td><td>Julio (July)</td></tr>
+                                <tr><td><span class="codigo">8</span></td><td>Agosto (August)</td></tr>
+                                <tr><td><span class="codigo">9</span></td><td>Septiembre (September)</td></tr>
+                                <tr><td><span class="codigo">10</span></td><td>Octubre (October)</td></tr>
+                                <tr><td><span class="codigo">11</span></td><td>Noviembre (November)</td></tr>
+                                <tr><td><span class="codigo">12</span></td><td>Diciembre (December)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⚠️</span>
+                            <p><strong>Nota:</strong> Enero (1) y Abril (4) no están presentes en el conjunto de datos original.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: OperatingSystems -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>OperatingSystems</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Sistemas operativos (códigos nominales)</strong>
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 2px 10px;">
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">1</span> OS 1</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">2</span> OS 2</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">3</span> OS 3</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">4</span> OS 4</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">6</span> OS 6</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">8</span> OS 8</div>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">💻</span>
+                            <p><strong>Nota:</strong> Códigos preasignados para anonimización. No se dispone del mapeo exacto a sistemas operativos reales.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Browser -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Browser</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Navegadores web (códigos nominales)</strong>
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 2px 10px;">
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">1</span> Browser 1</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">2</span> Browser 2</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">3</span> Browser 3</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">4</span> Browser 4</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">5</span> Browser 5</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">6</span> Browser 6</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">7</span> Browser 7</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">8</span> Browser 8</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">10</span> Browser 10</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">13</span> Browser 13</div>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">🌐</span>
+                            <p><strong>Nota:</strong> Códigos preasignados para anonimización. No se dispone del mapeo exacto a navegadores reales.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: Region -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Region</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Regiones geográficas (códigos nominales)</strong>
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 2px 10px;">
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">1</span> Región 1</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">2</span> Región 2</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">3</span> Región 3</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">4</span> Región 4</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">5</span> Región 5</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">6</span> Región 6</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">7</span> Región 7</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">8</span> Región 8</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">9</span> Región 9</div>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">🌍</span>
+                            <p><strong>Nota:</strong> Códigos preasignados para anonimización. No se dispone del mapeo exacto a regiones reales.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: TrafficType -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>TrafficType</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Tipo de tráfico / fuente de llegada (códigos nominales)</strong>
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 2px 10px;">
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">1</span> Traffic 1</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">2</span> Traffic 2</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">3</span> Traffic 3</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">4</span> Traffic 4</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">5</span> Traffic 5</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">6</span> Traffic 6</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">7</span> Traffic 7</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">8</span> Traffic 8</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">9</span> Traffic 9</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">10</span> Traffic 10</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">11</span> Traffic 11</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">12</span> Traffic 12</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">13</span> Traffic 13</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">14</span> Traffic 14</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">15</span> Traffic 15</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">20</span> Traffic 20</div>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">🔗</span>
+                            <p><strong>Nota:</strong> Códigos preasignados para anonimización. Representan fuentes como búsqueda orgánica, anuncios, redes sociales, etc.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: VisitorType -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>VisitorType</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>New Visitor (Visitante nuevo)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Other (Otro)</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>Returning Visitor (Visitante recurrente)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">👤</span>
+                            <p><strong>Importancia:</strong> Los visitantes recurrentes tienen mayor probabilidad de conversión que los nuevos visitantes.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato común:</strong> 0 = No / Falso, 1 = Sí / Verdadero
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>Weekend</code></span>
+                                <span class="binaria-desc">Sesión en fin de semana (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Revenue</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Compra realizada (0: No, 1: Sí)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Todas las variables binarias están codificadas como <strong>0 = No</strong> y <strong>1 = Sí</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 6
+                        <ul>
+                            <li>Month (10 meses codificados)</li>
+                            <li>OperatingSystems (6 códigos)</li>
+                            <li>Browser (10 códigos)</li>
+                            <li>Region (9 códigos)</li>
+                            <li>TrafficType (16 códigos)</li>
+                            <li>VisitorType (3 categorías)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 2
+                        <ul>
+                            <li>Weekend (Fin de semana)</li>
+                            <li>🎯 Revenue (Objetivo - Compra)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 10
+                        <ul>
+                            <li>3 Contadores de páginas</li>
+                            <li>3 Duración en segundos</li>
+                            <li>3 Métricas Google Analytics</li>
+                            <li>1 SpecialDay</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Marketing:</strong>
+                        <ul>
+                            <li><strong>Factor clave:</strong> <code>ProductRelated_Duration</code> - más tiempo en productos = mayor intención de compra</li>
+                            <li><strong>BounceRates altas:</strong> Indican bajo engagement y menor probabilidad de conversión</li>
+                            <li><strong>PageValues altos:</strong> Páginas con mayor valor predictivo de transacción</li>
+                            <li><strong>SpecialDay:</strong> Días como San Valentín o Navidad aumentan la conversión</li>
+                            <li><strong>VisitorType:</strong> Visitantes recurrentes (2) son más propensos a comprar</li>
+                            <li><strong>Month:</strong> Noviembre y Diciembre tienen mayor conversión (Black Friday/Navidad)</li>
+                            <li><strong>Weekend:</strong> Los fines de semana pueden tener diferente comportamiento de navegación</li>
+                            <li><strong>ExitRates:</strong> Páginas con alta tasa de salida pueden ser cuellos de botella</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- CONSISTENCIA CERO - Administrativas -->
+                        <li><code>Administrative == 0 → Administrative_Duration = 0</code></li>
+                        <li><code>Administrative > 0 → Administrative_Duration > 0</code></li>
+                        
+                        <!-- CONSISTENCIA CERO - Informativas -->
+                        <li><code>Informational == 0 → Informational_Duration = 0</code></li>
+                        <li><code>Informational > 0 → Informational_Duration > 0</code></li>
+                        
+                        <!-- CONSISTENCIA CERO - Producto -->
+                        <li><code>ProductRelated == 0 → ProductRelated_Duration = 0</code></li>
+                        <li><code>ProductRelated > 0 → ProductRelated_Duration > 0</code></li>
+                        
+                        <!-- LÓGICA DE COMPRA -->
+                        <li><code>ProductRelated == 0 → Revenue = 0 (Sin producto → sin compra)</code></li>
+                        <li><code>Revenue == 0 → PageValues = 0 (Sin compra → sin valor de página)</code></li>
+                        <li><code>PageValues > 0 → Revenue = 1 (Valor de página positivo → compra)</code></li>
+                        
+                        <!-- LÓGICA DE REBOTE -->
+                        <li><code>BounceRates > 0 → Administrative_Duration = 0 (Rebote → sin tiempo administrativo)</code></li>
+                        <li><code>BounceRates > 0 → Revenue = 0 (Rebote → sin compra)</code></li>
+                        
+                        <!-- LÓGICA DE SALIDA EXTREMA -->
+                        <li><code>ExitRates > 0.8 → Revenue = 0 (Tasa de salida alta → sin compra)</code></li>
+                        
+                        <!-- COMPORTAMIENTO DE COMPRA -->
+                        <li><code>Revenue == 1 → (ProductRelated > 0) OR (Administrative > 0) (Compra → producto o administrativa)</code></li>
+                        
+                        <!-- COMPORTAMIENTO DE VISITANTE NUEVO -->
+                        <li><code>VisitorType == 0 (Nuevo) → Administrative ≤ 2 (Visitante nuevo → pocas administrativas)</code></li>
+                        
+                        <!-- PLAUSIBILIDAD ESTACIONAL -->
+                        <li><code>Month == 11 (Noviembre) → Revenue = 0 (Noviembre sin producto → sin compra)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>Random Oversampling</strong></td>
+                                <td>1</td>
+                                <td>1014</td>
+                                <td>0.895</td>
+                                <td>0.870</td>
+                                <td>0.865</td>
+                                <td><strong>8.758</strong></td>
+                                <td>0.161</td>
+                                <td>0.189</td>
+                                <td>0.042</td>
+                                <td>0.960</td>
+                                <td>47.184</td>
+                                <td>0</td>
+                                <td>1014</td>
+                                <td>0.462</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>1014</td>
+                                <td>0.901</td>
+                                <td>0.855</td>
+                                <td>0.850</td>
+                                <td>6.015</td>
+                                <td>0.261</td>
+                                <td>0.172</td>
+                                <td>0.065</td>
+                                <td>0.956</td>
+                                <td>49.535</td>
+                                <td>0.050</td>
+                                <td>600</td>
+                                <td>0.467</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>1014</td>
+                                <td>0.887</td>
+                                <td>0.866</td>
+                                <td>0.860</td>
+                                <td>6.475</td>
+                                <td>0.262</td>
+                                <td>0.157</td>
+                                <td>0.065</td>
+                                <td>0.959</td>
+                                <td>48.664</td>
+                                <td>0.049</td>
+                                <td>600</td>
+                                <td>0.436</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.020</td>
+                                <td>1004</td>
+                                <td>0.900</td>
+                                <td>0.868</td>
+                                <td>0.860</td>
+                                <td>8.117</td>
+                                <td>0.254</td>
+                                <td>0.233</td>
+                                <td>0.061</td>
+                                <td>0.961</td>
+                                <td>48.391</td>
+                                <td>0.048</td>
+                                <td>600</td>
+                                <td>0.416</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1.090</td>
+                                <td>972</td>
+                                <td>0.885</td>
+                                <td>0.863</td>
+                                <td>0.855</td>
+                                <td>5.754</td>
+                                <td>0.252</td>
+                                <td>0.145</td>
+                                <td>0.052</td>
+                                <td>0.968</td>
+                                <td>47.834</td>
+                                <td>0.046</td>
+                                <td>600</td>
+                                <td>0.431</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1.090</td>
+                                <td>972</td>
+                                <td>0.878</td>
+                                <td>0.862</td>
+                                <td>0.855</td>
+                                <td>4.909</td>
+                                <td>0.252</td>
+                                <td>0.118</td>
+                                <td>0.049</td>
+                                <td>0.966</td>
+                                <td>47.472</td>
+                                <td>0.047</td>
+                                <td>600</td>
+                                <td>0.445</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>1014</td>
+                                <td>0.897</td>
+                                <td>0.854</td>
+                                <td>0.860</td>
+                                <td>3.530</td>
+                                <td>0.367</td>
+                                <td>0.000</td>
+                                <td>0.164</td>
+                                <td>0.658</td>
+                                <td>55.127</td>
+                                <td>0.193</td>
+                                <td>600</td>
+                                <td>0.428</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>2</td>
+                                <td>1014</td>
+                                <td>0.886</td>
+                                <td>0.843</td>
+                                <td>0.870</td>
+                                <td>3.746</td>
+                                <td>0.295</td>
+                                <td>0.087</td>
+                                <td>0.162</td>
+                                <td>0.758</td>
+                                <td>55.688</td>
+                                <td>0.146</td>
+                                <td>387</td>
+                                <td>0.490</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Random Oversampling</strong> 
+                    (TabDSFidelity: <strong>8.758</strong>, AUC: 0.895, F1: 0.870, MIA: 0.462). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.560</td>
+                                <td>7817</td>
+                                <td>0.848</td>
+                                <td>0.866</td>
+                                <td>0.875</td>
+                                <td>8.772</td>
+                                <td>0.343</td>
+                                <td>0.060</td>
+                                <td>0.112</td>
+                                <td>0.956</td>
+                                <td>69.378</td>
+                                <td>0.447</td>
+                                <td>0</td>
+                                <td>0.427</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>6.717</td>
+                                <td>7817</td>
+                                <td>0.892</td>
+                                <td>0.839</td>
+                                <td>0.865</td>
+                                <td>8.438</td>
+                                <td>0.323</td>
+                                <td>0.074</td>
+                                <td>0.096</td>
+                                <td>0.937</td>
+                                <td>188.121</td>
+                                <td>0.448</td>
+                                <td>0</td>
+                                <td>0.488</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.236</td>
+                                <td>9999</td>
+                                <td>0.877</td>
+                                <td>0.786</td>
+                                <td>0.755</td>
+                                <td>5.689</td>
+                                <td>0.349</td>
+                                <td>0.158</td>
+                                <td>0.078</td>
+                                <td>0.934</td>
+                                <td>420.193</td>
+                                <td>0.126</td>
+                                <td>0</td>
+                                <td>0.486</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>4.948</td>
+                                <td>9999</td>
+                                <td>0.661</td>
+                                <td>0.846</td>
+                                <td>0.865</td>
+                                <td>7.195</td>
+                                <td>0.338</td>
+                                <td>0.158</td>
+                                <td>0.054</td>
+                                <td>0.926</td>
+                                <td>560.383</td>
+                                <td>0.119</td>
+                                <td>0</td>
+                                <td>0.505</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.149</td>
+                                <td>10000</td>
+                                <td>0.888</td>
+                                <td>0.841</td>
+                                <td>0.825</td>
+                                <td>6.943</td>
+                                <td>0.496</td>
+                                <td>0.030</td>
+                                <td>0.073</td>
+                                <td>0.953</td>
+                                <td>212.929</td>
+                                <td>0.074</td>
+                                <td>0</td>
+                                <td>0.419</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>9.661</td>
+                                <td>10000</td>
+                                <td>0.811</td>
+                                <td>0.854</td>
+                                <td>0.875</td>
+                                <td>7.634</td>
+                                <td>0.437</td>
+                                <td>0.030</td>
+                                <td>0.049</td>
+                                <td>0.934</td>
+                                <td>354.311</td>
+                                <td>0.072</td>
+                                <td>0</td>
+                                <td>0.459</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.768</td>
+                                <td>0.787</td>
+                                <td>0.765</td>
+                                <td>1.124</td>
+                                <td>0.557</td>
+                                <td>0.000</td>
+                                <td>0.757</td>
+                                <td>0.588</td>
+                                <td>135.704</td>
+                                <td>0.263</td>
+                                <td>0</td>
+                                <td>0.430</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>30.056</td>
+                                <td>10000</td>
+                                <td>0.864</td>
+                                <td>0.820</td>
+                                <td>0.860</td>
+                                <td>4.790</td>
+                                <td>0.508</td>
+                                <td>0.000</td>
+                                <td>0.741</td>
+                                <td>0.667</td>
+                                <td>274.827</td>
+                                <td>0.226</td>
+                                <td>0</td>
+                                <td>0.453</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>1.505</td>
+                                <td>8290</td>
+                                <td>0.868</td>
+                                <td><strong>0.860</strong></td>
+                                <td>0.865</td>
+                                <td><strong>8.849</strong></td>
+                                <td>0.345</td>
+                                <td>0.094</td>
+                                <td>0.105</td>
+                                <td>0.956</td>
+                                <td>68.846</td>
+                                <td>0.392</td>
+                                <td>0</td>
+                                <td>0.445</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>6.462</td>
+                                <td>8290</td>
+                                <td>0.857</td>
+                                <td>0.839</td>
+                                <td>0.865</td>
+                                <td>8.465</td>
+                                <td>0.325</td>
+                                <td>0.127</td>
+                                <td>0.087</td>
+                                <td>0.936</td>
+                                <td>191.791</td>
+                                <td>0.397</td>
+                                <td>0</td>
+                                <td>0.488</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>8.849</strong>, AUC: 0.868, F1: 0.860, MIA: 0.445). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.480</td>
+                                <td>8831</td>
+                                <td>0.837</td>
+                                <td>0.841</td>
+                                <td>0.850</td>
+                                <td>4.615</td>
+                                <td>0.323</td>
+                                <td>0.054</td>
+                                <td>0.098</td>
+                                <td>0.958</td>
+                                <td>131.025</td>
+                                <td>0.447</td>
+                                <td>0</td>
+                                <td>0.434</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>4.810</td>
+                                <td>8831</td>
+                                <td>0.879</td>
+                                <td>0.842</td>
+                                <td>0.855</td>
+                                <td>5.850</td>
+                                <td>0.299</td>
+                                <td>0.066</td>
+                                <td>0.080</td>
+                                <td>0.945</td>
+                                <td>249.618</td>
+                                <td>0.448</td>
+                                <td>0</td>
+                                <td>0.455</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.212</td>
+                                <td>11013</td>
+                                <td>0.892</td>
+                                <td>0.854</td>
+                                <td>0.840</td>
+                                <td>6.847</td>
+                                <td>0.321</td>
+                                <td>0.165</td>
+                                <td>0.071</td>
+                                <td>0.939</td>
+                                <td>493.673</td>
+                                <td>0.116</td>
+                                <td>189</td>
+                                <td>0.477</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>4.033</td>
+                                <td>11013</td>
+                                <td>0.801</td>
+                                <td>0.859</td>
+                                <td>0.870</td>
+                                <td>6.932</td>
+                                <td>0.308</td>
+                                <td>0.165</td>
+                                <td>0.046</td>
+                                <td>0.933</td>
+                                <td>633.441</td>
+                                <td>0.109</td>
+                                <td>189</td>
+                                <td>0.496</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.134</td>
+                                <td>11014</td>
+                                <td>0.873</td>
+                                <td>0.844</td>
+                                <td>0.830</td>
+                                <td>4.027</td>
+                                <td>0.448</td>
+                                <td>0.033</td>
+                                <td>0.063</td>
+                                <td>0.955</td>
+                                <td>287.813</td>
+                                <td>0.066</td>
+                                <td>188</td>
+                                <td>0.410</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>TVAE + Reglas del Dominio</strong></td>                    
+                                <td>6.622</td>
+                                <td>11014</td>
+                                <td>0.877</td>
+                                <td><strong>0.863</strong></td>
+                                <td><strong>0.875</strong></td>
+                                <td><strong>7.649</strong></td>
+                                <td>0.390</td>
+                                <td>0.033</td>
+                                <td>0.035</td>
+                                <td>0.939</td>
+                                <td>427.953</td>
+                                <td>0.065</td>
+                                <td>188</td>
+                                <td>0.467</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>11014</td>
+                                <td>0.908</td>
+                                <td>0.870</td>
+                                <td>0.870</td>
+                                <td>5.778</td>
+                                <td>0.497</td>
+                                <td>0.000</td>
+                                <td>0.573</td>
+                                <td>0.618</td>
+                                <td>207.770</td>
+                                <td>0.238</td>
+                                <td>188</td>
+                                <td>0.431</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>12.286</td>
+                                <td>11014</td>
+                                <td>0.886</td>
+                                <td>0.861</td>
+                                <td>0.855</td>
+                                <td>4.535</td>
+                                <td>0.445</td>
+                                <td>0.000</td>
+                                <td>0.544</td>
+                                <td>0.689</td>
+                                <td>348.401</td>
+                                <td>0.205</td>
+                                <td>188</td>
+                                <td>0.456</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.438</td>
+                                <td>9304</td>
+                                <td>0.855</td>
+                                <td>0.860</td>
+                                <td>0.865</td>
+                                <td>7.110</td>
+                                <td>0.325</td>
+                                <td>0.082</td>
+                                <td>0.093</td>
+                                <td>0.957</td>
+                                <td>133.353</td>
+                                <td>0.391</td>
+                                <td>0</td>
+                                <td>0.460</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>4.750</td>
+                                <td>9304</td>
+                                <td>0.870</td>
+                                <td>0.842</td>
+                                <td>0.855</td>
+                                <td>5.944</td>
+                                <td>0.302</td>
+                                <td>0.108</td>
+                                <td>0.074</td>
+                                <td>0.944</td>
+                                <td>255.580</td>
+                                <td>0.397</td>
+                                <td>0</td>
+                                <td>0.450</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>TVAE + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>7.649</strong>, AUC: 0.877, F1: 0.863, MIA: 0.467). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_34</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>Random Oversampling</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* Refinado</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>TVAE + Reglas del Dominio</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd34.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Online Shoppers Purchasing Intention (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32939282.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [84.50, 15.50], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

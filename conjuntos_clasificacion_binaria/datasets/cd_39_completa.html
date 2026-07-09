@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_39: Water Potability - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_39</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_39: Water Potability</h1>
+            <p class="description">Conjunto de datos procesado con registros de mediciones de laboratorio continuas para la clasificación binaria de la potabilidad del agua. Integra variables físico-químicas (pH, dureza, sólidos disueltos) con imputación por mediana.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.62</td>
+                                    <td>0.92</td>
+                                    <td>0.74</td>
+                                    <td>122</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.44</td>
+                                    <td>0.10</td>
+                                    <td>0.17</td>
+                                    <td>78</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.60</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.53</td>
+                                    <td>0.51</td>
+                                    <td>0.45</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.55</td>
+                                    <td>0.60</td>
+                                    <td>0.51</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.49</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.51</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.60</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.10 AUC</span>
+                        <span class="improvement-tag">⬆ +0.09 F1</span>
+                        <span class="improvement-tag" style="color: #f39c12;">— Acc sin cambio</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.67</td>
+                                    <td>0.69</td>
+                                    <td>0.68</td>
+                                    <td>122</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.49 <span class="improvement-indicator">⬆ +0.05</span></td>
+                                    <td>0.47 <span class="improvement-indicator">⬆ +0.37</span></td>
+                                    <td>0.48 <span class="improvement-indicator">⬆ +0.31</span></td>
+                                    <td>78</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.60</strong> <span class="improvement-indicator" style="color: #f39c12;">—</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.58 <span class="improvement-indicator">⬆ +0.05</span></td>
+                                    <td>0.58 <span class="improvement-indicator">⬆ +0.07</span></td>
+                                    <td>0.58 <span class="improvement-indicator">⬆ +0.13</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.60 <span class="improvement-indicator">⬆ +0.05</span></td>
+                                    <td>0.60 <span class="improvement-indicator">—</span></td>
+                                    <td>0.60 <span class="improvement-indicator">⬆ +0.09</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.58</span>
+                            <span class="improvement-badge positive">⬆ +0.10</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.60</span>
+                            <span class="improvement-badge positive">⬆ +0.09</span>
+                        </div>
+                        <div class="summary-item" style="border-left-color: #f39c12;">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.60</span>
+                            <span class="improvement-badge" style="background: #f39c12; color: white;">— Sin cambio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.44</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 44%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.49</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 49%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.05</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.10</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 10%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.47</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 47%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.37</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.17</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 17%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.48</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 48%; background: #f39c12;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.31</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Water Potability Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Datos de calidad de agua</div>
+                    <div class="fuente-fecha">Disponible en repositorios públicos</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">Kaggle / Repositorios de ciencia de datos</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability" target="_blank">Kaggle - Water Potability</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">3,276</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">9 predictores + 1 objetivo</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Unidades:</span>
+                            <span class="metadata-value">ppm, mg/L, μg/L, μS/cm, NTU</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Potabilidad del Agua (Water Potability)</strong> contiene <strong>métricas de calidad de agua</strong> para <strong>3,276 cuerpos de agua</strong> diferentes. El acceso a agua potable segura es <strong>esencial para la salud</strong>, un <strong>derecho humano básico</strong> y un componente de políticas efectivas para la protección de la salud. Este conjunto de datos permite clasificar si el agua es <strong>potable (segura para el consumo humano)</strong> o no, basándose en <strong>10 parámetros fisicoquímicos</strong> como pH, dureza, sólidos disueltos, cloraminas, sulfatos, conductividad, carbono orgánico, trihalometanos y turbidez. El objetivo es determinar si el agua es <strong>segura para el consumo humano</strong> (variable <em>Potability</em>).</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🌍 Contexto y Motivación</h4>
+                        <p>El acceso a <strong>agua potable segura</strong> es un problema crítico de salud y desarrollo a nivel <strong>nacional, regional y local</strong>. Según la <strong>Organización Mundial de la Salud (OMS)</strong>:</p>
+                        <ul class="transformacion-lista">
+                            <li>Al menos <strong>2 mil millones de personas</strong> en todo el mundo utilizan una fuente de agua potable <strong>contaminada con heces</strong></li>
+                            <li>El agua contaminada puede transmitir enfermedades como <strong>diarrea</strong>, <strong>cólera</strong>, <strong>disentería</strong>, <strong>tifoidea</strong> y <strong>poliomielitis</strong></li>
+                            <li>Las <strong>enfermedades relacionadas con el agua</strong> causan aproximadamente <strong>485,000 muertes por diarrea</strong> cada año</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">En algunas regiones, se ha demostrado que las <strong>inversiones en el suministro de agua y saneamiento</strong> pueden generar un <strong>beneficio económico neto</strong>, ya que las reducciones en los efectos adversos para la salud y los costos de atención médica superan los costos de las intervenciones.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El archivo <code>water_potability.csv</code> contiene <strong>3,276 registros</strong> con <strong>10 columnas</strong> (9 variables predictoras y 1 variable objetivo). Las características son de tipo <strong>numérico</strong> y representan diferentes <strong>parámetros fisicoquímicos</strong> del agua.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Unidad</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Rango / Valor Típico</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="5" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Parámetros Fisicoquímicos</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>ph</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">pH del agua (medida de acidez/alcalinidad)</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                        <td style="padding: 0.4rem;">0-14 (6.5-8.5 según OMS)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Hardness</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Dureza del agua (capacidad de precipitar jabón)</td>
+                                        <td style="padding: 0.4rem;">mg/L</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Solids</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Sólidos disueltos totales (TDS)</td>
+                                        <td style="padding: 0.4rem;">ppm</td>
+                                        <td style="padding: 0.4rem;">Desirable: 500 mg/L, Máximo: 1000 mg/L</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Chloramines</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Cantidad de cloraminas (desinfectante)</td>
+                                        <td style="padding: 0.4rem;">ppm</td>
+                                        <td style="padding: 0.4rem;">Hasta 4 mg/L (seguro)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Sulfate</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Cantidad de sulfatos disueltos</td>
+                                        <td style="padding: 0.4rem;">mg/L</td>
+                                        <td style="padding: 0.4rem;">3-30 mg/L (agua dulce)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Conductivity</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Conductividad eléctrica del agua</td>
+                                        <td style="padding: 0.4rem;">μS/cm</td>
+                                        <td style="padding: 0.4rem;">No debe exceder 400 μS/cm (OMS)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Organic_carbon</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Carbono orgánico total (TOC)</td>
+                                        <td style="padding: 0.4rem;">ppm</td>
+                                        <td style="padding: 0.4rem;">< 2 mg/L (agua tratada)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Trihalomethanes</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Trihalometanos (subproductos de cloración)</td>
+                                        <td style="padding: 0.4rem;">μg/L</td>
+                                        <td style="padding: 0.4rem;">Hasta 80 ppm (seguro)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Turbidity</strong></td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Turbidez del agua (propiedades de emisión de luz)</td>
+                                        <td style="padding: 0.4rem;">NTU</td>
+                                        <td style="padding: 0.4rem;">Recomendado: 5.00 NTU</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="5" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">B. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Potability</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Indica si el agua es segura para el consumo humano</td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                        <td style="padding: 0.4rem;">1 = Potable<br>0 = No potable</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">📐 Unidades de Medida</h5>
+                            <ul class="transformacion-lista">
+                                <li><strong>ppm</strong> = partes por millón (equivalente a mg/L para agua)</li>
+                                <li><strong>mg/L</strong> = miligramos por litro</li>
+                                <li><strong>μg/L</strong> = microgramos por litro</li>
+                                <li><strong>μS/cm</strong> = microsiemens por centímetro (conductividad)</li>
+                                <li><strong>NTU</strong> = unidades nefelométricas de turbidez</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Potable vs. No Potable)</li>
+                            <li><strong>Dimensión:</strong> Multivariante (3,276 × 10)</li>
+                            <li><strong>Tipo de características:</strong> Numéricas (continuas)</li>
+                            <li><strong>Valores faltantes:</strong> Sí (presentes en varias variables)</li>
+                            <li><strong>Área de aplicación:</strong> Salud Pública, Gestión de Recursos Hídricos, Medio Ambiente</li>
+                            <li><strong>Contexto:</strong> Evaluación de calidad de agua para consumo humano</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📖 Estándares de Calidad del Agua (Referencias)</h4>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Parámetros y Límites Recomendados</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Parámetro</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Unidad</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Límite Recomendado</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Fuente</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>pH</strong></td>
+                                        <td style="padding: 0.4rem;">-</td>
+                                        <td style="padding: 0.4rem;">6.5 - 8.5</td>
+                                        <td style="padding: 0.4rem;">OMS</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Solids (TDS)</strong></td>
+                                        <td style="padding: 0.4rem;">mg/L</td>
+                                        <td style="padding: 0.4rem;">500 (deseable) / 1000 (máximo)</td>
+                                        <td style="padding: 0.4rem;">WHO</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Chloramines</strong></td>
+                                        <td style="padding: 0.4rem;">mg/L</td>
+                                        <td style="padding: 0.4rem;">≤ 4</td>
+                                        <td style="padding: 0.4rem;">EPA</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Conductivity</strong></td>
+                                        <td style="padding: 0.4rem;">μS/cm</td>
+                                        <td style="padding: 0.4rem;">≤ 400</td>
+                                        <td style="padding: 0.4rem;">OMS</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Organic_carbon</strong></td>
+                                        <td style="padding: 0.4rem;">mg/L</td>
+                                        <td style="padding: 0.4rem;">< 2 (tratada) / < 4 (fuente)</td>
+                                        <td style="padding: 0.4rem;">US EPA</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>Trihalomethanes</strong></td>
+                                        <td style="padding: 0.4rem;">ppm</td>
+                                        <td style="padding: 0.4rem;">≤ 80</td>
+                                        <td style="padding: 0.4rem;">EPA</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>Turbidity</strong></td>
+                                        <td style="padding: 0.4rem;">NTU</td>
+                                        <td style="padding: 0.4rem;">≤ 5</td>
+                                        <td style="padding: 0.4rem;">OMS</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="color: #000; font-size: 0.85rem; margin-top: 0.3rem;">Referencias: OMS (Organización Mundial de la Salud), EPA (Agencia de Protección Ambiental de EE.UU.), US EPA (Agencia de Protección Ambiental de EE.UU.)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos contiene <strong>mediciones fisicoquímicas</strong> de cuerpos de agua y no incluye <strong>información personal identificable</strong> de individuos o comunidades. Los datos son <strong>anónimos</strong> y se utilizan exclusivamente para fines de <strong>investigación académica</strong> en calidad de agua y salud pública. <strong>Restricción de confidencialidad:</strong> El uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es ideal para <strong>problemas de clasificación</strong> y <strong>evaluación de calidad de agua</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable objetivo <strong>Potability</strong> está codificada como <strong>1 = Potable</strong> y <strong>0 = No Potable</strong></li>
+                            <li>Manejar adecuadamente los <strong>valores faltantes</strong> presentes en varias variables mediante imputación (media, mediana, KNN, MICE) o eliminación de registros</li>
+                            <li>Considerar los <strong>estándares de calidad del agua</strong> (OMS, EPA) para contextualizar los valores de las variables</li>
+                            <li>Estandarizar/normalizar las características numéricas dado que tienen escalas muy diferentes</li>
+                            <li>Las variables <strong>pH</strong>, <strong>Solids</strong>, <strong>Chloramines</strong>, <strong>Conductivity</strong> y <strong>Trihalomethanes</strong> tienen límites de seguridad que pueden ser utilizados como referencia para umbrales</li>
+                            <li>Utilizar <strong>validación cruzada estratificada</strong> para evaluar el rendimiento del modelo</li>
+                            <li>El dataset es adecuado para <strong>modelos de clasificación</strong> como Regresión Logística, Random Forest, XGBoost y Redes Neuronales</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Salud Pública</h4>
+                        <p>El <strong>acceso a agua potable segura</strong> es un <strong>derecho humano fundamental</strong> y un <strong>Objetivo de Desarrollo Sostenible (ODS 6)</strong> de las Naciones Unidas. La calidad del agua es esencial para:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Prevenir enfermedades</strong> transmitidas por el agua (diarrea, cólera, tifoidea, etc.)</li>
+                            <li><strong>Reducir la mortalidad infantil</strong> y mejorar la salud de las comunidades</li>
+                            <li><strong>Mejorar la calidad de vida</strong> y el desarrollo económico</li>
+                            <li><strong>Reducir costos de atención médica</strong> asociados a enfermedades hídricas</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset permite desarrollar <strong>modelos de clasificación</strong> que pueden ayudar a <strong>evaluar la potabilidad del agua</strong> de manera rápida y eficiente, especialmente en regiones con <strong>recursos limitados</strong> para realizar análisis de laboratorio completos.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Water Potability Dataset. Kaggle. https://www.kaggle.com/datasets/adityakadiwal/water-potability</pre>
+                        <button onclick="copyToClipboard('Water Potability Dataset. Kaggle. https://www.kaggle.com/datasets/adityakadiwal/water-potability')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Organización Mundial de la Salud (OMS). (2022). <em>Drinking-water</em>. <a href="https://www.who.int/news-room/fact-sheets/detail/drinking-water" target="_blank" style="color: #4fc3f7;">https://www.who.int/news-room/fact-sheets/detail/drinking-water</a></li>
+                            <li>Organización Mundial de la Salud (OMS). (2017). <em>Guidelines for drinking-water quality: fourth edition incorporating the first addendum</em>. <a href="https://www.who.int/publications/i/item/9789241549950" target="_blank" style="color: #4fc3f7;">https://www.who.int/publications/i/item/9789241549950</a></li>
+                            <li>United Nations. (2015). <em>Sustainable Development Goal 6: Clean Water and Sanitation</em>. <a href="https://sdgs.un.org/goals/goal6" target="_blank" style="color: #4fc3f7;">https://sdgs.un.org/goals/goal6</a></li>
+                            <li>Kaggle - Water Potability Dataset. <a href="https://www.kaggle.com/datasets/adityakadiwal/water-potability" target="_blank" style="color: #4fc3f7;">https://www.kaggle.com/datasets/adityakadiwal/water-potability</a></li>
+                            <li>U.S. Environmental Protection Agency (EPA). <em>National Primary Drinking Water Regulations</em>. <a href="https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations" target="_blank" style="color: #4fc3f7;">https://www.epa.gov/ground-water-and-drinking-water/national-primary-drinking-water-regulations</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Water Potability Dataset)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Carga y verificación inicial de datos:</strong> 
+                        < class="transformacion-lista">
+                            <li>Carga del dataset desde el archivo <em>water_potability.csv</em>.</li>
+                            <li>Identificación de <strong>valores perdidos</strong> en variables físico-químicas (pH, Sulfatos, Trihalometanos, entre otros).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Imputación de valores faltantes:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Detección detallada de valores nulos por columna para transparencia metodológica.</li>
+                            <li><strong>Imputación con mediana</strong> para todas las variables numéricas — estrategia robusta y estándar para mediciones físico-químicas del agua.</li>
+                            <li>Garantía de integridad total del conjunto de datos para modelado directo.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Estandarización de tipos de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión forzada de la variable objetivo <em>Potability</em> a tipo <strong>entero (int)</strong> para eliminar decimales.</li>
+                            <li>Preservación de todas las variables predictoras en su tipo numérico original (flotantes) para mantener precisión en las mediciones.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submuestreo estratificado para reducción del dataset:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Reducción del dataset a <strong>1,000 ejemplos</strong> representativos mediante muestreo estratificado.</li>
+                            <li>Uso de <code>train_test_split</code> con parámetro <em>stratify</em> para <strong>preservar exactamente</strong> la proporción original de clases (desbalance de potabilidad).</li>
+                            <li>Semilla fija (<em>random_state=42</em>) para garantizar reproducibilidad científica de la muestra.</li>
+                            <li>Verificación de integridad con diferencia máxima < 1% en proporción de clases.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_water_potability.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Documentación de <strong>9 variables físico-químicas</strong> del agua: <em>ph</em> (acidez/alcalinidad), <em>Hardness</em> (dureza), <em>Solids</em> (sólidos disueltos), <em>Chloramines</em> (cloraminas), <em>Sulfate</em> (sulfatos), <em>Conductivity</em> (conductividad eléctrica), <em>Organic_carbon</em> (carbono orgánico), <em>Trihalomethanes</em> (trihalometanos), <em>Turbidity</em> (turbidez).</li>
+                            <li>Descripción de unidades de medida para cada variable (mg/L, ppm, µS/cm, NTU, etc.).</li>
+                            <li>Contextualización del dataset: calidad del agua para consumo humano.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>3,276 instancias</strong> (muestras de agua) originales para el dataset completo.</li>
+                            <li>Dataset reducido de <strong>1,000 ejemplos</strong> estratificados para experimentación eficiente.</li>
+                            <li>Dataset final con <strong>9 variables predictoras</strong> (todas numéricas continuas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>3,276 muestras de agua</strong> (con versión reducida estratificada de 1,000 ejemplos) con <strong>9 variables predictoras</strong> (mediciones físico-químicas) y <strong>1 variable objetivo binaria</strong> (Potability). Desbalance moderado (~60% agua no potable / ~40% agua potable) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>calidad del agua y salud pública</strong>, donde las mediciones fisicoquímicas son determinantes para la clasificación de potabilidad.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    💧 <strong>Fuente:</strong> Water Potability Dataset (Kaggle) - Datos de calidad del agua para consumo humano.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🔬 <strong>Variables físico-químicas:</strong> pH, dureza, sólidos disueltos totales (TDS), cloraminas, sulfatos, conductividad eléctrica, carbono orgánico total, trihalometanos, turbidez — parámetros críticos para la potabilidad del agua.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📋 <strong>Unidades de medida:</strong> pH (0-14), Hardness (mg/L), Solids (ppm), Chloramines (ppm), Sulfate (mg/L), Conductivity (µS/cm), Organic_carbon (ppm), Trihalomethanes (µg/L), Turbidity (NTU).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_water_potability.txt</em> con descripción completa de la variable objetivo y todas las variables predictoras con sus unidades de medida.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>Potability</em> (1 = Agua potable/segura para consumo, 0 = Agua no potable/no segura).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Imputación con mediana de valores perdidos, estandarización de tipos, reducción estratificada a 1,000 ejemplos.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción de Calidad del Agua</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>ph</code></td>
+                            <td>Nivel de pH (acidez/alcalinidad del agua)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1.76 - 11.45</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Hardness</code></td>
+                            <td>Dureza del agua (sales de calcio y magnesio)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>77.46 - 323.12</td>
+                            <td>mg/L</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Solids</code></td>
+                            <td>Total de Sólidos Disueltos (TDS) - Mineralización</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>320.94 - 52,060.23</td>
+                            <td>ppm</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Chloramines</code></td>
+                            <td>Concentración de cloraminas (desinfectante)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>2.39 - 12.65</td>
+                            <td>ppm</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Sulfate</code></td>
+                            <td>Concentración de sulfatos disueltos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>187.17 - 476.54</td>
+                            <td>mg/L</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Conductivity</code></td>
+                            <td>Conductividad eléctrica (iones disueltos)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>181.48 - 656.92</td>
+                            <td>μS/cm</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Organic_carbon</code></td>
+                            <td>Carbono Orgánico Total (TOC)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4.47 - 23.92</td>
+                            <td>ppm</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Trihalomethanes</code></td>
+                            <td>Trihalometanos (subproductos de cloración)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>8.18 - 120.03</td>
+                            <td>μg/L</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>Turbidity</code></td>
+                            <td>Turbidez (claridad del agua, partículas en suspensión)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>1.68 - 6.74</td>
+                            <td>NTU</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variable Binaria (Target) -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>Potability</code></td>
+                            <td>Potabilidad del agua (apta para consumo humano) - OBJETIVO</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No Potable, 1: Potable</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">9</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Potabilidad (Potability)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Potabilidad del Agua. Comprender estas codificaciones 
+                es fundamental para la correcta interpretación de los resultados de calidad del agua.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: Potability (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>Potability</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">0</span></td>
+                                    <td><strong>No Potable</strong> - Agua no segura para consumo humano</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">1</span></td>
+                                    <td><strong>Potable</strong> - Agua apta para consumo humano</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> Clasifica la potabilidad del agua basada en parámetros fisicoquímicos.</p>
+                        </div>                        
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato:</strong> 0 = No Potable, 1 = Potable
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>Potability</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Potabilidad (0: No Potable, 1: Potable)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Única variable binaria en el dataset.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 1
+                        <ul>
+                            <li>🎯 Potability (Objetivo - Potabilidad)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 9
+                        <ul>
+                            <li>ph, Hardness, Solids, Chloramines</li>
+                            <li>Sulfate, Conductivity, Organic_carbon</li>
+                            <li>Trihalomethanes, Turbidity</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">💧</span>
+                    <div>
+                        <strong>Parámetros de Calidad del Agua (OMS):</strong>
+                        <ul>
+                            <li><strong>pH:</strong> 6.5 - 8.5 (aceptable)</li>
+                            <li><strong>Turbidity:</strong> &lt; 5 NTU (recomendado)</li>
+                            <li><strong>Conductivity:</strong> &lt; 400 μS/cm (agua dulce)</li>
+                            <li><strong>TDS (Solids):</strong> &lt; 500 ppm (buena calidad)</li>
+                            <li><strong>Chloramines:</strong> ≤ 4 ppm (límite seguro)</li>
+                            <li><strong>Trihalomethanes:</strong> ≤ 80 μg/L (límite seguro)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Análisis:</strong>
+                        <ul>
+                            <li><strong>pH extremo:</strong> Valores &lt; 6.5 o &gt; 8.5 indican agua no potable</li>
+                            <li><strong>Solids (TDS):</strong> Valores &gt; 1000 ppm indican alta mineralización</li>
+                            <li><strong>Chloramines:</strong> Niveles &gt; 4 ppm pueden ser peligrosos</li>
+                            <li><strong>Trihalomethanes:</strong> Niveles &gt; 80 μg/L indican subproductos de cloración</li>
+                            <li><strong>Turbidity:</strong> Valores &gt; 5 NTU reducen efectividad de desinfección</li>
+                            <li><strong>Organic_carbon:</strong> Niveles altos favorecen formación de THMs</li>
+                            <li><strong>Conductivity:</strong> Correlaciona con concentración de iones disueltos</li>
+                            <li><strong>Hardness:</strong> Agua dura (&gt; 200 mg/L) puede causar incrustaciones</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- SEGURIDAD - pH -->
+                        <li><code>ph < 4.5 → Potability = 0 (pH ácido extremo → no potable)</code></li>
+                        <li><code>ph > 10.0 → Potability = 0 (pH básico extremo → no potable)</code></li>
+                        
+                        <!-- SEGURIDAD - Sulfatos -->
+                        <li><code>Sulfate > 480 → Potability = 0 (Sulfatos altos → no potable)</code></li>
+                        
+                        <!-- SEGURIDAD - Trihalometanos -->
+                        <li><code>Trihalomethanes > 100 → Potability = 0 (THMs altos → no potable)</code></li>
+                        
+                        <!-- SEGURIDAD - Turbidez -->
+                        <li><code>Turbidity > 6.0 → Potability = 0 (Turbidez alta → no potable)</code></li>
+                        
+                        <!-- HIDROFÍSICA - TDS vs EC -->
+                        <li><code>Solids > 30000 → Conductivity > 500 (Sólidos altos → conductividad alta)</code></li>
+                        <li><code>Conductivity < 300 → Solids < 25000 (Conductividad baja → sólidos bajos)</code></li>
+                        
+                        <!-- QUÍMICA - Buffering -->
+                        <li><code>Hardness > 250 → ph > 5.0 (Dureza alta → pH no extremo)</code></li>
+                        
+                        <!-- QUÍMICA - Precursores THM -->
+                        <li><code>Trihalomethanes > 80 → Organic_carbon > 5 (THMs altos → carbono orgánico alto)</code></li>
+                        <li><code>Trihalomethanes > 80 → Chloramines > 2 (THMs altos → cloraminas altas)</code></li>
+                        
+                        <!-- CALIDAD - Cloraminas -->
+                        <li><code>Chloramines > 10 → Potability = 0 (Cloraminas altas → no potable)</code></li>
+                        
+                        <!-- CONSISTENCIA POTABLE 1 - Turbidez -->
+                        <li><code>Potability == 1 → Turbidity < 5.0</code></li>
+                        
+                        <!-- CONSISTENCIA POTABLE 2 - Sulfatos -->
+                        <li><code>Potability == 1 → Sulfate < 400</code></li>
+                        
+                        <!-- CONSISTENCIA POTABLE 3 - pH -->
+                        <li><code>Potability == 1 → ph > 5.5</code></li>
+                        
+                        <!-- DUREZA vs CONDUCTIVIDAD -->
+                        <li><code>Hardness > 280 → Conductivity > 300</code></li>
+                        
+                        <!-- RELACIÓN SÓLIDOS -->
+                        <li><code>Solids < 5000 → Hardness < 180</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>1</td>
+                                <td>732</td>
+                                <td>0.604</td>
+                                <td>0.617</td>
+                                <td>0.630</td>
+                                <td>5.767</td>
+                                <td>0.131</td>
+                                <td>0.987</td>
+                                <td>0.024</td>
+                                <td>0.983</td>
+                                <td>57.676</td>
+                                <td>0</td>
+                                <td>732</td>
+                                <td>0.464</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>732</td>
+                                <td>0.608</td>
+                                <td>0.600</td>
+                                <td>0.605</td>
+                                <td>3.924</td>
+                                <td>0.257</td>
+                                <td>0.994</td>
+                                <td>0.024</td>
+                                <td>0.986</td>
+                                <td>52.875</td>
+                                <td>0.006</td>
+                                <td>600</td>
+                                <td>0.484</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>732</td>
+                                <td>0.636</td>
+                                <td>0.602</td>
+                                <td>0.600</td>
+                                <td>4.967</td>
+                                <td>0.258</td>
+                                <td>0.977</td>
+                                <td>0.024</td>
+                                <td>0.986</td>
+                                <td>56.516</td>
+                                <td>0.006</td>
+                                <td>600</td>
+                                <td>0.484</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.107</td>
+                                <td>771</td>
+                                <td>0.601</td>
+                                <td>0.579</td>
+                                <td>0.575</td>
+                                <td>1.961</td>
+                                <td>0.289</td>
+                                <td>0.968</td>
+                                <td>0.037</td>
+                                <td>0.987</td>
+                                <td>81.584</td>
+                                <td>0.007</td>
+                                <td>600</td>
+                                <td>0.482</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Adaptado</strong></td>
+                                <td>1.003</td>
+                                <td>731</td>
+                                <td><strong>0.646</strong></td>
+                                <td><strong>0.635</strong></td>
+                                <td><strong>0.635</strong></td>
+                                <td><strong>7.402</strong></td>
+                                <td>0.257</td>
+                                <td>0.983</td>
+                                <td>0.024</td>
+                                <td>0.989</td>
+                                <td>100.605</td>
+                                <td>0.009</td>
+                                <td>600</td>
+                                <td>0.496</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1.003</td>
+                                <td>731</td>
+                                <td>0.647</td>
+                                <td>0.625</td>
+                                <td>0.625</td>
+                                <td>6.839</td>
+                                <td>0.256</td>
+                                <td>0.981</td>
+                                <td>0.024</td>
+                                <td>0.989</td>
+                                <td>52.790</td>
+                                <td>0.009</td>
+                                <td>600</td>
+                                <td>0.487</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>732</td>
+                                <td>0.620</td>
+                                <td>0.619</td>
+                                <td>0.645</td>
+                                <td>4.367</td>
+                                <td>0.253</td>
+                                <td>0.034</td>
+                                <td>0.024</td>
+                                <td>0.748</td>
+                                <td>56.454</td>
+                                <td>0.037</td>
+                                <td>600</td>
+                                <td>0.474</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>2.660</td>
+                                <td>732</td>
+                                <td>0.651</td>
+                                <td>0.601</td>
+                                <td>0.660</td>
+                                <td>5.013</td>
+                                <td>0.251</td>
+                                <td>0.000</td>
+                                <td>0.032</td>
+                                <td>0.648</td>
+                                <td>60.132</td>
+                                <td>0.056</td>
+                                <td>566</td>
+                                <td>0.466</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Adaptado</strong> 
+                    (TabDSFidelity: <strong>7.402</strong>, AUC: 0.646, F1: 0.635, MIA: 0.496). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.019</td>
+                                <td>7243</td>
+                                <td>0.550</td>
+                                <td>0.604</td>
+                                <td>0.615</td>
+                                <td>7.432</td>
+                                <td>0.799</td>
+                                <td>0.327</td>
+                                <td>0.022</td>
+                                <td>0.985</td>
+                                <td>78.371</td>
+                                <td>0.126</td>
+                                <td>0</td>
+                                <td>0.449</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano + Reglas</strong></td>                    
+                                <td>1.203</td>
+                                <td>7243</td>
+                                <td>0.609</td>
+                                <td>0.601</td>
+                                <td>0.630</td>
+                                <td><strong>8.303</strong></td>
+                                <td>0.799</td>
+                                <td>0.327</td>
+                                <td>0.008</td>
+                                <td>0.981</td>
+                                <td>211.418</td>
+                                <td>0.126</td>
+                                <td>0</td>
+                                <td>0.463</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.053</td>
+                                <td>10000</td>
+                                <td>0.481</td>
+                                <td>0.486</td>
+                                <td>0.480</td>
+                                <td>1.560</td>
+                                <td>0.810</td>
+                                <td>0.041</td>
+                                <td>0.030</td>
+                                <td>0.905</td>
+                                <td>278.051</td>
+                                <td>0.077</td>
+                                <td>0</td>
+                                <td>0.483</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.615</td>
+                                <td>10000</td>
+                                <td>0.499</td>
+                                <td>0.502</td>
+                                <td>0.505</td>
+                                <td>2.376</td>
+                                <td>0.810</td>
+                                <td>0.041</td>
+                                <td>0.000</td>
+                                <td>0.916</td>
+                                <td>434.152</td>
+                                <td>0.076</td>
+                                <td>0</td>
+                                <td>0.480</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.139</td>
+                                <td>10000</td>
+                                <td>0.601</td>
+                                <td>0.549</td>
+                                <td>0.545</td>
+                                <td>4.336</td>
+                                <td>0.832</td>
+                                <td>0.021</td>
+                                <td>0.041</td>
+                                <td>0.972</td>
+                                <td>244.840</td>
+                                <td>0.056</td>
+                                <td>0</td>
+                                <td>0.554</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.001</td>
+                                <td>10000</td>
+                                <td>0.644</td>
+                                <td>0.610</td>
+                                <td>0.610</td>
+                                <td>6.648</td>
+                                <td>0.832</td>
+                                <td>0.021</td>
+                                <td>0.024</td>
+                                <td>0.972</td>
+                                <td>427.969</td>
+                                <td>0.056</td>
+                                <td>0</td>
+                                <td>0.527</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.531</td>
+                                <td>0.516</td>
+                                <td>0.510</td>
+                                <td>1.636</td>
+                                <td>0.827</td>
+                                <td>0.000</td>
+                                <td>0.024</td>
+                                <td>0.510</td>
+                                <td>128.607</td>
+                                <td>0.263</td>
+                                <td>0</td>
+                                <td>0.412</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>321.581</td>
+                                <td>10000</td>
+                                <td>0.559</td>
+                                <td>0.618</td>
+                                <td>0.620</td>
+                                <td>5.225</td>
+                                <td>0.827</td>
+                                <td>0.000</td>
+                                <td>1.586</td>
+                                <td>0.616</td>
+                                <td>277.809</td>
+                                <td>0.271</td>
+                                <td>0</td>
+                                <td>0.561</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1</td>
+                                <td>7000</td>
+                                <td>0.592</td>
+                                <td>0.601</td>
+                                <td>0.610</td>
+                                <td>6.654</td>
+                                <td>0.828</td>
+                                <td>0.230</td>
+                                <td>0.024</td>
+                                <td>0.984</td>
+                                <td>73.378</td>
+                                <td>0.030</td>
+                                <td>0</td>
+                                <td>0.473</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.183</td>
+                                <td>7000</td>
+                                <td>0.627</td>
+                                <td>0.607</td>
+                                <td>0.615</td>
+                                <td>7.228</td>
+                                <td>0.828</td>
+                                <td>0.230</td>
+                                <td>0.009</td>
+                                <td>0.983</td>
+                                <td>206.565</td>
+                                <td>0.033</td>
+                                <td>0</td>
+                                <td>0.446</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>8.303</strong>, AUC: 0.609, F1: 0.601, MIA: 0.463). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.018</td>
+                                <td>7974</td>
+                                <td>0.603</td>
+                                <td>0.622</td>
+                                <td>0.630</td>
+                                <td>7.932</td>
+                                <td>0.724</td>
+                                <td>0.365</td>
+                                <td>0.023</td>
+                                <td>0.986</td>
+                                <td>146.578</td>
+                                <td>0.124</td>
+                                <td>0</td>
+                                <td>0.459</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.183</td>
+                                <td>7974</td>
+                                <td>0.586</td>
+                                <td>0.556</td>
+                                <td>0.580</td>
+                                <td>6.351</td>
+                                <td>0.724</td>
+                                <td>0.365</td>
+                                <td>0.009</td>
+                                <td>0.983</td>
+                                <td>278.216</td>
+                                <td>0.124</td>
+                                <td>0</td>
+                                <td>0.443</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.049</td>
+                                <td>10731</td>
+                                <td>0.475</td>
+                                <td>0.505</td>
+                                <td>0.500</td>
+                                <td>1.968</td>
+                                <td>0.743</td>
+                                <td>0.054</td>
+                                <td>0.030</td>
+                                <td>0.911</td>
+                                <td>359.068</td>
+                                <td>0.072</td>
+                                <td>123</td>
+                                <td>0.490</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.562</td>
+                                <td>10731</td>
+                                <td>0.516</td>
+                                <td>0.481</td>
+                                <td>0.480</td>
+                                <td>1.951</td>
+                                <td>0.743</td>
+                                <td>0.054</td>
+                                <td>0.000</td>
+                                <td>0.921</td>
+                                <td>519.336</td>
+                                <td>0.072</td>
+                                <td>123</td>
+                                <td>0.497</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.128</td>
+                                <td>10731</td>
+                                <td>0.645</td>
+                                <td>0.560</td>
+                                <td>0.555</td>
+                                <td>4.885</td>
+                                <td>0.764</td>
+                                <td>0.031</td>
+                                <td>0.040</td>
+                                <td>0.974</td>
+                                <td>337.949</td>
+                                <td>0.052</td>
+                                <td>123</td>
+                                <td>0.505</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.001</td>
+                                <td>10731</td>
+                                <td>0.613</td>
+                                <td>0.579</td>
+                                <td>0.580</td>
+                                <td>5.017</td>
+                                <td>0.764</td>
+                                <td>0.031</td>
+                                <td>0.024</td>
+                                <td>0.974</td>
+                                <td>521.465</td>
+                                <td>0.052</td>
+                                <td>123</td>
+                                <td>0.518</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.000</td>
+                                <td>10731</td>
+                                <td>0.582</td>
+                                <td>0.571</td>
+                                <td>0.570</td>
+                                <td>3.543</td>
+                                <td>0.758</td>
+                                <td>0.000</td>
+                                <td>0.024</td>
+                                <td>0.520</td>
+                                <td>205.787</td>
+                                <td>0.242</td>
+                                <td>123</td>
+                                <td>0.494</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>26.099</td>
+                                <td>10731</td>
+                                <td>0.603</td>
+                                <td>0.626</td>
+                                <td>0.630</td>
+                                <td>5.343</td>
+                                <td>0.758</td>
+                                <td>0.000</td>
+                                <td>0.641</td>
+                                <td>0.616</td>
+                                <td>353.828</td>
+                                <td>0.249</td>
+                                <td>123</td>
+                                <td>0.475</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.000</td>
+                                <td>7731</td>
+                                <td>0.614</td>
+                                <td>0.592</td>
+                                <td>0.595</td>
+                                <td>6.592</td>
+                                <td>0.741</td>
+                                <td>0.264</td>
+                                <td>0.024</td>
+                                <td>0.985</td>
+                                <td>140.750</td>
+                                <td>0.028</td>
+                                <td>180</td>
+                                <td>0.464</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado + Reglas</strong></td>                    
+                                <td>1.165</td>
+                                <td>7731</td>
+                                <td><strong>0.632</strong></td>
+                                <td><strong>0.645</strong></td>
+                                <td><strong>0.655</strong></td>
+                                <td><strong>8.131</strong></td>
+                                <td>0.741</td>
+                                <td>0.264</td>
+                                <td>0.011</td>
+                                <td>0.984</td>
+                                <td>275.039</td>
+                                <td>0.029</td>
+                                <td>180</td>
+                                <td>0.454</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>8.131</strong>, AUC: 0.632, F1: 0.645, MIA: 0.454). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_39</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>SMOTE RSB* Adaptado</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* Refinado + Reglas del Dominio</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd39.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Water Potability Prediction (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32945999.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [61.00, 39.00], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

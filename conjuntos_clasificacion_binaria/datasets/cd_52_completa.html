@@ -1,0 +1,2089 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_52: EEG Eye State - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_52</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_52: EEG Eye State</h1>
+            <p class="description">Conjunto de datos de ondas cerebrales (EEG) para detectar si una persona tiene los ojos abiertos o cerrados. Al ser una grabación continua de 14 sensores, los datos mantienen un orden temporal estricto (como los fotogramas de un video). Integra lecturas de 14 electrodos con alta autocorrelación.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.66</td>
+                                    <td>0.73</td>
+                                    <td>0.69</td>
+                                    <td>110</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.62</td>
+                                    <td>0.54</td>
+                                    <td>0.58</td>
+                                    <td>90</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.65</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.64</td>
+                                    <td>0.64</td>
+                                    <td>0.64</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.64</td>
+                                    <td>0.65</td>
+                                    <td>0.64</td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.90</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.64</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.65</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.10 AUC</span>
+                        <span class="improvement-tag">⬆ +0.35 F1</span>
+                        <span class="improvement-tag">⬆ +0.34 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>1.00</td>
+                                    <td>0.98</td>
+                                    <td>0.99</td>
+                                    <td>110</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.98 <span class="improvement-indicator">⬆ +0.36</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.46</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.41</span></td>
+                                    <td>90</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.99</strong> <span class="improvement-indicator">⬆ +0.34</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.35</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.35</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.35</span></td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.35</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.34</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.35</span></td>
+                                    <td>200</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">1.00</span>
+                            <span class="improvement-badge positive">⬆ +0.10</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.99</span>
+                            <span class="improvement-badge positive">⬆ +0.35</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.99</span>
+                            <span class="improvement-badge positive">⬆ +0.34</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.62</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 62%; background: #f39c12;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.98</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 98%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.36</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.54</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 54%; background: #e74c3c;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 1.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.46</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.58</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 58%; background: #f39c12;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.99</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 99%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.41</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>EEG Eye State Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Datos de EEG con Emotiv Neuroheadset</div>
+                    <div class="fuente-fecha">Disponible en repositorios públicos</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/EEG+Eye+State" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">14,980</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">14 (13 canales EEG + 1 objetivo)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Duración:</span>
+                            <span class="metadata-value">117 segundos</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Dispositivo:</span>
+                            <span class="metadata-value">Emotiv EEG Neuroheadset</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Estado Ocular por EEG (EEG Eye State)</strong> consiste en <strong>14,980 valores de EEG</strong> y un valor que indica el <strong>estado del ojo</strong> (abierto o cerrado). Todos los datos provienen de una <strong>medición EEG continua</strong> con el <strong>Emotiv EEG Neuroheadset</strong> con una duración de <strong>117 segundos</strong>. El estado del ojo fue detectado mediante una <strong>cámara durante la medición EEG</strong> y agregado manualmente al archivo después de analizar los fotogramas del video. <strong>1</strong> indica el estado <strong>ojo cerrado</strong> y <strong>0</strong> el estado <strong>ojo abierto</strong>. Todos los valores están en <strong>orden cronológico</strong> con el primer valor medido al inicio del archivo.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🧠 Contexto del Dominio</h4>
+                        <p>La <strong>electroencefalografía (EEG)</strong> es una técnica no invasiva que registra la <strong>actividad eléctrica del cerebro</strong> mediante electrodos colocados en el cuero cabelludo. El <strong>Emotiv EEG Neuroheadset</strong> es un dispositivo de EEG <strong>portátil y de bajo costo</strong> que permite la captura de señales cerebrales en entornos no clínicos. La <strong>detección del estado ocular</strong> (ojos abiertos vs. cerrados) mediante EEG es un problema clásico en el procesamiento de señales cerebrales que tiene aplicaciones en:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Interfaces cerebro-computadora (BCI)</strong> para personas con discapacidades motoras</li>
+                            <li><strong>Monitoreo de fatiga y somnolencia</strong> en conductores y operarios</li>
+                            <li><strong>Estudios de sueño</strong> y estados de vigilia</li>
+                            <li><strong>Evaluación de atención</strong> y estados cognitivos</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;">La actividad EEG cambia significativamente cuando los ojos están cerrados, con un aumento en la <strong>actividad alfa (8-13 Hz)</strong> en las regiones occipitales del cerebro. Este dataset captura este fenómeno y permite entrenar modelos para <strong>clasificar el estado ocular</strong> basándose únicamente en señales EEG.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>14,980 instancias</strong> con <strong>14 atributos</strong> (13 canales EEG y 1 variable objetivo). Las características son de tipo <strong>numérico (real)</strong> y <strong>no presentan valores faltantes</strong>. Los datos están en <strong>orden cronológico</strong>, representando una serie temporal continua.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Canales del EEG (Sistema Internacional 10-20)</h5>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6;">Los 13 canales EEG corresponden a la <strong>ubicación de los electrodos</strong> según el <strong>Sistema Internacional 10-20</strong>:</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.3rem 1rem; padding: 0.5rem 0;">
+                                <div style="color: #4fc3f7; font-weight: bold;">Canal</div>
+                                <div style="color: #000; font-size: 0.85rem;">Descripción</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>AF3</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Frontal anterior izquierdo</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>F7</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Frontal lateral izquierdo</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>F3</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Frontal medial izquierdo</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>FC5</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Frontal central lateral izquierdo</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>T7</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Temporal izquierdo</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>P7</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Parietal lateral izquierdo</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>O1</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Occipital izquierdo</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>O2</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Occipital derecho</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>P8</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Parietal lateral derecho</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>T8</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Temporal derecho</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>FC6</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Frontal central lateral derecho</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>F4</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Frontal medial derecho</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>F8</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Frontal lateral derecho</div>
+                                
+                                <div style="color: #000; font-size: 0.85rem;"><strong>AF4</strong></div>
+                                <div style="color: #000; font-size: 0.85rem;">Frontal anterior derecho</div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Unidades</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Canales EEG (13 características)</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>AF3</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en AF3</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>F7</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en F7</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>F3</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en F3</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>FC5</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en FC5</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>T7</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en T7</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>P7</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en P7</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>O1</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en O1</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>O2</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en O2</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>P8</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en P8</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>T8</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en T8</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>FC6</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en FC6</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>F4</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en F4</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>F8</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en F8</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>AF4</strong></td>
+                                        <td style="padding: 0.4rem;">Continuo</td>
+                                        <td style="padding: 0.4rem;">Actividad eléctrica en AF4</td>
+                                        <td style="padding: 0.4rem;">μV</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="4" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">B. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>eyeDetection</strong></td>
+                                        <td style="padding: 0.4rem;">Binaria (Target)</td>
+                                        <td style="padding: 0.4rem;">Estado del ojo (detectado por cámara)</td>
+                                        <td style="padding: 0.4rem;">1 = Cerrado, 0 = Abierto</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Ojo abierto vs. Ojo cerrado)</li>
+                            <li><strong>Dimensión:</strong> Multivariante, Serie Temporal (14,980 × 14)</li>
+                            <li><strong>Tipo de características:</strong> Reales (continuas)</li>
+                            <li><strong>Valores faltantes:</strong> No</li>
+                            <li><strong>Área de aplicación:</strong> Neurociencia, Interfaces Cerebro-Computadora (BCI), Procesamiento de Señales</li>
+                            <li><strong>Dispositivo:</strong> Emotiv EEG Neuroheadset</li>
+                            <li><strong>Duración:</strong> 117 segundos</li>
+                            <li><strong>Orden cronológico:</strong> Los datos están en orden temporal</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos contiene <strong>señales EEG anonimizadas</strong> que no contienen información personal identificable. La medición se realizó en un entorno de investigación con el consentimiento del participante. <strong>Restricción de confidencialidad:</strong> El uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la reidentificación del participante.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es ideal para <strong>clasificación de series temporales</strong> y <strong>detección de estado ocular</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable objetivo <strong>eyeDetection</strong> está codificada como <strong>1 = Ojo cerrado</strong> y <strong>0 = Ojo abierto</strong></li>
+                            <li>Los datos están en <strong>orden cronológico</strong>, lo que permite análisis de series temporales y modelos secuenciales</li>
+                            <li>Los canales <strong>O1</strong> y <strong>O2</strong> (occipitales) suelen ser los más informativos para detectar el estado ocular (actividad alfa)</li>
+                            <li>El dataset es adecuado para <strong>modelos secuenciales</strong> (LSTM, GRU, Transformers) y <strong>clasificadores convencionales</strong> (SVM, Random Forest, XGBoost)</li>
+                            <li>Para modelos no secuenciales, se pueden utilizar <strong>características estadísticas</strong> (media, varianza, potencia por banda de frecuencia)</li>
+                            <li>Estandarizar/normalizar las señales EEG por canal</li>
+                            <li>Los canales EEG tienen <strong>correlación espacial</strong> que puede explotarse con técnicas de aprendizaje</li>
+                            <li>El <strong>desbalanceo de clases</strong> debe verificarse, aunque la duración de 117 segundos sugiere un balanceo razonable entre estados</li>
+                            <li>Utilizar <strong>validación temporal</strong> (time-series split) en lugar de validación cruzada aleatoria debido a la naturaleza secuencial de los datos</li>
+                            <li>Este dataset es adecuado para <strong>investigación en BCI</strong> y <strong>procesamiento de señales biomédicas</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en Neurociencia y BCI</h4>
+                        <p>La <strong>detección del estado ocular</strong> mediante EEG es un problema fundamental en <strong>neurociencia</strong> y <strong>sistemas BCI</strong>. La actividad cerebral cambia significativamente entre estados de ojos abiertos y cerrados:</p>
+                        <ul class="transformacion-lista">
+                            <li>Con los ojos cerrados, hay un <strong>aumento de la actividad alfa (8-13 Hz)</strong>, especialmente en regiones <strong>occipitales</strong></li>
+                            <li>La <strong>actividad beta (>13 Hz)</strong> también se ve afectada por el estado ocular</li>
+                            <li>La <strong>detección automática</strong> del estado ocular tiene aplicaciones en <strong>monitoreo de somnolencia</strong> y <strong>control de interfaces</strong></li>
+                            <li>Los <strong>dispositivos EEG portátiles</strong> como el Emotiv permiten la recolección de datos en entornos no clínicos</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset es particularmente valioso porque utiliza un <strong>dispositivo EEG de bajo costo</strong> (Emotiv) y proporciona <strong>datos etiquetados</strong> mediante grabación de video, lo que permite el desarrollo de <strong>modelos de clasificación robustos</strong> para aplicaciones prácticas de BCI.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">EEG Eye State Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/EEG+Eye+State</pre>
+                        <button onclick="copyToClipboard('EEG Eye State Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/EEG+Eye+State')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>UCI Machine Learning Repository - EEG Eye State. <a href="https://archive.ics.uci.edu/ml/datasets/EEG+Eye+State" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/EEG+Eye+State</a></li>
+                            <li>Emotiv Systems. <em>Emotiv EEG Neuroheadset</em>. <a href="https://www.emotiv.com" target="_blank" style="color: #4fc3f7;">https://www.emotiv.com</a></li>
+                            <li>Wolpaw, J. R., & Wolpaw, E. W. (Eds.). (2012). <em>Brain-Computer Interfaces: Principles and Practice</em>. Oxford University Press.</li>
+                            <li>Niedermeyer, E., & da Silva, F. L. (Eds.). (2005). <em>Electroencephalography: Basic Principles, Clinical Applications, and Related Fields</em>. Lippincott Williams & Wilkins.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (EEG Eye State Dataset)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Lectura personalizada del formato ARFF:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Procesamiento manual del archivo <em>.arff</em> (Attribute-Relation File Format) extrayendo exclusivamente la sección <em>@data</em>.</li>
+                            <li>Asignación de nombres de columnas según la documentación oficial: <strong>14 sensores EEG</strong> (AF3, F7, F3, FC5, T7, P7, O1, O2, P8, T8, FC6, F4, F8, AF4) y <strong>1 variable objetivo</strong> (eyeDetection).</li>
+                            <li>Manejo de archivos ARFF sin cabecera de atributos compleja.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Conversión y validación de tipos de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión forzada de <strong>14 variables de sensores</strong> a tipo <strong>float</strong> utilizando <code>pd.to_numeric(..., errors='coerce')</code> para manejar valores no numéricos.</li>
+                            <li>Conversión de la variable objetivo <em>eyeDetection</em> a tipo <strong>entero (int)</strong>.</li>
+                            <li>Eliminación de filas con valores nulos resultantes de la conversión para garantizar integridad del conjunto.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transformación de la variable objetivo:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Preservación de <em>eyeDetection</em> en su formato binario original: 0 = Eye Open (Ojos Abiertos), 1 = Eye Closed (Ojos Cerrados).</li>
+                            <li>Documentación del objetivo: detección del estado de apertura/cierre de ojos basado en señales EEG.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación y documentación de variables de sensores:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>14 variables</strong> correspondientes a sensores EEG en el sistema 10-20: Frontales (AF3, AF4, F7, F8, F3, F4, FC5, FC6), Temporales (T7, T8), Parietales (P7, P8), Occipitales (O1, O2).</li>
+                            <li>Documentación de unidades: Microvoltios (μV) o valores ADC crudos.</li>
+                            <li>Contextualización espacial de los sensores para interpretación neurofisiológica.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Submuestreo estratificado para reducción del dataset:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Reducción del dataset a <strong>1,000 ejemplos</strong> representativos mediante muestreo estratificado.</li>
+                            <li>Uso de <code>train_test_split</code> con parámetro <em>stratify</em> para <strong>preservar exactamente</strong> la proporción original de clases (desbalance de estado ocular).</li>
+                            <li>Semilla fija (<em>random_state=42</em>) para garantizar reproducibilidad científica de la muestra.</li>
+                            <li>Verificación de integridad con diferencia máxima < 1% en proporción de clases.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_eeg_eye_state.txt</em> con semántica completa de la variable objetivo y la estructura de sensores EEG.</li>
+                            <li>Documentación de la variable <em>eyeDetection</em> (0 = Ojos Abiertos, 1 = Ojos Cerrados).</li>
+                            <li>Descripción de los <strong>14 sensores EEG</strong> agrupados por región cerebral (Frontal, Temporal, Parietal, Occipital).</li>
+                            <li>Contextualización del dataset: datos de electroencefalografía (EEG) para detección de estado ocular.</li>
+                            <li>Nota sobre la naturaleza secuencial de los datos (117 segundos de registro).</li>
+                            <li>Estadísticas finales: total de instancias, distribución de clases y ratio de desbalance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>14,980 instancias</strong> (muestras temporales de EEG) originales para el dataset completo.</li>
+                            <li>Dataset reducido de <strong>1,000 ejemplos</strong> estratificados para experimentación eficiente.</li>
+                            <li>Dataset final con <strong>14 variables predictoras</strong> (todas numéricas continuas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>14,980 muestras de EEG</strong> (con versión reducida estratificada de 1,000 ejemplos) con <strong>14 variables predictoras</strong> (señales de sensores EEG en sistema 10-20) y <strong>1 variable objetivo binaria</strong> (eyeDetection). Desbalance moderado-preservado (~56% ojos cerrados / ~44% ojos abiertos) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>señales biomédicas y análisis de electroencefalografía (EEG)</strong>, donde la detección de estados oculares y la monitorización de actividad cerebral tienen aplicaciones en interfaces cerebro-computadora (BCI) y estudios de sueño/vigilia.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧠 <strong>Fuente:</strong> EEG Eye State Dataset (UCI Machine Learning Repository) - Datos de electroencefalografía para detección de estado ocular.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Sensores EEG (sistema 10-20):</strong> 14 electrodos distribuidos en regiones frontales (AF3, AF4, F7, F8, F3, F4, FC5, FC6), temporales (T7, T8), parietales (P7, P8) y occipitales (O1, O2).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    ⏱️ <strong>Naturaleza temporal:</strong> Datos secuenciales de 117 segundos continuos de registro EEG, con muestras individuales representando instantes de tiempo.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_eeg_eye_state.txt</em> con descripción completa de la variable objetivo y la ubicación de los sensores EEG.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>eyeDetection</em> (1 = Ojos Cerrados, 0 = Ojos Abiertos).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Lectura manual de ARFF, conversión de sensores a float, conversión de target a int, eliminación de filas con nulos, reducción estratificada a 1,000 ejemplos.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción del Sensor EEG</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Numéricas (Electrodos EEG) -->
+                        <!-- Región Pre-Frontal -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>AF3</code></td>
+                            <td>Electrodo AF3 - Pre-frontal izquierdo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,210.77 - 4,462.05</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>AF4</code></td>
+                            <td>Electrodo AF4 - Pre-frontal derecho</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,258.97 - 4,529.23</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Región Frontal -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>F7</code></td>
+                            <td>Electrodo F7 - Frontal izquierdo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>3,929.74 - 4,136.92</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>F3</code></td>
+                            <td>Electrodo F3 - Frontal izquierdo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,211.28 - 4,373.85</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>F4</code></td>
+                            <td>Electrodo F4 - Frontal derecho</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,228.21 - 4,380</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>F8</code></td>
+                            <td>Electrodo F8 - Frontal derecho</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,450.26 - 4,768.72</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Región Fronto-Central -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>FC5</code></td>
+                            <td>Electrodo FC5 - Fronto-central izquierdo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,072.82 - 4,232.31</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>FC6</code></td>
+                            <td>Electrodo FC6 - Fronto-central derecho</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,109.23 - 4,305.13</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Región Temporal -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>T7</code></td>
+                            <td>Electrodo T7 - Temporal izquierdo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,310.26 - 4,442.05</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>T8</code></td>
+                            <td>Electrodo T8 - Temporal derecho</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,165.64 - 4,331.28</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Región Parietal -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>P7</code></td>
+                            <td>Electrodo P7 - Parietal izquierdo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,570.26 - 4,747.69</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>P8</code></td>
+                            <td>Electrodo P8 - Parietal derecho</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,153.85 - 4,297.44</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Región Occipital -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>O1</code></td>
+                            <td>Electrodo O1 - Occipital izquierdo</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,032.82 - 4,163.59</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>O2</code></td>
+                            <td>Electrodo O2 - Occipital derecho</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4,567.18 - 4,714.87</td>
+                            <td>μV</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variable Binaria (Target) -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>eyeDetection</code></td>
+                            <td>Estado ocular (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Ojos abiertos, 1: Ojos cerrados</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">14</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Estado Ocular (eyeDetection)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Estado Ocular por EEG. Comprender estas codificaciones 
+                es fundamental para la correcta interpretación de los resultados de clasificación de 
+                señales cerebrales.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: eyeDetection (Target) -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>eyeDetection</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">0</span></td>
+                                    <td><strong>Ojos Abiertos (Eye Open)</strong> - Clase mayoritaria (~55.1%)</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">1</span></td>
+                                    <td><strong>Ojos Cerrados (Eye Closed)</strong> - Clase minoritaria (~44.9%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> Clasifica el estado ocular del sujeto basado en la amplitud de señales EEG de 14 electrodos.</p>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⚠️</span>
+                            <p><strong>Naturaleza temporal:</strong> Los datos son una serie temporal continua de 117 segundos. Existe autocorrelación temporal.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato:</strong> 0 = Ojos abiertos, 1 = Ojos cerrados
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>eyeDetection</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Estado ocular (0: Abiertos, 1: Cerrados)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Única variable binaria en el dataset.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 14
+                        <ul>
+                            <li>2 Pre-frontales (AF3, AF4)</li>
+                            <li>4 Frontales (F7, F3, F4, F8)</li>
+                            <li>2 Fronto-centrales (FC5, FC6)</li>
+                            <li>2 Temporales (T7, T8)</li>
+                            <li>2 Parietales (P7, P8)</li>
+                            <li>2 Occipitales (O1, O2)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 1
+                        <ul>
+                            <li>🎯 eyeDetection (Objetivo - Estado ocular)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Análisis:</strong>
+                        <ul>
+                            <li><strong>Electrodos clave:</strong> O1, O2 (región occipital) son los más discriminantes para estado ocular</li>
+                            <li><strong>Ritmo Alfa:</strong> El aumento de actividad Alfa en ojos cerrados es el principal marcador</li>
+                                                        
+                            <li><strong>Escalado:</strong> Todas las variables tienen rangos similares (~3,900-4,700 μV)</li>                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- OJOS CERRADOS -->
+                        <li><code>eyeDetection == 1 → O1 > 4500</code></li>
+                        <li><code>eyeDetection == 1 → O2 > 4500</code></li>
+                        
+                        <!-- OJOS ABIERTOS -->
+                        <li><code>eyeDetection == 0 → O1 < 4450</code></li>
+                        <li><code>eyeDetection == 0 → O2 < 4450</code></li>
+                        
+                        <!-- O1 BAJO → OJOS ABIERTOS -->
+                        <li><code>O1 < 4100 → eyeDetection = 0</code></li>
+                        
+                        <!-- SIMETRÍA FRONTAL -->
+                        <li><code>AF3 > 4400 → AF4 > 4200</code></li>
+                        <li><code>AF3 < 4100 → AF4 < 4300</code></li>
+                        
+                        <!-- SIMETRÍA TEMPORAL -->
+                        <li><code>T7 > 4400 → T8 > 4100</code></li>
+                        <li><code>T7 < 4200 → T8 < 4300</code></li>
+                        
+                        <!-- SIMETRÍA PARIETAL -->
+                        <li><code>P7 > 4600 → P8 > 4300</code></li>
+                        
+                        <!-- SIMETRÍA OCCIPITAL -->
+                        <li><code>O1 > 4600 → O2 > 4400</code></li>
+                        
+                        <!-- CORRELACIÓN ESPACIAL -->
+                        <li><code>F7 > 4100 → T7 > 4200</code></li>
+                        <li><code>F8 > 4600 → T8 > 4200</code></li>
+                        
+                        <!-- GRADIENTE OJOS CERRADOS -->
+                        <li><code>AF3 > 4400 → O1 > 4400</code></li>
+                        
+                        <!-- CONFIRMACIÓN OJOS CERRADOS -->
+                        <li><code>eyeDetection == 1 → (P7 > 4550) OR (P8 > 4550) OR (O1 > 4550) OR (O2 > 4550)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(256, 256)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>500</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>128</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(128, 128)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Sin datos disponibles</strong> 
+                    (TabDSFidelity: <strong>-</strong>, AUC: -, F1: -, MIA: -). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.227</td>
+                                <td>7277</td>
+                                <td>0.910</td>
+                                <td>0.721</td>
+                                <td>0.720</td>
+                                <td>5.538</td>
+                                <td>0.770</td>
+                                <td>0.840</td>
+                                <td>0.000</td>
+                                <td>0.993</td>
+                                <td>80.278</td>
+                                <td>0.074</td>
+                                <td>0</td>
+                                <td>0.451</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>15.729</td>
+                                <td>7277</td>
+                                <td>0.556</td>
+                                <td>0.484</td>
+                                <td>0.585</td>
+                                <td>2.475</td>
+                                <td>0.770</td>
+                                <td>0.840</td>
+                                <td>0.611</td>
+                                <td>0.961</td>
+                                <td>216.591</td>
+                                <td>0.074</td>
+                                <td>0</td>
+                                <td>0.452</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.035</td>
+                                <td>10000</td>
+                                <td>0.638</td>
+                                <td>0.600</td>
+                                <td>0.600</td>
+                                <td>2.767</td>
+                                <td>0.338</td>
+                                <td>0.010</td>
+                                <td>0.004</td>
+                                <td>0.713</td>
+                                <td>557.664</td>
+                                <td>0.061</td>
+                                <td>0</td>
+                                <td>0.518</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>90.743</td>
+                                <td>10000</td>
+                                <td>0.577</td>
+                                <td>0.401</td>
+                                <td>0.555</td>
+                                <td>1.623</td>
+                                <td>0.338</td>
+                                <td>0.010</td>
+                                <td>1.347</td>
+                                <td>0.717</td>
+                                <td>712.190</td>
+                                <td>0.061</td>
+                                <td>0</td>
+                                <td>0.453</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.305</td>
+                                <td>10000</td>
+                                <td>0.797</td>
+                                <td>0.727</td>
+                                <td>0.730</td>
+                                <td>3.882</td>
+                                <td>0.806</td>
+                                <td>0.039</td>
+                                <td>0.000</td>
+                                <td>0.886</td>
+                                <td>219.574</td>
+                                <td>0.036</td>
+                                <td>0</td>
+                                <td>0.484</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>20.834</td>
+                                <td>10000</td>
+                                <td>0.576</td>
+                                <td>0.464</td>
+                                <td>0.585</td>
+                                <td>1.309</td>
+                                <td>0.806</td>
+                                <td>0.039</td>
+                                <td>0.722</td>
+                                <td>0.867</td>
+                                <td>377.118</td>
+                                <td>0.036</td>
+                                <td>0</td>
+                                <td>0.435</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.619</td>
+                                <td>0.488</td>
+                                <td>0.560</td>
+                                <td>0.599</td>
+                                <td>0.828</td>
+                                <td>0.000</td>
+                                <td>0.005</td>
+                                <td>0.424</td>
+                                <td>137.692</td>
+                                <td>0.286</td>
+                                <td>0</td>
+                                <td>0.460</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>8.363</td>
+                                <td>10000</td>
+                                <td>0.595</td>
+                                <td>0.428</td>
+                                <td>0.560</td>
+                                <td>0.340</td>
+                                <td>0.828</td>
+                                <td>0.000</td>
+                                <td>0.379</td>
+                                <td>0.453</td>
+                                <td>310.989</td>
+                                <td>0.287</td>
+                                <td>0</td>
+                                <td>0.499</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>1</td>
+                                <td>7000</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>0.995</strong></td>
+                                <td><strong>0.995</strong></td>
+                                <td><strong>7.961</strong></td>
+                                <td>0.813</td>
+                                <td>0.785</td>
+                                <td>0.005</td>
+                                <td>0.991</td>
+                                <td>75.204</td>
+                                <td>0.010</td>
+                                <td>0</td>
+                                <td>0.437</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>13.257</td>
+                                <td>7000</td>
+                                <td>0.558</td>
+                                <td>0.512</td>
+                                <td>0.610</td>
+                                <td>2.536</td>
+                                <td>0.813</td>
+                                <td>0.785</td>
+                                <td>0.545</td>
+                                <td>0.958</td>
+                                <td>208.350</td>
+                                <td>0.020</td>
+                                <td>0</td>
+                                <td>0.458</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>7.961</strong>, AUC: 1.000, F1: 0.995, MIA: 0.437). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.227</td>
+                                <td>8277</td>
+                                <td>0.997</td>
+                                <td>0.970</td>
+                                <td>0.970</td>
+                                <td>5.845</td>
+                                <td>0.673</td>
+                                <td>0.914</td>
+                                <td>0.000</td>
+                                <td>0.994</td>
+                                <td>153.845</td>
+                                <td>0.073</td>
+                                <td>0</td>
+                                <td>0.430</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>8.363</td>
+                                <td>8277</td>
+                                <td>0.996</td>
+                                <td>0.882</td>
+                                <td>0.885</td>
+                                <td>2.096</td>
+                                <td>0.673</td>
+                                <td>0.914</td>
+                                <td>0.379</td>
+                                <td>0.973</td>
+                                <td>292.075</td>
+                                <td>0.073</td>
+                                <td>0</td>
+                                <td>0.434</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.051</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>7.556</td>
+                                <td>0.311</td>
+                                <td>0.017</td>
+                                <td>0.003</td>
+                                <td>0.735</td>
+                                <td>641.932</td>
+                                <td>0.056</td>
+                                <td>186</td>
+                                <td>0.470</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>18.713</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>7.566</td>
+                                <td>0.311</td>
+                                <td>0.017</td>
+                                <td>0.679</td>
+                                <td>0.741</td>
+                                <td>791.891</td>
+                                <td>0.055</td>
+                                <td>186</td>
+                                <td>0.426</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.298</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>6.924</td>
+                                <td>0.718</td>
+                                <td>0.063</td>
+                                <td>0.000</td>
+                                <td>0.899</td>
+                                <td>305.510</td>
+                                <td>0.032</td>
+                                <td>186</td>
+                                <td>0.436</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>11.128</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>0.995</td>
+                                <td>0.995</td>
+                                <td>6.730</td>
+                                <td>0.718</td>
+                                <td>0.063</td>
+                                <td>0.480</td>
+                                <td>0.887</td>
+                                <td>473.473</td>
+                                <td>0.033</td>
+                                <td>186</td>
+                                <td>0.445</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.019</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>6.000</td>
+                                <td>0.728</td>
+                                <td>0.000</td>
+                                <td>0.004</td>
+                                <td>0.435</td>
+                                <td>227.962</td>
+                                <td>0.261</td>
+                                <td>186</td>
+                                <td>0.427</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>6.251</td>
+                                <td>11000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>6.050</td>
+                                <td>0.728</td>
+                                <td>0.000</td>
+                                <td>0.283</td>
+                                <td>0.463</td>
+                                <td>401.552</td>
+                                <td>0.261</td>
+                                <td>186</td>
+                                <td>0.437</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* Refinado</strong></td>                    
+                                <td>1.026</td>
+                                <td>8000</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>8.038</strong></td>
+                                <td>0.695</td>
+                                <td>0.880</td>
+                                <td>0.004</td>
+                                <td>0.992</td>
+                                <td>147.628</td>
+                                <td>0.008</td>
+                                <td>254</td>
+                                <td>0.431</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>7.511</td>
+                                <td>8000</td>
+                                <td>1.000</td>
+                                <td>0.990</td>
+                                <td>0.990</td>
+                                <td>7.655</td>
+                                <td>0.695</td>
+                                <td>0.880</td>
+                                <td>0.342</td>
+                                <td>0.970</td>
+                                <td>280.499</td>
+                                <td>0.017</td>
+                                <td>254</td>
+                                <td>0.434</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* Refinado</strong> 
+                    (TabDSFidelity: <strong>8.038</strong>, AUC: 1.000, F1: 1.000, MIA: 0.431). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_52</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>----</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* Refinado</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* Refinado</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd52.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for EEG-Based Eye State Detection (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32946797.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [55.17, 44.83], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

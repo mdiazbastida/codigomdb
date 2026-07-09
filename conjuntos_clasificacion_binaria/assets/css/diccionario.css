@@ -1,0 +1,208 @@
+/* diccionario.css - Estilos para tabla de diccionario de datos */
+
+.stats-diccionario-container {
+    margin-bottom: 25px;
+}
+
+.stats-diccionario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255,255,255,0.15);
+    padding: 10px 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    opacity: 0.9;
+}
+
+.stat-value {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.diccionario-section {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.diccionario-section h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.diccionario-filtros {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 6px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+
+.filtro-btn:hover {
+    background: #e9ecef;
+    transform: translateY(-1px);
+}
+
+.filtro-btn.active {
+    background: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+}
+
+.data-dictionary {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.data-dictionary thead {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.data-dictionary th {
+    color: white;
+    padding: 14px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+    position: sticky;
+    top: 0;
+}
+
+.data-dictionary td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: top;
+}
+
+.data-dictionary tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.var-name code {
+    background: #f1f3f5;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: #e83e8c;
+    font-weight: 500;
+}
+
+.badge-tipo {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-tipo.numérico,
+.badge-tipo.numerico {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-tipo.categórico,
+.badge-tipo.categorico {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.badge-tipo.binario {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.badge-objetivo {
+    background: #dc3545;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge-ausentes {
+    background: #ffc107;
+    color: #212529;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.notes-cell {
+    max-width: 280px;
+    font-size: 0.8rem;
+    color: #6c757d;
+    line-height: 1.4;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .stats-diccionario {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .stat-item {
+        min-width: 100px;
+    }
+    .data-dictionary {
+        font-size: 0.7rem;
+    }
+    .data-dictionary th,
+    .data-dictionary td {
+        padding: 8px 6px;
+    }
+    .notes-cell {
+        max-width: 150px;
+    }
+}

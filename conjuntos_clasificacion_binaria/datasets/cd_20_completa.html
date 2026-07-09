@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_20: Chronic Kidney Disease: Apollo Hospitals - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_20</span>                
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_20: Chronic Kidney Disease: Apollo Hospitals</h1>
+            <p class="description">Conjunto de datos clínico recolectado en Apollo Hospitals para la clasificación binaria de Enfermedad Renal Crónica (class). Consta de 400 instancias y 25 variables: 1) Bioquímica Sanguínea/Hemograma (creatinina, urea, electrolitos, hemoglobina); 2) Análisis de Orina (albuminuria/azúcar ordinales, sedimentos binarios); y 3) Antecedentes Clínicos (hipertensión, diabetes, anemia). Destaca por ser un escenario de alta dimensionalidad y tipos de datos mixtos (continuos, ordinales, nominales), sometido a una limpieza rigurosa (imputación por mediana/moda) para subsanar la pérdida de datos original.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.91</td>
+                                    <td>1.00</td>
+                                    <td>0.95</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>1.00</td>
+                                    <td>0.94</td>
+                                    <td>0.97</td>
+                                    <td>50</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.96</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.95</td>
+                                    <td>0.97</td>
+                                    <td>0.96</td>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.97</td>
+                                    <td>0.96</td>
+                                    <td>0.96</td>
+                                    <td>80</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">1.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.96</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.96</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.001 AUC</span>
+                        <span class="improvement-tag">⬆ +0.03 F1</span>
+                        <span class="improvement-tag">⬆ +0.03 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.97</td>
+                                    <td>1.00</td>
+                                    <td>0.98</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>1.00 <span class="improvement-indicator">—</span></td>
+                                    <td>0.98 <span class="improvement-indicator">⬆ +0.04</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>50</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.99</strong> <span class="improvement-indicator">⬆ +0.03</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.98 <span class="improvement-indicator">⬆ +0.03</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.03</span></td>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.02</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.03</span></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.03</span></td>
+                                    <td>80</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">1.00</span>
+                            <span class="improvement-badge">----</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.99</span>
+                            <span class="improvement-badge positive">⬆ +0.03</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.99</span>
+                            <span class="improvement-badge positive">⬆ +0.03</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 1.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%; background: #2ecc71;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 1.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value" style="color: #2ecc71;">✓ Perfecto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.94</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 94%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.98</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 98%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.04</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.97</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 97%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.99</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 99%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.02</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Chronic Kidney Disease (CKD) Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Datos clínicos hospitalarios</div>
+                    <div class="fuente-fecha">Publicado: 2 de julio de 2015</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/Chronic+Kidney+Disease" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">400</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">24 (23 predictores + 1 objetivo)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Enfermedad Renal Crónica (Chronic Kidney Disease - CKD)</strong> está diseñado para predecir la presencia de enfermedad renal crónica en pacientes. Los datos fueron recolectados durante un período de aproximadamente <strong>2 meses</strong> en un entorno hospitalario. Cada instancia representa a un paciente y contiene <strong>24 atributos</strong> que incluyen características demográficas (edad), signos vitales (presión arterial), resultados de laboratorio (glucosa, creatinina, electrolitos, hemoglobina, conteos celulares), hallazgos de análisis de orina (gravedad específica, albúmina, azúcar, células sanguíneas) y antecedentes médicos (hipertensión, diabetes, enfermedad arterial coronaria, anemia). El objetivo es clasificar al paciente como con enfermedad renal crónica o sin ella.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🔬 Métodos y Contexto</h4>
+                        <p>El conjunto de datos fue recolectado de registros médicos hospitalarios durante un período de aproximadamente <strong>2 meses</strong>. Incluye una amplia gama de variables clínicas y de laboratorio que reflejan la evaluación integral de pacientes con sospecha o diagnóstico de enfermedad renal crónica. La enfermedad renal crónica es una condición progresiva que afecta la función de los riñones, y su detección temprana es crucial para retrasar su avance y prevenir complicaciones. Este dataset permite abordar un problema de <strong>clasificación binaria</strong> para identificar pacientes en riesgo o diagnosticados con CKD.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (CKD vs. No CKD)</li>
+                            <li><strong>Dimensión:</strong> Multivariante</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (Enteros, Continuos y Categóricos binarios)</li>
+                            <li><strong>Valores faltantes:</strong> Sí (presentes en todas las variables predictoras)</li>
+                            <li><strong>Área de aplicación:</strong> Salud y Medicina, Nefrología</li>
+                            <li><strong>Período de recolección:</strong> Aproximadamente 2 meses</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos ha sido anonimizado para proteger la privacidad de los pacientes. No contiene información personal identificable como nombres, direcciones o números de identificación. <strong>Restricción de confidencialidad:</strong> En cumplimiento de los protocolos de privacidad, el uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin divulgación de información que permita la reidentificación de pacientes.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos presenta desafíos particulares debido a la presencia de valores faltantes en todas las variables predictoras. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Manejar adecuadamente los valores faltantes</strong> mediante imputación (media, mediana, moda) o eliminación de registros incompletos</li>
+                            <li>Codificar las variables categóricas binarias (rbc, pc, pcc, ba, htn, dm, cad, appet, pe, ane) como 0/1 para modelado</li>
+                            <li>Las variables categóricas <code>sg</code>, <code>al</code> y <code>su</code> requieren codificación ordinal o one-hot encoding según corresponda</li>
+                            <li>Estandarizar/normalizar las características numéricas (age, bp, bgr, bu, sc, sod, pot, hemo, pcv, wbcc, rbcc)</li>
+                            <li>Utilizar validación cruzada estratificada debido al posible desbalanceo entre clases</li>
+                            <li>La variable objetivo <code>class</code> está codificada como <strong>"ckd"</strong> (enfermedad renal crónica) y <strong>"notckd"</strong> (sin enfermedad)</li>
+                            <li>Considerar técnicas de selección de características debido a la alta dimensionalidad relativa al número de instancias (24 variables para 400 registros)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia Clínica</h4>
+                        <p>La <strong>enfermedad renal crónica (CKD)</strong> es una condición caracterizada por la pérdida progresiva de la función renal a lo largo del tiempo. Afecta a aproximadamente <strong>850 millones de personas</strong> en todo el mundo y es una de las principales causas de morbilidad y mortalidad global. La detección temprana de CKD es fundamental para:</p>
+                        <ul class="transformacion-lista">
+                            <li>Retrasar la progresión a etapas avanzadas que requieren diálisis o trasplante</li>
+                            <li>Reducir el riesgo de complicaciones cardiovasculares asociadas</li>
+                            <li>Mejorar la calidad de vida de los pacientes mediante intervenciones tempranas</li>
+                            <li>Optimizar los recursos sanitarios mediante la identificación de pacientes de alto riesgo</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset, con su amplia gama de variables clínicas y de laboratorio, permite desarrollar modelos predictivos que pueden apoyar el diagnóstico temprano y la toma de decisiones clínicas en nefrología.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Chronic Kidney Disease Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/Chronic+Kidney+Disease</pre>
+                        <button onclick="copyToClipboard('Chronic Kidney Disease Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/Chronic+Kidney+Disease')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>Webster, A. C., Nagler, E. V., Morton, R. L., & Masson, P. (2017). Chronic Kidney Disease. <em>The Lancet</em>, 389(10075), 1238-1252. <a href="https://doi.org/10.1016/S0140-6736(16)32064-5" target="_blank" style="color: #4fc3f7;">https://doi.org/10.1016/S0140-6736(16)32064-5</a></li>
+                            <li>Jha, V., et al. (2013). Chronic kidney disease: global dimension and perspectives. <em>The Lancet</em>, 382(9888), 260-272.</li>
+                            <li>UCI Machine Learning Repository - Chronic Kidney Disease. <a href="https://archive.ics.uci.edu/ml/datasets/Chronic+Kidney+Disease" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/Chronic+Kidney+Disease</a></li>
+                            <li>National Kidney Foundation. <em>About Chronic Kidney Disease</em>. <a href="https://www.kidney.org/atoz/content/about-chronic-kidney-disease" target="_blank" style="color: #4fc3f7;">https://www.kidney.org/atoz/content/about-chronic-kidney-disease</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Chronic Kidney Disease - CKD)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Lectura personalizada del formato ARFF:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Procesamiento manual del archivo <em>.arff</em> (Attribute-Relation File Format) extrayendo exclusivamente la sección <em>@data</em>.</li>
+                            <li>Asignación de nombres de columnas basados en la especificación del dataset (25 variables en total).</li>
+                            <li>Manejo robusto de espacios en blanco, tabuladores y caracteres ocultos en los datos.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Limpieza y estandarización de valores:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión de valores <em>'?'</em> (indicadores de "no disponible" en el dataset original) a <em>NaN</em> para su correcto tratamiento estadístico.</li>
+                            <li>Eliminación de espacios en blanco (<em>strip</em>) en todas las columnas de texto para corregir errores de formato (ej. " yes" → "yes", "\tno" → "no").</li>
+                            <li>Corrección específica de typos conocidos: <em>dm</em> ('\tno' → 'no', '\tyes' → 'yes'), <em>cad</em> ('\tno' → 'no').</li>
+                        </ul>
+                    </li>
+                    <li><strong>Imputación de valores faltantes diferenciada por tipo de variable:</strong> 
+                        <ul class="transformacion-lista">
+                            <li><strong>Variables numéricas (11 columnas):</strong> Imputación con <em>mediana</em> para preservar robustez frente a outliers. Variables: <em>age</em>, <em>bp</em>, <em>bgr</em>, <em>bu</em>, <em>sc</em>, <em>sod</em>, <em>pot</em>, <em>hemo</em>, <em>pcv</em>, <em>wbcc</em>, <em>rbcc</em>.</li>
+                            <li><strong>Variables categóricas (14 columnas):</strong> Imputación con <em>moda</em> (valor más frecuente) para preservar la distribución categórica. Variables: <em>sg</em>, <em>al</em>, <em>su</em>, <em>rbc</em>, <em>pc</em>, <em>pcc</em>, <em>ba</em>, <em>htn</em>, <em>dm</em>, <em>cad</em>, <em>appet</em>, <em>pe</em>, <em>ane</em>, <em>class</em>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación numérica de variables categóricas y generación de leyenda:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de <strong>13 variables categóricas</strong> a valores numéricos enteros mediante codificación ordinal (<code>cat.codes</code>).</li>
+                            <li><strong>Tratamiento especial de la variable objetivo:</strong> Mapeo manual de <em>class</em> para asegurar consistencia clínica: <em>'ckd'</em> → 1 (Enfermedad Renal Crónica), <em>'notckd'</em> → 0 (Sano).</li>
+                            <li>Generación del archivo <em>leyenda_ckd.txt</em> con el mapeo semántico completo de todas las variables categóricas codificadas.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Control de calidad y optimización:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión forzada de variables numéricas a tipos <em>float</em> mediante <code>pd.to_numeric(..., errors='coerce')</code>.</li>
+                            <li>Verificación de integridad estructural del dataset (25 columnas originales).</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                            <li>Vista previa del dataset resultante para validación visual.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>400 pacientes</strong> (después de limpieza de formatos e imputación) con <strong>24 variables predictoras</strong> (mixtas: 11 numéricas continuas, 13 categóricas codificadas) y <strong>1 variable objetivo binaria</strong> (class). Desbalance moderado (~75% casos CKD positivos / ~25% sanos) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de enfermedad renal crónica.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🏥 <strong>Fuente:</strong> Chronic Kidney Disease Dataset (UCI Machine Learning Repository).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🔬 <strong>Variables clínicas clave:</strong> Edad, presión arterial, gravedad específica de orina, albúmina, glucosa en sangre, urea, creatinina, sodio, potasio, hemoglobina, hematocrito, conteo de glóbulos blancos/rojos, hipertensión, diabetes mellitus, enfermedad coronaria, apetito, edema, anemia.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_ckd.txt</em> con mapeo semántico completo de todas las variables categóricas codificadas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>class</em> (1 = Enfermedad Renal Crónica - CKD, 0 = Sano - notckd).
+                </p>
+            </div>
+        </div>
+    
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Clínica</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>sg</code></td>
+                            <td>Gravedad específica de la orina</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: 1.005, 1: 1.010, 2: 1.015, 3: 1.020, 4: 1.025</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>al</code></td>
+                            <td>Albúmina en orina (proteinuria)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-5 (nivel de albúmina)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>su</code></td>
+                            <td>Azúcar en orina (glucosuria)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0-5 (nivel de azúcar)</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>age</code></td>
+                            <td>Edad del paciente</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>2 - 82</td>
+                            <td>años</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>bp</code></td>
+                            <td>Presión arterial (sistólica)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>50 - 180</td>
+                            <td>mm Hg</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>bgr</code></td>
+                            <td>Glucosa en sangre aleatoria</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>70 - 490</td>
+                            <td>mg/dL</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>bu</code></td>
+                            <td>Urea en sangre (nitrógeno ureico)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>10 - 309</td>
+                            <td>mg/dL</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>sc</code></td>
+                            <td>Creatinina sérica (indicador crítico de función renal)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0.5 - 76</td>
+                            <td>mg/dL</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>sod</code></td>
+                            <td>Sodio sérico</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>4.5 - 150</td>
+                            <td>mEq/L</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>pot</code></td>
+                            <td>Potasio sérico</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>2.5 - 7.6</td>
+                            <td>mEq/L</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>hemo</code></td>
+                            <td>Hemoglobina</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>3.1 - 17.8</td>
+                            <td>g/dL</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>pcv</code></td>
+                            <td>Volumen celular aglomerado (hematocrito)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>9 - 54</td>
+                            <td>%</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>wbcc</code></td>
+                            <td>Conteo de glóbulos blancos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>2,200 - 26,400</td>
+                            <td>células/mm³</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>rbcc</code></td>
+                            <td>Conteo de glóbulos rojos</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>2.1 - 8.0</td>
+                            <td>millones/mm³</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>rbc</code></td>
+                            <td>Glóbulos rojos en sedimento urinario</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Anormal, 1: Normal</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>pc</code></td>
+                            <td>Células de pus en orina (piuria)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Anormal, 1: Normal</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>pcc</code></td>
+                            <td>Agrupaciones de células de pus</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No presente, 1: Presente</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>ba</code></td>
+                            <td>Bacterias en orina (bacteriuria)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No presente, 1: Presente</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>htn</code></td>
+                            <td>Hipertensión arterial (antecedente)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>dm</code></td>
+                            <td>Diabetes Mellitus (antecedente)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>cad</code></td>
+                            <td>Enfermedad coronaria (antecedente)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>appet</code></td>
+                            <td>Estado del apetito</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Bueno, 1: Pobre</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>pe</code></td>
+                            <td>Edema en pies (presencia)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>ane</code></td>
+                            <td>Anemia (diagnóstico)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: No, 1: Sí</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>class</code></td>
+                            <td>Diagnóstico de Enfermedad Renal Crónica (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: notckd (Sano), 1: ckd (Enfermedad Renal Crónica)</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">25</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Enfermedad Renal Crónica (class)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Enfermedad Renal Crónica (Chronic Kidney Disease). 
+                Comprender estas codificaciones es fundamental para la correcta interpretación de los 
+                resultados clínicos.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: sg (Specific Gravity) -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>sg</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Gravedad específica de la orina</strong>
+                        </p>
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>1.005 (Baja densidad - orina diluida)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>1.010</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>1.015</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>1.020</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>1.025 (Alta densidad - orina concentrada)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">💡</span>
+                            <p><strong>Interpretación:</strong> La gravedad específica mide la capacidad de concentración renal. Valores bajos indican pérdida de capacidad de concentración.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: al (Albumin) -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>al</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Albúmina en orina (Proteinuria)</strong>
+                        </p>
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Ausente (Normal)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Traza</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>+ (Leve)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>++ (Moderada)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>+++ (Severa)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>++++ (Muy severa)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🚨</span>
+                            <p><strong>Importancia clínica:</strong> La presencia de albúmina en orina (proteinuria) es un marcador temprano de daño renal y predictor de progresión de enfermedad renal.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: su (Sugar) -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>su</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Azúcar en orina (Glucosuria)</strong>
+                        </p>
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>Ausente (Normal)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>Traza</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>+ (Leve)</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>++ (Moderada)</td></tr>
+                                <tr><td><span class="codigo">4</span></td><td>+++ (Severa)</td></tr>
+                                <tr><td><span class="codigo">5</span></td><td>++++ (Muy severa)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⚠️</span>
+                            <p><strong>Interpretación:</strong> La presencia de azúcar en orina puede indicar diabetes mellitus no controlada o daño tubular renal.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variables Binarias -->
+                <div class="leyenda-card leyenda-binaria">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var">Variables Binarias</span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info">
+                            <strong>Formato común:</strong> 0 = No / Ausente / Anormal, 1 = Sí / Presente / Normal
+                        </p>
+                        <div class="leyenda-binaria-grid">
+                            <!-- Urinálisis -->
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>rbc</code></span>
+                                <span class="binaria-desc">Glóbulos rojos en orina (0: Anormal, 1: Normal)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>pc</code></span>
+                                <span class="binaria-desc">Células de pus en orina (0: Anormal, 1: Normal)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>pcc</code></span>
+                                <span class="binaria-desc">Agrupaciones de pus (0: No presente, 1: Presente)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>ba</code></span>
+                                <span class="binaria-desc">Bacterias en orina (0: No presente, 1: Presente)</span>
+                            </div>
+                            
+                            <!-- Comorbilidades -->
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>htn</code></span>
+                                <span class="binaria-desc">Hipertensión arterial (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>dm</code></span>
+                                <span class="binaria-desc">Diabetes Mellitus (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>cad</code></span>
+                                <span class="binaria-desc">Enfermedad coronaria (0: No, 1: Sí)</span>
+                            </div>
+                            
+                            <!-- Síntomas y hallazgos -->
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>appet</code></span>
+                                <span class="binaria-desc">Apetito (0: Bueno, 1: Pobre)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>pe</code></span>
+                                <span class="binaria-desc">Edema en pies (0: No, 1: Sí)</span>
+                            </div>
+                            <div class="binaria-item">
+                                <span class="binaria-var"><code>ane</code></span>
+                                <span class="binaria-desc">Anemia (0: No, 1: Sí)</span>
+                            </div>
+                            
+                            <!-- Variable Objetivo -->
+                            <div class="binaria-item destacada">
+                                <span class="binaria-var"><code>class</code></span>
+                                <span class="binaria-desc">🎯 <strong>Variable Objetivo:</strong> Enfermedad Renal Crónica (0: notckd, 1: ckd)</span>
+                            </div>
+                        </div>
+                        <div class="leyenda-nota">
+                            <span class="nota-icon">ℹ️</span>
+                            <p><strong>Nota:</strong> Las variables rbc, pc, pcc, ba representan hallazgos del sedimento urinario. htn, dm, cad son antecedentes médicos. appet, pe, ane son hallazgos clínicos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 3
+                        <ul>
+                            <li>sg (5 niveles - Gravedad específica)</li>
+                            <li>al (6 niveles - Albúmina)</li>
+                            <li>su (6 niveles - Azúcar)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 11
+                        <ul>
+                            <li>4 variables de urinálisis (rbc, pc, pcc, ba)</li>
+                            <li>3 comorbilidades (htn, dm, cad)</li>
+                            <li>3 hallazgos clínicos (appet, pe, ane)</li>
+                            <li>🎯 class (Objetivo - Enfermedad Renal Crónica)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 11
+                        <ul>
+                            <li>age, bp (Demográficas)</li>
+                            <li>bgr, bu, sc, sod, pot (Bioquímica)</li>
+                            <li>hemo, pcv, wbcc, rbcc (Hematología)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones Clínicas:</strong>
+                        <ul>
+                            <li><strong>Marcadores clave de ERC:</strong> sc (creatinina), bu (urea), al (proteinuria)</li>
+                            <li><strong>Creatinina sérica (sc):</strong> Valores > 1.5 mg/dL sugieren disfunción renal</li>
+                            <li><strong>Proteinuria (al):</strong> Niveles ≥ 2 son indicadores de daño renal significativo</li>
+                            <li><strong>Hipertensión (htn) y Diabetes (dm):</strong> Principales factores de riesgo para ERC</li>
+                            <li><strong>Anemia (ane):</strong> Común en ERC avanzada por déficit de eritropoyetina</li>
+                            <li><strong>Hemoglobina (hemo):</strong> Niveles bajos (< 10 g/dL) sugieren anemia en ERC</li>
+                            <li><strong>Imputación:</strong> Valores perdidos en variables categóricas imputados con Moda; numéricas con Mediana</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- RENAL - Diagnóstico de enfermedad renal -->
+                        <li><code>sc > 2.0 → class = 1 (Enfermedad renal presente)</code></li>
+                        <li><code>class == 0 → al = 0 (Sin enfermedad renal → sin albuminuria)</code></li>
+                        <li><code>class == 0 → sc < 1.2 (Sin enfermedad renal → creatinina normal)</code></li>
+                        
+                        <!-- HEMATOLOGÍA - Relación hemoglobina y PCV -->
+                        <li><code>hemo > 14 → pcv > 40 (Hemoglobina alta → hematocrito elevado)</code></li>
+                        <li><code>hemo < 9 → rbcc < 3.5 (Hemoglobina baja → glóbulos rojos bajos)</code></li>
+                        
+                        <!-- ANEMIA - Diagnóstico -->
+                        <li><code>hemo < 9.0 → ane = 1 (Anemia diagnosticada)</code></li>
+                        
+                        <!-- ELECTROLITOS - Hiperpotasemia -->
+                        <li><code>sc > 5.0 → pot > 4.5 (Creatinina muy alta → potasio elevado)</code></li>
+                        
+                        <!-- METABÓLICO - Diabetes -->
+                        <li><code>bgr > 200 → dm = 1 (Glucosa elevada → diabetes)</code></li>
+                        
+                        <!-- RENAL - Glucosa en orina -->
+                        <li><code>su > 0 → bgr > 140 (Glucosa en orina → glucosa en sangre elevada)</code></li>
+                        
+                        <!-- INFECCIÓN - Coherencia bacteriuria -->
+                        <li><code>ba == 1 → pc = 0 (Bacterias presentes → células de pus no deben estar)</code></li>
+                        
+                        <!-- AZOTEMIA - Nitrógeno ureico -->
+                        <li><code>sc > 4.0 → bu > 50 (Creatinina extremadamente alta → BUN elevado)</code></li>
+                        
+                        <!-- HIPERTENSIÓN - Diagnóstico -->
+                        <li><code>bp > 100 → htn = 1 (Presión arterial elevada → hipertensión)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>20</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>2</td></tr>
+                        <tr><th>generator_dim</th><td>(128, 128)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(128, 128)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>400</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>64</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(64, 64)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(64, 64)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>Random Oversampling</strong></td>
+                                <td>1</td>
+                                <td>296</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>3.892</strong></td>
+                                <td>0.081</td>
+                                <td>0.651</td>
+                                <td>0.009</td>
+                                <td>0.977</td>
+                                <td>51.932</td>
+                                <td>0</td>
+                                <td>296</td>
+                                <td>0.456</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>1</td>
+                                <td>296</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>2.605</td>
+                                <td>0.256</td>
+                                <td>0.446</td>
+                                <td>0.008</td>
+                                <td>0.974</td>
+                                <td>53.446</td>
+                                <td>0.002</td>
+                                <td>237</td>
+                                <td>0.433</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>1</td>
+                                <td>296</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>2.595</td>
+                                <td>0.255</td>
+                                <td>0.496</td>
+                                <td>0.009</td>
+                                <td>0.976</td>
+                                <td>55.393</td>
+                                <td>0.002</td>
+                                <td>237</td>
+                                <td>0.404</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>1.050</td>
+                                <td>289</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>2.960</td>
+                                <td>0.240</td>
+                                <td>0.566</td>
+                                <td>0.007</td>
+                                <td>0.979</td>
+                                <td>55.494</td>
+                                <td>0.002</td>
+                                <td>237</td>
+                                <td>0.394</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>1</td>
+                                <td>296</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>2.811</td>
+                                <td>0.207</td>
+                                <td>0.385</td>
+                                <td>0.008</td>
+                                <td>0.975</td>
+                                <td>47.341</td>
+                                <td>0.003</td>
+                                <td>232</td>
+                                <td>0.419</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>1</td>
+                                <td>296</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>2.824</td>
+                                <td>0.208</td>
+                                <td>0.400</td>
+                                <td>0.008</td>
+                                <td>0.975</td>
+                                <td>48.162</td>
+                                <td>0.003</td>
+                                <td>232</td>
+                                <td>0.432</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>1</td>
+                                <td>296</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>0.024</td>
+                                <td>0.252</td>
+                                <td>0.002</td>
+                                <td>0.020</td>
+                                <td>0.802</td>
+                                <td>59.651</td>
+                                <td>0.041</td>
+                                <td>237</td>
+                                <td>0.430</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>1</td>
+                                <td>296</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>0.947</td>
+                                <td>0.233</td>
+                                <td>0.012</td>
+                                <td>0.013</td>
+                                <td>0.874</td>
+                                <td>58.856</td>
+                                <td>0.026</td>
+                                <td>225</td>
+                                <td>0.448</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Random Oversampling</strong> 
+                    (TabDSFidelity: <strong>3.892</strong>, AUC: 1.000, F1: 1.000, MIA: 0.456). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.342</td>
+                                <td>8664</td>
+                                <td>1.000</td>
+                                <td>0.988</td>
+                                <td>0.988</td>
+                                <td>9.413</td>
+                                <td>0.379</td>
+                                <td>0.414</td>
+                                <td>0.018</td>
+                                <td>0.947</td>
+                                <td>90.811</td>
+                                <td>0.565</td>
+                                <td>0</td>
+                                <td>0.454</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano + Reglas</strong></td>                    
+                                <td>1.428</td>
+                                <td>8664</td>
+                                <td>1.000</td>
+                                <td>0.988</td>
+                                <td>0.988</td>
+                                <td><strong>9.453</strong></td>
+                                <td>0.379</td>
+                                <td>0.414</td>
+                                <td>0.015</td>
+                                <td>0.954</td>
+                                <td>247.613</td>
+                                <td>0.565</td>
+                                <td>0</td>
+                                <td>0.445</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.899</td>
+                                <td>10000</td>
+                                <td>0.996</td>
+                                <td>0.963</td>
+                                <td>0.963</td>
+                                <td>8.062</td>
+                                <td>0.291</td>
+                                <td>0.099</td>
+                                <td>0.012</td>
+                                <td>0.925</td>
+                                <td>294.970</td>
+                                <td>0.094</td>
+                                <td>0</td>
+                                <td>0.463</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>2.190</td>
+                                <td>10000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>9.129</td>
+                                <td>0.291</td>
+                                <td>0.099</td>
+                                <td>0.017</td>
+                                <td>0.925</td>
+                                <td>474.570</td>
+                                <td>0.095</td>
+                                <td>0</td>
+                                <td>0.448</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.244</td>
+                                <td>10000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>8.782</td>
+                                <td>0.407</td>
+                                <td>0.061</td>
+                                <td>0.020</td>
+                                <td>0.933</td>
+                                <td>177.662</td>
+                                <td>0.047</td>
+                                <td>0</td>
+                                <td>0.439</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.246</td>
+                                <td>10000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>8.778</td>
+                                <td>0.407</td>
+                                <td>0.061</td>
+                                <td>0.019</td>
+                                <td>0.932</td>
+                                <td>350.593</td>
+                                <td>0.048</td>
+                                <td>0</td>
+                                <td>0.424</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.980</td>
+                                <td>0.815</td>
+                                <td>0.813</td>
+                                <td>0.701</td>
+                                <td>0.752</td>
+                                <td>0.000</td>
+                                <td>0.279</td>
+                                <td>0.624</td>
+                                <td>125.135</td>
+                                <td>0.206</td>
+                                <td>0</td>
+                                <td>0.490</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>6.220</td>
+                                <td>10000</td>
+                                <td>0.970</td>
+                                <td>0.914</td>
+                                <td>0.913</td>
+                                <td>2.141</td>
+                                <td>0.752</td>
+                                <td>0.000</td>
+                                <td>0.404</td>
+                                <td>0.626</td>
+                                <td>298.834</td>
+                                <td>0.247</td>
+                                <td>0</td>
+                                <td>0.429</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.106</td>
+                                <td>9501</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>9.381</td>
+                                <td>0.398</td>
+                                <td>0.280</td>
+                                <td>0.016</td>
+                                <td>0.961</td>
+                                <td>94.195</td>
+                                <td>0.526</td>
+                                <td>0</td>
+                                <td>0.428</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.106</td>
+                                <td>9501</td>
+                                <td>1.000</td>
+                                <td>0.988</td>
+                                <td>0.988</td>
+                                <td>9.125</td>
+                                <td>0.398</td>
+                                <td>0.280</td>
+                                <td>0.014</td>
+                                <td>0.963</td>
+                                <td>265.196</td>
+                                <td>0.526</td>
+                                <td>0</td>
+                                <td>0.434</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</strong> 
+                    (TabDSFidelity: <strong>9.453</strong>, AUC: 1.000, F1: 0.988, MIA: 0.445). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano</td>                    
+                                <td>1.329</td>
+                                <td>8960</td>
+                                <td>1.000</td>
+                                <td>0.988</td>
+                                <td>0.988</td>
+                                <td>7.668</td>
+                                <td>0.370</td>
+                                <td>0.417</td>
+                                <td>0.017</td>
+                                <td>0.949</td>
+                                <td>170.090</td>
+                                <td>0.565</td>
+                                <td>0</td>
+                                <td>0.448</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.411</td>
+                                <td>8960</td>
+                                <td>1.000</td>
+                                <td>0.988</td>
+                                <td>0.988</td>
+                                <td>7.708</td>
+                                <td>0.370</td>
+                                <td>0.417</td>
+                                <td>0.014</td>
+                                <td>0.955</td>
+                                <td>327.843</td>
+                                <td>0.565</td>
+                                <td>0</td>
+                                <td>0.450</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.862</td>
+                                <td>10296</td>
+                                <td>0.993</td>
+                                <td>0.975</td>
+                                <td>0.975</td>
+                                <td>3.152</td>
+                                <td>0.284</td>
+                                <td>0.110</td>
+                                <td>0.011</td>
+                                <td>0.927</td>
+                                <td>385.775</td>
+                                <td>0.092</td>
+                                <td>59</td>
+                                <td>0.456</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>2.136</td>
+                                <td>10296</td>
+                                <td>1.000</td>
+                                <td>0.988</td>
+                                <td>0.988</td>
+                                <td>7.150</td>
+                                <td>0.284</td>
+                                <td>0.110</td>
+                                <td>0.016</td>
+                                <td>0.927</td>
+                                <td>564.341</td>
+                                <td>0.093</td>
+                                <td>59</td>
+                                <td>0.432</td>
+                                <td></td>
+                            </tr>
+                            <tr class="best-row">
+                                <td><strong>TVAE</strong></td>                    
+                                <td>1.236</td>
+                                <td>10296</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>8.800</strong></td>
+                                <td>0.395</td>
+                                <td>0.070</td>
+                                <td>0.019</td>
+                                <td>0.935</td>
+                                <td>266.461</td>
+                                <td>0.046</td>
+                                <td>59</td>
+                                <td>0.433</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.238</td>
+                                <td>10296</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>8.796</td>
+                                <td>0.395</td>
+                                <td>0.070</td>
+                                <td>0.018</td>
+                                <td>0.934</td>
+                                <td>438.137</td>
+                                <td>0.046</td>
+                                <td>59</td>
+                                <td>0.422</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10296</td>
+                                <td>1.000</td>
+                                <td>0.988</td>
+                                <td>0.988</td>
+                                <td>4.017</td>
+                                <td>0.720</td>
+                                <td>0.000</td>
+                                <td>0.259</td>
+                                <td>0.630</td>
+                                <td>212.310</td>
+                                <td>0.200</td>
+                                <td>59</td>
+                                <td>0.466</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>5.716</td>
+                                <td>10296</td>
+                                <td>1.000</td>
+                                <td>0.975</td>
+                                <td>0.975</td>
+                                <td>2.007</td>
+                                <td>0.720</td>
+                                <td>0.000</td>
+                                <td>0.373</td>
+                                <td>0.632</td>
+                                <td>388.849</td>
+                                <td>0.240</td>
+                                <td>59</td>
+                                <td>0.475</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.102</td>
+                                <td>9797</td>
+                                <td>1.000</td>
+                                <td>0.987</td>
+                                <td>0.988</td>
+                                <td>7.274</td>
+                                <td>0.390</td>
+                                <td>0.286</td>
+                                <td>0.015</td>
+                                <td>0.962</td>
+                                <td>181.736</td>
+                                <td>0.526</td>
+                                <td>0</td>
+                                <td>0.453</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.102</td>
+                                <td>9797</td>
+                                <td>0.999</td>
+                                <td>0.988</td>
+                                <td>0.988</td>
+                                <td>7.200</td>
+                                <td>0.390</td>
+                                <td>0.286</td>
+                                <td>0.014</td>
+                                <td>0.964</td>
+                                <td>351.774</td>
+                                <td>0.526</td>
+                                <td>0</td>
+                                <td>0.429</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>TVAE</strong> 
+                    (TabDSFidelity: <strong>8.800</strong>, AUC: 1.000, F1: 1.000, MIA: 0.433). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_20</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>Random Oversampling</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano + Reglas del Dominio</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>TVAE</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd20.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Chronic Kidney Disease (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32932754.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [37.55, 62.45], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

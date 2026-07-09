@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código MDB || CD_47: Credit Approval - Ficha Técnica Completa</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/diccionario.css">
+    <link rel="stylesheet" href="../assets/css/metodologia.css">
+    <link rel="stylesheet" href="../assets/css/metricas.css">
+    <link rel="stylesheet" href="../assets/css/derivados.css">
+    <script src="../assets/js/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-link">← Volver al catálogo</a>
+            <div class="nav-links">
+                <a href="#fuente" class="nav-link">Fuente Original</a>
+                <a href="#transformacion" class="nav-link">Transformación</a>
+                <a href="#diccionario" class="nav-link">Diccionario</a>
+                <a href="#metodologia" class="nav-link">Metodología</a>
+                <a href="#derivados" class="nav-link">Conjuntos Derivados</a>                
+                <a href="#citacion" class="nav-link">Citar</a>
+            </div>
+        </nav>
+
+        <div class="dataset-header">
+            <div class="header-badge">
+                <span class="badge-id">CD_47</span>
+                <span class="badge-type">Original + Derivados</span>
+            </div>
+            <h1>CD_47: Credit Approval</h1>
+            <p class="description">Conjunto de datos clásico para la evaluación de solicitudes de crédito. Caracterizado por la anonimización total de sus atributos (A1-A16) y una mezcla de tipos de datos (continuos, binarios, nominales) procesados numéricamente.</p>
+        </div>        
+        
+        <!-- Sección de Eficacia Predictiva Detallada -->
+        <div class="predictive-performance">
+            <h3>📈 Eficacia Predictiva Detallada</h3>
+            <p class="performance-intro">
+                Comparación detallada de las métricas de clasificación para los modelos entrenados 
+                con el conjunto de datos original y el conjunto sintético generado.
+            </p>
+
+            <div class="performance-grid">
+                <!-- Conjunto Original -->
+                <div class="performance-card original-performance">
+                    <h4>📊 Conjunto Original</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.86</td>
+                                    <td>0.85</td>
+                                    <td>0.85</td>
+                                    <td>72</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>0.82</td>
+                                    <td>0.83</td>
+                                    <td>0.82</td>
+                                    <td>59</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.84</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.84</td>
+                                    <td>0.84</td>
+                                    <td>0.84</td>
+                                    <td>131</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.84</td>
+                                    <td>0.84</td>
+                                    <td>0.84</td>
+                                    <td>131</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">0.96</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.84</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.84</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flecha de mejora -->
+                <div class="performance-arrow">
+                    <span class="arrow-icon">➡️</span>
+                    <span class="arrow-label">Mejora</span>
+                    <div class="arrow-improvements">
+                        <span class="improvement-tag">⬆ +0.04 AUC</span>
+                        <span class="improvement-tag">⬆ +0.14 F1</span>
+                        <span class="improvement-tag">⬆ +0.14 Acc</span>
+                    </div>
+                </div>
+
+                <!-- Conjunto Sintético -->
+                <div class="performance-card synthetic-performance best-performance">
+                    <div class="best-badge">🏆 MEJOR RENDIMIENTO</div>
+                    <h4>🔮 Conjunto Sintético</h4>
+                    <div class="performance-table-container">
+                        <table class="performance-table">
+                            <thead>
+                                <tr>
+                                    <th>Clase</th>
+                                    <th>Precisión</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+                                    <th>Soporte</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="class-badge class-0">Clase 0</span></td>
+                                    <td>0.97</td>
+                                    <td>1.00</td>
+                                    <td>0.99</td>
+                                    <td>72</td>
+                                </tr>
+                                <tr class="improved-row">
+                                    <td><span class="class-badge class-1">Clase 1</span></td>
+                                    <td>1.00 <span class="improvement-indicator">⬆ +0.18</span></td>
+                                    <td>0.97 <span class="improvement-indicator">⬆ +0.14</span></td>
+                                    <td>0.98 <span class="improvement-indicator">⬆ +0.16</span></td>
+                                    <td>59</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Accuracy</strong></td>
+                                    <td colspan="4"><strong>0.98</strong> <span class="improvement-indicator">⬆ +0.14</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Macro Avg</strong></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.15</span></td>
+                                    <td>0.98 <span class="improvement-indicator">⬆ +0.14</span></td>
+                                    <td>0.98 <span class="improvement-indicator">⬆ +0.14</span></td>
+                                    <td>131</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weighted Avg</strong></td>
+                                    <td>0.99 <span class="improvement-indicator">⬆ +0.15</span></td>
+                                    <td>0.98 <span class="improvement-indicator">⬆ +0.14</span></td>
+                                    <td>0.98 <span class="improvement-indicator">⬆ +0.14</span></td>
+                                    <td>131</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div class="performance-summary">
+                        <div class="summary-item improved">
+                            <span class="summary-label">AUC-ROC:</span>
+                            <span class="summary-value">1.00</span>
+                            <span class="improvement-badge positive">⬆ +0.04</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">F1-Score (weighted):</span>
+                            <span class="summary-value">0.98</span>
+                            <span class="improvement-badge positive">⬆ +0.14</span>
+                        </div>
+                        <div class="summary-item improved">
+                            <span class="summary-label">Accuracy:</span>
+                            <span class="summary-value">0.98</span>
+                            <span class="improvement-badge positive">⬆ +0.14</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resumen de mejoras en clase minoritaria -->
+            <div class="improvements-summary">
+                <h4>📊 Resumen de Mejoras en Clase Minoritaria (Clase 1)</h4>
+                <div class="improvements-grid">
+                    <div class="improvement-card">
+                        <span class="improvement-icon">🎯</span>
+                        <div>
+                            <strong>Precisión</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.82</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 82%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 1.00</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 100%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.18</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">📈</span>
+                        <div>
+                            <strong>Recall</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.83</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 83%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.97</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 97%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.14</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="improvement-card">
+                        <span class="improvement-icon">⚖️</span>
+                        <div>
+                            <strong>F1-Score</strong>
+                            <div class="improvement-bar">
+                                <div class="bar-label">Original: 0.82</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 82%; background: #3498db;"></div>
+                                </div>
+                                <div class="bar-label">Sintético: 0.98</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill" style="width: 98%; background: #2ecc71;"></div>
+                                </div>
+                                <span class="improvement-value">⬆ +0.16</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="fuente-original-section" id="fuente">
+            <h2>📚 Fuente Original del Conjunto</h2>
+            
+            <div class="fuente-card">
+                <div class="fuente-header">
+                    <div class="fuente-titulo">
+                        <h3>Credit Card Applications Dataset</h3>
+                        <span class="fuente-version">v1.0</span>
+                    </div>
+                    <div class="fuente-autores">Datos de solicitudes de tarjetas de crédito</div>
+                    <div class="fuente-fecha">Disponible en repositorios públicos</div>
+                </div>
+                
+                <div class="fuente-body">
+                    <div class="fuente-metadata">
+                        <div class="metadata-item">
+                            <span class="metadata-label">Repositorio:</span>
+                            <span class="metadata-value">UCI Machine Learning Repository</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">DOI:</span>
+                            <span class="metadata-value">No disponible</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">URL:</span>
+                            <span class="metadata-value"><a href="https://archive.ics.uci.edu/ml/datasets/Credit+Card+Applications" target="_blank">UCI ML Repository</a></span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Licencia:</span>
+                            <span class="metadata-value">Uso académico y de investigación</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Instancias:</span>
+                            <span class="metadata-value">690</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-label">Características:</span>
+                            <span class="metadata-value">15 (14 predictores + 1 objetivo)</span>
+                        </div>
+                        <div class="metadata-item">
+                            <span class="metadata-value">Tipo de problema:</span>
+                            <span class="metadata-value">Clasificación binaria (Aprobación de tarjeta)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📄 Resumen (Abstract)</h4>
+                        <p>El conjunto de datos de <strong>Solicitudes de Tarjetas de Crédito (Credit Card Applications)</strong> contiene <strong>690 solicitudes</strong> de tarjetas de crédito. Este dataset es interesante porque presenta una <strong>buena combinación de atributos</strong> de diferentes tipos: <strong>continuos</strong>, <strong>nominales con pocos valores</strong> y <strong>nominales con muchos valores</strong>. Todos los nombres y valores de los atributos han sido <strong>cambiados a símbolos sin significado</strong> para proteger la <strong>confidencialidad de los datos</strong>. El objetivo es predecir si una solicitud de tarjeta de crédito será <strong>aprobada (+) o rechazada (-)</strong>.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>🏦 Contexto del Dominio</h4>
+                        <p>La <strong>evaluación de solicitudes de tarjetas de crédito</strong> es un proceso crítico en la <strong>industria bancaria y financiera</strong>. Las instituciones financieras deben decidir rápidamente si aprobar o rechazar una solicitud basándose en la <strong>evaluación del riesgo crediticio</strong>. Este dataset permite:</p>
+                        <ul class="transformacion-lista">
+                            <li>Desarrollar <strong>modelos predictivos</strong> para automatizar la aprobación de tarjetas</li>
+                            <li>Identificar <strong>factores clave</strong> en la decisión de aprobación</li>
+                            <li>Reducir <strong>tiempos de procesamiento</strong> y mejorar la experiencia del cliente</li>
+                            <li>Mantener <strong>consistencia</strong> en las decisiones de aprobación</li>
+                        </ul>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">🔒 Confidencialidad</h5>
+                            <p style="color: #000; font-size: 0.9rem; line-height: 1.6;">Todos los <strong>nombres y valores de atributos</strong> han sido <strong>cambiados a símbolos sin significado</strong> (A1, A2, ..., A16) para <strong>proteger la confidencialidad</strong> de los datos. Esto es una práctica común en conjuntos de datos financieros para cumplir con <strong>normativas de privacidad</strong> y <strong>proteger información sensible</strong> de los solicitantes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📊 Descripción de Datos</h4>
+                        <p>El dataset contiene <strong>690 instancias</strong> con <strong>15 atributos</strong> (14 variables predictoras y 1 variable objetivo). Las características son de tipo <strong>mixto</strong> (categóricas, continuas) y presentan <strong>valores faltantes</strong> en varias variables.</p>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #4fc3f7; margin: 0.3rem 0;">📋 Variables del Dataset</h5>
+                            <table style="width: 100%; border-collapse: collapse; color: #000; font-size: 0.85rem;">
+                                <thead>
+                                    <tr style="border-bottom: 1px solid #444;">
+                                        <th style="text-align: left; padding: 0.4rem;">Variable</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Tipo</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Descripción</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Valores / Rango</th>
+                                        <th style="text-align: left; padding: 0.4rem;">Faltantes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="5" style="padding: 0.4rem; color: #4fc3f7; font-weight: bold;">A. Variables Predictoras</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A1</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 1</td>
+                                        <td style="padding: 0.4rem;">b, a</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A2</strong></td>
+                                        <td style="padding: 0.4rem;">Continua</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 2</td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A3</strong></td>
+                                        <td style="padding: 0.4rem;">Continua</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 3</td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A4</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 4</td>
+                                        <td style="padding: 0.4rem;">u, y, l, t</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A5</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 5</td>
+                                        <td style="padding: 0.4rem;">g, p, gg</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A6</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 6</td>
+                                        <td style="padding: 0.4rem;">c, d, cc, i, j, k, m, r, q, w, x, e, aa, ff</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A7</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 7</td>
+                                        <td style="padding: 0.4rem;">v, h, bb, j, n, z, dd, ff, o</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A8</strong></td>
+                                        <td style="padding: 0.4rem;">Continua</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 8</td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A9</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 9</td>
+                                        <td style="padding: 0.4rem;">t, f</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A10</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 10</td>
+                                        <td style="padding: 0.4rem;">t, f</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A11</strong></td>
+                                        <td style="padding: 0.4rem;">Continua</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 11</td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A12</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 12</td>
+                                        <td style="padding: 0.4rem;">t, f</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A13</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 13</td>
+                                        <td style="padding: 0.4rem;">g, p, s</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A14</strong></td>
+                                        <td style="padding: 0.4rem;">Continua</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 14</td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">Sí</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333;">
+                                        <td style="padding: 0.4rem;"><strong>A15</strong></td>
+                                        <td style="padding: 0.4rem;">Continua</td>
+                                        <td style="padding: 0.4rem;">Atributo anonimizado 15</td>
+                                        <td style="padding: 0.4rem;">Numérico</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid #333; background: rgba(255,255,255,0.02);">
+                                        <td colspan="5" style="padding: 0.4rem; color: #ff6b6b; font-weight: bold;">B. Variable Objetivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0.4rem;"><strong>A16</strong></td>
+                                        <td style="padding: 0.4rem;">Categórica (Target)</td>
+                                        <td style="padding: 0.4rem;">Resultado de la solicitud</td>
+                                        <td style="padding: 0.4rem;">+ = Aprobada<br>- = Rechazada</td>
+                                        <td style="padding: 0.4rem;">No</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; margin: 0.5rem 0;">
+                            <h5 style="color: #ffd93d; margin: 0.3rem 0;">📊 Distribución de Tipos de Atributos</h5>
+                            <ul class="transformacion-lista">
+                                <li><strong>Atributos Continuos (6):</strong> A2, A3, A8, A11, A14, A15</li>
+                                <li><strong>Atributos Categóricos con pocos valores (5):</strong> A1 (2), A4 (4), A5 (3), A9 (2), A10 (2), A12 (2), A13 (3)</li>
+                                <li><strong>Atributos Categóricos con muchos valores (3):</strong> A6 (14 valores), A7 (9 valores)</li>
+                                <li><strong>Variable Objetivo (1):</strong> A16 (+/-)</li>
+                            </ul>
+                            <p style="color: #000; font-size: 0.85rem; margin-top: 0.3rem;">Esta variedad de tipos de atributos hace que el dataset sea <strong>ideal para probar diferentes técnicas de preprocesamiento</strong> y <strong>algoritmos de clasificación</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Características del Dataset</h4>
+                        <ul class="transformacion-lista">
+                            <li><strong>Tipo de problema:</strong> Clasificación binaria (Aprobación + / Rechazo -)</li>
+                            <li><strong>Dimensión:</strong> Multivariante (690 × 15)</li>
+                            <li><strong>Tipo de características:</strong> Mixtas (Categóricas, Continuas)</li>
+                            <li><strong>Valores faltantes:</strong> Sí (en varias variables)</li>
+                            <li><strong>Área de aplicación:</strong> Finanzas, Banca, Evaluación de Crédito</li>
+                            <li><strong>Anonimización:</strong> Todos los nombres y valores han sido codificados</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>⚖️ Ética y Privacidad</h4>
+                        <p>El conjunto de datos ha sido <strong>completamente anonimizado</strong> para proteger la confidencialidad de los solicitantes y la información de la institución financiera. Todos los nombres y valores de atributos han sido <strong>cambiados a símbolos sin significado</strong> (A1, A2, ..., A16). <strong>Restricción de confidencialidad:</strong> El uso de los datos está restringido a fines académicos y de investigación. La publicación de resultados debe limitarse a métricas de evaluación, resultados agregados y metodología del modelo, sin intentar inferir el significado de los atributos anonimizados o reidentificar a los solicitantes.</p>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>📋 Notas de Uso</h4>
+                        <p>Este conjunto de datos es ideal para <strong>problemas de clasificación</strong> y <strong>evaluación de riesgos crediticios</strong>. Se recomienda:</p>
+                        <ul class="transformacion-lista">
+                            <li>La variable objetivo <strong>A16</strong> está codificada como <strong>+</strong> (Aprobada) y <strong>-</strong> (Rechazada). Convertir a valores binarios: <strong>+ → 1</strong>, <strong>- → 0</strong></li>
+                            <li>Manejar valores faltantes:
+                                <ul class="transformacion-lista">
+                                    <li><strong>Variables continuas</strong> (A2, A14): Imputación por <strong>mediana</strong></li>
+                                    <li><strong>Variables categóricas</strong> (A1, A4, A5, A6, A7): Imputación por <strong>moda</strong></li>
+                                </ul>
+                            </li>
+                            <li>Codificar variables categóricas:
+                                <ul class="transformacion-lista">
+                                    <li><strong>Binarias</strong> (A1, A9, A10, A12): Label Encoding (a/b → 0/1, t/f → 0/1)</li>
+                                    <li><strong>Multiclase con pocos valores</strong> (A4, A5, A13): One-Hot Encoding</li>
+                                    <li><strong>Multiclase con muchos valores</strong> (A6, A7): One-Hot Encoding o Frequency Encoding</li>
+                                </ul>
+                            </li>
+                            <li>Estandarizar/normalizar variables continuas (A2, A3, A8, A11, A14, A15)</li>
+                            <li>Los atributos han sido <strong>anonimizados</strong>, por lo que no hay interpretación semántica directa</li>
+                            <li>Este dataset tiene una <strong>buena mezcla de tipos de atributos</strong>, lo que lo hace adecuado para probar diferentes algoritmos</li>
+                            <li>Utilizar <strong>validación cruzada estratificada</strong> para evaluar el rendimiento del modelo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fuente-section">
+                        <h4>💡 Importancia en la Evaluación de Crédito</h4>
+                        <p>La <strong>evaluación automática de solicitudes de tarjetas de crédito</strong> es una aplicación fundamental del <strong>aprendizaje automático</strong> en el sector financiero. Los beneficios incluyen:</p>
+                        <ul class="transformacion-lista">
+                            <li><strong>Reducción de tiempos</strong> de procesamiento de solicitudes</li>
+                            <li><strong>Consistencia</strong> en las decisiones de aprobación</li>
+                            <li><strong>Reducción de sesgos</strong> en la evaluación manual</li>
+                            <li><strong>Mejora de la experiencia del cliente</strong> con respuestas rápidas</li>
+                            <li><strong>Optimización de recursos</strong> en el departamento de crédito</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem; color: #000; font-size: 0.9rem;">Este dataset es especialmente valioso porque presenta una <strong>mezcla realista de tipos de atributos</strong> (continuos, categóricos con pocos y muchos valores) y <strong>valores faltantes</strong>, lo que lo convierte en un <strong>desafío práctico</strong> para el desarrollo de modelos predictivos en el sector financiero.</p>
+                    </div>
+                    
+                    <div class="citation-box">
+                        <h4>📖 Cómo citar la fuente original</h4>
+                        <pre class="citation-block">Credit Card Applications Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/Credit+Card+Applications</pre>
+                        <button onclick="copyToClipboard('Credit Card Applications Dataset. UCI Machine Learning Repository. https://archive.ics.uci.edu/ml/datasets/Credit+Card+Applications')" class="btn-copy-small">Copiar cita</button>
+                    </div>
+                    
+                    <div class="fuente-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #444;">
+                        <h4>📚 Referencias Adicionales</h4>
+                        <ul class="transformacion-lista">
+                            <li>UCI Machine Learning Repository - Credit Card Applications. <a href="https://archive.ics.uci.edu/ml/datasets/Credit+Card+Applications" target="_blank" style="color: #4fc3f7;">https://archive.ics.uci.edu/ml/datasets/Credit+Card+Applications</a></li>
+                            <li>Quinlan, J. R. (1993). <em>C4.5: Programs for Machine Learning</em>. Morgan Kaufmann.</li>
+                            <li>Thomas, L. C., Edelman, D. B., & Crook, J. N. (2002). <em>Credit Scoring and Its Applications</em>. SIAM.</li>
+                            <li>Hand, D. J., & Henley, W. E. (1997). Statistical classification methods in consumer credit scoring: a review. <em>Journal of the Royal Statistical Society: Series A</em>, 160(3), 523-541.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformacion-section" id="transformacion">
+            <h2>🔄 Transformaciones Aplicadas</h2>
+            
+            <div class="transformacion-card">
+                <h3>Modificaciones realizadas al conjunto original (Credit Approval - CRX)</h3>
+                <ul class="transformacion-lista">
+                    <li><strong>Carga y estructuración de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Carga del archivo <em>crx.data</em> con nombres de columnas A1 a A16 según la documentación oficial.</li>
+                            <li>Tratamiento de valores <em>'?'</em> como <em>NaN</em> durante la carga para identificación temprana de valores faltantes.</li>
+                            <li>Eliminación de filas con valores faltantes (aproximadamente 5% de los datos) para garantizar integridad y calidad del conjunto.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transformación de la variable objetivo:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Renombramiento de <em>A16</em> a <em>target</em> para mayor claridad semántica.</li>
+                            <li><strong>Mapeo:</strong> '+' (Crédito Aprobado) → <em>1</em> (Clase Positiva), '-' (Crédito Rechazado) → <em>0</em> (Clase Negativa).</li>
+                            <li>Documentación detallada del objetivo en la leyenda.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Codificación de variables categóricas:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Transformación de <strong>variables categóricas</strong> a valores numéricos mediante <em>Label Encoding</em> con <code>cat.codes</code>.</li>
+                            <li>Generación de mapeo completo (código → valor original) en la leyenda para todas las variables categóricas.</li>
+                            <li>Preservación de la semántica original a través de la documentación.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Estandarización de tipos de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Conversión forzada de variables numéricas <em>A2</em> y <em>A14</em> a tipo <strong>float</strong> para garantizar integridad numérica.</li>
+                            <li>Preservación de todas las variables en sus tipos numéricos correspondientes.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Generación de documentación completa:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Creación del archivo <em>leyenda_credit_approval.txt</em> con semántica completa de la variable objetivo y todas las variables predictoras.</li>
+                            <li>Mapeo completo de variables categóricas codificadas con sus valores originales.</li>
+                            <li>Listado de variables numéricas conservadas en su formato original.</li>
+                            <li>Contextualización del dataset: clasificación de aprobación de crédito.</li>
+                            <li>Nota sobre eliminación de filas con valores faltantes (≈5% de los datos).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Preservación de la estructura y calidad de datos:</strong> 
+                        <ul class="transformacion-lista">
+                            <li>Mantenimiento de las <strong>instancias</strong> después de la eliminación de filas con nulos.</li>
+                            <li>Dataset final con <strong>15 variables predictoras</strong> (mixtas: categóricas codificadas y numéricas) y <strong>1 variable objetivo binaria</strong>.</li>
+                            <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #555;">
+                    📊 <strong>Resultado:</strong> Dataset de <strong>solicitudes de crédito</strong> (≈653 registros después de limpieza) con <strong>15 variables predictoras</strong> (mixtas: categóricas codificadas y numéricas) y <strong>1 variable objetivo binaria</strong> (target). Desbalance moderado (~55% créditos aprobados / ~45% rechazados) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos de <strong>evaluación de riesgo crediticio y aprobación de préstamos</strong>, donde factores demográficos, financieros y de historial crediticio son determinantes.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🏦 <strong>Fuente:</strong> Credit Approval Dataset (CRX - UCI Machine Learning Repository) - Datos de solicitudes de crédito para clasificación binaria.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variables categóricas codificadas:</strong> A1 (estado de cuenta), A4 (estado civil), A5 (trabajo), A6 (empleo), A7 (vivienda), A8 (historial crediticio), A9 (registro público), A10 (ocupación), A11 (forma de pago), A12 (garante), A13 (cuenta de ahorro), A15 (verificación de crédito) — 12 variables con mapeo documentado.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📊 <strong>Variables numéricas:</strong> A2 (edad), A3 (monto del crédito), A14 (código postal) — preservadas como números continuos/enteros.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    📁 <strong>Leyenda disponible:</strong> Archivo <em>leyenda_credit_approval.txt</em> con mapeo completo de variables categóricas codificadas (12 variables) y descripción de variables numéricas.
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🎯 <strong>Variable objetivo:</strong> <em>target</em> (1 = Crédito aprobado, 0 = Crédito rechazado).
+                </p>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
+                    🧹 <strong>Limpieza aplicada:</strong> Tratamiento de '?' como NaN, eliminación de filas con valores faltantes (~5% de los datos), codificación de variables categóricas con Label Encoding, estandarización de tipos, renombrado de target.
+                </p>
+            </div>
+        </div>
+            
+        <div class="diccionario-section" id="diccionario">
+            <h2>📋 Diccionario de Datos Detallado</h2>
+            <div class="diccionario-filtros">
+                <button class="filtro-btn active" data-filter="all">Todos</button>
+                <button class="filtro-btn" data-filter="binario">Binario</button>
+                <button class="filtro-btn" data-filter="categórico">Categórico</button>
+                <button class="filtro-btn" data-filter="numérico">Numérico</button>
+            </div>
+            <div class="table-container">
+                <table class="data-dictionary" id="data-dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Descripción Crediticia</th>
+                            <th>Tipo</th>
+                            <th>Rango / Categorías</th>
+                            <th>Unidad</th>
+                            <th>¿Objetivo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Variables Categóricas -->
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>A4</code></td>
+                            <td>Atributo categórico anonimizado (Original: l, u, y, t)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: l, 1: u, 2: y, 3: t</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>A5</code></td>
+                            <td>Atributo categórico anonimizado (Original: g, gg, p)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: g, 1: gg, 2: p</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>A7</code></td>
+                            <td>Atributo categórico anonimizado (Alta cardinalidad)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: bb, 1: dd, 2: ff, 3: h, 4: j, 5: n, 6: o, 7: v, 8: z</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="categórico">
+                            <td class="var-name"><code>A13</code></td>
+                            <td>Atributo categórico anonimizado (Original: g, p, s)</td>
+                            <td><span class="badge-tipo categórico">Categórico</span></td>
+                            <td>0: g, 1: p, 2: s</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Numéricas -->
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A2</code></td>
+                            <td>Atributo numérico anonimizado (Posiblemente edad)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>13.75 - 74.83</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A3</code></td>
+                            <td>Atributo numérico anonimizado (Posiblemente antigüedad laboral)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 28</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A6</code></td>
+                            <td>Atributo numérico anonimizado (Alta cardinalidad)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 13</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A8</code></td>
+                            <td>Atributo numérico anonimizado</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 28.5</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A11</code></td>
+                            <td>Atributo numérico anonimizado (Conteo)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 40</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A14</code></td>
+                            <td>Atributo numérico anonimizado (Posiblemente código postal)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 2,000</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="numérico">
+                            <td class="var-name"><code>A15</code></td>
+                            <td>Atributo numérico anonimizado (Posiblemente ingresos)</td>
+                            <td><span class="badge-tipo numérico">Numérico</span></td>
+                            <td>0 - 51,100</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+        
+                        <!-- Variables Binarias -->
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A1</code></td>
+                            <td>Atributo binario anonimizado (Original: a, b)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: a, 1: b</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A9</code></td>
+                            <td>Atributo binario anonimizado (Original: f, t)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: f, 1: t</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A10</code></td>
+                            <td>Atributo binario anonimizado (Original: f, t)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: f, 1: t</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>A12</code></td>
+                            <td>Atributo binario anonimizado (Original: f, t)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: f, 1: t</td>
+                            <td>N/A</td>
+                            <td class="text-center">No</td>
+                        </tr>
+                        <tr data-tipo="binario">
+                            <td class="var-name"><code>target</code></td>
+                            <td>Estado de aprobación de crédito (objetivo)</td>
+                            <td><span class="badge-tipo binario">Binario</span></td>
+                            <td>0: Rechazado, 1: Aprobado</td>
+                            <td>N/A</td>
+                            <td class="text-center"><span class="badge-objetivo">Sí</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Resumen del diccionario -->
+            <div class="stats-diccionario">
+                <div class="stat-item">
+                    <span class="stat-number">16</span>
+                    <span class="stat-label">Variables totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Numéricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Categóricas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Binarias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objetivo:</span>
+                    <span class="stat-value">Aprobación de Crédito (target)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Datos ausentes:</span>
+                    <span class="stat-value" style="color: #27ae60;"><strong>0%</strong></span>
+                </div>                
+            </div>
+        </div>
+
+        <div class="viz-card">
+            <h3>📈 Distribución de la variable objetivo en el conjunto original</h3>
+            <div id="target-plot"></div>
+        </div>
+
+        <div class="leyenda-categorias" id="leyenda">
+            <h2>📖 Leyenda de Variables Categóricas</h2>
+            <p class="leyenda-intro">
+                Esta sección detalla los códigos y significados de las variables categóricas y binarias 
+                presentes en el conjunto de datos de Aprobación de Crédito (Japanese Credit Screening). 
+                Comprender estas codificaciones es fundamental para la correcta interpretación de los 
+                resultados de aprobación crediticia.
+            </p>
+        
+            <div class="leyenda-grid">
+                <!-- Variable: A1 -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>A1</code></span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>a (Valor anonimizado)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>b (Valor anonimizado)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #eaf2f8; border-left-color: #3498db;">
+                            <span class="nota-icon">🔒</span>
+                            <p><strong>Nota:</strong> Variable anonimizada. Los valores "a" y "b" corresponden a alguna característica binaria del solicitante.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: A4 -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>A4</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>l</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>u</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>y</td></tr>
+                                <tr><td><span class="codigo">3</span></td><td>t</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: A5 -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>A5</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>g</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>gg</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>p</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: A6 -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>A6</code></span>
+                        <span class="leyenda-tipo numérico">Numérica (Categórica)</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Atributo categórico con alta cardinalidad</strong>
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px 8px; font-size: 0.85em;">
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">0</span> aa</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">1</span> c</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">2</span> cc</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">3</span> d</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">4</span> e</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">5</span> ff</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">6</span> i</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">7</span> j</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">8</span> k</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">9</span> m</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">10</span> q</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">11</span> r</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">12</span> w</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">13</span> x</div>
+                        </div>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fef9e7; border-left-color: #f39c12;">
+                            <span class="nota-icon">⚠️</span>
+                            <p><strong>Alta cardinalidad:</strong> 14 categorías anonimizadas.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: A7 -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>A7</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <p class="leyenda-binaria-info" style="margin-bottom: 8px;">
+                            <strong>Atributo categórico anonimizado</strong>
+                        </p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px 8px; font-size: 0.85em;">
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">0</span> bb</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">1</span> dd</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">2</span> ff</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">3</span> h</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">4</span> j</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">5</span> n</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">6</span> o</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">7</span> v</div>
+                            <div><span class="codigo" style="display: inline-block; width: 20px; text-align: center;">8</span> z</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variables A9, A10, A12 -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>A9, A10, A12</code></span>
+                        <span class="leyenda-tipo binario">Binario</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>f (False)</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>t (True)</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #d5f5e3; border-left-color: #27ae60;">
+                            <span class="nota-icon">🔲</span>
+                            <p><strong>Variables booleanas:</strong> A9, A10 y A12 son variables binarias que representan características del solicitante.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Variable: A13 -->
+                <div class="leyenda-card">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>A13</code></span>
+                        <span class="leyenda-tipo categórico">Categórica</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado (Original)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="codigo">0</span></td><td>g</td></tr>
+                                <tr><td><span class="codigo">1</span></td><td>p</td></tr>
+                                <tr><td><span class="codigo">2</span></td><td>s</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <!-- Variable: target -->
+                <div class="leyenda-card" style="border-color: #e74c3c;">
+                    <div class="leyenda-header">
+                        <span class="leyenda-var"><code>target</code></span>
+                        <span class="leyenda-tipo binario" style="background: #e74c3c;">🎯 Objetivo</span>
+                    </div>
+                    <div class="leyenda-body">
+                        <table class="leyenda-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Significado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="codigo" style="background: #e74c3c; color: white;">0</span></td>
+                                    <td><strong>- (Crédito Rechazado)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="codigo" style="background: #27ae60; color: white;">1</span></td>
+                                    <td><strong>+ (Crédito Aprobado)</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="leyenda-nota" style="margin-top: 8px; background: #fdebd0; border-left-color: #e74c3c;">
+                            <span class="nota-icon">🎯</span>
+                            <p><strong>Variable Objetivo:</strong> Predice la aprobación o rechazo de solicitudes de tarjeta de crédito.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Resumen de la leyenda -->
+            <div class="leyenda-resumen">
+                <div class="resumen-item">
+                    <span class="resumen-icon">📊</span>
+                    <div>
+                        <strong>Variables categóricas:</strong> 4
+                        <ul>
+                            <li>A4 (4 categorías: l, u, y, t)</li>
+                            <li>A5 (3 categorías: g, gg, p)</li>
+                            <li>A7 (9 categorías: bb, dd, ff, h, j, n, o, v, z)</li>
+                            <li>A13 (3 categorías: g, p, s)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">🎯</span>
+                    <div>
+                        <strong>Variables binarias:</strong> 5
+                        <ul>
+                            <li>A1 (a, b)</li>
+                            <li>A9 (f, t)</li>
+                            <li>A10 (f, t)</li>
+                            <li>A12 (f, t)</li>
+                            <li>🎯 target (Objetivo - Aprobación de crédito)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">📈</span>
+                    <div>
+                        <strong>Variables numéricas:</strong> 7
+                        <ul>
+                            <li>A2 (Posiblemente edad)</li>
+                            <li>A3 (Posiblemente antigüedad)</li>
+                            <li>A6 (Categórica codificada numéricamente - 14 niveles)</li>
+                            <li>A8, A11, A14, A15</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resumen-item">
+                    <span class="resumen-icon">⚠️</span>
+                    <div>
+                        <strong>Recomendaciones de Análisis:</strong>
+                        <ul>
+                            <li><strong>Datos anonimizados:</strong> Las variables no tienen significado semántico directo</li>
+                            <li><strong>A6:</strong> Variable con alta cardinalidad (14 categorías) - considerar reducción dimensional</li>
+                            <li><strong>Variables binarias:</strong> A9, A10, A12 son booleanas y pueden ser discriminantes</li>
+                            <li><strong>Valores perdidos:</strong> 37 instancias eliminadas para asegurar un dataset limpio</li>
+                            <li><strong>Target:</strong> Variable objetivo anonimizada (A16 en el dataset original)</li>
+                            <li><strong>Dataset histórico:</strong> Referencia utilizada en trabajos pioneros de C4.5 de Quinlan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="metodologia-section" id="metodologia">
+            <h2>🔬 Metodología de Generación (Reproducibilidad Científica)</h2>
+            
+            <div class="metodologia-grid">
+                <div class="metodologia-card">
+                    <h3>📐 Método Principal</h3>
+                    <div class="metodologia-badge">SMOTE RSB* Adaptado</div>
+                    <p><strong>Versión:</strong> 2.0</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">10.1007/s42979-026-04896-8</a></p>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📏 Reglas de restricción</h3>
+                    <ul class="restriction-rules">
+                        <!-- FÍSICA BIOLÓGICA - Edad-Trabajo -->
+                        <li><code>A2 < 20 → A8 ≤ 4 (Joven → pocos años trabajando)</code></li>
+                        
+                        <!-- RESTRICCIÓN VETERANOS -->
+                        <li><code>A8 > 20 → A2 > 36 (Muchos años trabajando → edad madura)</code></li>
+                        
+                        <!-- ESTRUCTURA A4-A5 -->
+                        <li><code>A4 == 1 (desempleado) → A5 = 0</code></li>
+                        <li><code>A4 == 2 (empleado) → A5 = 2</code></li>
+                        <li><code>A4 == 0 (estudiante) → A5 = 1</code></li>
+                        
+                        <!-- REGLA DE ORO HISTORIAL -->
+                        <li><code>A9 == 0 → target = 0 (Sin historial crediticio → rechazo)</code></li>
+                        
+                        <!-- REGLA PUNTUACIÓN DEFAULT -->
+                        <li><code>A9 == 0 → A11 ≤ 5 (Sin historial → score bajo)</code></li>
+                        
+                        <!-- COHERENCIA EMPLEO-SCORE -->
+                        <li><code>A10 == 0 → A11 = 0 (Sin empleo → score 0)</code></li>
+                        
+                        <!-- COHERENCIA INVERSA SCORE-EMPLEO -->
+                        <li><code>A11 > 0 → A10 = 1 (Score >0 → tiene empleo)</code></li>
+                        
+                        <!-- EDAD LEGAL -->
+                        <li><code>A2 < 18 → target = 0 (Menor de edad → rechazo)</code></li>
+                        
+                        <!-- PERFIL ALTO VALOR -->
+                        <li><code>A15 > 5000 → target = 1 (Saldo alto → aprobación)</code></li>
+                        
+                        <!-- CAPACIDAD DEUDA -->
+                        <li><code>A15 == 0 → A3 < 15 (Sin saldo → deuda limitada)</code></li>
+                        
+                        <!-- CONSISTENCIA LICENCIA -->
+                        <li><code>A12 == 1 → A2 ≥ 17 (Tiene licencia → edad mínima)</code></li>
+                        
+                        <!-- SALDO POSITIVO -->
+                        <li><code>A15 > 1000 → target = 1 (Saldo positivo → aprobación)</code></li>
+                        
+                        <!-- RECHAZO POR DEFECTO -->
+                        <li><code>A9 == 0 → target = 0 (Sin historial → rechazo)</code></li>
+                        
+                        <!-- DEUDA vs EDAD -->
+                        <li><code>A3 > 25 → A2 > 30 (Deuda alta → edad madura)</code></li>
+                    </ul>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>⚙️ Hiperparámetros SMOTE RSB* Adaptado</h3>
+                    <table class="params-table">
+                        <tr><th>Valor escala</th><td>0.03</td></tr>
+                        <tr><th>Probabilidad Base</th><td>0.1</td></tr>                    
+                    </table>                
+                </div>            
+                
+                <div class="metodologia-card">
+                    <h3>🔄 Hiperparámetros CTGAN</h3>
+                    <table class="params-table">
+                        <tr><th>epochs</th><td>500</td></tr>
+                        <tr><th>batch_size</th><td>50</td></tr>
+                        <tr><th>generator_lr</th><td>0.0002</td></tr>
+                        <tr><th>discriminator_lr</th><td>0.0002</td></tr>
+                        <tr><th>pac</th><td>10</td></tr>
+                        <tr><th>generator_dim</th><td>(128, 128)</td></tr>
+                        <tr><th>discriminator_dim</th><td>(128, 128)</td></tr>
+                        <tr><th>embedding_dim</th><td>128</td></tr>
+                        <tr><th>l2scale</th><td>1e-05</td></tr>
+                    </table>
+                </div>
+
+                <div class="metodologia-card">
+                    <h3>📊 Hiperparámetros TVAE</h3>
+                    <table class="params-table">
+                        <tr>
+                            <th>epochs</th>
+                            <td>400</td>
+                        </tr>
+                        <tr>
+                            <th>batch_size</th>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <th>embedding_dim</th>
+                            <td>64</td>
+                        </tr>
+                        <tr>
+                            <th>compress_dims</th>
+                            <td>(64, 64)</td>
+                        </tr>
+                        <tr>
+                            <th>decompress_dims</th>
+                            <td>(64, 64)</td>
+                        </tr>
+                        <tr>
+                            <th>l2scale</th>
+                            <td>1e-5</td>
+                        </tr>
+                        <tr>
+                            <th>loss_factor</th>
+                            <td>2</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="metodologia-card">
+                    <h3>🔐 Reproducibilidad</h3>
+                    <table class="params-table">
+                        <tr><th>Random Seed</th><td><code>42</code></td></tr>
+                        <tr><th>Python</th><td>3.12.12</td></tr>
+                    </table>
+                    <h4>Librerías utilizadas:</h4>
+                    <ul class="libraries-list">
+                        <li><strong>pandas</strong>: 2.3.3</li>
+                        <li><strong>numpy</strong>: 2.4.4</li>
+                        <li><strong>scikit-learn</strong>: 1.7.2</li>
+                        <li><strong>imbalanced-learn</strong>: 0.14.0</li>
+                        <li><strong>ctgan</strong>: 0.11.1</li>
+                        <li><strong>torch</strong>: 2.9.0</li>
+                        <li><strong>sdv</strong>: 1.28.0</li>
+                        <li><strong>scipy</strong>: 1.16.3</li>
+                        <li><strong>matplotlib</strong>: 3.10.9</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reproducibility-note">
+                <span class="note-icon">📝</span>
+                <p>Para reproducir exactamente este conjunto de datos, ejecute el script de generación con la semilla aleatoria <code>42</code>. 
+                Los resultados pueden variar ligeramente según la versión de las librerías.</p>
+            </div>
+        </div>    
+        
+        <div class="derivados-section" id="derivados">
+            <h2>📊 Conjuntos de Datos Derivados</h2>
+            
+            <div class="derivados-info">
+                <p>El conjunto original ha sido sometido a un proceso de <strong>balanceo de clases</strong> y <strong>generación sintética</strong>
+                    para mejorar la representación de clases minoritarias. <strong>Nota:</strong> se ha empleado un conjunto de validación para evaluar 
+                    el índice de fidelidad. Se han generado tres familias de conjuntos:</p>
+                <ul>
+                    <li><strong>📊 Balanceados:</strong> Conjuntos creados mediante técnicas de sobremuestreo</li>
+                    <li><strong>🔮 Sintéticos Puros:</strong> Conjuntos generados completamente con modelos generativos</li>
+                    <li><strong>✨ Aumentados:</strong> Combinación del conjunto original + datos sintéticos</li>
+                </ul>
+                <p>El mejor conjunto de cada etapa fue seleccionado mediante el índice <strong><a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></strong>.</p>
+            </div>
+            
+            <!-- Conjuntos Balanceados -->
+            <div class="categoria-derivados">
+                <h3>📊 Conjuntos Balanceados <span class="badge-categoria balanceados">8 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Random Oversampling</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Smote</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Borderline SMOTE</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ADASYN</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Adaptado + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Balanceo + Reglas</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>Sin datos disponibles</strong> 
+                    (TabDSFidelity: <strong>-</strong>, AUC: -, F1: -, MIA: -). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Sintéticos Puros -->
+            <div class="categoria-derivados">
+                <h3>🔮 Conjuntos Sintéticos Puros <span class="badge-categoria sinteticos">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>1.207</td>
+                                <td>9978</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>9.928</strong></td>
+                                <td>0.369</td>
+                                <td>0.463</td>
+                                <td>0.049</td>
+                                <td>0.971</td>
+                                <td>81.221</td>
+                                <td>0.567</td>
+                                <td>0</td>
+                                <td>0.409</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.488</td>
+                                <td>9978</td>
+                                <td>0.960</td>
+                                <td>0.969</td>
+                                <td>0.969</td>
+                                <td>8.926</td>
+                                <td>0.369</td>
+                                <td>0.447</td>
+                                <td>0.049</td>
+                                <td>0.974</td>
+                                <td>222.195</td>
+                                <td>0.567</td>
+                                <td>0</td>
+                                <td>0.491</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.760</td>
+                                <td>10000</td>
+                                <td>0.853</td>
+                                <td>0.740</td>
+                                <td>0.748</td>
+                                <td>3.295</td>
+                                <td>0.355</td>
+                                <td>0.000</td>
+                                <td>0.061</td>
+                                <td>0.937</td>
+                                <td>320.454</td>
+                                <td>0.071</td>
+                                <td>0</td>
+                                <td>0.467</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.765</td>
+                                <td>10000</td>
+                                <td>0.902</td>
+                                <td>0.781</td>
+                                <td>0.786</td>
+                                <td>4.534</td>
+                                <td>0.355</td>
+                                <td>0.000</td>
+                                <td>0.061</td>
+                                <td>0.944</td>
+                                <td>462.761</td>
+                                <td>0.060</td>
+                                <td>0</td>
+                                <td>0.512</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.125</td>
+                                <td>10000</td>
+                                <td>0.925</td>
+                                <td>0.855</td>
+                                <td>0.855</td>
+                                <td>5.566</td>
+                                <td>0.543</td>
+                                <td>0.140</td>
+                                <td>0.040</td>
+                                <td>0.944</td>
+                                <td>184.093</td>
+                                <td>0.029</td>
+                                <td>0</td>
+                                <td>0.465</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.252</td>
+                                <td>10000</td>
+                                <td>0.920</td>
+                                <td>0.848</td>
+                                <td>0.847</td>
+                                <td>5.383</td>
+                                <td>0.543</td>
+                                <td>0.140</td>
+                                <td>0.040</td>
+                                <td>0.943</td>
+                                <td>325.856</td>
+                                <td>0.028</td>
+                                <td>0</td>
+                                <td>0.454</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1</td>
+                                <td>10000</td>
+                                <td>0.888</td>
+                                <td>0.710</td>
+                                <td>0.718</td>
+                                <td>0.736</td>
+                                <td>0.669</td>
+                                <td>0.000</td>
+                                <td>0.548</td>
+                                <td>0.665</td>
+                                <td>110.207</td>
+                                <td>0.225</td>
+                                <td>0</td>
+                                <td>0.452</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.571</td>
+                                <td>10000</td>
+                                <td>0.885</td>
+                                <td>0.840</td>
+                                <td>0.840</td>
+                                <td>2.258</td>
+                                <td>0.663</td>
+                                <td>0.000</td>
+                                <td>0.730</td>
+                                <td>0.679</td>
+                                <td>247.050</td>
+                                <td>0.249</td>
+                                <td>0</td>
+                                <td>0.427</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.001</td>
+                                <td>9958</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>9.372</td>
+                                <td>0.378</td>
+                                <td>0.221</td>
+                                <td>0.048</td>
+                                <td>0.969</td>
+                                <td>79.588</td>
+                                <td>0.504</td>
+                                <td>0</td>
+                                <td>0.461</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.204</td>
+                                <td>9958</td>
+                                <td>0.959</td>
+                                <td>0.969</td>
+                                <td>0.969</td>
+                                <td>8.665</td>
+                                <td>0.377</td>
+                                <td>0.346</td>
+                                <td>0.047</td>
+                                <td>0.972</td>
+                                <td>223.220</td>
+                                <td>0.505</td>
+                                <td>0</td>
+                                <td>0.504</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>9.928</strong>, AUC: 1.000, F1: 1.000, MIA: 0.409). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+
+            <!-- Aumentados -->
+            <div class="categoria-derivados">
+                <h3>✨ Conjuntos Aumentados <span class="badge-categoria aumentados">10 conjuntos</span></h3>
+                
+                <div class="table-container">
+                    <table class="derivados-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>                    
+                                <th>Ratio</th>
+                                <th>N° Ejemplos</th>
+                                <th>AUC-ROC</th>
+                                <th>F1</th>
+                                <th>Accuracy</th>
+                                <th>TabDSFidelity</th>
+                                <th>Jensen-Shannon</th>
+                                <th>Kolmogorov-Smirnov</th>
+                                <th>Kullback-Leibler</th>
+                                <th>Correlación</th>
+                                <th>Tiempo Total (s)</th>
+                                <th>Dist. Promedio</th>
+                                <th>Copias Exactas</th>
+                                <th>Ataque MIA</th>
+                                <th>Mejor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="best-row">
+                                <td><strong>SMOTE RSB* + Ruido Gaussiano</strong></td>                    
+                                <td>1.207</td>
+                                <td>10631</td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>1.000</strong></td>
+                                <td><strong>3.849</strong></td>
+                                <td>0.353</td>
+                                <td>0.514</td>
+                                <td>0.045</td>
+                                <td>0.972</td>
+                                <td>153.863</td>
+                                <td>0.566</td>
+                                <td>0</td>
+                                <td>0.416</td>
+                                <td><span class="best-badge-table">🏆</span></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* + Ruido Gaussiano + Reglas</td>                    
+                                <td>1.468</td>
+                                <td>10631</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>3.831</td>
+                                <td>0.352</td>
+                                <td>0.498</td>
+                                <td>0.045</td>
+                                <td>0.975</td>
+                                <td>294.919</td>
+                                <td>0.566</td>
+                                <td>0</td>
+                                <td>0.485</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN</td>                    
+                                <td>1.718</td>
+                                <td>10653</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>2.860</td>
+                                <td>0.332</td>
+                                <td>0.001</td>
+                                <td>0.035</td>
+                                <td>0.941</td>
+                                <td>393.862</td>
+                                <td>0.064</td>
+                                <td>134</td>
+                                <td>0.477</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>CTGAN + Reglas del Dominio</td>                    
+                                <td>1.722</td>
+                                <td>10653</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>2.878</td>
+                                <td>0.333</td>
+                                <td>0.001</td>
+                                <td>0.035</td>
+                                <td>0.947</td>
+                                <td>535.352</td>
+                                <td>0.054</td>
+                                <td>134</td>
+                                <td>0.526</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE</td>                    
+                                <td>1.129</td>
+                                <td>10653</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>2.599</td>
+                                <td>0.505</td>
+                                <td>0.158</td>
+                                <td>0.011</td>
+                                <td>0.949</td>
+                                <td>257.243</td>
+                                <td>0.027</td>
+                                <td>134</td>
+                                <td>0.461</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TVAE + Reglas del Dominio</td>                    
+                                <td>1.249</td>
+                                <td>10653</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>2.594</td>
+                                <td>0.505</td>
+                                <td>0.158</td>
+                                <td>0.011</td>
+                                <td>0.948</td>
+                                <td>398.870</td>
+                                <td>0.026</td>
+                                <td>134</td>
+                                <td>0.463</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento</td>                    
+                                <td>1.012</td>
+                                <td>10653</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>0.265</td>
+                                <td>0.612</td>
+                                <td>0.000</td>
+                                <td>0.403</td>
+                                <td>0.681</td>
+                                <td>180.625</td>
+                                <td>0.211</td>
+                                <td>134</td>
+                                <td>0.434</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>OOF PSO para Aumento + Reglas</td>                    
+                                <td>1.546</td>
+                                <td>10653</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>0.076</td>
+                                <td>0.604</td>
+                                <td>0.000</td>
+                                <td>0.544</td>
+                                <td>0.694</td>
+                                <td>318.264</td>
+                                <td>0.234</td>
+                                <td>134</td>
+                                <td>0.452</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado</td>                    
+                                <td>1.012</td>
+                                <td>10611</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>3.326</td>
+                                <td>0.361</td>
+                                <td>0.262</td>
+                                <td>0.044</td>
+                                <td>0.971</td>
+                                <td>154.155</td>
+                                <td>0.505</td>
+                                <td>0</td>
+                                <td>0.458</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>SMOTE RSB* Refinado + Reglas</td>                    
+                                <td>1.204</td>
+                                <td>10611</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>1.000</td>
+                                <td>3.572</td>
+                                <td>0.360</td>
+                                <td>0.382</td>
+                                <td>0.044</td>
+                                <td>0.973</td>
+                                <td>294.703</td>
+                                <td>0.505</td>
+                                <td>0</td>
+                                <td>0.518</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mejor-seleccionado">
+                    <span class="star">⭐</span> Mejor seleccionado: <strong>SMOTE RSB* + Ruido Gaussiano</strong> 
+                    (TabDSFidelity: <strong>3.849</strong>, AUC: 1.000, F1: 1.000, MIA: 0.416). <strong>Nota:</strong> Ratio <= 1.5 = <strong>Conjunto Balanceado.</strong>
+                </div>
+            </div>
+            
+            <!-- Diagrama de flujo del proceso -->
+            <div class="flowchart-section">
+                <h4>📈 Diagrama del Proceso de Generación</h4>
+                <div class="flowchart">
+                    <div class="flow-node">Conjunto Original<br><small>CD_47</small></div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Balanceo<br>(8 métodos)</div>
+                        <div class="flow-node">↓ Selección por <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Balanceado<br>----</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node-group">
+                        <div class="flow-node">Generación Sintética<br>(10 métodos)</div>
+                        <div class="flow-node">↓ Evaluación <a href="https://doi.org/10.1007/978-3-032-08206-0_4" target="_blank">TabDSFidelity</a></div>
+                        <div class="flow-node best-flow">⭐ Mejor Sintético<br>SMOTE RSB* + Ruido Gaussiano</div>
+                        <div class="flow-node best-flow">⭐ Mejor Aumentado<br>SMOTE RSB* + Ruido Gaussiano</div>
+                    </div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-node">Conjunto Sintético Final<br><small>Seleccionado por calidad</small></div>
+                </div>
+            </div>
+
+            <!-- Guía de Métricas Explicativas -->
+            <div class="metricas-guia">
+                <h3>📊 Guía de Métricas de Evaluación</h3>
+                <p class="guia-intro">
+                    Para interpretar correctamente los resultados de los conjuntos de datos generados, es fundamental 
+                    comprender qué mide cada métrica y cómo se relacionan entre sí. A continuación, se detalla cada 
+                    una de las métricas utilizadas en la evaluación:
+                </p>
+                
+                <div class="metricas-grid">
+                    <!-- Métricas de Rendimiento Predictivo -->
+                    <div class="metrica-grupo">
+                        <h4>🎯 Métricas de Rendimiento Predictivo</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">AUC-ROC</span>
+                            <span class="metrica-rango">(0.5 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Capacidad del modelo para distinguir entre clases (Ej: mortalidad vs supervivencia).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Sin capacidad predictiva (aleatorio)</li>
+                                    <li><strong>0.7-0.8:</strong> Aceptable</li>
+                                    <li><strong>0.8-0.9:</strong> Excelente</li>
+                                    <li><strong>>0.9:</strong> Sobresaliente</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> AUC-ROC = 0.82 significa que hay un 82% de probabilidad de que el modelo clasifique correctamente un paciente fallecido frente a uno superviviente.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">F1-Score</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Media armónica entre precisión y sensibilidad (recall).</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen equilibrio entre precisión y sensibilidad</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen equilibrio</li>
+                                    <li><strong>>0.9:</strong> Excelente equilibrio</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> F1 = 0.76 indica que el modelo mantiene un buen balance entre identificar correctamente a los pacientes que fallecen (sensibilidad) y no etiquetar erróneamente a los que sobreviven (precisión).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Accuracy</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Proporción de predicciones correctas sobre el total.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.7-0.8:</strong> Buen rendimiento general</li>
+                                    <li><strong>0.8-0.9:</strong> Muy buen rendimiento</li>
+                                    <li><strong>>0.9:</strong> Excelente rendimiento</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Accuracy = 0.75 significa que el 75% de las predicciones del modelo son correctas.</p>
+                                <p class="nota">⚠️ <strong>Nota:</strong> En conjuntos desbalanceados, esta métrica puede ser engañosa. Es mejor usar F1-Score o AUC-ROC.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Fidelidad (TabDSFidelity) -->
+                    <div class="metrica-grupo">
+                        <h4>🔬 Índice de Fidelidad del Conjunto</h4>
+                        
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">TabDSFidelity</span>
+                            <span class="metrica-rango">(0 - 10+)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Calidad global del conjunto sintético comparado con el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 3.0:</strong> Baja fidelidad (poca similitud con el original)</li>
+                                    <li><strong>3.0 - 6.0:</strong> Fidelidad moderada</li>
+                                    <li><strong>6.0 - 8.0:</strong> Alta fidelidad</li>
+                                    <li><strong>> 8.0:</strong> Muy alta fidelidad (excelente representación)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> TabDSFidelity = 8.08 indica que el conjunto sintético mantiene una alta similitud con el original, preservando las relaciones y distribuciones de los datos reales, además de maximizar su eficacia predictiva.</p>
+                                <p class="nota">💡 <strong>Importante:</strong> Este es el índice para seleccionar el mejor conjunto de datos sintéticos. Para este caso, el peso empleado para las métricas "AUC-ROC", "F1-Score" y "Accuracy" fue (2) y para el resto de las métricas fue (1).</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Métricas de Distribución -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Similitud de Distribuciones</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Jensen-Shannon (Promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Similitud entre las distribuciones de variables numéricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.1 - 0.3:</strong> Diferencias moderadas</li>
+                                    <li><strong>> 0.3:</strong> Diferencias significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> JS = 0.118 indica que las distribuciones de las variables numéricas (edad, presión arterial, etc.) son bastante similares a las del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Jensen-Shannon calculada para todas las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kolmogorov-Smirnov (p-valor promedio)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Probabilidad estadística de que las muestras numéricas del conjunto sintético provengan de la misma distribución continua que el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Altísima probabilidad de que sean la misma distribución (ideal)</li>
+                                    <li><strong>> 0.05:</strong> Similitud aceptable (no se rechaza que sean iguales)</li>
+                                    <li><strong>< 0.05:</strong> Diferencias estadísticamente significativas</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KS p-valor = 0.753 indica que hay evidencia fuerte a favor de que las distribuciones acumulativas de la variable sintética y la original son equivalentes.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Se reporta el promedio de los p-valores obtenidos mediante la prueba de Kolmogorov-Smirnov de dos muestras para las variables numéricas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Kullback-Leibler (Promedio)</span>
+                            <span class="metrica-rango">(0 - ∞)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Divergencia entre las distribuciones de variables categóricas del conjunto sintético y el original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Distribuciones muy similares (ideal)</li>
+                                    <li><strong>0.01 - 0.1:</strong> Diferencias pequeñas</li>
+                                    <li><strong>> 0.1:</strong> Diferencias notables</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> KL = 0.014 indica que la distribución de las variables categóricas (género, mortalidad) es muy similar a la del conjunto original.</p>
+                                <p class="nota">📌 <strong>Nota:</strong> Es el promedio de la divergencia de Kullback-Leibler para todas las variables categóricas. A diferencia de JS y KS, esta métrica se aplica solo a variables categóricas.</p>
+                            </div>
+                        </div>
+                    </div>               
+                    
+                    <!-- Métricas de Estructura -->
+                    <div class="metrica-grupo">
+                        <h4>📊 Métricas de Estructura</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Similitud de Correlación</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Preservación de las relaciones entre variables del conjunto original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 1.0:</strong> Las relaciones entre variables se mantienen casi idénticas</li>
+                                    <li><strong>> 0.9:</strong> Excelente preservación de relaciones</li>
+                                    <li><strong>0.7 - 0.9:</strong> Buena preservación</li>
+                                    <li><strong>< 0.7:</strong> Pérdida significativa de relaciones</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Correlación = 0.976 significa que las relaciones entre variables (ej. edad y mortalidad) se mantienen en un 97.6% respecto al conjunto original.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Rendimiento Temporal -->
+                    <div class="metrica-grupo">
+                        <h4>⏱️ Métricas de Rendimiento Temporal</h4>
+                        
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Tiempo Total (s)</span>
+                            <span class="metrica-rango">(segundos)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tiempo total de ejecución del proceso de generación del conjunto.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>< 100s:</strong> Generación rápida</li>
+                                    <li><strong>100-300s:</strong> Tiempo moderado</li>
+                                    <li><strong>> 300s:</strong> Proceso lento (puede ser aceptable para conjuntos grandes)</li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Tiempo total = 69.45s significa que el proceso completo de generación del conjunto balanceado tomó aproximadamente 1.16 minutos.</p>
+                                <p class="nota">⏱️ <strong>Nota:</strong> Incluye el tiempo de generación sintética + cálculo de métricas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas de Privacidad -->
+                    <div class="metrica-grupo">
+                        <h4>🔒 Métricas de Privacidad</h4>
+                        <p class="metrica-subtitulo">
+                            Estas métricas evalúan el riesgo de exposición de información sensible y la capacidad de 
+                            un atacante para inferir datos de los pacientes a partir del conjunto de datos sintéticos.
+                        </p>
+                        
+                        <!-- Distancia al registro más cercano -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Distancia al Registro Más Cercano</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> La distancia promedio entre cada registro sintético y su registro más cercano en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>Cerca de 0:</strong> Los datos sintéticos son muy similares a los originales → <span class="text-danger">⚠️ ALTO RIESGO de privacidad</span></li>
+                                    <li><strong>0.01 - 0.05:</strong> Similaridad moderada → Riesgo moderado</li>
+                                    <li><strong>> 0.05:</strong> Buena separación de los datos originales → <span class="text-success">✅ BAJO RIESGO de privacidad</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> Distancia promedio = 0.015 en SMOTE indica que los registros sintéticos están relativamente cerca de los originales, lo que podría implicar un riesgo de privacidad moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🔬</span>
+                                    <p><strong>Metodología:</strong> Calculada utilizando la <strong>Distancia de Gower</strong>, la cual maneja internamente tipos de datos mixtos, normalizando las variables numéricas y penalizando diferencias categóricas para devolver un índice estandarizado entre 0 y 1.</p>
+                                    <span class="nota-icon">💡</span>
+                                    <p><strong>Recomendación:</strong> Valores < 0.01 deben ser evaluados con precaución. Idealmente, buscar valores > 0.02 para garantizar la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Copias exactas -->
+                        <div class="metrica-item">
+                            <span class="metrica-nombre">Copias Exactas</span>
+                            <span class="metrica-rango">(≥ 0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Número de registros sintéticos que son copias idénticas de registros en el conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0:</strong> Ninguna copia exacta → <span class="text-success">✅ SEGURO</span></li>
+                                    <li><strong>1 - 10:</strong> Pocas copias → Riesgo bajo</li>
+                                    <li><strong>11 - 50:</strong> Copias moderadas → <span class="text-warning">⚠️ RIESGO MODERADO</span></li>
+                                    <li><strong>> 50:</strong> Muchas copias → <span class="text-danger">🔴 ALTO RIESGO de reidentificación</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> SMOTE RSB* Refinado genera 76 copias exactas de 8817 registros (0.86%), lo que representa un riesgo de privacidad que debe ser evaluado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">⚠️</span>
+                                    <p><strong>Importante:</strong> La presencia de copias exactas es uno de los indicadores más críticos de fuga de datos. Idealmente, este valor debe ser 0.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ataque de inferencia de membresía -->
+                        <div class="metrica-item destacado">
+                            <span class="metrica-nombre">Ataque de Inferencia de Membresía (MIA)</span>
+                            <span class="metrica-rango">(0 - 1.0)</span>
+                            <div class="metrica-descripcion">
+                                <p><strong>¿Qué mide?</strong> Tasa de éxito (medida en AUC-ROC) de un atacante para determinar si un registro específico pertenece al conjunto de datos original.</p>
+                                <p><strong>Interpretación:</strong></p>
+                                <ul>
+                                    <li><strong>0.5:</strong> Aleatorio (ideal) → <span class="text-success">✅ PRIVACIDAD ÓPTIMA</span></li>
+                                    <li><strong>0.5 - 0.55:</strong> Riesgo bajo</li>
+                                    <li><strong>0.55 - 0.6:</strong> Riesgo moderado → <span class="text-warning">⚠️ PRIVACIDAD CUESTIONABLE</span></li>
+                                    <li><strong>> 0.6:</strong> Riesgo alto → <span class="text-danger">🔴 PRIVACIDAD COMPROMETIDA</span></li>
+                                </ul>
+                                <p class="ejemplo"><strong>Ejemplo:</strong> MIA = 0.553 significa que el atacante tiene un éxito ligeramente superior al 50% aleatorio, lo que indica un riesgo de privacidad bajo/moderado.</p>
+                                <div class="metrica-nota">
+                                    <span class="nota-icon">🎯</span>
+                                    <p><strong>Objetivo:</strong> Buscar valores lo más cercanos a 0.5. Valores > 0.6 indican que el conjunto sintético no protege adecuadamente la privacidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Resumen Rápido -->
+                <div class="metricas-resumen">
+                    <h4>📝 Resumen Rápido para Selección</h4>
+                    <div class="resumen-grid">
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🏆</span>
+                            <div>
+                                <strong>Para seleccionar el mejor conjunto:</strong>
+                                <ul>
+                                    <li>Priorizar <strong>TabDSFidelity</strong> más alto</li>
+                                    <li>Buscar <strong>AUC-ROC</strong> y <strong>F1</strong> altos</li>
+                                    <li>Valores de divergencia <strong>JS y KL</strong> cercanos a 0</li>
+                                    <li>P-valor de <strong>KS</strong> lo más cercano a 1.0 posible (>0.05)</li>
+                                    <li><strong>Correlación</strong> > 0.9</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">⚖️</span>
+                            <div>
+                                <strong>Balance entre calidad y tiempo:</strong>
+                                <ul>
+                                    <li>Un <strong>TabDSFidelity > 8.0</strong> indica excelente calidad</li>
+                                    <li>Tiempos de generación < 200s son aceptables</li>
+                                    <li>La <strong>Correlación > 0.95</strong> asegura buena preservación de relaciones</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resumen-item">
+                            <span class="resumen-icon">🔒</span>
+                            <div>
+                                <strong>Para garantizar la privacidad:</strong>
+                                <ul>
+                                    <li><strong>MIA</strong> lo más cercano a 0.5 (ideal)</li>
+                                    <li><strong>Copias exactas</strong> = 0 (ideal) o lo más bajo posible</li>
+                                    <li><strong>Distancia promedio</strong> > 0.02 para buena separación</li>
+                                    <li>Evaluar <strong>balance</strong> entre calidad (TabDSFidelity) y privacidad (MIA)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="descarga" class="download-section">
+            <h2>📥 Descargar conjuntos y código Python</h2>
+            <div class="download-buttons">
+                <a href="../_data/cd47.zip" class="btn btn-primary">
+                    📦 Descargar completo (ZIP)
+                </a>                
+            </div>
+            <p class="download-note">Formatos incluidos: CSV.</p>
+        </div>    
+        
+        <div id="citacion" class="citation-section">
+            <h2>📚 Cómo citar este conjunto</h2>
+            <pre class="citation-block-new">Díaz Bastida, M., Pérez Vázquez, R. A., & Bello Pérez, R. (2026). High-Fidelity Synthetic Dataset for Credit Card Application Approval (Version 1). figshare. https://doi.org/10.6084/m9.figshare.32946572.v1</pre>
+            <button onclick="copyToClipboard(document.querySelector('.citation-block-new').innerText)" class="btn-copy">Copiar BibTeX</button>
+        </div>
+
+        <footer>
+            <p>Licencia: CC BY 4.0 | No emplear para la toma de decisiones reales sin validación externa</p>
+            <p>Generado con metodología reproducible <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> <a href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">(GSTD)</a> | 8 métodos de balanceo | 10 métodos sintéticos</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('¡Copiado al portapapeles!');
+        }
+        
+        var trace = {x: ['Clase 0', 'Clase 1'], y: [54.48, 45.52], type: 'bar', marker: {color: ['#3498db', '#e74c3c']}};
+        Plotly.newPlot('target-plot', [trace], {title: 'Distribución de clases (%)', height: 400});
+
+        function generarMuestra() {
+            alert("Descarga de muestra - Contactar al autor para acceso completo");
+        }
+        
+        // Filtrado del diccionario
+        const filtros = document.querySelectorAll('.filtro-btn');
+        if (filtros.length > 0) {
+            filtros.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filtros.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    const rows = document.querySelectorAll('#data-dictionary-table tbody tr');
+                    rows.forEach(row => {
+                        if (filter === 'all' || row.dataset.tipo === filter) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
