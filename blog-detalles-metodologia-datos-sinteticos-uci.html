@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Código MDB || Metodologia TDS: Una Metodología Probada para Generar Datos Sintéticos de Calidad.</title>
+    <title>Código MDB || Metodologia TDS: Generación de Datos Sintéticos para Predicción de Mortalidad en UCI.</title>
     <meta name="description"
-        content="Descubra cómo pasar de datos escasos a modelos potentes a través de una metodología probada para generar datos dintéticos de alta calidad.">
+        content="Conoce una metodología sistemática de 4 etapas para generar y seleccionar datos sintéticos tabulares de alta fidelidad, validada con datos reales de UCI.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
@@ -213,10 +213,10 @@
                     <div class="col-xxl-6 col-xl-8 col-lg-8">
                         <div class="rs-breadcrumb-content-wrapper">
                             <div class="rs-breadcrumb-title-wrapper text-center">
-                                <h1 class="rs-breadcrumb-title">De datos escasos a modelos potentes</h1>
+                                <h1 class="rs-breadcrumb-title">De datos escasos a modelos potentes en UCI</h1>
                             </div>
                             <div class="rs-breadcrumb-title-wrapper text-center">
-                                <a class="rs-btn has-color has-icon" href="https://doi.org/10.1007/978-3-032-11358-0_30" target="_blank">Leer el artículo completo
+                                <a class="rs-btn has-color has-icon" href="https://doi.org/10.1007/s42979-026-04896-8" target="_blank">Leer el artículo completo
                                     <span class="icon-box">
                                <svg class="icon-first" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                                   <path
@@ -244,48 +244,65 @@
                 <div class="row g-5">
                     <div class="col-xl-8 col-lg-8">
                         <div class="rs-portfolio-details-wrapper">                                                        
-                            <div class="rs-portfolio-details-content wow fadeInUp" data-wow-delay=".3s"
-                                data-wow-duration="1s">
-                                <h3 class="rs-portfolio-details-title-plus">Una metodología probada para generar datos sintéticos de alta calidad.</h3>
-                                <p class="description"><strong>1. Los Datos Sintéticos</strong></p>    
-                                <p class="description">Generar datos sintéticos es una solución prometedora para los problemas de escasez y desbalance en Machine Learning. Pero tener las herramientas de generación es solo la mitad de la batalla. La pregunta que muchos investigadores y equipos de datos se hacen es: <strong>¿Cuál es el proceso correcto? ¿Cómo pasamos de un conjunto de datos original y limitado a uno sintético, de alta calidad y que realmente mejore nuestros modelos?</strong><br><br>
-                                    Sin un flujo de trabajo claro, el proceso puede ser caótico. ¿Debemos balancear los datos primero? ¿Qué técnica de generación usamos: una clásica como SMOTE o una más moderna como las GANs? Y lo más importante, ¿cómo tomamos estas decisiones de forma objetiva en cada paso? Faltaba una metodología unificada que sirviera como un mapa de ruta fiable.                                    
+                            <div class="rs-portfolio-details-content wow fadeInUp" data-wow-delay=".3s" data-wow-duration="1s">
+                                
+                                <h3 class="rs-portfolio-details-title-plus">Una metodología estructurada para generar datos sintéticos aplicados a la salud</h3>
+                                
+                                <p class="description"><strong>1. El desafío de los datos en entornos de cuidados críticos</strong></p>    
+                                <p class="description">
+                                    La predicción de resultados clínicos, como la mortalidad en las Unidades de Cuidados Intensivos (UCI), es un factor importante para la toma de decisiones médicas. Sin embargo, el desarrollo de modelos de aprendizaje automático robustos suele verse limitado por dos problemas habituales en los datos reales: la <strong>escasez de datos</strong> y el <strong>severo desbalance de clases</strong> (donde los eventos de interés, como los fallecimientos, representan una minoría).<br><br>
+                                    La generación de datos sintéticos se presenta como una alternativa para equilibrar y aumentar los conjuntos de datos. No obstante, el reto principal radica en garantizar la fidelidad de estos datos artificiales para que capturen correctamente las correlaciones y propiedades estadísticas de los pacientes reales, evitando sesgos que comprometan la seguridad clínica.
                                 </p>                                
-                                <p class="description"><strong>2. Nuestra Solución: "<strong>Metodologia TDS</strong>", una metodología de 4 pasos para la excelencia de datos</strong></p>
-                                <p class="description">Para dar respuesta a este desafío, hemos diseñado y validado una <strong>metodología integral para la generación y evaluación de datos sintéticos tabulares</strong>. Este framework sistematiza el proceso de principio a fin, asegurando que cada decisión se tome con base en la calidad y la utilidad final de los datos.<br><br>
-                                    Nuestra metodología se estructura en cuatro etapas claras:                                    
+                                
+                                <p class="description"><strong>2. Nuestra propuesta: Un flujo de trabajo en 4 etapas</strong></p>
+                                <p class="description">
+                                    Proponemos una metodología sistemática diseñada para guiar la preparación, balanceo, generación y selección de datos sintéticos tabulares de alta fidelidad. Este proceso consta de cuatro etapas principales:
                                 </p>
                                 <ol>
-                                    <li><strong>Preparación y Calidad:</strong> Aseguramos que los datos de partida sean de la máxima calidad, ya que son el cimiento de todo el proceso.</li>
-                                    <li><strong>Gestión del Desbalance:</strong> Abordamos el desbalance de clases aplicando varias técnicas de sobremuestreo y, crucialmente, seleccionando la mejor de forma objetiva.</li>
-                                    <li><strong>Generación de Datos Sintéticos:</strong> Creamos datos a gran escala utilizando diferentes enfoques, desde variantes adaptadas de SMOTE hasta modelos de Deep Learning como CTGAN y TVAE.</li>
-                                    <li><strong>Evaluación y Selección Guiada:</strong> En cada etapa de decisión (pasos 2 y 3), utilizamos nuestro índice de calidad, <a href="blog-detalles-tabdsfidelity-indice-de-fidelidad.html" class="a-plus">TabDSFidelity</a>, como una "brújula" para seleccionar el conjunto de datos con la mayor fidelidad y potencial predictivo.</li>
+                                    <li><strong>Aseguramiento preventivo de la calidad en la fuente:</strong> Implementación de controles de integridad y reglas de validación clínica para asegurar que el conjunto de datos inicial sea consistente y libre de redundancias anomalas.</li>
+                                    <li><strong>Balanceo de clases guiado por fidelidad:</strong> Aplicación de múltiples técnicas de sobremuestreo y selección del dataset balanceado óptimo mediante el uso de una métrica unificada.</li>
+                                    <li><strong>Generación de datos sintéticos a gran escala:</strong> Ampliación del volumen de datos a través de modelos de generación avanzados, comparando aproximaciones basadas en interpolación adaptada con ruido gaussiano y modelos de aprendizaje profundo (CTGAN).</li>
+                                    <li><strong>Selección del conjunto óptimo y modelado final:</strong> Evaluación final de los datasets generados utilizando nuestro índice de fidelidad para entrenar el modelo predictivo definitivo con el conjunto de mayor utilidad práctica.</li>
                                 </ol>
-                                <p class="description">Este enfoque elimina las conjeturas y ofrece un camino estructurado y basado en evidencia para crear datos sintéticos de alto impacto.</p>
-                                <p class="description"><strong>3. Transformando Datos de UCI en Modelos Predictivos</strong></p>
-                                <p class="description">Validamos nuestra metodología completa en un escenario exigente: diez conjuntos de datos reales de una Unidad de Cuidados Intensivos (UCI), caracterizados por su escasez y desbalance.<br><br>
-                                    Aplicamos rigurosamente nuestro framework de 4 pasos, utilizando <a href="blog-detalles-tabdsfidelity-indice-de-fidelidad.html" class="a-plus">TabDSFidelity</a> para guiar cada elección de técnica. Finalmente, entrenamos modelos de Redes Neuronales para comparar el rendimiento usando los datos originales frente a los datos aumentados con nuestra metodología.                                    
-                                </p>                                
-                                <p><strong>Los resultados validan la potencia del proceso.</strong><br><br>
-                                    El uso de los datos sintéticos generados con nuestra metodología produjo una mejora promedio del <strong>+22.35% en el AUC-ROC</strong> y del <strong>+12.62% en el F1-score</strong>. En la práctica, esto significa transformar un modelo con un poder predictivo cercano al azar en una herramienta con utilidad clínica aplicable.<br><br>
-                                    Además, la metodología nos permitió obtener conclusiones valiosas:
+                                <p class="description">
+                                    El núcleo de toma de decisiones de esta metodología es el índice <a href="blog-detalles-tabdsfidelity-indice-de-fidelidad.html" class="a-plus">TabDSFidelity</a>, el cual integra métricas de similitud estadística (como las divergencias de Kullback-Leibler y Jensen-Shannon) y métricas de utilidad predictiva para asegurar una evaluación multidimensional.
+                                </p>
+                    
+                                <p class="description"><strong>3. Validación empírica con datos reales de UCI</strong></p>
+                                <p class="description">
+                                    Para validar la propuesta, se utilizaron diez conjuntos de datos reales provenientes de la UCI del Hospital Clínico Quirúrgico "Arnaldo Milián Castro" en Santa Clara, Cuba. Cada dataset representa una condición clínica compleja (como neumonía comunitaria grave, cetoacidosis diabética o trauma craneoencefálico) con diferentes niveles de escasez y desbalance.<br><br>
+                                    Tras aplicar el flujo de trabajo y evaluar los modelos resultantes en conjuntos de prueba estrictamente independientes, se registraron mejoras promedio consistentes en el rendimiento del clasificador (Multilayer Perceptron):
                                 </p>
                                 <ul class="description">
-                                    <li>Una variante de SMOTE adaptada al dominio (SMOTE RSB* Adaptado con Ruido Gaussiano) superó consistentemente a los modelos de Deep Learning en este contexto.</li>
-                                    <li>No existe una "única técnica de balanceo perfecta"; la mejor opción varía según el conjunto de datos, lo que demuestra la importancia de un proceso de selección guiado como el nuestro.</li>                                    
+                                    <li>Un incremento promedio del <strong>+42.38% en el área bajo la curva (AUC-ROC)</strong> en comparación con los modelos entrenados únicamente con los datos originales.</li>
+                                    <li>Un aumento del <strong>+37.17% en el F1-score ponderado</strong>.</li>
+                                    <li>Una mejora del <strong>+28.37% en la exactitud (Accuracy) general</strong> del modelo.</li>
                                 </ul>
-                                <p class="description">Esto confirma que nuestra metodología no solo funciona, sino que proporciona un marco robusto para tomar decisiones informadas que conducen a modelos de Inteligencia Artificial más precisos y fiables.</p>
-                                <p class="description"><strong>4. Publicación y Estado del Artículo</strong></p>
-                                <p class="description">Este trabajo ha sido aceptado para su publicación en una de las series de actas de congresos más prestigiosas en ciencias de la computación.</p>
+                                <p class="description">
+                                    <strong>Hallazgos clave de la investigación:</strong><br>
+                                    • <strong>Idoneidad de técnicas clásicas adaptadas:</strong> En escenarios de alta escasez de datos, la técnica SMOTE adaptada al dominio con inyección de ruido gaussiano (DA-RSB*+GN) obtuvo un desempeño superior frente a modelos de aprendizaje profundo complejos como CTGAN, los cuales tienden a requerir mayores volúmenes de muestra para converger adecuadamente.<br>
+                                    • <strong>Análisis de la utilidad predictiva:</strong> El estudio de ablación confirmó que incorporar métricas de desempeño del clasificador dentro del índice de selección es fundamental para evitar la elección de conjuntos de datos estadísticamente similares pero predictivamente limitados.
+                                </p>
+                    
+                                <p class="description"><strong>4. Evaluación de seguridad y viabilidad computacional</strong></p>
+                                <p class="description">
+                                    Reconociendo la sensibilidad de los datos clínicos, el trabajo incorpora un análisis de privacidad que evalúa el riesgo de reidentificación de pacientes mediante métricas de distancia al registro más cercano (DCR) y ataques de inferencia de membresía (MIA). Los resultados señalan que, si bien existen compromisos entre la fidelidad y la privacidad, el riesgo de inferencia de membresía se mantuvo cercano al azar (promedio de ~0.468), lo que aporta un marco de confianza para su uso controlado.<br><br>
+                                    Adicionalmente, las pruebas de viabilidad demuestran que el flujo de trabajo completo es computacionalmente accesible, completando la generación y evaluación de candidatos en aproximadamente 62 segundos sobre hardware estándar de oficina, sin requerir infraestructura de cómputo de altas prestaciones.
+                                </p>
+                    
+                                <p class="description"><strong>5. Detalles del artículo científico y manuscrito</strong></p>
                                 <p class="description"><strong>AVISO IMPORTANTE</strong></p>
-<p class="description"><strong>Título del Artículo:</strong> A Methodology for the Generation and Evaluation of Tabular Synthetic Data: A Case Study in Data Analysis in Intensive Care Units.</p>
-<p class="description"><strong>Estado:</strong> Este es el <strong>Manuscrito Aceptado por el Autor (Author's Accepted Manuscript)</strong>. Esta versión ha sido aceptada para su publicación tras la revisión por pares, pero no es la versión final maquetada por la editorial (Version of Record) y no refleja las mejoras o correcciones posteriores a la aceptación.</p>
-<p class="description"><strong>Publicación:</strong> Publicado en el congreso "<strong>Progress in Artificial Intelligence and Pattern Recognition (IWAIPR 2025)</strong>" como parte de la serie "<strong>Lecture Notes in Computer Science (LNCS), volumen 16328</strong>" de <strong>Springer</strong>.</p>
-<p class="description"><strong>Primera publicación en línea:</strong> 03 de febrero de 2026.</p>
-<p class="description"><strong>Autores:</strong> Marcos Díaz Bastida, Ramiro A. Pérez Vázquez y Rafael Bello Pérez.</p>
-<p class="description">La <strong>Versión de Registro</strong> oficial está disponible en SpringerLink. El uso de esta versión aceptada está sujeto a los términos de uso de manuscritos aceptados del editor.</p>
-                                <p class="description"><strong>5. ¿Quieres saber más?</strong></p>
-                                <p class="description">Para un análisis detallado de la metodología, incluyendo tablas completas, figuras y pseudocódigo, puedes visitar el sitio web complementario del artículo: <a href="investigaciones-detalles-metodologia-tds.html" class="a-plus">Metodologia TDS</a>.
+                                <p class="description"><strong>Título del Artículo:</strong> Methodology for Generating High Fidelity Synthetic Data to Improve Mortality Prediction for Patients in Intensive Care Units.</p>
+                                <p class="description"><strong>Estado:</strong> Este es el <strong>Manuscrito Aceptado por el Autor (Author's Accepted Manuscript)</strong>. Esta versión ha sido aceptada para su publicación tras la revisión por pares, pero no es la versión final maquetada por la editorial (Version of Record) y no refleja las mejoras o correcciones posteriores a la aceptación.</p>
+                                <p class="description"><strong>Publicación:</strong> Publicado en la revista <strong>"SN Computer Science"</strong>, Volumen 7, Número de artículo 370 (2026), de <strong>Springer Nature</strong>.</p>
+                                <p class="description"><strong>Fecha de Publicación:</strong> 18 de abril de 2026.</p>                                
+                                <p class="description"><strong>Autores:</strong> Marcos Díaz Bastida, Ramiro A. Pérez Vázquez y Rafael Bello Pérez.</p>
+                                <p class="description"><strong>Tipo de artículo:</strong> Investigación Original (Original Research).</p>
+                                <p class="description">La <strong>Versión de Registro</strong> oficial está disponible en SpringerLink. El uso de esta versión aceptada está sujeto a los términos de uso de manuscritos aceptados del editor.</p>
+                    
+                                <p class="description"><strong>6. Material complementario</strong></p>
+                                <p class="description">
+                                    Para examinar los detalles experimentales, el pseudocódigo del índice TabDSFidelity, así como los gráficos de distribución y las tablas de resultados por cada condición clínica, te invitamos a visitar el sitio web complementario del proyecto en: <a href="https://mdiazbastida.github.io/codigomdb/investigaciones-detalles-metodologia-tds.html" target="_blank" class="a-plus">Sitio del Proyecto - Metodología TDS</a>.
                                 </p>                                
                             </div>
                         </div>
