@@ -586,14 +586,15 @@
                     </li>
                     <li><strong>Preservación de la estructura y calidad de datos:</strong> 
                         <ul class="transformacion-lista">
-                            <li>Mantenimiento de las <strong>7,311 instancias</strong> (participantes NHANES) después de filtrado de target.</li>
+                            <li>Submuestreo controlado a <strong>1,000 instancias</strong> (extraídas del conjunto original de 7,311 participantes NHANES) aplicando muestreo aleatorio estratificado (<code>train_test_split</code> con <code>random_state=42</code>).</li>
+                            <li>Preservación exacta de la distribución y proporción original del desbalance de la variable objetivo (<em>Hypertension_Diagnosis</em>).</li>
                             <li>Dataset final con <strong>14 variables predictoras</strong> (mixtas: categóricas codificadas y numéricas continuas) y <strong>1 variable objetivo binaria</strong>.</li>
                             <li>Guardado en formato CSV con separador <em>punto y coma</em> (;) para compatibilidad internacional.</li>
                         </ul>
                     </li>
                 </ul>
                 <p style="margin-top: 15px; font-style: italic; color: #555;">
-                    📊 <strong>Resultado:</strong> Dataset de <strong>7,311 participantes</strong> del ciclo NHANES 2013-2014 con <strong>14 variables predictoras</strong> (demográficas, antropométricas, metabólicas, dietéticas y de hábitos) y <strong>1 variable objetivo binaria</strong> (Hypertension_Diagnosis). Desbalance moderado (~55% no hipertensos / ~45% hipertensos) — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos epidemiológicos de enfermedades cardiovasculares con factores dietéticos clave (sodio/potasio).
+                    📊 <strong>Resultado:</strong> Dataset reducido mediante muestreo estratificado a <strong>1,000 participantes</strong> del ciclo NHANES 2013-2014 con <strong>14 variables predictoras</strong> (demográficas, antropométricas, metabólicas, dietéticas y de hábitos) y <strong>1 variable objetivo binaria</strong> (Hypertension_Diagnosis). Se mantiene fielmente el desbalance original de clases — escenario ideal para validación de técnicas de generación de datos sintéticos y evaluación del índice TabDSFidelity en contextos epidemiológicos con datos complejos y multidimensionales.
                 </p>
                 <p style="margin-top: 5px; font-size: 0.9em; color: #777;">
                     🏥 <strong>Fuente:</strong> National Health and Nutrition Examination Survey (NHANES) 2013-2014 - CDC/NCHS.
